@@ -1,3 +1,4 @@
+1.mysql数据源配置
 将以下内容复制到%TOMCAT_HOME%\conf\context.xml中。
 或参照Readme\context.xml文件
 
@@ -12,4 +13,5 @@
         maxActive="4"
 />
 
-2. 工程下面的lib/mysql-connector-javabin.jar  也要拷备到Tomcat/lib/下面
+2.mysql驱动包
+将lib/mysql-connector-javabin.jar拷备到%TOMCAT_HOME%/lib/中
