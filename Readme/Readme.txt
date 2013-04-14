@@ -11,3 +11,5 @@
         url="jdbc:mysql://192.168.1.104:3306/test"   
         maxActive="4"
 />
+
+2. 工程下面的lib/mysql-connector-javabin.jar  也要拷备到Tomcat/lib/下面
