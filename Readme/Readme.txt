@@ -1,6 +1,6 @@
 1.mysql数据源配置
 将以下内容复制到%TOMCAT_HOME%\conf\context.xml中。
-或参照Readme\context.xml文件
+或者直接覆盖project\Readme\context.xml文件到%TOMCAT_HOME%\conf\context.xml
 
 <Resource name="jdbc/mysql"
         type="javax.sql.DataSource"
@@ -14,4 +14,4 @@
 />
 
 2.mysql驱动包
-将lib/mysql-connector-javabin.jar拷备到%TOMCAT_HOME%/lib/中
+将project\lib\mysql-connector-javabin.jar复制到%TOMCAT_HOME%/lib/中
