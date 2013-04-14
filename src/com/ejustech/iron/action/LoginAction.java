@@ -4,8 +4,12 @@
  */
 package com.ejustech.iron.action;
 
+import java.sql.Connection;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.DataSource;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -39,13 +43,13 @@ public class LoginAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		LoginForm loginForm = (LoginForm) form;// TODO Auto-generated method stub
-		
-		//Login画面的业务逻辑类定义并初始化
-		Login loginModule = new Login(loginForm.getUserID(), loginForm.getUserPassword());
-		
-		//登陆验证，并返回一个验证的结果
 		try {
+			LoginForm loginForm = (LoginForm) form;// TODO Auto-generated method stub
+			
+			//Login画面的业务逻辑类定义并初始化
+			Login loginModule = new Login(loginForm.getUserID(), loginForm.getUserPassword());
+			
+			//登陆验证，并返回一个验证的结果
 			LoginCheckResult loginCheckResult = loginModule.LoginCheck();
 			
 			switch (loginCheckResult) {

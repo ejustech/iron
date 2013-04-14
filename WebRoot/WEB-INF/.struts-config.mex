@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="50,50" dimension="252,104" />
+  <StrutsActivity path="/form/loginOK.jsp" location="950,50" dimension="137,53" />
+  <StrutsActivity path="/form/loginError.jsp" location="50,250" dimension="149,53" />
+  <StrutsActivity path="/form/login.jsp" location="350,250" dimension="119,53" />
   <StrutsActivity path="form/login.jsp" location="650,50" dimension="114,53" />
-  <StrutsActivity path="/login.do" />
-  <StrutsActivity path="/form/loginOK.jsp" />
-  <StrutsActivity path="/form/loginError.jsp" />
-  <StrutsActivity path="/form/login.jsp" />
   <StrutsTransition id="/form/login.jsp,null,/login.do,2" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="0,0" />

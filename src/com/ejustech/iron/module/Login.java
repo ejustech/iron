@@ -1,8 +1,22 @@
 package com.ejustech.iron.module;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+import javax.naming.NamingException;
+
 import com.ejustech.iron.common.IronStatus.LoginCheckResult;
 
 public class Login {
+	/***
+	 * 数据源
+	 */
+	private DataSource dataSource;
+	
 	/***
 	 * 用户名
 	 */
@@ -17,9 +31,19 @@ public class Login {
 	 * @param 用户名
 	 * @param 用户密码
 	 */
-	public Login(String userID, String userPassword) {
+	public Login(String userID, String userPassword) throws NamingException {
+		//设置用户名
 		this.setUserID(userID);
+		//设置用户名密码
 		this.setUserPassword(userPassword);
+		
+		//Context数据源对象与名字的绑定的集合(通过数据源名字找到数据源对象) 
+        Context ctx=null;  
+        ctx = new InitialContext();  
+        //JNDI  
+        //DataSource data=text.lookup("java:comp/env/oracle");  
+        //(java:comp/env)是java虚拟机,通过java虚拟机获取数据源的名字【重要】通过text.lookup("java:comp/env/oracle")找到数据源  
+        dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");  
 	}
 	
 	/**
@@ -97,7 +121,24 @@ public class Login {
 	 * @return 系统中不存在输入的用户名，false；存在，true
 	 */
 	private boolean HasUserID() {
-		return true;
+		Connection conn = null;
+		ResultSet rs  = null;
+		
+        String sql = "select count(userID) as userCount from m_user where userID = ?";  
+        try {  
+            conn = this.dataSource.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);  
+            ps.setString(1, userID);  
+            rs = ps.executeQuery(); 
+            while (rs.next())
+            {
+            	System.out.println(rs.getString("userCount"));
+            	return true;
+            }
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }   
+		return false;
 	}
 	
 	/***
