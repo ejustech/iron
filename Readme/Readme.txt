@@ -1,4 +1,4 @@
-将一下内容复制到%TOMCAT_HOME%\conf\context.xml中。
+将以下内容复制到%TOMCAT_HOME%\conf\context.xml中。
 或参照Readme\context.xml文件
 
 <Resource name="jdbc/mysql"
