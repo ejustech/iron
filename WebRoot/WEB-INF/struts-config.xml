@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="loginForm" type="com.ejustech.iron.form.LoginForm" />
+    
+    
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/form/login.jsp"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="com.ejustech.iron.action.LoginAction"
+      cancellable="true">
+      <forward name="loginOK" path="/form/loginOK.jsp" />
+      <forward name="loginError" path="/form/loginError.jsp" />
+    </action>
+    
+
+  </action-mappings>
+
+  <message-resources parameter="com.ejustech.iron.ApplicationResources" />
+</struts-config>
+
