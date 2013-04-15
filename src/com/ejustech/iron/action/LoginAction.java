@@ -43,10 +43,10 @@ public class LoginAction extends Action {
 		try {
 			LoginForm loginForm = (LoginForm) form;// TODO Auto-generated method stub
 			
-			//Login»­ÃæµÄÒµÎñÂß¼­Àà¶¨Òå²¢³õÊ¼»¯
+			//Loginç”»é¢çš„ä¸šåŠ¡é€»è¾‘ç±»å®šä¹‰å¹¶åˆå§‹åŒ–
 			Login loginModule = new Login(loginForm.getUserID(), loginForm.getUserPassword());
 			
-			//µÇÂ½ÑéÖ¤£¬²¢·µ»ØÒ»¸öÑéÖ¤µÄ½á¹û
+			//ç™»é™†éªŒè¯ï¼Œå¹¶è¿”å›ä¸€ä¸ªéªŒè¯çš„ç»“æœ
 			LoginCheckResult loginCheckResult = loginModule.LoginCheck();
 			
 			switch (loginCheckResult) {

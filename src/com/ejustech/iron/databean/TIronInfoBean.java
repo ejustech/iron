@@ -1,7 +1,7 @@
 package com.ejustech.iron.databean;
 
 /***
- * T_Iron_Info表的数据对象
+ * T_Iron_Info琛ㄧ殑鏁版嵁瀵硅薄
  */
 public class TIronInfoBean {
 

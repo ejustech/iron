@@ -14,57 +14,57 @@ import com.ejustech.iron.dao.MUserDao;
 
 public class Login {
 	/***
-	 * ÓÃ»§Ãû
+	 * ç”¨æˆ·å
 	 */
 	private static String userID = "";
 	/***
-	 * ÓÃ»§ÃÜÂë
+	 * ç”¨æˆ·å¯†ç 
 	 */
 	private static String userPassword = "";
 	
 	/***
-	 * ¹¹Ôìº¯Êı£¬²¢ÇÒÉèÖÃÁËÓÃ»§ÃûºÍÃÜÂë
-	 * @param ÓÃ»§Ãû
-	 * @param ÓÃ»§ÃÜÂë
+	 * æ„é€ å‡½æ•°ï¼Œå¹¶ä¸”è®¾ç½®äº†ç”¨æˆ·åå’Œå¯†ç 
+	 * @param ç”¨æˆ·å
+	 * @param ç”¨æˆ·å¯†ç 
 	 */
 	public Login(String userID, String userPassword) throws NamingException {
-		//ÉèÖÃÓÃ»§Ãû
+		//è®¾ç½®ç”¨æˆ·å
 		this.setUserID(userID);
-		//ÉèÖÃÓÃ»§ÃûÃÜÂë
+		//è®¾ç½®ç”¨æˆ·åå¯†ç 
 		this.setUserPassword(userPassword);
 	}
 	
 	/**
-	 * Login»­Ãæ£¬¶ÔÓÃ»§ÊäÈëµÄÓÃ»§ÃûºÍÃÜÂë×öÑéÖ¤
-	 * @param ÓÃ»§Ãû
-	 * @param ÃÜÂë
-	 * @return ÑéÖ¤OKµÄÇé¿ö£¬true£»ÑéÖ¤NGµÄÇé¿ö£¬false
+	 * Loginç”»é¢ï¼Œå¯¹ç”¨æˆ·è¾“å…¥çš„ç”¨æˆ·åå’Œå¯†ç åšéªŒè¯
+	 * @param ç”¨æˆ·å
+	 * @param å¯†ç 
+	 * @return éªŒè¯OKçš„æƒ…å†µï¼Œtrueï¼›éªŒè¯NGçš„æƒ…å†µï¼Œfalse
 	 * @throws Exception
 	 */
 	public LoginCheckResult LoginCheck() throws Exception {
-		//ÓÃ»§ÃûÎª¿Õ
+		//ç”¨æˆ·åä¸ºç©º
 		if (IsEmptyForUserID()) return LoginCheckResult.USER_ID_IS_EMPTY;
 		
-		//ÓÃ»§ÃûÃÜÂëÎª¿Õ
+		//ç”¨æˆ·åå¯†ç ä¸ºç©º
 		if (IsEmptyForUserPassword()) return LoginCheckResult.USER_PASSWORD_IS_EMPTY;
 		
-		//ÓÃ»§ÃûºÍÃÜÂëÍ¬Ê±Îª¿Õ
+		//ç”¨æˆ·åå’Œå¯†ç åŒæ—¶ä¸ºç©º
 		if (isEmptyForAllItems()) return LoginCheckResult.ALL_ITEMS_IS_EMPTY;
 		
-		//ÓÃ»§Ãû²»´æÔÚ
+		//ç”¨æˆ·åä¸å­˜åœ¨
 		if (!HasUserID()) return LoginCheckResult.USER_ID_NOT_FOUND;
 		
-		//ÃÜÂëÑéÖ¤Ê§°Ü
+		//å¯†ç éªŒè¯å¤±è´¥
 		if (IsErrorForUserPassword()) return LoginCheckResult.USER_PASSWORD_IS_ERROR;
 		
-		//ÓÃ»§ÃûÃÜÂëÑéÖ¤³É¹¦£¬µ«ÊÇ¸ÃÓÃ»§Ã»ÓĞµÇÂ½ÏµÍ³µÄÈ¨ÏŞ
+		//ç”¨æˆ·åå¯†ç éªŒè¯æˆåŠŸï¼Œä½†æ˜¯è¯¥ç”¨æˆ·æ²¡æœ‰ç™»é™†ç³»ç»Ÿçš„æƒé™
 		
 		return LoginCheckResult.OK;
 	}
 	
 	/***
-	 * ÓÃ»§ÃûÊÇ·ñÎª¿Õ
-	 * @return ÓÃ»§ÃûÎª¿Õ£¬true£»²»Îª¿Õ£¬false
+	 * ç”¨æˆ·åæ˜¯å¦ä¸ºç©º
+	 * @return ç”¨æˆ·åä¸ºç©ºï¼Œtrueï¼›ä¸ä¸ºç©ºï¼Œfalse
 	 */
 	private boolean IsEmptyForUserID() {
 		if (IsEmpty(userID) && !IsEmpty(userPassword)) return true;
@@ -72,8 +72,8 @@ public class Login {
 	}
 	
 	/***
-	 * ÓÃ»§ÃÜÂëÊÇ·ñÎª¿Õ
-	 * @return ÓÃ»§ÃÜÂëÎª¿Õ£¬true£»²»Îª¿Õ£¬false
+	 * ç”¨æˆ·å¯†ç æ˜¯å¦ä¸ºç©º
+	 * @return ç”¨æˆ·å¯†ç ä¸ºç©ºï¼Œtrueï¼›ä¸ä¸ºç©ºï¼Œfalse
 	 */
 	private boolean IsEmptyForUserPassword() {
 		if (!IsEmpty(userID) && IsEmpty(userPassword)) return true;
@@ -81,17 +81,17 @@ public class Login {
 	}
 	
 	/***
-	 * ÓÃ»§ÃûºÍÃÜÂëÊÇ·ñÍ¬Ê±Îª¿Õ
-	 * @return ÓÃ»§ÃûºÍÃÜÂëÍ¬Ê±Îª¿Õ£¬true£»²»Í¬Ê±Îª¿Õ£¬»ò²»Îª¿Õ£¬false
+	 * ç”¨æˆ·åå’Œå¯†ç æ˜¯å¦åŒæ—¶ä¸ºç©º
+	 * @return ç”¨æˆ·åå’Œå¯†ç åŒæ—¶ä¸ºç©ºï¼Œtrueï¼›ä¸åŒæ—¶ä¸ºç©ºï¼Œæˆ–ä¸ä¸ºç©ºï¼Œfalse
 	 */
 	private boolean isEmptyForAllItems() {
 		if (IsEmpty(userID) && IsEmpty(userPassword)) return true;
 		return false;
 	}
 	/**
-	 * ¶ÔÏóÊÇ·ñÎª¿ÕµÄÅĞ¶Ï
-	 * @param ½«Òª½øĞĞÅĞ¶ÏµÄ¶ÔÏóÖµ
-	 * @return Èç¹û¶ÔÏóÎªnull£¬true£»Èç¹û¶ÔÏóµÄÀàĞÍÎªString,""µÄÇé¿ö£¬·µ»Øtrue£»ÒÔÍâ£¬false
+	 * å¯¹è±¡æ˜¯å¦ä¸ºç©ºçš„åˆ¤æ–­
+	 * @param å°†è¦è¿›è¡Œåˆ¤æ–­çš„å¯¹è±¡å€¼
+	 * @return å¦‚æœå¯¹è±¡ä¸ºnullï¼Œtrueï¼›å¦‚æœå¯¹è±¡çš„ç±»å‹ä¸ºString,""çš„æƒ…å†µï¼Œè¿”å›trueï¼›ä»¥å¤–ï¼Œfalse
 	 */
 	private boolean IsEmpty(Object value) {
 		if (value== null) return true;
@@ -105,8 +105,8 @@ public class Login {
 	}
 	
 	/***
-	 * ÓÃ»§ÃûÊÇ·ñ´æÔÚ
-	 * @return ÏµÍ³ÖĞ²»´æÔÚÊäÈëµÄÓÃ»§Ãû£¬false£»´æÔÚ£¬true
+	 * ç”¨æˆ·åæ˜¯å¦å­˜åœ¨
+	 * @return ç³»ç»Ÿä¸­ä¸å­˜åœ¨è¾“å…¥çš„ç”¨æˆ·åï¼Œfalseï¼›å­˜åœ¨ï¼Œtrue
 	 */
 	private boolean HasUserID() {
 		try {
@@ -126,40 +126,40 @@ public class Login {
 	}
 	
 	/***
-	 * ÓÃ»§ÃûÊÇ·ñÓµÓĞÈ¨ÏŞ
-	 * @return ÓÃ»§ÃûµÄÈ¨ÏŞ¿ÉÒÔµÇÂ½£¬true£»²»¿ÉÒÔµÇÂ¼£¬false
+	 * ç”¨æˆ·åæ˜¯å¦æ‹¥æœ‰æƒé™
+	 * @return ç”¨æˆ·åçš„æƒé™å¯ä»¥ç™»é™†ï¼Œtrueï¼›ä¸å¯ä»¥ç™»å½•ï¼Œfalse
 	 */
 	private boolean IsErrorForUserPassword() {
 		return false;
 	}
 
 	/***
-	 * È¡µÃÓÃ»§Ãû
-	 * @return ÓÃ»§Ãû
+	 * å–å¾—ç”¨æˆ·å
+	 * @return ç”¨æˆ·å
 	 */
 	public String getUserID() {
 		return userID;
 	}
 
 	/***
-	 * ÉèÖÃÓÃ»§Ãû
-	 * @param ÓÃ»§Ãû
+	 * è®¾ç½®ç”¨æˆ·å
+	 * @param ç”¨æˆ·å
 	 */
 	public void setUserID(String userID) {
 		Login.userID = userID;
 	}
 
 	/***
-	 * È¡µÃÓÃ»§ÃÜÂë
-	 * @return ÓÃ»§ÃÜÂë
+	 * å–å¾—ç”¨æˆ·å¯†ç 
+	 * @return ç”¨æˆ·å¯†ç 
 	 */
 	public String getUserPassword() {
 		return userPassword;
 	}
 
 	/***
-	 * ÉèÖÃÓÃ»§ÃÜÂë
-	 * @param ÓÃ»§ÃÜÂë
+	 * è®¾ç½®ç”¨æˆ·å¯†ç 
+	 * @param ç”¨æˆ·å¯†ç 
 	 */
 	public void setUserPassword(String userPassword) {
 		Login.userPassword = userPassword;

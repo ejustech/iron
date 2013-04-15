@@ -1,10 +1,10 @@
-1.¿ª·¢»·¾³
-»ùÓÚMyEclipse2013(MyEclipse10)¿ª·¢¡£
-  1-1.MyEclipse2013°²×°
-  1-2.MyEclipseÆô¶¯£¬µ¼ÈëÒÑ¾­´æÔÚµÄ¹¤³Ì
+1.å¼€å‘ç¯å¢ƒ
+åŸºäºMyEclipse2013(MyEclipse10)å¼€å‘ã€‚
+  1-1.MyEclipse2013å®‰è£…
+  1-2.MyEclipseå¯åŠ¨ï¼Œå¯¼å…¥å·²ç»å­˜åœ¨çš„å·¥ç¨‹
 
-2.mysqlÊı¾İÔ´ÅäÖÃ,Ê¹ÓÃTomcatÁ¬½Ó³Ø¡£
-½«ÒÔÏÂÄÚÈİ¸´ÖÆµ½%TOMCAT_HOME%\conf\context.xmlÖĞ¡£
+2.mysqlæ•°æ®æºé…ç½®,ä½¿ç”¨Tomcatè¿æ¥æ± ã€‚
+å°†ä»¥ä¸‹å†…å®¹å¤åˆ¶åˆ°%TOMCAT_HOME%\conf\context.xmlä¸­ã€‚
 
 <Resource name="jdbc/mysql"
         type="javax.sql.DataSource"
@@ -17,5 +17,5 @@
         maxActive="4"
 />
 
-3.mysqlÇı¶¯°ü
-½«project\lib\mysql-connector-javabin.jar¸´ÖÆµ½%TOMCAT_HOME%/lib/ÖĞ
+3.mysqlé©±åŠ¨åŒ…
+å°†project\lib\mysql-connector-javabin.jarå¤åˆ¶åˆ°%TOMCAT_HOME%/lib/ä¸­

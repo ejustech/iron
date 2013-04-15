@@ -1,12 +1,12 @@
 package com.ejustech.iron.common;
 
 /***
- * SQL常量
+ * SQL甯搁噺
  *
  */
 public class ConstantSql {
 	/***
-	 * 根据用户名，在M_User表中检索，查看该用户是否存在的SQL
+	 * 鏍规嵁鐢ㄦ埛鍚嶏紝鍦∕_User琛ㄤ腑妫�绱紝鏌ョ湅璇ョ敤鎴锋槸鍚﹀瓨鍦ㄧ殑SQL
 	 */
 	 public static final String GET_COUNTS_BY_USER_ID = "select count(userID) as userCounts from m_user where userID = ?";
 }

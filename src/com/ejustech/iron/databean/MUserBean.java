@@ -1,42 +1,42 @@
 package com.ejustech.iron.databean;
 
 /***
- * M_USER±íµÄÊı¾İ¶ÔÏó
+ * M_USERè¡¨çš„æ•°æ®å¯¹è±¡
  */
 public class MUserBean {
 	/***
-	 * ÓÃ»§Ãû
+	 * ç”¨æˆ·å
 	 */
 	private static String userID = "";
 	/***
-	 * ÓÃ»§ÃÜÂë
+	 * ç”¨æˆ·å¯†ç 
 	 */
 	private static String userPassword = "";
 	
 	/***
-	 * È¡µÃÓÃ»§Ãû
-	 * @return ÓÃ»§Ãû
+	 * å–å¾—ç”¨æˆ·å
+	 * @return ç”¨æˆ·å
 	 */
 	public static String getUserID() {
 		return userID;
 	}
 	/***
-	 * ÉèÖÃÓÃ»§Ãû
-	 * @param ÓÃ»§Ãû
+	 * è®¾ç½®ç”¨æˆ·å
+	 * @param ç”¨æˆ·å
 	 */
 	public static void setUserID(String userID) {
 		MUserBean.userID = userID;
 	}
 	/***
-	 * È¡µÃÓÃ»§ÃÜÂë
-	 * @return ÓÃ»§ÃÜÂë
+	 * å–å¾—ç”¨æˆ·å¯†ç 
+	 * @return ç”¨æˆ·å¯†ç 
 	 */
 	public static String getUserPassword() {
 		return userPassword;
 	}
 	/***
-	 * ÉèÖÃÓÃ»§ÃÜÂë
-	 * @param ÓÃ»§ÃÜÂë
+	 * è®¾ç½®ç”¨æˆ·å¯†ç 
+	 * @param ç”¨æˆ·å¯†ç 
 	 */
 	public static void setUserPassword(String userPassword) {
 		MUserBean.userPassword = userPassword;

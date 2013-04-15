@@ -13,17 +13,17 @@ import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.databean.MUserBean;
 
 /***
- * M_User±íµÄÊı¾İ·ÃÎÊ¶ÔÏó
+ * M_Userè¡¨çš„æ•°æ®è®¿é—®å¯¹è±¡
  *
  */
 public class MUserDao {
 	/***
-	 * Êı¾İÔ´
+	 * æ•°æ®æº
 	 */
 	private DataSource dataSource;
 	
 	/***
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public MUserDao() throws NamingException {	
         Context ctx=null;  
@@ -33,9 +33,9 @@ public class MUserDao {
 	}
 	
 	/***
-	 * ¸ù¾İÓÃ»§Ãû£¬È¡µÃm_user±íÖĞÊı¾İµÄ¼ÇÂ¼Êı
-	 * @param ÓÃ»§Ãû
-	 * @return ÓÃ»§Ãû´æÔÚ£¬1£»ÓÃ»§Ãû²»´æÔÚ£¬0
+	 * æ ¹æ®ç”¨æˆ·åï¼Œå–å¾—m_userè¡¨ä¸­æ•°æ®çš„è®°å½•æ•°
+	 * @param ç”¨æˆ·å
+	 * @return ç”¨æˆ·åå­˜åœ¨ï¼Œ1ï¼›ç”¨æˆ·åä¸å­˜åœ¨ï¼Œ0
 	 */
 	public int GetCountsByUserID(String userID) {
 		Connection conn = null;
@@ -44,14 +44,14 @@ public class MUserDao {
         try {  
             conn = this.dataSource.getConnection();
             PreparedStatement ps = conn.prepareStatement(ConstantSql.GET_COUNTS_BY_USER_ID); 
-            //SQLÎÄÖĞ£¬ÉèÖÃ²ÎÊı£¬£¿=userID
+            //SQLæ–‡ä¸­ï¼Œè®¾ç½®å‚æ•°ï¼Œï¼Ÿ=userID
             ps.setString(1, userID);  
-            //Ö´ĞĞSQL
+            //æ‰§è¡ŒSQL
             rs = ps.executeQuery(); 
             while (rs.next())
             {
             	try {
-            		//userCounts ¶ÔÓ¦ËùÖ´ĞĞµÄSQLÖĞ£¬as¹Ø¼ü×ÖºóÃæµÄ±ğÃû
+            		//userCounts å¯¹åº”æ‰€æ‰§è¡Œçš„SQLä¸­ï¼Œaså…³é”®å­—åé¢çš„åˆ«å
 					return Integer.parseInt(rs.getString("userCounts"));
 				} catch (NumberFormatException e) {
 					// TODO Auto-generated catch block
@@ -65,7 +65,7 @@ public class MUserDao {
 		return 0;
 	}
 	
-	//ÆäËû¶ÔM_USER±íµÄÊı¾İ·ÃÎÊ·½·¨
+	//å…¶ä»–å¯¹M_USERè¡¨çš„æ•°æ®è®¿é—®æ–¹æ³•
 	public MUserBean GetUserInfoByUserID(String userID) {
 		return new MUserBean();
 	}

@@ -6,17 +6,17 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 /***
- * T_Iron_Info±íµÄÊı¾İ·ÃÎÊ¶ÔÏó
+ * T_Iron_Infoè¡¨çš„æ•°æ®è®¿é—®å¯¹è±¡
  *
  */
 public class TIronInfoDao {
 	/***
-	 * Êı¾İÔ´
+	 * æ•°æ®æº
 	 */
 	private DataSource dataSource;
 	
 	/***
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public TIronInfoDao() throws NamingException {	
         Context ctx=null;  
@@ -25,5 +25,5 @@ public class TIronInfoDao {
         dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");  
 	}
 	
-	//ÆäËû¶ÔIronInfo±íµÄÊı¾İ·ÃÎÊ·½·¨
+	//å…¶ä»–å¯¹IronInfoè¡¨çš„æ•°æ®è®¿é—®æ–¹æ³•
 }
