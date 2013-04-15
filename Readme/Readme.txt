@@ -1,6 +1,10 @@
-1.mysql数据源配置
+1.开发环境
+基于MyEclipse2013(MyEclipse10)开发。
+  1-1.MyEclipse2013安装
+  1-2.MyEclipse启动，导入已经存在的工程
+
+2.mysql数据源配置,使用Tomcat连接池。
 将以下内容复制到%TOMCAT_HOME%\conf\context.xml中。
-或者直接覆盖project\Readme\context.xml文件到%TOMCAT_HOME%\conf\context.xml
 
 <Resource name="jdbc/mysql"
         type="javax.sql.DataSource"
@@ -13,5 +17,5 @@
         maxActive="4"
 />
 
-2.mysql驱动包
+3.mysql驱动包
 将project\lib\mysql-connector-javabin.jar复制到%TOMCAT_HOME%/lib/中
