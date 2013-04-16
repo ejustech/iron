@@ -1,29 +1,51 @@
 package com.ejustech.iron.dao;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
+import java.sql.ResultSet;
+
 import javax.naming.NamingException;
-import javax.sql.DataSource;
+
+import com.ejustech.iron.common.db.BaseDao;
 
 /***
  * T_Iron_Info表的数据访问对象
- *
+ * 
  */
-public class TIronInfoDao {
-	/***
-	 * 数据源
-	 */
-	private DataSource dataSource;
-	
+public class TIronInfoDao extends BaseDao {
 	/***
 	 * 构造函数
 	 */
-	public TIronInfoDao() throws NamingException {	
-        Context ctx=null;  
-        ctx = new InitialContext();  
- 
-        dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");  
+	public TIronInfoDao() throws NamingException {
 	}
-	
-	//其他对IronInfo表的数据访问方法
+
+	@Override
+	public int insert() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int delete() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int update() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int findCounts() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ResultSet select() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	// 其他对IronInfo表的数据访问方法
 }
