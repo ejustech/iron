@@ -1,10 +1,7 @@
 package com.ejustech.iron.module;
 
-import java.util.ArrayList;
-
 import javax.naming.NamingException;
 
-import com.ejustech.iron.common.IronEnum.TableName;
 import com.ejustech.iron.common.IronStatus.LoginCheckResult;
 import com.ejustech.iron.common.db.DaoFactory;
 import com.ejustech.iron.dao.MUserDao;
@@ -123,26 +120,15 @@ public class Login {
 	 * @return 系统中不存在输入的用户名，false；存在，true
 	 */
 	private boolean HasUserID() {
-		try {
-			MUserDao mUserDao = (MUserDao) DaoFactory
-					.getInstance(TableName.M_USER);
+		MUserDao mUserDao = (MUserDao) DaoFactory.CreateMUserDao();
 
-			ArrayList<String> paraList = new ArrayList<String>();
-			paraList.add(userID);
-			mUserDao.setParaList(paraList);
+		int userCounts = mUserDao.GetCountsByUserID(userID);
 
-			int userCounts = mUserDao.findCounts();
-
-			if (userCounts == 0) {
-				return false;
-			} else {
-				return true;
-			}
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (userCounts == 0) {
+			return false;
+		} else {
+			return true;
 		}
-		return false;
 	}
 
 	/***

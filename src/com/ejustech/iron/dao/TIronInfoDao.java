@@ -15,43 +15,8 @@ import com.ejustech.iron.databean.TIronInfoBean;
  * 
  */
 public class TIronInfoDao extends BaseDao {
-	/***
-	 * 构造函数
-	 */
-	public TIronInfoDao() throws NamingException {
-	}
-
-	@Override
-	public int insert() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int delete() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int update() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int findCounts() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public ResultSet select() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	// 其他对IronInfo表的数据访问方法
+	
 	public ArrayList<TIronInfoBean> getAllInfoList(String riqi1, String riqi2,
 			String qihao, String luci1, String luci2, String guige,
 			String shengchanluhao, String fanyingqihao, String shiyongcishu,
@@ -479,7 +444,7 @@ public class TIronInfoDao extends BaseDao {
 
 		try {
 			super.Open();
-			statement = super.getConn().createStatement();
+			statement = super.Conn().createStatement();
 			resultSet = statement.executeQuery(sqlBuffer.toString());
 
 			while (resultSet.next()) {

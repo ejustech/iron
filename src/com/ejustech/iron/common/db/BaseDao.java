@@ -1,6 +1,7 @@
 package com.ejustech.iron.common.db;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -13,51 +14,53 @@ public class BaseDao implements IDAO {
 	/***
 	 * 数据源
 	 */
-	private DataSource dataSource;
+	private DataSource _dataSource;
 
 	/***
 	 * DB连接
 	 */
-	private Connection conn = null;
-
+	private Connection _conn = null;
+	
 	/***
-	 * SQL执行时的参数
+	 * SQL执行参数
 	 */
-	private ArrayList<String> paraList = new ArrayList<String>();
-
+	private ArrayList<String> _paraList = null;
+	
 	/***
-	 * 取得SQL执行时的参数
-	 * @return SQL执行时的参数
+	 * 取得SQL执行的参数
+	 * @return SQL执行的参数
 	 */
 	protected ArrayList<String> getParaList() {
-		return paraList;
+		return _paraList;
 	}
 
 	/***
-	 * 构造函数
+	 * 设置SQL执行的参数
+	 * @param SQL执行的参数
 	 */
-	public BaseDao() {
-
+	protected void setParaList(ArrayList<String> paraList) {
+		this._paraList = paraList;
 	}
-
+	
 	/***
 	 * 取得DB连接
+	 * 
 	 * @return DB连接
 	 */
-	protected Connection getConn() {
-		return conn;
+	protected Connection Conn() {
+		return _conn;
 	}
 
 	/***
 	 * 打开DB连接
 	 */
-	protected void Open() {
+	public void Open() {
 		try {
 			Context ctx = null;
 			ctx = new InitialContext();
 
-			dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");
-			conn = this.dataSource.getConnection();
+			_dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/mysql");
+			_conn = this._dataSource.getConnection();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -66,50 +69,89 @@ public class BaseDao implements IDAO {
 	/***
 	 * 关闭DB连接
 	 */
-	protected void Close() {
-		if (conn != null) {
+	public void Close() {
+		if (_conn != null) {
 			try {
-				conn.close();
+				_conn.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			conn = null;
+			_conn = null;
 		}
 	}
 
-	@Override
-	public int insert() {
+	/***
+	 * 开启事务
+	 */
+	public void BeginTrans() {
 		// TODO Auto-generated method stub
-		return 0;
+		try {
+			if (_conn != null && _conn.getAutoCommit()) {
+				_conn.setAutoCommit(false);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	@Override
-	public int delete() {
+	/***
+	 * 提交
+	 */
+	public void Commit() {
 		// TODO Auto-generated method stub
-		return 0;
+		if (_conn != null) {
+			try {
+				_conn.commit();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
-	@Override
-	public int update() {
+	/***
+	 * 回滚
+	 */
+	public void Rollback() {
 		// TODO Auto-generated method stub
-		return 0;
+		if (_conn != null) {
+			try {
+				_conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
-	@Override
-	public int findCounts() {
+	/***
+	 * 关闭Statement
+	 */
+	public void Close(PreparedStatement ps) {
 		// TODO Auto-generated method stub
-		return 0;
+		if (ps != null) {
+			try {
+				ps.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
-	@Override
-	public ResultSet select() {
+	/***
+	 * 关闭ResultSet
+	 */
+	public void Close(ResultSet rs) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setParaList(ArrayList<String> paraList) {
-		// TODO Auto-generated method stub
-		this.paraList = paraList;
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 }

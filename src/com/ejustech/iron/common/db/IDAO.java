@@ -1,18 +1,22 @@
 package com.ejustech.iron.common.db;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
+
+
 
 public interface IDAO {
-	public int insert();
+	public void Open();
 
-	public int delete();
+	public void Close();
 
-	public int update();
+	public void BeginTrans();
 
-	public int findCounts();
+	public void Commit();
 
-	public ResultSet select();
+	public void Rollback();
 
-	public void setParaList(ArrayList<String> paraList);
+	public void Close(PreparedStatement ps);
+
+	public void Close(ResultSet rs);
 }
