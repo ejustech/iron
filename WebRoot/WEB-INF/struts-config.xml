@@ -20,7 +20,9 @@
 -->
   <form-beans >
     <form-bean name="loginForm" type="com.ejustech.iron.form.LoginForm" />
-    
+    <form-bean name="menuForm" type="com.ejustech.iron.form.MenuForm" />
+    <form-bean name="searchForm" type="com.ejustech.iron.form.SearchForm" />
+    <form-bean name="result1Form" type="com.ejustech.iron.form.Result1Form" />
     
 
   </form-beans>
@@ -36,10 +38,45 @@
       scope="request"
       type="com.ejustech.iron.action.LoginAction"
       cancellable="true">
-      <forward name="loginOK" path="/form/loginOK.jsp" />
+      <forward name="loginOK" path="/form/menu.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
-    
+    <action
+      attribute="menuForm"
+      input="/form/menu.jsp"
+      name="menuForm"
+      path="/menu"
+      scope="request"
+      type="com.ejustech.iron.action.MenuAction"
+      cancellable="true">
+      <forward name="search" path="/form/search.jsp" />
+      <forward name="searchError" path="/form/loginError.jsp" />
+    </action>
+    <action
+      attribute="searchForm"
+      input="/form/search.jsp"
+      name="searchForm"
+      path="/search"
+      scope="request"
+      type="com.ejustech.iron.action.SearchAction"
+      cancellable="true">
+      <forward name="srch1" path="/form/result1.jsp" />
+      <forward name="srch2" path="/form/result2.jsp" />
+      <forward name="srch3" path="/form/result3.jsp" />
+      <forward name="srch4" path="/form/result4.jsp" />
+      <forward name="srch5" path="/form/result5.jsp" />
+      <forward name="srch6" path="/form/result6.jsp" />
+      <forward name="srch7" path="/form/result7.jsp" />
+      <forward name="searchError" path="/form/loginError.jsp" />
+    </action>
+    <action
+      attribute="result1Form"
+      input="/form/result1.jsp"
+      name="result1Form"
+      path="/result1"
+      scope="request"
+      type="com.ejustech.iron.action.Result1Action"
+      cancellable="true" />
 
   </action-mappings>
 
