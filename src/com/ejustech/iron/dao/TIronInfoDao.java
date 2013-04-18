@@ -9,7 +9,7 @@ import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 
 import com.ejustech.iron.common.db.BaseDao;
-import com.ejustech.iron.databean.TIronInfoBean;
+import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
 import com.ejustech.iron.form.Result1Form;
 
 /***
@@ -19,7 +19,7 @@ import com.ejustech.iron.form.Result1Form;
 public class TIronInfoDao extends BaseDao {
 	// 其他对IronInfo表的数据访问方法
 	
-	public ArrayList<TIronInfoBean> getAllInfoList(HttpServletRequest request,String riqi1, String riqi2,
+	public ArrayList<TIronInfoDaoBean> getAllInfoList(HttpServletRequest request,String riqi1, String riqi2,
 			String qihao, String luci1, String luci2, String guige,
 			String shengchanluhao, String fanyingqihao, String shiyongcishu,
 			String ticl41, String ticl42, String chuluzhenkongdu1, String chuluzhenkongdu2,
@@ -451,7 +451,7 @@ public class TIronInfoDao extends BaseDao {
 
 			while (resultSet.next()) {
 				
-				TIronInfoBean tIronInfoBean = new TIronInfoBean();
+				TIronInfoDaoBean tIronInfoBean = new TIronInfoDaoBean();
 				
 				tIronInfoBean.setRiqi(resultSet.getString("riqi"));
 				tIronInfoBean.setQihao(resultSet.getString("qihao"));

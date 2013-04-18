@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
  
 <html> 
 	<head>
@@ -14,7 +15,7 @@
 			<th>fanyingqihao</th>
 		</tr>
 		<logic:notEmpty name="AllINFOLIST" property="list">
-			<logic:iterate id="tIronInfoBean" name="AllINFOLIST" property="list">
+			<logic:iterate id="tIronInfoBean" name="AllINFOLIST">
 		<tr>	
 			<td><bean:write name="tIronInfoBean" property="luci" ></bean:write>
 			<td><bean:write name="tIronInfoBean" property="fanyingqihao"></bean:write>

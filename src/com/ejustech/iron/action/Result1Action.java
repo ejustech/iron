@@ -11,7 +11,7 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.ejustech.iron.databean.TIronInfoBean;
+import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
 
 /** 
  * MyEclipse Struts
@@ -35,7 +35,7 @@ public class Result1Action extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		TIronInfoBean result1Form = (TIronInfoBean) form;// TODO Auto-generated method stub
+		TIronInfoDaoBean result1Form = (TIronInfoDaoBean) form;// TODO Auto-generated method stub
 		return null;
 	}
 }

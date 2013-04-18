@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.common.db.BaseDao;
-import com.ejustech.iron.databean.MUserBean;
+import com.ejustech.iron.databean.dao.MUserDaoBean;
 
 /***
  * M_User表的数据访问对象
@@ -55,7 +55,7 @@ public class MUserDao extends BaseDao {
 	}
 
 	// 其他对M_USER表的数据访问方法
-	public MUserBean GetUserInfoByUserID(String userID) {
-		return new MUserBean();
+	public MUserDaoBean GetUserInfoByUserID(String userID) {
+		return new MUserDaoBean();
 	}
 }

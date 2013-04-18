@@ -12,7 +12,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.ejustech.iron.dao.TIronInfoDao;
-import com.ejustech.iron.databean.TIronInfoBean;
+import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
+import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.form.Result1Form;
 import com.ejustech.iron.form.SearchForm;
 
@@ -88,14 +89,14 @@ public class SearchAction extends Action {
 					fe1, fe2, hb1, hb2, cl1, cl2);
 			
 			//Result1Form result1Form =(Result1Form) form;		
-			Result1Form result1Form = new Result1Form();
+			Result1FormBean result1FormBean = new Result1FormBean();
 			
-			result1Form.setList(allInfoList);
-			System.out.println("form list size======="+result1Form.getList().size());
-			System.out.println("luci======="+result1Form.getLuci());
+//			result1FormBean.setList(allInfoList);
+//			System.out.println("form list size======="+result1FormBean.getList().size());
+//			System.out.println("luci======="+result1FormBean.getLuci());
 			
-			request.setAttribute("AllINFOLIST", result1Form);
-//			request.setAttribute("AllINFOLIST", allInfoList);
+//			request.setAttribute("AllINFOLIST", result1FormBean);
+			request.setAttribute("AllINFOLIST", allInfoList);
 			
 			return mapping.findForward("srch1");
 			
