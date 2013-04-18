@@ -6,9 +6,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletRequest;
 
 import com.ejustech.iron.common.db.BaseDao;
 import com.ejustech.iron.databean.TIronInfoBean;
+import com.ejustech.iron.form.Result1Form;
 
 /***
  * T_Iron_Info表的数据访问对象
@@ -17,7 +19,7 @@ import com.ejustech.iron.databean.TIronInfoBean;
 public class TIronInfoDao extends BaseDao {
 	// 其他对IronInfo表的数据访问方法
 	
-	public ArrayList<TIronInfoBean> getAllInfoList(String riqi1, String riqi2,
+	public ArrayList<TIronInfoBean> getAllInfoList(HttpServletRequest request,String riqi1, String riqi2,
 			String qihao, String luci1, String luci2, String guige,
 			String shengchanluhao, String fanyingqihao, String shiyongcishu,
 			String ticl41, String ticl42, String chuluzhenkongdu1, String chuluzhenkongdu2,
@@ -27,9 +29,9 @@ public class TIronInfoDao extends BaseDao {
 			String zongpaimeiliang1, String zongpaimeiliang2, String fe1,
 			String fe2, String hb1, String hb2, String cl1, String cl2)
 			throws Exception {
-		ArrayList<TIronInfoBean> allInfoList = new ArrayList<TIronInfoBean>();
-
-		TIronInfoBean result1Form = null;
+		ArrayList allInfoList = new ArrayList();
+//		TIronInfoBean tIronInfoBean = new TIronInfoBean();
+		
 		StringBuffer sqlBuffer = new StringBuffer();
 
 		sqlBuffer.append("select");
@@ -448,55 +450,58 @@ public class TIronInfoDao extends BaseDao {
 			resultSet = statement.executeQuery(sqlBuffer.toString());
 
 			while (resultSet.next()) {
-				result1Form = new TIronInfoBean();
-				result1Form.setRiqi(resultSet.getString("riqi"));
-				result1Form.setQihao(resultSet.getString("qihao"));
-				result1Form.setLuci(resultSet.getString("luci"));
-				result1Form.setGuige(resultSet.getString("guige"));
-				result1Form.setShengchanluhao(resultSet.getString("shengchanluhao"));
-				result1Form.setFanyingqihao(resultSet.getString("fanyingqihao"));
-				result1Form.setShiyojngcishu(resultSet.getString("shiyojngcishu"));
-				result1Form.setMg(resultSet.getString("mg"));
-				result1Form.setTicl(resultSet.getString("ticl"));
-				result1Form.setMaozhong(resultSet.getString("maozhong"));
-				result1Form.setJingzhong(resultSet.getString("jingzhong"));
-				result1Form.setChengpinlv(resultSet.getString("chengpinlv"));
-				result1Form.setFe(resultSet.getString("fe"));
-				result1Form.setSi(resultSet.getString("si"));
-				result1Form.setCl(resultSet.getString("cl"));
-				result1Form.setC(resultSet.getString("c"));
-				result1Form.setO(resultSet.getString("n"));
-				result1Form.setN(resultSet.getString("o"));
-				result1Form.setH(resultSet.getString("h"));
-				result1Form.setMn(resultSet.getString("mn"));
-				result1Form.setHb(resultSet.getString("hb"));
-				result1Form.setDengji_hanmeng(resultSet.getString("dengji_hanmeng"));
-				result1Form.setKaohedengji_chumeng(resultSet.getString("kaohedengji_chumeng"));
-				result1Form.setGongyitiaozheng(resultSet.getString("gongyitiaozheng"));
-				result1Form.setGongyishiyan(resultSet.getString("gongyishiyan"));
-				result1Form.setDipi(resultSet.getString("dipi"));
-				result1Form.setShangmao(resultSet.getString("shangmao"));
-				result1Form.setPabi(resultSet.getString("pabi"));
-				result1Form.setFeidipi(resultSet.getString("feidipi"));
-				result1Form.setFeishangmao(resultSet.getString("feishangmao"));
-				result1Form.setFeipabi(resultSet.getString("feipabi"));
-				result1Form.setFeitaifen(resultSet.getString("feitaifen"));
-				result1Form.setCixuan(resultSet.getString("cixuan"));
-				result1Form.setShouxuanfeiliao(resultSet.getString("shouxuanfeiliao"));
-				result1Form.setSunhao(resultSet.getString("sunhao"));
-				result1Form.setZongpaimeiliang(resultSet.getString("zongpaimeiliang"));
-				result1Form.setChuluzhenkongdu(resultSet.getString("chuluzhenkongdu"));
-				result1Form.setHuanyuanzuigaowendu(resultSet.getString("huanyuanzuigaowendu"));
-				result1Form.setZhengliugaoheng(resultSet.getString("zhengliugaoheng"));
-				result1Form.setZhuanzhengliu(resultSet.getString("zhuanzhengliu"));
-				result1Form.setJiashouci(resultSet.getString("jiashouci"));
-				result1Form.setJiamoci(resultSet.getString("jiamoci"));
-				result1Form.setTongdao(resultSet.getString("tongdao"));
-				result1Form.setShengchanguzhang(resultSet.getString("shengchanguzhang"));
-				result1Form.setBeizhushuoming(resultSet.getString("beizhushuoming"));
 				
-				allInfoList.add(result1Form);
+				TIronInfoBean tIronInfoBean = new TIronInfoBean();
+				
+				tIronInfoBean.setRiqi(resultSet.getString("riqi"));
+				tIronInfoBean.setQihao(resultSet.getString("qihao"));
+				tIronInfoBean.setLuci(resultSet.getString("luci"));
+				tIronInfoBean.setGuige(resultSet.getString("guige"));
+				tIronInfoBean.setShengchanluhao(resultSet.getString("shengchanluhao"));
+				tIronInfoBean.setFanyingqihao(resultSet.getString("fanyingqihao"));
+				tIronInfoBean.setShiyojngcishu(resultSet.getString("shiyojngcishu"));
+				tIronInfoBean.setMg(resultSet.getString("mg"));
+				tIronInfoBean.setTicl(resultSet.getString("ticl"));
+				tIronInfoBean.setMaozhong(resultSet.getString("maozhong"));
+				tIronInfoBean.setJingzhong(resultSet.getString("jingzhong"));
+				tIronInfoBean.setChengpinlv(resultSet.getString("chengpinlv"));
+				tIronInfoBean.setFe(resultSet.getString("fe"));
+				tIronInfoBean.setSi(resultSet.getString("si"));
+				tIronInfoBean.setCl(resultSet.getString("cl"));
+				tIronInfoBean.setC(resultSet.getString("c"));
+				tIronInfoBean.setO(resultSet.getString("n"));
+				tIronInfoBean.setN(resultSet.getString("o"));
+				tIronInfoBean.setH(resultSet.getString("h"));
+				tIronInfoBean.setMn(resultSet.getString("mn"));
+				tIronInfoBean.setHb(resultSet.getString("hb"));
+				tIronInfoBean.setDengji_hanmeng(resultSet.getString("dengji_hanmeng"));
+				tIronInfoBean.setKaohedengji_chumeng(resultSet.getString("kaohedengji_chumeng"));
+				tIronInfoBean.setGongyitiaozheng(resultSet.getString("gongyitiaozheng"));
+				tIronInfoBean.setGongyishiyan(resultSet.getString("gongyishiyan"));
+				tIronInfoBean.setDipi(resultSet.getString("dipi"));
+				tIronInfoBean.setShangmao(resultSet.getString("shangmao"));
+				tIronInfoBean.setPabi(resultSet.getString("pabi"));
+				tIronInfoBean.setFeidipi(resultSet.getString("feidipi"));
+				tIronInfoBean.setFeishangmao(resultSet.getString("feishangmao"));
+				tIronInfoBean.setFeipabi(resultSet.getString("feipabi"));
+				tIronInfoBean.setFeitaifen(resultSet.getString("feitaifen"));
+				tIronInfoBean.setCixuan(resultSet.getString("cixuan"));
+				tIronInfoBean.setShouxuanfeiliao(resultSet.getString("shouxuanfeiliao"));
+				tIronInfoBean.setSunhao(resultSet.getString("sunhao"));
+				tIronInfoBean.setZongpaimeiliang(resultSet.getString("zongpaimeiliang"));
+				tIronInfoBean.setChuluzhenkongdu(resultSet.getString("chuluzhenkongdu"));
+				tIronInfoBean.setHuanyuanzuigaowendu(resultSet.getString("huanyuanzuigaowendu"));
+				tIronInfoBean.setZhengliugaoheng(resultSet.getString("zhengliugaoheng"));
+				tIronInfoBean.setZhuanzhengliu(resultSet.getString("zhuanzhengliu"));
+				tIronInfoBean.setJiashouci(resultSet.getString("jiashouci"));
+				tIronInfoBean.setJiamoci(resultSet.getString("jiamoci"));
+				tIronInfoBean.setTongdao(resultSet.getString("tongdao"));
+				tIronInfoBean.setShengchanguzhang(resultSet.getString("shengchanguzhang"));
+				tIronInfoBean.setBeizhushuoming(resultSet.getString("beizhushuoming"));
+			
+				allInfoList.add(tIronInfoBean);
 			}
+			
 			return allInfoList;
 
 		} catch (Exception exception) {
@@ -505,4 +510,5 @@ public class TIronInfoDao extends BaseDao {
 			super.Close();
 		}
 	}
+
 }

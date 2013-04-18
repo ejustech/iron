@@ -1,5 +1,6 @@
 package com.ejustech.iron.action;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,8 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.ejustech.iron.dao.TIronInfoDao;
+import com.ejustech.iron.databean.TIronInfoBean;
+import com.ejustech.iron.form.Result1Form;
 import com.ejustech.iron.form.SearchForm;
 
 /**
@@ -40,7 +43,7 @@ public class SearchAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
-														// method stub
+									// method stub
 			TIronInfoDao searchDao = new TIronInfoDao();
 
 			String riqi1 = searchForm.getRiqi1();
@@ -75,27 +78,27 @@ public class SearchAction extends Action {
 			String cl2 = searchForm.getCl2();
 
 			@SuppressWarnings("unused")
-			ArrayList getAllInfoList = new ArrayList();
-			getAllInfoList = (ArrayList) searchDao.getAllInfoList(riqi1, riqi2,
+			ArrayList allInfoList = new ArrayList();
+			allInfoList = (ArrayList) searchDao.getAllInfoList(request,riqi1, riqi2,
 					qihao, luci1, luci2, guige, shengchanluhao, fanyingqihao,
 					shiyongcishu, ticl41, ticl42, chuluzhenkongdu1,
 					chuluzhenkongdu2, zhuanzherngliu, jiashouci, jiamoci,
 					shiyanluci, gongyitiaozhengluci, tongdao, shengchanguzhang,
 					huishoulv1, huishoulv2, zongpaimeiliang1, zongpaimeiliang2,
 					fe1, fe2, hb1, hb2, cl1, cl2);
-			request.setAttribute("allResult", getAllInfoList);
 			
-//			session.setAttribute("FormBean",myFormBeanArray)
-//			System.out.println("sss=" + getAllInfoList.get(1));
-//			request.setAttribute("allResult", getAllInfoList);
-			// String password = (String) result1Form.getValue("password");
-			//
-			// if (name.equals("caterpillar") && password.equals("1234")) {
-			// request.setAttribute("allResult", form);
-			// }
-
+			//Result1Form result1Form =(Result1Form) form;		
+			Result1Form result1Form = new Result1Form();
+			
+			result1Form.setList(allInfoList);
+			System.out.println("form list size======="+result1Form.getList().size());
+			System.out.println("luci======="+result1Form.getLuci());
+			
+			request.setAttribute("AllINFOLIST", result1Form);
+//			request.setAttribute("AllINFOLIST", allInfoList);
+			
 			return mapping.findForward("srch1");
-
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
