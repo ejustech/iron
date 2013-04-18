@@ -8,7 +8,21 @@
 	</head>
 	<body>
 		<html:form action="/result1">
-			shengchanluhao : <html:text property="shengchanluhao"/><html:errors property="shengchanluhao"/><br/>
+	<table>
+		<tr>
+			<th>luci</th>
+			<th>fanyingqihao</th>
+		</tr>
+		<logic:notEmpty name="AllINFOLIST" property="list">
+			<logic:iterate id="tIronInfoBean" name="AllINFOLIST" property="list">
+		<tr>	
+			<td><bean:write name="tIronInfoBean" property="luci" ></bean:write>
+			<td><bean:write name="tIronInfoBean" property="fanyingqihao"></bean:write>
+		</tr>
+			</logic:iterate>
+		</logic:notEmpty>
+	</table>
+			<!--  shengchanluhao : <html:text property="shengchanluhao"/><html:errors property="shengchanluhao"/><br/>
 			zhengliugaoheng : <html:text property="zhengliugaoheng"/><html:errors property="zhengliugaoheng"/><br/>
 			feipabi : <html:text property="feipabi"/><html:errors property="feipabi"/><br/>
 			zhuanzhengliu : <html:text property="zhuanzhengliu"/><html:errors property="zhuanzhengliu"/><br/>
@@ -53,7 +67,7 @@
 			guige : <html:text property="guige"/><html:errors property="guige"/><br/>
 			kaohedengji_chumeng : <html:text property="kaohedengji_chumeng"/><html:errors property="kaohedengji_chumeng"/><br/>
 			gongyishiyan : <html:text property="gongyishiyan"/><html:errors property="gongyishiyan"/><br/>
-			<html:submit/><html:cancel/>
+			<html:submit/><html:cancel/>-->
 		</html:form>
 	</body>
 </html>
