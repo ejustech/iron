@@ -80,6 +80,54 @@
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
       cancellable="true" />
+      <action
+      attribute="result2Form"
+      input="/form/result2.jsp"
+      name="result1Form"
+      path="/result2"
+      scope="request"
+      type="com.ejustech.iron.action.Result2Action"
+      cancellable="true" />
+      <action
+      attribute="result1Form"
+      input="/form/result3.jsp"
+      name="result3Form"
+      path="/result3"
+      scope="request"
+      type="com.ejustech.iron.action.Result3Action"
+      cancellable="true" />
+      <action
+      attribute="result4Form"
+      input="/form/result4.jsp"
+      name="result4Form"
+      path="/result4"
+      scope="request"
+      type="com.ejustech.iron.action.Result4Action"
+      cancellable="true" />
+      <action
+      attribute="result5Form"
+      input="/form/result5.jsp"
+      name="result5Form"
+      path="/result5"
+      scope="request"
+      type="com.ejustech.iron.action.Result5Action"
+      cancellable="true" />
+      <action
+      attribute="result6Form"
+      input="/form/result6.jsp"
+      name="result6Form"
+      path="/result6"
+      scope="request"
+      type="com.ejustech.iron.action.Result6Action"
+      cancellable="true" />
+      <action
+      attribute="result7Form"
+      input="/form/result7.jsp"
+      name="result7Form"
+      path="/result7"
+      scope="request"
+      type="com.ejustech.iron.action.Result7Action"
+      cancellable="true" />
     <action
       attribute="sampleQueryForm"
       input="/jsp/sampleQuery.jsp"

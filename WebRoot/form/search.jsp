@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
  
 <html> 
 	<head>
@@ -9,12 +10,11 @@
 	<body>
 		<html:form action="/search">
 			日期 : <html:text property="riqi1"/><html:errors property="riqi1"/>-<html:text property="riqi2"/><html:errors property="riqi2"/><br/>
-			期号 : <html:select property="qihao">
-			<html:option value="1">1</html:option>
-			<html:option value="2">2</html:option>
-			<html:option value="3">3</html:option>
-			<html:option value="3">4</html:option>
-			</html:select><br/>
+			期号 : <html:multibox property="qihao" value="1"/>1
+			<html:multibox property="qihao" value="2"/>2
+			<html:multibox property="qihao" value="3"/>3
+			<html:multibox property="qihao" value="4"/>4
+			<br/>
 			炉次 : <html:text property="luci1"/><html:errors property="luci1"/>-<html:text property="luci2"/><html:errors property="luci2"/><br/>
 			规格 : <html:text property="guige"/><html:errors property="guige"/><br/>
 			
@@ -38,6 +38,15 @@
 			fe : <html:text property="fe1"/><html:errors property="fe1"/>-<html:text property="fe2"/><html:errors property="fe2"/><br/>
 			hb : <html:text property="hb1"/><html:errors property="hb1"/>-<html:text property="hb2"/><html:errors property="hb2"/><br/>
 			cl : <html:text property="cl1"/><html:errors property="cl1"/>-<html:text property="cl2"/><html:errors property="cl2"/><br/>
+			<br/>
+			<html:radio property="selInfoList" value="1"/>全部信息输出表
+			<html:radio property="selInfoList" value="2"/>月生产数据统计表-含锰
+			<html:radio property="selInfoList" value="3"/>月生产数据统计表-除锰
+			<html:radio property="selInfoList" value="4"/>月等外钛统计表
+			<html:radio property="selInfoList" value="5"/>月指标统计表
+			<html:radio property="selInfoList" value="6"/>单炉生产数据统计表
+			<html:radio property="selInfoList" value="7"/>月还渗炉次生产数据汇总表
+			<br/>
 			<html:submit property="srch1">查询</html:submit>
 			<html:reset property="reset">重置</html:reset>
 			<html:submit property="back">返回</html:submit>

@@ -1,6 +1,5 @@
 package com.ejustech.iron.action;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,9 +11,6 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import com.ejustech.iron.dao.TIronInfoDao;
-import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
-import com.ejustech.iron.databean.form.Result1FormBean;
-import com.ejustech.iron.form.Result1Form;
 import com.ejustech.iron.form.SearchForm;
 
 /**
@@ -44,12 +40,15 @@ public class SearchAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
-									// method stub
+			// method stub
 			TIronInfoDao searchDao = new TIronInfoDao();
 
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
 			String qihao = searchForm.getQihao();
+			if(qihao == null){
+				qihao = "";
+			}
 			String luci1 = searchForm.getLuci1();
 			String luci2 = searchForm.getLuci2();
 			String guige = searchForm.getGuige();
@@ -77,29 +76,73 @@ public class SearchAction extends Action {
 			String hb2 = searchForm.getHb2();
 			String cl1 = searchForm.getCl1();
 			String cl2 = searchForm.getCl2();
-
-			@SuppressWarnings("unused")
-			ArrayList allInfoList = new ArrayList();
-			allInfoList = (ArrayList) searchDao.getAllInfoList(request,riqi1, riqi2,
-					qihao, luci1, luci2, guige, shengchanluhao, fanyingqihao,
-					shiyongcishu, ticl41, ticl42, chuluzhenkongdu1,
-					chuluzhenkongdu2, zhuanzherngliu, jiashouci, jiamoci,
-					shiyanluci, gongyitiaozhengluci, tongdao, shengchanguzhang,
-					huishoulv1, huishoulv2, zongpaimeiliang1, zongpaimeiliang2,
-					fe1, fe2, hb1, hb2, cl1, cl2);
+			String selInfoList = searchForm.getSelInfoList();
 			
-			//Result1Form result1Form =(Result1Form) form;		
-			Result1FormBean result1FormBean = new Result1FormBean();
-			
-//			result1FormBean.setList(allInfoList);
-//			System.out.println("form list size======="+result1FormBean.getList().size());
-//			System.out.println("luci======="+result1FormBean.getLuci());
-			
-//			request.setAttribute("AllINFOLIST", result1FormBean);
-			request.setAttribute("AllINFOLIST", allInfoList);
-			
-			return mapping.findForward("srch1");
-			
+			switch (Integer.parseInt(selInfoList)) {
+				case 1: {
+					ArrayList allInfoList = new ArrayList();
+					allInfoList = (ArrayList) searchDao.getAllInfoList(request,
+							riqi1, riqi2, qihao, luci1, luci2, guige,
+							shengchanluhao, fanyingqihao, shiyongcishu, ticl41,
+							ticl42, chuluzhenkongdu1, chuluzhenkongdu2,
+							zhuanzherngliu, jiashouci, jiamoci, shiyanluci,
+							gongyitiaozhengluci, tongdao, shengchanguzhang,
+							huishoulv1, huishoulv2, zongpaimeiliang1,
+							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
+					request.setAttribute("AllINFOLIST", allInfoList);
+					//全部信息输出表
+					return mapping.findForward("srch1");
+				}
+				case 2: {
+					ArrayList hanmengList = new ArrayList();
+					hanmengList = (ArrayList) searchDao.getHanmengList(request,
+							riqi1, riqi2, qihao, luci1, luci2, guige,
+							shengchanluhao, fanyingqihao, shiyongcishu, ticl41,
+							ticl42, chuluzhenkongdu1, chuluzhenkongdu2,
+							zhuanzherngliu, jiashouci, jiamoci, shiyanluci,
+							gongyitiaozhengluci, tongdao, shengchanguzhang,
+							huishoulv1, huishoulv2, zongpaimeiliang1,
+							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
+					request.setAttribute("AllINFOLIST", hanmengList);
+					//月生产数据统计表-含锰
+					return mapping.findForward("srch2");
+				}
+				case 3: {
+					//月生产数据统计表-除锰
+					return mapping.findForward("srch3");
+				}
+				case 4: {
+					//月等外钛统计表
+					return mapping.findForward("srch4");
+				}
+				case 5: {
+					//月指标统计表
+					return mapping.findForward("srch5");
+				}
+				case 6: {
+					//单炉生产数据统计表
+					return mapping.findForward("srch6");
+				}
+				case 7: {
+					//月还渗炉次生产数据汇总表
+					return mapping.findForward("srch7");
+				}
+			}
+//			@SuppressWarnings("unused")
+//			ArrayList allInfoList = new ArrayList();
+//			allInfoList = (ArrayList) searchDao.getAllInfoList(request, riqi1,
+//					riqi2, qihao, luci1, luci2, guige, shengchanluhao,
+//					fanyingqihao, shiyongcishu, ticl41, ticl42,
+//					chuluzhenkongdu1, chuluzhenkongdu2, zhuanzherngliu,
+//					jiashouci, jiamoci, shiyanluci, gongyitiaozhengluci,
+//					tongdao, shengchanguzhang, huishoulv1, huishoulv2,
+//					zongpaimeiliang1, zongpaimeiliang2, fe1, fe2, hb1, hb2,
+//					cl1, cl2);
+//
+//			request.setAttribute("AllINFOLIST", allInfoList);
+//
+//			return mapping.findForward("srch1");
+			return null;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

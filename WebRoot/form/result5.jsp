@@ -5,15 +5,10 @@
  
 <html> 
 	<head>
-		<title>全部信息输出表</title>
+		<title>全部信息</title>
 	</head>
 	<body>
 		<html:form action="/result1">
-			<table>
-				<tr>
-					<td>全部信息输出表</td>
-				</tr>
-			</table>
 			<table>
 				<tr>
 					<th>日期</th>
