@@ -2,6 +2,7 @@ package com.ejustech.iron.action;
 
 import java.util.ArrayList;
 
+import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -45,10 +46,8 @@ public class SearchAction extends Action {
 
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
-			String qihao = searchForm.getQihao();
-			if(qihao == null){
-				qihao = "";
-			}
+			String[] qihao = searchForm.getQihao();
+			System.out.println("qihao----"+qihao.length);
 			String luci1 = searchForm.getLuci1();
 			String luci2 = searchForm.getLuci2();
 			String guige = searchForm.getGuige();
@@ -104,6 +103,7 @@ public class SearchAction extends Action {
 							huishoulv1, huishoulv2, zongpaimeiliang1,
 							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
 					request.setAttribute("AllINFOLIST", hanmengList);
+
 					//月生产数据统计表-含锰
 					return mapping.findForward("srch2");
 				}

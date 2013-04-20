@@ -75,7 +75,8 @@ public class SearchForm extends ActionForm {
 	private String hb1;
 
 	/** qihao property */
-	private String qihao;
+	private String[] qihao=new String[0];
+
 
 	/** fanyingqihao property */
 	private String fanyingqihao;
@@ -453,19 +454,23 @@ public class SearchForm extends ActionForm {
 	 * 
 	 * @return String
 	 */
-	public String getQihao() {
-		return qihao;
-	}
+//	public String getQihao() {
+//		return qihao;
+//	}
+//
+//	/**
+//	 * Set the qihao.
+//	 * 
+//	 * @param qihao
+//	 *            The qihao to set
+//	 */
+//	public void setQihao(String qihao) {
+//		this.qihao = qihao;
+//	}
+	public void setQihao(String[] qihao){   this.qihao=qihao; }
 
-	/**
-	 * Set the qihao.
-	 * 
-	 * @param qihao
-	 *            The qihao to set
-	 */
-	public void setQihao(String qihao) {
-		this.qihao = qihao;
-	}
+    public String[] getQihao(){ return qihao; }
+
 
 	/**
 	 * Returns the fanyingqihao.

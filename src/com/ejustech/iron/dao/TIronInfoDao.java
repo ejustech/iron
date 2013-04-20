@@ -18,7 +18,7 @@ public class TIronInfoDao extends BaseDao {
 
 	//全部信息输出表
 	public ArrayList<TIronInfoDaoBean> getAllInfoList(HttpServletRequest request,String riqi1, String riqi2,
-			String qihao, String luci1, String luci2, String guige,
+			String[] qihao, String luci1, String luci2, String guige,
 			String shengchanluhao, String fanyingqihao, String shiyongcishu,
 			String ticl41, String ticl42, String chuluzhenkongdu1, String chuluzhenkongdu2,
 			String zhuanzherngliu, String jiashouci, String jiamoci,
@@ -37,7 +37,7 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append(" from");
 		sqlBuffer.append(" ironinfo");
 
-		if (!riqi1.equals("") || !riqi2.equals("") || !qihao.equals("") 
+		if (!riqi1.equals("") || !riqi2.equals("") || qihao.length !=0 
 				|| !luci1.equals("") || !luci2.equals("") || !guige.equals("")
 				|| !shengchanluhao.equals("") || !fanyingqihao.equals("")
 				|| !shiyongcishu.equals("") || !ticl41.equals("") || !ticl42.equals("")
@@ -61,13 +61,26 @@ public class TIronInfoDao extends BaseDao {
 				sqlBuffer.append("'");
 			}
 	
-			if (!qihao.equals("")) {
+			if (qihao.length != 0) {
 				if (!riqi2.equals("")) {
 					sqlBuffer.append(" and");
 				}
-				sqlBuffer.append(" qihao ='");
-				sqlBuffer.append(qihao);
-				sqlBuffer.append("'");
+				sqlBuffer.append(" qihao in (");
+				StringBuffer transmode=new StringBuffer("");  
+		        String[] trans=qihao;
+		        if(trans!=null&&trans.length>0)  
+		        {  
+		            for(int i=0;i<trans.length;i++)  
+		            {  
+		                transmode.append(trans[i]);  
+		                if(!(i==trans.length-1))  
+		                {  
+		                    transmode.append(",");  
+		                }  
+		            }  
+		        }
+				sqlBuffer.append(transmode.toString());
+				sqlBuffer.append(")");
 			}
 			
 			if (!luci1.equals("")) {
@@ -414,7 +427,7 @@ public class TIronInfoDao extends BaseDao {
 	
 	//月生产数据统计表-含锰
 	public ArrayList<Result2FormBean> getHanmengList(HttpServletRequest request,String riqi1, String riqi2,
-			String qihao, String luci1, String luci2, String guige,
+			String[] qihao, String luci1, String luci2, String guige,
 			String shengchanluhao, String fanyingqihao, String shiyongcishu,
 			String ticl41, String ticl42, String chuluzhenkongdu1, String chuluzhenkongdu2,
 			String zhuanzherngliu, String jiashouci, String jiamoci,
@@ -423,17 +436,23 @@ public class TIronInfoDao extends BaseDao {
 			String zongpaimeiliang1, String zongpaimeiliang2, String fe1,
 			String fe2, String hb1, String hb2, String cl1, String cl2)
 			throws Exception {
-//		SELECT qihao,sum(maozhong),sum(jingzhong*fe)/sum(jingzhong) FROM `ironinfo` GROUP BY qihao
+
+		
 		ArrayList<Result2FormBean> chumengList = new ArrayList<Result2FormBean>();
 
 		StringBuffer sqlBuffer = new StringBuffer();
 		
 		sqlBuffer.append("select");
-		sqlBuffer.append(" qihao,sum(jingzhong*fe)/sum(jingzhong) as fe,sum(jingzhong*cl)/sum(jingzhong) as cl,sum(jingzhong*c)/sum(jingzhong) as c,sum(jingzhong*n)/sum(jingzhong) as n,sum(jingzhong*o)/sum(jingzhong) as o,sum(jingzhong*hb)/sum(jingzhong) as hb");
+		sqlBuffer.append(" qihao,sum(jingzhong*fe)/sum(jingzhong) as fe,");
+		sqlBuffer.append(" sum(jingzhong*cl)/sum(jingzhong) as cl,");
+		sqlBuffer.append(" sum(jingzhong*c)/sum(jingzhong) as c,");
+		sqlBuffer.append(" sum(jingzhong*n)/sum(jingzhong) as n,");
+		sqlBuffer.append(" sum(jingzhong*o)/sum(jingzhong) as o,");
+		sqlBuffer.append(" sum(jingzhong*hb)/sum(jingzhong) as hb");
 		sqlBuffer.append(" from");
-		sqlBuffer.append(" ironinfo group by qihao2");
+		sqlBuffer.append(" ironinfo");
 
-		if (!riqi1.equals("") || !riqi2.equals("") || !qihao.equals("") 
+		if (!riqi1.equals("") || !riqi2.equals("") || qihao.length !=0 
 				|| !luci1.equals("") || !luci2.equals("") || !guige.equals("")
 				|| !shengchanluhao.equals("") || !fanyingqihao.equals("")
 				|| !shiyongcishu.equals("") || !ticl41.equals("") || !ticl42.equals("")
@@ -457,13 +476,26 @@ public class TIronInfoDao extends BaseDao {
 				sqlBuffer.append("'");
 			}
 	
-			if (!qihao.equals("")) {
+			if (qihao.length != 0) {
 				if (!riqi2.equals("")) {
 					sqlBuffer.append(" and");
 				}
-				sqlBuffer.append(" qihao ='");
-				sqlBuffer.append(qihao);
-				sqlBuffer.append("'");
+				sqlBuffer.append(" qihao in (");
+				StringBuffer transmode=new StringBuffer("");  
+		        String[] trans=qihao;
+		        if(trans!=null&&trans.length>0)  
+		        {  
+		            for(int i=0;i<trans.length;i++)  
+		            {  
+		                transmode.append(trans[i]);  
+		                if(!(i==trans.length-1))  
+		                {  
+		                    transmode.append(",");  
+		                }  
+		            }  
+		        }
+				sqlBuffer.append(transmode.toString());
+				sqlBuffer.append(")");
 			}
 			
 			if (!luci1.equals("")) {
@@ -737,15 +769,20 @@ public class TIronInfoDao extends BaseDao {
 				sqlBuffer.append("'");
 			}
 		}
+		sqlBuffer.append(" group by qihao");
+
 		
 		System.out.println("sql=" + sqlBuffer);
+
 		ResultSet resultSet = null;
+
 		Statement statement = null;
 
 		try {
 			super.Open();
 			statement = super.Conn().createStatement();
 			resultSet = statement.executeQuery(sqlBuffer.toString());
+
 
 			while (resultSet.next()) {
 				
@@ -759,7 +796,6 @@ public class TIronInfoDao extends BaseDao {
 				result2FormBean.setN(resultSet.getString("o"));
 				result2FormBean.setHb(resultSet.getString("hb"));
 				
-			
 				chumengList.add(result2FormBean);
 			}
 			return chumengList;

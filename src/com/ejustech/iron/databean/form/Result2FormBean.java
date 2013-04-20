@@ -30,6 +30,9 @@ public class Result2FormBean {
 
 	/** cl property */
 	private String cl;
+	
+	/** lushu property */
+	private String lushu;
 
 	
 
@@ -179,5 +182,26 @@ public class Result2FormBean {
 	 */
 	public void setCl(String cl) {
 		this.cl = cl;
+	}
+	
+	
+	
+	/**
+	 * Returns the cl.
+	 * 
+	 * @return String
+	 */
+	public String getLushu() {
+		return lushu;
+	}
+
+	/**
+	 * Set the cl.
+	 * 
+	 * @param cl
+	 *            The cl to set
+	 */
+	public void setLushu(String lushu) {
+		this.lushu = lushu;
 	}
 }

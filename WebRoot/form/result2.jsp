@@ -54,6 +54,7 @@
 					<td><bean:write name="tIronInfoBean" property="n" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="o" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="hb" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="lushu" ></bean:write>
 				</tr>
 					</logic:iterate>
 				</logic:notEmpty>
