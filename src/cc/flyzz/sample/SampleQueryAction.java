@@ -14,6 +14,8 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.ejustech.iron.databean.form.InputByNewFormBean;
+
 /** 
  * MyEclipse Struts
  * Creation date: 04-18-2013
@@ -39,48 +41,54 @@ public class SampleQueryAction extends Action {
 			HttpServletRequest request, HttpServletResponse response) {
 		SampleQueryForm sampleQueryForm = (SampleQueryForm) form;// TODO Auto-generated method stub
 		
-		System.out.println(sampleQueryForm.getId());
-		System.out.println(sampleQueryForm.getLastName());
-		System.out.println(sampleQueryForm.getFirstName());
-		System.out.println(sampleQueryForm.getFullName());
-		
-		ArrayList<SampleQueryResultDataBean> personList = new ArrayList<SampleQueryResultDataBean>();
-		
-		SampleQueryResultDataBean sampleQueryResultDataBean = new SampleQueryResultDataBean();
-		
-		sampleQueryResultDataBean.setId("P0001477");
-		sampleQueryResultDataBean.setFirstName("赵");
-		sampleQueryResultDataBean.setLastName("峰");
-		sampleQueryResultDataBean.setFullName("赵峰");
-		sampleQueryResultDataBean.setPhoneNumber("18604111203");
-		sampleQueryResultDataBean.setSchool("DL");
-		
-		personList.add(sampleQueryResultDataBean);
-		
-		sampleQueryResultDataBean = new SampleQueryResultDataBean();
-		
-		sampleQueryResultDataBean.setId("P0001488");
-		sampleQueryResultDataBean.setFirstName("毛");
-		sampleQueryResultDataBean.setLastName("泽东");
-		sampleQueryResultDataBean.setFullName("毛泽东");
-		sampleQueryResultDataBean.setPhoneNumber("11111111111");
-		sampleQueryResultDataBean.setSchool("BJ");
-	
-		personList.add(sampleQueryResultDataBean);
-		
-		sampleQueryResultDataBean = new SampleQueryResultDataBean();
-		
-		sampleQueryResultDataBean.setId("P0001499");
-		sampleQueryResultDataBean.setFirstName("邓");
-		sampleQueryResultDataBean.setLastName("小平");
-		sampleQueryResultDataBean.setFullName("邓小平");
-		sampleQueryResultDataBean.setPhoneNumber("22222222222");
-		sampleQueryResultDataBean.setSchool("SH");
-		
-		personList.add(sampleQueryResultDataBean);
-				
-		request.setAttribute("personList", personList);
-
-		return mapping.findForward("queryResult");
+		try {
+			System.out.println(sampleQueryForm.getId());
+			System.out.println(sampleQueryForm.getLastName());
+			System.out.println(sampleQueryForm.getFirstName());
+			System.out.println(sampleQueryForm.getFullName());
+			
+			ArrayList<SampleQueryResultDataBean> personList = new ArrayList<SampleQueryResultDataBean>();
+			
+			SampleQueryResultDataBean sampleQueryResultDataBean = new SampleQueryResultDataBean();
+			
+			sampleQueryResultDataBean.setId("P0001477");
+			sampleQueryResultDataBean.setFirstName("赵");
+			sampleQueryResultDataBean.setLastName("峰");
+			sampleQueryResultDataBean.setFullName("赵峰");
+			sampleQueryResultDataBean.setPhoneNumber("18604111203");
+			sampleQueryResultDataBean.setSchool("DL");
+			
+			personList.add(sampleQueryResultDataBean);
+			
+			sampleQueryResultDataBean = new SampleQueryResultDataBean();
+			
+			sampleQueryResultDataBean.setId("P0001488");
+			sampleQueryResultDataBean.setFirstName("毛");
+			sampleQueryResultDataBean.setLastName("泽东");
+			sampleQueryResultDataBean.setFullName("毛泽东");
+			sampleQueryResultDataBean.setPhoneNumber("11111111111");
+			sampleQueryResultDataBean.setSchool("BJ");
+			
+			personList.add(sampleQueryResultDataBean);
+			
+			sampleQueryResultDataBean = new SampleQueryResultDataBean();
+			
+			sampleQueryResultDataBean.setId("P0001499");
+			sampleQueryResultDataBean.setFirstName("邓");
+			sampleQueryResultDataBean.setLastName("小平");
+			sampleQueryResultDataBean.setFullName("邓小平");
+			sampleQueryResultDataBean.setPhoneNumber("22222222222");
+			sampleQueryResultDataBean.setSchool("SH");
+			
+			personList.add(sampleQueryResultDataBean);
+					
+			request.setAttribute("personList", personList);
+			
+			return mapping.findForward("queryResult");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

@@ -26,6 +26,7 @@
     <form-bean name="SampleQuery" type="SampleQuery" />
     <form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
     <form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
+    <form-bean name="inputByNewForm" type="com.ejustech.iron.form.InputByNewForm" />
     
 
   </form-beans>
@@ -51,8 +52,10 @@
       path="/menu"
       scope="request"
       type="com.ejustech.iron.action.MenuAction"
+      parameter="search,inputByNew,inputByUpdate,userManage,logoff"
       cancellable="true">
       <forward name="search" path="/form/search.jsp" />
+      <forward name="inputByNew" path="/form/inputByNew.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -145,6 +148,15 @@
       path="/sampleQueryResult"
       scope="request"
       type="com.ejustech.iron.action.SampleQueryResultAction"
+      cancellable="true" />
+    <action
+      attribute="inputByNewForm"
+      input="/form/inputByNew.jsp"
+      name="inputByNewForm"
+      path="/inputByNew"
+      scope="request"
+      parameter="Save,Reset,Return"
+      type="com.ejustech.iron.action.InputByNewAction"
       cancellable="true" />
     
 

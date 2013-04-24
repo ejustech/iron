@@ -24,8 +24,8 @@ public class MUserDao extends BaseDao {
 		int result = 0;
 
 		try {
-			super.Open();
-			ps = super.Conn().prepareStatement(
+			Open();
+			ps = Conn().prepareStatement(
 					ConstantSql.GET_COUNTS_BY_USER_ID);
 
 			// // 设置参数List
@@ -48,9 +48,9 @@ public class MUserDao extends BaseDao {
 			e.printStackTrace();
 			result = 0;
 		}
-		super.Close(rs);
-		super.Close(ps);
-		super.Close();
+		Close(rs);
+		Close(ps);
+		Close();
 		return result;
 	}
 

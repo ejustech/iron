@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<html:form action="/menu">
-			<html:submit property="input">信息录入</html:submit>
+			<html:submit property="inputByNew">信息录入</html:submit>
 			<html:submit property="search">信息查询</html:submit>
 			<html:submit property="userManage">用户管理</html:submit>
 			<html:submit property="logoff">注        销</html:submit>
