@@ -19,7 +19,6 @@
 					<th>单位（期号）</th>
 					<th>Fe</th>
 					<th>Cl</th>
-					<th>C</th>
 					<th>N</th>
 					<th>O</th>
 					<th>HB</th>
@@ -47,14 +46,32 @@
 				<logic:notEmpty name="AllINFOLIST">
 					<logic:iterate id="tIronInfoBean" name="AllINFOLIST">
 				<tr>
-					<td><bean:write name="tIronInfoBean" property="qihao" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="qihao" ></bean:write>期
 					<td><bean:write name="tIronInfoBean" property="fe" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="cl" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="c" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="cl" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="n" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="o" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="hb" ></bean:write>
 					<td><bean:write name="tIronInfoBean" property="lushu" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="zongmaozhong" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="junmaozhong" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="junmgdanhao" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="junhuishoulv" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="zongjingzhong" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="junjingzhong" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j0Aji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j0Ajilv" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j0ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j0jilv" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j0jiyishang" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j1ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j1jilv" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j2ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j3ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j4ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j5ji" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j2jijiyixia" ></bean:write>
+					<td><bean:write name="tIronInfoBean" property="j2jijiyixialv" ></bean:write>				
 				</tr>
 					</logic:iterate>
 				</logic:notEmpty>

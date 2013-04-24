@@ -2,6 +2,7 @@ package com.ejustech.iron.common.db;
 
 import com.ejustech.iron.dao.MUserDao;
 import com.ejustech.iron.dao.TIronInfoDao;
+import com.ejustech.iron.common.db.IDAO;;
 
 public class DaoFactory {
 //	public static IDAO getInstance(TableName tableName) throws NamingException {
