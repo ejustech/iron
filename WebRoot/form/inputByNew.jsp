@@ -188,6 +188,57 @@ body {
 		<td align="center"><html:text name="itemKey01" property="shengChanGuZhangJunPin" /></td>
 		<td align="center"><html:text name="itemKey01" property="beiZhuShuoMingJunPin" /></td>
 	</tr>
+	<tr>
+		<td align="center" bordercolor="#666666"></td>
+		<td align="center"><html:text name="itemKey01" property="yearJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="monthJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="dayJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yearMonthDayJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="qiHaoJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="luCiJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="guiGeJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="shengChanLuHaoJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="fanYingQiHaoJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="shiYongCiShuJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="mgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="tiCl4JunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="maoZhongJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="jingZhongJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="chengPinLvJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuFeJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuSiJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuClJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuCJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuNJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuOJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuHJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuansuMnJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanSuHbJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="dengJiHanMengJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="kaoHeDengJiChuMengJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="gongYiTiaoZhengJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="gongYiShiYanJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="diPiKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="shangMaoKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="paBiKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="feiDiPiKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="feiShangMaoKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="feiPaBiKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="feiTaiFenKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="ciYuanKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="shouXuanFeiLiaoKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="sunHaoKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="zongPaiMeiLiangKgJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="chuLuZhenKongDuJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="yuanZuiGaoWenDuJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="zhengLiuGaoHengDianJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="zhuanZhengLiuJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="jiaShouCiJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="jiaMoCiJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="tongDaoJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="shengChanGuZhangJunPin2" /></td>
+		<td align="center"><html:text name="itemKey01" property="beiZhuShuoMingJunPin2" /></td>
+	</tr>	
   </logic:iterate>
 </table>
 <p>&nbsp;</p>

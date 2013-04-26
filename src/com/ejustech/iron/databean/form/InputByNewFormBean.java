@@ -165,6 +165,390 @@ public class InputByNewFormBean {
 	/** yuanSuNJunPin property */
 	private String yuanSuNJunPin;
 
+	public String getGongYiShiYanJunPin2() {
+		return gongYiShiYanJunPin2;
+	}
+
+	public void setGongYiShiYanJunPin2(String gongYiShiYanJunPin2) {
+		this.gongYiShiYanJunPin2 = gongYiShiYanJunPin2;
+	}
+
+	public String getZongPaiMeiLiangKgJunPin2() {
+		return zongPaiMeiLiangKgJunPin2;
+	}
+
+	public void setZongPaiMeiLiangKgJunPin2(String zongPaiMeiLiangKgJunPin2) {
+		this.zongPaiMeiLiangKgJunPin2 = zongPaiMeiLiangKgJunPin2;
+	}
+
+	public String getShengChanGuZhangJunPin2() {
+		return shengChanGuZhangJunPin2;
+	}
+
+	public void setShengChanGuZhangJunPin2(String shengChanGuZhangJunPin2) {
+		this.shengChanGuZhangJunPin2 = shengChanGuZhangJunPin2;
+	}
+
+	public String getCiYuanKgJunPin2() {
+		return ciYuanKgJunPin2;
+	}
+
+	public void setCiYuanKgJunPin2(String ciYuanKgJunPin2) {
+		this.ciYuanKgJunPin2 = ciYuanKgJunPin2;
+	}
+
+	public String getBeiZhuShuoMingJunPin2() {
+		return beiZhuShuoMingJunPin2;
+	}
+
+	public void setBeiZhuShuoMingJunPin2(String beiZhuShuoMingJunPin2) {
+		this.beiZhuShuoMingJunPin2 = beiZhuShuoMingJunPin2;
+	}
+
+	public String getYuanSuSiJunPin2() {
+		return yuanSuSiJunPin2;
+	}
+
+	public void setYuanSuSiJunPin2(String yuanSuSiJunPin2) {
+		this.yuanSuSiJunPin2 = yuanSuSiJunPin2;
+	}
+
+	public String getChengPinLvJunPin2() {
+		return chengPinLvJunPin2;
+	}
+
+	public void setChengPinLvJunPin2(String chengPinLvJunPin2) {
+		this.chengPinLvJunPin2 = chengPinLvJunPin2;
+	}
+
+	public String getFeiShangMaoKgJunPin2() {
+		return feiShangMaoKgJunPin2;
+	}
+
+	public void setFeiShangMaoKgJunPin2(String feiShangMaoKgJunPin2) {
+		this.feiShangMaoKgJunPin2 = feiShangMaoKgJunPin2;
+	}
+
+	public String getYuanSuFeJunPin2() {
+		return yuanSuFeJunPin2;
+	}
+
+	public void setYuanSuFeJunPin2(String yuanSuFeJunPin2) {
+		this.yuanSuFeJunPin2 = yuanSuFeJunPin2;
+	}
+
+	public String getDiPiKgJunPin2() {
+		return diPiKgJunPin2;
+	}
+
+	public void setDiPiKgJunPin2(String diPiKgJunPin2) {
+		this.diPiKgJunPin2 = diPiKgJunPin2;
+	}
+
+	public String getFeiDiPiKgJunPin2() {
+		return feiDiPiKgJunPin2;
+	}
+
+	public void setFeiDiPiKgJunPin2(String feiDiPiKgJunPin2) {
+		this.feiDiPiKgJunPin2 = feiDiPiKgJunPin2;
+	}
+
+	public String getPaBiKgJunPin2() {
+		return paBiKgJunPin2;
+	}
+
+	public void setPaBiKgJunPin2(String paBiKgJunPin2) {
+		this.paBiKgJunPin2 = paBiKgJunPin2;
+	}
+
+	public String getDengJiHanMengJunPin2() {
+		return dengJiHanMengJunPin2;
+	}
+
+	public void setDengJiHanMengJunPin2(String dengJiHanMengJunPin2) {
+		this.dengJiHanMengJunPin2 = dengJiHanMengJunPin2;
+	}
+
+	public String getZhuanZhengLiuJunPin2() {
+		return zhuanZhengLiuJunPin2;
+	}
+
+	public void setZhuanZhengLiuJunPin2(String zhuanZhengLiuJunPin2) {
+		this.zhuanZhengLiuJunPin2 = zhuanZhengLiuJunPin2;
+	}
+
+	public String getGongYiTiaoZhengJunPin2() {
+		return gongYiTiaoZhengJunPin2;
+	}
+
+	public void setGongYiTiaoZhengJunPin2(String gongYiTiaoZhengJunPin2) {
+		this.gongYiTiaoZhengJunPin2 = gongYiTiaoZhengJunPin2;
+	}
+
+	public String getSunHaoKgJunPin2() {
+		return sunHaoKgJunPin2;
+	}
+
+	public void setSunHaoKgJunPin2(String sunHaoKgJunPin2) {
+		this.sunHaoKgJunPin2 = sunHaoKgJunPin2;
+	}
+
+	public String getShouXuanFeiLiaoKgJunPin2() {
+		return shouXuanFeiLiaoKgJunPin2;
+	}
+
+	public void setShouXuanFeiLiaoKgJunPin2(String shouXuanFeiLiaoKgJunPin2) {
+		this.shouXuanFeiLiaoKgJunPin2 = shouXuanFeiLiaoKgJunPin2;
+	}
+
+	public String getMaoZhongJunPin2() {
+		return maoZhongJunPin2;
+	}
+
+	public void setMaoZhongJunPin2(String maoZhongJunPin2) {
+		this.maoZhongJunPin2 = maoZhongJunPin2;
+	}
+
+	public String getJiaShouCiJunPin2() {
+		return jiaShouCiJunPin2;
+	}
+
+	public void setJiaShouCiJunPin2(String jiaShouCiJunPin2) {
+		this.jiaShouCiJunPin2 = jiaShouCiJunPin2;
+	}
+
+	public String getZhengLiuGaoHengDianJunPin2() {
+		return zhengLiuGaoHengDianJunPin2;
+	}
+
+	public void setZhengLiuGaoHengDianJunPin2(String zhengLiuGaoHengDianJunPin2) {
+		this.zhengLiuGaoHengDianJunPin2 = zhengLiuGaoHengDianJunPin2;
+	}
+
+	public String getYuanSuOJunPin2() {
+		return yuanSuOJunPin2;
+	}
+
+	public void setYuanSuOJunPin2(String yuanSuOJunPin2) {
+		this.yuanSuOJunPin2 = yuanSuOJunPin2;
+	}
+
+	public String getYuanSuNJunPin2() {
+		return yuanSuNJunPin2;
+	}
+
+	public void setYuanSuNJunPin2(String yuanSuNJunPin2) {
+		this.yuanSuNJunPin2 = yuanSuNJunPin2;
+	}
+
+	public String getShangMaoKgJunPin2() {
+		return shangMaoKgJunPin2;
+	}
+
+	public void setShangMaoKgJunPin2(String shangMaoKgJunPin2) {
+		this.shangMaoKgJunPin2 = shangMaoKgJunPin2;
+	}
+
+	public String getLuCiJunPin2() {
+		return luCiJunPin2;
+	}
+
+	public void setLuCiJunPin2(String luCiJunPin2) {
+		this.luCiJunPin2 = luCiJunPin2;
+	}
+
+	public String getDayJunPin2() {
+		return dayJunPin2;
+	}
+
+	public void setDayJunPin2(String dayJunPin2) {
+		this.dayJunPin2 = dayJunPin2;
+	}
+
+	public String getFeiTaiFenKgJunPin2() {
+		return feiTaiFenKgJunPin2;
+	}
+
+	public void setFeiTaiFenKgJunPin2(String feiTaiFenKgJunPin2) {
+		this.feiTaiFenKgJunPin2 = feiTaiFenKgJunPin2;
+	}
+
+	public String getYearMonthDayJunPin2() {
+		return yearMonthDayJunPin2;
+	}
+
+	public void setYearMonthDayJunPin2(String yearMonthDayJunPin2) {
+		this.yearMonthDayJunPin2 = yearMonthDayJunPin2;
+	}
+
+	public String getShiYongCiShuJunPin2() {
+		return shiYongCiShuJunPin2;
+	}
+
+	public void setShiYongCiShuJunPin2(String shiYongCiShuJunPin2) {
+		this.shiYongCiShuJunPin2 = shiYongCiShuJunPin2;
+	}
+
+	public String getGuiGeJunPin2() {
+		return guiGeJunPin2;
+	}
+
+	public void setGuiGeJunPin2(String guiGeJunPin2) {
+		this.guiGeJunPin2 = guiGeJunPin2;
+	}
+
+	public String getYuanSuClJunPin2() {
+		return yuanSuClJunPin2;
+	}
+
+	public void setYuanSuClJunPin2(String yuanSuClJunPin2) {
+		this.yuanSuClJunPin2 = yuanSuClJunPin2;
+	}
+
+	public String getTongDaoJunPin2() {
+		return tongDaoJunPin2;
+	}
+
+	public void setTongDaoJunPin2(String tongDaoJunPin2) {
+		this.tongDaoJunPin2 = tongDaoJunPin2;
+	}
+
+	public String getShengChanLuHaoJunPin2() {
+		return shengChanLuHaoJunPin2;
+	}
+
+	public void setShengChanLuHaoJunPin2(String shengChanLuHaoJunPin2) {
+		this.shengChanLuHaoJunPin2 = shengChanLuHaoJunPin2;
+	}
+
+	public String getYuanSuCJunPin2() {
+		return yuanSuCJunPin2;
+	}
+
+	public void setYuanSuCJunPin2(String yuanSuCJunPin2) {
+		this.yuanSuCJunPin2 = yuanSuCJunPin2;
+	}
+
+	public String getFanYingQiHaoJunPin2() {
+		return fanYingQiHaoJunPin2;
+	}
+
+	public void setFanYingQiHaoJunPin2(String fanYingQiHaoJunPin2) {
+		this.fanYingQiHaoJunPin2 = fanYingQiHaoJunPin2;
+	}
+
+	public String getQiHaoJunPin2() {
+		return qiHaoJunPin2;
+	}
+
+	public void setQiHaoJunPin2(String qiHaoJunPin2) {
+		this.qiHaoJunPin2 = qiHaoJunPin2;
+	}
+
+	public String getKaoHeDengJiChuMengJunPin2() {
+		return kaoHeDengJiChuMengJunPin2;
+	}
+
+	public void setKaoHeDengJiChuMengJunPin2(String kaoHeDengJiChuMengJunPin2) {
+		this.kaoHeDengJiChuMengJunPin2 = kaoHeDengJiChuMengJunPin2;
+	}
+
+	public String getTiCl4JunPin2() {
+		return tiCl4JunPin2;
+	}
+
+	public void setTiCl4JunPin2(String tiCl4JunPin2) {
+		this.tiCl4JunPin2 = tiCl4JunPin2;
+	}
+
+	public String getJingZhongJunPin2() {
+		return jingZhongJunPin2;
+	}
+
+	public void setJingZhongJunPin2(String jingZhongJunPin2) {
+		this.jingZhongJunPin2 = jingZhongJunPin2;
+	}
+
+	public String getFeiPaBiKgJunPin2() {
+		return feiPaBiKgJunPin2;
+	}
+
+	public void setFeiPaBiKgJunPin2(String feiPaBiKgJunPin2) {
+		this.feiPaBiKgJunPin2 = feiPaBiKgJunPin2;
+	}
+
+	public String getYuansuMnJunPin2() {
+		return yuansuMnJunPin2;
+	}
+
+	public void setYuansuMnJunPin2(String yuansuMnJunPin2) {
+		this.yuansuMnJunPin2 = yuansuMnJunPin2;
+	}
+
+	public String getYearJunPin2() {
+		return yearJunPin2;
+	}
+
+	public void setYearJunPin2(String yearJunPin2) {
+		this.yearJunPin2 = yearJunPin2;
+	}
+
+	public String getJiaMoCiJunPin2() {
+		return jiaMoCiJunPin2;
+	}
+
+	public void setJiaMoCiJunPin2(String jiaMoCiJunPin2) {
+		this.jiaMoCiJunPin2 = jiaMoCiJunPin2;
+	}
+
+	public String getYuanSuHJunPin2() {
+		return yuanSuHJunPin2;
+	}
+
+	public void setYuanSuHJunPin2(String yuanSuHJunPin2) {
+		this.yuanSuHJunPin2 = yuanSuHJunPin2;
+	}
+
+	public String getYuanSuHbJunPin2() {
+		return yuanSuHbJunPin2;
+	}
+
+	public void setYuanSuHbJunPin2(String yuanSuHbJunPin2) {
+		this.yuanSuHbJunPin2 = yuanSuHbJunPin2;
+	}
+
+	public String getMonthJunPin2() {
+		return monthJunPin2;
+	}
+
+	public void setMonthJunPin2(String monthJunPin2) {
+		this.monthJunPin2 = monthJunPin2;
+	}
+
+	public String getYuanZuiGaoWenDuJunPin2() {
+		return yuanZuiGaoWenDuJunPin2;
+	}
+
+	public void setYuanZuiGaoWenDuJunPin2(String yuanZuiGaoWenDuJunPin2) {
+		this.yuanZuiGaoWenDuJunPin2 = yuanZuiGaoWenDuJunPin2;
+	}
+
+	public String getChuLuZhenKongDuJunPin2() {
+		return chuLuZhenKongDuJunPin2;
+	}
+
+	public void setChuLuZhenKongDuJunPin2(String chuLuZhenKongDuJunPin2) {
+		this.chuLuZhenKongDuJunPin2 = chuLuZhenKongDuJunPin2;
+	}
+
+	public String getMgJunPin2() {
+		return mgJunPin2;
+	}
+
+	public void setMgJunPin2(String mgJunPin2) {
+		this.mgJunPin2 = mgJunPin2;
+	}
+
 	/** month property */
 	private String month;
 
@@ -308,6 +692,103 @@ public class InputByNewFormBean {
 
 	/** mgJunPin property */
 	private String mgJunPin;
+
+	private String gongYiShiYanJunPin2;
+
+	private String zongPaiMeiLiangKgJunPin2;
+
+	private String shengChanGuZhangJunPin2;
+
+	private String ciYuanKgJunPin2;
+
+	private String beiZhuShuoMingJunPin2;
+
+	private String yuanSuSiJunPin2;
+
+	private String chengPinLvJunPin2;
+
+	private String feiShangMaoKgJunPin2;
+
+	private String yuanSuFeJunPin2;
+
+	private String diPiKgJunPin2;
+
+	private String feiDiPiKgJunPin2;
+
+	private String paBiKgJunPin2;
+
+	private String dengJiHanMengJunPin2;
+
+	private String zhuanZhengLiuJunPin2;
+
+	private String gongYiTiaoZhengJunPin2;
+
+	private String sunHaoKgJunPin2;
+
+	private String shouXuanFeiLiaoKgJunPin2;
+
+	private String maoZhongJunPin2;
+
+	private String jiaShouCiJunPin2;
+
+	private String zhengLiuGaoHengDianJunPin2;
+
+	private String yuanSuOJunPin2;
+
+	private String yuanSuNJunPin2;
+
+	private String shangMaoKgJunPin2;
+
+	private String luCiJunPin2;
+
+	private String dayJunPin2;
+
+	private String feiTaiFenKgJunPin2;
+
+	private String yearMonthDayJunPin2;
+
+	private String shiYongCiShuJunPin2;
+
+	private String guiGeJunPin2;
+
+	private String yuanSuClJunPin2;
+
+	private String tongDaoJunPin2;
+
+	private String shengChanLuHaoJunPin2;
+
+	private String yuanSuCJunPin2;
+
+	private String fanYingQiHaoJunPin2;
+
+	private String qiHaoJunPin2;
+
+	private String kaoHeDengJiChuMengJunPin2;
+
+	private String tiCl4JunPin2;
+
+	private String jingZhongJunPin2;
+
+	private String feiPaBiKgJunPin2;
+
+	private String yuansuMnJunPin2;
+
+	private String yearJunPin2;
+
+	private String jiaMoCiJunPin2;
+
+	private String yuanSuHJunPin2;
+
+	private String yuanSuHbJunPin2;
+
+	private String monthJunPin2;
+
+	private String yuanZuiGaoWenDuJunPin2;
+
+	private String chuLuZhenKongDuJunPin2;
+
+	private String mgJunPin2;
+
 
 	/*
 	 * Generated Methods
