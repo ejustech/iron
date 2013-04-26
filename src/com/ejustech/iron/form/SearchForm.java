@@ -50,8 +50,27 @@ public class SearchForm extends ActionForm {
 	/** riqi1 property */
 	private String riqi1;
 
+	/** shiyongcishu1 property */
+	private String shiyongcishu1;
+	
+	public String getShiyongcishu1() {
+		return shiyongcishu1;
+	}
+
+	public void setShiyongcishu1(String shiyongcishu1) {
+		this.shiyongcishu1 = shiyongcishu1;
+	}
+
+	public String getShiyongcishu2() {
+		return shiyongcishu2;
+	}
+
+	public void setShiyongcishu2(String shiyongcishu2) {
+		this.shiyongcishu2 = shiyongcishu2;
+	}
+
 	/** shiyongcishu property */
-	private String shiyongcishu;
+	private String shiyongcishu2;
 
 	/** hb2 property */
 	private String hb2;
@@ -305,25 +324,6 @@ public class SearchForm extends ActionForm {
 	 */
 	public void setRiqi1(String riqi1) {
 		this.riqi1 = riqi1;
-	}
-
-	/**
-	 * Returns the shiyongcishu.
-	 * 
-	 * @return String
-	 */
-	public String getShiyongcishu() {
-		return shiyongcishu;
-	}
-
-	/**
-	 * Set the shiyongcishu.
-	 * 
-	 * @param shiyongcishu
-	 *            The shiyongcishu to set
-	 */
-	public void setShiyongcishu(String shiyongcishu) {
-		this.shiyongcishu = shiyongcishu;
 	}
 
 	/**

@@ -38,7 +38,7 @@
 		<table align="center">
 			<tr>
 				<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
-			<tr>
+			</tr>
 		</table>
 	</body>
 </html>

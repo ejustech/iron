@@ -29,7 +29,7 @@
 		    <p class="STYLE1">金达钛业生产数据统计系统</p>
 		  </div>
 		<hr width="1200" />
-		<table border="1" align="center"><tr>
+		<table border="1" align="center">
 			<tr>
 				<td>日&nbsp;期 : <html:text property="riqi1"/><html:errors property="riqi1"/>-<html:text property="riqi2"/><html:errors property="riqi2"/></td>
 				<td>期号 : <html:multibox property="qihao" value="1"/>1
@@ -47,7 +47,7 @@
 				<td>反应器号 : <html:text property="fanyingqihao"/><html:errors property="fanyingqihao"/></td>
 			</tr>
 			<tr>
-				<td>使用次数 : <html:text property="shiyongcishu"/><html:errors property="shiyongcishu"/></td>
+				<td>使用次数 : <html:text property="shiyongcishu1"/><html:errors property="shiyongcishu1"/>-<html:text property="shiyongcishu2"/><html:errors property="shiyongcishu2"/></td>
 				<td>ticl4 : <html:text property="ticl41"/><html:errors property="ticl41"/>-<html:text property="ticl42"/><html:errors property="ticl42"/></td>
 			</tr>	
 			<tr>
@@ -106,7 +106,7 @@
 		<table align="center">
 			<tr>
 				<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
-			<tr>
+			</tr>
 		</table>	
 		</html:form>
 	</body>

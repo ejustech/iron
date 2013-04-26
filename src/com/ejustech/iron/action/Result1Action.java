@@ -15,6 +15,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.databean.form.SearchFormBean;
+import com.ejustech.iron.form.Result1Form;
 
 /** 
  * MyEclipse Struts
@@ -41,10 +42,29 @@ public class Result1Action extends EventDispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
 			SearchFormBean searchFormBean = new SearchFormBean();
+			
 			searchFormBean.setSelInfoList("1");
 			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
 			selList.add(searchFormBean);
 			request.setAttribute("SELLIST", selList);
+			
+//			Result1Form result1Form = (Result1Form)form;
+//			SearchForm searchForm = (SearchForm) form;
+//			System.out.println("llll = " + result1Form.getIndexCheckbox().length);
+//			String[] indexValue = result1Form.getIndexCheckbox();
+//			StringBuffer transmode = new StringBuffer("");
+//			String[] trans = indexValue;
+//			if (trans != null && trans.length > 0) {
+//				for (int i = 0; i < trans.length; i++) {
+//					transmode.append(trans[i]);
+//					if (!(i == trans.length - 1)) {
+//						transmode.append(",");
+//					}
+//				}
+//			}
+//			System.out.println("indexValue = " + transmode.toString());
+			
+			
 			return mapping.findForward("search");
 		} catch (Exception e) {
 		}

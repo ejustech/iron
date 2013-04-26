@@ -10,11 +10,11 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 
-/** 
- * MyEclipse Struts
- * Creation date: 04-16-2013
+/**
+ * MyEclipse Struts Creation date: 04-16-2013
  * 
  * XDoclet definition:
+ * 
  * @struts.form name="MenuForm"
  */
 public class Result1Form extends ActionForm {
@@ -28,13 +28,33 @@ public class Result1Form extends ActionForm {
 	private static final long serialVersionUID = 1L;
 	/** search property */
 	private String search;
-	
+	// private String indexCheckbox;
+	private String[] indexCheckbox = new String[0];
+
 	/*
 	 * Generated Methods
 	 */
 
-	/** 
+	// public String getIndexCheckbox() {
+	// return indexCheckbox;
+	// }
+	//
+	// public void setIndexCheckbox(String indexCheckbox) {
+	// this.indexCheckbox = indexCheckbox;
+	// }
+
+
+	public String[] getIndexCheckbox() {
+		return indexCheckbox;
+	}
+
+	public void setIndexCheckbox(String[] indexCheckbox) {
+		this.indexCheckbox = indexCheckbox;
+	}
+
+	/**
 	 * Method validate
+	 * 
 	 * @param mapping
 	 * @param request
 	 * @return ActionErrors
@@ -45,8 +65,9 @@ public class Result1Form extends ActionForm {
 		return null;
 	}
 
-	/** 
+	/**
 	 * Method reset
+	 * 
 	 * @param mapping
 	 * @param request
 	 */
@@ -54,8 +75,9 @@ public class Result1Form extends ActionForm {
 		// TODO Auto-generated method stub
 	}
 
-	/** 
+	/**
 	 * Method validate
+	 * 
 	 * @param mapping
 	 * @param request
 	 * @return ActionErrors
@@ -65,8 +87,9 @@ public class Result1Form extends ActionForm {
 		return null;
 	}
 
-	/** 
+	/**
 	 * Method reset
+	 * 
 	 * @param mapping
 	 * @param request
 	 */
@@ -74,17 +97,20 @@ public class Result1Form extends ActionForm {
 		// TODO Auto-generated method stub
 	}
 
-	/** 
+	/**
 	 * Returns the userID.
+	 * 
 	 * @return String
 	 */
 	public String getSearch() {
 		return search;
 	}
 
-	/** 
+	/**
 	 * Set the userID.
-	 * @param userID The userID to set
+	 * 
+	 * @param userID
+	 *            The userID to set
 	 */
 	public void setSearch(String search) {
 		this.search = search;

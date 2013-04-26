@@ -8,6 +8,16 @@ public class Result1FormBean {
 	/*
 	 * Generated fields
 	 */
+	/** index property */
+	private String index;
+	
+	public String getIndex() {
+		return index;
+	}
+
+	public void setIndex(String index) {
+		this.index = index;
+	}
 
 	/** shengchanluhao property */
 	private String shengchanluhao;

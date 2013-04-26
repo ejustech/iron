@@ -63,46 +63,47 @@
 				<logic:notEmpty name="CHUMENGLIST">
 					<logic:iterate id="result3FormBean" name="CHUMENGLIST">
 				<tr>
-					<td><bean:write name="result3FormBean" property="qihao" ></bean:write>期
-					<td><bean:write name="result3FormBean" property="fe" ></bean:write>
-					<td><bean:write name="result3FormBean" property="cl" ></bean:write>
-					<td><bean:write name="result3FormBean" property="n" ></bean:write>
-					<td><bean:write name="result3FormBean" property="o" ></bean:write>
-					<td><bean:write name="result3FormBean" property="hb" ></bean:write>
-					<td><bean:write name="result3FormBean" property="lushu" ></bean:write>
-					<td><bean:write name="result3FormBean" property="zongmaozhong" ></bean:write>
-					<td><bean:write name="result3FormBean" property="junmaozhong" ></bean:write>
-					<td><bean:write name="result3FormBean" property="junmgdanhao" ></bean:write>
-					<td><bean:write name="result3FormBean" property="junhuishoulv" ></bean:write>
-					<td><bean:write name="result3FormBean" property="zongjingzhong" ></bean:write>
-					<td><bean:write name="result3FormBean" property="junjingzhong" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j0Aji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j0Ajilv" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j0ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j0jilv" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j0jiyishang" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j1ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j1jilv" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j2ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j3ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j4ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j5ji" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j2jijiyixia" ></bean:write>
-					<td><bean:write name="result3FormBean" property="j2jijiyixialv" ></bean:write>				
+					<td><bean:write name="result3FormBean" property="qihao" ></bean:write>期</td>
+					<td><bean:write name="result3FormBean" property="fe" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="cl" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="n" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="o" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="hb" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="lushu" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="zongmaozhong" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="junmaozhong" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="junmgdanhao" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="junhuishoulv" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="zongjingzhong" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="junjingzhong" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j0Aji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j0Ajilv" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j0ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j0jilv" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j0jiyishang" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j1ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j1jilv" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j2ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j3ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j4ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j5ji" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j2jijiyixia" ></bean:write></td>
+					<td><bean:write name="result3FormBean" property="j2jijiyixialv" ></bean:write></td>				
 				</tr>
 					</logic:iterate>
 				</logic:notEmpty>
 			</table>
 			<table>
 				<tr>
-					<td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td>
+					<!-- <td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td> -->
+					<td><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onclick="javascript:window.history.back();"></td>
 				</tr>
 			</table>
 			<hr width="1200" />
 			<table align="center">
 				<tr>
 					<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
-				<tr>
+				</tr>
 			</table>
 		</html:form>
 	</body>

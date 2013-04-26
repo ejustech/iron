@@ -79,14 +79,15 @@
 			</table>
 			<table>
 				<tr>
-					<td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td>
+					<!-- <td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td> -->
+					<td><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onclick="javascript:window.history.back();"></td>
 				</tr>
 			</table>
 			<hr width="1200" />
 			<table align="center">
 				<tr>
 					<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
-				<tr>
+				</tr>
 			</table>
 		</html:form>
 	</body>
