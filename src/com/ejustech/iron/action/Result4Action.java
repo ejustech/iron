@@ -4,38 +4,52 @@
  */
 package com.ejustech.iron.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.struts.action.Action;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.EventDispatchAction;
 
-import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
+import com.ejustech.iron.databean.form.SearchFormBean;
 
-/** 
- * MyEclipse Struts
- * Creation date: 04-17-2013
+/**
+ * MyEclipse Struts Creation date: 04-17-2013
  * 
  * XDoclet definition:
- * @struts.action path="/result1" name="result1Form" input="/form/result1.jsp" scope="request" validate="true"
+ * 
+ * @struts.action path="/result4" name="result4Form" input="/form/result4.jsp"
+ *                scope="request" validate="true"
  */
-public class Result4Action extends Action {
+public class Result4Action extends EventDispatchAction {
 	/*
 	 * Generated Methods
 	 */
 
-	/** 
+	/**
 	 * Method execute
+	 * 
 	 * @param mapping
 	 * @param form
 	 * @param request
 	 * @param response
 	 * @return ActionForward
 	 */
-	public ActionForward execute(ActionMapping mapping, ActionForm form,
+	// 处理search动作
+	public ActionForward search(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		TIronInfoDaoBean result1Form = (TIronInfoDaoBean) form;// TODO Auto-generated method stub
+		try {
+			SearchFormBean searchFormBean = new SearchFormBean();
+			searchFormBean.setSelInfoList("4");
+			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
+			selList.add(searchFormBean);
+			request.setAttribute("SELLIST", selList);
+			return mapping.findForward("search");
+		} catch (Exception e) {
+		}
 		return null;
 	}
 }

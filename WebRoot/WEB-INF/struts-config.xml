@@ -23,6 +23,12 @@
     <form-bean name="menuForm" type="com.ejustech.iron.form.MenuForm" />
     <form-bean name="searchForm" type="com.ejustech.iron.form.SearchForm" />
     <form-bean name="result1Form" type="com.ejustech.iron.form.Result1Form" />
+    <form-bean name="result2Form" type="com.ejustech.iron.form.Result2Form" />
+    <form-bean name="result3Form" type="com.ejustech.iron.form.Result3Form" />
+    <form-bean name="result4Form" type="com.ejustech.iron.form.Result4Form" />
+    <form-bean name="result5Form" type="com.ejustech.iron.form.Result5Form" />
+    <form-bean name="result6Form" type="com.ejustech.iron.form.Result6Form" />
+    <form-bean name="result7Form" type="com.ejustech.iron.form.Result7Form" />
     <form-bean name="SampleQuery" type="SampleQuery" />
     <form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
     <form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
@@ -65,6 +71,7 @@
       path="/search"
       scope="request"
       type="com.ejustech.iron.action.SearchAction"
+      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,backToMenu,loginError"
       cancellable="true">
       <forward name="srch1" path="/form/result1.jsp" />
       <forward name="srch2" path="/form/result2.jsp" />
@@ -73,6 +80,7 @@
       <forward name="srch5" path="/form/result5.jsp" />
       <forward name="srch6" path="/form/result6.jsp" />
       <forward name="srch7" path="/form/result7.jsp" />
+      <forward name="backToMenu" path="/form/menu.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -82,55 +90,74 @@
       path="/result1"
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
-      cancellable="true" />
-      <action
+	  parameter="search"
+      cancellable="true">
+      <forward name="search" path="/form/search.jsp" />
+      <forward name="loginError" path="/form/loginError.jsp" />
+    </action>
+    <action
       attribute="result2Form"
       input="/form/result2.jsp"
       name="result1Form"
       path="/result2"
       scope="request"
       type="com.ejustech.iron.action.Result2Action"
-      cancellable="true" />
-      <action
-      attribute="result1Form"
+      parameter="search"
+      cancellable="true">
+      <forward name="search" path="/form/search.jsp" />
+      <forward name="loginError" path="/form/loginError.jsp" />
+    </action>
+    <action
+      attribute="result3Form"
       input="/form/result3.jsp"
       name="result3Form"
       path="/result3"
       scope="request"
       type="com.ejustech.iron.action.Result3Action"
-      cancellable="true" />
-      <action
+      parameter="search"
+      cancellable="true">
+      <forward name="search" path="/form/search.jsp" />
+      <forward name="loginError" path="/form/loginError.jsp" />
+    </action>
+    <action
       attribute="result4Form"
       input="/form/result4.jsp"
       name="result4Form"
       path="/result4"
       scope="request"
       type="com.ejustech.iron.action.Result4Action"
-      cancellable="true" />
-      <action
+      parameter="search"
+      cancellable="true">
+      <forward name="search" path="/form/search.jsp" />
+      <forward name="loginError" path="/form/loginError.jsp" />
+    </action>
+    <action
       attribute="result5Form"
       input="/form/result5.jsp"
       name="result5Form"
       path="/result5"
       scope="request"
       type="com.ejustech.iron.action.Result5Action"
-      cancellable="true" />
-      <action
+      cancellable="true">
+    </action>
+    <action
       attribute="result6Form"
       input="/form/result6.jsp"
       name="result6Form"
       path="/result6"
       scope="request"
       type="com.ejustech.iron.action.Result6Action"
-      cancellable="true" />
-      <action
+      cancellable="true">
+    </action>
+    <action
       attribute="result7Form"
       input="/form/result7.jsp"
       name="result7Form"
       path="/result7"
       scope="request"
       type="com.ejustech.iron.action.Result7Action"
-      cancellable="true" />
+      cancellable="true">
+    </action>
     <action
       attribute="sampleQueryForm"
       input="/jsp/sampleQuery.jsp"
@@ -148,7 +175,8 @@
       path="/sampleQueryResult"
       scope="request"
       type="com.ejustech.iron.action.SampleQueryResultAction"
-      cancellable="true" />
+      cancellable="true">
+    </action>
     <action
       attribute="inputByNewForm"
       input="/form/inputByNew.jsp"
@@ -157,7 +185,8 @@
       scope="request"
       parameter="Save,Reset,Return"
       type="com.ejustech.iron.action.InputByNewAction"
-      cancellable="true" />
+      cancellable="true">
+    </action>
     
 
   </action-mappings>

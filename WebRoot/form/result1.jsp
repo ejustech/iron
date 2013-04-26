@@ -7,14 +7,31 @@
 	<head>
 		<title>全部信息输出表</title>
 	</head>
+	<style type="text/css">
+	<!--
+		body {
+			background-color: #C9D3DA;
+		}
+		.STYLE1 {
+			font-size: 16px;
+			font-weight: bold;
+		}
+		.STYLE9 {font-size: 12px}
+	-->
+	</style>
 	<body>
 		<html:form action="/result1">
+			<div align="center">
+			    <p><img src="../image/1.jpg" width="1090" height="112" /></p>
+			    <p class="STYLE1">金达钛业生产数据统计系统</p>
+			  </div>
+			<hr width="1200" />
 			<table>
 				<tr>
 					<td>全部信息输出表</td>
 				</tr>
 			</table>
-			<table>
+			<table border="1">
 				<tr>
 					<th>日期</th>
 					<th>期号</th>
@@ -63,56 +80,67 @@
 					<th>备注说明</th>
 				</tr>
 				<logic:notEmpty name="AllINFOLIST">
-					<logic:iterate id="tIronInfoBean" name="AllINFOLIST">
+					<logic:iterate id="result1FormBean" name="AllINFOLIST">
 				<tr>
-					<td><bean:write name="tIronInfoBean" property="riqi" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="qihao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="luci" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="guige" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="shengchanluhao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="fanyingqihao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="shiyongcishu" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="mg" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="ticl" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="maozhong" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="jingzhong" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="chengpinlv" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="fe" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="si" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="cl" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="c" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="n" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="o" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="h" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="mn" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="hb" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="dengji_hanmeng" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="kaohedengji_chumeng" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="gongyitiaozheng" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="gongyishiyan" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="dipi" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="shangmao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="pabi" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="feidipi" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="feishangmao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="feipabi" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="feitaifen" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="cixuan" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="shouxuanfeiliao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="sunhao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="zongpaimeiliang" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="chuluzhenkongdu" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="huanyuanzuigaowendu" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="zhengliugaoheng" ></bean:write>	
-					<td><bean:write name="tIronInfoBean" property="zhuanzhengliu" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="jiashouci" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="jiamoci" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="tongdao" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="shengchanguzhang" ></bean:write>
-					<td><bean:write name="tIronInfoBean" property="beizhushuoming" ></bean:write>
+					<td><bean:write name="result1FormBean" property="riqi" ></bean:write>
+					<td><bean:write name="result1FormBean" property="qihao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="luci" ></bean:write><bean:write name="result1FormBean" property="junpin" ></bean:write>
+					<td><bean:write name="result1FormBean" property="guige" ></bean:write>
+					<td><bean:write name="result1FormBean" property="shengchanluhao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="fanyingqihao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="shiyongcishu" ></bean:write>	
+					<td><bean:write name="result1FormBean" property="mg" ></bean:write>
+					<td><bean:write name="result1FormBean" property="ticl" ></bean:write>
+					<td><bean:write name="result1FormBean" property="maozhong" ></bean:write>
+					<td><bean:write name="result1FormBean" property="jingzhong" ></bean:write>
+					<td><bean:write name="result1FormBean" property="chengpinlv" ></bean:write>
+					<td><bean:write name="result1FormBean" property="fe" ></bean:write>
+					<td><bean:write name="result1FormBean" property="si" ></bean:write>
+					<td><bean:write name="result1FormBean" property="cl" ></bean:write>	
+					<td><bean:write name="result1FormBean" property="c" ></bean:write>
+					<td><bean:write name="result1FormBean" property="n" ></bean:write>
+					<td><bean:write name="result1FormBean" property="o" ></bean:write>
+					<td><bean:write name="result1FormBean" property="h" ></bean:write>
+					<td><bean:write name="result1FormBean" property="mn" ></bean:write>
+					<td><bean:write name="result1FormBean" property="hb" ></bean:write>
+					<td><bean:write name="result1FormBean" property="dengji_hanmeng" ></bean:write>
+					<td><bean:write name="result1FormBean" property="kaohedengji_chumeng" ></bean:write>	
+					<td><bean:write name="result1FormBean" property="gongyitiaozheng" ></bean:write>
+					<td><bean:write name="result1FormBean" property="gongyishiyan" ></bean:write>
+					<td><bean:write name="result1FormBean" property="dipi" ></bean:write>
+					<td><bean:write name="result1FormBean" property="shangmao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="pabi" ></bean:write>
+					<td><bean:write name="result1FormBean" property="feidipi" ></bean:write>
+					<td><bean:write name="result1FormBean" property="feishangmao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="feipabi" ></bean:write>	
+					<td><bean:write name="result1FormBean" property="feitaifen" ></bean:write>
+					<td><bean:write name="result1FormBean" property="cixuan" ></bean:write>
+					<td><bean:write name="result1FormBean" property="shouxuanfeiliao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="sunhao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="zongpaimeiliang" ></bean:write>
+					<td><bean:write name="result1FormBean" property="chuluzhenkongdu" ></bean:write>
+					<td><bean:write name="result1FormBean" property="huanyuanzuigaowendu" ></bean:write>
+					<td><bean:write name="result1FormBean" property="zhengliugaoheng" ></bean:write>	
+					<td><bean:write name="result1FormBean" property="zhuanzhengliu" ></bean:write>
+					<td><bean:write name="result1FormBean" property="jiashouci" ></bean:write>
+					<td><bean:write name="result1FormBean" property="jiamoci" ></bean:write>
+					<td><bean:write name="result1FormBean" property="tongdao" ></bean:write>
+					<td><bean:write name="result1FormBean" property="shengchanguzhang" ></bean:write>
+					<td><bean:write name="result1FormBean" property="beizhushuoming" ></bean:write>
 				</tr>
 					</logic:iterate>
 				</logic:notEmpty>
+			</table>
+			<table>
+				<tr>
+					<td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td>
+				</tr>
+			</table>
+			<hr width="1200" />
+			<table align="center">
+				<tr>
+					<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
+				<tr>
 			</table>
 		</html:form>
 	</body>

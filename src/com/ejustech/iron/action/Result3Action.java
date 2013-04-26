@@ -4,14 +4,17 @@
  */
 package com.ejustech.iron.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.struts.action.Action;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.EventDispatchAction;
 
-import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
+import com.ejustech.iron.databean.form.SearchFormBean;
 
 /** 
  * MyEclipse Struts
@@ -20,7 +23,7 @@ import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
  * XDoclet definition:
  * @struts.action path="/result1" name="result1Form" input="/form/result1.jsp" scope="request" validate="true"
  */
-public class Result3Action extends Action {
+public class Result3Action extends EventDispatchAction {
 	/*
 	 * Generated Methods
 	 */
@@ -33,9 +36,18 @@ public class Result3Action extends Action {
 	 * @param response
 	 * @return ActionForward
 	 */
-	public ActionForward execute(ActionMapping mapping, ActionForm form,
+	// 处理search动作
+	public ActionForward search(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		TIronInfoDaoBean result1Form = (TIronInfoDaoBean) form;// TODO Auto-generated method stub
+		try {
+			SearchFormBean searchFormBean = new SearchFormBean();
+			searchFormBean.setSelInfoList("3");
+			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
+			selList.add(searchFormBean);
+			request.setAttribute("SELLIST", selList);
+			return mapping.findForward("search");
+		} catch (Exception e) {
+		}
 		return null;
 	}
 }

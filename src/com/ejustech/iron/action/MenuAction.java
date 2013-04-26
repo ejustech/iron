@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.databean.form.InputByNewFormBean;
-
-import cc.flyzz.sample.SampleQueryResultDataBean;
+import com.ejustech.iron.databean.form.SearchFormBean;
 
 public class MenuAction extends EventDispatchAction {
     // 处理search动作
@@ -21,7 +19,12 @@ public class MenuAction extends EventDispatchAction {
             HttpServletRequest request, HttpServletResponse response)
     {
         try
-        {
+        {	
+        	SearchFormBean searchFormBean = new SearchFormBean();
+        	searchFormBean.setSelInfoList("1");
+        	ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
+        	selList.add(searchFormBean);
+        	request.setAttribute("SELLIST", selList);
 			return mapping.findForward("search");
         }
         catch (Exception e)

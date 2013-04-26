@@ -118,9 +118,19 @@ public class SearchForm extends ActionForm {
 	private String cl2;
 
 	private String selInfoList;
+	
+	private String backToMenu;
 	/*
 	 * Generated Methods
 	 */
+
+	public String getBackToMenu() {
+		return backToMenu;
+	}
+
+	public void setBackToMenu(String backToMenu) {
+		this.backToMenu = backToMenu;
+	}
 
 	/**
 	 * Method validate

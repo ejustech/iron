@@ -162,6 +162,9 @@ public class TIronInfoDaoBean extends ActionForm {
 	/** gongyishiyan property */
 	private String gongyishiyan;
 	
+	private String junpin;
+	
+	
 
 	/*
 	 * Generated Methods
@@ -898,5 +901,15 @@ public class TIronInfoDaoBean extends ActionForm {
 	 */
 	public void setGongyishiyan(String gongyishiyan) {
 		this.gongyishiyan = gongyishiyan;
+	}
+
+
+	public String getJunpin() {
+		return junpin;
+	}
+
+
+	public void setJunpin(String junpin) {
+		this.junpin = junpin;
 	}
 }

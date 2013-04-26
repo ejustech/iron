@@ -2,14 +2,13 @@ package com.ejustech.iron.action;
 
 import java.util.ArrayList;
 
-import javax.jms.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.dao.TIronInfoDao;
 import com.ejustech.iron.form.SearchForm;
@@ -22,7 +21,7 @@ import com.ejustech.iron.form.SearchForm;
  * @struts.action path="/search" name="searchForm" input="/form/search.jsp"
  *                scope="request" validate="true"
  */
-public class SearchAction extends Action {
+public class SearchAction extends EventDispatchAction {
 	/*
 	 * Generated Methods
 	 */
@@ -36,18 +35,17 @@ public class SearchAction extends Action {
 	 * @param response
 	 * @return ActionForward
 	 */
-	@SuppressWarnings("rawtypes")
-	public ActionForward execute(ActionMapping mapping, ActionForm form,
+	public ActionForward srch1(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
+		
 		try {
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
 			// method stub
 			TIronInfoDao searchDao = new TIronInfoDao();
-
+			
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
 			String[] qihao = searchForm.getQihao();
-			System.out.println("qihao----"+qihao.length);
 			String luci1 = searchForm.getLuci1();
 			String luci2 = searchForm.getLuci2();
 			String guige = searchForm.getGuige();
@@ -102,16 +100,36 @@ public class SearchAction extends Action {
 							gongyitiaozhengluci, tongdao, shengchanguzhang,
 							huishoulv1, huishoulv2, zongpaimeiliang1,
 							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
-					request.setAttribute("AllINFOLIST", hanmengList);
+					request.setAttribute("HANMENGLIST", hanmengList);
 
 					//月生产数据统计表-含锰
 					return mapping.findForward("srch2");
 				}
 				case 3: {
+					ArrayList chumengList = new ArrayList();
+					chumengList = (ArrayList) searchDao.getChumengList(request,
+							riqi1, riqi2, qihao, luci1, luci2, guige,
+							shengchanluhao, fanyingqihao, shiyongcishu, ticl41,
+							ticl42, chuluzhenkongdu1, chuluzhenkongdu2,
+							zhuanzherngliu, jiashouci, jiamoci, shiyanluci,
+							gongyitiaozhengluci, tongdao, shengchanguzhang,
+							huishoulv1, huishoulv2, zongpaimeiliang1,
+							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
+					request.setAttribute("CHUMENGLIST", chumengList);
 					//月生产数据统计表-除锰
 					return mapping.findForward("srch3");
 				}
 				case 4: {
+					ArrayList waitaiList = new ArrayList();
+					waitaiList = (ArrayList) searchDao.getWaitaiList(request,
+							riqi1, riqi2, qihao, luci1, luci2, guige,
+							shengchanluhao, fanyingqihao, shiyongcishu, ticl41,
+							ticl42, chuluzhenkongdu1, chuluzhenkongdu2,
+							zhuanzherngliu, jiashouci, jiamoci, shiyanluci,
+							gongyitiaozhengluci, tongdao, shengchanguzhang,
+							huishoulv1, huishoulv2, zongpaimeiliang1,
+							zongpaimeiliang2, fe1, fe2, hb1, hb2, cl1, cl2);
+					request.setAttribute("WAITAILIST", waitaiList);
 					//月等外钛统计表
 					return mapping.findForward("srch4");
 				}
@@ -146,6 +164,16 @@ public class SearchAction extends Action {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return mapping.findForward("loginError");
+		}
+	}
+	// 处理返回menu动作
+	public ActionForward backToMenu(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		try {
+
+			return mapping.findForward("backToMenu");
+		} catch (Exception e) {
 			return mapping.findForward("loginError");
 		}
 	}

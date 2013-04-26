@@ -6,12 +6,13 @@ package com.ejustech.iron.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
+import com.ejustech.iron.form.Result7Form;
 
 /** 
  * MyEclipse Struts
@@ -35,7 +36,7 @@ public class Result7Action extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		TIronInfoDaoBean result1Form = (TIronInfoDaoBean) form;// TODO Auto-generated method stub
+		Result7Form result7Form = (Result7Form) form;// TODO Auto-generated method stub
 		return null;
 	}
 }
