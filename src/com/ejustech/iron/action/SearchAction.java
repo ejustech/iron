@@ -54,7 +54,7 @@ public class SearchAction extends EventDispatchAction {
 
 		try {
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
-			// method stub
+
 			TIronInfoDao searchDao = new TIronInfoDao();
 
 			String riqi1 = searchForm.getRiqi1();
@@ -187,11 +187,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !shiyongcishu2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" ticl between '");
+				sqlBufferCondition.append(" ticl between ");
 				sqlBufferCondition.append(ticl41);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(ticl42);
-				sqlBufferCondition.append("'");
 			}
 			// 检索条件_出炉真空度(三段区间)
 			if (!chuluzhenkongdu1.equals("") && chuluzhenkongdu2.equals("")) {
@@ -204,9 +203,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !ticl42.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" chuluzhenkongdu <='");
+				sqlBufferCondition.append(" chuluzhenkongdu <= ");
 				sqlBufferCondition.append(chuluzhenkongdu1);
-				sqlBufferCondition.append("'");
 			} else if (!chuluzhenkongdu2.equals("")
 					&& chuluzhenkongdu1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
@@ -218,9 +216,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !ticl42.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" chuluzhenkongdu >='");
+				sqlBufferCondition.append(" chuluzhenkongdu >= ");
 				sqlBufferCondition.append(chuluzhenkongdu2);
-				sqlBufferCondition.append("'");
 			} else if (!chuluzhenkongdu2.equals("")
 					&& !chuluzhenkongdu1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
@@ -232,11 +229,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !ticl42.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" chuluzhenkongdu between '");
+				sqlBufferCondition.append(" chuluzhenkongdu between ");
 				sqlBufferCondition.append(chuluzhenkongdu1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(chuluzhenkongdu2);
-				sqlBufferCondition.append("'");
 			}
 			// 检索条件_转蒸馏
 			if (!zhuanzhengliu.equals("")) {
@@ -437,9 +433,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !huishoulv1.equals("") || !huishoulv2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" zongpaimeiliang <='");
+				sqlBufferCondition.append(" zongpaimeiliang <= ");
 				sqlBufferCondition.append(zongpaimeiliang1);
-				sqlBufferCondition.append("'");
 			} else if (!zongpaimeiliang2.equals("")
 					&& zongpaimeiliang1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
@@ -457,9 +452,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !huishoulv1.equals("") || !huishoulv2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" zongpaimeiliang >='");
+				sqlBufferCondition.append(" zongpaimeiliang >= ");
 				sqlBufferCondition.append(zongpaimeiliang2);
-				sqlBufferCondition.append("'");
 			} else if (!zongpaimeiliang1.equals("")
 					&& !zongpaimeiliang2.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
@@ -477,11 +471,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !huishoulv1.equals("") || !huishoulv2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" zongpaimeiliang between '");
+				sqlBufferCondition.append(" zongpaimeiliang between ");
 				sqlBufferCondition.append(zongpaimeiliang1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(zongpaimeiliang2);
-				sqlBufferCondition.append("'");
 			}
 			// 检索条件_Fe(三段区间)
 			if (!fe1.equals("") && fe2.equals("")) {
@@ -502,9 +495,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !zongpaimeiliang2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" fe <='");
+				sqlBufferCondition.append(" fe <= ");
 				sqlBufferCondition.append(fe1);
-				sqlBufferCondition.append("'");
 			} else if (!fe2.equals("") && fe1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -523,9 +515,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !zongpaimeiliang2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" fe >='");
+				sqlBufferCondition.append(" fe >= ");
 				sqlBufferCondition.append(fe2);
-				sqlBufferCondition.append("'");
 			} else if (!fe1.equals("") && !fe2.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -544,11 +535,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !zongpaimeiliang2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" fe between '");
+				sqlBufferCondition.append(" fe between ");
 				sqlBufferCondition.append(fe1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(fe2);
-				sqlBufferCondition.append("'");
 			}
 			// 检索条件_HB(三段区间)
 			if (!hb1.equals("") && hb2.equals("")) {
@@ -570,9 +560,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !fe2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" hb <='");
+				sqlBufferCondition.append(" hb <= ");
 				sqlBufferCondition.append(hb1);
-				sqlBufferCondition.append("'");
 			} else if (!hb2.equals("") && hb1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -592,9 +581,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !fe2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" hb >='");
+				sqlBufferCondition.append(" hb >= ");
 				sqlBufferCondition.append(hb2);
-				sqlBufferCondition.append("'");
 			} else if (!hb1.equals("") && !hb2.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -614,11 +602,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !fe2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" hb between '");
+				sqlBufferCondition.append(" hb between ");
 				sqlBufferCondition.append(hb1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(hb2);
-				sqlBufferCondition.append("'");
 			}
 			// 检索条件_Cl(三段区间)
 			if (!cl1.equals("") && cl2.equals("")) {
@@ -641,9 +628,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !hb2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" cl <='");
+				sqlBufferCondition.append(" cl <= ");
 				sqlBufferCondition.append(cl1);
-				sqlBufferCondition.append("'");
 			} else if (!cl2.equals("") && cl1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -664,9 +650,8 @@ public class SearchAction extends EventDispatchAction {
 						|| !hb2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" cl >='");
+				sqlBufferCondition.append(" cl >= ");
 				sqlBufferCondition.append(cl2);
-				sqlBufferCondition.append("'");
 			} else if (!cl1.equals("") && !cl2.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0
 						|| !luci1.equals("") || !luci2.equals("")
@@ -687,11 +672,10 @@ public class SearchAction extends EventDispatchAction {
 						|| !hb2.equals("")) {
 					sqlBufferCondition.append(" and");
 				}
-				sqlBufferCondition.append(" cl between '");
+				sqlBufferCondition.append(" cl between ");
 				sqlBufferCondition.append(cl1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append(" and ");
 				sqlBufferCondition.append(cl2);
-				sqlBufferCondition.append("'");
 			}
 
 			switch (Integer.parseInt(selInfoList)) {

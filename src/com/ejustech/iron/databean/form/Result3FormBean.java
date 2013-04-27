@@ -26,7 +26,7 @@ public class Result3FormBean {
 
 	/** cl property */
 	private String cl;
-	
+
 	/** lushu property */
 	private String zonglushu;
 	private String zongmaozhong;
@@ -181,9 +181,7 @@ public class Result3FormBean {
 	public void setCl(String cl) {
 		this.cl = cl;
 	}
-	
-	
-	
+
 	/**
 	 * Returns the cl.
 	 * 
