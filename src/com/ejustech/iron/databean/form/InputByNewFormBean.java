@@ -5,15 +5,15 @@
 package com.ejustech.iron.databean.form;
 
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.struts.action.ActionErrors;
-import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionMapping;
 
-/** 
- * MyEclipse Struts
- * Creation date: 04-19-2013
+/**
+ * MyEclipse Struts Creation date: 04-19-2013
  * 
  * XDoclet definition:
+ * 
  * @struts.form name="inputByNewForm"
  */
 public class InputByNewFormBean {
@@ -164,6 +164,1031 @@ public class InputByNewFormBean {
 
 	/** yuanSuNJunPin property */
 	private String yuanSuNJunPin;
+
+	/** month property */
+	private String month;
+
+	/** beiZhuShuoMing property */
+	private String beiZhuShuoMing;
+
+	/** shangMaoKgJunPin property */
+	private String shangMaoKgJunPin;
+
+	/** day property */
+	private String day;
+
+	/** luCiJunPin property */
+	private String luCiJunPin;
+
+	/** chengPinLv property */
+	private String chengPinLv;
+
+	/** dayJunPin property */
+	private String dayJunPin;
+
+	/** gongYiTiaoZheng property */
+	private String gongYiTiaoZheng;
+
+	/** feiTaiFenKgJunPin property */
+	private String feiTaiFenKgJunPin;
+
+	/** zhengLiuGaoHengDian property */
+	private String zhengLiuGaoHengDian;
+
+	/** fanYingQiHao property */
+	private String fanYingQiHao;
+
+	/** guiGe property */
+	private String guiGe;
+
+	/** yearMonthDayJunPin property */
+	private String yearMonthDayJunPin;
+
+	/** paBiKg property */
+	private String paBiKg;
+
+	/** shiYongCiShuJunPin property */
+	private String shiYongCiShuJunPin;
+
+	/** guiGeJunPin property */
+	private String guiGeJunPin;
+
+	/** yuanSuClJunPin property */
+	private String yuanSuClJunPin;
+
+	/** yearMonthDay property */
+	private String yearMonthDay;
+
+	/** ciYuanKg property */
+	private String ciYuanKg;
+
+	/** kaoHeDengJiChuMeng property */
+	private String kaoHeDengJiChuMeng;
+
+	/** tongDaoJunPin property */
+	private String tongDaoJunPin;
+
+	/** shengChanLuHaoJunPin property */
+	private String shengChanLuHaoJunPin;
+
+	/** yuanSuCJunPin property */
+	private String yuanSuCJunPin;
+
+	/** mg property */
+	private String mg;
+
+	/** tiCl4 property */
+	private String tiCl4;
+
+	/** fanYingQiHaoJunPin property */
+	private String fanYingQiHaoJunPin;
+
+	/** qiHaoJunPin property */
+	private String qiHaoJunPin;
+
+	/** yuanSuCl property */
+	private String yuanSuCl;
+
+	/** kaoHeDengJiChuMengJunPin property */
+	private String kaoHeDengJiChuMengJunPin;
+
+	/** tiCl4JunPin property */
+	private String tiCl4JunPin;
+
+	/** jingZhongJunPin property */
+	private String jingZhongJunPin;
+
+	/** yuanSuHb property */
+	private String yuanSuHb;
+
+	/** shiYongCiShu property */
+	private String shiYongCiShu;
+
+	/** feiPaBiKgJunPin property */
+	private String feiPaBiKgJunPin;
+
+	/** yuansuMnJunPin property */
+	private String yuansuMnJunPin;
+
+	/** yearJunPin property */
+	private String yearJunPin;
+
+	/** jiaMoCiJunPin property */
+	private String jiaMoCiJunPin;
+
+	/** gongYiShiYan property */
+	private String gongYiShiYan;
+
+	/** yuanSuHJunPin property */
+	private String yuanSuHJunPin;
+
+	/** tongDao property */
+	private String tongDao;
+
+	/** yuanSuHbJunPin property */
+	private String yuanSuHbJunPin;
+
+	/** shouXuanFeiLiaoKg property */
+	private String shouXuanFeiLiaoKg;
+
+	/** monthJunPin property */
+	private String monthJunPin;
+
+	/** feiShangMaoKg property */
+	private String feiShangMaoKg;
+
+	/** yuanZuiGaoWenDuJunPin property */
+	private String yuanZuiGaoWenDuJunPin;
+
+	/** feiDiPiKg property */
+	private String feiDiPiKg;
+
+	/** chuLuZhenKongDuJunPin property */
+	private String chuLuZhenKongDuJunPin;
+
+	/** mgJunPin property */
+	private String mgJunPin;
+
+	private String gongYiShiYanJunPin2;
+
+	private String zongPaiMeiLiangKgJunPin2;
+
+	private String shengChanGuZhangJunPin2;
+
+	private String ciYuanKgJunPin2;
+
+	private String beiZhuShuoMingJunPin2;
+
+	private String yuanSuSiJunPin2;
+
+	private String chengPinLvJunPin2;
+
+	private String feiShangMaoKgJunPin2;
+
+	private String yuanSuFeJunPin2;
+
+	private String diPiKgJunPin2;
+
+	private String feiDiPiKgJunPin2;
+
+	private String paBiKgJunPin2;
+
+	private String dengJiHanMengJunPin2;
+
+	private String zhuanZhengLiuJunPin2;
+
+	private String gongYiTiaoZhengJunPin2;
+
+	private String sunHaoKgJunPin2;
+
+	private String shouXuanFeiLiaoKgJunPin2;
+
+	private String maoZhongJunPin2;
+
+	private String jiaShouCiJunPin2;
+
+	private String zhengLiuGaoHengDianJunPin2;
+
+	private String yuanSuOJunPin2;
+
+	private String yuanSuNJunPin2;
+
+	private String shangMaoKgJunPin2;
+
+	private String luCiJunPin2;
+
+	private String dayJunPin2;
+
+	private String feiTaiFenKgJunPin2;
+
+	private String yearMonthDayJunPin2;
+
+	private String shiYongCiShuJunPin2;
+
+	private String guiGeJunPin2;
+
+	private String yuanSuClJunPin2;
+
+	private String tongDaoJunPin2;
+
+	private String shengChanLuHaoJunPin2;
+
+	private String yuanSuCJunPin2;
+
+	private String fanYingQiHaoJunPin2;
+
+	private String qiHaoJunPin2;
+
+	private String kaoHeDengJiChuMengJunPin2;
+
+	private String tiCl4JunPin2;
+
+	private String jingZhongJunPin2;
+
+	private String feiPaBiKgJunPin2;
+
+	private String yuansuMnJunPin2;
+
+	private String yearJunPin2;
+
+	private String jiaMoCiJunPin2;
+
+	private String yuanSuHJunPin2;
+
+	private String yuanSuHbJunPin2;
+
+	private String monthJunPin2;
+
+	private String yuanZuiGaoWenDuJunPin2;
+
+	private String chuLuZhenKongDuJunPin2;
+
+	private String mgJunPin2;
+
+	/*
+	 * Generated Methods
+	 */
+
+	/**
+	 * Method validate
+	 * 
+	 * @param mapping
+	 * @param request
+	 * @return ActionErrors
+	 */
+	public ActionErrors validate(ActionMapping mapping,
+			HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getGongYiShiYanJunPin() {
+		return gongYiShiYanJunPin;
+	}
+
+	public void setGongYiShiYanJunPin(String gongYiShiYanJunPin) {
+		this.gongYiShiYanJunPin = gongYiShiYanJunPin;
+	}
+
+	public String getChuLuZhenKongDu() {
+		return chuLuZhenKongDu;
+	}
+
+	public void setChuLuZhenKongDu(String chuLuZhenKongDu) {
+		this.chuLuZhenKongDu = chuLuZhenKongDu;
+	}
+
+	public String getZongPaiMeiLiangKgJunPin() {
+		return zongPaiMeiLiangKgJunPin;
+	}
+
+	public void setZongPaiMeiLiangKgJunPin(String zongPaiMeiLiangKgJunPin) {
+		this.zongPaiMeiLiangKgJunPin = zongPaiMeiLiangKgJunPin;
+	}
+
+	public String getMaoZhong() {
+		return maoZhong;
+	}
+
+	public void setMaoZhong(String maoZhong) {
+		this.maoZhong = maoZhong;
+	}
+
+	public String getShengChanGuZhang() {
+		return shengChanGuZhang;
+	}
+
+	public void setShengChanGuZhang(String shengChanGuZhang) {
+		this.shengChanGuZhang = shengChanGuZhang;
+	}
+
+	public String getShengChanGuZhangJunPin() {
+		return shengChanGuZhangJunPin;
+	}
+
+	public void setShengChanGuZhangJunPin(String shengChanGuZhangJunPin) {
+		this.shengChanGuZhangJunPin = shengChanGuZhangJunPin;
+	}
+
+	public String getDiPiKg() {
+		return diPiKg;
+	}
+
+	public void setDiPiKg(String diPiKg) {
+		this.diPiKg = diPiKg;
+	}
+
+	public String getLuCi() {
+		return luCi;
+	}
+
+	public void setLuCi(String luCi) {
+		this.luCi = luCi;
+	}
+
+	public String getCiYuanKgJunPin() {
+		return ciYuanKgJunPin;
+	}
+
+	public void setCiYuanKgJunPin(String ciYuanKgJunPin) {
+		this.ciYuanKgJunPin = ciYuanKgJunPin;
+	}
+
+	public String getYuansuMn() {
+		return yuansuMn;
+	}
+
+	public void setYuansuMn(String yuansuMn) {
+		this.yuansuMn = yuansuMn;
+	}
+
+	public String getBeiZhuShuoMingJunPin() {
+		return beiZhuShuoMingJunPin;
+	}
+
+	public void setBeiZhuShuoMingJunPin(String beiZhuShuoMingJunPin) {
+		this.beiZhuShuoMingJunPin = beiZhuShuoMingJunPin;
+	}
+
+	public String getYuanSuSiJunPin() {
+		return yuanSuSiJunPin;
+	}
+
+	public void setYuanSuSiJunPin(String yuanSuSiJunPin) {
+		this.yuanSuSiJunPin = yuanSuSiJunPin;
+	}
+
+	public String getChengPinLvJunPin() {
+		return chengPinLvJunPin;
+	}
+
+	public void setChengPinLvJunPin(String chengPinLvJunPin) {
+		this.chengPinLvJunPin = chengPinLvJunPin;
+	}
+
+	public String getFeiPaBiKg() {
+		return feiPaBiKg;
+	}
+
+	public void setFeiPaBiKg(String feiPaBiKg) {
+		this.feiPaBiKg = feiPaBiKg;
+	}
+
+	public String getFeiShangMaoKgJunPin() {
+		return feiShangMaoKgJunPin;
+	}
+
+	public void setFeiShangMaoKgJunPin(String feiShangMaoKgJunPin) {
+		this.feiShangMaoKgJunPin = feiShangMaoKgJunPin;
+	}
+
+	public String getYuanSuO() {
+		return yuanSuO;
+	}
+
+	public void setYuanSuO(String yuanSuO) {
+		this.yuanSuO = yuanSuO;
+	}
+
+	public String getYuanSuFeJunPin() {
+		return yuanSuFeJunPin;
+	}
+
+	public void setYuanSuFeJunPin(String yuanSuFeJunPin) {
+		this.yuanSuFeJunPin = yuanSuFeJunPin;
+	}
+
+	public String getYuanSuN() {
+		return yuanSuN;
+	}
+
+	public void setYuanSuN(String yuanSuN) {
+		this.yuanSuN = yuanSuN;
+	}
+
+	public String getJingZhong() {
+		return jingZhong;
+	}
+
+	public void setJingZhong(String jingZhong) {
+		this.jingZhong = jingZhong;
+	}
+
+	public String getDiPiKgJunPin() {
+		return diPiKgJunPin;
+	}
+
+	public void setDiPiKgJunPin(String diPiKgJunPin) {
+		this.diPiKgJunPin = diPiKgJunPin;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getDengJiHanMeng() {
+		return dengJiHanMeng;
+	}
+
+	public void setDengJiHanMeng(String dengJiHanMeng) {
+		this.dengJiHanMeng = dengJiHanMeng;
+	}
+
+	public String getShangMaoKg() {
+		return shangMaoKg;
+	}
+
+	public void setShangMaoKg(String shangMaoKg) {
+		this.shangMaoKg = shangMaoKg;
+	}
+
+	public String getShengChanLuHao() {
+		return shengChanLuHao;
+	}
+
+	public void setShengChanLuHao(String shengChanLuHao) {
+		this.shengChanLuHao = shengChanLuHao;
+	}
+
+	public String getJiaShouCi() {
+		return jiaShouCi;
+	}
+
+	public void setJiaShouCi(String jiaShouCi) {
+		this.jiaShouCi = jiaShouCi;
+	}
+
+	public String getFeiDiPiKgJunPin() {
+		return feiDiPiKgJunPin;
+	}
+
+	public void setFeiDiPiKgJunPin(String feiDiPiKgJunPin) {
+		this.feiDiPiKgJunPin = feiDiPiKgJunPin;
+	}
+
+	public String getZhuanZhengLiu() {
+		return zhuanZhengLiu;
+	}
+
+	public void setZhuanZhengLiu(String zhuanZhengLiu) {
+		this.zhuanZhengLiu = zhuanZhengLiu;
+	}
+
+	public String getPaBiKgJunPin() {
+		return paBiKgJunPin;
+	}
+
+	public void setPaBiKgJunPin(String paBiKgJunPin) {
+		this.paBiKgJunPin = paBiKgJunPin;
+	}
+
+	public String getZongPaiMeiLiangKg() {
+		return zongPaiMeiLiangKg;
+	}
+
+	public void setZongPaiMeiLiangKg(String zongPaiMeiLiangKg) {
+		this.zongPaiMeiLiangKg = zongPaiMeiLiangKg;
+	}
+
+	public String getDengJiHanMengJunPin() {
+		return dengJiHanMengJunPin;
+	}
+
+	public void setDengJiHanMengJunPin(String dengJiHanMengJunPin) {
+		this.dengJiHanMengJunPin = dengJiHanMengJunPin;
+	}
+
+	public String getZhuanZhengLiuJunPin() {
+		return zhuanZhengLiuJunPin;
+	}
+
+	public void setZhuanZhengLiuJunPin(String zhuanZhengLiuJunPin) {
+		this.zhuanZhengLiuJunPin = zhuanZhengLiuJunPin;
+	}
+
+	public String getGongYiTiaoZhengJunPin() {
+		return gongYiTiaoZhengJunPin;
+	}
+
+	public void setGongYiTiaoZhengJunPin(String gongYiTiaoZhengJunPin) {
+		this.gongYiTiaoZhengJunPin = gongYiTiaoZhengJunPin;
+	}
+
+	public String getYuanSuSi() {
+		return yuanSuSi;
+	}
+
+	public void setYuanSuSi(String yuanSuSi) {
+		this.yuanSuSi = yuanSuSi;
+	}
+
+	public String getYuanZuiGaoWenDu() {
+		return yuanZuiGaoWenDu;
+	}
+
+	public void setYuanZuiGaoWenDu(String yuanZuiGaoWenDu) {
+		this.yuanZuiGaoWenDu = yuanZuiGaoWenDu;
+	}
+
+	public String getYuanSuH() {
+		return yuanSuH;
+	}
+
+	public void setYuanSuH(String yuanSuH) {
+		this.yuanSuH = yuanSuH;
+	}
+
+	public String getSunHaoKgJunPin() {
+		return sunHaoKgJunPin;
+	}
+
+	public void setSunHaoKgJunPin(String sunHaoKgJunPin) {
+		this.sunHaoKgJunPin = sunHaoKgJunPin;
+	}
+
+	public String getYuanSuC() {
+		return yuanSuC;
+	}
+
+	public void setYuanSuC(String yuanSuC) {
+		this.yuanSuC = yuanSuC;
+	}
+
+	public String getYuanSuFe() {
+		return yuanSuFe;
+	}
+
+	public void setYuanSuFe(String yuanSuFe) {
+		this.yuanSuFe = yuanSuFe;
+	}
+
+	public String getJiaMoCi() {
+		return jiaMoCi;
+	}
+
+	public void setJiaMoCi(String jiaMoCi) {
+		this.jiaMoCi = jiaMoCi;
+	}
+
+	public String getShouXuanFeiLiaoKgJunPin() {
+		return shouXuanFeiLiaoKgJunPin;
+	}
+
+	public void setShouXuanFeiLiaoKgJunPin(String shouXuanFeiLiaoKgJunPin) {
+		this.shouXuanFeiLiaoKgJunPin = shouXuanFeiLiaoKgJunPin;
+	}
+
+	public String getSunHaoKg() {
+		return sunHaoKg;
+	}
+
+	public void setSunHaoKg(String sunHaoKg) {
+		this.sunHaoKg = sunHaoKg;
+	}
+
+	public String getMaoZhongJunPin() {
+		return maoZhongJunPin;
+	}
+
+	public void setMaoZhongJunPin(String maoZhongJunPin) {
+		this.maoZhongJunPin = maoZhongJunPin;
+	}
+
+	public String getFeiTaiFenKg() {
+		return feiTaiFenKg;
+	}
+
+	public void setFeiTaiFenKg(String feiTaiFenKg) {
+		this.feiTaiFenKg = feiTaiFenKg;
+	}
+
+	public String getJiaShouCiJunPin() {
+		return jiaShouCiJunPin;
+	}
+
+	public void setJiaShouCiJunPin(String jiaShouCiJunPin) {
+		this.jiaShouCiJunPin = jiaShouCiJunPin;
+	}
+
+	public String getZhengLiuGaoHengDianJunPin() {
+		return zhengLiuGaoHengDianJunPin;
+	}
+
+	public void setZhengLiuGaoHengDianJunPin(String zhengLiuGaoHengDianJunPin) {
+		this.zhengLiuGaoHengDianJunPin = zhengLiuGaoHengDianJunPin;
+	}
+
+	public String getQiHao() {
+		return qiHao;
+	}
+
+	public void setQiHao(String qiHao) {
+		this.qiHao = qiHao;
+	}
+
+	public String getYuanSuOJunPin() {
+		return yuanSuOJunPin;
+	}
+
+	public void setYuanSuOJunPin(String yuanSuOJunPin) {
+		this.yuanSuOJunPin = yuanSuOJunPin;
+	}
+
+	public String getYuanSuNJunPin() {
+		return yuanSuNJunPin;
+	}
+
+	public void setYuanSuNJunPin(String yuanSuNJunPin) {
+		this.yuanSuNJunPin = yuanSuNJunPin;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getBeiZhuShuoMing() {
+		return beiZhuShuoMing;
+	}
+
+	public void setBeiZhuShuoMing(String beiZhuShuoMing) {
+		this.beiZhuShuoMing = beiZhuShuoMing;
+	}
+
+	public String getShangMaoKgJunPin() {
+		return shangMaoKgJunPin;
+	}
+
+	public void setShangMaoKgJunPin(String shangMaoKgJunPin) {
+		this.shangMaoKgJunPin = shangMaoKgJunPin;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public String getLuCiJunPin() {
+		return luCiJunPin;
+	}
+
+	public void setLuCiJunPin(String luCiJunPin) {
+		this.luCiJunPin = luCiJunPin;
+	}
+
+	public String getChengPinLv() {
+		return chengPinLv;
+	}
+
+	public void setChengPinLv(String chengPinLv) {
+		this.chengPinLv = chengPinLv;
+	}
+
+	public String getDayJunPin() {
+		return dayJunPin;
+	}
+
+	public void setDayJunPin(String dayJunPin) {
+		this.dayJunPin = dayJunPin;
+	}
+
+	public String getGongYiTiaoZheng() {
+		return gongYiTiaoZheng;
+	}
+
+	public void setGongYiTiaoZheng(String gongYiTiaoZheng) {
+		this.gongYiTiaoZheng = gongYiTiaoZheng;
+	}
+
+	public String getFeiTaiFenKgJunPin() {
+		return feiTaiFenKgJunPin;
+	}
+
+	public void setFeiTaiFenKgJunPin(String feiTaiFenKgJunPin) {
+		this.feiTaiFenKgJunPin = feiTaiFenKgJunPin;
+	}
+
+	public String getZhengLiuGaoHengDian() {
+		return zhengLiuGaoHengDian;
+	}
+
+	public void setZhengLiuGaoHengDian(String zhengLiuGaoHengDian) {
+		this.zhengLiuGaoHengDian = zhengLiuGaoHengDian;
+	}
+
+	public String getFanYingQiHao() {
+		return fanYingQiHao;
+	}
+
+	public void setFanYingQiHao(String fanYingQiHao) {
+		this.fanYingQiHao = fanYingQiHao;
+	}
+
+	public String getGuiGe() {
+		return guiGe;
+	}
+
+	public void setGuiGe(String guiGe) {
+		this.guiGe = guiGe;
+	}
+
+	public String getYearMonthDayJunPin() {
+		return yearMonthDayJunPin;
+	}
+
+	public void setYearMonthDayJunPin(String yearMonthDayJunPin) {
+		this.yearMonthDayJunPin = yearMonthDayJunPin;
+	}
+
+	public String getPaBiKg() {
+		return paBiKg;
+	}
+
+	public void setPaBiKg(String paBiKg) {
+		this.paBiKg = paBiKg;
+	}
+
+	public String getShiYongCiShuJunPin() {
+		return shiYongCiShuJunPin;
+	}
+
+	public void setShiYongCiShuJunPin(String shiYongCiShuJunPin) {
+		this.shiYongCiShuJunPin = shiYongCiShuJunPin;
+	}
+
+	public String getGuiGeJunPin() {
+		return guiGeJunPin;
+	}
+
+	public void setGuiGeJunPin(String guiGeJunPin) {
+		this.guiGeJunPin = guiGeJunPin;
+	}
+
+	public String getYuanSuClJunPin() {
+		return yuanSuClJunPin;
+	}
+
+	public void setYuanSuClJunPin(String yuanSuClJunPin) {
+		this.yuanSuClJunPin = yuanSuClJunPin;
+	}
+
+	public String getYearMonthDay() {
+		return yearMonthDay;
+	}
+
+	public void setYearMonthDay(String yearMonthDay) {
+		this.yearMonthDay = yearMonthDay;
+	}
+
+	public String getCiYuanKg() {
+		return ciYuanKg;
+	}
+
+	public void setCiYuanKg(String ciYuanKg) {
+		this.ciYuanKg = ciYuanKg;
+	}
+
+	public String getKaoHeDengJiChuMeng() {
+		return kaoHeDengJiChuMeng;
+	}
+
+	public void setKaoHeDengJiChuMeng(String kaoHeDengJiChuMeng) {
+		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMeng;
+	}
+
+	public String getTongDaoJunPin() {
+		return tongDaoJunPin;
+	}
+
+	public void setTongDaoJunPin(String tongDaoJunPin) {
+		this.tongDaoJunPin = tongDaoJunPin;
+	}
+
+	public String getShengChanLuHaoJunPin() {
+		return shengChanLuHaoJunPin;
+	}
+
+	public void setShengChanLuHaoJunPin(String shengChanLuHaoJunPin) {
+		this.shengChanLuHaoJunPin = shengChanLuHaoJunPin;
+	}
+
+	public String getYuanSuCJunPin() {
+		return yuanSuCJunPin;
+	}
+
+	public void setYuanSuCJunPin(String yuanSuCJunPin) {
+		this.yuanSuCJunPin = yuanSuCJunPin;
+	}
+
+	public String getMg() {
+		return mg;
+	}
+
+	public void setMg(String mg) {
+		this.mg = mg;
+	}
+
+	public String getTiCl4() {
+		return tiCl4;
+	}
+
+	public void setTiCl4(String tiCl4) {
+		this.tiCl4 = tiCl4;
+	}
+
+	public String getFanYingQiHaoJunPin() {
+		return fanYingQiHaoJunPin;
+	}
+
+	public void setFanYingQiHaoJunPin(String fanYingQiHaoJunPin) {
+		this.fanYingQiHaoJunPin = fanYingQiHaoJunPin;
+	}
+
+	public String getQiHaoJunPin() {
+		return qiHaoJunPin;
+	}
+
+	public void setQiHaoJunPin(String qiHaoJunPin) {
+		this.qiHaoJunPin = qiHaoJunPin;
+	}
+
+	public String getYuanSuCl() {
+		return yuanSuCl;
+	}
+
+	public void setYuanSuCl(String yuanSuCl) {
+		this.yuanSuCl = yuanSuCl;
+	}
+
+	public String getKaoHeDengJiChuMengJunPin() {
+		return kaoHeDengJiChuMengJunPin;
+	}
+
+	public void setKaoHeDengJiChuMengJunPin(String kaoHeDengJiChuMengJunPin) {
+		this.kaoHeDengJiChuMengJunPin = kaoHeDengJiChuMengJunPin;
+	}
+
+	public String getTiCl4JunPin() {
+		return tiCl4JunPin;
+	}
+
+	public void setTiCl4JunPin(String tiCl4JunPin) {
+		this.tiCl4JunPin = tiCl4JunPin;
+	}
+
+	public String getJingZhongJunPin() {
+		return jingZhongJunPin;
+	}
+
+	public void setJingZhongJunPin(String jingZhongJunPin) {
+		this.jingZhongJunPin = jingZhongJunPin;
+	}
+
+	public String getYuanSuHb() {
+		return yuanSuHb;
+	}
+
+	public void setYuanSuHb(String yuanSuHb) {
+		this.yuanSuHb = yuanSuHb;
+	}
+
+	public String getShiYongCiShu() {
+		return shiYongCiShu;
+	}
+
+	public void setShiYongCiShu(String shiYongCiShu) {
+		this.shiYongCiShu = shiYongCiShu;
+	}
+
+	public String getFeiPaBiKgJunPin() {
+		return feiPaBiKgJunPin;
+	}
+
+	public void setFeiPaBiKgJunPin(String feiPaBiKgJunPin) {
+		this.feiPaBiKgJunPin = feiPaBiKgJunPin;
+	}
+
+	public String getYuansuMnJunPin() {
+		return yuansuMnJunPin;
+	}
+
+	public void setYuansuMnJunPin(String yuansuMnJunPin) {
+		this.yuansuMnJunPin = yuansuMnJunPin;
+	}
+
+	public String getYearJunPin() {
+		return yearJunPin;
+	}
+
+	public void setYearJunPin(String yearJunPin) {
+		this.yearJunPin = yearJunPin;
+	}
+
+	public String getJiaMoCiJunPin() {
+		return jiaMoCiJunPin;
+	}
+
+	public void setJiaMoCiJunPin(String jiaMoCiJunPin) {
+		this.jiaMoCiJunPin = jiaMoCiJunPin;
+	}
+
+	public String getGongYiShiYan() {
+		return gongYiShiYan;
+	}
+
+	public void setGongYiShiYan(String gongYiShiYan) {
+		this.gongYiShiYan = gongYiShiYan;
+	}
+
+	public String getYuanSuHJunPin() {
+		return yuanSuHJunPin;
+	}
+
+	public void setYuanSuHJunPin(String yuanSuHJunPin) {
+		this.yuanSuHJunPin = yuanSuHJunPin;
+	}
+
+	public String getTongDao() {
+		return tongDao;
+	}
+
+	public void setTongDao(String tongDao) {
+		this.tongDao = tongDao;
+	}
+
+	public String getYuanSuHbJunPin() {
+		return yuanSuHbJunPin;
+	}
+
+	public void setYuanSuHbJunPin(String yuanSuHbJunPin) {
+		this.yuanSuHbJunPin = yuanSuHbJunPin;
+	}
+
+	public String getShouXuanFeiLiaoKg() {
+		return shouXuanFeiLiaoKg;
+	}
+
+	public void setShouXuanFeiLiaoKg(String shouXuanFeiLiaoKg) {
+		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKg;
+	}
+
+	public String getMonthJunPin() {
+		return monthJunPin;
+	}
+
+	public void setMonthJunPin(String monthJunPin) {
+		this.monthJunPin = monthJunPin;
+	}
+
+	public String getFeiShangMaoKg() {
+		return feiShangMaoKg;
+	}
+
+	public void setFeiShangMaoKg(String feiShangMaoKg) {
+		this.feiShangMaoKg = feiShangMaoKg;
+	}
+
+	public String getYuanZuiGaoWenDuJunPin() {
+		return yuanZuiGaoWenDuJunPin;
+	}
+
+	public void setYuanZuiGaoWenDuJunPin(String yuanZuiGaoWenDuJunPin) {
+		this.yuanZuiGaoWenDuJunPin = yuanZuiGaoWenDuJunPin;
+	}
+
+	public String getFeiDiPiKg() {
+		return feiDiPiKg;
+	}
+
+	public void setFeiDiPiKg(String feiDiPiKg) {
+		this.feiDiPiKg = feiDiPiKg;
+	}
+
+	public String getChuLuZhenKongDuJunPin() {
+		return chuLuZhenKongDuJunPin;
+	}
+
+	public void setChuLuZhenKongDuJunPin(String chuLuZhenKongDuJunPin) {
+		this.chuLuZhenKongDuJunPin = chuLuZhenKongDuJunPin;
+	}
+
+	public String getMgJunPin() {
+		return mgJunPin;
+	}
+
+	public void setMgJunPin(String mgJunPin) {
+		this.mgJunPin = mgJunPin;
+	}
 
 	public String getGongYiShiYanJunPin2() {
 		return gongYiShiYanJunPin2;
@@ -549,1805 +1574,13 @@ public class InputByNewFormBean {
 		this.mgJunPin2 = mgJunPin2;
 	}
 
-	/** month property */
-	private String month;
-
-	/** beiZhuShuoMing property */
-	private String beiZhuShuoMing;
-
-	/** shangMaoKgJunPin property */
-	private String shangMaoKgJunPin;
-
-	/** day property */
-	private String day;
-
-	/** luCiJunPin property */
-	private String luCiJunPin;
-
-	/** chengPinLv property */
-	private String chengPinLv;
-
-	/** dayJunPin property */
-	private String dayJunPin;
-
-	/** gongYiTiaoZheng property */
-	private String gongYiTiaoZheng;
-
-	/** feiTaiFenKgJunPin property */
-	private String feiTaiFenKgJunPin;
-
-	/** zhengLiuGaoHengDian property */
-	private String zhengLiuGaoHengDian;
-
-	/** fanYingQiHao property */
-	private String fanYingQiHao;
-
-	/** guiGe property */
-	private String guiGe;
-
-	/** yearMonthDayJunPin property */
-	private String yearMonthDayJunPin;
-
-	/** paBiKg property */
-	private String paBiKg;
-
-	/** shiYongCiShuJunPin property */
-	private String shiYongCiShuJunPin;
-
-	/** guiGeJunPin property */
-	private String guiGeJunPin;
-
-	/** yuanSuClJunPin property */
-	private String yuanSuClJunPin;
-
-	/** yearMonthDay property */
-	private String yearMonthDay;
-
-	/** ciYuanKg property */
-	private String ciYuanKg;
-
-	/** kaoHeDengJiChuMeng property */
-	private String kaoHeDengJiChuMeng;
-
-	/** tongDaoJunPin property */
-	private String tongDaoJunPin;
-
-	/** shengChanLuHaoJunPin property */
-	private String shengChanLuHaoJunPin;
-
-	/** yuanSuCJunPin property */
-	private String yuanSuCJunPin;
-
-	/** mg property */
-	private String mg;
-
-	/** tiCl4 property */
-	private String tiCl4;
-
-	/** fanYingQiHaoJunPin property */
-	private String fanYingQiHaoJunPin;
-
-	/** qiHaoJunPin property */
-	private String qiHaoJunPin;
-
-	/** yuanSuCl property */
-	private String yuanSuCl;
-
-	/** kaoHeDengJiChuMengJunPin property */
-	private String kaoHeDengJiChuMengJunPin;
-
-	/** tiCl4JunPin property */
-	private String tiCl4JunPin;
-
-	/** jingZhongJunPin property */
-	private String jingZhongJunPin;
-
-	/** yuanSuHb property */
-	private String yuanSuHb;
-
-	/** shiYongCiShu property */
-	private String shiYongCiShu;
-
-	/** feiPaBiKgJunPin property */
-	private String feiPaBiKgJunPin;
-
-	/** yuansuMnJunPin property */
-	private String yuansuMnJunPin;
-
-	/** yearJunPin property */
-	private String yearJunPin;
-
-	/** jiaMoCiJunPin property */
-	private String jiaMoCiJunPin;
-
-	/** gongYiShiYan property */
-	private String gongYiShiYan;
-
-	/** yuanSuHJunPin property */
-	private String yuanSuHJunPin;
-
-	/** tongDao property */
-	private String tongDao;
-
-	/** yuanSuHbJunPin property */
-	private String yuanSuHbJunPin;
-
-	/** shouXuanFeiLiaoKg property */
-	private String shouXuanFeiLiaoKg;
-
-	/** monthJunPin property */
-	private String monthJunPin;
-
-	/** feiShangMaoKg property */
-	private String feiShangMaoKg;
-
-	/** yuanZuiGaoWenDuJunPin property */
-	private String yuanZuiGaoWenDuJunPin;
-
-	/** feiDiPiKg property */
-	private String feiDiPiKg;
-
-	/** chuLuZhenKongDuJunPin property */
-	private String chuLuZhenKongDuJunPin;
-
-	/** mgJunPin property */
-	private String mgJunPin;
-
-	private String gongYiShiYanJunPin2;
-
-	private String zongPaiMeiLiangKgJunPin2;
-
-	private String shengChanGuZhangJunPin2;
-
-	private String ciYuanKgJunPin2;
-
-	private String beiZhuShuoMingJunPin2;
-
-	private String yuanSuSiJunPin2;
-
-	private String chengPinLvJunPin2;
-
-	private String feiShangMaoKgJunPin2;
-
-	private String yuanSuFeJunPin2;
-
-	private String diPiKgJunPin2;
-
-	private String feiDiPiKgJunPin2;
-
-	private String paBiKgJunPin2;
-
-	private String dengJiHanMengJunPin2;
-
-	private String zhuanZhengLiuJunPin2;
-
-	private String gongYiTiaoZhengJunPin2;
-
-	private String sunHaoKgJunPin2;
-
-	private String shouXuanFeiLiaoKgJunPin2;
-
-	private String maoZhongJunPin2;
-
-	private String jiaShouCiJunPin2;
-
-	private String zhengLiuGaoHengDianJunPin2;
-
-	private String yuanSuOJunPin2;
-
-	private String yuanSuNJunPin2;
-
-	private String shangMaoKgJunPin2;
-
-	private String luCiJunPin2;
-
-	private String dayJunPin2;
-
-	private String feiTaiFenKgJunPin2;
-
-	private String yearMonthDayJunPin2;
-
-	private String shiYongCiShuJunPin2;
-
-	private String guiGeJunPin2;
-
-	private String yuanSuClJunPin2;
-
-	private String tongDaoJunPin2;
-
-	private String shengChanLuHaoJunPin2;
-
-	private String yuanSuCJunPin2;
-
-	private String fanYingQiHaoJunPin2;
-
-	private String qiHaoJunPin2;
-
-	private String kaoHeDengJiChuMengJunPin2;
-
-	private String tiCl4JunPin2;
-
-	private String jingZhongJunPin2;
-
-	private String feiPaBiKgJunPin2;
-
-	private String yuansuMnJunPin2;
-
-	private String yearJunPin2;
-
-	private String jiaMoCiJunPin2;
-
-	private String yuanSuHJunPin2;
-
-	private String yuanSuHbJunPin2;
-
-	private String monthJunPin2;
-
-	private String yuanZuiGaoWenDuJunPin2;
-
-	private String chuLuZhenKongDuJunPin2;
-
-	private String mgJunPin2;
-
-
-	/*
-	 * Generated Methods
-	 */
-
-	/** 
-	 * Method validate
-	 * @param mapping
-	 * @param request
-	 * @return ActionErrors
-	 */
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/** 
+	/**
 	 * Method reset
+	 * 
 	 * @param mapping
 	 * @param request
 	 */
 	public void reset(ActionMapping mapping, HttpServletRequest request) {
 		// TODO Auto-generated method stub
-	}
-
-	/** 
-	 * Returns the gongYiShiYanJunPin.
-	 * @return String
-	 */
-	public String getGongYiShiYanJunPin() {
-		return gongYiShiYanJunPin;
-	}
-
-	/** 
-	 * Set the gongYiShiYanJunPin.
-	 * @param gongYiShiYanJunPin The gongYiShiYanJunPin to set
-	 */
-	public void setGongYiShiYanJunPin(String gongYiShiYanJunPin) {
-		this.gongYiShiYanJunPin = gongYiShiYanJunPin;
-	}
-
-	/** 
-	 * Returns the chuLuZhenKongDu.
-	 * @return String
-	 */
-	public String getChuLuZhenKongDu() {
-		return chuLuZhenKongDu;
-	}
-
-	/** 
-	 * Set the chuLuZhenKongDu.
-	 * @param chuLuZhenKongDu The chuLuZhenKongDu to set
-	 */
-	public void setChuLuZhenKongDu(String chuLuZhenKongDu) {
-		this.chuLuZhenKongDu = chuLuZhenKongDu;
-	}
-
-	/** 
-	 * Returns the zongPaiMeiLiangKgJunPin.
-	 * @return String
-	 */
-	public String getZongPaiMeiLiangKgJunPin() {
-		return zongPaiMeiLiangKgJunPin;
-	}
-
-	/** 
-	 * Set the zongPaiMeiLiangKgJunPin.
-	 * @param zongPaiMeiLiangKgJunPin The zongPaiMeiLiangKgJunPin to set
-	 */
-	public void setZongPaiMeiLiangKgJunPin(String zongPaiMeiLiangKgJunPin) {
-		this.zongPaiMeiLiangKgJunPin = zongPaiMeiLiangKgJunPin;
-	}
-
-	/** 
-	 * Returns the maoZhong.
-	 * @return String
-	 */
-	public String getMaoZhong() {
-		return maoZhong;
-	}
-
-	/** 
-	 * Set the maoZhong.
-	 * @param maoZhong The maoZhong to set
-	 */
-	public void setMaoZhong(String maoZhong) {
-		this.maoZhong = maoZhong;
-	}
-
-	/** 
-	 * Returns the shengChanGuZhang.
-	 * @return String
-	 */
-	public String getShengChanGuZhang() {
-		return shengChanGuZhang;
-	}
-
-	/** 
-	 * Set the shengChanGuZhang.
-	 * @param shengChanGuZhang The shengChanGuZhang to set
-	 */
-	public void setShengChanGuZhang(String shengChanGuZhang) {
-		this.shengChanGuZhang = shengChanGuZhang;
-	}
-
-	/** 
-	 * Returns the shengChanGuZhangJunPin.
-	 * @return String
-	 */
-	public String getShengChanGuZhangJunPin() {
-		return shengChanGuZhangJunPin;
-	}
-
-	/** 
-	 * Set the shengChanGuZhangJunPin.
-	 * @param shengChanGuZhangJunPin The shengChanGuZhangJunPin to set
-	 */
-	public void setShengChanGuZhangJunPin(String shengChanGuZhangJunPin) {
-		this.shengChanGuZhangJunPin = shengChanGuZhangJunPin;
-	}
-
-	/** 
-	 * Returns the diPiKg.
-	 * @return String
-	 */
-	public String getDiPiKg() {
-		return diPiKg;
-	}
-
-	/** 
-	 * Set the diPiKg.
-	 * @param diPiKg The diPiKg to set
-	 */
-	public void setDiPiKg(String diPiKg) {
-		this.diPiKg = diPiKg;
-	}
-
-	/** 
-	 * Returns the luCi.
-	 * @return String
-	 */
-	public String getLuCi() {
-		return luCi;
-	}
-
-	/** 
-	 * Set the luCi.
-	 * @param luCi The luCi to set
-	 */
-	public void setLuCi(String luCi) {
-		this.luCi = luCi;
-	}
-
-	/** 
-	 * Returns the ciYuanKgJunPin.
-	 * @return String
-	 */
-	public String getCiYuanKgJunPin() {
-		return ciYuanKgJunPin;
-	}
-
-	/** 
-	 * Set the ciYuanKgJunPin.
-	 * @param ciYuanKgJunPin The ciYuanKgJunPin to set
-	 */
-	public void setCiYuanKgJunPin(String ciYuanKgJunPin) {
-		this.ciYuanKgJunPin = ciYuanKgJunPin;
-	}
-
-	/** 
-	 * Returns the yuansuMn.
-	 * @return String
-	 */
-	public String getYuansuMn() {
-		return yuansuMn;
-	}
-
-	/** 
-	 * Set the yuansuMn.
-	 * @param yuansuMn The yuansuMn to set
-	 */
-	public void setYuansuMn(String yuansuMn) {
-		this.yuansuMn = yuansuMn;
-	}
-
-	/** 
-	 * Returns the beiZhuShuoMingJunPin.
-	 * @return String
-	 */
-	public String getBeiZhuShuoMingJunPin() {
-		return beiZhuShuoMingJunPin;
-	}
-
-	/** 
-	 * Set the beiZhuShuoMingJunPin.
-	 * @param beiZhuShuoMingJunPin The beiZhuShuoMingJunPin to set
-	 */
-	public void setBeiZhuShuoMingJunPin(String beiZhuShuoMingJunPin) {
-		this.beiZhuShuoMingJunPin = beiZhuShuoMingJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuSiJunPin.
-	 * @return String
-	 */
-	public String getYuanSuSiJunPin() {
-		return yuanSuSiJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuSiJunPin.
-	 * @param yuanSuSiJunPin The yuanSuSiJunPin to set
-	 */
-	public void setYuanSuSiJunPin(String yuanSuSiJunPin) {
-		this.yuanSuSiJunPin = yuanSuSiJunPin;
-	}
-
-	/** 
-	 * Returns the chengPinLvJunPin.
-	 * @return String
-	 */
-	public String getChengPinLvJunPin() {
-		return chengPinLvJunPin;
-	}
-
-	/** 
-	 * Set the chengPinLvJunPin.
-	 * @param chengPinLvJunPin The chengPinLvJunPin to set
-	 */
-	public void setChengPinLvJunPin(String chengPinLvJunPin) {
-		this.chengPinLvJunPin = chengPinLvJunPin;
-	}
-
-	/** 
-	 * Returns the feiPaBiKg.
-	 * @return String
-	 */
-	public String getFeiPaBiKg() {
-		return feiPaBiKg;
-	}
-
-	/** 
-	 * Set the feiPaBiKg.
-	 * @param feiPaBiKg The feiPaBiKg to set
-	 */
-	public void setFeiPaBiKg(String feiPaBiKg) {
-		this.feiPaBiKg = feiPaBiKg;
-	}
-
-	/** 
-	 * Returns the feiShangMaoKgJunPin.
-	 * @return String
-	 */
-	public String getFeiShangMaoKgJunPin() {
-		return feiShangMaoKgJunPin;
-	}
-
-	/** 
-	 * Set the feiShangMaoKgJunPin.
-	 * @param feiShangMaoKgJunPin The feiShangMaoKgJunPin to set
-	 */
-	public void setFeiShangMaoKgJunPin(String feiShangMaoKgJunPin) {
-		this.feiShangMaoKgJunPin = feiShangMaoKgJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuO.
-	 * @return String
-	 */
-	public String getYuanSuO() {
-		return yuanSuO;
-	}
-
-	/** 
-	 * Set the yuanSuO.
-	 * @param yuanSuO The yuanSuO to set
-	 */
-	public void setYuanSuO(String yuanSuO) {
-		this.yuanSuO = yuanSuO;
-	}
-
-	/** 
-	 * Returns the yuanSuFeJunPin.
-	 * @return String
-	 */
-	public String getYuanSuFeJunPin() {
-		return yuanSuFeJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuFeJunPin.
-	 * @param yuanSuFeJunPin The yuanSuFeJunPin to set
-	 */
-	public void setYuanSuFeJunPin(String yuanSuFeJunPin) {
-		this.yuanSuFeJunPin = yuanSuFeJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuN.
-	 * @return String
-	 */
-	public String getYuanSuN() {
-		return yuanSuN;
-	}
-
-	/** 
-	 * Set the yuanSuN.
-	 * @param yuanSuN The yuanSuN to set
-	 */
-	public void setYuanSuN(String yuanSuN) {
-		this.yuanSuN = yuanSuN;
-	}
-
-	/** 
-	 * Returns the jingZhong.
-	 * @return String
-	 */
-	public String getJingZhong() {
-		return jingZhong;
-	}
-
-	/** 
-	 * Set the jingZhong.
-	 * @param jingZhong The jingZhong to set
-	 */
-	public void setJingZhong(String jingZhong) {
-		this.jingZhong = jingZhong;
-	}
-
-	/** 
-	 * Returns the diPiKgJunPin.
-	 * @return String
-	 */
-	public String getDiPiKgJunPin() {
-		return diPiKgJunPin;
-	}
-
-	/** 
-	 * Set the diPiKgJunPin.
-	 * @param diPiKgJunPin The diPiKgJunPin to set
-	 */
-	public void setDiPiKgJunPin(String diPiKgJunPin) {
-		this.diPiKgJunPin = diPiKgJunPin;
-	}
-
-	/** 
-	 * Returns the year.
-	 * @return String
-	 */
-	public String getYear() {
-		return year;
-	}
-
-	/** 
-	 * Set the year.
-	 * @param year The year to set
-	 */
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	/** 
-	 * Returns the dengJiHanMeng.
-	 * @return String
-	 */
-	public String getDengJiHanMeng() {
-		return dengJiHanMeng;
-	}
-
-	/** 
-	 * Set the dengJiHanMeng.
-	 * @param dengJiHanMeng The dengJiHanMeng to set
-	 */
-	public void setDengJiHanMeng(String dengJiHanMeng) {
-		this.dengJiHanMeng = dengJiHanMeng;
-	}
-
-	/** 
-	 * Returns the shangMaoKg.
-	 * @return String
-	 */
-	public String getShangMaoKg() {
-		return shangMaoKg;
-	}
-
-	/** 
-	 * Set the shangMaoKg.
-	 * @param shangMaoKg The shangMaoKg to set
-	 */
-	public void setShangMaoKg(String shangMaoKg) {
-		this.shangMaoKg = shangMaoKg;
-	}
-
-	/** 
-	 * Returns the shengChanLuHao.
-	 * @return String
-	 */
-	public String getShengChanLuHao() {
-		return shengChanLuHao;
-	}
-
-	/** 
-	 * Set the shengChanLuHao.
-	 * @param shengChanLuHao The shengChanLuHao to set
-	 */
-	public void setShengChanLuHao(String shengChanLuHao) {
-		this.shengChanLuHao = shengChanLuHao;
-	}
-
-	/** 
-	 * Returns the jiaShouCi.
-	 * @return String
-	 */
-	public String getJiaShouCi() {
-		return jiaShouCi;
-	}
-
-	/** 
-	 * Set the jiaShouCi.
-	 * @param jiaShouCi The jiaShouCi to set
-	 */
-	public void setJiaShouCi(String jiaShouCi) {
-		this.jiaShouCi = jiaShouCi;
-	}
-
-	/** 
-	 * Returns the feiDiPiKgJunPin.
-	 * @return String
-	 */
-	public String getFeiDiPiKgJunPin() {
-		return feiDiPiKgJunPin;
-	}
-
-	/** 
-	 * Set the feiDiPiKgJunPin.
-	 * @param feiDiPiKgJunPin The feiDiPiKgJunPin to set
-	 */
-	public void setFeiDiPiKgJunPin(String feiDiPiKgJunPin) {
-		this.feiDiPiKgJunPin = feiDiPiKgJunPin;
-	}
-
-	/** 
-	 * Returns the zhuanZhengLiu.
-	 * @return String
-	 */
-	public String getZhuanZhengLiu() {
-		return zhuanZhengLiu;
-	}
-
-	/** 
-	 * Set the zhuanZhengLiu.
-	 * @param zhuanZhengLiu The zhuanZhengLiu to set
-	 */
-	public void setZhuanZhengLiu(String zhuanZhengLiu) {
-		this.zhuanZhengLiu = zhuanZhengLiu;
-	}
-
-	/** 
-	 * Returns the paBiKgJunPin.
-	 * @return String
-	 */
-	public String getPaBiKgJunPin() {
-		return paBiKgJunPin;
-	}
-
-	/** 
-	 * Set the paBiKgJunPin.
-	 * @param paBiKgJunPin The paBiKgJunPin to set
-	 */
-	public void setPaBiKgJunPin(String paBiKgJunPin) {
-		this.paBiKgJunPin = paBiKgJunPin;
-	}
-
-	/** 
-	 * Returns the zongPaiMeiLiangKg.
-	 * @return String
-	 */
-	public String getZongPaiMeiLiangKg() {
-		return zongPaiMeiLiangKg;
-	}
-
-	/** 
-	 * Set the zongPaiMeiLiangKg.
-	 * @param zongPaiMeiLiangKg The zongPaiMeiLiangKg to set
-	 */
-	public void setZongPaiMeiLiangKg(String zongPaiMeiLiangKg) {
-		this.zongPaiMeiLiangKg = zongPaiMeiLiangKg;
-	}
-
-	/** 
-	 * Returns the dengJiHanMengJunPin.
-	 * @return String
-	 */
-	public String getDengJiHanMengJunPin() {
-		return dengJiHanMengJunPin;
-	}
-
-	/** 
-	 * Set the dengJiHanMengJunPin.
-	 * @param dengJiHanMengJunPin The dengJiHanMengJunPin to set
-	 */
-	public void setDengJiHanMengJunPin(String dengJiHanMengJunPin) {
-		this.dengJiHanMengJunPin = dengJiHanMengJunPin;
-	}
-
-	/** 
-	 * Returns the zhuanZhengLiuJunPin.
-	 * @return String
-	 */
-	public String getZhuanZhengLiuJunPin() {
-		return zhuanZhengLiuJunPin;
-	}
-
-	/** 
-	 * Set the zhuanZhengLiuJunPin.
-	 * @param zhuanZhengLiuJunPin The zhuanZhengLiuJunPin to set
-	 */
-	public void setZhuanZhengLiuJunPin(String zhuanZhengLiuJunPin) {
-		this.zhuanZhengLiuJunPin = zhuanZhengLiuJunPin;
-	}
-
-	/** 
-	 * Returns the gongYiTiaoZhengJunPin.
-	 * @return String
-	 */
-	public String getGongYiTiaoZhengJunPin() {
-		return gongYiTiaoZhengJunPin;
-	}
-
-	/** 
-	 * Set the gongYiTiaoZhengJunPin.
-	 * @param gongYiTiaoZhengJunPin The gongYiTiaoZhengJunPin to set
-	 */
-	public void setGongYiTiaoZhengJunPin(String gongYiTiaoZhengJunPin) {
-		this.gongYiTiaoZhengJunPin = gongYiTiaoZhengJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuSi.
-	 * @return String
-	 */
-	public String getYuanSuSi() {
-		return yuanSuSi;
-	}
-
-	/** 
-	 * Set the yuanSuSi.
-	 * @param yuanSuSi The yuanSuSi to set
-	 */
-	public void setYuanSuSi(String yuanSuSi) {
-		this.yuanSuSi = yuanSuSi;
-	}
-
-	/** 
-	 * Returns the yuanZuiGaoWenDu.
-	 * @return String
-	 */
-	public String getYuanZuiGaoWenDu() {
-		return yuanZuiGaoWenDu;
-	}
-
-	/** 
-	 * Set the yuanZuiGaoWenDu.
-	 * @param yuanZuiGaoWenDu The yuanZuiGaoWenDu to set
-	 */
-	public void setYuanZuiGaoWenDu(String yuanZuiGaoWenDu) {
-		this.yuanZuiGaoWenDu = yuanZuiGaoWenDu;
-	}
-
-	/** 
-	 * Returns the yuanSuH.
-	 * @return String
-	 */
-	public String getYuanSuH() {
-		return yuanSuH;
-	}
-
-	/** 
-	 * Set the yuanSuH.
-	 * @param yuanSuH The yuanSuH to set
-	 */
-	public void setYuanSuH(String yuanSuH) {
-		this.yuanSuH = yuanSuH;
-	}
-
-	/** 
-	 * Returns the sunHaoKgJunPin.
-	 * @return String
-	 */
-	public String getSunHaoKgJunPin() {
-		return sunHaoKgJunPin;
-	}
-
-	/** 
-	 * Set the sunHaoKgJunPin.
-	 * @param sunHaoKgJunPin The sunHaoKgJunPin to set
-	 */
-	public void setSunHaoKgJunPin(String sunHaoKgJunPin) {
-		this.sunHaoKgJunPin = sunHaoKgJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuC.
-	 * @return String
-	 */
-	public String getYuanSuC() {
-		return yuanSuC;
-	}
-
-	/** 
-	 * Set the yuanSuC.
-	 * @param yuanSuC The yuanSuC to set
-	 */
-	public void setYuanSuC(String yuanSuC) {
-		this.yuanSuC = yuanSuC;
-	}
-
-	/** 
-	 * Returns the yuanSuFe.
-	 * @return String
-	 */
-	public String getYuanSuFe() {
-		return yuanSuFe;
-	}
-
-	/** 
-	 * Set the yuanSuFe.
-	 * @param yuanSuFe The yuanSuFe to set
-	 */
-	public void setYuanSuFe(String yuanSuFe) {
-		this.yuanSuFe = yuanSuFe;
-	}
-
-	/** 
-	 * Returns the jiaMoCi.
-	 * @return String
-	 */
-	public String getJiaMoCi() {
-		return jiaMoCi;
-	}
-
-	/** 
-	 * Set the jiaMoCi.
-	 * @param jiaMoCi The jiaMoCi to set
-	 */
-	public void setJiaMoCi(String jiaMoCi) {
-		this.jiaMoCi = jiaMoCi;
-	}
-
-	/** 
-	 * Returns the shouXuanFeiLiaoKgJunPin.
-	 * @return String
-	 */
-	public String getShouXuanFeiLiaoKgJunPin() {
-		return shouXuanFeiLiaoKgJunPin;
-	}
-
-	/** 
-	 * Set the shouXuanFeiLiaoKgJunPin.
-	 * @param shouXuanFeiLiaoKgJunPin The shouXuanFeiLiaoKgJunPin to set
-	 */
-	public void setShouXuanFeiLiaoKgJunPin(String shouXuanFeiLiaoKgJunPin) {
-		this.shouXuanFeiLiaoKgJunPin = shouXuanFeiLiaoKgJunPin;
-	}
-
-	/** 
-	 * Returns the sunHaoKg.
-	 * @return String
-	 */
-	public String getSunHaoKg() {
-		return sunHaoKg;
-	}
-
-	/** 
-	 * Set the sunHaoKg.
-	 * @param sunHaoKg The sunHaoKg to set
-	 */
-	public void setSunHaoKg(String sunHaoKg) {
-		this.sunHaoKg = sunHaoKg;
-	}
-
-	/** 
-	 * Returns the maoZhongJunPin.
-	 * @return String
-	 */
-	public String getMaoZhongJunPin() {
-		return maoZhongJunPin;
-	}
-
-	/** 
-	 * Set the maoZhongJunPin.
-	 * @param maoZhongJunPin The maoZhongJunPin to set
-	 */
-	public void setMaoZhongJunPin(String maoZhongJunPin) {
-		this.maoZhongJunPin = maoZhongJunPin;
-	}
-
-	/** 
-	 * Returns the feiTaiFenKg.
-	 * @return String
-	 */
-	public String getFeiTaiFenKg() {
-		return feiTaiFenKg;
-	}
-
-	/** 
-	 * Set the feiTaiFenKg.
-	 * @param feiTaiFenKg The feiTaiFenKg to set
-	 */
-	public void setFeiTaiFenKg(String feiTaiFenKg) {
-		this.feiTaiFenKg = feiTaiFenKg;
-	}
-
-	/** 
-	 * Returns the jiaShouCiJunPin.
-	 * @return String
-	 */
-	public String getJiaShouCiJunPin() {
-		return jiaShouCiJunPin;
-	}
-
-	/** 
-	 * Set the jiaShouCiJunPin.
-	 * @param jiaShouCiJunPin The jiaShouCiJunPin to set
-	 */
-	public void setJiaShouCiJunPin(String jiaShouCiJunPin) {
-		this.jiaShouCiJunPin = jiaShouCiJunPin;
-	}
-
-	/** 
-	 * Returns the zhengLiuGaoHengDianJunPin.
-	 * @return String
-	 */
-	public String getZhengLiuGaoHengDianJunPin() {
-		return zhengLiuGaoHengDianJunPin;
-	}
-
-	/** 
-	 * Set the zhengLiuGaoHengDianJunPin.
-	 * @param zhengLiuGaoHengDianJunPin The zhengLiuGaoHengDianJunPin to set
-	 */
-	public void setZhengLiuGaoHengDianJunPin(String zhengLiuGaoHengDianJunPin) {
-		this.zhengLiuGaoHengDianJunPin = zhengLiuGaoHengDianJunPin;
-	}
-
-	/** 
-	 * Returns the qiHao.
-	 * @return String
-	 */
-	public String getQiHao() {
-		return qiHao;
-	}
-
-	/** 
-	 * Set the qiHao.
-	 * @param qiHao The qiHao to set
-	 */
-	public void setQiHao(String qiHao) {
-		this.qiHao = qiHao;
-	}
-
-	/** 
-	 * Returns the yuanSuOJunPin.
-	 * @return String
-	 */
-	public String getYuanSuOJunPin() {
-		return yuanSuOJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuOJunPin.
-	 * @param yuanSuOJunPin The yuanSuOJunPin to set
-	 */
-	public void setYuanSuOJunPin(String yuanSuOJunPin) {
-		this.yuanSuOJunPin = yuanSuOJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuNJunPin.
-	 * @return String
-	 */
-	public String getYuanSuNJunPin() {
-		return yuanSuNJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuNJunPin.
-	 * @param yuanSuNJunPin The yuanSuNJunPin to set
-	 */
-	public void setYuanSuNJunPin(String yuanSuNJunPin) {
-		this.yuanSuNJunPin = yuanSuNJunPin;
-	}
-
-	/** 
-	 * Returns the month.
-	 * @return String
-	 */
-	public String getMonth() {
-		return month;
-	}
-
-	/** 
-	 * Set the month.
-	 * @param month The month to set
-	 */
-	public void setMonth(String month) {
-		this.month = month;
-	}
-
-	/** 
-	 * Returns the beiZhuShuoMing.
-	 * @return String
-	 */
-	public String getBeiZhuShuoMing() {
-		return beiZhuShuoMing;
-	}
-
-	/** 
-	 * Set the beiZhuShuoMing.
-	 * @param beiZhuShuoMing The beiZhuShuoMing to set
-	 */
-	public void setBeiZhuShuoMing(String beiZhuShuoMing) {
-		this.beiZhuShuoMing = beiZhuShuoMing;
-	}
-
-	/** 
-	 * Returns the shangMaoKgJunPin.
-	 * @return String
-	 */
-	public String getShangMaoKgJunPin() {
-		return shangMaoKgJunPin;
-	}
-
-	/** 
-	 * Set the shangMaoKgJunPin.
-	 * @param shangMaoKgJunPin The shangMaoKgJunPin to set
-	 */
-	public void setShangMaoKgJunPin(String shangMaoKgJunPin) {
-		this.shangMaoKgJunPin = shangMaoKgJunPin;
-	}
-
-	/** 
-	 * Returns the day.
-	 * @return String
-	 */
-	public String getDay() {
-		return day;
-	}
-
-	/** 
-	 * Set the day.
-	 * @param day The day to set
-	 */
-	public void setDay(String day) {
-		this.day = day;
-	}
-
-	/** 
-	 * Returns the luCiJunPin.
-	 * @return String
-	 */
-	public String getLuCiJunPin() {
-		return luCiJunPin;
-	}
-
-	/** 
-	 * Set the luCiJunPin.
-	 * @param luCiJunPin The luCiJunPin to set
-	 */
-	public void setLuCiJunPin(String luCiJunPin) {
-		this.luCiJunPin = luCiJunPin;
-	}
-
-	/** 
-	 * Returns the chengPinLv.
-	 * @return String
-	 */
-	public String getChengPinLv() {
-		return chengPinLv;
-	}
-
-	/** 
-	 * Set the chengPinLv.
-	 * @param chengPinLv The chengPinLv to set
-	 */
-	public void setChengPinLv(String chengPinLv) {
-		this.chengPinLv = chengPinLv;
-	}
-
-	/** 
-	 * Returns the dayJunPin.
-	 * @return String
-	 */
-	public String getDayJunPin() {
-		return dayJunPin;
-	}
-
-	/** 
-	 * Set the dayJunPin.
-	 * @param dayJunPin The dayJunPin to set
-	 */
-	public void setDayJunPin(String dayJunPin) {
-		this.dayJunPin = dayJunPin;
-	}
-
-	/** 
-	 * Returns the gongYiTiaoZheng.
-	 * @return String
-	 */
-	public String getGongYiTiaoZheng() {
-		return gongYiTiaoZheng;
-	}
-
-	/** 
-	 * Set the gongYiTiaoZheng.
-	 * @param gongYiTiaoZheng The gongYiTiaoZheng to set
-	 */
-	public void setGongYiTiaoZheng(String gongYiTiaoZheng) {
-		this.gongYiTiaoZheng = gongYiTiaoZheng;
-	}
-
-	/** 
-	 * Returns the feiTaiFenKgJunPin.
-	 * @return String
-	 */
-	public String getFeiTaiFenKgJunPin() {
-		return feiTaiFenKgJunPin;
-	}
-
-	/** 
-	 * Set the feiTaiFenKgJunPin.
-	 * @param feiTaiFenKgJunPin The feiTaiFenKgJunPin to set
-	 */
-	public void setFeiTaiFenKgJunPin(String feiTaiFenKgJunPin) {
-		this.feiTaiFenKgJunPin = feiTaiFenKgJunPin;
-	}
-
-	/** 
-	 * Returns the zhengLiuGaoHengDian.
-	 * @return String
-	 */
-	public String getZhengLiuGaoHengDian() {
-		return zhengLiuGaoHengDian;
-	}
-
-	/** 
-	 * Set the zhengLiuGaoHengDian.
-	 * @param zhengLiuGaoHengDian The zhengLiuGaoHengDian to set
-	 */
-	public void setZhengLiuGaoHengDian(String zhengLiuGaoHengDian) {
-		this.zhengLiuGaoHengDian = zhengLiuGaoHengDian;
-	}
-
-	/** 
-	 * Returns the fanYingQiHao.
-	 * @return String
-	 */
-	public String getFanYingQiHao() {
-		return fanYingQiHao;
-	}
-
-	/** 
-	 * Set the fanYingQiHao.
-	 * @param fanYingQiHao The fanYingQiHao to set
-	 */
-	public void setFanYingQiHao(String fanYingQiHao) {
-		this.fanYingQiHao = fanYingQiHao;
-	}
-
-	/** 
-	 * Returns the guiGe.
-	 * @return String
-	 */
-	public String getGuiGe() {
-		return guiGe;
-	}
-
-	/** 
-	 * Set the guiGe.
-	 * @param guiGe The guiGe to set
-	 */
-	public void setGuiGe(String guiGe) {
-		this.guiGe = guiGe;
-	}
-
-	/** 
-	 * Returns the yearMonthDayJunPin.
-	 * @return String
-	 */
-	public String getYearMonthDayJunPin() {
-		return yearMonthDayJunPin;
-	}
-
-	/** 
-	 * Set the yearMonthDayJunPin.
-	 * @param yearMonthDayJunPin The yearMonthDayJunPin to set
-	 */
-	public void setYearMonthDayJunPin(String yearMonthDayJunPin) {
-		this.yearMonthDayJunPin = yearMonthDayJunPin;
-	}
-
-	/** 
-	 * Returns the paBiKg.
-	 * @return String
-	 */
-	public String getPaBiKg() {
-		return paBiKg;
-	}
-
-	/** 
-	 * Set the paBiKg.
-	 * @param paBiKg The paBiKg to set
-	 */
-	public void setPaBiKg(String paBiKg) {
-		this.paBiKg = paBiKg;
-	}
-
-	/** 
-	 * Returns the shiYongCiShuJunPin.
-	 * @return String
-	 */
-	public String getShiYongCiShuJunPin() {
-		return shiYongCiShuJunPin;
-	}
-
-	/** 
-	 * Set the shiYongCiShuJunPin.
-	 * @param shiYongCiShuJunPin The shiYongCiShuJunPin to set
-	 */
-	public void setShiYongCiShuJunPin(String shiYongCiShuJunPin) {
-		this.shiYongCiShuJunPin = shiYongCiShuJunPin;
-	}
-
-	/** 
-	 * Returns the guiGeJunPin.
-	 * @return String
-	 */
-	public String getGuiGeJunPin() {
-		return guiGeJunPin;
-	}
-
-	/** 
-	 * Set the guiGeJunPin.
-	 * @param guiGeJunPin The guiGeJunPin to set
-	 */
-	public void setGuiGeJunPin(String guiGeJunPin) {
-		this.guiGeJunPin = guiGeJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuClJunPin.
-	 * @return String
-	 */
-	public String getYuanSuClJunPin() {
-		return yuanSuClJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuClJunPin.
-	 * @param yuanSuClJunPin The yuanSuClJunPin to set
-	 */
-	public void setYuanSuClJunPin(String yuanSuClJunPin) {
-		this.yuanSuClJunPin = yuanSuClJunPin;
-	}
-
-	/** 
-	 * Returns the yearMonthDay.
-	 * @return String
-	 */
-	public String getYearMonthDay() {
-		return yearMonthDay;
-	}
-
-	/** 
-	 * Set the yearMonthDay.
-	 * @param yearMonthDay The yearMonthDay to set
-	 */
-	public void setYearMonthDay(String yearMonthDay) {
-		this.yearMonthDay = yearMonthDay;
-	}
-
-	/** 
-	 * Returns the ciYuanKg.
-	 * @return String
-	 */
-	public String getCiYuanKg() {
-		return ciYuanKg;
-	}
-
-	/** 
-	 * Set the ciYuanKg.
-	 * @param ciYuanKg The ciYuanKg to set
-	 */
-	public void setCiYuanKg(String ciYuanKg) {
-		this.ciYuanKg = ciYuanKg;
-	}
-
-	/** 
-	 * Returns the kaoHeDengJiChuMeng.
-	 * @return String
-	 */
-	public String getKaoHeDengJiChuMeng() {
-		return kaoHeDengJiChuMeng;
-	}
-
-	/** 
-	 * Set the kaoHeDengJiChuMeng.
-	 * @param kaoHeDengJiChuMeng The kaoHeDengJiChuMeng to set
-	 */
-	public void setKaoHeDengJiChuMeng(String kaoHeDengJiChuMeng) {
-		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMeng;
-	}
-
-	/** 
-	 * Returns the tongDaoJunPin.
-	 * @return String
-	 */
-	public String getTongDaoJunPin() {
-		return tongDaoJunPin;
-	}
-
-	/** 
-	 * Set the tongDaoJunPin.
-	 * @param tongDaoJunPin The tongDaoJunPin to set
-	 */
-	public void setTongDaoJunPin(String tongDaoJunPin) {
-		this.tongDaoJunPin = tongDaoJunPin;
-	}
-
-	/** 
-	 * Returns the shengChanLuHaoJunPin.
-	 * @return String
-	 */
-	public String getShengChanLuHaoJunPin() {
-		return shengChanLuHaoJunPin;
-	}
-
-	/** 
-	 * Set the shengChanLuHaoJunPin.
-	 * @param shengChanLuHaoJunPin The shengChanLuHaoJunPin to set
-	 */
-	public void setShengChanLuHaoJunPin(String shengChanLuHaoJunPin) {
-		this.shengChanLuHaoJunPin = shengChanLuHaoJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuCJunPin.
-	 * @return String
-	 */
-	public String getYuanSuCJunPin() {
-		return yuanSuCJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuCJunPin.
-	 * @param yuanSuCJunPin The yuanSuCJunPin to set
-	 */
-	public void setYuanSuCJunPin(String yuanSuCJunPin) {
-		this.yuanSuCJunPin = yuanSuCJunPin;
-	}
-
-	/** 
-	 * Returns the mg.
-	 * @return String
-	 */
-	public String getMg() {
-		return mg;
-	}
-
-	/** 
-	 * Set the mg.
-	 * @param mg The mg to set
-	 */
-	public void setMg(String mg) {
-		this.mg = mg;
-	}
-
-	/** 
-	 * Returns the tiCl4.
-	 * @return String
-	 */
-	public String getTiCl4() {
-		return tiCl4;
-	}
-
-	/** 
-	 * Set the tiCl4.
-	 * @param tiCl4 The tiCl4 to set
-	 */
-	public void setTiCl4(String tiCl4) {
-		this.tiCl4 = tiCl4;
-	}
-
-	/** 
-	 * Returns the fanYingQiHaoJunPin.
-	 * @return String
-	 */
-	public String getFanYingQiHaoJunPin() {
-		return fanYingQiHaoJunPin;
-	}
-
-	/** 
-	 * Set the fanYingQiHaoJunPin.
-	 * @param fanYingQiHaoJunPin The fanYingQiHaoJunPin to set
-	 */
-	public void setFanYingQiHaoJunPin(String fanYingQiHaoJunPin) {
-		this.fanYingQiHaoJunPin = fanYingQiHaoJunPin;
-	}
-
-	/** 
-	 * Returns the qiHaoJunPin.
-	 * @return String
-	 */
-	public String getQiHaoJunPin() {
-		return qiHaoJunPin;
-	}
-
-	/** 
-	 * Set the qiHaoJunPin.
-	 * @param qiHaoJunPin The qiHaoJunPin to set
-	 */
-	public void setQiHaoJunPin(String qiHaoJunPin) {
-		this.qiHaoJunPin = qiHaoJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuCl.
-	 * @return String
-	 */
-	public String getYuanSuCl() {
-		return yuanSuCl;
-	}
-
-	/** 
-	 * Set the yuanSuCl.
-	 * @param yuanSuCl The yuanSuCl to set
-	 */
-	public void setYuanSuCl(String yuanSuCl) {
-		this.yuanSuCl = yuanSuCl;
-	}
-
-	/** 
-	 * Returns the kaoHeDengJiChuMengJunPin.
-	 * @return String
-	 */
-	public String getKaoHeDengJiChuMengJunPin() {
-		return kaoHeDengJiChuMengJunPin;
-	}
-
-	/** 
-	 * Set the kaoHeDengJiChuMengJunPin.
-	 * @param kaoHeDengJiChuMengJunPin The kaoHeDengJiChuMengJunPin to set
-	 */
-	public void setKaoHeDengJiChuMengJunPin(String kaoHeDengJiChuMengJunPin) {
-		this.kaoHeDengJiChuMengJunPin = kaoHeDengJiChuMengJunPin;
-	}
-
-	/** 
-	 * Returns the tiCl4JunPin.
-	 * @return String
-	 */
-	public String getTiCl4JunPin() {
-		return tiCl4JunPin;
-	}
-
-	/** 
-	 * Set the tiCl4JunPin.
-	 * @param tiCl4JunPin The tiCl4JunPin to set
-	 */
-	public void setTiCl4JunPin(String tiCl4JunPin) {
-		this.tiCl4JunPin = tiCl4JunPin;
-	}
-
-	/** 
-	 * Returns the jingZhongJunPin.
-	 * @return String
-	 */
-	public String getJingZhongJunPin() {
-		return jingZhongJunPin;
-	}
-
-	/** 
-	 * Set the jingZhongJunPin.
-	 * @param jingZhongJunPin The jingZhongJunPin to set
-	 */
-	public void setJingZhongJunPin(String jingZhongJunPin) {
-		this.jingZhongJunPin = jingZhongJunPin;
-	}
-
-	/** 
-	 * Returns the yuanSuHb.
-	 * @return String
-	 */
-	public String getYuanSuHb() {
-		return yuanSuHb;
-	}
-
-	/** 
-	 * Set the yuanSuHb.
-	 * @param yuanSuHb The yuanSuHb to set
-	 */
-	public void setYuanSuHb(String yuanSuHb) {
-		this.yuanSuHb = yuanSuHb;
-	}
-
-	/** 
-	 * Returns the shiYongCiShu.
-	 * @return String
-	 */
-	public String getShiYongCiShu() {
-		return shiYongCiShu;
-	}
-
-	/** 
-	 * Set the shiYongCiShu.
-	 * @param shiYongCiShu The shiYongCiShu to set
-	 */
-	public void setShiYongCiShu(String shiYongCiShu) {
-		this.shiYongCiShu = shiYongCiShu;
-	}
-
-	/** 
-	 * Returns the feiPaBiKgJunPin.
-	 * @return String
-	 */
-	public String getFeiPaBiKgJunPin() {
-		return feiPaBiKgJunPin;
-	}
-
-	/** 
-	 * Set the feiPaBiKgJunPin.
-	 * @param feiPaBiKgJunPin The feiPaBiKgJunPin to set
-	 */
-	public void setFeiPaBiKgJunPin(String feiPaBiKgJunPin) {
-		this.feiPaBiKgJunPin = feiPaBiKgJunPin;
-	}
-
-	/** 
-	 * Returns the yuansuMnJunPin.
-	 * @return String
-	 */
-	public String getYuansuMnJunPin() {
-		return yuansuMnJunPin;
-	}
-
-	/** 
-	 * Set the yuansuMnJunPin.
-	 * @param yuansuMnJunPin The yuansuMnJunPin to set
-	 */
-	public void setYuansuMnJunPin(String yuansuMnJunPin) {
-		this.yuansuMnJunPin = yuansuMnJunPin;
-	}
-
-	/** 
-	 * Returns the yearJunPin.
-	 * @return String
-	 */
-	public String getYearJunPin() {
-		return yearJunPin;
-	}
-
-	/** 
-	 * Set the yearJunPin.
-	 * @param yearJunPin The yearJunPin to set
-	 */
-	public void setYearJunPin(String yearJunPin) {
-		this.yearJunPin = yearJunPin;
-	}
-
-	/** 
-	 * Returns the jiaMoCiJunPin.
-	 * @return String
-	 */
-	public String getJiaMoCiJunPin() {
-		return jiaMoCiJunPin;
-	}
-
-	/** 
-	 * Set the jiaMoCiJunPin.
-	 * @param jiaMoCiJunPin The jiaMoCiJunPin to set
-	 */
-	public void setJiaMoCiJunPin(String jiaMoCiJunPin) {
-		this.jiaMoCiJunPin = jiaMoCiJunPin;
-	}
-
-	/** 
-	 * Returns the gongYiShiYan.
-	 * @return String
-	 */
-	public String getGongYiShiYan() {
-		return gongYiShiYan;
-	}
-
-	/** 
-	 * Set the gongYiShiYan.
-	 * @param gongYiShiYan The gongYiShiYan to set
-	 */
-	public void setGongYiShiYan(String gongYiShiYan) {
-		this.gongYiShiYan = gongYiShiYan;
-	}
-
-	/** 
-	 * Returns the yuanSuHJunPin.
-	 * @return String
-	 */
-	public String getYuanSuHJunPin() {
-		return yuanSuHJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuHJunPin.
-	 * @param yuanSuHJunPin The yuanSuHJunPin to set
-	 */
-	public void setYuanSuHJunPin(String yuanSuHJunPin) {
-		this.yuanSuHJunPin = yuanSuHJunPin;
-	}
-
-	/** 
-	 * Returns the tongDao.
-	 * @return String
-	 */
-	public String getTongDao() {
-		return tongDao;
-	}
-
-	/** 
-	 * Set the tongDao.
-	 * @param tongDao The tongDao to set
-	 */
-	public void setTongDao(String tongDao) {
-		this.tongDao = tongDao;
-	}
-
-	/** 
-	 * Returns the yuanSuHbJunPin.
-	 * @return String
-	 */
-	public String getYuanSuHbJunPin() {
-		return yuanSuHbJunPin;
-	}
-
-	/** 
-	 * Set the yuanSuHbJunPin.
-	 * @param yuanSuHbJunPin The yuanSuHbJunPin to set
-	 */
-	public void setYuanSuHbJunPin(String yuanSuHbJunPin) {
-		this.yuanSuHbJunPin = yuanSuHbJunPin;
-	}
-
-	/** 
-	 * Returns the shouXuanFeiLiaoKg.
-	 * @return String
-	 */
-	public String getShouXuanFeiLiaoKg() {
-		return shouXuanFeiLiaoKg;
-	}
-
-	/** 
-	 * Set the shouXuanFeiLiaoKg.
-	 * @param shouXuanFeiLiaoKg The shouXuanFeiLiaoKg to set
-	 */
-	public void setShouXuanFeiLiaoKg(String shouXuanFeiLiaoKg) {
-		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKg;
-	}
-
-	/** 
-	 * Returns the monthJunPin.
-	 * @return String
-	 */
-	public String getMonthJunPin() {
-		return monthJunPin;
-	}
-
-	/** 
-	 * Set the monthJunPin.
-	 * @param monthJunPin The monthJunPin to set
-	 */
-	public void setMonthJunPin(String monthJunPin) {
-		this.monthJunPin = monthJunPin;
-	}
-
-	/** 
-	 * Returns the feiShangMaoKg.
-	 * @return String
-	 */
-	public String getFeiShangMaoKg() {
-		return feiShangMaoKg;
-	}
-
-	/** 
-	 * Set the feiShangMaoKg.
-	 * @param feiShangMaoKg The feiShangMaoKg to set
-	 */
-	public void setFeiShangMaoKg(String feiShangMaoKg) {
-		this.feiShangMaoKg = feiShangMaoKg;
-	}
-
-	/** 
-	 * Returns the yuanZuiGaoWenDuJunPin.
-	 * @return String
-	 */
-	public String getYuanZuiGaoWenDuJunPin() {
-		return yuanZuiGaoWenDuJunPin;
-	}
-
-	/** 
-	 * Set the yuanZuiGaoWenDuJunPin.
-	 * @param yuanZuiGaoWenDuJunPin The yuanZuiGaoWenDuJunPin to set
-	 */
-	public void setYuanZuiGaoWenDuJunPin(String yuanZuiGaoWenDuJunPin) {
-		this.yuanZuiGaoWenDuJunPin = yuanZuiGaoWenDuJunPin;
-	}
-
-	/** 
-	 * Returns the feiDiPiKg.
-	 * @return String
-	 */
-	public String getFeiDiPiKg() {
-		return feiDiPiKg;
-	}
-
-	/** 
-	 * Set the feiDiPiKg.
-	 * @param feiDiPiKg The feiDiPiKg to set
-	 */
-	public void setFeiDiPiKg(String feiDiPiKg) {
-		this.feiDiPiKg = feiDiPiKg;
-	}
-
-	/** 
-	 * Returns the chuLuZhenKongDuJunPin.
-	 * @return String
-	 */
-	public String getChuLuZhenKongDuJunPin() {
-		return chuLuZhenKongDuJunPin;
-	}
-
-	/** 
-	 * Set the chuLuZhenKongDuJunPin.
-	 * @param chuLuZhenKongDuJunPin The chuLuZhenKongDuJunPin to set
-	 */
-	public void setChuLuZhenKongDuJunPin(String chuLuZhenKongDuJunPin) {
-		this.chuLuZhenKongDuJunPin = chuLuZhenKongDuJunPin;
-	}
-
-	/** 
-	 * Returns the mgJunPin.
-	 * @return String
-	 */
-	public String getMgJunPin() {
-		return mgJunPin;
-	}
-
-	/** 
-	 * Set the mgJunPin.
-	 * @param mgJunPin The mgJunPin to set
-	 */
-	public void setMgJunPin(String mgJunPin) {
-		this.mgJunPin = mgJunPin;
 	}
 }

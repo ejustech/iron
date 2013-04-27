@@ -12,9 +12,10 @@ import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.databean.form.InputByNewFormBean;
 import com.ejustech.iron.databean.form.SearchFormBean;
+import com.ejustech.iron.form.InputByNewForm;
 
 public class MenuAction extends EventDispatchAction {
-    // 处理search动作
+    // 处理信息检索动作
     public ActionForward search(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
     {
@@ -32,6 +33,26 @@ public class MenuAction extends EventDispatchAction {
         }
         return null;
     }
+       
+    // 处理信息输入动作
+    public ActionForward inputByNew(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+    {
+        try
+        {
+        	InputByNewForm inputByNewForm = new InputByNewForm();
+        	inputByNewForm.setInputByNewList(initInputByNewForm());
+        	
+            request.setAttribute("inputByNewForm", inputByNewForm);
+            
+            return mapping.findForward("inputByNew");
+        }
+        catch (Exception e)
+        {
+        }
+        return null;
+    }
+    
     private ArrayList<InputByNewFormBean> initInputByNewForm()
     {
         ArrayList<InputByNewFormBean> inputByNewList = new ArrayList<InputByNewFormBean>();
@@ -137,120 +158,55 @@ public class MenuAction extends EventDispatchAction {
             inputByNewFormBean.setShengChanGuZhangJunPin("");
             inputByNewFormBean.setBeiZhuShuoMingJunPin("");
             inputByNewFormBean.setYearJunPin2("");
-
             inputByNewFormBean.setMonthJunPin2("");
-
             inputByNewFormBean.setDayJunPin2("");
-
             inputByNewFormBean.setYearMonthDayJunPin2("");
-
             inputByNewFormBean.setQiHaoJunPin2("");
-
             inputByNewFormBean.setLuCiJunPin2("");
-
             inputByNewFormBean.setGuiGeJunPin2("");
-
             inputByNewFormBean.setShengChanLuHaoJunPin2("");
-
             inputByNewFormBean.setFanYingQiHaoJunPin2("");
-
             inputByNewFormBean.setShiYongCiShuJunPin2("");
-
             inputByNewFormBean.setMgJunPin2("");
-
             inputByNewFormBean.setTiCl4JunPin2("");
-
             inputByNewFormBean.setMaoZhongJunPin2("");
-
             inputByNewFormBean.setJingZhongJunPin2("");
-
             inputByNewFormBean.setChengPinLvJunPin2("");
-
             inputByNewFormBean.setYuanSuFeJunPin2("");
-
             inputByNewFormBean.setYuanSuSiJunPin2("");
-
             inputByNewFormBean.setYuanSuClJunPin2("");
-
             inputByNewFormBean.setYuanSuCJunPin2("");
-
             inputByNewFormBean.setYuanSuNJunPin2("");
-
             inputByNewFormBean.setYuanSuOJunPin2("");
-
             inputByNewFormBean.setYuanSuHJunPin2("");
-
             inputByNewFormBean.setYuansuMnJunPin2("");
-
             inputByNewFormBean.setYuanSuHbJunPin2("");
-
             inputByNewFormBean.setDengJiHanMengJunPin2("");
-
             inputByNewFormBean.setKaoHeDengJiChuMengJunPin2("");
-
             inputByNewFormBean.setGongYiTiaoZhengJunPin2("");
-
             inputByNewFormBean.setGongYiShiYanJunPin2("");
-
             inputByNewFormBean.setDiPiKgJunPin2("");
-
             inputByNewFormBean.setShangMaoKgJunPin2("");
-
             inputByNewFormBean.setPaBiKgJunPin2("");
-
             inputByNewFormBean.setFeiDiPiKgJunPin2("");
-
             inputByNewFormBean.setFeiShangMaoKgJunPin2("");
-
             inputByNewFormBean.setFeiPaBiKgJunPin2("");
-
             inputByNewFormBean.setFeiTaiFenKgJunPin2("");
-
             inputByNewFormBean.setCiYuanKgJunPin2("");
-
             inputByNewFormBean.setShouXuanFeiLiaoKgJunPin2("");
-
             inputByNewFormBean.setSunHaoKgJunPin2("");
-
             inputByNewFormBean.setZongPaiMeiLiangKgJunPin2("");
-
             inputByNewFormBean.setChuLuZhenKongDuJunPin2("");
-
             inputByNewFormBean.setYuanZuiGaoWenDuJunPin2("");
-
             inputByNewFormBean.setZhengLiuGaoHengDianJunPin2("");
-
             inputByNewFormBean.setZhuanZhengLiuJunPin2("");
-
             inputByNewFormBean.setJiaShouCiJunPin2("");
-
             inputByNewFormBean.setJiaMoCiJunPin2("");
-
             inputByNewFormBean.setTongDaoJunPin2("");
-
             inputByNewFormBean.setShengChanGuZhangJunPin2("");
-
             inputByNewFormBean.setBeiZhuShuoMingJunPin2("");
-
             inputByNewList.add(inputByNewFormBean);
         }
-        
         return inputByNewList;
-
-    }     
-    // 处理search动作
-    public ActionForward inputByNew(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-    {
-        try
-        {
-            request.setAttribute("inputByNewList", initInputByNewForm());
-            
-            return mapping.findForward("inputByNew");
-        }
-        catch (Exception e)
-        {
-        }
-        return null;
-    }     
+    }      
 }

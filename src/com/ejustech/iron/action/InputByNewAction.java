@@ -6,7 +6,7 @@ package com.ejustech.iron.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.struts.action.Action;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -14,25 +14,25 @@ import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.form.InputByNewForm;
 
-/** 
- * MyEclipse Struts
- * Creation date: 04-19-2013
+/**
+ * MyEclipse Struts Creation date: 04-19-2013
  * 
  * XDoclet definition:
- * @struts.action path="/inputByNew" name="inputByNewForm" input="/form/inputByNew.jsp" scope="request" validate="true"
+ * 
+ * @struts.action path="/inputByNew" name="inputByNewForm"
+ *                input="/form/inputByNew.jsp" scope="request" validate="true"
  */
 public class InputByNewAction extends EventDispatchAction {
-    // 处理保存的动作
-    public ActionForward Save(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-    {
-        try
-        {
+	// 处理保存的动作
+	public ActionForward Save(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		try {
+			InputByNewForm inputByNewForm = (InputByNewForm) form;
+
+			System.out.println(inputByNewForm.getInputByNewList().size());
 			return mapping.findForward("OK");
-        }
-        catch (Exception e)
-        {
-        }
-        return null;
-    }   
+		} catch (Exception e) {
+		}
+		return null;
+	}
 }
