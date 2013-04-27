@@ -38,130 +38,130 @@
   <action-mappings >
     <action
       attribute="loginForm"
-      input="/form/login.jsp"
+      input="/jsp/login.jsp"
       name="loginForm"
       path="/login"
       scope="request"
       type="com.ejustech.iron.action.LoginAction"
       cancellable="true">
-      <forward name="loginOK" path="/form/menu.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="loginOK" path="/jsp/menu.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="menuForm"
-      input="/form/menu.jsp"
+      input="/jsp/menu.jsp"
       name="menuForm"
       path="/menu"
       scope="request"
       type="com.ejustech.iron.action.MenuAction"
       parameter="search,inputByNew,inputByUpdate,userManage,logoff"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="inputByNew" path="/form/inputByNew.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="inputByNew" path="/jsp/inputByNew.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="searchForm"
-      input="/form/search.jsp"
+      input="/jsp/search.jsp"
       name="searchForm"
       path="/search"
       scope="request"
       type="com.ejustech.iron.action.SearchAction"
       parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,backToMenu,loginError"
       cancellable="true">
-      <forward name="srch1" path="/form/result1.jsp" />
-      <forward name="srch2" path="/form/result2.jsp" />
-      <forward name="srch3" path="/form/result3.jsp" />
-      <forward name="srch4" path="/form/result4.jsp" />
-      <forward name="srch5" path="/form/result5.jsp" />
-      <forward name="srch6" path="/form/result6.jsp" />
-      <forward name="srch7" path="/form/result7.jsp" />
-      <forward name="backToMenu" path="/form/menu.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="srch1" path="/jsp/result1.jsp" />
+      <forward name="srch2" path="/jsp/result2.jsp" />
+      <forward name="srch3" path="/jsp/result3.jsp" />
+      <forward name="srch4" path="/jsp/result4.jsp" />
+      <forward name="srch5" path="/jsp/result5.jsp" />
+      <forward name="srch6" path="/jsp/result6.jsp" />
+      <forward name="srch7" path="/jsp/result7.jsp" />
+      <forward name="backToMenu" path="/jsp/menu.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result1Form"
-      input="/form/result1.jsp"
+      input="/jsp/result1.jsp"
       name="result1Form"
       path="/result1"
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
 	  parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result2Form"
-      input="/form/result2.jsp"
+      input="/jsp/result2.jsp"
       name="result1Form"
       path="/result2"
       scope="request"
       type="com.ejustech.iron.action.Result2Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result3Form"
-      input="/form/result3.jsp"
+      input="/jsp/result3.jsp"
       name="result3Form"
       path="/result3"
       scope="request"
       type="com.ejustech.iron.action.Result3Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result4Form"
-      input="/form/result4.jsp"
+      input="/jsp/result4.jsp"
       name="result4Form"
       path="/result4"
       scope="request"
       type="com.ejustech.iron.action.Result4Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result5Form"
-      input="/form/result5.jsp"
+      input="/jsp/result5.jsp"
       name="result5Form"
       path="/result5"
       scope="request"
       type="com.ejustech.iron.action.Result5Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result6Form"
-      input="/form/result6.jsp"
+      input="/jsp/result6.jsp"
       name="result6Form"
       path="/result6"
       scope="request"
       type="com.ejustech.iron.action.Result6Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="result7Form"
-      input="/form/result7.jsp"
+      input="/jsp/result7.jsp"
       name="result7Form"
       path="/result7"
       scope="request"
       type="com.ejustech.iron.action.Result7Action"
       parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
-      <forward name="loginError" path="/form/loginError.jsp" />
+      <forward name="search" path="/jsp/search.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
       attribute="sampleQueryForm"
@@ -184,7 +184,7 @@
     </action>
     <action
       attribute="inputByNewForm"
-      input="/form/inputByNew.jsp"
+      input="/jsp/inputByNew.jsp"
       name="inputByNewForm"
       path="/inputByNew"
       scope="request"
