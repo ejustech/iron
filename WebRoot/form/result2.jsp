@@ -33,19 +33,20 @@
 			</table>
 			<table border="1">
 				<tr>
-					<th>单位（期号）</th>
+					<th>期号</th>
 					<th>Fe</th>
 					<th>Cl</th>
 					<th>N</th>
 					<th>O</th>
 					<th>HB</th>
-					<th>总毛重</th>
-					<th>总炉数</th>
-					<th>均毛重</th>
-					<th>均Mg单耗</th>
-					<th>均回收率</th>
-					<th>净重量</th>
-					<th>均净重</th>
+					<th>总毛重量kg</th>
+					<th>总炉次数</th>
+					<th>均毛重kg</th>
+					<th>Mg单耗</th>
+					<th>TiCl4单耗</th>
+					<th>成品率</th>
+					<th>总净重量kg</th>
+					<th>均净重kg</th>
 					<th>0A级</th>
 					<th>0A级率</th>
 					<th>0级</th>
@@ -69,8 +70,8 @@
 					<td><bean:write name="result2FormBean" property="n" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="o" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="hb" ></bean:write></td>
-					<td><bean:write name="result2FormBean" property="lushu" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="zongmaozhong" ></bean:write></td>
+					<td><bean:write name="result2FormBean" property="zonglushu" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="junmaozhong" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="junmgdanhao" ></bean:write></td>
 					<td><bean:write name="result2FormBean" property="junhuishoulv" ></bean:write></td>
@@ -95,7 +96,6 @@
 			</table>
 			<table>
 				<tr>
-					<!-- <td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td> -->
 					<td><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onclick="javascript:window.history.back();"></td>
 				</tr>
 			</table>

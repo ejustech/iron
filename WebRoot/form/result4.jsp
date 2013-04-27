@@ -33,24 +33,24 @@
 			</table>
 			<table border="1">
 				<tr>
-					<th>单位（期号）</th>
-					<th>总炉数</th>
-					<th>平均毛重</th>
-					<th>平均净重</th>
-					<th>回收率</th>
-					<th>底皮</th>
-					<th>上帽</th>
-					<th>爬壁</th>
-					<th>废底皮</th>
+					<th>期号</th>
+					<th>总炉次数</th>
+					<th>均毛重量kg</th>
+					<th>均净重量kg</th>
+					<th>成品率</th>
+					<th>底皮kg</th>
+					<th>上帽kg</th>
+					<th>爬壁kg</th>
+					<th>废底皮kg</th>
 					<th>废底皮比例</th>
-					<th>废上帽</th>
-					<th>废上帽比例</th>
-					<th>废爬壁</th>
-					<th>废爬壁比例</th>
-					<th>筛选废料</th>
-					<th>磁选废料</th>
-					<th>手选废料</th>
-					<th>损耗</th>
+					<th>废上帽kg</th>
+					<th>废上帽 比例</th>
+					<th>废爬壁kg</th>
+					<th>废爬壁 比例</th>
+					<th>废钛粉kg</th>
+					<th>磁选kg</th>
+					<th>手选废料kg</th>
+					<th>损耗kg</th>
 				</tr>
 				<logic:notEmpty name="WAITAILIST">
 					<logic:iterate id="result4FormBean" name="WAITAILIST">
@@ -79,7 +79,6 @@
 			</table>
 			<table>
 				<tr>
-					<!-- <td><html:submit property="search">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td> -->
 					<td><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onclick="javascript:window.history.back();"></td>
 				</tr>
 			</table>

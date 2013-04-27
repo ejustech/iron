@@ -28,8 +28,7 @@ public class Result3FormBean {
 	private String cl;
 	
 	/** lushu property */
-	private String lushu;
-	
+	private String zonglushu;
 	private String zongmaozhong;
 	private String junmaozhong;
 	private String junmgdanhao;
@@ -190,8 +189,8 @@ public class Result3FormBean {
 	 * 
 	 * @return String
 	 */
-	public String getLushu() {
-		return lushu;
+	public String getZonglushu() {
+		return zonglushu;
 	}
 
 	/**
@@ -200,8 +199,8 @@ public class Result3FormBean {
 	 * @param cl
 	 *            The cl to set
 	 */
-	public void setLushu(String lushu) {
-		this.lushu = lushu;
+	public void setZonglushu(String zonglushu) {
+		this.zonglushu = zonglushu;
 	}
 
 	public String getJunmaozhong() {

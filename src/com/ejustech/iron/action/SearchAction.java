@@ -755,6 +755,10 @@ public class SearchAction extends EventDispatchAction {
 				return mapping.findForward("srch4");
 			}
 			case 5: {
+				sqlCondition = sqlBufferCondition.toString();
+				ArrayList zhibiaoList = new ArrayList();
+				zhibiaoList = (ArrayList) searchDao.getZhibiaoList(request, sqlCondition);
+				request.setAttribute("ZHIBIAOLIST", zhibiaoList);
 				// 月指标统计表
 				return mapping.findForward("srch5");
 			}

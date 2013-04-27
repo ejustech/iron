@@ -9,1009 +9,145 @@ public class Result5FormBean {
 	/*
 	 * Generated fields
 	 */
-
-	/** shengchanluhao property */
-	private String shengchanluhao;
-
-	/** zhengliugaoheng property */
-	private String zhengliugaoheng;
-
-	/** feipabi property */
-	private String feipabi;
-
-	/** zhuanzhengliu property */
-	private String zhuanzhengliu;
-
-	/** tongdao property */
-	private String tongdao;
-
-	/** zongpaimeiliang property */
-	private String zongpaimeiliang;
-
-	/** shangmao property */
-	private String shangmao;
-
-	/** shengchanguzhang property */
-	private String shengchanguzhang;
-
-	/** pabi property */
-	private String pabi;
-
-	/** gongyitiaozheng property */
-	private String gongyitiaozheng;
-
-	/** riqi property */
-	private String riqi;
-
-	/** chengpinlv property */
-	private String chengpinlv;
-
-	/** mg property */
-	private String mg;
-
-	/** beizhushuoming property */
-	private String beizhushuoming;
-
-	/** feishangmao property */
-	private String feishangmao;
-
-	/** shiyongcishu property */
-	private String shiyongcishu;
-
-	/** huanyuanzuigaowendu property */
-	private String huanyuanzuigaowendu;
-
-	/** dengji_hanmeng property */
-	private String dengji_hanmeng;
-
-	/** sunhao property */
-	private String sunhao;
-
-	/** mn property */
-	private String mn;
-
-	/** maozhong property */
-	private String maozhong;
-
-	/** jingzhong property */
-	private String jingzhong;
-
-	/** c property */
-	private String c;
-
-	/** jiashouci property */
-	private String jiashouci;
-
-	/** feitaifen property */
-	private String feitaifen;
-
-	/** n property */
-	private String n;
-
-	/** o property */
-	private String o;
-
-	/** cixuan property */
-	private String cixuan;
-
-	/** hb property */
-	private String hb;
-
-	/** fe property */
-	private String fe;
-
-	/** qihao property */
 	private String qihao;
-
-	/** h property */
-	private String h;
-
-	/** dipi property */
-	private String dipi;
-
-	/** fanyingqihao property */
-	private String fanyingqihao;
-
-	/** si property */
-	private String si;
-
-	/** shouxuanfeiliao property */
-	private String shouxuanfeiliao;
-
-	/** ticl property */
-	private String ticl;
-
-	/** jiamoci property */
-	private String jiamoci;
-
-	/** cl property */
-	private String cl;
-
-	/** luci property */
-	private String luci;
-
-	/** chuluzhenkongdu property */
-	private String chuluzhenkongdu;
-
-	/** feidipi property */
-	private String feidipi;
-
-	/** guige property */
-	private String guige;
-
-	/** kaohedengji_chumeng property */
-	private String kaohedengji_chumeng;
-
-	/** gongyishiyan property */
-	private String gongyishiyan;
-
-	/*
-	 * Generated Methods
-	 */
-
-	/**
-	 * Method reset
-	 * 
-	 * @param mapping
-	 * @param request
-	 */
-	// public void reset(ActionMapping mapping, HttpServletRequest request) {
-	// // TODO Auto-generated method stub
-	// map.clear();
-	// }	
-	
-	/**
-	 * Returns the shengchanluhao.
-	 * 
-	 * @return String
-	 */
-	public String getShengchanluhao() {
-		return shengchanluhao;
+	private String zongmaozhong;
+	private String zongjingzhong;
+	private String j2jijiyixialv;
+	private String fe008;
+	private String fe008bili;
+	private String fe005;
+	private String fe005bili;
+	private String cl008;
+	private String cl008bili;
+	private String cl006;
+	private String cl006bili;
+	private String o008;
+	private String o008bili;
+	private String o005;
+	private String o005bili;
+	private String fecl008;
+	private String fecl008bili;
+	private String n001;
+	private String n001bili;
+	public String getN001() {
+		return n001;
 	}
-
-	/**
-	 * Set the shengchanluhao.
-	 * 
-	 * @param shengchanluhao
-	 *            The shengchanluhao to set
-	 */
-	public void setShengchanluhao(String shengchanluhao) {
-		this.shengchanluhao = shengchanluhao;
+	public void setN001(String n001) {
+		this.n001 = n001;
 	}
-
-	/**
-	 * Returns the zhengliugaoheng.
-	 * 
-	 * @return String
-	 */
-	public String getZhengliugaoheng() {
-		return zhengliugaoheng;
+	public String getN001bili() {
+		return n001bili;
 	}
-
-	/**
-	 * Set the zhengliugaoheng.
-	 * 
-	 * @param zhengliugaoheng
-	 *            The zhengliugaoheng to set
-	 */
-	public void setZhengliugaoheng(String zhengliugaoheng) {
-		this.zhengliugaoheng = zhengliugaoheng;
+	public void setN001bili(String n001bili) {
+		this.n001bili = n001bili;
 	}
-
-	/**
-	 * Returns the feipabi.
-	 * 
-	 * @return String
-	 */
-	public String getFeipabi() {
-		return feipabi;
-	}
-
-	/**
-	 * Set the feipabi.
-	 * 
-	 * @param feipabi
-	 *            The feipabi to set
-	 */
-	public void setFeipabi(String feipabi) {
-		this.feipabi = feipabi;
-	}
-
-	/**
-	 * Returns the zhuanzhengliu.
-	 * 
-	 * @return String
-	 */
-	public String getZhuanzhengliu() {
-		return zhuanzhengliu;
-	}
-
-	/**
-	 * Set the zhuanzhengliu.
-	 * 
-	 * @param zhuanzhengliu
-	 *            The zhuanzhengliu to set
-	 */
-	public void setZhuanzhengliu(String zhuanzhengliu) {
-		this.zhuanzhengliu = zhuanzhengliu;
-	}
-
-	/**
-	 * Returns the tongdao.
-	 * 
-	 * @return String
-	 */
-	public String getTongdao() {
-		return tongdao;
-	}
-
-	/**
-	 * Set the tongdao.
-	 * 
-	 * @param tongdao
-	 *            The tongdao to set
-	 */
-	public void setTongdao(String tongdao) {
-		this.tongdao = tongdao;
-	}
-
-	/**
-	 * Returns the zongpaimeiliang.
-	 * 
-	 * @return String
-	 */
-	public String getZongpaimeiliang() {
-		return zongpaimeiliang;
-	}
-
-	/**
-	 * Set the zongpaimeiliang.
-	 * 
-	 * @param zongpaimeiliang
-	 *            The zongpaimeiliang to set
-	 */
-	public void setZongpaimeiliang(String zongpaimeiliang) {
-		this.zongpaimeiliang = zongpaimeiliang;
-	}
-
-	/**
-	 * Returns the shangmao.
-	 * 
-	 * @return String
-	 */
-	public String getShangmao() {
-		return shangmao;
-	}
-
-	/**
-	 * Set the shangmao.
-	 * 
-	 * @param shangmao
-	 *            The shangmao to set
-	 */
-	public void setShangmao(String shangmao) {
-		this.shangmao = shangmao;
-	}
-
-	/**
-	 * Returns the shengchanguzhang.
-	 * 
-	 * @return String
-	 */
-	public String getShengchanguzhang() {
-		return shengchanguzhang;
-	}
-
-	/**
-	 * Set the shengchanguzhang.
-	 * 
-	 * @param shengchanguzhang
-	 *            The shengchanguzhang to set
-	 */
-	public void setShengchanguzhang(String shengchanguzhang) {
-		this.shengchanguzhang = shengchanguzhang;
-	}
-
-	/**
-	 * Returns the pabi.
-	 * 
-	 * @return String
-	 */
-	public String getPabi() {
-		return pabi;
-	}
-
-	/**
-	 * Set the pabi.
-	 * 
-	 * @param pabi
-	 *            The pabi to set
-	 */
-	public void setPabi(String pabi) {
-		this.pabi = pabi;
-	}
-
-	/**
-	 * Returns the gongyitiaozheng.
-	 * 
-	 * @return String
-	 */
-	public String getGongyitiaozheng() {
-		return gongyitiaozheng;
-	}
-
-	/**
-	 * Set the gongyitiaozheng.
-	 * 
-	 * @param gongyitiaozheng
-	 *            The gongyitiaozheng to set
-	 */
-	public void setGongyitiaozheng(String gongyitiaozheng) {
-		this.gongyitiaozheng = gongyitiaozheng;
-	}
-
-	/**
-	 * Returns the riqi.
-	 * 
-	 * @return String
-	 */
-	public String getRiqi() {
-		return riqi;
-	}
-
-	/**
-	 * Set the riqi.
-	 * 
-	 * @param riqi
-	 *            The riqi to set
-	 */
-	public void setRiqi(String riqi) {
-		this.riqi = riqi;
-	}
-
-	/**
-	 * Returns the chengpinlv.
-	 * 
-	 * @return String
-	 */
-	public String getChengpinlv() {
-		return chengpinlv;
-	}
-
-	/**
-	 * Set the chengpinlv.
-	 * 
-	 * @param chengpinlv
-	 *            The chengpinlv to set
-	 */
-	public void setChengpinlv(String chengpinlv) {
-		this.chengpinlv = chengpinlv;
-	}
-
-	/**
-	 * Returns the mg.
-	 * 
-	 * @return String
-	 */
-	public String getMg() {
-		return mg;
-	}
-
-	/**
-	 * Set the mg.
-	 * 
-	 * @param mg
-	 *            The mg to set
-	 */
-	public void setMg(String mg) {
-		this.mg = mg;
-	}
-
-	/**
-	 * Returns the beizhushuoming.
-	 * 
-	 * @return String
-	 */
-	public String getBeizhushuoming() {
-		return beizhushuoming;
-	}
-
-	/**
-	 * Set the beizhushuoming.
-	 * 
-	 * @param beizhushuoming
-	 *            The beizhushuoming to set
-	 */
-	public void setBeizhushuoming(String beizhushuoming) {
-		this.beizhushuoming = beizhushuoming;
-	}
-
-	/**
-	 * Returns the feishangmao.
-	 * 
-	 * @return String
-	 */
-	public String getFeishangmao() {
-		return feishangmao;
-	}
-
-	/**
-	 * Set the feishangmao.
-	 * 
-	 * @param feishangmao
-	 *            The feishangmao to set
-	 */
-	public void setFeishangmao(String feishangmao) {
-		this.feishangmao = feishangmao;
-	}
-
-	/**
-	 * Returns the shiyongcishu.
-	 * 
-	 * @return String
-	 */
-	public String getShiyongcishu() {
-		return shiyongcishu;
-	}
-
-	/**
-	 * Set the shiyongcishu.
-	 * 
-	 * @param shiyongcishu
-	 *            The shiyongcishu to set
-	 */
-	public void setShiyongcishu(String shiyongcishu) {
-		this.shiyongcishu = shiyongcishu;
-	}
-
-	/**
-	 * Returns the huanyuanzuigaowendu.
-	 * 
-	 * @return String
-	 */
-	public String getHuanyuanzuigaowendu() {
-		return huanyuanzuigaowendu;
-	}
-
-	/**
-	 * Set the huanyuanzuigaowendu.
-	 * 
-	 * @param huanyuanzuigaowendu
-	 *            The huanyuanzuigaowendu to set
-	 */
-	public void setHuanyuanzuigaowendu(String huanyuanzuigaowendu) {
-		this.huanyuanzuigaowendu = huanyuanzuigaowendu;
-	}
-
-	/**
-	 * Returns the dengji_hanmeng.
-	 * 
-	 * @return String
-	 */
-	public String getDengji_hanmeng() {
-		return dengji_hanmeng;
-	}
-
-	/**
-	 * Set the dengji_hanmeng.
-	 * 
-	 * @param dengji_hanmeng
-	 *            The dengji_hanmeng to set
-	 */
-	public void setDengji_hanmeng(String dengji_hanmeng) {
-		this.dengji_hanmeng = dengji_hanmeng;
-	}
-
-	/**
-	 * Returns the sunhao.
-	 * 
-	 * @return String
-	 */
-	public String getSunhao() {
-		return sunhao;
-	}
-
-	/**
-	 * Set the sunhao.
-	 * 
-	 * @param sunhao
-	 *            The sunhao to set
-	 */
-	public void setSunhao(String sunhao) {
-		this.sunhao = sunhao;
-	}
-
-	/**
-	 * Returns the mn.
-	 * 
-	 * @return String
-	 */
-	public String getMn() {
-		return mn;
-	}
-
-	/**
-	 * Set the mn.
-	 * 
-	 * @param mn
-	 *            The mn to set
-	 */
-	public void setMn(String mn) {
-		this.mn = mn;
-	}
-
-	/**
-	 * Returns the maozhong.
-	 * 
-	 * @return String
-	 */
-	public String getMaozhong() {
-		return maozhong;
-	}
-
-	/**
-	 * Set the maozhong.
-	 * 
-	 * @param maozhong
-	 *            The maozhong to set
-	 */
-	public void setMaozhong(String maozhong) {
-		this.maozhong = maozhong;
-	}
-
-	/**
-	 * Returns the jingzhong.
-	 * 
-	 * @return String
-	 */
-	public String getJingzhong() {
-		return jingzhong;
-	}
-
-	/**
-	 * Set the jingzhong.
-	 * 
-	 * @param jingzhong
-	 *            The jingzhong to set
-	 */
-	public void setJingzhong(String jingzhong) {
-		this.jingzhong = jingzhong;
-	}
-
-	/**
-	 * Returns the c.
-	 * 
-	 * @return String
-	 */
-	public String getC() {
-		return c;
-	}
-
-	/**
-	 * Set the c.
-	 * 
-	 * @param c
-	 *            The c to set
-	 */
-	public void setC(String c) {
-		this.c = c;
-	}
-
-	/**
-	 * Returns the jiashouci.
-	 * 
-	 * @return String
-	 */
-	public String getJiashouci() {
-		return jiashouci;
-	}
-
-	/**
-	 * Set the jiashouci.
-	 * 
-	 * @param jiashouci
-	 *            The jiashouci to set
-	 */
-	public void setJiashouci(String jiashouci) {
-		this.jiashouci = jiashouci;
-	}
-
-	/**
-	 * Returns the feitaifen.
-	 * 
-	 * @return String
-	 */
-	public String getFeitaifen() {
-		return feitaifen;
-	}
-
-	/**
-	 * Set the feitaifen.
-	 * 
-	 * @param feitaifen
-	 *            The feitaifen to set
-	 */
-	public void setFeitaifen(String feitaifen) {
-		this.feitaifen = feitaifen;
-	}
-
-	/**
-	 * Returns the n.
-	 * 
-	 * @return String
-	 */
-	public String getN() {
-		return n;
-	}
-
-	/**
-	 * Set the n.
-	 * 
-	 * @param n
-	 *            The n to set
-	 */
-	public void setN(String n) {
-		this.n = n;
-	}
-
-	/**
-	 * Returns the o.
-	 * 
-	 * @return String
-	 */
-	public String getO() {
-		return o;
-	}
-
-	/**
-	 * Set the o.
-	 * 
-	 * @param o
-	 *            The o to set
-	 */
-	public void setO(String o) {
-		this.o = o;
-	}
-
-	/**
-	 * Returns the cixuan.
-	 * 
-	 * @return String
-	 */
-	public String getCixuan() {
-		return cixuan;
-	}
-
-	/**
-	 * Set the cixuan.
-	 * 
-	 * @param cixuan
-	 *            The cixuan to set
-	 */
-	public void setCixuan(String cixuan) {
-		this.cixuan = cixuan;
-	}
-
-	/**
-	 * Returns the hb.
-	 * 
-	 * @return String
-	 */
-	public String getHb() {
-		return hb;
-	}
-
-	/**
-	 * Set the hb.
-	 * 
-	 * @param hb
-	 *            The hb to set
-	 */
-	public void setHb(String hb) {
-		this.hb = hb;
-	}
-
-	/**
-	 * Returns the fe.
-	 * 
-	 * @return String
-	 */
-	public String getFe() {
-		return fe;
-	}
-
-	/**
-	 * Set the fe.
-	 * 
-	 * @param fe
-	 *            The fe to set
-	 */
-	public void setFe(String fe) {
-		this.fe = fe;
-	}
-
-	/**
-	 * Returns the qihao.
-	 * 
-	 * @return String
-	 */
 	public String getQihao() {
 		return qihao;
 	}
-
-	/**
-	 * Set the qihao.
-	 * 
-	 * @param qihao
-	 *            The qihao to set
-	 */
 	public void setQihao(String qihao) {
 		this.qihao = qihao;
 	}
-
-	/**
-	 * Returns the h.
-	 * 
-	 * @return String
-	 */
-	public String getH() {
-		return h;
+	public String getZongmaozhong() {
+		return zongmaozhong;
 	}
-
-	/**
-	 * Set the h.
-	 * 
-	 * @param h
-	 *            The h to set
-	 */
-	public void setH(String h) {
-		this.h = h;
+	public void setZongmaozhong(String zongmaozhong) {
+		this.zongmaozhong = zongmaozhong;
 	}
-
-	/**
-	 * Returns the dipi.
-	 * 
-	 * @return String
-	 */
-	public String getDipi() {
-		return dipi;
+	public String getZongjingzhong() {
+		return zongjingzhong;
 	}
-
-	/**
-	 * Set the dipi.
-	 * 
-	 * @param dipi
-	 *            The dipi to set
-	 */
-	public void setDipi(String dipi) {
-		this.dipi = dipi;
+	public void setZongjingzhong(String zongjingzhong) {
+		this.zongjingzhong = zongjingzhong;
 	}
-
-	/**
-	 * Returns the fanyingqihao.
-	 * 
-	 * @return String
-	 */
-	public String getFanyingqihao() {
-		return fanyingqihao;
+	public String getJ2jijiyixialv() {
+		return j2jijiyixialv;
 	}
-
-	/**
-	 * Set the fanyingqihao.
-	 * 
-	 * @param fanyingqihao
-	 *            The fanyingqihao to set
-	 */
-	public void setFanyingqihao(String fanyingqihao) {
-		this.fanyingqihao = fanyingqihao;
+	public void setJ2jijiyixialv(String j2jijiyixialv) {
+		this.j2jijiyixialv = j2jijiyixialv;
 	}
-
-	/**
-	 * Returns the si.
-	 * 
-	 * @return String
-	 */
-	public String getSi() {
-		return si;
+	public String getFe008() {
+		return fe008;
 	}
-
-	/**
-	 * Set the si.
-	 * 
-	 * @param si
-	 *            The si to set
-	 */
-	public void setSi(String si) {
-		this.si = si;
+	public void setFe008(String fe008) {
+		this.fe008 = fe008;
 	}
-
-	/**
-	 * Returns the shouxuanfeiliao.
-	 * 
-	 * @return String
-	 */
-	public String getShouxuanfeiliao() {
-		return shouxuanfeiliao;
+	public String getFe008bili() {
+		return fe008bili;
 	}
-
-	/**
-	 * Set the shouxuanfeiliao.
-	 * 
-	 * @param shouxuanfeiliao
-	 *            The shouxuanfeiliao to set
-	 */
-	public void setShouxuanfeiliao(String shouxuanfeiliao) {
-		this.shouxuanfeiliao = shouxuanfeiliao;
+	public void setFe008bili(String fe008bili) {
+		this.fe008bili = fe008bili;
 	}
-
-	/**
-	 * Returns the ticl.
-	 * 
-	 * @return String
-	 */
-	public String getTicl() {
-		return ticl;
+	public String getFe005() {
+		return fe005;
 	}
-
-	/**
-	 * Set the ticl.
-	 * 
-	 * @param ticl
-	 *            The ticl to set
-	 */
-	public void setTicl(String ticl) {
-		this.ticl = ticl;
+	public void setFe005(String fe005) {
+		this.fe005 = fe005;
 	}
-
-	/**
-	 * Returns the jiamoci.
-	 * 
-	 * @return String
-	 */
-	public String getJiamoci() {
-		return jiamoci;
+	public String getFe005bili() {
+		return fe005bili;
 	}
-
-	/**
-	 * Set the jiamoci.
-	 * 
-	 * @param jiamoci
-	 *            The jiamoci to set
-	 */
-	public void setJiamoci(String jiamoci) {
-		this.jiamoci = jiamoci;
+	public void setFe005bili(String fe005bili) {
+		this.fe005bili = fe005bili;
 	}
-
-	/**
-	 * Returns the cl.
-	 * 
-	 * @return String
-	 */
-	public String getCl() {
-		return cl;
+	public String getCl008() {
+		return cl008;
 	}
-
-	/**
-	 * Set the cl.
-	 * 
-	 * @param cl
-	 *            The cl to set
-	 */
-	public void setCl(String cl) {
-		this.cl = cl;
+	public void setCl008(String cl008) {
+		this.cl008 = cl008;
 	}
-
-	/**
-	 * Returns the luci.
-	 * 
-	 * @return String
-	 */
-	public String getLuci() {
-		return luci;
+	public String getCl008bili() {
+		return cl008bili;
 	}
-
-	/**
-	 * Set the luci.
-	 * 
-	 * @param luci
-	 *            The luci to set
-	 */
-	public void setLuci(String luci) {
-		this.luci = luci;
+	public void setCl008bili(String cl008bili) {
+		this.cl008bili = cl008bili;
 	}
-
-	/**
-	 * Returns the chuluzhenkongdu.
-	 * 
-	 * @return String
-	 */
-	public String getChuluzhenkongdu() {
-		return chuluzhenkongdu;
+	public String getCl006() {
+		return cl006;
 	}
-
-	/**
-	 * Set the chuluzhenkongdu.
-	 * 
-	 * @param chuluzhenkongdu
-	 *            The chuluzhenkongdu to set
-	 */
-	public void setChuluzhenkongdu(String chuluzhenkongdu) {
-		this.chuluzhenkongdu = chuluzhenkongdu;
+	public void setCl006(String cl006) {
+		this.cl006 = cl006;
 	}
-
-	/**
-	 * Returns the feidipi.
-	 * 
-	 * @return String
-	 */
-	public String getFeidipi() {
-		return feidipi;
+	public String getCl006bili() {
+		return cl006bili;
 	}
-
-	/**
-	 * Set the feidipi.
-	 * 
-	 * @param feidipi
-	 *            The feidipi to set
-	 */
-	public void setFeidipi(String feidipi) {
-		this.feidipi = feidipi;
+	public void setCl006bili(String cl006bili) {
+		this.cl006bili = cl006bili;
 	}
-
-	/**
-	 * Returns the guige.
-	 * 
-	 * @return String
-	 */
-	public String getGuige() {
-		return guige;
+	public String getO008() {
+		return o008;
 	}
-
-	/**
-	 * Set the guige.
-	 * 
-	 * @param guige
-	 *            The guige to set
-	 */
-	public void setGuige(String guige) {
-		this.guige = guige;
+	public void setO008(String o008) {
+		this.o008 = o008;
 	}
-
-	/**
-	 * Returns the kaohedengji_chumeng.
-	 * 
-	 * @return String
-	 */
-	public String getKaohedengji_chumeng() {
-		return kaohedengji_chumeng;
+	public String getO008bili() {
+		return o008bili;
 	}
-
-	/**
-	 * Set the kaohedengji_chumeng.
-	 * 
-	 * @param kaohedengji_chumeng
-	 *            The kaohedengji_chumeng to set
-	 */
-	public void setKaohedengji_chumeng(String kaohedengji_chumeng) {
-		this.kaohedengji_chumeng = kaohedengji_chumeng;
+	public void setO008bili(String o008bili) {
+		this.o008bili = o008bili;
 	}
-
-	/**
-	 * Returns the gongyishiyan.
-	 * 
-	 * @return String
-	 */
-	public String getGongyishiyan() {
-		return gongyishiyan;
+	public String getO005() {
+		return o005;
 	}
-
-	/**
-	 * Set the gongyishiyan.
-	 * 
-	 * @param gongyishiyan
-	 *            The gongyishiyan to set
-	 */
-	public void setGongyishiyan(String gongyishiyan) {
-		this.gongyishiyan = gongyishiyan;
+	public void setO005(String o005) {
+		this.o005 = o005;
 	}
+	public String getO005bili() {
+		return o005bili;
+	}
+	public void setO005bili(String o005bili) {
+		this.o005bili = o005bili;
+	}
+	public String getFecl008() {
+		return fecl008;
+	}
+	public void setFecl008(String fecl008) {
+		this.fecl008 = fecl008;
+	}
+	public String getFecl008bili() {
+		return fecl008bili;
+	}
+	public void setFecl008bili(String fecl008bili) {
+		this.fecl008bili = fecl008bili;
+	}
+		
 }

@@ -86,9 +86,7 @@
       path="/result1"
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
-	  parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -98,9 +96,7 @@
       path="/result2"
       scope="request"
       type="com.ejustech.iron.action.Result2Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -110,9 +106,7 @@
       path="/result3"
       scope="request"
       type="com.ejustech.iron.action.Result3Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -122,9 +116,7 @@
       path="/result4"
       scope="request"
       type="com.ejustech.iron.action.Result4Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -134,9 +126,7 @@
       path="/result5"
       scope="request"
       type="com.ejustech.iron.action.Result5Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -146,9 +136,7 @@
       path="/result6"
       scope="request"
       type="com.ejustech.iron.action.Result6Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action
@@ -158,9 +146,7 @@
       path="/result7"
       scope="request"
       type="com.ejustech.iron.action.Result7Action"
-      parameter="search"
       cancellable="true">
-      <forward name="search" path="/form/search.jsp" />
       <forward name="loginError" path="/form/loginError.jsp" />
     </action>
     <action

@@ -12,6 +12,7 @@ import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.databean.form.Result2FormBean;
 import com.ejustech.iron.databean.form.Result3FormBean;
 import com.ejustech.iron.databean.form.Result4FormBean;
+import com.ejustech.iron.databean.form.Result5FormBean;
 
 /***
  * T_Iron_Info表的数据访问对象
@@ -254,9 +255,9 @@ public class TIronInfoDao extends BaseDao {
 						.getString("o"), 4));
 				result2FormBean.setHb(Output.getSubValue(resultSet
 						.getString("hb"), 0));
-				result2FormBean.setLushu(resultSet.getString("zonglushu"));
 				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet
 						.getString("zongmaozhong"), 0));
+				result2FormBean.setZonglushu(resultSet.getString("zonglushu"));
 				result2FormBean.setJunmaozhong(Output.getSubValue(resultSet
 						.getString("junmaozhong"), 0));
 				result2FormBean.setJunmgdanhao(Output.getSubValue(resultSet
@@ -430,9 +431,9 @@ public class TIronInfoDao extends BaseDao {
 						.getString("o"), 4));
 				result3FormBean.setHb(Output.getSubValue(resultSet
 						.getString("hb"), 0));
-				result3FormBean.setLushu(resultSet.getString("zonglushu"));
 				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet
 						.getString("zongmaozhong"), 0));
+				result3FormBean.setZonglushu(resultSet.getString("zonglushu"));
 				result3FormBean.setJunmaozhong(Output.getSubValue(resultSet
 						.getString("junmaozhong"), 0));
 				result3FormBean.setJunmgdanhao(Output.getSubValue(resultSet
@@ -601,6 +602,197 @@ public class TIronInfoDao extends BaseDao {
 				waitaiList.add(result4FormBean);
 			}
 			return waitaiList;
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
+		}
+	}
+	
+	//月指标统计表
+	public ArrayList<Result5FormBean> getZhibiaoList(HttpServletRequest request,
+			String sqlCondition) throws Exception {
+
+		ArrayList<Result5FormBean> zhibiaoList = new ArrayList<Result5FormBean>();
+
+		StringBuffer sqlBuffer = new StringBuffer();
+		StringBuffer sqlBuffer1 = new StringBuffer();
+		StringBuffer sqlBuffer2 = new StringBuffer();
+		if (!sqlCondition.equals("")) {
+			sqlBuffer1 = sqlBuffer1.append(" WHERE" + sqlCondition);
+			sqlBuffer2 = sqlBuffer2.append(" AND" + sqlCondition);
+		}
+
+		sqlBuffer.append("SELECT  ");
+		sqlBuffer.append("t.qihao, ");
+		sqlBuffer.append("t.zongmaozhong, ");
+		sqlBuffer.append("t.zongjingzhong, ");
+		sqlBuffer.append("tj2u.2jijiyixialv, ");
+		sqlBuffer.append("tfe008.fe008, ");
+		sqlBuffer.append("tfe005.fe005, ");
+		sqlBuffer.append("tcl008.cl008, ");
+		sqlBuffer.append("tcl006.cl006, ");
+		sqlBuffer.append("to008.o008, ");
+		sqlBuffer.append("to005.o005, ");
+		sqlBuffer.append("tn001.n001, ");
+		sqlBuffer.append("tfecl008.fecl008, ");		
+		sqlBuffer.append("tfe008.fe008bili, ");
+		sqlBuffer.append("tfe005.fe005bili, ");
+		sqlBuffer.append("tcl008.cl008bili, ");
+		sqlBuffer.append("tcl006.cl006bili, ");
+		sqlBuffer.append("to008.o008bili, ");
+		sqlBuffer.append("to005.o005bili, ");
+		sqlBuffer.append("tn001.n001bili, ");
+		sqlBuffer.append("tfecl008.fecl008bili ");
+		
+		sqlBuffer.append("FROM ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong, SUM(jingzhong) AS zongjingzhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t, ");
+		sqlBuffer.append("(SELECT t_1.qihao as qihao,j_2u.2jijiyixia as 2jijiyixia,j_2u.2jijiyixia/t_1.zongmaozhong as 2jijiyixialv FROM ");
+		sqlBuffer.append("(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t_1 ");
+		sqlBuffer.append("LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng in(2,3,4,5)")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_2u ON (t_1.qihao = j_2u.qihao) GROUP BY t_1.qihao ");
+		sqlBuffer.append(")tj2u, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS fe008,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS fe008bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tfe008, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS fe005,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS fe005bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.05")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tfe005, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS cl008,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS cl008bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.08")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tcl008, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS cl006,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS cl006bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.06")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tcl006, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS o008,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS o008bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.08")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))to008, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS o005,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS o005bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.05")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))to005, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS n001,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS n001bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE n > 0.01")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tn001, ");
+		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
+		sqlBuffer.append("tm.zongjingzhong AS fecl008,  ");
+		sqlBuffer.append("tm.zongjingzhong/t1.zongmaozhong AS fecl008bili  ");
+		sqlBuffer.append("FROM  ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM")
+				.append(sqlBuffer1).append(" ironinfo GROUP BY qihao)t1  ");
+		sqlBuffer.append("LEFT JOIN  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08 and cl > 0.08")
+				.append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("ON  ");
+		sqlBuffer.append("(t1.qihao = tm.qihao))tfecl008 ");
+		sqlBuffer.append("WHERE t.qihao = tj2u.qihao ");
+		sqlBuffer.append("AND t.qihao = tfe008.qihao ");
+		sqlBuffer.append("AND t.qihao = tfe005.qihao ");
+		sqlBuffer.append("AND t.qihao = tcl008.qihao ");
+		sqlBuffer.append("AND t.qihao = tcl006.qihao ");
+		sqlBuffer.append("AND t.qihao = to008.qihao ");
+		sqlBuffer.append("AND t.qihao = to005.qihao ");
+		sqlBuffer.append("AND t.qihao = tn001.qihao ");
+		sqlBuffer.append("AND t.qihao = tn001.qihao ");
+		sqlBuffer.append("AND t.qihao = tfecl008.qihao ");
+		sqlBuffer.append("GROUP BY qihao ");
+
+		System.out.println("sql=" + sqlBuffer);
+
+		ResultSet resultSet = null;
+		Statement statement = null;
+
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+			resultSet = statement.executeQuery(sqlBuffer.toString());
+
+			while (resultSet.next()) {
+
+				Result5FormBean result5FormBean = new Result5FormBean();
+
+				result5FormBean.setQihao(resultSet.getString("qihao"));
+				result5FormBean.setZongmaozhong(resultSet.getString("zongmaozhong"));
+				result5FormBean.setZongjingzhong(resultSet.getString("zongjingzhong"));
+				result5FormBean.setJ2jijiyixialv(resultSet.getString("2jijiyixialv"));
+				result5FormBean.setFe008(resultSet.getString("fe008"));
+				result5FormBean.setFe005(resultSet.getString("fe005"));				
+				result5FormBean.setCl008(resultSet.getString("cl008"));				
+				result5FormBean.setCl006(resultSet.getString("cl006"));				
+				result5FormBean.setO008(resultSet.getString("o008"));				
+				result5FormBean.setO005(resultSet.getString("o005"));				
+				result5FormBean.setN001(resultSet.getString("n001"));
+				result5FormBean.setFecl008(resultSet.getString("fecl008"));
+				result5FormBean.setFe008bili(resultSet.getString("fe008bili"));
+				result5FormBean.setFe005bili(resultSet.getString("fe005bili"));
+				result5FormBean.setCl008bili(resultSet.getString("cl008bili"));
+				result5FormBean.setCl006bili(resultSet.getString("cl006bili"));
+				result5FormBean.setO008bili(resultSet.getString("o008bili"));
+				result5FormBean.setO005bili(resultSet.getString("o005bili"));
+				result5FormBean.setN001bili(resultSet.getString("n001bili"));
+				result5FormBean.setFecl008bili(resultSet.getString("fecl008bili"));
+				
+				zhibiaoList.add(result5FormBean);
+			}
+			return zhibiaoList;
 
 		} catch (Exception exception) {
 			throw new Exception("SQLException: " + exception.getMessage());
