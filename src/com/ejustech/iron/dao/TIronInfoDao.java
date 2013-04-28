@@ -4,7 +4,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,7 +33,7 @@ public class TIronInfoDao extends BaseDao {
 		PreparedStatement ps = null;
 		try {
 			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_INSERT);
-
+		
 			ps.setString(Constant.T_IRON_INFO_COL_YearMonthDay, daoBean.getYearMonthDay());
 			ps.setString(Constant.T_IRON_INFO_COL_QiHao, daoBean.getQiHao());
 			ps.setString(Constant.T_IRON_INFO_COL_LuCi, daoBean.getLuCi());
