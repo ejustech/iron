@@ -19,3 +19,5 @@
 
 3.mysql驱动包
 将project\lib\mysql-connector-javabin.jar复制到%TOMCAT_HOME%/lib/中
+
+4.SSH Key?
