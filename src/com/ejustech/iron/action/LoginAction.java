@@ -12,9 +12,9 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
+import com.ejustech.iron.business.Login;
 import com.ejustech.iron.common.IronStatus.LoginCheckResult;
 import com.ejustech.iron.form.LoginForm;
-import com.ejustech.iron.module.Login;
 
 /** 
  * MyEclipse Struts

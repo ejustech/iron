@@ -7,6 +7,7 @@ package com.ejustech.iron.databean.form;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionFormBean;
 import org.apache.struts.action.ActionMapping;
 
 /**
@@ -16,7 +17,7 @@ import org.apache.struts.action.ActionMapping;
  * 
  * @struts.form name="inputByNewForm"
  */
-public class InputByNewFormBean {
+public class InputByNewFormBean extends ActionFormBean{
 	/*
 	 * Generated fields
 	 */
