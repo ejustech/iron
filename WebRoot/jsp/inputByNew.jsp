@@ -36,9 +36,6 @@ body {
 <table width="3000" border=1 align="center" bordercolor="#999999" >
   <tr bgcolor="#006699">
     <td align="center" width="21" bordercolor="#666666">No.</td>
-    <td align="center" height="43">年</td>
-    <td align="center">月</td>
-    <td align="center">日</td>
     <td align="center">年月日</td>
     <td align="center">期号</td>
     <td align="center">炉次</td>
@@ -86,12 +83,57 @@ body {
     <td align="center">备注说明</td>
   </tr>
   <logic:iterate id="inputByNewList" name="inputByNewForm" property="inputByNewList" indexId="index">
-	<tr>
-		<td bordercolor="#666666" align="center"><%=index+1%></td>
+  	<tr>
+  		<td bordercolor="#666666" align="center"><%=index+1%></td>
+<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHao"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCi"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGe"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanLuHao"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].fanYingQiHao"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shiYongCiShu"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].mg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tiCl4"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].maoZhong"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jingZhong"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chengPinLv"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuFe"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuSi"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuCl"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuC"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuN"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuO"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuH"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuMn"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHb"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dengJiHanMeng"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].kaoHeDengJiChuMeng"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiTiaoZheng"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiShiYan"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].diPiKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shangMaoKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].paBiKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiDiPiKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiShangMaoKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiPaBiKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiTaiFenKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].ciYuanKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shouXuanFeiLiaoKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].sunHaoKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zongPaiMeiLiangKg"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chuLuZhenKongDu"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanZuiGaoWenDu"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhengLiuGaoHengDian"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhuanZhengLiu"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaShouCi"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaMoCi"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDao"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhang"> </td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMing"> </td>
+  	</tr>
+	<!-- <tr>
+		
 
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].year"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].month"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].day"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHao"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCi"> </td>
@@ -140,9 +182,6 @@ body {
 	</tr>
 	<tr>
 		<td align="center" bordercolor="#666666"></td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].monthJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dayJunPin1"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDayJunPin1"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHaoJunPin1"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCiJunPin1"> </td>
@@ -191,9 +230,6 @@ body {
 	</tr>
 	<tr>
 		<td align="center" bordercolor="#666666"></td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].monthJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dayJunPin2"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDayJunPin2"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHaoJunPin2"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCiJunPin2"> </td>
@@ -239,7 +275,7 @@ body {
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDaoJunPin2"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhangJunPin2"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMingJunPin2"> </td>
-	</tr>	
+	</tr>	 -->
   </logic:iterate>
 </table>
 <p>&nbsp;</p>

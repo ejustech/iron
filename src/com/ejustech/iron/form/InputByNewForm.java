@@ -11,21 +11,7 @@ import org.apache.struts.action.ActionForm;
 import com.ejustech.iron.common.AutoArrayList;
 import com.ejustech.iron.databean.form.InputByNewFormBean;
 
-/**
- * MyEclipse Struts Creation date: 04-19-2013
- * 
- * XDoclet definition:
- * 
- * @struts.form name="inputByNewForm"
- */
 public class InputByNewForm extends ActionForm {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	/*
-	 * Generated fields
-	 */
 	private List inputByNewList = new AutoArrayList(InputByNewFormBean.class);
 
 	public List getInputByNewList() {
@@ -35,5 +21,4 @@ public class InputByNewForm extends ActionForm {
 	public void setInputByNewList(List inputByNewList) {
 		this.inputByNewList = inputByNewList;
 	}
-
 }

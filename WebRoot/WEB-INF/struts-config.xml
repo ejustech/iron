@@ -172,12 +172,11 @@
       attribute="inputByNewForm"
       input="/jsp/inputByNew.jsp"
       name="inputByNewForm"
+      parameter="Save,Reset,Return"
       path="/inputByNew"
       scope="request"
-      parameter="Save,Reset,Return"
       type="com.ejustech.iron.action.InputByNewAction"
-      cancellable="true">
-    </action>
+      cancellable="true" />
   </action-mappings>
 
   <message-resources parameter="com.ejustech.iron.ApplicationResources" />

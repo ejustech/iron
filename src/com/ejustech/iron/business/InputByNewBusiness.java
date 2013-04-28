@@ -1,7 +1,5 @@
 package com.ejustech.iron.business;
 
-import java.text.DecimalFormat;
-
 import org.apache.struts.action.ActionForm;
 
 import com.ejustech.iron.common.Constant;
@@ -11,24 +9,65 @@ import com.ejustech.iron.databean.form.InputByNewFormBean;
 import com.ejustech.iron.form.InputByNewForm;
 
 public class InputByNewBusiness {
-	public Boolean Save(ActionForm form) {
+	private void log(InputByNewFormBean inputByNewFormBean) {
+		System.out.println("年月日:" + inputByNewFormBean.getYearMonthDay());
+		System.out.println("期号:" + inputByNewFormBean.getQiHao());
+		System.out.println("炉次:" + inputByNewFormBean.getLuCi());
+		System.out.println("规格:" + inputByNewFormBean.getGuiGe());
+		System.out.println("生产炉号:" + inputByNewFormBean.getShengChanLuHao());
+		System.out.println("反应器号:" + inputByNewFormBean.getFanYingQiHao());
 		
-		if (form != null) {
-			TIronInfoDao dao = new TIronInfoDao();
-			InputByNewForm inputByNewForm = (InputByNewForm) form;
-			InputByNewFormBean inputByNewFormBean;
-			TIronInfoDaoBean tIronInfoDaoBean;
-			for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
-				inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
-				
-				for (int j = 0; j < 3; j++) {
-					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, j+1);
-					dao.Insert(tIronInfoDaoBean);
+		System.out.println("年月日军品1:" + inputByNewFormBean.getYearMonthDayJunPin1());
+		System.out.println("期号军品1:" + inputByNewFormBean.getQiHaoJunPin1());
+		System.out.println("炉次军品1:" + inputByNewFormBean.getLuCi());
+		System.out.println("炉次军品1:" + inputByNewFormBean.getLuCiJunPin1());
+		System.out.println("规格军品1:" + inputByNewFormBean.getGuiGeJunPin1());
+		System.out.println("生产炉号军品1:" + inputByNewFormBean.getShengChanLuHaoJunPin1());
+		System.out.println("反应器号军品1:" + inputByNewFormBean.getFanYingQiHaoJunPin1());
+		
+		System.out.println("年月日军品2:" + inputByNewFormBean.getYearMonthDayJunPin2());
+		System.out.println("期号军品2:" + inputByNewFormBean.getQiHaoJunPin2());
+		System.out.println("炉次军品2:" + inputByNewFormBean.getLuCi());
+		System.out.println("炉次军品2:" + inputByNewFormBean.getLuCiJunPin2());
+		System.out.println("规格军品2:" + inputByNewFormBean.getGuiGeJunPin2());
+		System.out.println("生产炉号军品2:" + inputByNewFormBean.getShengChanLuHaoJunPin2());
+		System.out.println("反应器号军品2:" + inputByNewFormBean.getFanYingQiHaoJunPin2());
+	}
+	public Boolean Save(ActionForm form) {
+		TIronInfoDao dao = new TIronInfoDao();;
+		try {
+			if (form != null) {
+				InputByNewForm inputByNewForm = (InputByNewForm) form;
+				InputByNewFormBean inputByNewFormBean;
+				TIronInfoDaoBean tIronInfoDaoBean;
+				dao.Open();
+				dao.BeginTrans();
+				//信息输入画面，默认10条数据 循环
+				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
+					//信息输入画面Form取得FormBean
+					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
+//					log(inputByNewFormBean);
+					//1：常规数据 2:军品1 3：军品2
+					//FormBean转化成DaoBean
+					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
+					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) 
+							&& null != tIronInfoDaoBean.getGuiGe() && !"".equals(tIronInfoDaoBean.getGuiGe())) {
+						// 炉次和规格都不为空时，登陆。
+						dao.Insert(tIronInfoDaoBean);
+					}
 				}
+				dao.Commit();
+				dao.Close();
 			}
-		}
 
-		return null;
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			dao.Rollback();
+			dao.Close();
+			return false;
+		}
 	}
 
 	private InputByNewFormBean getInputByNewFormBeanFromForm(InputByNewForm form, int index) {
@@ -42,9 +81,6 @@ public class InputByNewBusiness {
 		TIronInfoDaoBean daoBean = new TIronInfoDaoBean();
 		switch (rowDataIndex) {
 		case 1:
-			daoBean.setYear(formBean.getYear());
-			daoBean.setMonth(formBean.getMonth());
-			daoBean.setDay(formBean.getDay());
 			daoBean.setYearMonthDay(formBean.getYearMonthDay());
 			daoBean.setQiHao(formBean.getQiHao());
 			daoBean.setLuCi(formBean.getLuCi());
@@ -92,9 +128,6 @@ public class InputByNewBusiness {
 			daoBean.setBeiZhuShuoMing(formBean.getBeiZhuShuoMing());
 			break;
 		case 2:
-			daoBean.setYear(formBean.getYearJunPin1());
-			daoBean.setMonth(formBean.getMonthJunPin1());
-			daoBean.setDay(formBean.getDayJunPin1());
 			daoBean.setYearMonthDay(formBean.getYearMonthDayJunPin1());
 			daoBean.setQiHao(formBean.getQiHaoJunPin1());
 			daoBean.setLuCi(formBean.getLuCiJunPin1());
@@ -142,9 +175,6 @@ public class InputByNewBusiness {
 			daoBean.setBeiZhuShuoMing(formBean.getBeiZhuShuoMingJunPin1());
 			break;
 		case 3:
-			daoBean.setYear(formBean.getYearJunPin2());
-			daoBean.setMonth(formBean.getMonthJunPin2());
-			daoBean.setDay(formBean.getDayJunPin2());
 			daoBean.setYearMonthDay(formBean.getYearMonthDayJunPin2());
 			daoBean.setQiHao(formBean.getQiHaoJunPin2());
 			daoBean.setLuCi(formBean.getLuCiJunPin2());

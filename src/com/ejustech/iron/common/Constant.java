@@ -4,7 +4,7 @@ public class Constant {
 	/**
 	 * 信息输入画面，默认显示行数
 	 */
-	public static final int INPUT_BY_NEW_ROWS = 10;
+	public static final int INPUT_BY_NEW_ROWS = 30;
 	/**
 	 * 年月日
 	 */
@@ -18,7 +18,7 @@ public class Constant {
 	 */
 	public static final int T_IRON_INFO_COL_LuCi = 3;
 	/**
-	 * 
+	 * 军品
 	 */
 	public static final int T_IRON_INFO_COL_JunPinFlg = 4;
 	/**

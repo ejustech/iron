@@ -25,7 +25,7 @@ import com.ejustech.iron.databean.form.Result5FormBean;
 public class TIronInfoDao extends BaseDao {
 
 	public Boolean Insert(TIronInfoDaoBean daoBean) {
-		Open();
+//		Open();
 
 		PreparedStatement ps = null;
 		try {

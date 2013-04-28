@@ -14,12 +14,6 @@ import org.apache.struts.action.ActionFormBean;
  * @struts.form name="inputByNewForm"
  */
 public class InputByNewFormBean extends ActionFormBean {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	/** 备注说明 */
 	private String beiZhuShuoMing;
 
@@ -55,15 +49,6 @@ public class InputByNewFormBean extends ActionFormBean {
 
 	/** 磁选Kg */
 	private String ciYuanKgJunPin2;
-
-	/** 日 */
-	private String day;
-
-	/** 日 */
-	private String dayJunPin1;
-
-	/** 日 */
-	private String dayJunPin2;
 
 	/** 等级(含锰) */
 	private String dengJiHanMeng;
@@ -218,15 +203,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	/** Mg（t） */
 	private String mgJunPin2;
 
-	/** 月 */
-	private String month;
-
-	/** 月 */
-	private String monthJunPin1;
-
-	/** 月 */
-	private String monthJunPin2;
-
 	/** 爬壁Kg */
 	private String paBiKg;
 
@@ -316,15 +292,6 @@ public class InputByNewFormBean extends ActionFormBean {
 
 	/** 通道 */
 	private String tongDaoJunPin2;
-
-	/** 年 */
-	private String year;
-
-	/** 年 */
-	private String yearJunPin1;
-
-	/** 年 */
-	private String yearJunPin2;
 
 	/** 年月日 */
 	private String yearMonthDay;
@@ -534,27 +501,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	 */
 	public String getCiYuanKgJunPin2() {
 		return ciYuanKgJunPin2;
-	}
-
-	/**
-	 * @return 日
-	 */
-	public String getDay() {
-		return day;
-	}
-
-	/**
-	 * @return 日
-	 */
-	public String getDayJunPin1() {
-		return dayJunPin1;
-	}
-
-	/**
-	 * @return 日
-	 */
-	public String getDayJunPin2() {
-		return dayJunPin2;
 	}
 
 	/**
@@ -915,27 +861,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	}
 
 	/**
-	 * @return 月
-	 */
-	public String getMonth() {
-		return month;
-	}
-
-	/**
-	 * @return 月
-	 */
-	public String getMonthJunPin1() {
-		return monthJunPin1;
-	}
-
-	/**
-	 * @return 月
-	 */
-	public String getMonthJunPin2() {
-		return monthJunPin2;
-	}
-
-	/**
 	 * @return 爬壁Kg
 	 */
 	public String getPaBiKg() {
@@ -1143,27 +1068,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	 */
 	public String getTongDaoJunPin2() {
 		return tongDaoJunPin2;
-	}
-
-	/**
-	 * @return 年
-	 */
-	public String getYear() {
-		return year;
-	}
-
-	/**
-	 * @return 年
-	 */
-	public String getYearJunPin1() {
-		return yearJunPin1;
-	}
-
-	/**
-	 * @return 年
-	 */
-	public String getYearJunPin2() {
-		return yearJunPin2;
 	}
 
 	/**
@@ -1545,27 +1449,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	}
 
 	/**
-	 * @param 日
-	 */
-	public void setDay(String day) {
-		this.day = day;
-	}
-
-	/**
-	 * @param 日
-	 */
-	public void setDayJunPin1(String day) {
-		this.day = dayJunPin1;
-	}
-
-	/**
-	 * @param 日
-	 */
-	public void setDayJunPin2(String day) {
-		this.day = dayJunPin2;
-	}
-
-	/**
 	 * @param 等级
 	 *            (含锰)
 	 */
@@ -1938,27 +1821,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	}
 
 	/**
-	 * @param 月
-	 */
-	public void setMonth(String month) {
-		this.month = month;
-	}
-
-	/**
-	 * @param 月
-	 */
-	public void setMonthJunPin1(String month) {
-		this.month = monthJunPin1;
-	}
-
-	/**
-	 * @param 月
-	 */
-	public void setMonthJunPin2(String month) {
-		this.month = monthJunPin2;
-	}
-
-	/**
 	 * @param 爬壁Kg
 	 */
 	public void setPaBiKg(String paBiKg) {
@@ -2166,27 +2028,6 @@ public class InputByNewFormBean extends ActionFormBean {
 	 */
 	public void setTongDaoJunPin2(String tongDao) {
 		this.tongDao = tongDaoJunPin2;
-	}
-
-	/**
-	 * @param 年
-	 */
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	/**
-	 * @param 年
-	 */
-	public void setYearJunPin1(String year) {
-		this.year = yearJunPin1;
-	}
-
-	/**
-	 * @param 年
-	 */
-	public void setYearJunPin2(String year) {
-		this.year = yearJunPin2;
 	}
 
 	/**

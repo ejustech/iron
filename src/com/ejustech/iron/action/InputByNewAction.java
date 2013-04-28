@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
+import com.ejustech.iron.business.InputByNewBusiness;
 import com.ejustech.iron.form.InputByNewForm;
 
 /**
@@ -28,8 +29,9 @@ public class InputByNewAction extends EventDispatchAction {
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
-
-			System.out.println(inputByNewForm.getInputByNewList().size());
+			InputByNewBusiness business = new InputByNewBusiness();
+			business.Save(inputByNewForm);
+			
 			return mapping.findForward("OK");
 		} catch (Exception e) {
 		}
