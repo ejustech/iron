@@ -84,8 +84,8 @@ body {
   </tr>
   <logic:iterate id="inputByNewList" name="inputByNewForm" property="inputByNewList" indexId="index">
   	<tr>
-  		<td bordercolor="#666666" align="center"><%=index+1%></td>
-<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
+  		<td bordercolor="#666666" align="center"><%=index/3+1%></td>
+		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHao"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCi"> </td>
 		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGe"> </td>
