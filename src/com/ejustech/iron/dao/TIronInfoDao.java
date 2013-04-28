@@ -1,13 +1,18 @@
 package com.ejustech.iron.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.ejustech.iron.common.Constant;
+import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.common.Output;
 import com.ejustech.iron.common.db.BaseDao;
+import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
 import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.databean.form.Result2FormBean;
 import com.ejustech.iron.databean.form.Result3FormBean;
@@ -18,6 +23,70 @@ import com.ejustech.iron.databean.form.Result5FormBean;
  * T_Iron_Info表的数据访问对象
  */
 public class TIronInfoDao extends BaseDao {
+
+	public Boolean Insert(TIronInfoDaoBean daoBean) {
+		Open();
+
+		PreparedStatement ps = null;
+		try {
+			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_INSERT);
+
+			ps.setString(Constant.T_IRON_INFO_COL_YearMonthDay, daoBean.getYearMonthDay());
+			ps.setString(Constant.T_IRON_INFO_COL_QiHao, daoBean.getQiHao());
+			ps.setString(Constant.T_IRON_INFO_COL_LuCi, daoBean.getLuCi());
+			ps.setString(Constant.T_IRON_INFO_COL_JunPinFlg, daoBean.getJunPinFlg());
+			ps.setString(Constant.T_IRON_INFO_COL_GuiGe, daoBean.getGuiGe());
+			ps.setString(Constant.T_IRON_INFO_COL_ShengChanLuHao, daoBean.getShengChanLuHao());
+			ps.setString(Constant.T_IRON_INFO_COL_FanYingQiHao, daoBean.getFanYingQiHao());
+			ps.setString(Constant.T_IRON_INFO_COL_ShiYongCiShu, daoBean.getShiYongCiShu());
+			ps.setString(Constant.T_IRON_INFO_COL_Mg, daoBean.getMg());
+			ps.setString(Constant.T_IRON_INFO_COL_TiCl4, daoBean.getTiCl4());
+			ps.setString(Constant.T_IRON_INFO_COL_MaoZhong, daoBean.getMaoZhong());
+			ps.setString(Constant.T_IRON_INFO_COL_JingZhong, daoBean.getJingZhong());
+			ps.setString(Constant.T_IRON_INFO_COL_ChengPinLv, daoBean.getChengPinLv());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuFe, daoBean.getYuanSuFe());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuSi, daoBean.getYuanSuSi());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuCl, daoBean.getYuanSuCl());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuC, daoBean.getYuanSuC());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuN, daoBean.getYuanSuN());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuO, daoBean.getYuanSuO());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuH, daoBean.getYuanSuH());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuMn, daoBean.getYuanSuMn());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanSuHb, daoBean.getYuanSuHb());
+			ps.setString(Constant.T_IRON_INFO_COL_DengJiHanMeng, daoBean.getDengJiHanMeng());
+			ps.setString(Constant.T_IRON_INFO_COL_KaoHeDengJiChuMeng, daoBean.getKaoHeDengJiChuMeng());
+			ps.setString(Constant.T_IRON_INFO_COL_GongYiTiaoZheng, daoBean.getGongYiTiaoZheng());
+			ps.setString(Constant.T_IRON_INFO_COL_GongYiShiYan, daoBean.getGongYiShiYan());
+			ps.setString(Constant.T_IRON_INFO_COL_DiPiKg, daoBean.getDiPiKg());
+			ps.setString(Constant.T_IRON_INFO_COL_ShangMaoKg, daoBean.getShangMaoKg());
+			ps.setString(Constant.T_IRON_INFO_COL_PaBiKg, daoBean.getPaBiKg());
+			ps.setString(Constant.T_IRON_INFO_COL_FeiDiPiKg, daoBean.getFeiDiPiKg());
+			ps.setString(Constant.T_IRON_INFO_COL_FeiShangMaoKg, daoBean.getFeiShangMaoKg());
+			ps.setString(Constant.T_IRON_INFO_COL_FeiPaBiKg, daoBean.getFeiPaBiKg());
+			ps.setString(Constant.T_IRON_INFO_COL_FeiTaiFenKg, daoBean.getFeiTaiFenKg());
+			ps.setString(Constant.T_IRON_INFO_COL_CiYuanKg, daoBean.getCiYuanKg());
+			ps.setString(Constant.T_IRON_INFO_COL_ShouXuanFeiLiaoKg, daoBean.getShouXuanFeiLiaoKg());
+			ps.setString(Constant.T_IRON_INFO_COL_SunHaoKg, daoBean.getSunHaoKg());
+			ps.setString(Constant.T_IRON_INFO_COL_ZongPaiMeiLiangKg, daoBean.getZongPaiMeiLiangKg());
+			ps.setString(Constant.T_IRON_INFO_COL_ChuLuZhenKongDu, daoBean.getChuLuZhenKongDu());
+			ps.setString(Constant.T_IRON_INFO_COL_YuanZuiGaoWenDu, daoBean.getYuanZuiGaoWenDu());
+			ps.setString(Constant.T_IRON_INFO_COL_ZhengLiuGaoHengDian, daoBean.getZhengLiuGaoHengDian());
+			ps.setString(Constant.T_IRON_INFO_COL_ZhuanZhengLiu, daoBean.getZhuanZhengLiu());
+			ps.setString(Constant.T_IRON_INFO_COL_JiaShouCi, daoBean.getJiaShouCi());
+			ps.setString(Constant.T_IRON_INFO_COL_JiaMoCi, daoBean.getJiaMoCi());
+			ps.setString(Constant.T_IRON_INFO_COL_TongDao, daoBean.getTongDao());
+			ps.setString(Constant.T_IRON_INFO_COL_ShengChanGuZhang, daoBean.getShengChanGuZhang());
+			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing, daoBean.getBeiZhuShuoMing());
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return true;
+
+	}
 
 	// 全部信息输出表
 	public ArrayList<Result1FormBean> getAllInfoList(HttpServletRequest request, String sqlCondition) throws Exception {
@@ -126,37 +195,50 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer
 				.append(" SELECT t1.qihao,t2.fe,t2.cl,t2.n,t2.o,t2.hb,t1.zonglushu,t2.zongmaozhong,t2.zongmaozhong/t1.zonglushu AS junmaozhong,t2.mgzongliang*1000/t2.zongmaozhong AS junmgdanhao,t2.zongjingzhong/t2.zongmaozhong AS junhuishoulv,t2.zongjingzhong,t2.zongjingzhong/t1.zonglushu AS junjingzhong,tj0A.0Aji,tj0A.0Ajilv,tj0.0ji,tj0.0jilv,(tj0A.0Aji+tj0.0ji)/t2.zongmaozhong as 0jiyishang,tj1.1ji,tj1.1jilv,tj2.2ji,tj3.3ji,tj4.4ji,tj5.5ji,tj2u.2jijiyixia,tj2u.2jijiyixialv FROM");
 
-		sqlBuffer.append(" (SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2).append(" GROUP BY qihao)t1,");
+		sqlBuffer.append(" (SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2)
+				.append(" GROUP BY qihao)t1,");
 		sqlBuffer
-				.append(
-						" (SELECT qihao,sum(jingzhong*fe)/sum(jingzhong) AS fe,sum(jingzhong*cl)/sum(jingzhong) AS cl,sum(jingzhong*n)/sum(jingzhong) AS n,sum(jingzhong*o)/sum(jingzhong) AS o,sum(jingzhong*hb)/sum(jingzhong) AS hb ,sum(maozhong) AS zongmaozhong,sum(mg) AS mgzongliang,sum(jingzhong) AS zongjingzhong FROM ironinfo")
+				.append(" (SELECT qihao,sum(jingzhong*fe)/sum(jingzhong) AS fe,sum(jingzhong*cl)/sum(jingzhong) AS cl,sum(jingzhong*n)/sum(jingzhong) AS n,sum(jingzhong*o)/sum(jingzhong) AS o,sum(jingzhong*hb)/sum(jingzhong) AS hb ,sum(maozhong) AS zongmaozhong,sum(mg) AS mgzongliang,sum(jingzhong) AS zongjingzhong FROM ironinfo")
 				.append(sqlBuffer1).append(" GROUP BY qihao)t2,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_0A.0Aji as 0Aji,j_0A.0Aji/t_1.zongmaozhong as 0Ajilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1)
-				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'").append(sqlBuffer2).append(
-						" GROUP BY qihao)j_0A ON (t_1.qihao = j_0A.qihao) GROUP BY t_1.qihao)tj0A,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_0.0ji as 0ji,j_0.0ji/t_1.zongmaozhong as 0jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_0 ON (t_1.qihao = j_0.qihao) GROUP BY t_1.qihao)tj0,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_1.1ji as 1ji,j_1.1ji/t_1.zongmaozhong as 1jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 1ji FROM ironinfo WHERE dengji_hanmeng = '1' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_1 ON (t_1.qihao = j_1.qihao) GROUP BY t_1.qihao)tj1,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_2.2ji as 2ji,j_2.2ji/t_1.zongmaozhong as 2jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2ji FROM ironinfo WHERE dengji_hanmeng = '2' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_2 ON (t_1.qihao = j_2.qihao) GROUP BY t_1.qihao)tj2,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_3.3ji as 3ji,j_3.3ji/t_1.zongmaozhong as 3jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 3ji FROM ironinfo WHERE dengji_hanmeng = '3' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_3 ON (t_1.qihao = j_3.qihao) GROUP BY t_1.qihao)tj3,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_4.4ji as 4ji,j_4.4ji/t_1.zongmaozhong as 4jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 4ji FROM ironinfo WHERE dengji_hanmeng = '4' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_4 ON (t_1.qihao = j_4.qihao) GROUP BY t_1.qihao)tj4,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_5.5ji as 5ji,j_5.5ji/t_1.zongmaozhong as 5jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 5ji FROM ironinfo WHERE dengji_hanmeng = '5' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_5 ON (t_1.qihao = j_5.qihao) GROUP BY t_1.qihao)tj5,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_0A.0Aji as 0Aji,j_0A.0Aji/t_1.zongmaozhong as 0Ajilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_0A ON (t_1.qihao = j_0A.qihao) GROUP BY t_1.qihao)tj0A,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_0.0ji as 0ji,j_0.0ji/t_1.zongmaozhong as 0jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_0 ON (t_1.qihao = j_0.qihao) GROUP BY t_1.qihao)tj0,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_1.1ji as 1ji,j_1.1ji/t_1.zongmaozhong as 1jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 1ji FROM ironinfo WHERE dengji_hanmeng = '1' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_1 ON (t_1.qihao = j_1.qihao) GROUP BY t_1.qihao)tj1,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_2.2ji as 2ji,j_2.2ji/t_1.zongmaozhong as 2jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2ji FROM ironinfo WHERE dengji_hanmeng = '2' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_2 ON (t_1.qihao = j_2.qihao) GROUP BY t_1.qihao)tj2,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_3.3ji as 3ji,j_3.3ji/t_1.zongmaozhong as 3jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 3ji FROM ironinfo WHERE dengji_hanmeng = '3' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_3 ON (t_1.qihao = j_3.qihao) GROUP BY t_1.qihao)tj3,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_4.4ji as 4ji,j_4.4ji/t_1.zongmaozhong as 4jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 4ji FROM ironinfo WHERE dengji_hanmeng = '4' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_4 ON (t_1.qihao = j_4.qihao) GROUP BY t_1.qihao)tj4,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_5.5ji as 5ji,j_5.5ji/t_1.zongmaozhong as 5jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 5ji FROM ironinfo WHERE dengji_hanmeng = '5' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_5 ON (t_1.qihao = j_5.qihao) GROUP BY t_1.qihao)tj5,");
 		sqlBuffer
 				.append(" (SELECT t_1.qihao as qihao,j_2u.2jijiyixia as 2jijiyixia,j_2u.2jijiyixia/t_1.zongmaozhong as 2jijiyixialv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
 				.append(sqlBuffer1)
-				.append(
-						" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE dengji_hanmeng ='2' or dengji_hanmeng ='3' or dengji_hanmeng ='4' or dengji_hanmeng ='5' ")
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE dengji_hanmeng ='2' or dengji_hanmeng ='3' or dengji_hanmeng ='4' or dengji_hanmeng ='5' ")
 				.append(sqlBuffer2).append(" GROUP BY qihao)j_2u ON (t_1.qihao = j_2u.qihao) GROUP BY t_1.qihao)tj2u");
 		sqlBuffer
 				.append(" WHERE t1.qihao = t2.qihao AND t1.qihao = tj0A.qihao AND t1.qihao = tj0.qihao AND t1.qihao = tj1.qihao AND t1.qihao = tj2.qihao AND t1.qihao = tj3.qihao AND t1.qihao = tj4.qihao AND t1.qihao = tj5.qihao AND t1.qihao = tj2u.qihao GROUP BY t1.qihao");
@@ -229,37 +311,50 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer
 				.append(" SELECT t1.qihao,t2.fe,t2.cl,t2.n,t2.o,t2.hb,t1.zonglushu,t2.zongmaozhong,t2.zongmaozhong/t1.zonglushu AS junmaozhong,t2.mgzongliang*1000/t2.zongmaozhong AS junmgdanhao,t2.zongjingzhong/t2.zongmaozhong AS junhuishoulv,t2.zongjingzhong,t2.zongjingzhong/t1.zonglushu AS junjingzhong,tj0A.0Aji,tj0A.0Ajilv,tj0.0ji,tj0.0jilv,(tj0A.0Aji+tj0.0ji)/t2.zongmaozhong as 0jiyishang,tj1.1ji,tj1.1jilv,tj2.2ji,tj3.3ji,tj4.4ji,tj5.5ji,tj2u.2jijiyixia,tj2u.2jijiyixialv FROM");
 
-		sqlBuffer.append(" (SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2).append(" GROUP BY qihao)t1,");
+		sqlBuffer.append(" (SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2)
+				.append(" GROUP BY qihao)t1,");
 		sqlBuffer
-				.append(
-						" (SELECT qihao,sum(jingzhong*fe)/sum(jingzhong) AS fe,sum(jingzhong*cl)/sum(jingzhong) AS cl,sum(jingzhong*n)/sum(jingzhong) AS n,sum(jingzhong*o)/sum(jingzhong) AS o,sum(jingzhong*hb)/sum(jingzhong) AS hb ,sum(maozhong) AS zongmaozhong,sum(mg) AS mgzongliang,sum(jingzhong) AS zongjingzhong FROM ironinfo")
+				.append(" (SELECT qihao,sum(jingzhong*fe)/sum(jingzhong) AS fe,sum(jingzhong*cl)/sum(jingzhong) AS cl,sum(jingzhong*n)/sum(jingzhong) AS n,sum(jingzhong*o)/sum(jingzhong) AS o,sum(jingzhong*hb)/sum(jingzhong) AS hb ,sum(maozhong) AS zongmaozhong,sum(mg) AS mgzongliang,sum(jingzhong) AS zongjingzhong FROM ironinfo")
 				.append(sqlBuffer1).append(" GROUP BY qihao)t2,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_0A.0Aji as 0Aji,j_0A.0Aji/t_1.zongmaozhong as 0Ajilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1)
-				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2).append(
-						" GROUP BY qihao)j_0A ON (t_1.qihao = j_0A.qihao) GROUP BY t_1.qihao)tj0A,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_0.0ji as 0ji,j_0.0ji/t_1.zongmaozhong as 0jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_0 ON (t_1.qihao = j_0.qihao) GROUP BY t_1.qihao)tj0,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_1.1ji as 1ji,j_1.1ji/t_1.zongmaozhong as 1jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_1 ON (t_1.qihao = j_1.qihao) GROUP BY t_1.qihao)tj1,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_2.2ji as 2ji,j_2.2ji/t_1.zongmaozhong as 2jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2ji FROM ironinfo WHERE kaohedengji_chumeng = '2' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_2 ON (t_1.qihao = j_2.qihao) GROUP BY t_1.qihao)tj2,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_3.3ji as 3ji,j_3.3ji/t_1.zongmaozhong as 3jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 3ji FROM ironinfo WHERE kaohedengji_chumeng = '3' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_3 ON (t_1.qihao = j_3.qihao) GROUP BY t_1.qihao)tj3,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_4.4ji as 4ji,j_4.4ji/t_1.zongmaozhong as 4jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 4ji FROM ironinfo WHERE kaohedengji_chumeng = '4' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_4 ON (t_1.qihao = j_4.qihao) GROUP BY t_1.qihao)tj4,");
-		sqlBuffer.append(" (SELECT t_1.qihao as qihao,j_5.5ji as 5ji,j_5.5ji/t_1.zongmaozhong as 5jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ").append(sqlBuffer1).append(
-				" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 5ji FROM ironinfo WHERE kaohedengji_chumeng = '5' ").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_5 ON (t_1.qihao = j_5.qihao) GROUP BY t_1.qihao)tj5,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_0A.0Aji as 0Aji,j_0A.0Aji/t_1.zongmaozhong as 0Ajilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_0A ON (t_1.qihao = j_0A.qihao) GROUP BY t_1.qihao)tj0A,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_0.0ji as 0ji,j_0.0ji/t_1.zongmaozhong as 0jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_0 ON (t_1.qihao = j_0.qihao) GROUP BY t_1.qihao)tj0,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_1.1ji as 1ji,j_1.1ji/t_1.zongmaozhong as 1jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_1 ON (t_1.qihao = j_1.qihao) GROUP BY t_1.qihao)tj1,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_2.2ji as 2ji,j_2.2ji/t_1.zongmaozhong as 2jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2ji FROM ironinfo WHERE kaohedengji_chumeng = '2' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_2 ON (t_1.qihao = j_2.qihao) GROUP BY t_1.qihao)tj2,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_3.3ji as 3ji,j_3.3ji/t_1.zongmaozhong as 3jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 3ji FROM ironinfo WHERE kaohedengji_chumeng = '3' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_3 ON (t_1.qihao = j_3.qihao) GROUP BY t_1.qihao)tj3,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_4.4ji as 4ji,j_4.4ji/t_1.zongmaozhong as 4jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 4ji FROM ironinfo WHERE kaohedengji_chumeng = '4' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_4 ON (t_1.qihao = j_4.qihao) GROUP BY t_1.qihao)tj4,");
+		sqlBuffer
+				.append(" (SELECT t_1.qihao as qihao,j_5.5ji as 5ji,j_5.5ji/t_1.zongmaozhong as 5jilv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
+				.append(sqlBuffer1)
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 5ji FROM ironinfo WHERE kaohedengji_chumeng = '5' ")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_5 ON (t_1.qihao = j_5.qihao) GROUP BY t_1.qihao)tj5,");
 		sqlBuffer
 				.append(" (SELECT t_1.qihao as qihao,j_2u.2jijiyixia as 2jijiyixia,j_2u.2jijiyixia/t_1.zongmaozhong as 2jijiyixialv FROM(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo ")
 				.append(sqlBuffer1)
-				.append(
-						" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng ='2' or kaohedengji_chumeng ='3' or kaohedengji_chumeng ='4' or kaohedengji_chumeng ='5' ")
+				.append(" GROUP BY qihao)t_1 LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng ='2' or kaohedengji_chumeng ='3' or kaohedengji_chumeng ='4' or kaohedengji_chumeng ='5' ")
 				.append(sqlBuffer2).append(" GROUP BY qihao)j_2u ON (t_1.qihao = j_2u.qihao) GROUP BY t_1.qihao)tj2u");
 		sqlBuffer
 				.append(" WHERE t1.qihao = t2.qihao AND t1.qihao = tj0A.qihao AND t1.qihao = tj0.qihao AND t1.qihao = tj1.qihao AND t1.qihao = tj2.qihao AND t1.qihao = tj3.qihao AND t1.qihao = tj4.qihao AND t1.qihao = tj5.qihao AND t1.qihao = tj2u.qihao GROUP BY t1.qihao");
@@ -349,7 +444,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("t2.shouxuanfeiliao/t1.zonglushu AS shouxuanfeiliao, ");
 		sqlBuffer.append("t2.sunhao/t1.zonglushu AS sunhao ");
 		sqlBuffer.append("FROM ");
-		sqlBuffer.append("(SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2).append(" GROUP BY qihao)t1, ");
+		sqlBuffer.append("(SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2)
+				.append(" GROUP BY qihao)t1, ");
 		sqlBuffer.append("(SELECT  ");
 		sqlBuffer.append("qihao,sum(maozhong) AS zongmaozhong, ");
 		sqlBuffer.append("sum(jingzhong) AS zongjingzhong, ");
@@ -394,7 +490,8 @@ public class TIronInfoDao extends BaseDao {
 				result4FormBean.setFeidipi(Output.getSubValue(resultSet.getString("feidipi"), 2));
 				result4FormBean.setFeidipibili(Output.getSubValue(Output.getPercentValue(resultSet.getString("feidipibili")), 2) + "%");
 				result4FormBean.setFeishangmao(Output.getSubValue(resultSet.getString("feishangmao"), 2));
-				result4FormBean.setFeishangmaobili(Output.getSubValue(Output.getPercentValue(resultSet.getString("feishangmaobili")), 2) + "%");
+				result4FormBean.setFeishangmaobili(Output.getSubValue(Output.getPercentValue(resultSet.getString("feishangmaobili")), 2)
+						+ "%");
 				result4FormBean.setFeipabi(Output.getSubValue(resultSet.getString("feipabi"), 2));
 				result4FormBean.setFeipabibili(Output.getSubValue(Output.getPercentValue(resultSet.getString("feipabibili")), 2) + "%");
 				result4FormBean.setShaixuanfeiliao(Output.getSubValue(resultSet.getString("shaixuanfeiliao"), 2));
@@ -449,11 +546,12 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("tfecl008.fecl008bili ");
 
 		sqlBuffer.append("FROM ");
-		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong, SUM(jingzhong) AS zongjingzhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t, ");
+		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong, SUM(jingzhong) AS zongjingzhong FROM ironinfo").append(sqlBuffer1)
+				.append(" GROUP BY qihao)t, ");
 		sqlBuffer.append("(SELECT t_1.qihao as qihao,j_2u.2jijiyixia as 2jijiyixia,j_2u.2jijiyixia/t_1.zongmaozhong as 2jijiyixialv FROM ");
 		sqlBuffer.append("(SELECT qihao,sum(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t_1 ");
-		sqlBuffer.append("LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng in(2,3,4,5)").append(sqlBuffer2).append(
-				" GROUP BY qihao)j_2u ON (t_1.qihao = j_2u.qihao) GROUP BY t_1.qihao ");
+		sqlBuffer.append("LEFT JOIN (SELECT qihao,sum(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng in(2,3,4,5)")
+				.append(sqlBuffer2).append(" GROUP BY qihao)j_2u ON (t_1.qihao = j_2u.qihao) GROUP BY t_1.qihao ");
 		sqlBuffer.append(")tj2u, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
 		sqlBuffer.append("tm.zongjingzhong AS fe008,  ");
@@ -461,7 +559,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tfe008, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -470,7 +569,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.05").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.05").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tfe005, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -479,7 +579,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.08").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.08").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tcl008, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -488,7 +589,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.06").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE cl > 0.06").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tcl006, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -497,7 +599,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.08").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.08").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))to008, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -506,7 +609,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.05").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE o > 0.05").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))to005, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -515,7 +619,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM ironinfo").append(sqlBuffer1).append(" GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE n > 0.01").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE n > 0.01").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tn001, ");
 		sqlBuffer.append("(SELECT t1.qihao as qihao,  ");
@@ -524,7 +629,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("FROM  ");
 		sqlBuffer.append("(SELECT qihao, SUM(maozhong) AS zongmaozhong FROM").append(sqlBuffer1).append(" ironinfo GROUP BY qihao)t1  ");
 		sqlBuffer.append("LEFT JOIN  ");
-		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08 and cl > 0.08").append(sqlBuffer2).append(" GROUP BY qihao)tm  ");
+		sqlBuffer.append("(SELECT qihao, SUM(jingzhong) AS zongjingzhong FROM ironinfo WHERE fe > 0.08 and cl > 0.08").append(sqlBuffer2)
+				.append(" GROUP BY qihao)tm  ");
 		sqlBuffer.append("ON  ");
 		sqlBuffer.append("(t1.qihao = tm.qihao))tfecl008 ");
 		sqlBuffer.append("WHERE t.qihao = tj2u.qihao ");

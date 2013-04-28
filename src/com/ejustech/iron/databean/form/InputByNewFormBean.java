@@ -4,11 +4,7 @@
  */
 package com.ejustech.iron.databean.form;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionFormBean;
-import org.apache.struts.action.ActionMapping;
 
 /**
  * MyEclipse Struts Creation date: 04-19-2013
@@ -17,1571 +13,2479 @@ import org.apache.struts.action.ActionMapping;
  * 
  * @struts.form name="inputByNewForm"
  */
-public class InputByNewFormBean extends ActionFormBean{
-	/*
-	 * Generated fields
-	 */
-
-	/** gongYiShiYanJunPin property */
-	private String gongYiShiYanJunPin;
-
-	/** chuLuZhenKongDu property */
-	private String chuLuZhenKongDu;
-
-	/** zongPaiMeiLiangKgJunPin property */
-	private String zongPaiMeiLiangKgJunPin;
-
-	/** maoZhong property */
-	private String maoZhong;
-
-	/** shengChanGuZhang property */
-	private String shengChanGuZhang;
-
-	/** shengChanGuZhangJunPin property */
-	private String shengChanGuZhangJunPin;
-
-	/** diPiKg property */
-	private String diPiKg;
-
-	/** luCi property */
-	private String luCi;
-
-	/** ciYuanKgJunPin property */
-	private String ciYuanKgJunPin;
-
-	/** yuansuMn property */
-	private String yuansuMn;
-
-	/** beiZhuShuoMingJunPin property */
-	private String beiZhuShuoMingJunPin;
-
-	/** yuanSuSiJunPin property */
-	private String yuanSuSiJunPin;
-
-	/** chengPinLvJunPin property */
-	private String chengPinLvJunPin;
-
-	/** feiPaBiKg property */
-	private String feiPaBiKg;
-
-	/** feiShangMaoKgJunPin property */
-	private String feiShangMaoKgJunPin;
-
-	/** yuanSuO property */
-	private String yuanSuO;
-
-	/** yuanSuFeJunPin property */
-	private String yuanSuFeJunPin;
-
-	/** yuanSuN property */
-	private String yuanSuN;
-
-	/** jingZhong property */
-	private String jingZhong;
-
-	/** diPiKgJunPin property */
-	private String diPiKgJunPin;
-
-	/** year property */
-	private String year;
-
-	/** dengJiHanMeng property */
-	private String dengJiHanMeng;
-
-	/** shangMaoKg property */
-	private String shangMaoKg;
-
-	/** shengChanLuHao property */
-	private String shengChanLuHao;
-
-	/** jiaShouCi property */
-	private String jiaShouCi;
-
-	/** feiDiPiKgJunPin property */
-	private String feiDiPiKgJunPin;
-
-	/** zhuanZhengLiu property */
-	private String zhuanZhengLiu;
-
-	/** paBiKgJunPin property */
-	private String paBiKgJunPin;
-
-	/** zongPaiMeiLiangKg property */
-	private String zongPaiMeiLiangKg;
-
-	/** dengJiHanMengJunPin property */
-	private String dengJiHanMengJunPin;
-
-	/** zhuanZhengLiuJunPin property */
-	private String zhuanZhengLiuJunPin;
-
-	/** gongYiTiaoZhengJunPin property */
-	private String gongYiTiaoZhengJunPin;
-
-	/** yuanSuSi property */
-	private String yuanSuSi;
-
-	/** yuanZuiGaoWenDu property */
-	private String yuanZuiGaoWenDu;
-
-	/** yuanSuH property */
-	private String yuanSuH;
-
-	/** sunHaoKgJunPin property */
-	private String sunHaoKgJunPin;
-
-	/** yuanSuC property */
-	private String yuanSuC;
-
-	/** yuanSuFe property */
-	private String yuanSuFe;
-
-	/** jiaMoCi property */
-	private String jiaMoCi;
-
-	/** shouXuanFeiLiaoKgJunPin property */
-	private String shouXuanFeiLiaoKgJunPin;
-
-	/** sunHaoKg property */
-	private String sunHaoKg;
-
-	/** maoZhongJunPin property */
-	private String maoZhongJunPin;
-
-	/** feiTaiFenKg property */
-	private String feiTaiFenKg;
-
-	/** jiaShouCiJunPin property */
-	private String jiaShouCiJunPin;
-
-	/** zhengLiuGaoHengDianJunPin property */
-	private String zhengLiuGaoHengDianJunPin;
-
-	/** qiHao property */
-	private String qiHao;
-
-	/** yuanSuOJunPin property */
-	private String yuanSuOJunPin;
-
-	/** yuanSuNJunPin property */
-	private String yuanSuNJunPin;
-
-	/** month property */
-	private String month;
-
-	/** beiZhuShuoMing property */
-	private String beiZhuShuoMing;
-
-	/** shangMaoKgJunPin property */
-	private String shangMaoKgJunPin;
-
-	/** day property */
-	private String day;
-
-	/** luCiJunPin property */
-	private String luCiJunPin;
-
-	/** chengPinLv property */
-	private String chengPinLv;
-
-	/** dayJunPin property */
-	private String dayJunPin;
-
-	/** gongYiTiaoZheng property */
-	private String gongYiTiaoZheng;
-
-	/** feiTaiFenKgJunPin property */
-	private String feiTaiFenKgJunPin;
-
-	/** zhengLiuGaoHengDian property */
-	private String zhengLiuGaoHengDian;
-
-	/** fanYingQiHao property */
-	private String fanYingQiHao;
-
-	/** guiGe property */
-	private String guiGe;
-
-	/** yearMonthDayJunPin property */
-	private String yearMonthDayJunPin;
-
-	/** paBiKg property */
-	private String paBiKg;
-
-	/** shiYongCiShuJunPin property */
-	private String shiYongCiShuJunPin;
-
-	/** guiGeJunPin property */
-	private String guiGeJunPin;
-
-	/** yuanSuClJunPin property */
-	private String yuanSuClJunPin;
-
-	/** yearMonthDay property */
-	private String yearMonthDay;
-
-	/** ciYuanKg property */
-	private String ciYuanKg;
-
-	/** kaoHeDengJiChuMeng property */
-	private String kaoHeDengJiChuMeng;
-
-	/** tongDaoJunPin property */
-	private String tongDaoJunPin;
-
-	/** shengChanLuHaoJunPin property */
-	private String shengChanLuHaoJunPin;
-
-	/** yuanSuCJunPin property */
-	private String yuanSuCJunPin;
-
-	/** mg property */
-	private String mg;
-
-	/** tiCl4 property */
-	private String tiCl4;
-
-	/** fanYingQiHaoJunPin property */
-	private String fanYingQiHaoJunPin;
-
-	/** qiHaoJunPin property */
-	private String qiHaoJunPin;
-
-	/** yuanSuCl property */
-	private String yuanSuCl;
-
-	/** kaoHeDengJiChuMengJunPin property */
-	private String kaoHeDengJiChuMengJunPin;
-
-	/** tiCl4JunPin property */
-	private String tiCl4JunPin;
-
-	/** jingZhongJunPin property */
-	private String jingZhongJunPin;
-
-	/** yuanSuHb property */
-	private String yuanSuHb;
-
-	/** shiYongCiShu property */
-	private String shiYongCiShu;
-
-	/** feiPaBiKgJunPin property */
-	private String feiPaBiKgJunPin;
-
-	/** yuansuMnJunPin property */
-	private String yuansuMnJunPin;
-
-	/** yearJunPin property */
-	private String yearJunPin;
-
-	/** jiaMoCiJunPin property */
-	private String jiaMoCiJunPin;
-
-	/** gongYiShiYan property */
-	private String gongYiShiYan;
-
-	/** yuanSuHJunPin property */
-	private String yuanSuHJunPin;
-
-	/** tongDao property */
-	private String tongDao;
-
-	/** yuanSuHbJunPin property */
-	private String yuanSuHbJunPin;
-
-	/** shouXuanFeiLiaoKg property */
-	private String shouXuanFeiLiaoKg;
-
-	/** monthJunPin property */
-	private String monthJunPin;
-
-	/** feiShangMaoKg property */
-	private String feiShangMaoKg;
-
-	/** yuanZuiGaoWenDuJunPin property */
-	private String yuanZuiGaoWenDuJunPin;
-
-	/** feiDiPiKg property */
-	private String feiDiPiKg;
-
-	/** chuLuZhenKongDuJunPin property */
-	private String chuLuZhenKongDuJunPin;
-
-	/** mgJunPin property */
-	private String mgJunPin;
-
-	private String gongYiShiYanJunPin2;
-
-	private String zongPaiMeiLiangKgJunPin2;
-
-	private String shengChanGuZhangJunPin2;
-
-	private String ciYuanKgJunPin2;
-
-	private String beiZhuShuoMingJunPin2;
-
-	private String yuanSuSiJunPin2;
-
-	private String chengPinLvJunPin2;
-
-	private String feiShangMaoKgJunPin2;
-
-	private String yuanSuFeJunPin2;
-
-	private String diPiKgJunPin2;
-
-	private String feiDiPiKgJunPin2;
-
-	private String paBiKgJunPin2;
-
-	private String dengJiHanMengJunPin2;
-
-	private String zhuanZhengLiuJunPin2;
-
-	private String gongYiTiaoZhengJunPin2;
-
-	private String sunHaoKgJunPin2;
-
-	private String shouXuanFeiLiaoKgJunPin2;
-
-	private String maoZhongJunPin2;
-
-	private String jiaShouCiJunPin2;
-
-	private String zhengLiuGaoHengDianJunPin2;
-
-	private String yuanSuOJunPin2;
-
-	private String yuanSuNJunPin2;
-
-	private String shangMaoKgJunPin2;
-
-	private String luCiJunPin2;
-
-	private String dayJunPin2;
-
-	private String feiTaiFenKgJunPin2;
-
-	private String yearMonthDayJunPin2;
-
-	private String shiYongCiShuJunPin2;
-
-	private String guiGeJunPin2;
-
-	private String yuanSuClJunPin2;
-
-	private String tongDaoJunPin2;
-
-	private String shengChanLuHaoJunPin2;
-
-	private String yuanSuCJunPin2;
-
-	private String fanYingQiHaoJunPin2;
-
-	private String qiHaoJunPin2;
-
-	private String kaoHeDengJiChuMengJunPin2;
-
-	private String tiCl4JunPin2;
-
-	private String jingZhongJunPin2;
-
-	private String feiPaBiKgJunPin2;
-
-	private String yuansuMnJunPin2;
-
-	private String yearJunPin2;
-
-	private String jiaMoCiJunPin2;
-
-	private String yuanSuHJunPin2;
-
-	private String yuanSuHbJunPin2;
-
-	private String monthJunPin2;
-
-	private String yuanZuiGaoWenDuJunPin2;
-
-	private String chuLuZhenKongDuJunPin2;
-
-	private String mgJunPin2;
-
-	/*
-	 * Generated Methods
-	 */
+public class InputByNewFormBean extends ActionFormBean {
 
 	/**
-	 * Method validate
 	 * 
-	 * @param mapping
-	 * @param request
-	 * @return ActionErrors
 	 */
-	public ActionErrors validate(ActionMapping mapping,
-			HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getGongYiShiYanJunPin() {
-		return gongYiShiYanJunPin;
-	}
-
-	public void setGongYiShiYanJunPin(String gongYiShiYanJunPin) {
-		this.gongYiShiYanJunPin = gongYiShiYanJunPin;
-	}
-
-	public String getChuLuZhenKongDu() {
-		return chuLuZhenKongDu;
-	}
-
-	public void setChuLuZhenKongDu(String chuLuZhenKongDu) {
-		this.chuLuZhenKongDu = chuLuZhenKongDu;
-	}
-
-	public String getZongPaiMeiLiangKgJunPin() {
-		return zongPaiMeiLiangKgJunPin;
-	}
-
-	public void setZongPaiMeiLiangKgJunPin(String zongPaiMeiLiangKgJunPin) {
-		this.zongPaiMeiLiangKgJunPin = zongPaiMeiLiangKgJunPin;
-	}
-
-	public String getMaoZhong() {
-		return maoZhong;
-	}
-
-	public void setMaoZhong(String maoZhong) {
-		this.maoZhong = maoZhong;
-	}
-
-	public String getShengChanGuZhang() {
-		return shengChanGuZhang;
-	}
-
-	public void setShengChanGuZhang(String shengChanGuZhang) {
-		this.shengChanGuZhang = shengChanGuZhang;
-	}
-
-	public String getShengChanGuZhangJunPin() {
-		return shengChanGuZhangJunPin;
-	}
-
-	public void setShengChanGuZhangJunPin(String shengChanGuZhangJunPin) {
-		this.shengChanGuZhangJunPin = shengChanGuZhangJunPin;
-	}
-
-	public String getDiPiKg() {
-		return diPiKg;
-	}
-
-	public void setDiPiKg(String diPiKg) {
-		this.diPiKg = diPiKg;
-	}
-
-	public String getLuCi() {
-		return luCi;
-	}
-
-	public void setLuCi(String luCi) {
-		this.luCi = luCi;
-	}
-
-	public String getCiYuanKgJunPin() {
-		return ciYuanKgJunPin;
-	}
-
-	public void setCiYuanKgJunPin(String ciYuanKgJunPin) {
-		this.ciYuanKgJunPin = ciYuanKgJunPin;
-	}
-
-	public String getYuansuMn() {
-		return yuansuMn;
-	}
-
-	public void setYuansuMn(String yuansuMn) {
-		this.yuansuMn = yuansuMn;
-	}
-
-	public String getBeiZhuShuoMingJunPin() {
-		return beiZhuShuoMingJunPin;
-	}
-
-	public void setBeiZhuShuoMingJunPin(String beiZhuShuoMingJunPin) {
-		this.beiZhuShuoMingJunPin = beiZhuShuoMingJunPin;
-	}
-
-	public String getYuanSuSiJunPin() {
-		return yuanSuSiJunPin;
-	}
-
-	public void setYuanSuSiJunPin(String yuanSuSiJunPin) {
-		this.yuanSuSiJunPin = yuanSuSiJunPin;
-	}
-
-	public String getChengPinLvJunPin() {
-		return chengPinLvJunPin;
-	}
-
-	public void setChengPinLvJunPin(String chengPinLvJunPin) {
-		this.chengPinLvJunPin = chengPinLvJunPin;
-	}
-
-	public String getFeiPaBiKg() {
-		return feiPaBiKg;
-	}
-
-	public void setFeiPaBiKg(String feiPaBiKg) {
-		this.feiPaBiKg = feiPaBiKg;
-	}
-
-	public String getFeiShangMaoKgJunPin() {
-		return feiShangMaoKgJunPin;
-	}
-
-	public void setFeiShangMaoKgJunPin(String feiShangMaoKgJunPin) {
-		this.feiShangMaoKgJunPin = feiShangMaoKgJunPin;
-	}
-
-	public String getYuanSuO() {
-		return yuanSuO;
-	}
-
-	public void setYuanSuO(String yuanSuO) {
-		this.yuanSuO = yuanSuO;
-	}
-
-	public String getYuanSuFeJunPin() {
-		return yuanSuFeJunPin;
-	}
-
-	public void setYuanSuFeJunPin(String yuanSuFeJunPin) {
-		this.yuanSuFeJunPin = yuanSuFeJunPin;
-	}
-
-	public String getYuanSuN() {
-		return yuanSuN;
-	}
-
-	public void setYuanSuN(String yuanSuN) {
-		this.yuanSuN = yuanSuN;
-	}
-
-	public String getJingZhong() {
-		return jingZhong;
-	}
-
-	public void setJingZhong(String jingZhong) {
-		this.jingZhong = jingZhong;
-	}
-
-	public String getDiPiKgJunPin() {
-		return diPiKgJunPin;
-	}
-
-	public void setDiPiKgJunPin(String diPiKgJunPin) {
-		this.diPiKgJunPin = diPiKgJunPin;
-	}
-
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public String getDengJiHanMeng() {
-		return dengJiHanMeng;
-	}
-
-	public void setDengJiHanMeng(String dengJiHanMeng) {
-		this.dengJiHanMeng = dengJiHanMeng;
-	}
-
-	public String getShangMaoKg() {
-		return shangMaoKg;
-	}
-
-	public void setShangMaoKg(String shangMaoKg) {
-		this.shangMaoKg = shangMaoKg;
-	}
-
-	public String getShengChanLuHao() {
-		return shengChanLuHao;
-	}
-
-	public void setShengChanLuHao(String shengChanLuHao) {
-		this.shengChanLuHao = shengChanLuHao;
-	}
-
-	public String getJiaShouCi() {
-		return jiaShouCi;
-	}
-
-	public void setJiaShouCi(String jiaShouCi) {
-		this.jiaShouCi = jiaShouCi;
-	}
-
-	public String getFeiDiPiKgJunPin() {
-		return feiDiPiKgJunPin;
-	}
-
-	public void setFeiDiPiKgJunPin(String feiDiPiKgJunPin) {
-		this.feiDiPiKgJunPin = feiDiPiKgJunPin;
-	}
-
-	public String getZhuanZhengLiu() {
-		return zhuanZhengLiu;
-	}
-
-	public void setZhuanZhengLiu(String zhuanZhengLiu) {
-		this.zhuanZhengLiu = zhuanZhengLiu;
-	}
-
-	public String getPaBiKgJunPin() {
-		return paBiKgJunPin;
-	}
-
-	public void setPaBiKgJunPin(String paBiKgJunPin) {
-		this.paBiKgJunPin = paBiKgJunPin;
-	}
-
-	public String getZongPaiMeiLiangKg() {
-		return zongPaiMeiLiangKg;
-	}
-
-	public void setZongPaiMeiLiangKg(String zongPaiMeiLiangKg) {
-		this.zongPaiMeiLiangKg = zongPaiMeiLiangKg;
-	}
-
-	public String getDengJiHanMengJunPin() {
-		return dengJiHanMengJunPin;
-	}
-
-	public void setDengJiHanMengJunPin(String dengJiHanMengJunPin) {
-		this.dengJiHanMengJunPin = dengJiHanMengJunPin;
-	}
-
-	public String getZhuanZhengLiuJunPin() {
-		return zhuanZhengLiuJunPin;
-	}
-
-	public void setZhuanZhengLiuJunPin(String zhuanZhengLiuJunPin) {
-		this.zhuanZhengLiuJunPin = zhuanZhengLiuJunPin;
-	}
-
-	public String getGongYiTiaoZhengJunPin() {
-		return gongYiTiaoZhengJunPin;
-	}
-
-	public void setGongYiTiaoZhengJunPin(String gongYiTiaoZhengJunPin) {
-		this.gongYiTiaoZhengJunPin = gongYiTiaoZhengJunPin;
-	}
-
-	public String getYuanSuSi() {
-		return yuanSuSi;
-	}
-
-	public void setYuanSuSi(String yuanSuSi) {
-		this.yuanSuSi = yuanSuSi;
-	}
-
-	public String getYuanZuiGaoWenDu() {
-		return yuanZuiGaoWenDu;
-	}
-
-	public void setYuanZuiGaoWenDu(String yuanZuiGaoWenDu) {
-		this.yuanZuiGaoWenDu = yuanZuiGaoWenDu;
-	}
-
-	public String getYuanSuH() {
-		return yuanSuH;
-	}
-
-	public void setYuanSuH(String yuanSuH) {
-		this.yuanSuH = yuanSuH;
-	}
-
-	public String getSunHaoKgJunPin() {
-		return sunHaoKgJunPin;
-	}
-
-	public void setSunHaoKgJunPin(String sunHaoKgJunPin) {
-		this.sunHaoKgJunPin = sunHaoKgJunPin;
-	}
-
-	public String getYuanSuC() {
-		return yuanSuC;
-	}
-
-	public void setYuanSuC(String yuanSuC) {
-		this.yuanSuC = yuanSuC;
-	}
+	private static final long serialVersionUID = 1L;
 
-	public String getYuanSuFe() {
-		return yuanSuFe;
-	}
+	/** 备注说明 */
+	private String beiZhuShuoMing;
 
-	public void setYuanSuFe(String yuanSuFe) {
-		this.yuanSuFe = yuanSuFe;
-	}
+	/** 备注说明 */
+	private String beiZhuShuoMingJunPin1;
 
-	public String getJiaMoCi() {
-		return jiaMoCi;
-	}
+	/** 备注说明 */
+	private String beiZhuShuoMingJunPin2;
 
-	public void setJiaMoCi(String jiaMoCi) {
-		this.jiaMoCi = jiaMoCi;
-	}
+	/** 成品率 */
+	private String chengPinLv;
 
-	public String getShouXuanFeiLiaoKgJunPin() {
-		return shouXuanFeiLiaoKgJunPin;
-	}
+	/** 成品率 */
+	private String chengPinLvJunPin1;
 
-	public void setShouXuanFeiLiaoKgJunPin(String shouXuanFeiLiaoKgJunPin) {
-		this.shouXuanFeiLiaoKgJunPin = shouXuanFeiLiaoKgJunPin;
-	}
+	/** 成品率 */
+	private String chengPinLvJunPin2;
 
-	public String getSunHaoKg() {
-		return sunHaoKg;
-	}
+	/** 出炉真空度Pa */
+	private String chuLuZhenKongDu;
 
-	public void setSunHaoKg(String sunHaoKg) {
-		this.sunHaoKg = sunHaoKg;
-	}
+	/** 出炉真空度Pa */
+	private String chuLuZhenKongDuJunPin1;
 
-	public String getMaoZhongJunPin() {
-		return maoZhongJunPin;
-	}
+	/** 出炉真空度Pa */
+	private String chuLuZhenKongDuJunPin2;
 
-	public void setMaoZhongJunPin(String maoZhongJunPin) {
-		this.maoZhongJunPin = maoZhongJunPin;
-	}
+	/** 磁选Kg */
+	private String ciYuanKg;
 
-	public String getFeiTaiFenKg() {
-		return feiTaiFenKg;
-	}
+	/** 磁选Kg */
+	private String ciYuanKgJunPin1;
 
-	public void setFeiTaiFenKg(String feiTaiFenKg) {
-		this.feiTaiFenKg = feiTaiFenKg;
-	}
+	/** 磁选Kg */
+	private String ciYuanKgJunPin2;
 
-	public String getJiaShouCiJunPin() {
-		return jiaShouCiJunPin;
-	}
+	/** 日 */
+	private String day;
 
-	public void setJiaShouCiJunPin(String jiaShouCiJunPin) {
-		this.jiaShouCiJunPin = jiaShouCiJunPin;
-	}
+	/** 日 */
+	private String dayJunPin1;
 
-	public String getZhengLiuGaoHengDianJunPin() {
-		return zhengLiuGaoHengDianJunPin;
-	}
+	/** 日 */
+	private String dayJunPin2;
 
-	public void setZhengLiuGaoHengDianJunPin(String zhengLiuGaoHengDianJunPin) {
-		this.zhengLiuGaoHengDianJunPin = zhengLiuGaoHengDianJunPin;
-	}
+	/** 等级(含锰) */
+	private String dengJiHanMeng;
 
-	public String getQiHao() {
-		return qiHao;
-	}
+	/** 等级JunPin1(含锰) */
+	private String dengJiHanMengJunPin1;
 
-	public void setQiHao(String qiHao) {
-		this.qiHao = qiHao;
-	}
+	/** 等级JunPin2(含锰) */
+	private String dengJiHanMengJunPin2;
 
-	public String getYuanSuOJunPin() {
-		return yuanSuOJunPin;
-	}
+	/** 底皮Kg */
+	private String diPiKg;
 
-	public void setYuanSuOJunPin(String yuanSuOJunPin) {
-		this.yuanSuOJunPin = yuanSuOJunPin;
-	}
+	/** 底皮Kg */
+	private String diPiKgJunPin1;
 
-	public String getYuanSuNJunPin() {
-		return yuanSuNJunPin;
-	}
+	/** 底皮Kg */
+	private String diPiKgJunPin2;
 
-	public void setYuanSuNJunPin(String yuanSuNJunPin) {
-		this.yuanSuNJunPin = yuanSuNJunPin;
-	}
+	/** 反应器号 */
+	private String fanYingQiHao;
 
-	public String getMonth() {
-		return month;
-	}
+	/** 反应器号 */
+	private String fanYingQiHaoJunPin1;
 
-	public void setMonth(String month) {
-		this.month = month;
-	}
+	/** 反应器号 */
+	private String fanYingQiHaoJunPin2;
 
+	/** 废底皮Kg */
+	private String feiDiPiKg;
+
+	/** 废底皮Kg */
+	private String feiDiPiKgJunPin1;
+
+	/** 废底皮Kg */
+	private String feiDiPiKgJunPin2;
+
+	/** 废爬壁Kg */
+	private String feiPaBiKg;
+
+	/** 废爬壁Kg */
+	private String feiPaBiKgJunPin1;
+
+	/** 废爬壁Kg */
+	private String feiPaBiKgJunPin2;
+
+	/** 废上帽Kg */
+	private String feiShangMaoKg;
+
+	/** 废上帽Kg */
+	private String feiShangMaoKgJunPin1;
+
+	/** 废上帽Kg */
+	private String feiShangMaoKgJunPin2;
+
+	/** 废钛粉Kg */
+	private String feiTaiFenKg;
+
+	/** 废钛粉Kg */
+	private String feiTaiFenKgJunPin1;
+
+	/** 废钛粉Kg */
+	private String feiTaiFenKgJunPin2;
+
+	/** 工艺试验 */
+	private String gongYiShiYan;
+
+	/** 工艺试验 */
+	private String gongYiShiYanJunPin1;
+
+	/** 工艺试验 */
+	private String gongYiShiYanJunPin2;
+
+	/** 工艺调整 */
+	private String gongYiTiaoZheng;
+
+	/** 工艺调整 */
+	private String gongYiTiaoZhengJunPin1;
+
+	/** 工艺调整 */
+	private String gongYiTiaoZhengJunPin2;
+
+	/** 规格 */
+	private String guiGe;
+
+	/** 规格 */
+	private String guiGeJunPin1;
+
+	/** 规格 */
+	private String guiGeJunPin2;
+
+	/** 加末次 */
+	private String jiaMoCi;
+
+	/** 加末次 */
+	private String jiaMoCiJunPin1;
+
+	/** 加末次 */
+	private String jiaMoCiJunPin2;
+
+	/** 加首次 */
+	private String jiaShouCi;
+
+	/** 加首次 */
+	private String jiaShouCiJunPin1;
+
+	/** 加首次 */
+	private String jiaShouCiJunPin2;
+
+	/** 净重 */
+	private String jingZhong;
+
+	/** 净重 */
+	private String jingZhongJunPin1;
+
+	/** 净重 */
+	private String jingZhongJunPin2;
+
+	/** 考核等级(除锰) */
+	private String kaoHeDengJiChuMeng;
+
+	/** 考核等级JunPin1(除锰) */
+	private String kaoHeDengJiChuMengJunPin1;
+
+	/** 考核等级JunPin2(除锰) */
+	private String kaoHeDengJiChuMengJunPin2;
+
+	/** 炉次 */
+	private String luCi;
+
+	/** 炉次 */
+	private String luCiJunPin1;
+
+	/** 炉次 */
+	private String luCiJunPin2;
+
+	/** 毛重 */
+	private String maoZhong;
+
+	/** 毛重 */
+	private String maoZhongJunPin1;
+
+	/** 毛重 */
+	private String maoZhongJunPin2;
+
+	/** Mg（t） */
+	private String mg;
+
+	/** Mg（t） */
+	private String mgJunPin1;
+
+	/** Mg（t） */
+	private String mgJunPin2;
+
+	/** 月 */
+	private String month;
+
+	/** 月 */
+	private String monthJunPin1;
+
+	/** 月 */
+	private String monthJunPin2;
+
+	/** 爬壁Kg */
+	private String paBiKg;
+
+	/** 爬壁Kg */
+	private String paBiKgJunPin1;
+
+	/** 爬壁Kg */
+	private String paBiKgJunPin2;
+
+	/** 期号 */
+	private String qiHao;
+
+	/** 期号 */
+	private String qiHaoJunPin1;
+
+	/** 期号 */
+	private String qiHaoJunPin2;
+
+	/** 上帽Kg */
+	private String shangMaoKg;
+
+	/** 上帽Kg */
+	private String shangMaoKgJunPin1;
+
+	/** 上帽Kg */
+	private String shangMaoKgJunPin2;
+
+	/** 生产故障 */
+	private String shengChanGuZhang;
+
+	/** 生产故障 */
+	private String shengChanGuZhangJunPin1;
+
+	/** 生产故障 */
+	private String shengChanGuZhangJunPin2;
+
+	/** 生产炉号 */
+	private String shengChanLuHao;
+
+	/** 生产炉号 */
+	private String shengChanLuHaoJunPin1;
+
+	/** 生产炉号 */
+	private String shengChanLuHaoJunPin2;
+
+	/** 使用次数 */
+	private String shiYongCiShu;
+
+	/** 使用次数 */
+	private String shiYongCiShuJunPin1;
+
+	/** 使用次数 */
+	private String shiYongCiShuJunPin2;
+
+	/** 手选废料Kg */
+	private String shouXuanFeiLiaoKg;
+
+	/** 手选废料Kg */
+	private String shouXuanFeiLiaoKgJunPin1;
+
+	/** 手选废料Kg */
+	private String shouXuanFeiLiaoKgJunPin2;
+
+	/** 损耗Kg */
+	private String sunHaoKg;
+
+	/** 损耗Kg */
+	private String sunHaoKgJunPin1;
+
+	/** 损耗Kg */
+	private String sunHaoKgJunPin2;
+
+	/** TiCl4 */
+	private String tiCl4;
+
+	/** TiCl4 */
+	private String tiCl4JunPin1;
+
+	/** TiCl4 */
+	private String tiCl4JunPin2;
+
+	/** 通道 */
+	private String tongDao;
+
+	/** 通道 */
+	private String tongDaoJunPin1;
+
+	/** 通道 */
+	private String tongDaoJunPin2;
+
+	/** 年 */
+	private String year;
+
+	/** 年 */
+	private String yearJunPin1;
+
+	/** 年 */
+	private String yearJunPin2;
+
+	/** 年月日 */
+	private String yearMonthDay;
+
+	/** 年月日 */
+	private String yearMonthDayJunPin1;
+
+	/** 年月日 */
+	private String yearMonthDayJunPin2;
+
+	/** 元素C */
+	private String yuanSuC;
+
+	/** 元素C */
+	private String yuanSuCJunPin1;
+
+	/** 元素C */
+	private String yuanSuCJunPin2;
+
+	/** 元素Cl */
+	private String yuanSuCl;
+
+	/** 元素Cl */
+	private String yuanSuClJunPin1;
+
+	/** 元素Cl */
+	private String yuanSuClJunPin2;
+
+	/** 元素Fe */
+	private String yuanSuFe;
+
+	/** 元素Fe */
+	private String yuanSuFeJunPin1;
+
+	/** 元素Fe */
+	private String yuanSuFeJunPin2;
+
+	/** 元素H */
+	private String yuanSuH;
+
+	/** 元素HB */
+	private String yuanSuHb;
+
+	/** 元素HB */
+	private String yuanSuHbJunPin1;
+
+	/** 元素HB */
+	private String yuanSuHbJunPin2;
+
+	/** 元素H */
+	private String yuanSuHJunPin1;
+
+	/** 元素H */
+	private String yuanSuHJunPin2;
+
+	/** 元素Mn */
+	private String yuanSuMn;
+
+	/** 元素Mn */
+	private String yuanSuMnJunPin1;
+
+	/** 元素Mn */
+	private String yuanSuMnJunPin2;
+
+	/** 元素N */
+	private String yuanSuN;
+
+	/** 元素N */
+	private String yuanSuNJunPin1;
+
+	/** 元素N */
+	private String yuanSuNJunPin2;
+
+	/** 元素O */
+	private String yuanSuO;
+
+	/** 元素O */
+	private String yuanSuOJunPin1;
+
+	/** 元素O */
+	private String yuanSuOJunPin2;
+
+	/** 元素Si */
+	private String yuanSuSi;
+
+	/** 元素Si */
+	private String yuanSuSiJunPin1;
+
+	/** 元素Si */
+	private String yuanSuSiJunPin2;
+
+	/** 还原最高温度℃ */
+	private String yuanZuiGaoWenDu;
+
+	/** 还原最高温度℃ */
+	private String yuanZuiGaoWenDuJunPin1;
+
+	/** 还原最高温度℃ */
+	private String yuanZuiGaoWenDuJunPin2;
+
+	/** 蒸馏高恒A点最高℃ */
+	private String zhengLiuGaoHengDian;
+
+	/** 蒸馏高恒A点最高℃ */
+	private String zhengLiuGaoHengDianJunPin1;
+
+	/** 蒸馏高恒A点最高℃ */
+	private String zhengLiuGaoHengDianJunPin2;
+
+	/** 转蒸馏 */
+	private String zhuanZhengLiu;
+
+	/** 转蒸馏 */
+	private String zhuanZhengLiuJunPin1;
+
+	/** 转蒸馏 */
+	private String zhuanZhengLiuJunPin2;
+
+	/** 总排镁量Kg */
+	private String zongPaiMeiLiangKg;
+
+	/** 总排镁量Kg */
+	private String zongPaiMeiLiangKgJunPin1;
+
+	/** 总排镁量Kg */
+	private String zongPaiMeiLiangKgJunPin2;
+
+	/**
+	 * @return 备注说明
+	 */
 	public String getBeiZhuShuoMing() {
 		return beiZhuShuoMing;
 	}
 
-	public void setBeiZhuShuoMing(String beiZhuShuoMing) {
-		this.beiZhuShuoMing = beiZhuShuoMing;
-	}
-
-	public String getShangMaoKgJunPin() {
-		return shangMaoKgJunPin;
-	}
-
-	public void setShangMaoKgJunPin(String shangMaoKgJunPin) {
-		this.shangMaoKgJunPin = shangMaoKgJunPin;
-	}
-
-	public String getDay() {
-		return day;
-	}
-
-	public void setDay(String day) {
-		this.day = day;
-	}
-
-	public String getLuCiJunPin() {
-		return luCiJunPin;
-	}
-
-	public void setLuCiJunPin(String luCiJunPin) {
-		this.luCiJunPin = luCiJunPin;
-	}
-
-	public String getChengPinLv() {
-		return chengPinLv;
-	}
-
-	public void setChengPinLv(String chengPinLv) {
-		this.chengPinLv = chengPinLv;
-	}
-
-	public String getDayJunPin() {
-		return dayJunPin;
-	}
-
-	public void setDayJunPin(String dayJunPin) {
-		this.dayJunPin = dayJunPin;
-	}
-
-	public String getGongYiTiaoZheng() {
-		return gongYiTiaoZheng;
-	}
-
-	public void setGongYiTiaoZheng(String gongYiTiaoZheng) {
-		this.gongYiTiaoZheng = gongYiTiaoZheng;
-	}
-
-	public String getFeiTaiFenKgJunPin() {
-		return feiTaiFenKgJunPin;
-	}
-
-	public void setFeiTaiFenKgJunPin(String feiTaiFenKgJunPin) {
-		this.feiTaiFenKgJunPin = feiTaiFenKgJunPin;
-	}
-
-	public String getZhengLiuGaoHengDian() {
-		return zhengLiuGaoHengDian;
-	}
-
-	public void setZhengLiuGaoHengDian(String zhengLiuGaoHengDian) {
-		this.zhengLiuGaoHengDian = zhengLiuGaoHengDian;
-	}
-
-	public String getFanYingQiHao() {
-		return fanYingQiHao;
-	}
-
-	public void setFanYingQiHao(String fanYingQiHao) {
-		this.fanYingQiHao = fanYingQiHao;
-	}
-
-	public String getGuiGe() {
-		return guiGe;
-	}
-
-	public void setGuiGe(String guiGe) {
-		this.guiGe = guiGe;
-	}
-
-	public String getYearMonthDayJunPin() {
-		return yearMonthDayJunPin;
-	}
-
-	public void setYearMonthDayJunPin(String yearMonthDayJunPin) {
-		this.yearMonthDayJunPin = yearMonthDayJunPin;
-	}
-
-	public String getPaBiKg() {
-		return paBiKg;
-	}
-
-	public void setPaBiKg(String paBiKg) {
-		this.paBiKg = paBiKg;
-	}
-
-	public String getShiYongCiShuJunPin() {
-		return shiYongCiShuJunPin;
-	}
-
-	public void setShiYongCiShuJunPin(String shiYongCiShuJunPin) {
-		this.shiYongCiShuJunPin = shiYongCiShuJunPin;
-	}
-
-	public String getGuiGeJunPin() {
-		return guiGeJunPin;
-	}
-
-	public void setGuiGeJunPin(String guiGeJunPin) {
-		this.guiGeJunPin = guiGeJunPin;
-	}
-
-	public String getYuanSuClJunPin() {
-		return yuanSuClJunPin;
-	}
-
-	public void setYuanSuClJunPin(String yuanSuClJunPin) {
-		this.yuanSuClJunPin = yuanSuClJunPin;
-	}
-
-	public String getYearMonthDay() {
-		return yearMonthDay;
-	}
-
-	public void setYearMonthDay(String yearMonthDay) {
-		this.yearMonthDay = yearMonthDay;
-	}
-
-	public String getCiYuanKg() {
-		return ciYuanKg;
-	}
-
-	public void setCiYuanKg(String ciYuanKg) {
-		this.ciYuanKg = ciYuanKg;
-	}
-
-	public String getKaoHeDengJiChuMeng() {
-		return kaoHeDengJiChuMeng;
-	}
-
-	public void setKaoHeDengJiChuMeng(String kaoHeDengJiChuMeng) {
-		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMeng;
-	}
-
-	public String getTongDaoJunPin() {
-		return tongDaoJunPin;
-	}
-
-	public void setTongDaoJunPin(String tongDaoJunPin) {
-		this.tongDaoJunPin = tongDaoJunPin;
-	}
-
-	public String getShengChanLuHaoJunPin() {
-		return shengChanLuHaoJunPin;
-	}
-
-	public void setShengChanLuHaoJunPin(String shengChanLuHaoJunPin) {
-		this.shengChanLuHaoJunPin = shengChanLuHaoJunPin;
-	}
-
-	public String getYuanSuCJunPin() {
-		return yuanSuCJunPin;
-	}
-
-	public void setYuanSuCJunPin(String yuanSuCJunPin) {
-		this.yuanSuCJunPin = yuanSuCJunPin;
-	}
-
-	public String getMg() {
-		return mg;
-	}
-
-	public void setMg(String mg) {
-		this.mg = mg;
-	}
-
-	public String getTiCl4() {
-		return tiCl4;
-	}
-
-	public void setTiCl4(String tiCl4) {
-		this.tiCl4 = tiCl4;
-	}
-
-	public String getFanYingQiHaoJunPin() {
-		return fanYingQiHaoJunPin;
-	}
-
-	public void setFanYingQiHaoJunPin(String fanYingQiHaoJunPin) {
-		this.fanYingQiHaoJunPin = fanYingQiHaoJunPin;
-	}
-
-	public String getQiHaoJunPin() {
-		return qiHaoJunPin;
-	}
-
-	public void setQiHaoJunPin(String qiHaoJunPin) {
-		this.qiHaoJunPin = qiHaoJunPin;
-	}
-
-	public String getYuanSuCl() {
-		return yuanSuCl;
-	}
-
-	public void setYuanSuCl(String yuanSuCl) {
-		this.yuanSuCl = yuanSuCl;
-	}
-
-	public String getKaoHeDengJiChuMengJunPin() {
-		return kaoHeDengJiChuMengJunPin;
-	}
-
-	public void setKaoHeDengJiChuMengJunPin(String kaoHeDengJiChuMengJunPin) {
-		this.kaoHeDengJiChuMengJunPin = kaoHeDengJiChuMengJunPin;
-	}
-
-	public String getTiCl4JunPin() {
-		return tiCl4JunPin;
-	}
-
-	public void setTiCl4JunPin(String tiCl4JunPin) {
-		this.tiCl4JunPin = tiCl4JunPin;
-	}
-
-	public String getJingZhongJunPin() {
-		return jingZhongJunPin;
-	}
-
-	public void setJingZhongJunPin(String jingZhongJunPin) {
-		this.jingZhongJunPin = jingZhongJunPin;
-	}
-
-	public String getYuanSuHb() {
-		return yuanSuHb;
-	}
-
-	public void setYuanSuHb(String yuanSuHb) {
-		this.yuanSuHb = yuanSuHb;
-	}
-
-	public String getShiYongCiShu() {
-		return shiYongCiShu;
-	}
-
-	public void setShiYongCiShu(String shiYongCiShu) {
-		this.shiYongCiShu = shiYongCiShu;
-	}
-
-	public String getFeiPaBiKgJunPin() {
-		return feiPaBiKgJunPin;
-	}
-
-	public void setFeiPaBiKgJunPin(String feiPaBiKgJunPin) {
-		this.feiPaBiKgJunPin = feiPaBiKgJunPin;
-	}
-
-	public String getYuansuMnJunPin() {
-		return yuansuMnJunPin;
-	}
-
-	public void setYuansuMnJunPin(String yuansuMnJunPin) {
-		this.yuansuMnJunPin = yuansuMnJunPin;
-	}
-
-	public String getYearJunPin() {
-		return yearJunPin;
-	}
-
-	public void setYearJunPin(String yearJunPin) {
-		this.yearJunPin = yearJunPin;
-	}
-
-	public String getJiaMoCiJunPin() {
-		return jiaMoCiJunPin;
-	}
-
-	public void setJiaMoCiJunPin(String jiaMoCiJunPin) {
-		this.jiaMoCiJunPin = jiaMoCiJunPin;
-	}
-
-	public String getGongYiShiYan() {
-		return gongYiShiYan;
-	}
-
-	public void setGongYiShiYan(String gongYiShiYan) {
-		this.gongYiShiYan = gongYiShiYan;
-	}
-
-	public String getYuanSuHJunPin() {
-		return yuanSuHJunPin;
-	}
-
-	public void setYuanSuHJunPin(String yuanSuHJunPin) {
-		this.yuanSuHJunPin = yuanSuHJunPin;
-	}
-
-	public String getTongDao() {
-		return tongDao;
-	}
-
-	public void setTongDao(String tongDao) {
-		this.tongDao = tongDao;
-	}
-
-	public String getYuanSuHbJunPin() {
-		return yuanSuHbJunPin;
-	}
-
-	public void setYuanSuHbJunPin(String yuanSuHbJunPin) {
-		this.yuanSuHbJunPin = yuanSuHbJunPin;
-	}
-
-	public String getShouXuanFeiLiaoKg() {
-		return shouXuanFeiLiaoKg;
-	}
-
-	public void setShouXuanFeiLiaoKg(String shouXuanFeiLiaoKg) {
-		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKg;
-	}
-
-	public String getMonthJunPin() {
-		return monthJunPin;
-	}
-
-	public void setMonthJunPin(String monthJunPin) {
-		this.monthJunPin = monthJunPin;
-	}
-
-	public String getFeiShangMaoKg() {
-		return feiShangMaoKg;
-	}
-
-	public void setFeiShangMaoKg(String feiShangMaoKg) {
-		this.feiShangMaoKg = feiShangMaoKg;
-	}
-
-	public String getYuanZuiGaoWenDuJunPin() {
-		return yuanZuiGaoWenDuJunPin;
-	}
-
-	public void setYuanZuiGaoWenDuJunPin(String yuanZuiGaoWenDuJunPin) {
-		this.yuanZuiGaoWenDuJunPin = yuanZuiGaoWenDuJunPin;
-	}
-
-	public String getFeiDiPiKg() {
-		return feiDiPiKg;
-	}
-
-	public void setFeiDiPiKg(String feiDiPiKg) {
-		this.feiDiPiKg = feiDiPiKg;
-	}
-
-	public String getChuLuZhenKongDuJunPin() {
-		return chuLuZhenKongDuJunPin;
-	}
-
-	public void setChuLuZhenKongDuJunPin(String chuLuZhenKongDuJunPin) {
-		this.chuLuZhenKongDuJunPin = chuLuZhenKongDuJunPin;
-	}
-
-	public String getMgJunPin() {
-		return mgJunPin;
-	}
-
-	public void setMgJunPin(String mgJunPin) {
-		this.mgJunPin = mgJunPin;
-	}
-
-	public String getGongYiShiYanJunPin2() {
-		return gongYiShiYanJunPin2;
-	}
-
-	public void setGongYiShiYanJunPin2(String gongYiShiYanJunPin2) {
-		this.gongYiShiYanJunPin2 = gongYiShiYanJunPin2;
-	}
-
-	public String getZongPaiMeiLiangKgJunPin2() {
-		return zongPaiMeiLiangKgJunPin2;
-	}
-
-	public void setZongPaiMeiLiangKgJunPin2(String zongPaiMeiLiangKgJunPin2) {
-		this.zongPaiMeiLiangKgJunPin2 = zongPaiMeiLiangKgJunPin2;
-	}
-
-	public String getShengChanGuZhangJunPin2() {
-		return shengChanGuZhangJunPin2;
-	}
-
-	public void setShengChanGuZhangJunPin2(String shengChanGuZhangJunPin2) {
-		this.shengChanGuZhangJunPin2 = shengChanGuZhangJunPin2;
-	}
-
-	public String getCiYuanKgJunPin2() {
-		return ciYuanKgJunPin2;
-	}
-
-	public void setCiYuanKgJunPin2(String ciYuanKgJunPin2) {
-		this.ciYuanKgJunPin2 = ciYuanKgJunPin2;
-	}
-
+	/**
+	 * @return 备注说明
+	 */
+	public String getBeiZhuShuoMingJunPin1() {
+		return beiZhuShuoMingJunPin1;
+	}
+
+	/**
+	 * @return 备注说明
+	 */
 	public String getBeiZhuShuoMingJunPin2() {
 		return beiZhuShuoMingJunPin2;
 	}
 
-	public void setBeiZhuShuoMingJunPin2(String beiZhuShuoMingJunPin2) {
-		this.beiZhuShuoMingJunPin2 = beiZhuShuoMingJunPin2;
+	/**
+	 * @return 成品率
+	 */
+	public String getChengPinLv() {
+		return chengPinLv;
 	}
 
-	public String getYuanSuSiJunPin2() {
-		return yuanSuSiJunPin2;
+	/**
+	 * @return 成品率
+	 */
+	public String getChengPinLvJunPin1() {
+		return chengPinLvJunPin1;
 	}
 
-	public void setYuanSuSiJunPin2(String yuanSuSiJunPin2) {
-		this.yuanSuSiJunPin2 = yuanSuSiJunPin2;
-	}
-
+	/**
+	 * @return 成品率
+	 */
 	public String getChengPinLvJunPin2() {
 		return chengPinLvJunPin2;
 	}
 
-	public void setChengPinLvJunPin2(String chengPinLvJunPin2) {
-		this.chengPinLvJunPin2 = chengPinLvJunPin2;
-	}
-
-	public String getFeiShangMaoKgJunPin2() {
-		return feiShangMaoKgJunPin2;
-	}
-
-	public void setFeiShangMaoKgJunPin2(String feiShangMaoKgJunPin2) {
-		this.feiShangMaoKgJunPin2 = feiShangMaoKgJunPin2;
-	}
-
-	public String getYuanSuFeJunPin2() {
-		return yuanSuFeJunPin2;
-	}
-
-	public void setYuanSuFeJunPin2(String yuanSuFeJunPin2) {
-		this.yuanSuFeJunPin2 = yuanSuFeJunPin2;
-	}
-
-	public String getDiPiKgJunPin2() {
-		return diPiKgJunPin2;
-	}
-
-	public void setDiPiKgJunPin2(String diPiKgJunPin2) {
-		this.diPiKgJunPin2 = diPiKgJunPin2;
-	}
-
-	public String getFeiDiPiKgJunPin2() {
-		return feiDiPiKgJunPin2;
-	}
-
-	public void setFeiDiPiKgJunPin2(String feiDiPiKgJunPin2) {
-		this.feiDiPiKgJunPin2 = feiDiPiKgJunPin2;
-	}
-
-	public String getPaBiKgJunPin2() {
-		return paBiKgJunPin2;
-	}
-
-	public void setPaBiKgJunPin2(String paBiKgJunPin2) {
-		this.paBiKgJunPin2 = paBiKgJunPin2;
-	}
-
-	public String getDengJiHanMengJunPin2() {
-		return dengJiHanMengJunPin2;
-	}
-
-	public void setDengJiHanMengJunPin2(String dengJiHanMengJunPin2) {
-		this.dengJiHanMengJunPin2 = dengJiHanMengJunPin2;
-	}
-
-	public String getZhuanZhengLiuJunPin2() {
-		return zhuanZhengLiuJunPin2;
-	}
-
-	public void setZhuanZhengLiuJunPin2(String zhuanZhengLiuJunPin2) {
-		this.zhuanZhengLiuJunPin2 = zhuanZhengLiuJunPin2;
-	}
-
-	public String getGongYiTiaoZhengJunPin2() {
-		return gongYiTiaoZhengJunPin2;
-	}
-
-	public void setGongYiTiaoZhengJunPin2(String gongYiTiaoZhengJunPin2) {
-		this.gongYiTiaoZhengJunPin2 = gongYiTiaoZhengJunPin2;
-	}
-
-	public String getSunHaoKgJunPin2() {
-		return sunHaoKgJunPin2;
-	}
-
-	public void setSunHaoKgJunPin2(String sunHaoKgJunPin2) {
-		this.sunHaoKgJunPin2 = sunHaoKgJunPin2;
-	}
-
-	public String getShouXuanFeiLiaoKgJunPin2() {
-		return shouXuanFeiLiaoKgJunPin2;
-	}
-
-	public void setShouXuanFeiLiaoKgJunPin2(String shouXuanFeiLiaoKgJunPin2) {
-		this.shouXuanFeiLiaoKgJunPin2 = shouXuanFeiLiaoKgJunPin2;
-	}
-
-	public String getMaoZhongJunPin2() {
-		return maoZhongJunPin2;
-	}
-
-	public void setMaoZhongJunPin2(String maoZhongJunPin2) {
-		this.maoZhongJunPin2 = maoZhongJunPin2;
-	}
-
-	public String getJiaShouCiJunPin2() {
-		return jiaShouCiJunPin2;
-	}
-
-	public void setJiaShouCiJunPin2(String jiaShouCiJunPin2) {
-		this.jiaShouCiJunPin2 = jiaShouCiJunPin2;
-	}
-
-	public String getZhengLiuGaoHengDianJunPin2() {
-		return zhengLiuGaoHengDianJunPin2;
-	}
-
-	public void setZhengLiuGaoHengDianJunPin2(String zhengLiuGaoHengDianJunPin2) {
-		this.zhengLiuGaoHengDianJunPin2 = zhengLiuGaoHengDianJunPin2;
-	}
-
-	public String getYuanSuOJunPin2() {
-		return yuanSuOJunPin2;
-	}
-
-	public void setYuanSuOJunPin2(String yuanSuOJunPin2) {
-		this.yuanSuOJunPin2 = yuanSuOJunPin2;
-	}
-
-	public String getYuanSuNJunPin2() {
-		return yuanSuNJunPin2;
-	}
-
-	public void setYuanSuNJunPin2(String yuanSuNJunPin2) {
-		this.yuanSuNJunPin2 = yuanSuNJunPin2;
-	}
-
-	public String getShangMaoKgJunPin2() {
-		return shangMaoKgJunPin2;
-	}
-
-	public void setShangMaoKgJunPin2(String shangMaoKgJunPin2) {
-		this.shangMaoKgJunPin2 = shangMaoKgJunPin2;
-	}
-
-	public String getLuCiJunPin2() {
-		return luCiJunPin2;
-	}
-
-	public void setLuCiJunPin2(String luCiJunPin2) {
-		this.luCiJunPin2 = luCiJunPin2;
-	}
-
-	public String getDayJunPin2() {
-		return dayJunPin2;
-	}
-
-	public void setDayJunPin2(String dayJunPin2) {
-		this.dayJunPin2 = dayJunPin2;
-	}
-
-	public String getFeiTaiFenKgJunPin2() {
-		return feiTaiFenKgJunPin2;
-	}
-
-	public void setFeiTaiFenKgJunPin2(String feiTaiFenKgJunPin2) {
-		this.feiTaiFenKgJunPin2 = feiTaiFenKgJunPin2;
-	}
-
-	public String getYearMonthDayJunPin2() {
-		return yearMonthDayJunPin2;
-	}
-
-	public void setYearMonthDayJunPin2(String yearMonthDayJunPin2) {
-		this.yearMonthDayJunPin2 = yearMonthDayJunPin2;
-	}
-
-	public String getShiYongCiShuJunPin2() {
-		return shiYongCiShuJunPin2;
-	}
-
-	public void setShiYongCiShuJunPin2(String shiYongCiShuJunPin2) {
-		this.shiYongCiShuJunPin2 = shiYongCiShuJunPin2;
-	}
-
-	public String getGuiGeJunPin2() {
-		return guiGeJunPin2;
-	}
-
-	public void setGuiGeJunPin2(String guiGeJunPin2) {
-		this.guiGeJunPin2 = guiGeJunPin2;
-	}
-
-	public String getYuanSuClJunPin2() {
-		return yuanSuClJunPin2;
-	}
-
-	public void setYuanSuClJunPin2(String yuanSuClJunPin2) {
-		this.yuanSuClJunPin2 = yuanSuClJunPin2;
-	}
-
-	public String getTongDaoJunPin2() {
-		return tongDaoJunPin2;
-	}
-
-	public void setTongDaoJunPin2(String tongDaoJunPin2) {
-		this.tongDaoJunPin2 = tongDaoJunPin2;
-	}
-
-	public String getShengChanLuHaoJunPin2() {
-		return shengChanLuHaoJunPin2;
-	}
-
-	public void setShengChanLuHaoJunPin2(String shengChanLuHaoJunPin2) {
-		this.shengChanLuHaoJunPin2 = shengChanLuHaoJunPin2;
-	}
-
-	public String getYuanSuCJunPin2() {
-		return yuanSuCJunPin2;
-	}
-
-	public void setYuanSuCJunPin2(String yuanSuCJunPin2) {
-		this.yuanSuCJunPin2 = yuanSuCJunPin2;
-	}
-
-	public String getFanYingQiHaoJunPin2() {
-		return fanYingQiHaoJunPin2;
-	}
-
-	public void setFanYingQiHaoJunPin2(String fanYingQiHaoJunPin2) {
-		this.fanYingQiHaoJunPin2 = fanYingQiHaoJunPin2;
-	}
-
-	public String getQiHaoJunPin2() {
-		return qiHaoJunPin2;
-	}
-
-	public void setQiHaoJunPin2(String qiHaoJunPin2) {
-		this.qiHaoJunPin2 = qiHaoJunPin2;
-	}
-
-	public String getKaoHeDengJiChuMengJunPin2() {
-		return kaoHeDengJiChuMengJunPin2;
-	}
-
-	public void setKaoHeDengJiChuMengJunPin2(String kaoHeDengJiChuMengJunPin2) {
-		this.kaoHeDengJiChuMengJunPin2 = kaoHeDengJiChuMengJunPin2;
-	}
-
-	public String getTiCl4JunPin2() {
-		return tiCl4JunPin2;
-	}
-
-	public void setTiCl4JunPin2(String tiCl4JunPin2) {
-		this.tiCl4JunPin2 = tiCl4JunPin2;
-	}
-
-	public String getJingZhongJunPin2() {
-		return jingZhongJunPin2;
-	}
-
-	public void setJingZhongJunPin2(String jingZhongJunPin2) {
-		this.jingZhongJunPin2 = jingZhongJunPin2;
-	}
-
-	public String getFeiPaBiKgJunPin2() {
-		return feiPaBiKgJunPin2;
-	}
-
-	public void setFeiPaBiKgJunPin2(String feiPaBiKgJunPin2) {
-		this.feiPaBiKgJunPin2 = feiPaBiKgJunPin2;
-	}
-
-	public String getYuansuMnJunPin2() {
-		return yuansuMnJunPin2;
-	}
-
-	public void setYuansuMnJunPin2(String yuansuMnJunPin2) {
-		this.yuansuMnJunPin2 = yuansuMnJunPin2;
-	}
-
-	public String getYearJunPin2() {
-		return yearJunPin2;
-	}
-
-	public void setYearJunPin2(String yearJunPin2) {
-		this.yearJunPin2 = yearJunPin2;
-	}
-
-	public String getJiaMoCiJunPin2() {
-		return jiaMoCiJunPin2;
-	}
-
-	public void setJiaMoCiJunPin2(String jiaMoCiJunPin2) {
-		this.jiaMoCiJunPin2 = jiaMoCiJunPin2;
-	}
-
-	public String getYuanSuHJunPin2() {
-		return yuanSuHJunPin2;
-	}
-
-	public void setYuanSuHJunPin2(String yuanSuHJunPin2) {
-		this.yuanSuHJunPin2 = yuanSuHJunPin2;
-	}
-
-	public String getYuanSuHbJunPin2() {
-		return yuanSuHbJunPin2;
-	}
-
-	public void setYuanSuHbJunPin2(String yuanSuHbJunPin2) {
-		this.yuanSuHbJunPin2 = yuanSuHbJunPin2;
-	}
-
-	public String getMonthJunPin2() {
-		return monthJunPin2;
-	}
-
-	public void setMonthJunPin2(String monthJunPin2) {
-		this.monthJunPin2 = monthJunPin2;
-	}
-
-	public String getYuanZuiGaoWenDuJunPin2() {
-		return yuanZuiGaoWenDuJunPin2;
-	}
-
-	public void setYuanZuiGaoWenDuJunPin2(String yuanZuiGaoWenDuJunPin2) {
-		this.yuanZuiGaoWenDuJunPin2 = yuanZuiGaoWenDuJunPin2;
-	}
-
+	/**
+	 * @return the 出炉真空度Pa
+	 */
+	public String getChuLuZhenKongDu() {
+		return chuLuZhenKongDu;
+	}
+
+	/**
+	 * @return the 出炉真空度Pa
+	 */
+	public String getChuLuZhenKongDuJunPin1() {
+		return chuLuZhenKongDuJunPin1;
+	}
+
+	/**
+	 * @return the 出炉真空度Pa
+	 */
 	public String getChuLuZhenKongDuJunPin2() {
 		return chuLuZhenKongDuJunPin2;
 	}
 
-	public void setChuLuZhenKongDuJunPin2(String chuLuZhenKongDuJunPin2) {
-		this.chuLuZhenKongDuJunPin2 = chuLuZhenKongDuJunPin2;
+	/**
+	 * @return 磁选Kg
+	 */
+	public String getCiYuanKg() {
+		return ciYuanKg;
 	}
 
+	/**
+	 * @return 磁选Kg
+	 */
+	public String getCiYuanKgJunPin1() {
+		return ciYuanKgJunPin1;
+	}
+
+	/**
+	 * @return 磁选Kg
+	 */
+	public String getCiYuanKgJunPin2() {
+		return ciYuanKgJunPin2;
+	}
+
+	/**
+	 * @return 日
+	 */
+	public String getDay() {
+		return day;
+	}
+
+	/**
+	 * @return 日
+	 */
+	public String getDayJunPin1() {
+		return dayJunPin1;
+	}
+
+	/**
+	 * @return 日
+	 */
+	public String getDayJunPin2() {
+		return dayJunPin2;
+	}
+
+	/**
+	 * @return 等级(含锰)
+	 */
+	public String getDengJiHanMeng() {
+		return dengJiHanMeng;
+	}
+
+	/**
+	 * @return 等级JunPin1(含锰)
+	 */
+	public String getDengJiHanMengJunPin1() {
+		return dengJiHanMengJunPin1;
+	}
+
+	/**
+	 * @return 等级JunPin2(含锰)
+	 */
+	public String getDengJiHanMengJunPin2() {
+		return dengJiHanMengJunPin2;
+	}
+
+	/**
+	 * @return 底皮Kg
+	 */
+	public String getDiPiKg() {
+		return diPiKg;
+	}
+
+	/**
+	 * @return 底皮Kg
+	 */
+	public String getDiPiKgJunPin1() {
+		return diPiKgJunPin1;
+	}
+
+	/**
+	 * @return 底皮Kg
+	 */
+	public String getDiPiKgJunPin2() {
+		return diPiKgJunPin2;
+	}
+
+	/**
+	 * @return 反应器号
+	 */
+	public String getFanYingQiHao() {
+		return fanYingQiHao;
+	}
+
+	/**
+	 * @return 反应器号
+	 */
+	public String getFanYingQiHaoJunPin1() {
+		return fanYingQiHaoJunPin1;
+	}
+
+	/**
+	 * @return 反应器号
+	 */
+	public String getFanYingQiHaoJunPin2() {
+		return fanYingQiHaoJunPin2;
+	}
+
+	/**
+	 * @return 废底皮Kg
+	 */
+	public String getFeiDiPiKg() {
+		return feiDiPiKg;
+	}
+
+	/**
+	 * @return 废底皮Kg
+	 */
+	public String getFeiDiPiKgJunPin1() {
+		return feiDiPiKgJunPin1;
+	}
+
+	/**
+	 * @return 废底皮Kg
+	 */
+	public String getFeiDiPiKgJunPin2() {
+		return feiDiPiKgJunPin2;
+	}
+
+	/**
+	 * @return 废爬壁Kg
+	 */
+	public String getFeiPaBiKg() {
+		return feiPaBiKg;
+	}
+
+	/**
+	 * @return 废爬壁Kg
+	 */
+	public String getFeiPaBiKgJunPin1() {
+		return feiPaBiKgJunPin1;
+	}
+
+	/**
+	 * @return 废爬壁Kg
+	 */
+	public String getFeiPaBiKgJunPin2() {
+		return feiPaBiKgJunPin2;
+	}
+
+	/**
+	 * @return 废上帽Kg
+	 */
+	public String getFeiShangMaoKg() {
+		return feiShangMaoKg;
+	}
+
+	/**
+	 * @return 废上帽Kg
+	 */
+	public String getFeiShangMaoKgJunPin1() {
+		return feiShangMaoKgJunPin1;
+	}
+
+	/**
+	 * @return 废上帽Kg
+	 */
+	public String getFeiShangMaoKgJunPin2() {
+		return feiShangMaoKgJunPin2;
+	}
+
+	/**
+	 * @return 废钛粉Kg
+	 */
+	public String getFeiTaiFenKg() {
+		return feiTaiFenKg;
+	}
+
+	/**
+	 * @return 废钛粉Kg
+	 */
+	public String getFeiTaiFenKgJunPin1() {
+		return feiTaiFenKgJunPin1;
+	}
+
+	/**
+	 * @return 废钛粉Kg
+	 */
+	public String getFeiTaiFenKgJunPin2() {
+		return feiTaiFenKgJunPin2;
+	}
+
+	/**
+	 * @return 工艺试验
+	 */
+	public String getGongYiShiYan() {
+		return gongYiShiYan;
+	}
+
+	/**
+	 * @return 工艺试验
+	 */
+	public String getGongYiShiYanJunPin1() {
+		return gongYiShiYanJunPin1;
+	}
+
+	/**
+	 * @return 工艺试验
+	 */
+	public String getGongYiShiYanJunPin2() {
+		return gongYiShiYanJunPin2;
+	}
+
+	/**
+	 * @return 工艺调整
+	 */
+	public String getGongYiTiaoZheng() {
+		return gongYiTiaoZheng;
+	}
+
+	/**
+	 * @return 工艺调整
+	 */
+	public String getGongYiTiaoZhengJunPin1() {
+		return gongYiTiaoZhengJunPin1;
+	}
+
+	/**
+	 * @return 工艺调整
+	 */
+	public String getGongYiTiaoZhengJunPin2() {
+		return gongYiTiaoZhengJunPin2;
+	}
+
+	/**
+	 * @return 规格
+	 */
+	public String getGuiGe() {
+		return guiGe;
+	}
+
+	/**
+	 * @return 规格
+	 */
+	public String getGuiGeJunPin1() {
+		return guiGeJunPin1;
+	}
+
+	/**
+	 * @return 规格
+	 */
+	public String getGuiGeJunPin2() {
+		return guiGeJunPin2;
+	}
+
+	/**
+	 * @return 加末次
+	 */
+	public String getJiaMoCi() {
+		return jiaMoCi;
+	}
+
+	/**
+	 * @return 加末次
+	 */
+	public String getJiaMoCiJunPin1() {
+		return jiaMoCiJunPin1;
+	}
+
+	/**
+	 * @return 加末次
+	 */
+	public String getJiaMoCiJunPin2() {
+		return jiaMoCiJunPin2;
+	}
+
+	/**
+	 * @return 加首次
+	 */
+	public String getJiaShouCi() {
+		return jiaShouCi;
+	}
+
+	/**
+	 * @return 加首次
+	 */
+	public String getJiaShouCiJunPin1() {
+		return jiaShouCiJunPin1;
+	}
+
+	/**
+	 * @return 加首次
+	 */
+	public String getJiaShouCiJunPin2() {
+		return jiaShouCiJunPin2;
+	}
+
+	/**
+	 * @return 净重
+	 */
+	public String getJingZhong() {
+		return jingZhong;
+	}
+
+	/**
+	 * @return 净重
+	 */
+	public String getJingZhongJunPin1() {
+		return jingZhongJunPin1;
+	}
+
+	/**
+	 * @return 净重
+	 */
+	public String getJingZhongJunPin2() {
+		return jingZhongJunPin2;
+	}
+
+	/**
+	 * @return 考核等级(除锰)
+	 */
+	public String getKaoHeDengJiChuMeng() {
+		return kaoHeDengJiChuMeng;
+	}
+
+	/**
+	 * @return 考核等级(除锰)
+	 */
+	public String getKaoHeDengJiChuMengJunPin1() {
+		return kaoHeDengJiChuMengJunPin1;
+	}
+
+	/**
+	 * @return 考核等级(除锰)
+	 */
+	public String getKaoHeDengJiChuMengJunPin2() {
+		return kaoHeDengJiChuMengJunPin2;
+	}
+
+	/**
+	 * @return 炉次
+	 */
+	public String getLuCi() {
+		return luCi;
+	}
+
+	/**
+	 * @return 炉次
+	 */
+	public String getLuCiJunPin1() {
+		return luCiJunPin1;
+	}
+
+	/**
+	 * @return 炉次
+	 */
+	public String getLuCiJunPin2() {
+		return luCiJunPin2;
+	}
+
+	/**
+	 * @return 毛重
+	 */
+	public String getMaoZhong() {
+		return maoZhong;
+	}
+
+	/**
+	 * @return 毛重
+	 */
+	public String getMaoZhongJunPin1() {
+		return maoZhongJunPin1;
+	}
+
+	/**
+	 * @return 毛重
+	 */
+	public String getMaoZhongJunPin2() {
+		return maoZhongJunPin2;
+	}
+
+	/**
+	 * @return Mg（t）
+	 */
+	public String getMg() {
+		return mg;
+	}
+
+	/**
+	 * @return Mg（t）
+	 */
+	public String getMgJunPin1() {
+		return mgJunPin1;
+	}
+
+	/**
+	 * @return Mg（t）
+	 */
 	public String getMgJunPin2() {
 		return mgJunPin2;
 	}
 
-	public void setMgJunPin2(String mgJunPin2) {
-		this.mgJunPin2 = mgJunPin2;
+	/**
+	 * @return 月
+	 */
+	public String getMonth() {
+		return month;
 	}
 
 	/**
-	 * Method reset
-	 * 
-	 * @param mapping
-	 * @param request
+	 * @return 月
 	 */
-	public void reset(ActionMapping mapping, HttpServletRequest request) {
-		// TODO Auto-generated method stub
+	public String getMonthJunPin1() {
+		return monthJunPin1;
+	}
+
+	/**
+	 * @return 月
+	 */
+	public String getMonthJunPin2() {
+		return monthJunPin2;
+	}
+
+	/**
+	 * @return 爬壁Kg
+	 */
+	public String getPaBiKg() {
+		return paBiKg;
+	}
+
+	/**
+	 * @return 爬壁Kg
+	 */
+	public String getPaBiKgJunPin1() {
+		return paBiKgJunPin1;
+	}
+
+	/**
+	 * @return 爬壁Kg
+	 */
+	public String getPaBiKgJunPin2() {
+		return paBiKgJunPin2;
+	}
+
+	/**
+	 * @return 期号
+	 */
+	public String getQiHao() {
+		return qiHao;
+	}
+
+	/**
+	 * @return 期号
+	 */
+	public String getQiHaoJunPin1() {
+		return qiHaoJunPin1;
+	}
+
+	/**
+	 * @return 期号
+	 */
+	public String getQiHaoJunPin2() {
+		return qiHaoJunPin2;
+	}
+
+	/**
+	 * @return 上帽Kg
+	 */
+	public String getShangMaoKg() {
+		return shangMaoKg;
+	}
+
+	/**
+	 * @return 上帽Kg
+	 */
+	public String getShangMaoKgJunPin1() {
+		return shangMaoKgJunPin1;
+	}
+
+	/**
+	 * @return 上帽Kg
+	 */
+	public String getShangMaoKgJunPin2() {
+		return shangMaoKgJunPin2;
+	}
+
+	/**
+	 * @return 生产故障
+	 */
+	public String getShengChanGuZhang() {
+		return shengChanGuZhang;
+	}
+
+	/**
+	 * @return 生产故障
+	 */
+	public String getShengChanGuZhangJunPin1() {
+		return shengChanGuZhangJunPin1;
+	}
+
+	/**
+	 * @return 生产故障
+	 */
+	public String getShengChanGuZhangJunPin2() {
+		return shengChanGuZhangJunPin2;
+	}
+
+	/**
+	 * @return 生产炉号
+	 */
+	public String getShengChanLuHao() {
+		return shengChanLuHao;
+	}
+
+	/**
+	 * @return 生产炉号
+	 */
+	public String getShengChanLuHaoJunPin1() {
+		return shengChanLuHaoJunPin1;
+	}
+
+	/**
+	 * @return 生产炉号
+	 */
+	public String getShengChanLuHaoJunPin2() {
+		return shengChanLuHaoJunPin2;
+	}
+
+	/**
+	 * @return 使用次数
+	 */
+	public String getShiYongCiShu() {
+		return shiYongCiShu;
+	}
+
+	/**
+	 * @return 使用次数
+	 */
+	public String getShiYongCiShuJunPin1() {
+		return shiYongCiShuJunPin1;
+	}
+
+	/**
+	 * @return 使用次数
+	 */
+	public String getShiYongCiShuJunPin2() {
+		return shiYongCiShuJunPin2;
+	}
+
+	/**
+	 * @return 手选废料Kg
+	 */
+	public String getShouXuanFeiLiaoKg() {
+		return shouXuanFeiLiaoKg;
+	}
+
+	/**
+	 * @return 手选废料Kg
+	 */
+	public String getShouXuanFeiLiaoKgJunPin1() {
+		return shouXuanFeiLiaoKgJunPin1;
+	}
+
+	/**
+	 * @return 手选废料Kg
+	 */
+	public String getShouXuanFeiLiaoKgJunPin2() {
+		return shouXuanFeiLiaoKgJunPin2;
+	}
+
+	/**
+	 * @return 损耗Kg
+	 */
+	public String getSunHaoKg() {
+		return sunHaoKg;
+	}
+
+	/**
+	 * @return 损耗Kg
+	 */
+	public String getSunHaoKgJunPin1() {
+		return sunHaoKgJunPin1;
+	}
+
+	/**
+	 * @return 损耗Kg
+	 */
+	public String getSunHaoKgJunPin2() {
+		return sunHaoKgJunPin2;
+	}
+
+	/**
+	 * @return TiCl4
+	 */
+	public String getTiCl4() {
+		return tiCl4;
+	}
+
+	/**
+	 * @return TiCl4
+	 */
+	public String getTiCl4JunPin1() {
+		return tiCl4JunPin1;
+	}
+
+	/**
+	 * @return TiCl4
+	 */
+	public String getTiCl4JunPin2() {
+		return tiCl4JunPin2;
+	}
+
+	/**
+	 * @return 通道
+	 */
+	public String getTongDao() {
+		return tongDao;
+	}
+
+	/**
+	 * @return 通道
+	 */
+	public String getTongDaoJunPin1() {
+		return tongDaoJunPin1;
+	}
+
+	/**
+	 * @return 通道
+	 */
+	public String getTongDaoJunPin2() {
+		return tongDaoJunPin2;
+	}
+
+	/**
+	 * @return 年
+	 */
+	public String getYear() {
+		return year;
+	}
+
+	/**
+	 * @return 年
+	 */
+	public String getYearJunPin1() {
+		return yearJunPin1;
+	}
+
+	/**
+	 * @return 年
+	 */
+	public String getYearJunPin2() {
+		return yearJunPin2;
+	}
+
+	/**
+	 * @return 年月日
+	 */
+	public String getYearMonthDay() {
+		return yearMonthDay;
+	}
+
+	/**
+	 * @return 年月日
+	 */
+	public String getYearMonthDayJunPin1() {
+		return yearMonthDayJunPin1;
+	}
+
+	/**
+	 * @return 年月日
+	 */
+	public String getYearMonthDayJunPin2() {
+		return yearMonthDayJunPin2;
+	}
+
+	/**
+	 * @return 元素C
+	 */
+	public String getYuanSuC() {
+		return yuanSuC;
+	}
+
+	/**
+	 * @return 元素C
+	 */
+	public String getYuanSuCJunPin1() {
+		return yuanSuCJunPin1;
+	}
+
+	/**
+	 * @return 元素C
+	 */
+	public String getYuanSuCJunPin2() {
+		return yuanSuCJunPin2;
+	}
+
+	/**
+	 * @return 元素Cl
+	 */
+	public String getYuanSuCl() {
+		return yuanSuCl;
+	}
+
+	/**
+	 * @return 元素Cl
+	 */
+	public String getYuanSuClJunPin1() {
+		return yuanSuClJunPin1;
+	}
+
+	/**
+	 * @return 元素Cl
+	 */
+	public String getYuanSuClJunPin2() {
+		return yuanSuClJunPin2;
+	}
+
+	/**
+	 * @return 元素Fe
+	 */
+	public String getYuanSuFe() {
+		return yuanSuFe;
+	}
+
+	/**
+	 * @return 元素Fe
+	 */
+	public String getYuanSuFeJunPin1() {
+		return yuanSuFeJunPin1;
+	}
+
+	/**
+	 * @return 元素Fe
+	 */
+	public String getYuanSuFeJunPin2() {
+		return yuanSuFeJunPin2;
+	}
+
+	/**
+	 * @return 元素H
+	 */
+	public String getYuanSuH() {
+		return yuanSuH;
+	}
+
+	/**
+	 * @return 元素HB
+	 */
+	public String getYuanSuHb() {
+		return yuanSuHb;
+	}
+
+	/**
+	 * @return 元素HB
+	 */
+	public String getYuanSuHbJunPin1() {
+		return yuanSuHbJunPin1;
+	}
+
+	/**
+	 * @return 元素HB
+	 */
+	public String getYuanSuHbJunPin2() {
+		return yuanSuHbJunPin2;
+	}
+
+	/**
+	 * @return 元素H
+	 */
+	public String getYuanSuHJunPin1() {
+		return yuanSuHJunPin1;
+	}
+
+	/**
+	 * @return 元素H
+	 */
+	public String getYuanSuHJunPin2() {
+		return yuanSuHJunPin2;
+	}
+
+	/**
+	 * @return 元素Mn
+	 */
+	public String getYuanSuMn() {
+		return yuanSuMn;
+	}
+
+	/**
+	 * @return 元素Mn
+	 */
+	public String getYuanSuMnJunPin1() {
+		return yuanSuMnJunPin1;
+	}
+
+	/**
+	 * @return 元素Mn
+	 */
+	public String getYuanSuMnJunPin2() {
+		return yuanSuMnJunPin2;
+	}
+
+	/**
+	 * @return 元素N
+	 */
+	public String getYuanSuN() {
+		return yuanSuN;
+	}
+
+	/**
+	 * @return 元素N
+	 */
+	public String getYuanSuNJunPin1() {
+		return yuanSuNJunPin1;
+	}
+
+	/**
+	 * @return 元素N
+	 */
+	public String getYuanSuNJunPin2() {
+		return yuanSuNJunPin2;
+	}
+
+	/**
+	 * @return 元素O
+	 */
+	public String getYuanSuO() {
+		return yuanSuO;
+	}
+
+	/**
+	 * @return 元素O
+	 */
+	public String getYuanSuOJunPin1() {
+		return yuanSuOJunPin1;
+	}
+
+	/**
+	 * @return 元素O
+	 */
+	public String getYuanSuOJunPin2() {
+		return yuanSuOJunPin2;
+	}
+
+	/**
+	 * @return 元素Si
+	 */
+	public String getYuanSuSi() {
+		return yuanSuSi;
+	}
+
+	/**
+	 * @return 元素Si
+	 */
+	public String getYuanSuSiJunPin1() {
+		return yuanSuSiJunPin1;
+	}
+
+	/**
+	 * @return 元素Si
+	 */
+	public String getYuanSuSiJunPin2() {
+		return yuanSuSiJunPin2;
+	}
+
+	/**
+	 * @return 还原最高温度℃
+	 */
+	public String getYuanZuiGaoWenDu() {
+		return yuanZuiGaoWenDu;
+	}
+
+	/**
+	 * @return 还原最高温度℃
+	 */
+	public String getYuanZuiGaoWenDuJunPin1() {
+		return yuanZuiGaoWenDuJunPin1;
+	}
+
+	/**
+	 * @return 还原最高温度℃
+	 */
+	public String getYuanZuiGaoWenDuJunPin2() {
+		return yuanZuiGaoWenDuJunPin2;
+	}
+
+	/**
+	 * @return 蒸馏高恒A点最高℃
+	 */
+	public String getZhengLiuGaoHengDian() {
+		return zhengLiuGaoHengDian;
+	}
+
+	/**
+	 * @return 蒸馏高恒A点最高℃
+	 */
+	public String getZhengLiuGaoHengDianJunPin1() {
+		return zhengLiuGaoHengDianJunPin1;
+	}
+
+	/**
+	 * @return 蒸馏高恒A点最高℃
+	 */
+	public String getZhengLiuGaoHengDianJunPin2() {
+		return zhengLiuGaoHengDianJunPin2;
+	}
+
+	/**
+	 * @return 转蒸馏
+	 */
+	public String getZhuanZhengLiu() {
+		return zhuanZhengLiu;
+	}
+
+	/**
+	 * @return 转蒸馏
+	 */
+	public String getZhuanZhengLiuJunPin1() {
+		return zhuanZhengLiuJunPin1;
+	}
+
+	/**
+	 * @return 转蒸馏
+	 */
+	public String getZhuanZhengLiuJunPin2() {
+		return zhuanZhengLiuJunPin2;
+	}
+
+	/**
+	 * @return 总排镁量Kg
+	 */
+	public String getZongPaiMeiLiangKg() {
+		return zongPaiMeiLiangKg;
+	}
+
+	/**
+	 * @return 总排镁量Kg
+	 */
+	public String getZongPaiMeiLiangKgJunPin1() {
+		return zongPaiMeiLiangKgJunPin1;
+	}
+
+	/**
+	 * @return 总排镁量Kg
+	 */
+	public String getZongPaiMeiLiangKgJunPin2() {
+		return zongPaiMeiLiangKgJunPin2;
+	}
+
+	/**
+	 * @param 备注说明
+	 */
+	public void setBeiZhuShuoMing(String beiZhuShuoMing) {
+		this.beiZhuShuoMing = beiZhuShuoMing;
+	}
+
+	/**
+	 * @param 备注说明
+	 */
+	public void setBeiZhuShuoMingJunPin1(String beiZhuShuoMing) {
+		this.beiZhuShuoMing = beiZhuShuoMingJunPin1;
+	}
+
+	/**
+	 * @param 备注说明
+	 */
+	public void setBeiZhuShuoMingJunPin2(String beiZhuShuoMing) {
+		this.beiZhuShuoMing = beiZhuShuoMingJunPin2;
+	}
+
+	/**
+	 * @param 成品率
+	 */
+	public void setChengPinLv(String chengPinLv) {
+		this.chengPinLv = chengPinLv;
+	}
+
+	/**
+	 * @param 成品率
+	 */
+	public void setChengPinLvJunPin1(String chengPinLv) {
+		this.chengPinLv = chengPinLvJunPin1;
+	}
+
+	/**
+	 * @param 成品率
+	 */
+	public void setChengPinLvJunPin2(String chengPinLv) {
+		this.chengPinLv = chengPinLvJunPin2;
+	}
+
+	/**
+	 * @param 出炉真空度Pa
+	 */
+	public void setChuLuZhenKongDu(String chuLuZhenKongDu) {
+		this.chuLuZhenKongDu = chuLuZhenKongDu;
+	}
+
+	/**
+	 * @param 出炉真空度Pa
+	 */
+	public void setChuLuZhenKongDuJunPin1(String chuLuZhenKongDu) {
+		this.chuLuZhenKongDu = chuLuZhenKongDuJunPin1;
+	}
+
+	/**
+	 * @param 出炉真空度Pa
+	 */
+	public void setChuLuZhenKongDuJunPin2(String chuLuZhenKongDu) {
+		this.chuLuZhenKongDu = chuLuZhenKongDuJunPin2;
+	}
+
+	/**
+	 * @param 磁选Kg
+	 */
+	public void setCiYuanKg(String ciYuanKg) {
+		this.ciYuanKg = ciYuanKg;
+	}
+
+	/**
+	 * @param 磁选Kg
+	 */
+	public void setCiYuanKgJunPin1(String ciYuanKg) {
+		this.ciYuanKg = ciYuanKgJunPin1;
+	}
+
+	/**
+	 * @param 磁选Kg
+	 */
+	public void setCiYuanKgJunPin2(String ciYuanKg) {
+		this.ciYuanKg = ciYuanKgJunPin2;
+	}
+
+	/**
+	 * @param 日
+	 */
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	/**
+	 * @param 日
+	 */
+	public void setDayJunPin1(String day) {
+		this.day = dayJunPin1;
+	}
+
+	/**
+	 * @param 日
+	 */
+	public void setDayJunPin2(String day) {
+		this.day = dayJunPin2;
+	}
+
+	/**
+	 * @param 等级
+	 *            (含锰)
+	 */
+	public void setDengJiHanMeng(String dengJiHanMeng) {
+		this.dengJiHanMeng = dengJiHanMeng;
+	}
+
+	/**
+	 * @param 等级
+	 *            JunPin1(含锰)
+	 */
+	public void setDengJiHanMengJunPin1(String dengJiHanMeng) {
+		this.dengJiHanMeng = dengJiHanMengJunPin1;
+	}
+
+	/**
+	 * @param 等级
+	 *            JunPin2(含锰)
+	 */
+	public void setDengJiHanMengJunPin2(String dengJiHanMeng) {
+		this.dengJiHanMeng = dengJiHanMengJunPin2;
+	}
+
+	/**
+	 * @param 底皮Kg
+	 */
+	public void setDiPiKg(String diPiKg) {
+		this.diPiKg = diPiKg;
+	}
+
+	/**
+	 * @param 底皮Kg
+	 */
+	public void setDiPiKgJunPin1(String diPiKg) {
+		this.diPiKg = diPiKgJunPin1;
+	}
+
+	/**
+	 * @param 底皮Kg
+	 */
+	public void setDiPiKgJunPin2(String diPiKg) {
+		this.diPiKg = diPiKgJunPin2;
+	}
+
+	/**
+	 * @param 反应器号
+	 */
+	public void setFanYingQiHao(String fanYingQiHao) {
+		this.fanYingQiHao = fanYingQiHao;
+	}
+
+	/**
+	 * @param 反应器号
+	 */
+	public void setFanYingQiHaoJunPin1(String fanYingQiHao) {
+		this.fanYingQiHao = fanYingQiHaoJunPin1;
+	}
+
+	/**
+	 * @param 反应器号
+	 */
+	public void setFanYingQiHaoJunPin2(String fanYingQiHao) {
+		this.fanYingQiHao = fanYingQiHaoJunPin2;
+	}
+
+	/**
+	 * @param 废底皮Kg
+	 */
+	public void setFeiDiPiKg(String feiDiPiKg) {
+		this.feiDiPiKg = feiDiPiKg;
+	}
+
+	/**
+	 * @param 废底皮Kg
+	 */
+	public void setFeiDiPiKgJunPin1(String feiDiPiKg) {
+		this.feiDiPiKg = feiDiPiKgJunPin1;
+	}
+
+	/**
+	 * @param 废底皮Kg
+	 */
+	public void setFeiDiPiKgJunPin2(String feiDiPiKg) {
+		this.feiDiPiKg = feiDiPiKgJunPin2;
+	}
+
+	/**
+	 * @param 废爬壁Kg
+	 */
+	public void setFeiPaBiKg(String feiPaBiKg) {
+		this.feiPaBiKg = feiPaBiKg;
+	}
+
+	/**
+	 * @param 废爬壁Kg
+	 */
+	public void setFeiPaBiKgJunPin1(String feiPaBiKg) {
+		this.feiPaBiKg = feiPaBiKgJunPin1;
+	}
+
+	/**
+	 * @param 废爬壁Kg
+	 */
+	public void setFeiPaBiKgJunPin2(String feiPaBiKg) {
+		this.feiPaBiKg = feiPaBiKgJunPin2;
+	}
+
+	/**
+	 * @param 废上帽Kg
+	 */
+	public void setFeiShangMaoKg(String feiShangMaoKg) {
+		this.feiShangMaoKg = feiShangMaoKg;
+	}
+
+	/**
+	 * @param 废上帽Kg
+	 */
+	public void setFeiShangMaoKgJunPin1(String feiShangMaoKg) {
+		this.feiShangMaoKg = feiShangMaoKgJunPin1;
+	}
+
+	/**
+	 * @param 废上帽Kg
+	 */
+	public void setFeiShangMaoKgJunPin2(String feiShangMaoKg) {
+		this.feiShangMaoKg = feiShangMaoKgJunPin2;
+	}
+
+	/**
+	 * @param 废钛粉Kg
+	 */
+	public void setFeiTaiFenKg(String feiTaiFenKg) {
+		this.feiTaiFenKg = feiTaiFenKg;
+	}
+
+	/**
+	 * @param 废钛粉Kg
+	 */
+	public void setFeiTaiFenKgJunPin1(String feiTaiFenKg) {
+		this.feiTaiFenKg = feiTaiFenKgJunPin1;
+	}
+
+	/**
+	 * @param 废钛粉Kg
+	 */
+	public void setFeiTaiFenKgJunPin2(String feiTaiFenKg) {
+		this.feiTaiFenKg = feiTaiFenKgJunPin2;
+	}
+
+	/**
+	 * @param 工艺试验
+	 */
+	public void setGongYiShiYan(String gongYiShiYan) {
+		this.gongYiShiYan = gongYiShiYan;
+	}
+
+	/**
+	 * @param 工艺试验
+	 */
+	public void setGongYiShiYanJunPin1(String gongYiShiYan) {
+		this.gongYiShiYan = gongYiShiYanJunPin1;
+	}
+
+	/**
+	 * @param 工艺试验
+	 */
+	public void setGongYiShiYanJunPin2(String gongYiShiYan) {
+		this.gongYiShiYan = gongYiShiYanJunPin2;
+	}
+
+	/**
+	 * @param 工艺调整
+	 */
+	public void setGongYiTiaoZheng(String gongYiTiaoZheng) {
+		this.gongYiTiaoZheng = gongYiTiaoZheng;
+	}
+
+	/**
+	 * @param 工艺调整
+	 */
+	public void setGongYiTiaoZhengJunPin1(String gongYiTiaoZheng) {
+		this.gongYiTiaoZheng = gongYiTiaoZhengJunPin1;
+	}
+
+	/**
+	 * @param 工艺调整
+	 */
+	public void setGongYiTiaoZhengJunPin2(String gongYiTiaoZheng) {
+		this.gongYiTiaoZheng = gongYiTiaoZhengJunPin2;
+	}
+
+	/**
+	 * @param 规格
+	 */
+	public void setGuiGe(String guiGe) {
+		this.guiGe = guiGe;
+	}
+
+	/**
+	 * @param 规格
+	 */
+	public void setGuiGeJunPin1(String guiGe) {
+		this.guiGe = guiGeJunPin1;
+	}
+
+	/**
+	 * @param 规格
+	 */
+	public void setGuiGeJunPin2(String guiGe) {
+		this.guiGe = guiGeJunPin2;
+	}
+
+	/**
+	 * @param 加末次
+	 */
+	public void setJiaMoCi(String jiaMoCi) {
+		this.jiaMoCi = jiaMoCi;
+	}
+
+	/**
+	 * @param 加末次
+	 */
+	public void setJiaMoCiJunPin1(String jiaMoCi) {
+		this.jiaMoCi = jiaMoCiJunPin1;
+	}
+
+	/**
+	 * @param 加末次
+	 */
+	public void setJiaMoCiJunPin2(String jiaMoCi) {
+		this.jiaMoCi = jiaMoCiJunPin2;
+	}
+
+	/**
+	 * @param 加首次
+	 */
+	public void setJiaShouCi(String jiaShouCi) {
+		this.jiaShouCi = jiaShouCi;
+	}
+
+	/**
+	 * @param 加首次
+	 */
+	public void setJiaShouCiJunPin1(String jiaShouCi) {
+		this.jiaShouCi = jiaShouCiJunPin1;
+	}
+
+	/**
+	 * @param 加首次
+	 */
+	public void setJiaShouCiJunPin2(String jiaShouCi) {
+		this.jiaShouCi = jiaShouCiJunPin2;
+	}
+
+	/**
+	 * @param 净重
+	 */
+	public void setJingZhong(String jingZhong) {
+		this.jingZhong = jingZhong;
+	}
+
+	/**
+	 * @param 净重
+	 */
+	public void setJingZhongJunPin1(String jingZhong) {
+		this.jingZhong = jingZhongJunPin1;
+	}
+
+	/**
+	 * @param 净重
+	 */
+	public void setJingZhongJunPin2(String jingZhong) {
+		this.jingZhong = jingZhongJunPin2;
+	}
+
+	/**
+	 * @param 考核等级
+	 *            (除锰)
+	 * 
+	 */
+	public void setKaoHeDengJiChuMeng(String kaoHeDengJiChuMeng) {
+		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMeng;
+	}
+
+	/**
+	 * @param 考核等级
+	 *            (除锰)
+	 * 
+	 */
+	public void setKaoHeDengJiChuMengJunPin1(String kaoHeDengJiChuMeng) {
+		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMengJunPin1;
+	}
+
+	/**
+	 * @param 考核等级
+	 *            (除锰)
+	 * 
+	 */
+	public void setKaoHeDengJiChuMengJunPin2(String kaoHeDengJiChuMeng) {
+		this.kaoHeDengJiChuMeng = kaoHeDengJiChuMengJunPin2;
+	}
+
+	/**
+	 * @param 炉次
+	 */
+	public void setLuCi(String luCi) {
+		this.luCi = luCi;
+	}
+
+	/**
+	 * @param 炉次
+	 */
+	public void setLuCiJunPin1(String luCi) {
+		this.luCi = luCiJunPin1;
+	}
+
+	/**
+	 * @param 炉次
+	 */
+	public void setLuCiJunPin2(String luCi) {
+		this.luCi = luCiJunPin2;
+	}
+
+	/**
+	 * @param 毛重
+	 */
+	public void setMaoZhong(String maoZhong) {
+		this.maoZhong = maoZhong;
+	}
+
+	/**
+	 * @param 毛重
+	 */
+	public void setMaoZhongJunPin1(String maoZhong) {
+		this.maoZhong = maoZhongJunPin1;
+	}
+
+	/**
+	 * @param 毛重
+	 */
+	public void setMaoZhongJunPin2(String maoZhong) {
+		this.maoZhong = maoZhongJunPin2;
+	}
+
+	/**
+	 * @param Mg
+	 *            （t）
+	 * 
+	 */
+	public void setMg(String mg) {
+		this.mg = mg;
+	}
+
+	/**
+	 * @param Mg
+	 *            （t）
+	 * 
+	 */
+	public void setMgJunPin1(String mg) {
+		this.mg = mgJunPin1;
+	}
+
+	/**
+	 * @param Mg
+	 *            （t）
+	 * 
+	 */
+	public void setMgJunPin2(String mg) {
+		this.mg = mgJunPin2;
+	}
+
+	/**
+	 * @param 月
+	 */
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	/**
+	 * @param 月
+	 */
+	public void setMonthJunPin1(String month) {
+		this.month = monthJunPin1;
+	}
+
+	/**
+	 * @param 月
+	 */
+	public void setMonthJunPin2(String month) {
+		this.month = monthJunPin2;
+	}
+
+	/**
+	 * @param 爬壁Kg
+	 */
+	public void setPaBiKg(String paBiKg) {
+		this.paBiKg = paBiKg;
+	}
+
+	/**
+	 * @param 爬壁Kg
+	 */
+	public void setPaBiKgJunPin1(String paBiKg) {
+		this.paBiKg = paBiKgJunPin1;
+	}
+
+	/**
+	 * @param 爬壁Kg
+	 */
+	public void setPaBiKgJunPin2(String paBiKg) {
+		this.paBiKg = paBiKgJunPin2;
+	}
+
+	/**
+	 * @param 期号
+	 */
+	public void setQiHao(String qiHao) {
+		this.qiHao = qiHao;
+	}
+
+	/**
+	 * @param 期号
+	 */
+	public void setQiHaoJunPin1(String qiHao) {
+		this.qiHao = qiHaoJunPin1;
+	}
+
+	/**
+	 * @param 期号
+	 */
+	public void setQiHaoJunPin2(String qiHao) {
+		this.qiHao = qiHaoJunPin2;
+	}
+
+	/**
+	 * @param 上帽Kg
+	 */
+	public void setShangMaoKg(String shangMaoKg) {
+		this.shangMaoKg = shangMaoKg;
+	}
+
+	/**
+	 * @param 上帽Kg
+	 */
+	public void setShangMaoKgJunPin1(String shangMaoKg) {
+		this.shangMaoKg = shangMaoKgJunPin1;
+	}
+
+	/**
+	 * @param 上帽Kg
+	 */
+	public void setShangMaoKgJunPin2(String shangMaoKg) {
+		this.shangMaoKg = shangMaoKgJunPin2;
+	}
+
+	/**
+	 * @param 生产故障
+	 */
+	public void setShengChanGuZhang(String shengChanGuZhang) {
+		this.shengChanGuZhang = shengChanGuZhang;
+	}
+
+	/**
+	 * @param 生产故障
+	 */
+	public void setShengChanGuZhangJunPin1(String shengChanGuZhang) {
+		this.shengChanGuZhang = shengChanGuZhangJunPin1;
+	}
+
+	/**
+	 * @param 生产故障
+	 */
+	public void setShengChanGuZhangJunPin2(String shengChanGuZhang) {
+		this.shengChanGuZhang = shengChanGuZhangJunPin2;
+	}
+
+	/**
+	 * @param 生产炉号
+	 */
+	public void setShengChanLuHao(String shengChanLuHao) {
+		this.shengChanLuHao = shengChanLuHao;
+	}
+
+	/**
+	 * @param 生产炉号
+	 */
+	public void setShengChanLuHaoJunPin1(String shengChanLuHao) {
+		this.shengChanLuHao = shengChanLuHaoJunPin1;
+	}
+
+	/**
+	 * @param 生产炉号
+	 */
+	public void setShengChanLuHaoJunPin2(String shengChanLuHao) {
+		this.shengChanLuHao = shengChanLuHaoJunPin2;
+	}
+
+	/**
+	 * @param 使用次数
+	 */
+	public void setShiYongCiShu(String shiYongCiShu) {
+		this.shiYongCiShu = shiYongCiShu;
+	}
+
+	/**
+	 * @param 使用次数
+	 */
+	public void setShiYongCiShuJunPin1(String shiYongCiShu) {
+		this.shiYongCiShu = shiYongCiShuJunPin1;
+	}
+
+	/**
+	 * @param 使用次数
+	 */
+	public void setShiYongCiShuJunPin2(String shiYongCiShu) {
+		this.shiYongCiShu = shiYongCiShuJunPin2;
+	}
+
+	/**
+	 * @param 手选废料Kg
+	 */
+	public void setShouXuanFeiLiaoKg(String shouXuanFeiLiaoKg) {
+		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKg;
+	}
+
+	/**
+	 * @param 手选废料Kg
+	 */
+	public void setShouXuanFeiLiaoKgJunPin1(String shouXuanFeiLiaoKg) {
+		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKgJunPin1;
+	}
+
+	/**
+	 * @param 手选废料Kg
+	 */
+	public void setShouXuanFeiLiaoKgJunPin2(String shouXuanFeiLiaoKg) {
+		this.shouXuanFeiLiaoKg = shouXuanFeiLiaoKgJunPin2;
+	}
+
+	/**
+	 * @param 损耗Kg
+	 */
+	public void setSunHaoKg(String sunHaoKg) {
+		this.sunHaoKg = sunHaoKg;
+	}
+
+	/**
+	 * @param 损耗Kg
+	 */
+	public void setSunHaoKgJunPin1(String sunHaoKg) {
+		this.sunHaoKg = sunHaoKgJunPin1;
+	}
+
+	/**
+	 * @param 损耗Kg
+	 */
+	public void setSunHaoKgJunPin2(String sunHaoKg) {
+		this.sunHaoKg = sunHaoKgJunPin2;
+	}
+
+	/**
+	 * @param TiCl4
+	 */
+	public void setTiCl4(String tiCl4) {
+		this.tiCl4 = tiCl4;
+	}
+
+	/**
+	 * @param TiCl4
+	 */
+	public void setTiCl4JunPin1(String tiCl4) {
+		this.tiCl4 = tiCl4JunPin1;
+	}
+
+	/**
+	 * @param TiCl4
+	 */
+	public void setTiCl4JunPin2(String tiCl4) {
+		this.tiCl4 = tiCl4JunPin2;
+	}
+
+	/**
+	 * @param 通道
+	 */
+	public void setTongDao(String tongDao) {
+		this.tongDao = tongDao;
+	}
+
+	/**
+	 * @param 通道
+	 */
+	public void setTongDaoJunPin1(String tongDao) {
+		this.tongDao = tongDaoJunPin1;
+	}
+
+	/**
+	 * @param 通道
+	 */
+	public void setTongDaoJunPin2(String tongDao) {
+		this.tongDao = tongDaoJunPin2;
+	}
+
+	/**
+	 * @param 年
+	 */
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	/**
+	 * @param 年
+	 */
+	public void setYearJunPin1(String year) {
+		this.year = yearJunPin1;
+	}
+
+	/**
+	 * @param 年
+	 */
+	public void setYearJunPin2(String year) {
+		this.year = yearJunPin2;
+	}
+
+	/**
+	 * @param 年月日
+	 */
+	public void setYearMonthDay(String yearMonthDay) {
+		this.yearMonthDay = yearMonthDay;
+	}
+
+	/**
+	 * @param 年月日
+	 */
+	public void setYearMonthDayJunPin1(String yearMonthDay) {
+		this.yearMonthDay = yearMonthDayJunPin1;
+	}
+
+	/**
+	 * @param 年月日
+	 */
+	public void setYearMonthDayJunPin2(String yearMonthDay) {
+		this.yearMonthDay = yearMonthDayJunPin2;
+	}
+
+	/**
+	 * @param 元素C
+	 */
+	public void setYuanSuC(String yuanSuC) {
+		this.yuanSuC = yuanSuC;
+	}
+
+	/**
+	 * @param 元素C
+	 */
+	public void setYuanSuCJunPin1(String yuanSuC) {
+		this.yuanSuC = yuanSuCJunPin1;
+	}
+
+	/**
+	 * @param 元素C
+	 */
+	public void setYuanSuCJunPin2(String yuanSuC) {
+		this.yuanSuC = yuanSuCJunPin2;
+	}
+
+	/**
+	 * @param 元素Cl
+	 */
+	public void setYuanSuCl(String yuanSuCl) {
+		this.yuanSuCl = yuanSuCl;
+	}
+
+	/**
+	 * @param 元素Cl
+	 */
+	public void setYuanSuClJunPin1(String yuanSuCl) {
+		this.yuanSuCl = yuanSuClJunPin1;
+	}
+
+	/**
+	 * @param 元素Cl
+	 */
+	public void setYuanSuClJunPin2(String yuanSuCl) {
+		this.yuanSuCl = yuanSuClJunPin2;
+	}
+
+	/**
+	 * @param 元素Fe
+	 */
+	public void setYuanSuFe(String yuanSuFe) {
+		this.yuanSuFe = yuanSuFe;
+	}
+
+	/**
+	 * @param 元素Fe
+	 */
+	public void setYuanSuFeJunPin1(String yuanSuFe) {
+		this.yuanSuFe = yuanSuFeJunPin1;
+	}
+
+	/**
+	 * @param 元素Fe
+	 */
+	public void setYuanSuFeJunPin2(String yuanSuFe) {
+		this.yuanSuFe = yuanSuFeJunPin2;
+	}
+
+	/**
+	 * @param 元素H
+	 */
+	public void setYuanSuH(String yuanSuH) {
+		this.yuanSuH = yuanSuH;
+	}
+
+	/**
+	 * @param 元素HB
+	 */
+	public void setYuanSuHb(String yuanSuHb) {
+		this.yuanSuHb = yuanSuHb;
+	}
+
+	/**
+	 * @param 元素HB
+	 */
+	public void setYuanSuHbJunPin1(String yuanSuHb) {
+		this.yuanSuHb = yuanSuHbJunPin1;
+	}
+
+	/**
+	 * @param 元素HB
+	 */
+	public void setYuanSuHbJunPin2(String yuanSuHb) {
+		this.yuanSuHb = yuanSuHbJunPin2;
+	}
+
+	/**
+	 * @param 元素H
+	 */
+	public void setYuanSuHJunPin1(String yuanSuH) {
+		this.yuanSuH = yuanSuHJunPin1;
+	}
+
+	/**
+	 * @param 元素H
+	 */
+	public void setYuanSuHJunPin2(String yuanSuH) {
+		this.yuanSuH = yuanSuHJunPin2;
+	}
+
+	/**
+	 * @param 元素Mn
+	 */
+	public void setYuanSuMn(String yuansuMn) {
+		this.yuanSuMn = yuansuMn;
+	}
+
+	/**
+	 * @param 元素Mn
+	 */
+	public void setYuanSuMnJunPin1(String yuansuMn) {
+		this.yuanSuMn = yuanSuMnJunPin1;
+	}
+
+	/**
+	 * @param 元素Mn
+	 */
+	public void setYuanSuMnJunPin2(String yuansuMn) {
+		this.yuanSuMn = yuanSuMnJunPin2;
+	}
+
+	/**
+	 * @param 元素N
+	 */
+	public void setYuanSuN(String yuanSuN) {
+		this.yuanSuN = yuanSuN;
+	}
+
+	/**
+	 * @param 元素N
+	 */
+	public void setYuanSuNJunPin1(String yuanSuN) {
+		this.yuanSuN = yuanSuNJunPin1;
+	}
+
+	/**
+	 * @param 元素N
+	 */
+	public void setYuanSuNJunPin2(String yuanSuN) {
+		this.yuanSuN = yuanSuNJunPin2;
+	}
+
+	/**
+	 * @param 元素O
+	 */
+	public void setYuanSuO(String yuanSuO) {
+		this.yuanSuO = yuanSuO;
+	}
+
+	/**
+	 * @param 元素O
+	 */
+	public void setYuanSuOJunPin1(String yuanSuO) {
+		this.yuanSuO = yuanSuOJunPin1;
+	}
+
+	/**
+	 * @param 元素O
+	 */
+	public void setYuanSuOJunPin2(String yuanSuO) {
+		this.yuanSuO = yuanSuOJunPin2;
+	}
+
+	/**
+	 * @param 元素Si
+	 */
+	public void setYuanSuSi(String yuanSuSi) {
+		this.yuanSuSi = yuanSuSi;
+	}
+
+	/**
+	 * @param 元素Si
+	 */
+	public void setYuanSuSiJunPin1(String yuanSuSi) {
+		this.yuanSuSi = yuanSuSiJunPin1;
+	}
+
+	/**
+	 * @param 元素Si
+	 */
+	public void setYuanSuSiJunPin2(String yuanSuSi) {
+		this.yuanSuSi = yuanSuSiJunPin2;
+	}
+
+	/**
+	 * @param 还原最高温度
+	 *            ℃
+	 */
+	public void setYuanZuiGaoWenDu(String yuanZuiGaoWenDu) {
+		this.yuanZuiGaoWenDu = yuanZuiGaoWenDu;
+	}
+
+	/**
+	 * @param 还原最高温度
+	 *            ℃
+	 */
+	public void setYuanZuiGaoWenDuJunPin1(String yuanZuiGaoWenDu) {
+		this.yuanZuiGaoWenDu = yuanZuiGaoWenDuJunPin1;
+	}
+
+	/**
+	 * @param 还原最高温度
+	 *            ℃
+	 */
+	public void setYuanZuiGaoWenDuJunPin2(String yuanZuiGaoWenDu) {
+		this.yuanZuiGaoWenDu = yuanZuiGaoWenDuJunPin2;
+	}
+
+	/**
+	 * @param 蒸馏高恒A点最高
+	 *            ℃
+	 */
+	public void setZhengLiuGaoHengDian(String zhengLiuGaoHengDian) {
+		this.zhengLiuGaoHengDian = zhengLiuGaoHengDian;
+	}
+
+	/**
+	 * @param 蒸馏高恒A点最高
+	 *            ℃
+	 */
+	public void setZhengLiuGaoHengDianJunPin1(String zhengLiuGaoHengDian) {
+		this.zhengLiuGaoHengDian = zhengLiuGaoHengDianJunPin1;
+	}
+
+	/**
+	 * @param 蒸馏高恒A点最高
+	 *            ℃
+	 */
+	public void setZhengLiuGaoHengDianJunPin2(String zhengLiuGaoHengDian) {
+		this.zhengLiuGaoHengDian = zhengLiuGaoHengDianJunPin2;
+	}
+
+	/**
+	 * @param 转蒸馏
+	 */
+	public void setZhuanZhengLiu(String zhuanZhengLiu) {
+		this.zhuanZhengLiu = zhuanZhengLiu;
+	}
+
+	/**
+	 * @param 转蒸馏
+	 */
+	public void setZhuanZhengLiuJunPin1(String zhuanZhengLiu) {
+		this.zhuanZhengLiu = zhuanZhengLiuJunPin1;
+	}
+
+	/**
+	 * @param 转蒸馏
+	 */
+	public void setZhuanZhengLiuJunPin2(String zhuanZhengLiu) {
+		this.zhuanZhengLiu = zhuanZhengLiuJunPin2;
+	}
+
+	/**
+	 * @param 总排镁量Kg
+	 */
+	public void setZongPaiMeiLiangKg(String zongPaiMeiLiangKg) {
+		this.zongPaiMeiLiangKg = zongPaiMeiLiangKg;
+	}
+
+	/**
+	 * @param 总排镁量Kg
+	 */
+	public void setZongPaiMeiLiangKgJunPin1(String zongPaiMeiLiangKg) {
+		this.zongPaiMeiLiangKg = zongPaiMeiLiangKgJunPin1;
+	}
+
+	/**
+	 * @param 总排镁量Kg
+	 */
+	public void setZongPaiMeiLiangKgJunPin2(String zongPaiMeiLiangKg) {
+		this.zongPaiMeiLiangKg = zongPaiMeiLiangKgJunPin2;
 	}
 }
