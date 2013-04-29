@@ -6,7 +6,14 @@ package com.ejustech.iron.form;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+import org.apache.struts.chain.commands.servlet.ValidateActionForm;
 
 import com.ejustech.iron.common.AutoArrayList;
 import com.ejustech.iron.databean.form.InputByNewFormBean;
@@ -20,5 +27,18 @@ public class InputByNewForm extends ActionForm {
 
 	public void setInputByNewList(List inputByNewList) {
 		this.inputByNewList = inputByNewList;
+	}
+
+	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+		ActionErrors error = new ActionErrors();
+		error.add("errors", new ActionMessage("jsp.inputByNew.test.error"));
+		error.add("errors", new ActionMessage("jsp.inputByNew.Empty.YearMonthDay"));
+		error.add("errors", new ActionMessage("jsp.inputByNew.Empty.QiHao"));
+		error.add("errors", new ActionMessage("jsp.inputByNew.Empty.LuCi"));
+		error.add("errors", new ActionMessage("jsp.inputByNew.Empty.GuiGe"));
+		error.add("errors", new ActionMessage("jsp.inputByNew.Format.YearMonthDay"));
+		error.add("error01", new ActionMessage("jsp.inputByNew.Length.QiHao"));
+
+		return error;
 	}
 }
