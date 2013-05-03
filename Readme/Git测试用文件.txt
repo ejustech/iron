@@ -11,3 +11,5 @@
 			machine github.com       	#git服务器名称
 			login user          		#git帐号
 			password pwd   				#git密码
+
+3.公司电脑保存git密码测试
