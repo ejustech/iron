@@ -12,6 +12,7 @@
   <StrutsActivity path="/result7.do" location="2280,1354" dimension="262,104" />
   <StrutsActivity path="/sampleQuery.do" location="44,1889" dimension="244,104" />
   <StrutsActivity path="/sampleQueryResult.do" location="0,2246" dimension="333,104" />
+  <StrutsActivity path="/inputByNew.do" location="2493,917" dimension="290,104" />
   <StrutsActivity path="/jsp/menu.jsp" location="350,250" dimension="111,53" />
   <StrutsActivity path="/jsp/loginError.jsp" location="650,250" dimension="138,53" />
   <StrutsActivity path="/jsp/login.jsp" location="950,250" dimension="108,53" />
@@ -38,7 +39,6 @@
   <StrutsActivity path="/form/result1.jsp" location="983,1201" dimension="129,53" />
   <StrutsActivity path="/form/result3.jsp" location="325,1201" dimension="129,53" />
   <StrutsActivity path="/form/result2.jsp" location="687,1201" dimension="129,53" />
-  <StrutsActivity path="/inputByNew.do" location="2493,917" dimension="290,104" />
   <StrutsTransition id="/search.do,srch1,/jsp/result1.jsp,1" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="1228,917" />

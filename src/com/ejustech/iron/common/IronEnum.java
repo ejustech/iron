@@ -8,8 +8,15 @@ public class IronEnum {
 	public enum TableName {
 		M_USER, T_IRON_INFO
 	}
-
+	
+	public enum UserRole {
+		R0, R1, R2, R3
+	}
+	public enum ErrorType {
+		EMPTY, LENGTH, NUMBER_FORMAT, DATE_FORMAT, OTHER
+	}
 	public enum ValidateStatusInputByNew {
+		OK,
 		EMPTY_YearMonthDay,
 		EMPTY_QiHao,
 		EMPTY_LuCi,
@@ -102,7 +109,53 @@ public class IronEnum {
 		LENGTH_TongDao,
 		LENGTH_ShengChanGuZhang,
 		LENGTH_BeiZhuShuoMing,
-		FORMAT_DATE,
-		FORMAT_NUMBER
+		NUMBER_FORMAT_YearMonthDay,
+		NUMBER_FORMAT_QiHao,
+		NUMBER_FORMAT_LuCi,
+		NUMBER_FORMAT_JunPinFlg,
+		NUMBER_FORMAT_GuiGe,
+		NUMBER_FORMAT_ShengChanLuHao,
+		NUMBER_FORMAT_FanYingQiHao,
+		NUMBER_FORMAT_ShiYongCiShu,
+		NUMBER_FORMAT_Mg,
+		NUMBER_FORMAT_TiCl4,
+		NUMBER_FORMAT_MaoZhong,
+		NUMBER_FORMAT_JingZhong,
+		NUMBER_FORMAT_ChengPinLv,
+		NUMBER_FORMAT_YuanSuFe,
+		NUMBER_FORMAT_YuanSuSi,
+		NUMBER_FORMAT_YuanSuCl,
+		NUMBER_FORMAT_YuanSuC,
+		NUMBER_FORMAT_YuanSuN,
+		NUMBER_FORMAT_YuanSuO,
+		NUMBER_FORMAT_YuanSuH,
+		NUMBER_FORMAT_YuanSuMn,
+		NUMBER_FORMAT_YuanSuHb,
+		NUMBER_FORMAT_DengJiHanMeng,
+		NUMBER_FORMAT_KaoHeDengJiChuMeng,
+		NUMBER_FORMAT_GongYiTiaoZheng,
+		NUMBER_FORMAT_GongYiShiYan,
+		NUMBER_FORMAT_DiPiKg,
+		NUMBER_FORMAT_ShangMaoKg,
+		NUMBER_FORMAT_PaBiKg,
+		NUMBER_FORMAT_FeiDiPiKg,
+		NUMBER_FORMAT_FeiShangMaoKg,
+		NUMBER_FORMAT_FeiPaBiKg,
+		NUMBER_FORMAT_FeiTaiFenKg,
+		NUMBER_FORMAT_CiYuanKg,
+		NUMBER_FORMAT_ShouXuanFeiLiaoKg,
+		NUMBER_FORMAT_SunHaoKg,
+		NUMBER_FORMAT_ZongPaiMeiLiangKg,
+		NUMBER_FORMAT_ChuLuZhenKongDu,
+		NUMBER_FORMAT_YuanZuiGaoWenDu,
+		NUMBER_FORMAT_ZhengLiuGaoHengDian,
+		NUMBER_FORMAT_ZhuanZhengLiu,
+		NUMBER_FORMAT_JiaShouCi,
+		NUMBER_FORMAT_JiaMoCi,
+		NUMBER_FORMAT_TongDao,
+		NUMBER_FORMAT_ShengChanGuZhang,
+		NUMBER_FORMAT_BeiZhuShuoMing,
+		DATE_FORMAT_YearMonthDay,
+		OTHER_ERRORS
 	}
 }
