@@ -428,39 +428,39 @@ public class Constant {
 	/**
 	 * 信息输入画面 画面项目 Fe
 	 */
-	public static final String ITEM_YuanSuFe = "Fe";
+	public static final String ITEM_YuanSuFe = "元素Fe";
 	/**
 	 * 信息输入画面 画面项目 Si
 	 */
-	public static final String ITEM_YuanSuSi = "Si";
+	public static final String ITEM_YuanSuSi = "元素Si";
 	/**
 	 * 信息输入画面 画面项目 Cl
 	 */
-	public static final String ITEM_YuanSuCl = "Cl";
+	public static final String ITEM_YuanSuCl = "元素Cl";
 	/**
 	 * 信息输入画面 画面项目 C
 	 */
-	public static final String ITEM_YuanSuC = "C";
+	public static final String ITEM_YuanSuC = "元素C";
 	/**
 	 * 信息输入画面 画面项目 N
 	 */
-	public static final String ITEM_YuanSuN = "N";
+	public static final String ITEM_YuanSuN = "元素N";
 	/**
 	 * 信息输入画面 画面项目 O
 	 */
-	public static final String ITEM_YuanSuO = "O";
+	public static final String ITEM_YuanSuO = "元素O";
 	/**
 	 * 信息输入画面 画面项目 H
 	 */
-	public static final String ITEM_YuanSuH = "H";
+	public static final String ITEM_YuanSuH = "元素H";
 	/**
 	 * 信息输入画面 画面项目 Mn
 	 */
-	public static final String ITEM_YuanSuMn = "Mn";
+	public static final String ITEM_YuanSuMn = "元素Mn";
 	/**
 	 * 信息输入画面 画面项目 HB
 	 */
-	public static final String ITEM_YuanSuHb = "HB";
+	public static final String ITEM_YuanSuHb = "元素HB";
 	/**
 	 * 信息输入画面 画面项目 等级(含锰)
 	 */

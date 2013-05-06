@@ -27,6 +27,8 @@ public class StringHelper {
 	private static final String REGX_POSITIVE_DECIMAL = "^[1-9]\\d*\\.\\d*|0\\.\\d*[1-9]\\d*$";
 	/** 匹配正整数 */
 	private static final String REGX_POSITIVE_INTEGER = "^[1-9]\\d*$";
+	/** 匹配数字 可以为负数，可以是小数 */
+	private static final String REGX_NUMBER = "-?[0-9]*.?[0-9]*";
 
 	/** 匹配日期格式 */
 	public static Boolean isDateFormat(String value) {
@@ -35,6 +37,13 @@ public class StringHelper {
 		return m.matches();
 	}
 
+	/** 匹配数字，可以是负数，可以是小数 */
+	public static Boolean isNumber(String value) {
+		Pattern p = Pattern.compile(REGX_NUMBER);
+		Matcher m = p.matcher(value);
+		return m.matches();
+	}
+	
 	/** 匹配浮点数 */
 	public static Boolean isDecimal(String value) {
 		Pattern p = Pattern.compile(REGX_DECIMAL);

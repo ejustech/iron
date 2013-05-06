@@ -418,6 +418,12 @@ public class InputByNewFormBean extends ActionFormBean {
 
 	/** 总排镁量Kg */
 	private String zongPaiMeiLiangKgJunPin2;
+	
+	/** 输入或更新数据的用户权限 */
+	private String roleRank;
+	
+	/** 输入或更新完毕标志 */
+	private String updateFlg;
 
 	/**
 	 * @return 备注说明

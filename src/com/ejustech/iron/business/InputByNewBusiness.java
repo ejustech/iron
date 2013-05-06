@@ -77,7 +77,7 @@ public class InputByNewBusiness {
 	}
 
 	private ValidateStatusInputByNew checkDateFormat(InputByNewFormBean inputByNewFormBean) {
-		if (StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
+		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
 			return ValidateStatusInputByNew.DATE_FORMAT_YearMonthDay;
 		}
 		return ValidateStatusInputByNew.OK;
@@ -86,7 +86,7 @@ public class InputByNewBusiness {
 	private ArrayList<ValidateStatusInputByNew> checkDateFormatAll(InputByNewFormBean inputByNewFormBean) {
 		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
 
-		if (StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
+		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
 			checkResult.add(ValidateStatusInputByNew.DATE_FORMAT_YearMonthDay);
 		}
 
@@ -685,139 +685,139 @@ public class InputByNewBusiness {
 	}
 
 	private ValidateStatusInputByNew checkNumberFormat(InputByNewFormBean inputByNewFormBean) {
-		// if (StringHelper.isDecimal(inputByNewFormBean.getYearMonthDay())) {
+		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay;
 		// }
-		if (StringHelper.isDecimal(inputByNewFormBean.getQiHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_QiHao;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getLuCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_LuCi;
 		}
-		// if (StringHelper.isDecimal(inputByNewFormBean.getGuiGe())) {
+		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe;
 		// }
-		if (StringHelper.isDecimal(inputByNewFormBean.getShengChanLuHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanLuHao;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFanYingQiHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFanYingQiHao())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_FanYingQiHao;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShiYongCiShu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShiYongCiShu())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ShiYongCiShu;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getMg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getMg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_Mg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getTiCl4())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getTiCl4())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_TiCl4;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getMaoZhong())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getMaoZhong())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_MaoZhong;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJingZhong())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJingZhong())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_JingZhong;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getChengPinLv())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ChengPinLv;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuFe())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuFe;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuSi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuSi;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuCl())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuCl;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuC())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuC;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuN())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuN;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuO())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuO;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuH())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuH;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuMn())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuMn;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuHb())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuHb;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getDengJiHanMeng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_DengJiHanMeng;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_KaoHeDengJiChuMeng;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getGongYiTiaoZheng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_GongYiTiaoZheng;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getGongYiShiYan())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_GongYiShiYan;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getDiPiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getDiPiKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_DiPiKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShangMaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShangMaoKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ShangMaoKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getPaBiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getPaBiKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_PaBiKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiDiPiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiDiPiKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiDiPiKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiShangMaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiShangMaoKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiShangMaoKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiPaBiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiPaBiKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiPaBiKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiTaiFenKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiTaiFenKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiTaiFenKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getCiYuanKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getCiYuanKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_CiYuanKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ShouXuanFeiLiaoKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getSunHaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getSunHaoKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_SunHaoKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZongPaiMeiLiangKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZongPaiMeiLiangKg())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ZongPaiMeiLiangKg;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getChuLuZhenKongDu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getChuLuZhenKongDu())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ChuLuZhenKongDu;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanZuiGaoWenDu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanZuiGaoWenDu())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanZuiGaoWenDu;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZhengLiuGaoHengDian())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZhengLiuGaoHengDian())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ZhengLiuGaoHengDian;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZhuanZhengLiu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ZhuanZhengLiu;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJiaShouCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_JiaShouCi;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJiaMoCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_JiaMoCi;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getTongDao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_TongDao;
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShengChanGuZhang())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
 			return ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanGuZhang;
 		}
-		// if (StringHelper.isDecimal(inputByNewFormBean.getBeiZhuShuoMing())) {
+		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing;
 		// }
 		return ValidateStatusInputByNew.OK;
@@ -825,144 +825,144 @@ public class InputByNewBusiness {
 
 	private ArrayList<ValidateStatusInputByNew> checkNumberFormatAll(InputByNewFormBean inputByNewFormBean) {
 		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
-
-		// if (StringHelper.isDecimal(inputByNewFormBean.getYearMonthDay())) {
+		
+		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay);
 		// }
-		if (StringHelper.isDecimal(inputByNewFormBean.getQiHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_QiHao);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getLuCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_LuCi);
 		}
-		// if (StringHelper.isDecimal(inputByNewFormBean.getGuiGe())) {
+		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe);
 		// }
-		if (StringHelper.isDecimal(inputByNewFormBean.getShengChanLuHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanLuHao);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFanYingQiHao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFanYingQiHao())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FanYingQiHao);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShiYongCiShu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShiYongCiShu())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShiYongCiShu);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getMg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getMg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_Mg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getTiCl4())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getTiCl4())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_TiCl4);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getMaoZhong())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getMaoZhong())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_MaoZhong);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJingZhong())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJingZhong())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JingZhong);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getChengPinLv())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ChengPinLv);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuFe())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuFe);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuSi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuSi);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuCl())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuCl);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuC())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuC);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuN())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuN);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuO())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuO);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuH())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuH);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuMn())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuMn);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanSuHb())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuHb);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getDengJiHanMeng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_DengJiHanMeng);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_KaoHeDengJiChuMeng);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getGongYiTiaoZheng())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GongYiTiaoZheng);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getGongYiShiYan())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GongYiShiYan);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getDiPiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getDiPiKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_DiPiKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShangMaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShangMaoKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShangMaoKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getPaBiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getPaBiKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_PaBiKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiDiPiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiDiPiKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiDiPiKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiShangMaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiShangMaoKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiShangMaoKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiPaBiKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiPaBiKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiPaBiKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getFeiTaiFenKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getFeiTaiFenKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiTaiFenKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getCiYuanKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getCiYuanKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_CiYuanKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShouXuanFeiLiaoKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getSunHaoKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getSunHaoKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_SunHaoKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZongPaiMeiLiangKg())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZongPaiMeiLiangKg())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZongPaiMeiLiangKg);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getChuLuZhenKongDu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getChuLuZhenKongDu())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ChuLuZhenKongDu);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getYuanZuiGaoWenDu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getYuanZuiGaoWenDu())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanZuiGaoWenDu);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZhengLiuGaoHengDian())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZhengLiuGaoHengDian())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZhengLiuGaoHengDian);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getZhuanZhengLiu())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZhuanZhengLiu);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJiaShouCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JiaShouCi);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getJiaMoCi())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JiaMoCi);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getTongDao())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_TongDao);
 		}
-		if (StringHelper.isDecimal(inputByNewFormBean.getShengChanGuZhang())) {
+		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
 			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanGuZhang);
 		}
-		// if (StringHelper.isDecimal(inputByNewFormBean.getBeiZhuShuoMing())) {
+		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing);
 		// }
 		checkResult.add(ValidateStatusInputByNew.OK);
-
+		
 		return checkResult;
 	}
 
@@ -1751,7 +1751,7 @@ public class InputByNewBusiness {
 		case NUMBER_FORMAT_BeiZhuShuoMing:
 			return Constant.ITEM_BeiZhuShuoMing;
 		case DATE_FORMAT_YearMonthDay:
-			return Constant.ITEM_YearMonthDay;
+			return Constant.ITEM_YearMonthDay;		
 		default:
 			break;
 		}

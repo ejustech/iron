@@ -16,6 +16,7 @@ import org.apache.struts.action.ActionMessage;
 
 import com.ejustech.iron.business.InputByNewBusiness;
 import com.ejustech.iron.common.AutoArrayList;
+import com.ejustech.iron.common.StringHelper;
 import com.ejustech.iron.common.IronEnum.ErrorType;
 import com.ejustech.iron.common.IronEnum.UserRole;
 import com.ejustech.iron.common.IronEnum.ValidateStatusInputByNew;
@@ -38,7 +39,7 @@ public class InputByNewForm extends ActionForm {
 		ArrayList<ValidateStatusInputByNew> checkResultList = new ArrayList<ValidateStatusInputByNew>();
 
 		ActionErrors error = new ActionErrors();
-		 error.add("errors", new ActionMessage("jsp.inputByNew.test.error"));
+//		 error.add("errors", new ActionMessage("jsp.inputByNew.test.error"));
 		// error.add("errors", new
 		// ActionMessage("jsp.inputByNew.Empty.YearMonthDay"));
 		// error.add("errors", new ActionMessage("jsp.inputByNew.Empty.QiHao"));
@@ -52,6 +53,9 @@ public class InputByNewForm extends ActionForm {
 
 		for (int rowIndex = 0; rowIndex < inputByNewList.size(); rowIndex++) {
 			checkBean = (InputByNewFormBean) inputByNewList.get(rowIndex);
+			
+			if (StringHelper.isNullEmpty(checkBean.getLuCi()) && StringHelper.isNullEmpty(checkBean.getGuiGe())) continue;
+			
 			checkResultList.addAll(business.checkAll(checkBean, UserRole.R3));
 
 			for (int i = 0; i < checkResultList.size(); i++) {
