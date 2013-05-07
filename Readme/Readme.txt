@@ -21,3 +21,6 @@
 将project\lib\mysql-connector-javabin.jar复制到%TOMCAT_HOME%/lib/中
 
 4.SSH Key?
+
+5.将project\lib\jxl.jar和poi-3.9-20121203.jar，复制到%TOMCAT_HOME%/lib/中
+Excel用
