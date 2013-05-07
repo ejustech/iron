@@ -92,7 +92,7 @@
     <action
       attribute="result2Form"
       input="/jsp/result2.jsp"
-      name="result1Form"
+      name="result2Form"
       path="/result2"
       scope="request"
       type="com.ejustech.iron.action.Result2Action"

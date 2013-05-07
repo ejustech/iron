@@ -28,10 +28,19 @@ public class Result2Form extends ActionForm {
 	private static final long serialVersionUID = 1L;
 	/** search property */
 	private String search;
+	private String exportResult2;
 	
 	/*
 	 * Generated Methods
 	 */
+
+	public String getExportResult2() {
+		return exportResult2;
+	}
+
+	public void setExportResult2(String exportResult2) {
+		this.exportResult2 = exportResult2;
+	}
 
 	/** 
 	 * Method validate

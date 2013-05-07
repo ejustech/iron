@@ -22,4 +22,15 @@
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
+
+  <servlet>  
+   <servlet-name>outPutExcel</servlet-name>  
+   <servlet-class>output.OutputExcel</servlet-class>  
+</servlet>  
+<servlet-mapping>  
+   <servlet-name>outPutExcel</servlet-name>  
+   <url-pattern>/excel</url-pattern>  
+</servlet-mapping>  
+
+
 </web-app>

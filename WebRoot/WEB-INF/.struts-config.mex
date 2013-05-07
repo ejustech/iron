@@ -121,8 +121,8 @@
   </StrutsTransition>
   <StrutsTransition id="/result2.do,loginError,/jsp/loginError.jsp,1" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="523,1354" />
-      <AbsolutePoint location="523,276" />
+      <AbsolutePoint location="493,1354" />
+      <AbsolutePoint location="493,276" />
       <AbsolutePoint location="650,276" />
     </AutomaticBendpoints>
   </StrutsTransition>
@@ -132,6 +132,12 @@
       <AbsolutePoint location="573,969" />
       <AbsolutePoint location="573,276" />
       <AbsolutePoint location="461,276" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/result2.do,search,/jsp/search.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="523,1406" />
+      <AbsolutePoint location="108,376" />
     </AutomaticBendpoints>
   </StrutsTransition>
   <StrutsTransition id="/login.do,loginError,/jsp/loginError.jsp,1" routingType="0">

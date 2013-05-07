@@ -8,46 +8,56 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
-import com.ejustech.iron.databean.form.SearchFormBean;
+import com.ejustech.iron.common.Excel;
+import com.ejustech.iron.databean.form.Result3FormBean;
 
-/** 
- * MyEclipse Struts
- * Creation date: 04-17-2013
+/**
+ * MyEclipse Struts Creation date: 04-17-2013
  * 
  * XDoclet definition:
- * @struts.action path="/result1" name="result1Form" input="/form/result1.jsp" scope="request" validate="true"
+ * 
+ * @struts.action path="/result1" name="result1Form" input="/form/result1.jsp"
+ *                scope="request" validate="true"
  */
 public class Result3Action extends EventDispatchAction {
 	/*
 	 * Generated Methods
 	 */
 
-	/** 
+	/**
 	 * Method execute
+	 * 
 	 * @param mapping
 	 * @param form
 	 * @param request
 	 * @param response
 	 * @return ActionForward
 	 */
-	// 处理search动作
-	public ActionForward search(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
+	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			SearchFormBean searchFormBean = new SearchFormBean();
-			searchFormBean.setSelInfoList("3");
-			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
-			selList.add(searchFormBean);
-			request.setAttribute("SELLIST", selList);
-			return mapping.findForward("search");
+			// 从session获取list
+			HttpSession session = request.getSession();
+			ArrayList<Result3FormBean> list = new ArrayList<Result3FormBean>();
+			list = (ArrayList<Result3FormBean>) session.getAttribute("CHUMENGLIST"); // 此时取出来的是Object,
+																						// 需要强转
+			// 定义导出excel名字
+			String fileName = "result3.xls";
+			// 导出excel到服务器
+			Excel.exportResult3Excel(list, fileName);
+			// 下载excel到本地
+			FileAction fileDownload = new FileAction();
+			fileDownload.downFile(response, fileName);
+			return null;
 		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("loginError");
 		}
-		return null;
 	}
 }

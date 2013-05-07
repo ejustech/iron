@@ -6,83 +6,135 @@
 <html>
 	<head>
 		<title>月等外钛统计表</title>
-	</head>
+	    <style type="text/css">
+<!--
+.STYLE13 {
+	font-family: "新宋体";
+	font-size: 14px;
+	font-weight: bold;
+}
+-->
+        </style>
+</head>
 	<style type="text/css">
 	<!--
-	body {
-		background-color: #C9D3DA;
-	}
-	.STYLE1 {
-		font-size: 16px;
-		font-weight: bold;
-	}
-	.STYLE9 {font-size: 12px}
+		body {
+			background-color: #C9D3DA;
+		}
+		.STYLE12 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+		.STYLE9 {font-size: 12px}
+		.STYLE10 {font-family: "宋体"}
 	-->
 	</style>
 	<body>
+	<body>
 		<html:form action="/result4">
 			<div align="center">
-			    <p><img src="../image/1.jpg" width="1090" height="112" /></p>
-			    <p class="STYLE1">金达钛业生产数据统计系统</p>
-			  </div>
-			<hr width="1200" />
-			<table>
+			    <p><img src="../iron/image/1.jpg"/></p>
+			    
+		  </div>
+		   <table width="1024" align="center">
 				<tr>
-					<td>月等外钛统计表</td>
+					<td align="left"><span class="STYLE13">月等外钛统计表</span></td>
+					<td align="right">
+						<html:submit property="exportResult4">导出Excel</html:submit>
+						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
+					</td>
 				</tr>
 			</table>
-			<table border="1">
+			<p></p>
+			<hr width="1024" />
+			<table align="center" border=1 style="BORDER-COLLAPSE: collapse">
 				<tr>
-					<th>期号</th>
-					<th>总炉次数</th>
-					<th>均毛重量kg</th>
-					<th>均净重量kg</th>
-					<th>成品率</th>
-					<th>底皮kg</th>
-					<th>上帽kg</th>
-					<th>爬壁kg</th>
-					<th>废底皮kg</th>
-					<th>废底皮比例</th>
-					<th>废上帽kg</th>
-					<th>废上帽 比例</th>
-					<th>废爬壁kg</th>
-					<th>废爬壁 比例</th>
-					<th>废钛粉kg</th>
-					<th>磁选kg</th>
-					<th>手选废料kg</th>
-					<th>损耗kg</th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">期号</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">总炉次数</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">均毛重量kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">均净重量kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">成品率</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">底皮kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">上帽kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">爬壁kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废底皮kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废底皮比例</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废上帽kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废上帽比例</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废爬壁kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废爬壁比例</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">废钛粉kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">磁选kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">手选废料kg</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">损耗kg</span></th>
 				</tr>
 				<logic:notEmpty name="WAITAILIST">
 					<logic:iterate id="result4FormBean" name="WAITAILIST">
 				<tr>
-					<td><bean:write name="result4FormBean" property="qihao" ></bean:write>期</td>
-					<td><bean:write name="result4FormBean" property="zonglushu" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="junmaozhong" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="junjingzhong" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="junhuishoulv" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="dipi" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="shangmao" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="pabi" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feidipi" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feidipibili" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feishangmao" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feishangmaobili" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feipabi" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="feipabibili" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="shaixuanfeiliao" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="cixuanfeiliao" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="shouxuanfeiliao" ></bean:write></td>
-					<td><bean:write name="result4FormBean" property="sunhao" ></bean:write></td>
+					<td align="center"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="qihao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="zonglushu" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="junmaozhong" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="junjingzhong" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="junhuishoulv" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="dipi" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="shangmao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="pabi" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feidipi" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feidipibili" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feishangmao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feishangmaobili" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feipabi" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="feipabibili" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="shaixuanfeiliao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="cixuanfeiliao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="shouxuanfeiliao" ></bean:write>
+					</span></td>
+					<td align="right"><span class="STYLE12">
+					  <bean:write name="result4FormBean" property="sunhao" ></bean:write>
+					</span></td>
 				</tr>
 					</logic:iterate>
 				</logic:notEmpty>
-			</table>
-			<table>
-				<tr>
-					<td><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onclick="javascript:window.history.back();"></td>
+		  </table>
+		  <!--
+			<table align="center" width="900">
+			<tr>
+				<td align="right"><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();"></td>
 				</tr>
 			</table>
-			<hr width="1200" />
+			-->
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<hr width="1024" />
 			<table align="center">
 				<tr>
 					<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>

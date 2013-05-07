@@ -15,15 +15,24 @@
 			font-weight: bold;
 		}
 		.STYLE9 {font-size: 12px}
+		.STYLE12 {
+	font-family: "新宋体";
+	font-size: 14px;
+	font-weight: bold;
+}
 	-->
 	</style>
 	<body>
 		<html:form action="/menu">
 			<div align="center">
-			    <p><img src="../image/1.jpg" width="1090" height="112" /></p>
-			    <p class="STYLE1">金达钛业生产数据统计系统</p>
+			    <p><img src="../iron/image/1.jpg"/></p>
+			    
 			  </div>
-			<hr width="1200" />
+			<table width="1024" align="center">
+				<tr><td align="left"><span class="STYLE12">功能列表</span></td></tr>
+			</table>
+			<p></p>
+			<hr width="1024" />
 			<table align="center">
 				<tr>
 					<td><html:submit property="inputByNew">信息录入</html:submit></td>
@@ -32,9 +41,9 @@
 					<td><html:submit property="logoff">注&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
 				</tr>
 			</table>
-			
 		</html:form>
-		<hr width="1200" />
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<hr width="1024" />
 		<table align="center">
 			<tr>
 				<td><span class="STYLE9">Copyright 大连毅展科技有限公司 2013 Dalian Ejustech Co., Ltd.</span></td>
