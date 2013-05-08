@@ -23,8 +23,7 @@ body {
 <body>
 <html:form action="/login" >
   <div align="center">
-    <p><img src="../image/1.jpg" width="1090" height="112" /></p>
-    <p class="STYLE1">金达钛业生产数据统计系统</p>
+    <p><img src="../image/1.jpg"/></p>
   </div>
 <hr width="1200" />
 <table height="375" align="center" border="0">
@@ -37,7 +36,7 @@ body {
 				</tr>
 				<tr>
 					<td>密&nbsp;&nbsp;码:</td>
-					<td><html:text property="userPassword"/><html:errors property="userPassword"/></td>
+					<td><input type="password" name="userPassword" maxlength="8"></td>
 				<tr>
 			</table>
 			<table align="center">

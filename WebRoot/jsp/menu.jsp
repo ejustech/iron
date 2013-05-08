@@ -38,7 +38,7 @@
 					<td><html:submit property="inputByNew">信息录入</html:submit></td>
 					<td><html:submit property="search">信息查询</html:submit></td>
 					<td><html:submit property="userManage">用户管理</html:submit></td>
-					<td><html:submit property="logoff">注&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
+					<td><html:submit property="logout">注&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
 				</tr>
 			</table>
 		</html:form>

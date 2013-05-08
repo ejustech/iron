@@ -508,6 +508,10 @@ public class SearchAction extends EventDispatchAction {
 					// sqlCondition = sqlBufferCondition.toString();
 					sqlCondition = "";
 				}
+				// sqlCondition查询条件放到session用于result1画面删除后刷新页面的同样条件
+				HttpSession session = request.getSession();
+				session.setAttribute("SQLCONDITION", sqlCondition);
+				
 				ArrayList<Result1FormBean> allInfoList = new ArrayList<Result1FormBean>();
 				allInfoList = (ArrayList<Result1FormBean>) searchDao.getAllInfoList(request, sqlCondition);
 				request.setAttribute("AllINFOLIST", allInfoList);

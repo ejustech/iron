@@ -118,17 +118,21 @@ public class Login {
 	 * 用户名是否存在
 	 * 
 	 * @return 系统中不存在输入的用户名，false；存在，true
+	 * @throws Exception 
 	 */
-	private boolean HasUserID() {
+	private boolean HasUserID() throws Exception {
 		MUserDao mUserDao = (MUserDao) DaoFactory.CreateMUserDao();
 
-		int userCounts = mUserDao.GetCountsByUserID(userID);
+//		int userCounts = mUserDao.GetCountsByUserID(userID);
 
-		if (userCounts == 0) {
-			return false;
-		} else {
-			return true;
-		}
+//		if (userCounts == 0) {
+//			return false;
+//		} else {
+//			return true;
+//		}
+		boolean flag = mUserDao.verifyUserID(userID, userPassword);
+		System.out.println(flag);
+		return flag;
 	}
 
 	/***

@@ -28,6 +28,9 @@
     <form-bean name="result5Form" type="com.ejustech.iron.form.Result5Form" />
     <form-bean name="result6Form" type="com.ejustech.iron.form.Result6Form" />
     <form-bean name="result7Form" type="com.ejustech.iron.form.Result7Form" />
+    <form-bean name="userManageForm" type="com.ejustech.iron.form.UserManageForm" />
+    <form-bean name="userAddForm" type="com.ejustech.iron.form.UserAddForm" />
+    
     <form-bean name="SampleQuery" type="SampleQuery" />
     <form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
     <form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
@@ -54,10 +57,12 @@
       path="/menu"
       scope="request"
       type="com.ejustech.iron.action.MenuAction"
-      parameter="search,inputByNew,inputByUpdate,userManage,logoff"
+      parameter="search,inputByNew,userManage,inputByUpdate,logout"
       cancellable="true">
       <forward name="search" path="/jsp/search.jsp" />
       <forward name="inputByNew" path="/jsp/inputByNew.jsp" />
+      <forward name="userManage" path="/jsp/userManage.jsp" />
+      <forward name="logout" path="/jsp/login.jsp" />
       <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
@@ -86,7 +91,12 @@
       path="/result1"
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
+      parameter="res1_add,res1_modify,res1_del,res1_back,loginError"
       cancellable="true">
+      <forward name="res1_add" path="/jsp/inputByNew.jsp" />
+      <forward name="res1_modify" path="/jsp/inputByNew.jsp" />
+      <forward name="res1_del" path="/jsp/result1.jsp" />
+      <forward name="res1_back" path="/jsp/menu.jsp" />
       <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action
@@ -149,6 +159,35 @@
       cancellable="true">
       <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
+    <action
+      attribute="userManageForm"
+      input="/jsp/userManage.jsp"
+      name="userManageForm"
+      path="/userManage"
+      scope="request"
+      type="com.ejustech.iron.action.UserManageAction"
+      parameter="add,modify,del,back,loginError"
+      cancellable="true">
+      <forward name="add" path="/jsp/userAdd.jsp" />
+      <forward name="modify" path="/jsp/userAdd.jsp" />
+      <forward name="del" path="/jsp/userManage.jsp" />
+      <forward name="back" path="/jsp/menu.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
+    </action>
+    <action
+      attribute="userAdd"
+      input="/jsp/userAdd.jsp"
+      name="userAddForm"
+      path="/userAdd"
+      scope="request"
+      type="com.ejustech.iron.action.UserAddAction"
+      parameter="update,back,loginError"
+      cancellable="true">
+      <forward name="update" path="/jsp/userManage.jsp" />
+      <forward name="back" path="/jsp/userManage.jsp" />
+      <forward name="loginError" path="/jsp/loginError.jsp" />
+    </action>
+    
     <action
       attribute="sampleQueryForm"
       input="/jsp/sampleQuery.jsp"

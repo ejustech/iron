@@ -34,7 +34,12 @@
 		   <table width="1024" align="center">
 				<tr>
 					<td align="left"><span class="STYLE13 STYLE14">全部信息输出表</span></td>
-				  <td align="right"><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();"></td>
+				  	<td align="right">
+					  	<html:submit property="res1_add">添&nbsp&nbsp&nbsp&nbsp加</html:submit>
+						<html:submit property="res1_modify">修&nbsp&nbsp&nbsp&nbsp改</html:submit>
+						<html:submit property="res1_del">删&nbsp&nbsp&nbsp&nbsp除</html:submit>
+					  	<html:submit property="res1_back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+				  	</td>
 				</tr>
 		  </table>
 			<p></p>
@@ -95,7 +100,8 @@
 						<html:multibox property="indexCheckbox">
 							<logic:empty name="result1FormBean" property="index"></logic:empty>
 							<bean:write name="result1FormBean" property="index" />
-						</html:multibox>					</td>
+						</html:multibox>					
+					</td>
 					<td align="center"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="riqi" ></bean:write>
 					</span></td>

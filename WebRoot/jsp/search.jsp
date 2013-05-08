@@ -191,7 +191,7 @@
 						    <html:text property="zongpaimeiliang2"/>
 						    <html:errors property="zongpaimeiliang2"/>
 							  </span></td>
-							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">实验炉次 : </span></td>
+							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">实验炉次:</span></td>
 							<td><span class="STYLE10 STYLE11">
 						    <html:text property="shiyanluci"/>
 						    <html:errors property="shiyanluci"/>

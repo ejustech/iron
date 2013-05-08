@@ -123,7 +123,7 @@ public class TIronInfoDao extends BaseDao {
 
 				Result1FormBean result1FormBean = new Result1FormBean();
 				// String index = String.valueOf(resultSet.getRow());
-				result1FormBean.setIndex(resultSet.getString("luci") + "," + resultSet.getString("guige"));
+				result1FormBean.setIndex(resultSet.getString("luci") + "~" + resultSet.getString("guige"));
 				result1FormBean.setRiqi(resultSet.getString("riqi"));
 				result1FormBean.setQihao(resultSet.getString("qihao"));
 				result1FormBean.setLuci(resultSet.getString("luci"));
@@ -1553,7 +1553,7 @@ public class TIronInfoDao extends BaseDao {
 
 			zhibiaoList = Utility.getList5ByHashMap(zhibiaoList, zhibiaoList11, 11);
 
-			//合计部分
+			// 合计部分
 			result5FormBean = new Result5FormBean();
 			resultSet1s = statement.executeQuery(sql1s.toString());
 			while (resultSet1s.next()) {
@@ -1638,10 +1638,11 @@ public class TIronInfoDao extends BaseDao {
 			super.Close();
 		}
 	}
-	
+
 	/**
 	 * @param request
-	 * @param sqlCondition 检索条件
+	 * @param sqlCondition
+	 *            检索条件
 	 * @return 单炉生产数据统计表
 	 * @throws Exception
 	 */
@@ -1655,7 +1656,7 @@ public class TIronInfoDao extends BaseDao {
 		ArrayList<Result6FormBean> danluList4 = new ArrayList<Result6FormBean>();
 		ArrayList<Result6FormBean> danluList5 = new ArrayList<Result6FormBean>();
 		ArrayList<Result6FormBean> danluList6 = new ArrayList<Result6FormBean>();
-		
+
 		Result6FormBean result6FormBean = new Result6FormBean();
 
 		StringBuffer sql1 = new StringBuffer();
@@ -1666,7 +1667,7 @@ public class TIronInfoDao extends BaseDao {
 		StringBuffer sql6 = new StringBuffer();
 
 		StringBuffer sqlBuffer1 = new StringBuffer();
-		
+
 		StringBuffer sqlBuffer2 = new StringBuffer();
 		if (!sqlCondition.equals("")) {
 			sqlBuffer1 = sqlBuffer1.append(" WHERE" + sqlCondition);
@@ -1684,12 +1685,16 @@ public class TIronInfoDao extends BaseDao {
 		sql1.append("SUM(jingzhong*n)/SUM(jingzhong) AS n, ");
 		sql1.append("SUM(jingzhong*o)/SUM(jingzhong) AS o ");
 		sql1.append("FROM ironinfo").append(sqlBuffer1).append(" GROUP BY shengchanluhao ");
-		
-		sql2.append("SELECT shengchanluhao, SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2).append(" GROUP BY shengchanluhao");
-		sql3.append("SELECT shengchanluhao, SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2).append(" GROUP BY shengchanluhao");
-		sql4.append("SELECT shengchanluhao, SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2).append(" GROUP BY shengchanluhao");
-		sql5.append("SELECT shengchanluhao, SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2).append(" GROUP BY shengchanluhao");
-		
+
+		sql2.append("SELECT shengchanluhao, SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2)
+				.append(" GROUP BY shengchanluhao");
+		sql3.append("SELECT shengchanluhao, SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2)
+				.append(" GROUP BY shengchanluhao");
+		sql4.append("SELECT shengchanluhao, SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2)
+				.append(" GROUP BY shengchanluhao");
+		sql5.append("SELECT shengchanluhao, SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2)
+				.append(" GROUP BY shengchanluhao");
+
 		sql6.append("SELECT ");
 		sql6.append("shengchanluhao, COUNT(luci) AS zonglucishu, ");
 		sql6.append("SUM(dipi)/COUNT(luci) AS dipi, ");
@@ -1704,8 +1709,6 @@ public class TIronInfoDao extends BaseDao {
 		sql6.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
 		sql6.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2).append(" GROUP BY shengchanluhao ");
 
-
-		
 		ResultSet resultSet1 = null;
 		ResultSet resultSet2 = null;
 		ResultSet resultSet3 = null;
@@ -1719,12 +1722,12 @@ public class TIronInfoDao extends BaseDao {
 			super.Open();
 			statement = super.Conn().createStatement();
 
-			for(int i =1;i<17;i++){
+			for (int i = 1; i < 17; i++) {
 				result6FormBean = new Result6FormBean();
 				result6FormBean.setShengchanluhao(String.valueOf(i));
 				danluList0.add(result6FormBean);
 			}
-			
+
 			resultSet1 = statement.executeQuery(sql1.toString());
 			System.out.println("sql1=" + sql1);
 			while (resultSet1.next()) {
@@ -1742,7 +1745,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 			// 横向合并list2到list1
 			danluList = Utility.getList6ByHashMap(danluList0, danluList1, 1);
-			
+
 			resultSet2 = statement.executeQuery(sql2.toString());
 			System.out.println("sql2=" + sql2);
 			while (resultSet2.next()) {
@@ -1753,7 +1756,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 			// 横向合并list2到list1
 			danluList = Utility.getList6ByHashMap(danluList, danluList2, 2);
-			
+
 			resultSet3 = statement.executeQuery(sql3.toString());
 			System.out.println("sql3=" + sql3);
 			while (resultSet3.next()) {
@@ -1764,7 +1767,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			danluList = Utility.getList6ByHashMap(danluList, danluList3, 3);
-			
+
 			resultSet4 = statement.executeQuery(sql4.toString());
 			System.out.println("sql4=" + sql4);
 			while (resultSet4.next()) {
@@ -1775,7 +1778,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			danluList = Utility.getList6ByHashMap(danluList, danluList4, 4);
-			
+
 			resultSet5 = statement.executeQuery(sql5.toString());
 			System.out.println("sql5=" + sql5);
 			while (resultSet5.next()) {
@@ -1784,9 +1787,9 @@ public class TIronInfoDao extends BaseDao {
 				result6FormBean.setJ2jijiyixia(resultSet5.getString("2jijiyixia"));
 				danluList5.add(result6FormBean);
 			}
-			
+
 			danluList = Utility.getList6ByHashMap(danluList, danluList5, 5);
-			
+
 			resultSet6 = statement.executeQuery(sql6.toString());
 			System.out.println("sql6=" + sql6);
 			while (resultSet6.next()) {
@@ -1816,10 +1819,11 @@ public class TIronInfoDao extends BaseDao {
 			super.Close();
 		}
 	}
-	
+
 	/**
 	 * @param request
-	 * @param sqlCondition 检索条件
+	 * @param sqlCondition
+	 *            检索条件
 	 * @return 月还渗炉次生产数据汇总表
 	 * @throws Exception
 	 */
@@ -1833,7 +1837,7 @@ public class TIronInfoDao extends BaseDao {
 		ArrayList<Result7FormBean> yueluList4 = new ArrayList<Result7FormBean>();
 		ArrayList<Result7FormBean> yueluList5 = new ArrayList<Result7FormBean>();
 		ArrayList<Result7FormBean> yueluList6 = new ArrayList<Result7FormBean>();
-		
+
 		Result7FormBean result7FormBean = new Result7FormBean();
 
 		StringBuffer sql1 = new StringBuffer();
@@ -1842,7 +1846,7 @@ public class TIronInfoDao extends BaseDao {
 		StringBuffer sql4 = new StringBuffer();
 		StringBuffer sql5 = new StringBuffer();
 		StringBuffer sql6 = new StringBuffer();
-		
+
 		StringBuffer sql1s = new StringBuffer();
 		StringBuffer sql2s = new StringBuffer();
 		StringBuffer sql3s = new StringBuffer();
@@ -1868,12 +1872,13 @@ public class TIronInfoDao extends BaseDao {
 		sql1.append("SUM(jingzhong*n)/SUM(jingzhong) AS n, ");
 		sql1.append("SUM(jingzhong*o)/SUM(jingzhong) AS o ");
 		sql1.append("FROM ironinfo").append(sqlBuffer1).append(" GROUP BY yue ");
-		
+
 		sql2.append("SELECT yue, SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2).append(" GROUP BY yue");
 		sql3.append("SELECT yue, SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2).append(" GROUP BY yue");
 		sql4.append("SELECT yue, SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2).append(" GROUP BY yue");
-		sql5.append("SELECT yue, SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2).append(" GROUP BY yue");
-		
+		sql5.append("SELECT yue, SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2)
+				.append(" GROUP BY yue");
+
 		sql6.append("SELECT ");
 		sql6.append("yue, COUNT(luci) AS zonglucishu, ");
 		sql6.append("SUM(dipi)/COUNT(luci) AS dipi, ");
@@ -1887,7 +1892,7 @@ public class TIronInfoDao extends BaseDao {
 		sql6.append("SUM(shouxuanfeiliao)/COUNT(luci) AS shouxuanfeiliao, ");
 		sql6.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
 		sql6.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2).append(" GROUP BY yue ");
-		//合计部分
+		// 合计部分
 		sql1s.append("SELECT ");
 		sql1s.append("'累计' AS yue,");
 		sql1s.append("SUM(maozhong) AS zongmaozhong, ");
@@ -1899,12 +1904,12 @@ public class TIronInfoDao extends BaseDao {
 		sql1s.append("SUM(jingzhong*n)/SUM(jingzhong) AS n, ");
 		sql1s.append("SUM(jingzhong*o)/SUM(jingzhong) AS o ");
 		sql1s.append("FROM ironinfo").append(sqlBuffer1);
-		
+
 		sql2s.append("SELECT SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2);
 		sql3s.append("SELECT SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2);
 		sql4s.append("SELECT SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2);
 		sql5s.append("SELECT SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2);
-		
+
 		sql6s.append("SELECT ");
 		sql6s.append("COUNT(luci) AS zonglucishu, ");
 		sql6s.append("SUM(dipi)/COUNT(luci) AS dipi, ");
@@ -1918,14 +1923,14 @@ public class TIronInfoDao extends BaseDao {
 		sql6s.append("SUM(shouxuanfeiliao)/COUNT(luci) AS shouxuanfeiliao, ");
 		sql6s.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
 		sql6s.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2);
-				
+
 		ResultSet resultSet1 = null;
 		ResultSet resultSet2 = null;
 		ResultSet resultSet3 = null;
 		ResultSet resultSet4 = null;
 		ResultSet resultSet5 = null;
 		ResultSet resultSet6 = null;
-		
+
 		ResultSet resultSet1s = null;
 		ResultSet resultSet2s = null;
 		ResultSet resultSet3s = null;
@@ -1938,8 +1943,8 @@ public class TIronInfoDao extends BaseDao {
 		try {
 			super.Open();
 			statement = super.Conn().createStatement();
-			
-			for(int i =1;i<13;i++){
+
+			for (int i = 1; i < 13; i++) {
 				result7FormBean = new Result7FormBean();
 				result7FormBean.setYue(String.valueOf(i));
 				yueluList0.add(result7FormBean);
@@ -1962,7 +1967,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 			// 横向合并list2到list1
 			yueluList = Utility.getList7ByHashMap(yueluList0, yueluList1, 1);
-			
+
 			resultSet2 = statement.executeQuery(sql2.toString());
 			System.out.println("sql2=" + sql2);
 			while (resultSet2.next()) {
@@ -1973,7 +1978,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 			// 横向合并list2到list1
 			yueluList = Utility.getList7ByHashMap(yueluList, yueluList2, 2);
-			
+
 			resultSet3 = statement.executeQuery(sql3.toString());
 			System.out.println("sql3=" + sql3);
 			while (resultSet3.next()) {
@@ -1984,7 +1989,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			yueluList = Utility.getList7ByHashMap(yueluList, yueluList3, 3);
-			
+
 			resultSet4 = statement.executeQuery(sql4.toString());
 			System.out.println("sql4=" + sql4);
 			while (resultSet4.next()) {
@@ -1995,7 +2000,7 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			yueluList = Utility.getList7ByHashMap(yueluList, yueluList4, 4);
-			
+
 			resultSet5 = statement.executeQuery(sql5.toString());
 			System.out.println("sql5=" + sql5);
 			while (resultSet5.next()) {
@@ -2004,9 +2009,9 @@ public class TIronInfoDao extends BaseDao {
 				result7FormBean.setJ2jijiyixia(resultSet5.getString("2jijiyixia"));
 				yueluList5.add(result7FormBean);
 			}
-			
+
 			yueluList = Utility.getList7ByHashMap(yueluList, yueluList5, 5);
-			
+
 			resultSet6 = statement.executeQuery(sql6.toString());
 			System.out.println("sql6=" + sql6);
 			while (resultSet6.next()) {
@@ -2027,8 +2032,8 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			yueluList = Utility.getList7ByHashMap(yueluList, yueluList6, 6);
-			
-			//合计部分
+
+			// 合计部分
 			result7FormBean = new Result7FormBean();
 			resultSet1s = statement.executeQuery(sql1s.toString());
 			System.out.println("sql1s=" + sql1s);
@@ -2038,7 +2043,7 @@ public class TIronInfoDao extends BaseDao {
 				result7FormBean.setZongmaozhong(resultSet1s.getString("zongmaozhong"));
 				result7FormBean.setZongjingzhong(resultSet1s.getString("zongjingzhong"));
 				result7FormBean.setChengpinlv(Output.getPValue(resultSet1s.getString("chengpinlv")));
-				result7FormBean.setMgdanhao(Output.getSubValue(resultSet1s.getString("mgdanhao"),3));
+				result7FormBean.setMgdanhao(Output.getSubValue(resultSet1s.getString("mgdanhao"), 3));
 				result7FormBean.setFe(Output.getSubValue(resultSet1s.getString("fe"), 4));
 				result7FormBean.setCl(Output.getSubValue(resultSet1s.getString("cl"), 4));
 				result7FormBean.setN(Output.getSubValue(resultSet1s.getString("n"), 4));
@@ -2101,6 +2106,39 @@ public class TIronInfoDao extends BaseDao {
 		} finally {
 			super.Close();
 		}
+	}
+
+	// 删除全部信息表
+	public void delAllInfoList(String luci, String guige) throws Exception {
+
+		StringBuffer sqlBuffer = new StringBuffer();
+		int rs = 0;
+
+		sqlBuffer.append("DELETE ");
+		sqlBuffer.append("FROM ");
+		sqlBuffer.append("ironinfo ");
+		sqlBuffer.append("WHERE ");
+		sqlBuffer.append("luci = ");
+		sqlBuffer.append(luci);
+		sqlBuffer.append(" AND ");
+		sqlBuffer.append("guige = ");
+		sqlBuffer.append(guige);
+
+		String sql = sqlBuffer.toString();
+		System.out.println("sql=" + sql);
+
+		Statement statement = null;
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+			rs = statement.executeUpdate(sql);
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
+		}
+
 	}
 
 }

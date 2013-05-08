@@ -10,6 +10,8 @@ import java.net.URLEncoder;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.actions.DispatchAction;
 
+import com.ejustech.iron.common.FileProcessor;
+
 /**
  * @author Administrator
  * 从服务器下载文件到本地
@@ -45,6 +47,8 @@ public class FileAction extends DispatchAction {
 		bis.close();
 		fos.close();
 		bos.close();
+		
+		FileProcessor.deleteFolder(path);
 
 	}
 }

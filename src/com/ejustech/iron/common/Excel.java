@@ -20,17 +20,15 @@ import com.ejustech.iron.databean.form.Result7FormBean;
 public class Excel {
 
 	private static String path = "c:\\irontemp";
+	
 
 	// 导出result2 月生产数据统计表-含锰
 	public static void exportResult2Excel(ArrayList<Result2FormBean> list, String fileName) {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
-
+			FileProcessor.createForder(path);
+			
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
 			WritableSheet sheet = book.createSheet("sheet1", 0);
@@ -176,10 +174,7 @@ public class Excel {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
+			FileProcessor.createForder(path);
 
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
@@ -326,10 +321,7 @@ public class Excel {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
+			FileProcessor.createForder(path);
 
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
@@ -440,10 +432,7 @@ public class Excel {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
+			FileProcessor.createForder(path);
 
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
@@ -570,10 +559,7 @@ public class Excel {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
+			FileProcessor.createForder(path);
 
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
@@ -724,10 +710,7 @@ public class Excel {
 		// TODO Auto-generated method stub
 		try {
 
-			File file = new File(path);
-			if (!file.exists()) {
-				file.mkdirs();
-			}
+			FileProcessor.createForder(path);
 
 			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
 
