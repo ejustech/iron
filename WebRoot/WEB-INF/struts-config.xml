@@ -215,9 +215,14 @@
       path="/inputByNew"
       scope="request"
       type="com.ejustech.iron.action.InputByNewAction"
-      cancellable="true" />
+      cancellable="true"
+      validate="true" >
+      <forward name="OK" path="/jsp/inputByNew.jsp" />
+      <forward name="NG" path="/jsp/inputByNew.jsp" />
+      </action>
   </action-mappings>
 
   <message-resources parameter="com.ejustech.iron.ApplicationResources" />
+
 </struts-config>
 

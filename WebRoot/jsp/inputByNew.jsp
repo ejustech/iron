@@ -34,7 +34,9 @@ body {
 
 
 <table width="3000" border=1 align="center" bordercolor="#999999" >
-  <tr bgcolor="#006699">
+	<tr><html:errors property="errors"></html:errors></tr>
+	<tr><html:errors property="error01"></html:errors></tr>
+  	<tr bgcolor="#006699">
     <td align="center" width="21" bordercolor="#666666">No.</td>
     <td align="center">年月日</td>
     <td align="center">期号</td>
@@ -84,198 +86,53 @@ body {
   </tr>
   <logic:iterate id="inputByNewList" name="inputByNewForm" property="inputByNewList" indexId="index">
   	<tr>
-  		<td bordercolor="#666666" align="center"><%=index+1%></td>
-<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGe"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanLuHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].fanYingQiHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shiYongCiShu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].mg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tiCl4"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].maoZhong"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jingZhong"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chengPinLv"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuFe"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuSi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuCl"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuC"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuN"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuO"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuH"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuMn"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHb"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dengJiHanMeng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].kaoHeDengJiChuMeng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiTiaoZheng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiShiYan"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].diPiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shangMaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].paBiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiDiPiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiShangMaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiPaBiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiTaiFenKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].ciYuanKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shouXuanFeiLiaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].sunHaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zongPaiMeiLiangKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chuLuZhenKongDu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanZuiGaoWenDu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhengLiuGaoHengDian"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhuanZhengLiu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaShouCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaMoCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhang"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMing"> </td>
+  		<td bordercolor="#666666" align="center"><%=index/3+1%></td>
+		<td align="center"><html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="qiHao" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="luCi" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="shengChanLuHao" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="fanYingQiHao" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="shiYongCiShu" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="mg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="tiCl4" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="maoZhong" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="gongYiShiYan" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="diPiKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="shangMaoKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="paBiKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="feiDiPiKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="feiShangMaoKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="feiPaBiKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="feiTaiFenKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="ciYuanKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="sunHaoKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true"></html:text></td>
+		<td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true"></html:text></td>
   	</tr>
-	<!-- <tr>
-		
-
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDay"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGe"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanLuHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].fanYingQiHao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shiYongCiShu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].mg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tiCl4"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].maoZhong"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jingZhong"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chengPinLv"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuFe"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuSi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuCl"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuC"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuN"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuO"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuH"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuMn"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHb"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dengJiHanMeng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].kaoHeDengJiChuMeng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiTiaoZheng"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiShiYan"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].diPiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shangMaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].paBiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiDiPiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiShangMaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiPaBiKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiTaiFenKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].ciYuanKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shouXuanFeiLiaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].sunHaoKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zongPaiMeiLiangKg"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chuLuZhenKongDu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanZuiGaoWenDu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhengLiuGaoHengDian"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhuanZhengLiu"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaShouCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaMoCi"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDao"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhang"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMing"> </td>
-	</tr>
-	<tr>
-		<td align="center" bordercolor="#666666"></td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDayJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHaoJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCiJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGeJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanLuHaoJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].fanYingQiHaoJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shiYongCiShuJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].mgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tiCl4JunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].maoZhongJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jingZhongJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chengPinLvJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuFeJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuSiJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuClJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuCJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuNJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuOJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuMnJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHbJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dengJiHanMengJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].kaoHeDengJiChuMengJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiTiaoZhengJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiShiYanJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].diPiKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shangMaoKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].paBiKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiDiPiKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiShangMaoKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiPaBiKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiTaiFenKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].ciYuanKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shouXuanFeiLiaoKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].sunHaoKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zongPaiMeiLiangKgJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chuLuZhenKongDuJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanZuiGaoWenDuJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhengLiuGaoHengDianJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhuanZhengLiuJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaShouCiJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaMoCiJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDaoJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhangJunPin1"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMingJunPin1"> </td>
-	</tr>
-	<tr>
-		<td align="center" bordercolor="#666666"></td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yearMonthDayJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].qiHaoJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].luCiJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].guiGeJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanLuHaoJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].fanYingQiHaoJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shiYongCiShuJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].mgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tiCl4JunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].maoZhongJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jingZhongJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chengPinLvJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuFeJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuSiJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuClJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuCJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuNJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuOJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuMnJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanSuHbJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].dengJiHanMengJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].kaoHeDengJiChuMengJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiTiaoZhengJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].gongYiShiYanJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].diPiKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shangMaoKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].paBiKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiDiPiKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiShangMaoKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiPaBiKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].feiTaiFenKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].ciYuanKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shouXuanFeiLiaoKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].sunHaoKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zongPaiMeiLiangKgJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].chuLuZhenKongDuJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].yuanZuiGaoWenDuJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhengLiuGaoHengDianJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].zhuanZhengLiuJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaShouCiJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].jiaMoCiJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].tongDaoJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].shengChanGuZhangJunPin2"> </td>
-		<td align="center"><input type="text" name="inputByNewList[<bean:write name="index"/>].beiZhuShuoMingJunPin2"> </td>
-	</tr>	 -->
   </logic:iterate>
 </table>
 <p>&nbsp;</p>
