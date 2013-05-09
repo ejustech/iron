@@ -21,8 +21,9 @@ import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.Result7FormBean;
 import com.mysql.jdbc.PreparedStatement;
 
-/***
- * T_Iron_Info表的数据访问对象
+/**
+ * @author Administrator
+ * ironinfo表的数据访问对象
  */
 public class TIronInfoDao extends BaseDao {
 
@@ -2108,7 +2109,12 @@ public class TIronInfoDao extends BaseDao {
 		}
 	}
 
-	// 删除全部信息表
+	/**
+	 * 删除全部信息表
+	 * @param luci
+	 * @param guige
+	 * @throws Exception
+	 */
 	public void delAllInfoList(String luci, String guige) throws Exception {
 
 		StringBuffer sqlBuffer = new StringBuffer();

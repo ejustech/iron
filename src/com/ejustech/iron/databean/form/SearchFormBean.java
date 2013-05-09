@@ -9,12 +9,6 @@ import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionMapping;
 
 public class SearchFormBean {
-	/*
-	 * Generated fields
-	 */
-	/*
-	 * Generated Methods
-	 */
 
 	/** 
 	 * Method validate

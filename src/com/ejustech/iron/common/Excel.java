@@ -17,8 +17,12 @@ import com.ejustech.iron.databean.form.Result5FormBean;
 import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.Result7FormBean;
 
+/**
+ * @author Administrator
+ * 导出Excel用
+ */
 public class Excel {
-
+	//导出文件临时存放文件夹
 	private static String path = "c:\\irontemp";
 	
 

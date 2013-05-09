@@ -22,18 +22,10 @@ import com.ejustech.iron.databean.form.Result7FormBean;
 import com.ejustech.iron.form.SearchForm;
 
 /**
- * MyEclipse Struts Creation date: 04-16-2013
+ * @author NZ
  * 
- * XDoclet definition:
- * 
- * @struts.action path="/search" name="searchForm" input="/form/search.jsp"
- *                scope="request" validate="true"
  */
 public class SearchAction extends EventDispatchAction {
-	/*
-	 * Generated Methods
-	 */
-
 	/**
 	 * Method execute
 	 * 
@@ -42,20 +34,6 @@ public class SearchAction extends EventDispatchAction {
 	 * @param request
 	 * @param response
 	 * @return ActionForward
-	 */
-	/**
-	 * @param mapping
-	 * @param form
-	 * @param request
-	 * @param response
-	 * @return
-	 */
-	/**
-	 * @param mapping
-	 * @param form
-	 * @param request
-	 * @param response
-	 * @return
 	 */
 	public ActionForward srch1(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 
@@ -511,7 +489,7 @@ public class SearchAction extends EventDispatchAction {
 				// sqlCondition查询条件放到session用于result1画面删除后刷新页面的同样条件
 				HttpSession session = request.getSession();
 				session.setAttribute("SQLCONDITION", sqlCondition);
-				
+
 				ArrayList<Result1FormBean> allInfoList = new ArrayList<Result1FormBean>();
 				allInfoList = (ArrayList<Result1FormBean>) searchDao.getAllInfoList(request, sqlCondition);
 				request.setAttribute("AllINFOLIST", allInfoList);
@@ -536,11 +514,11 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
 				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumengList(request, sqlCondition);
 				request.setAttribute("CHUMENGLIST", chumengList);
-				
+
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("CHUMENGLIST", chumengList);
-				
+
 				// 月生产数据统计表-除锰
 				return mapping.findForward("srch3");
 			}
@@ -549,11 +527,11 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result4FormBean> waitaiList = new ArrayList<Result4FormBean>();
 				waitaiList = (ArrayList<Result4FormBean>) searchDao.getWaitaiList(request, sqlCondition);
 				request.setAttribute("WAITAILIST", waitaiList);
-				
+
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("WAITAILIST", waitaiList);
-				
+
 				// 月等外钛统计表
 				return mapping.findForward("srch4");
 			}
@@ -562,11 +540,11 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result5FormBean> zhibiaoList = new ArrayList<Result5FormBean>();
 				zhibiaoList = (ArrayList<Result5FormBean>) searchDao.getZhibiaoList(request, sqlCondition);
 				request.setAttribute("ZHIBIAOLIST", zhibiaoList);
-				
+
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("ZHIBIAOLIST", zhibiaoList);
-				
+
 				// 月指标统计表
 				return mapping.findForward("srch5");
 			}
@@ -575,11 +553,11 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result6FormBean> danluList = new ArrayList<Result6FormBean>();
 				danluList = (ArrayList<Result6FormBean>) searchDao.getDanluList(request, sqlCondition);
 				request.setAttribute("DANLULIST", danluList);
-				
+
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("DANLULIST", danluList);
-				
+
 				// 单炉生产数据统计表
 				return mapping.findForward("srch6");
 			}
@@ -588,11 +566,11 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result7FormBean> yueluList = new ArrayList<Result7FormBean>();
 				yueluList = (ArrayList<Result7FormBean>) searchDao.getYueluList(request, sqlCondition);
 				request.setAttribute("YUELULIST", yueluList);
-				
+
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("YUELULIST", yueluList);
-				
+
 				// 月还渗炉次生产数据汇总表
 				return mapping.findForward("srch7");
 			}

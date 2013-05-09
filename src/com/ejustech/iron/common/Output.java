@@ -6,7 +6,7 @@ import java.math.MathContext;
 
 /**
  * @author NZ
- * 
+ * 字符串输出方法
  */
 public class Output {
 	/**

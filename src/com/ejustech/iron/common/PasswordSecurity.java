@@ -10,6 +10,10 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
   
+/**
+ * @author NZ
+ * 密匙
+ */
 public class PasswordSecurity {  
       
     //KeyGenerator 提供对称密钥生成器的功能，支持各种算法  

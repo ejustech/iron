@@ -13,7 +13,7 @@ import org.apache.struts.actions.DispatchAction;
 import com.ejustech.iron.common.FileProcessor;
 
 /**
- * @author Administrator
+ * @author NZ
  * 从服务器下载文件到本地
  */
 public class FileAction extends DispatchAction {

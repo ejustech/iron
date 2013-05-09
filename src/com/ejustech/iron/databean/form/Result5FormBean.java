@@ -9,12 +9,6 @@ public class Result5FormBean {
 	private String zongjingzhong;
 	private String j2jijiyixialv;
 	private String j2jijiyixia;
-	public String getJ2jijiyixia() {
-		return j2jijiyixia;
-	}
-	public void setJ2jijiyixia(String j2jijiyixia) {
-		this.j2jijiyixia = j2jijiyixia;
-	}
 	private String fe008;
 	private String fe008bili;
 	private String fe005;
@@ -66,6 +60,12 @@ public class Result5FormBean {
 	}
 	public void setJ2jijiyixialv(String j2jijiyixialv) {
 		this.j2jijiyixialv = j2jijiyixialv;
+	}
+	public String getJ2jijiyixia() {
+		return j2jijiyixia;
+	}
+	public void setJ2jijiyixia(String j2jijiyixia) {
+		this.j2jijiyixia = j2jijiyixia;
 	}
 	public String getFe008() {
 		return fe008;

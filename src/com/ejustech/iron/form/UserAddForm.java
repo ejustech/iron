@@ -2,7 +2,13 @@ package com.ejustech.iron.form;
 
 import org.apache.struts.action.ActionForm;
 
+/**
+ * @author NZ
+ *
+ */
 public class UserAddForm extends ActionForm {
+
+	private static final long serialVersionUID = 1L;
 	private String userID;
 	private String password;
 	private String authority;

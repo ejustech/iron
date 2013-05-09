@@ -3,6 +3,10 @@ package com.ejustech.iron.common;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author NZ
+ * 文件与文件夹处理
+ */
 public class FileProcessor {
 	/**
 	 * 创建文件夹

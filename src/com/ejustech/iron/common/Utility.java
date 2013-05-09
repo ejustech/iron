@@ -10,8 +10,8 @@ import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.Result7FormBean;
 
 /**
- * @author Administrator 
- * 横向合并list
+ * @author NZ 
+ * 横向合并ArrayList
  */
 public class Utility {
 
