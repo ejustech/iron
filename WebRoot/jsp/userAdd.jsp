@@ -2,10 +2,12 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+
  
 <html> 
 	<head>
 		<title>用户维护</title>
+		<link href="../iron/css/style.css" rel="stylesheet" type="text/css">
 	    <style type="text/css">
 <!--
 .STYLE10 {font-family: "宋体"}
@@ -48,8 +50,7 @@
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">用户名:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<html:text property="userID"/>
-				<html:errors property="userID"/>
+				<input type="text" name="userID" maxlength="10">
 				  </span></td>
 			</tr>
 			<tr>
@@ -76,15 +77,13 @@
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">电话:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<html:text property="tel"/>
-				<html:errors property="tel"/>
+				<input type="text" name="tel" maxlength="12">
 				  </span></td>
 			</tr>
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">电子邮箱:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<html:text property="email"/>
-				<html:errors property="email"/>
+				<input type="text" name="email" maxlength="20">
 				  </span></td>
 			</tr>			
 		</table>
