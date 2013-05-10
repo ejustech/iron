@@ -518,7 +518,7 @@ public class TIronInfoDao extends BaseDao {
 				if (resultSet3s.getString("mgzongliang") != null)
 					result2FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3s.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
 				if (resultSet3s.getString("ticl4zongliang") != null)
-					result2FormBean.setTicl4danhao(Output.getAkgValue(resultSet3s.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 2));
+					result2FormBean.setTicl4danhao(Output.getAkgValue(resultSet3s.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 3));
 			}
 
 			resultSet4s = statement.executeQuery(sql4s.toString());
@@ -623,7 +623,7 @@ public class TIronInfoDao extends BaseDao {
 					result2FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
 				if (resultSet3ys.getString("ticl4zongliang") != null)
 					result2FormBean
-							.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 2));
+							.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 3));
 			}
 
 			resultSet4ys = statement.executeQuery(sql4ys.toString());
