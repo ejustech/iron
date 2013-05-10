@@ -40,7 +40,8 @@ public class Result7Action extends Action {
 			list = (ArrayList<Result7FormBean>) session.getAttribute("YUELULIST"); // 此时取出来的是Object,
 																					// 需要强转
 			// 定义导出excel名字
-			String fileName = "result7.xls";
+			String fileName = "还渗炉次生产数据汇总表.xls";
+			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			// 导出excel到服务器
 			Excel.exportResult7Excel(list, fileName);
 			// 下载excel到本地

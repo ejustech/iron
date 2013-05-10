@@ -100,7 +100,7 @@ public class Utility {
 							.getZonglushu(), 0));
 				if (h2.get(String.valueOf(i + 1)).getTicl4zongliang() != null)
 					resultBean.setTicl4danhao(Output.getAkgValue(h2.get(String.valueOf(i + 1)).getTicl4zongliang(), h2.get(String.valueOf(i + 1))
-							.getZongmaozhong(), 2));
+							.getZongmaozhong(), 3));
 				break;
 			case 4:
 				resultBean = new Result2FormBean();
@@ -449,7 +449,7 @@ public class Utility {
 							.getZonglushu(), 0));
 				if (h2.get(String.valueOf(i + 1)).getTicl4zongliang() != null)
 					resultBean.setTicl4danhao(Output.getAkgValue(h2.get(String.valueOf(i + 1)).getTicl4zongliang(), h2.get(String.valueOf(i + 1))
-							.getZongmaozhong(), 2));
+							.getZongmaozhong(), 3));
 				break;
 			case 4:
 				resultBean = new Result3FormBean();

@@ -40,7 +40,8 @@ public class Result5Action extends Action {
 			list = (ArrayList<Result5FormBean>) session.getAttribute("ZHIBIAOLIST"); // 此时取出来的是Object,
 																						// 需要强转
 			// 定义导出excel名字
-			String fileName = "result5.xls";
+			String fileName = "指标统计表.xls";
+			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			// 导出excel到服务器
 			Excel.exportResult5Excel(list, fileName);
 			// 下载excel到本地

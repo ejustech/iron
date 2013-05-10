@@ -40,7 +40,8 @@ public class Result6Action extends Action {
 			list = (ArrayList<Result6FormBean>) session.getAttribute("DANLULIST"); // 此时取出来的是Object,
 																					// 需要强转
 			// 定义导出excel名字
-			String fileName = "result6.xls";
+			String fileName = "单炉生产数据统计表.xls";
+			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			// 导出excel到服务器
 			Excel.exportResult6Excel(list, fileName);
 			// 下载excel到本地

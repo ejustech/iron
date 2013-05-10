@@ -24,7 +24,7 @@ public class FileAction extends DispatchAction {
 		BufferedOutputStream bos = null;
 		OutputStream fos = null;
 		InputStream fis = null;
-
+//		fileName = new String(fileName.getBytes("ISO-8859-1"), "utf-8");
 		// 如果是从服务器上取就用这个获得系统的绝对路径
 		//String filepath = servlet.getServletContext().getRealPath("/" + path);
 		String filepath = path+"\\"+fileName;
@@ -35,7 +35,8 @@ public class FileAction extends DispatchAction {
 		fos = response.getOutputStream();
 		bos = new BufferedOutputStream(fos);
 		// 弹出下载对话框
-		response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(filepath, "utf-8"));
+//		response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(filepath, "utf-8"));
+		response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileName, "utf-8"));
 		int bytesRead = 0;
 		// 用输入流进行先读，然后用输出流去写，缓冲输入输出流
 		byte[] buffer = new byte[8192];

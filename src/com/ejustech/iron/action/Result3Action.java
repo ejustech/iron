@@ -40,7 +40,8 @@ public class Result3Action extends EventDispatchAction {
 			list = (ArrayList<Result3FormBean>) session.getAttribute("CHUMENGLIST"); // 此时取出来的是Object,
 																						// 需要强转
 			// 定义导出excel名字
-			String fileName = "result3.xls";
+			String fileName = "生产数据统计表-除锰.xls";
+			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			// 导出excel到服务器
 			Excel.exportResult3Excel(list, fileName);
 			// 下载excel到本地
