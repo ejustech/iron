@@ -15,6 +15,7 @@ import com.ejustech.iron.dao.TIronInfoDao;
 import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.databean.form.SearchFormBean;
 import com.ejustech.iron.form.Result1Form;
+import com.ejustech.iron.form.SearchForm;
 
 /**
  * @author NZ
@@ -77,7 +78,32 @@ public class Result1Action extends EventDispatchAction {
 	// 处理用户返回跳转动作
 	public ActionForward res1_back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			return mapping.findForward("res1_back");
+			try {
+				SearchFormBean searchFormBean = new SearchFormBean();
+
+				searchFormBean.setSelInfoList("1");
+				ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
+				selList.add(searchFormBean);
+				request.setAttribute("SELLIST", selList);
+//				Result1Form result1Form = (Result1Form) form;
+//				SearchForm searchForm = (SearchForm) form;
+//				System.out.println("llll = " + result1Form.getIndexCheckbox().length);
+//				String[] indexValue = result1Form.getIndexCheckbox();
+//				StringBuffer transmode = new StringBuffer("");
+//				String[] trans = indexValue;
+//				if (trans != null && trans.length > 0) {
+//					for (int i = 0; i < trans.length; i++) {
+//						transmode.append(trans[i]);
+//						if (!(i == trans.length - 1)) {
+//							transmode.append(",");
+//						}
+//					}
+//				}
+//				System.out.println("indexValue = " + transmode.toString());
+				return mapping.findForward("res1_back");
+			} catch (Exception e) {
+			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

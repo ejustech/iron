@@ -260,7 +260,7 @@ public class TIronInfoDao extends BaseDao {
 		}
 
 		sql1.append("SELECT qihao FROM ironinfo GROUP BY qihao");
-		sql2.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql2.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY qihao");
 		sql3.append(
 				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo")
 				.append(sqlBuffer1).append(" GROUP BY qihao");
@@ -277,7 +277,7 @@ public class TIronInfoDao extends BaseDao {
 				.append(" GROUP BY qihao");
 		// 合计部分
 		sql1s.append("SELECT '总计' AS qihao FROM ironinfo");
-		sql2s.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2);
+		sql2s.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2);
 		sql3s.append(
 				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo")
 				.append(sqlBuffer1);
@@ -292,7 +292,7 @@ public class TIronInfoDao extends BaseDao {
 		sql12s.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE dengji_hanmeng IN ('0','0A')").append(sqlBuffer2);
 		// 年度累计部分
 		sql1ys.append("SELECT '年度累计' AS qihao FROM ironinfo");
-		sql2ys.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'");
+		sql2ys.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'");
 		sql3ys.append("SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo");
 		sql4ys.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'");
 		sql5ys.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0'");
@@ -773,7 +773,7 @@ public class TIronInfoDao extends BaseDao {
 		}
 
 		sql1.append("SELECT qihao FROM ironinfo GROUP BY qihao");
-		sql2.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql2.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY qihao");
 		sql3.append(
 				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo")
 				.append(sqlBuffer1).append(" GROUP BY qihao");
@@ -791,7 +791,7 @@ public class TIronInfoDao extends BaseDao {
 				.append(" GROUP BY qihao");
 		// 合计部分
 		sql1s.append("SELECT '总计' AS qihao FROM ironinfo");
-		sql2s.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2);
+		sql2s.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2);
 		sql3s.append(
 				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo")
 				.append(sqlBuffer1);
@@ -806,7 +806,7 @@ public class TIronInfoDao extends BaseDao {
 		sql12s.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE kaohedengji_chumeng IN ('0','0A')").append(sqlBuffer2);
 		// 年度累计部分
 		sql1ys.append("SELECT '年度累计' AS qihao FROM ironinfo");
-		sql2ys.append("SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'");
+		sql2ys.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'");
 		sql3ys.append("SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong) AS junhuishoulv FROM ironinfo");
 		sql4ys.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'");
 		sql5ys.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'");
@@ -1254,7 +1254,7 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append("t2.shouxuanfeiliao/t1.zonglushu AS shouxuanfeiliao, ");
 		sqlBuffer.append("t2.sunhao/t1.zonglushu AS sunhao ");
 		sqlBuffer.append("FROM ");
-		sqlBuffer.append("(SELECT qihao,count(qihao) AS zonglushu FROM ironinfo WHERE junpin !='军品'").append(sqlBuffer2)
+		sqlBuffer.append("(SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2)
 				.append(" GROUP BY qihao)t1, ");
 		sqlBuffer.append("(SELECT  ");
 		sqlBuffer.append("qihao,sum(maozhong) AS zongmaozhong, ");
@@ -1697,18 +1697,18 @@ public class TIronInfoDao extends BaseDao {
 				.append(" GROUP BY shengchanluhao");
 
 		sql6.append("SELECT ");
-		sql6.append("shengchanluhao, COUNT(luci) AS zonglucishu, ");
-		sql6.append("SUM(dipi)/COUNT(luci) AS dipi, ");
-		sql6.append("SUM(shangmao)/COUNT(luci) AS shangmao, ");
-		sql6.append("SUM(pabi)/COUNT(luci) AS pabi, ");
-		sql6.append("SUM(feidipi)/COUNT(luci) AS feidipi, ");
-		sql6.append("SUM(feishangmao)/COUNT(luci) AS feishangmao, ");
-		sql6.append("SUM(feipabi)/COUNT(luci) AS feipabi, ");
-		sql6.append("SUM(feitaifen)/COUNT(luci) AS feitaifen, ");
-		sql6.append("SUM(cixuan)/COUNT(luci) AS cixuanfeiliao, ");
-		sql6.append("SUM(shouxuanfeiliao)/COUNT(luci) AS shouxuanfeiliao, ");
-		sql6.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
-		sql6.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2).append(" GROUP BY shengchanluhao ");
+		sql6.append("shengchanluhao, COUNT(guige) AS zonglucishu, ");
+		sql6.append("SUM(dipi)/COUNT(guige) AS dipi, ");
+		sql6.append("SUM(shangmao)/COUNT(guige) AS shangmao, ");
+		sql6.append("SUM(pabi)/COUNT(guige) AS pabi, ");
+		sql6.append("SUM(feidipi)/COUNT(guige) AS feidipi, ");
+		sql6.append("SUM(feishangmao)/COUNT(guige) AS feishangmao, ");
+		sql6.append("SUM(feipabi)/COUNT(guige) AS feipabi, ");
+		sql6.append("SUM(feitaifen)/COUNT(guige) AS feitaifen, ");
+		sql6.append("SUM(cixuan)/COUNT(guige) AS cixuanfeiliao, ");
+		sql6.append("SUM(shouxuanfeiliao)/COUNT(guige) AS shouxuanfeiliao, ");
+		sql6.append("SUM(sunhao)/COUNT(guige) AS sunhao ");
+		sql6.append("FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY shengchanluhao ");
 
 		ResultSet resultSet1 = null;
 		ResultSet resultSet2 = null;
@@ -1881,18 +1881,18 @@ public class TIronInfoDao extends BaseDao {
 				.append(" GROUP BY yue");
 
 		sql6.append("SELECT ");
-		sql6.append("yue, COUNT(luci) AS zonglucishu, ");
-		sql6.append("SUM(dipi)/COUNT(luci) AS dipi, ");
-		sql6.append("SUM(shangmao)/COUNT(luci) AS shangmao, ");
-		sql6.append("SUM(pabi)/COUNT(luci) AS pabi, ");
-		sql6.append("SUM(feidipi)/COUNT(luci) AS feidipi, ");
-		sql6.append("SUM(feishangmao)/COUNT(luci) AS feishangmao, ");
-		sql6.append("SUM(feipabi)/COUNT(luci) AS feipabi, ");
-		sql6.append("SUM(feitaifen)/COUNT(luci) AS feitaifen, ");
-		sql6.append("SUM(cixuan)/COUNT(luci) AS cixuanfeiliao, ");
-		sql6.append("SUM(shouxuanfeiliao)/COUNT(luci) AS shouxuanfeiliao, ");
-		sql6.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
-		sql6.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2).append(" GROUP BY yue ");
+		sql6.append("yue, COUNT(guige) AS zonglucishu, ");
+		sql6.append("SUM(dipi)/COUNT(guige) AS dipi, ");
+		sql6.append("SUM(shangmao)/COUNT(guige) AS shangmao, ");
+		sql6.append("SUM(pabi)/COUNT(guige) AS pabi, ");
+		sql6.append("SUM(feidipi)/COUNT(guige) AS feidipi, ");
+		sql6.append("SUM(feishangmao)/COUNT(guige) AS feishangmao, ");
+		sql6.append("SUM(feipabi)/COUNT(guige) AS feipabi, ");
+		sql6.append("SUM(feitaifen)/COUNT(guige) AS feitaifen, ");
+		sql6.append("SUM(cixuan)/COUNT(guige) AS cixuanfeiliao, ");
+		sql6.append("SUM(shouxuanfeiliao)/COUNT(guige) AS shouxuanfeiliao, ");
+		sql6.append("SUM(sunhao)/COUNT(guige) AS sunhao ");
+		sql6.append("FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY yue ");
 		// 合计部分
 		sql1s.append("SELECT ");
 		sql1s.append("'累计' AS yue,");
@@ -1912,18 +1912,18 @@ public class TIronInfoDao extends BaseDao {
 		sql5s.append("SELECT SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2);
 
 		sql6s.append("SELECT ");
-		sql6s.append("COUNT(luci) AS zonglucishu, ");
-		sql6s.append("SUM(dipi)/COUNT(luci) AS dipi, ");
-		sql6s.append("SUM(shangmao)/COUNT(luci) AS shangmao, ");
-		sql6s.append("SUM(pabi)/COUNT(luci) AS pabi, ");
-		sql6s.append("SUM(feidipi)/COUNT(luci) AS feidipi, ");
-		sql6s.append("SUM(feishangmao)/COUNT(luci) AS feishangmao, ");
-		sql6s.append("SUM(feipabi)/COUNT(luci) AS feipabi, ");
-		sql6s.append("SUM(feitaifen)/COUNT(luci) AS feitaifen, ");
-		sql6s.append("SUM(cixuan)/COUNT(luci) AS cixuanfeiliao, ");
-		sql6s.append("SUM(shouxuanfeiliao)/COUNT(luci) AS shouxuanfeiliao, ");
-		sql6s.append("SUM(sunhao)/COUNT(luci) AS sunhao ");
-		sql6s.append("FROM ironinfo WHERE junpin != '军品'").append(sqlBuffer2);
+		sql6s.append("COUNT(guige) AS zonglucishu, ");
+		sql6s.append("SUM(dipi)/COUNT(guige) AS dipi, ");
+		sql6s.append("SUM(shangmao)/COUNT(guige) AS shangmao, ");
+		sql6s.append("SUM(pabi)/COUNT(guige) AS pabi, ");
+		sql6s.append("SUM(feidipi)/COUNT(guige) AS feidipi, ");
+		sql6s.append("SUM(feishangmao)/COUNT(guige) AS feishangmao, ");
+		sql6s.append("SUM(feipabi)/COUNT(guige) AS feipabi, ");
+		sql6s.append("SUM(feitaifen)/COUNT(guige) AS feitaifen, ");
+		sql6s.append("SUM(cixuan)/COUNT(guige) AS cixuanfeiliao, ");
+		sql6s.append("SUM(shouxuanfeiliao)/COUNT(guige) AS shouxuanfeiliao, ");
+		sql6s.append("SUM(sunhao)/COUNT(guige) AS sunhao ");
+		sql6s.append("FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2);
 
 		ResultSet resultSet1 = null;
 		ResultSet resultSet2 = null;
@@ -2110,7 +2110,7 @@ public class TIronInfoDao extends BaseDao {
 	}
 
 	/**
-	 * 删除全部信息表
+	 * 删除全部信息表删除操作
 	 * @param luci
 	 * @param guige
 	 * @throws Exception

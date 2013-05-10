@@ -70,22 +70,22 @@
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="2"/>
-						  月生产数据统计表-含锰</span></td>
+						  生产数据统计表-含锰</span></td>
 						</tr>
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="3"/>
-						  月生产数据统计表-除锰</span></td>
+						  生产数据统计表-除锰</span></td>
 						</tr>
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="4"/>
-						  月等外钛统计表</span></td>
+						  等外钛统计表</span></td>
 						</tr>
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="5"/>
-						  月指标统计表</span></td>
+						  指标统计表</span></td>
 						</tr>
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
@@ -95,7 +95,7 @@
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="7"/>
-						  月还渗炉次生产数据汇总表</span></td>
+						  还渗炉次生产数据汇总表</span></td>
 						</tr>
 					</logic:iterate>
 					</table>
@@ -105,11 +105,9 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">日期:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="riqi1"/>
-						    <html:errors property="riqi1"/>
+							从<input type="text" name="riqi1" maxlength="10">
 						    -
-						    <html:text property="riqi2"/>
-						    <html:errors property="riqi2"/>
+						    到<input type="text" name="riqi2" maxlength="10">
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">期号:</span></td>
 							<td><span class="STYLE10 STYLE11">
@@ -125,11 +123,9 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">炉次:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="luci1"/>
-						    <html:errors property="luci1"/>
+						    从<input type="text" name="luci1" maxlength="9">
 						    -
-						    <html:text property="luci2"/>
-						    <html:errors property="luci2"/>
+						    到<input type="text" name="luci2" maxlength="9">
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">规格:</span></td>
 							<td><span class="STYLE10 STYLE11">
@@ -140,10 +136,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">ticl4:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="ticl41"/>
+						    从<html:text property="ticl41"/>
 						    <html:errors property="ticl41"/>
 						    -
-						    <html:text property="ticl42"/>
+						    到<html:text property="ticl42"/>
 						    <html:errors property="ticl42"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">反应器号:</span></td>
@@ -155,10 +151,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">使用次数:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="shiyongcishu1"/>
+						    从<html:text property="shiyongcishu1"/>
 						    <html:errors property="shiyongcishu1"/>
 						    -
-						    <html:text property="shiyongcishu2"/>
+						    到<html:text property="shiyongcishu2"/>
 						    <html:errors property="shiyongcishu2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">生产炉号:</span></td>
@@ -170,10 +166,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">出炉真空度Pa1:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="chuluzhenkongdupa1"/>
+						    从<html:text property="chuluzhenkongdupa1"/>
 						    <html:errors property="chuluzhenkongdupa1"/>
 						    -
-						    <html:text property="chuluzhenkongdupa2"/>
+						    到<html:text property="chuluzhenkongdupa2"/>
 						    <html:errors property="chuluzhenkongdupa2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">转蒸馏:</span></td>
@@ -185,10 +181,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">总排镁量:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="zongpaimeiliang1"/>
+						    从<html:text property="zongpaimeiliang1"/>
 						    <html:errors property="zongpaimeiliang1"/>
 						    -
-						    <html:text property="zongpaimeiliang2"/>
+						    到<html:text property="zongpaimeiliang2"/>
 						    <html:errors property="zongpaimeiliang2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">实验炉次:</span></td>
@@ -200,10 +196,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">Fe:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="fe1"/>
+						    从<html:text property="fe1"/>
 						    <html:errors property="fe1"/>
 						    -
-						    <html:text property="fe2"/>
+						    到<html:text property="fe2"/>
 						    <html:errors property="fe2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">加首次:</span></td>
@@ -215,10 +211,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">Cl:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="cl1"/>
+						    从<html:text property="cl1"/>
 						    <html:errors property="cl1"/>
 						    -
-						    <html:text property="cl2"/>
+						    到<html:text property="cl2"/>
 						    <html:errors property="cl2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">加末次:</span></td>
@@ -230,10 +226,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">Hb:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="hb1"/>
+						    从<html:text property="hb1"/>
 						    <html:errors property="hb1"/>
 						    -
-						    <html:text property="hb2"/>
+						    到<html:text property="hb2"/>
 						    <html:errors property="hb2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">工艺调整炉次:</span></td>
@@ -245,10 +241,10 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">回收率:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="huishoulv1"/>
+						    从<html:text property="huishoulv1"/>
 						    <html:errors property="huishoulv1"/>
 						    -
-						    <html:text property="huishoulv2"/>
+						    到<html:text property="huishoulv2"/>
 						    <html:errors property="huishoulv2"/>
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">通道:</span></td>
@@ -258,8 +254,10 @@
 							  </span></td>
 						</tr>
 						<tr>
+							<td bgcolor="#99CCCC"></td>
+							<td></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">生产故障:</span></td>
-							<td colspan="3"><span class="STYLE10 STYLE11">
+							<td><span class="STYLE10 STYLE11">
 						    <html:text property="shengchanguzhang"/>
 						    <html:errors property="shengchanguzhang"/>
 							  </span></td>

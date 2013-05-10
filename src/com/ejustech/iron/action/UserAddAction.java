@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -50,16 +51,33 @@ public class UserAddAction extends EventDispatchAction {
 			// ArrayList<Result2FormBean>();
 			// list = (ArrayList<Result2FormBean>)
 			// session.getAttribute("HANMENGLIST"); //此时取出来的是Object, 需要强转
-
+			
+			// 取得动作状态判断是修改还是添加
+			HttpSession session = request.getSession();
+			String update_flag = (String) session.getAttribute("UPDATE_FLAG");
+			
 			MUserDao mUserDao = new MUserDao();
-			// 添加用户
-			mUserDao.addUser(userID, password, authority, tel, email);
-			// //返回删除后的用户列表
-			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
-			userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
-			request.setAttribute("USERLIST", userList);
-
-			return mapping.findForward("update");
+			//判断是添加用户还是更新用户
+			if(update_flag.equals("Add")){
+				// 添加用户
+				boolean flag = mUserDao.addUser(userID, password, authority, tel, email);
+				//用户不存在添加成功，用户存在添加失败返回错误页面
+				if(flag = true){
+					// //返回删除后的用户列表
+					ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
+					userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
+					request.setAttribute("USERLIST", userList);
+					return mapping.findForward("update");
+				}else{
+					return mapping.findForward("loginerror");
+				}
+			}else if (update_flag.equals("Modify")){
+				mUserDao.updateUser(userID, password, authority, tel, email);
+				ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
+				userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
+				request.setAttribute("USERLIST", userList);
+				return mapping.findForward("update");
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

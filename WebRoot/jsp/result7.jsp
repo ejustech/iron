@@ -5,7 +5,7 @@
  
 <html>
 	<head>
-		<title>月还渗炉次生产数据汇总表</title>
+		<title>还渗炉次生产数据汇总表</title>
 	    <style type="text/css">
 <!--
 .STYLE10 {font-family: "宋体"}
@@ -34,7 +34,7 @@
 		  </div>
 		  <table width="1024" align="center">
 				<tr>
-					<td align="left"><span class="STYLE13">月还渗炉次生产数据汇总表</span></td>
+					<td align="left"><span class="STYLE13">还渗炉次生产数据汇总表</span></td>
 					<td align="right">
 						<html:submit property="exportResult7">导出Excel</html:submit>
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">

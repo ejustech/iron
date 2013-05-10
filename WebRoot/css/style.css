@@ -8,13 +8,13 @@ body {
 	font-size: 12px
 }
 .STYLEMenu{
-	font-family: "ÐÂËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 	font-size: 14px;
 	font-weight: bold;
 }
 .STYLEListTitle {
 	font-size: 12px;
-	font-family: "ËÎÌå";
+	font-family: "ï¿½ï¿½ï¿½ï¿½";
 	bgcolor:"#99CC99";
 }
 .STYLEListContent {
@@ -29,4 +29,7 @@ body {
 	align:expression(this.align = "center" );
 	border:1;
 	style:"BORDER-COLLAPSE: collapse";
+}
+.STYLEerror{
+	font-color: red;
 }

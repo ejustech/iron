@@ -23,7 +23,7 @@ import com.ejustech.iron.form.SearchForm;
 
 /**
  * @author NZ
- * 
+ * 用于检索画面
  */
 public class SearchAction extends EventDispatchAction {
 	/**
@@ -39,9 +39,12 @@ public class SearchAction extends EventDispatchAction {
 
 		try {
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
-
 			TIronInfoDao searchDao = new TIronInfoDao();
-
+			// 检索条件
+			String sqlCondition = new String();
+			// 检索条件拼接字符串
+			StringBuffer sqlBufferCondition = new StringBuffer();
+			// 从Form中获取Search页面的检索条件
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
 			String[] qihao = searchForm.getQihao();
@@ -75,23 +78,8 @@ public class SearchAction extends EventDispatchAction {
 			String cl2 = searchForm.getCl2();
 			String selInfoList = searchForm.getSelInfoList();
 
-			String sqlCondition = new String();
-
-			StringBuffer sqlBufferCondition = new StringBuffer();
-
-			// 检索条件_日期
-			if (!riqi1.equals("")) {
-				sqlBufferCondition.append(" riqi between '");
-				sqlBufferCondition.append(riqi1);
-				sqlBufferCondition.append("' and '");
-				sqlBufferCondition.append(riqi2);
-				sqlBufferCondition.append("'");
-			}
 			// 检索条件_期号
 			if (qihao.length != 0) {
-				if (!riqi1.equals("") || !riqi2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
 				sqlBufferCondition.append(" qihao in (");
 				StringBuffer transmode = new StringBuffer("");
 				String[] trans = qihao;
@@ -105,304 +93,225 @@ public class SearchAction extends EventDispatchAction {
 				}
 				sqlBufferCondition.append(transmode.toString());
 				sqlBufferCondition.append(")");
+			} else {
+				sqlBufferCondition.append(" qihao in (1,2,3,4)");
 			}
-			// 检索条件_炉次(区间)
-			if (!luci1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" luci between '");
+			// 检索条件_日期(三段区间)
+			if (!riqi1.equals("") && !riqi2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" riqi BETWEEN '");
+				sqlBufferCondition.append(riqi1);
+				sqlBufferCondition.append("' AND '");
+				sqlBufferCondition.append(riqi2);
+				sqlBufferCondition.append("'");
+			} else if (!riqi1.equals("") && riqi2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" riqi >= '");
+				sqlBufferCondition.append(riqi1);
+				sqlBufferCondition.append("'");
+			} else if (riqi1.equals("") && !riqi2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" riqi <= '");
+				sqlBufferCondition.append(riqi2);
+				sqlBufferCondition.append("'");
+			}
+			// 检索条件_炉次(三段区间)
+			if (!luci1.equals("") && !luci2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" luci BETWEEN '");
 				sqlBufferCondition.append(luci1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append("' AND '");
+				sqlBufferCondition.append(luci2);
+				sqlBufferCondition.append("'");
+			} else if (!luci1.equals("") && luci2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" luci >= '");
+				sqlBufferCondition.append(luci1);
+				sqlBufferCondition.append("'");
+			} else if (luci1.equals("") && !luci2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" luci <= '");
 				sqlBufferCondition.append(luci2);
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_规格
 			if (!guige.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" guige ='");
 				sqlBufferCondition.append(guige);
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_生产炉号
 			if (!shengchanluhao.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" shengchanluhao ='");
 				sqlBufferCondition.append(shengchanluhao);
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_反应器号
 			if (!fanyingqihao.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" fanyingqihao ='");
 				sqlBufferCondition.append(fanyingqihao);
 				sqlBufferCondition.append("'");
 			}
-			// 检索条件_使用次数(区间)
-			if (!shiyongcishu1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" shiyongcishu between ");
+			// 检索条件_使用次数(三段区间)
+			if (!shiyongcishu1.equals("") && !shiyongcishu2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" shiyongcishu2 BETWEEN ");
 				sqlBufferCondition.append(shiyongcishu1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(shiyongcishu2);
+			} else if (!shiyongcishu1.equals("") && shiyongcishu2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" shiyongcishu2 >= '");
+				sqlBufferCondition.append(shiyongcishu1);
+				sqlBufferCondition.append("'");
+			} else if (shiyongcishu1.equals("") && !shiyongcishu2.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" shiyongcishu2 <= '");
+				sqlBufferCondition.append(shiyongcishu2);
+				sqlBufferCondition.append("'");
 			}
-			// 检索条件_Ticl4(区间)
-			if (!ticl41.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" ticl between ");
+			// 检索条件_Ticl4(三段区间)
+			if (!ticl41.equals("") && !ticl42.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" ticl BETWEEN ");
 				sqlBufferCondition.append(ticl41);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(ticl42);
+			} else if (!ticl41.equals("") && ticl42.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" ticl >= '");
+				sqlBufferCondition.append(ticl41);
+				sqlBufferCondition.append("'");
+			} else if (ticl41.equals("") && !ticl42.equals("")) {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" ticl <= '");
+				sqlBufferCondition.append(ticl42);
+				sqlBufferCondition.append("'");
 			}
 			// 检索条件_出炉真空度(三段区间)
 			if (!chuluzhenkongdu1.equals("") && chuluzhenkongdu2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" chuluzhenkongdu <= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chuluzhenkongdu >= ");
 				sqlBufferCondition.append(chuluzhenkongdu1);
 			} else if (!chuluzhenkongdu2.equals("") && chuluzhenkongdu1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" chuluzhenkongdu >= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chuluzhenkongdu <= ");
 				sqlBufferCondition.append(chuluzhenkongdu2);
 			} else if (!chuluzhenkongdu2.equals("") && !chuluzhenkongdu1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" chuluzhenkongdu between ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chuluzhenkongdu BETWEEN ");
 				sqlBufferCondition.append(chuluzhenkongdu1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(chuluzhenkongdu2);
 			}
 			// 检索条件_转蒸馏
 			if (!zhuanzhengliu.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" zhuanzhengliu ='");
-				sqlBufferCondition.append(zhuanzhengliu);
+				// 非英文字符转换为UTF-8防止数据库解析成乱码
+				sqlBufferCondition.append(new String(zhuanzhengliu.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_加首次
 			if (!jiashouci.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" jiashouci ='");
-				sqlBufferCondition.append(jiashouci);
+				sqlBufferCondition.append(new String(jiashouci.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_加末次
 			if (!jiamoci.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" jiamoci ='");
-				sqlBufferCondition.append(jiamoci);
+				sqlBufferCondition.append(new String(jiamoci.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_实验炉次
 			if (!shiyanluci.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" shiyanluci ='");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" gongyishiyan ='");
 				sqlBufferCondition.append(shiyanluci);
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_工艺调整炉次
 			if (!gongyitiaozhengluci.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" gongyitiaozhengluci ='");
-				sqlBufferCondition.append(gongyitiaozhengluci);
+				sqlBufferCondition.append(new String(gongyitiaozhengluci.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_通道
 			if (!tongdao.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" tongdao ='");
-				sqlBufferCondition.append(tongdao);
+				sqlBufferCondition.append(new String(tongdao.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_生产故障
 			if (!shengchanguzhang.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
+				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" shengchanguzhang ='");
 				sqlBufferCondition.append(shengchanguzhang);
 				sqlBufferCondition.append("'");
 			}
-			// 检索条件_回收率(三段区间)
+			// 检索条件_回收率（即成品率）(三段区间)
 			if (!huishoulv1.equals("") && huishoulv2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" huishoulv <='");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chengpinlv >='");
 				sqlBufferCondition.append(huishoulv1);
 				sqlBufferCondition.append("'");
 			} else if (!huishoulv2.equals("") && huishoulv1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" huishoulv >='");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chengpinlv <='");
 				sqlBufferCondition.append(huishoulv2);
 				sqlBufferCondition.append("'");
 			} else if (!huishoulv1.equals("") && !huishoulv2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" huishoulv between '");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" chengpinlv BETWEEN '");
 				sqlBufferCondition.append(huishoulv1);
-				sqlBufferCondition.append("' and '");
+				sqlBufferCondition.append("' AND '");
 				sqlBufferCondition.append(huishoulv2);
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_总排镁量(三段区间)
 			if (!zongpaimeiliang1.equals("") && zongpaimeiliang2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" zongpaimeiliang <= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" zongpaimeiliang >= ");
 				sqlBufferCondition.append(zongpaimeiliang1);
 			} else if (!zongpaimeiliang2.equals("") && zongpaimeiliang1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" zongpaimeiliang >= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" zongpaimeiliang <= ");
 				sqlBufferCondition.append(zongpaimeiliang2);
 			} else if (!zongpaimeiliang1.equals("") && !zongpaimeiliang2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" zongpaimeiliang between ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" zongpaimeiliang BETWEEN ");
 				sqlBufferCondition.append(zongpaimeiliang1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(zongpaimeiliang2);
 			}
 			// 检索条件_Fe(三段区间)
 			if (!fe1.equals("") && fe2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" fe <= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" fe >= ");
 				sqlBufferCondition.append(fe1);
 			} else if (!fe2.equals("") && fe1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" fe >= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" fe <= ");
 				sqlBufferCondition.append(fe2);
 			} else if (!fe1.equals("") && !fe2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" fe between ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" fe BETWEEN ");
 				sqlBufferCondition.append(fe1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(fe2);
 			}
 			// 检索条件_HB(三段区间)
 			if (!hb1.equals("") && hb2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" hb <= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" hb >= ");
 				sqlBufferCondition.append(hb1);
 			} else if (!hb2.equals("") && hb1.equals("")) {
 				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
@@ -412,84 +321,41 @@ public class SearchAction extends EventDispatchAction {
 						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
 						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
 						|| !fe2.equals("")) {
-					sqlBufferCondition.append(" and");
+					sqlBufferCondition.append(" AND");
 				}
-				sqlBufferCondition.append(" hb >= ");
+				sqlBufferCondition.append(" hb <= ");
 				sqlBufferCondition.append(hb2);
 			} else if (!hb1.equals("") && !hb2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" hb between ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" hb BETWEEN ");
 				sqlBufferCondition.append(hb1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(hb2);
 			}
 			// 检索条件_Cl(三段区间)
 			if (!cl1.equals("") && cl2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("") || !hb1.equals("") || !hb2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" cl <= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" cl >= ");
 				sqlBufferCondition.append(cl1);
 			} else if (!cl2.equals("") && cl1.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("") || !hb1.equals("") || !hb2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" cl >= ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" cl <= ");
 				sqlBufferCondition.append(cl2);
 			} else if (!cl1.equals("") && !cl2.equals("")) {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("") || !hb1.equals("") || !hb2.equals("")) {
-					sqlBufferCondition.append(" and");
-				}
-				sqlBufferCondition.append(" cl between ");
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" cl BETWEEN ");
 				sqlBufferCondition.append(cl1);
-				sqlBufferCondition.append(" and ");
+				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(cl2);
 			}
-
+			// 选定要查询的输出表
 			switch (Integer.parseInt(selInfoList)) {
 			case 1: {
-				if (!riqi1.equals("") || !riqi2.equals("") || qihao.length != 0 || !luci1.equals("") || !luci2.equals("") || !guige.equals("")
-						|| !shengchanluhao.equals("") || !fanyingqihao.equals("") || !shiyongcishu1.equals("") || !shiyongcishu2.equals("")
-						|| !ticl41.equals("") || !ticl42.equals("") || !chuluzhenkongdu1.equals("") || !chuluzhenkongdu2.equals("")
-						|| !zhuanzhengliu.equals("") || !jiashouci.equals("") || !jiamoci.equals("") || !shiyanluci.equals("")
-						|| !gongyitiaozhengluci.equals("") || !tongdao.equals("") || !shengchanguzhang.equals("") || !huishoulv1.equals("")
-						|| !huishoulv2.equals("") || !zongpaimeiliang1.equals("") || !zongpaimeiliang2.equals("") || !fe1.equals("")
-						|| !fe2.equals("") || !hb1.equals("") || !hb2.equals("") || !cl1.equals("") || !cl2.equals("")) {
-					sqlCondition = " WHERE" + sqlBufferCondition.toString();
-				} else {
-					// sqlCondition = sqlBufferCondition.toString();
-					sqlCondition = "";
-				}
+				sqlCondition = " WHERE" + sqlBufferCondition.toString();
 				// sqlCondition查询条件放到session用于result1画面删除后刷新页面的同样条件
 				HttpSession session = request.getSession();
 				session.setAttribute("SQLCONDITION", sqlCondition);
-
+				// 执行查询全部信息操作并放到AllINFOLIST供jsp读取
 				ArrayList<Result1FormBean> allInfoList = new ArrayList<Result1FormBean>();
 				allInfoList = (ArrayList<Result1FormBean>) searchDao.getAllInfoList(request, sqlCondition);
 				request.setAttribute("AllINFOLIST", allInfoList);
@@ -501,12 +367,10 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
 				hanmengList = (ArrayList<Result2FormBean>) searchDao.getHanmengList(request, sqlCondition);
 				request.setAttribute("HANMENGLIST", hanmengList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("HANMENGLIST", hanmengList);
-
-				// 月生产数据统计表-含锰
+				// 生产数据统计表-含锰
 				return mapping.findForward("srch2");
 			}
 			case 3: {
@@ -514,12 +378,10 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
 				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumengList(request, sqlCondition);
 				request.setAttribute("CHUMENGLIST", chumengList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("CHUMENGLIST", chumengList);
-
-				// 月生产数据统计表-除锰
+				// 生产数据统计表-除锰
 				return mapping.findForward("srch3");
 			}
 			case 4: {
@@ -527,12 +389,10 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result4FormBean> waitaiList = new ArrayList<Result4FormBean>();
 				waitaiList = (ArrayList<Result4FormBean>) searchDao.getWaitaiList(request, sqlCondition);
 				request.setAttribute("WAITAILIST", waitaiList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("WAITAILIST", waitaiList);
-
-				// 月等外钛统计表
+				// 等外钛统计表
 				return mapping.findForward("srch4");
 			}
 			case 5: {
@@ -540,12 +400,10 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result5FormBean> zhibiaoList = new ArrayList<Result5FormBean>();
 				zhibiaoList = (ArrayList<Result5FormBean>) searchDao.getZhibiaoList(request, sqlCondition);
 				request.setAttribute("ZHIBIAOLIST", zhibiaoList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("ZHIBIAOLIST", zhibiaoList);
-
-				// 月指标统计表
+				// 指标统计表
 				return mapping.findForward("srch5");
 			}
 			case 6: {
@@ -553,11 +411,9 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result6FormBean> danluList = new ArrayList<Result6FormBean>();
 				danluList = (ArrayList<Result6FormBean>) searchDao.getDanluList(request, sqlCondition);
 				request.setAttribute("DANLULIST", danluList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("DANLULIST", danluList);
-
 				// 单炉生产数据统计表
 				return mapping.findForward("srch6");
 			}
@@ -566,16 +422,13 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result7FormBean> yueluList = new ArrayList<Result7FormBean>();
 				yueluList = (ArrayList<Result7FormBean>) searchDao.getYueluList(request, sqlCondition);
 				request.setAttribute("YUELULIST", yueluList);
-
 				// list放到session用于excel导出
 				HttpSession session = request.getSession();
 				session.setAttribute("YUELULIST", yueluList);
-
 				// 月还渗炉次生产数据汇总表
 				return mapping.findForward("srch7");
 			}
 			}
-
 			return null;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

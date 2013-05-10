@@ -5,7 +5,7 @@
 
 <html> 
 	<head>
-		<title>月生产数据统计表-含锰</title>
+		<title>生产数据统计表-含锰</title>
         <style type="text/css">
 <!--
 .STYLE15 {
@@ -33,7 +33,7 @@
 		  	</div>
 		  	<table width="1024" align="center">
 				<tr>
-					<td align="left"><span class="STYLE15">月生产数据统计表（等级：含锰）</span></td>
+					<td align="left"><span class="STYLE15">生产数据统计表（等级：含锰）</span></td>
 					<td align="right">
 						<html:submit property="exportResult2">导出Excel</html:submit>
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">

@@ -26,6 +26,12 @@
 	font-size: 14px;
 	font-weight: bold;
 }
+.STYLE1 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+}
 	-->
 	</style>
 	<body>
@@ -41,6 +47,7 @@
 					<html:reset property="reset">重&nbsp&nbsp&nbsp&nbsp置</html:reset>
 					<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
 				</td>
+				<tr><td align="left"><html:errors property="errors"></html:errors></td><td align="left"></td></tr>
 			</tr>
 		</table>
 		
@@ -50,8 +57,9 @@
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">用户名:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<input type="text" name="userID" maxlength="10">
+				<input type="text" name="userID" maxlength="10" value="<bean:write name="USERID" scope="session"/>">
 				  </span></td>
+				  
 			</tr>
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">权限:</span></td>
@@ -71,19 +79,19 @@
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">确认密码:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<input type="password" name="passwordv" maxlength="8">
-				  </span></td>
+				<input type="password" name="passwordv" maxlength="8"><span class="STYLE1">
+				  </span></span></td>
 			</tr>	
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">电话:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<input type="text" name="tel" maxlength="12">
+				<input type="text" name="tel" maxlength="12" value="<bean:write name="TEL" scope="session"/>">
 				  </span></td>
 			</tr>
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">电子邮箱:</span></td>
 				<td><span class="STYLE10 STYLE11">
-				<input type="text" name="email" maxlength="20">
+				<input type="text" name="email" maxlength="20" value="<bean:write name="EMAIL" scope="session"/>">
 				  </span></td>
 			</tr>			
 		</table>

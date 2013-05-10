@@ -18,6 +18,7 @@ import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.SearchFormBean;
 import com.ejustech.iron.databean.form.UserManageFormBean;
 import com.ejustech.iron.form.InputByNewForm;
+import com.ejustech.iron.form.UserManageForm;
 
 public class MenuAction extends EventDispatchAction {
 	// 处理信息检索动作
@@ -52,10 +53,19 @@ public class MenuAction extends EventDispatchAction {
 	public ActionForward userManage(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			MUserDao mUserDao = new MUserDao();
-
+			// 取得用户列表
 			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
 			userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
 			request.setAttribute("USERLIST", userList);
+			
+			//设置第一个userID radio被选中
+			UserManageForm userManageForm = new UserManageForm();
+			userManageForm.setIndexModify(userList.get(0).getUserID());
+			
+//			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
+//			selList.add(searchFormBean);
+//			request.setAttribute("SELLIST", selList);
+			
 			return mapping.findForward("userManage");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -63,7 +73,7 @@ public class MenuAction extends EventDispatchAction {
 		return null;
 	}
 
-	// 处理用户管理动作
+	// 处理用户注销动作
 	public ActionForward logout(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			return mapping.findForward("logout");

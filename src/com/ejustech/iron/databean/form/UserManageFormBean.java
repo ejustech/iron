@@ -1,11 +1,19 @@
 package com.ejustech.iron.databean.form;
 
 public class UserManageFormBean {
+	private String index;
 	private String userID;
 	private String password;
 	private String authority;
 	private String tel;
 	private String email;
+	
+	public String getIndex() {
+		return index;
+	}
+	public void setIndex(String index) {
+		this.index = index;
+	}
 	public String getUserID() {
 		return userID;
 	}

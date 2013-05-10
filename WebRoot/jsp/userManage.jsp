@@ -7,14 +7,24 @@
 	<head>
 		<title>用户管理</title>
 		<link href="../iron/css/style.css" rel="stylesheet" type="text/css">
-	</head>
+	    <style type="text/css">
+<!--
+.STYLE1 {
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF0000;
+}
+-->
+        </style>
+</head>
 	<body>
 		<html:form action="/userManage">
 		<div align="center">
 			<p><img src="../iron/image/1.jpg"/></p>
 		</div>
 	
-		<table id="table0">
+		<table width="1024" align="center">
 			<tr>
 				<td align="left" class="STYLEMenu">用户管理</td>
 				<td align="right">
@@ -24,25 +34,31 @@
 					<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
 				</td>
 			</tr>
+			<tr><td align="left"><html:errors property="errors"></html:errors></td><td align="left"></td></tr>
 		</table>
 		<p></p>
 		<hr width="1024" />
-		<table id="table1" class="STYLEListTitle">
-				<tr>
-					<th></th>
+
+		<table align="center" border=1 style="BORDER-COLLAPSE: collapse"  width="800" >
+				<tr bgcolor="#99CC99">
+					<th>删除</th>
+					<th>No.</th>
 					<th>用户名</th>
 					<th>用户权限</th>
 					<th>电话</th>
 					<th>电子邮件</th>
+					<th>修改</th>
 			  	</tr>
 				<logic:notEmpty name="USERLIST">
 					<logic:iterate id="userManageFormBean" name="USERLIST">
 				<tr class="STYLEListContent">
 					<td align="center">
 						<html:multibox property="indexCheckbox">
-							<logic:empty name="userManageFormBean" property="userID"></logic:empty>
 							<bean:write name="userManageFormBean" property="userID" />
-						</html:multibox>					
+						</html:multibox>			
+					</td>
+					<td align="center">
+					  <bean:write name="userManageFormBean" property="index" ></bean:write>
 					</td>
 					<td align="center">					  
 					  <bean:write name="userManageFormBean" property="userID" ></bean:write>
@@ -54,7 +70,10 @@
 					  <bean:write name="userManageFormBean" property="tel" ></bean:write>
 					</td>
 					<td align="right">
-					<bean:write name="userManageFormBean" property="email" ></bean:write>
+						<bean:write name="userManageFormBean" property="email" ></bean:write>
+					</td>
+					<td align="center">
+						<html:radio idName="userManageFormBean" property="indexModify" value="userID"/>
 					</td>
 				</tr>
 					</logic:iterate>
@@ -69,4 +88,7 @@
 		</html:form>
 	</body>
 </html>
+<script>  
+    document.all("indexModify")[0].checked=true;
+</script>  
 

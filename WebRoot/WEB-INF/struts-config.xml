@@ -96,7 +96,7 @@
       <forward name="res1_add" path="/jsp/inputByNew.jsp" />
       <forward name="res1_modify" path="/jsp/inputByNew.jsp" />
       <forward name="res1_del" path="/jsp/result1.jsp" />
-      <forward name="res1_back" path="/jsp/menu.jsp" />
+      <forward name="res1_back" path="/jsp/search.jsp" />
       <forward name="loginError" path="/jsp/loginError.jsp" />
     </action>
     <action

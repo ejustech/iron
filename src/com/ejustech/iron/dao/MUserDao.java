@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.common.Output;
@@ -27,14 +28,14 @@ public class MUserDao extends BaseDao {
 	 * 
 	 * @param 用户名
 	 * @return 用户名存在，1；用户名不存在，0
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public boolean verifyUserID(String userID, String password) throws Exception {
 		boolean flag = false;
 
-//		// 密码解密
-//		PasswordSecurity passwordSecurity = new PasswordSecurity();
-		
+		// // 密码解密
+		// PasswordSecurity passwordSecurity = new PasswordSecurity();
+
 		LoginFormBean loginFormBean;
 
 		StringBuffer sqlBuffer = new StringBuffer();
@@ -47,7 +48,7 @@ public class MUserDao extends BaseDao {
 		sqlBuffer.append("m_user ");
 		sqlBuffer.append("WHERE ");
 		sqlBuffer.append("userID = ");
-		sqlBuffer.append("'"+ userID +"'");
+		sqlBuffer.append("'" + userID + "'");
 
 		String sql = sqlBuffer.toString();
 		System.out.println("sql=" + sql);
@@ -62,17 +63,18 @@ public class MUserDao extends BaseDao {
 
 			while (resultSet.next()) {
 				loginFormBean = new LoginFormBean();
-				
-				//解密数据库中密码
-//				byte[] decontent = passwordSecurity.Decryptor(resultSet.getString("password").getBytes());
-//				System.out.println("解密后:" + new String(decontent));
+
+				// 解密数据库中密码
+				// byte[] decontent =
+				// passwordSecurity.Decryptor(resultSet.getString("password").getBytes());
+				// System.out.println("解密后:" + new String(decontent));
 				loginFormBean.setUserID(resultSet.getString("userID"));
 				loginFormBean.setPassword(resultSet.getString("password"));
 				loginFormBean.setAuthority(resultSet.getString("authority"));
 
-				//验证密码是否与输入的匹配
-//				if(password.equals(new String(decontent))){
-				if(password.equals(resultSet.getString("password"))){
+				// 验证密码是否与输入的匹配
+				// if(password.equals(new String(decontent))){
+				if (password.equals(resultSet.getString("password"))) {
 					flag = true;
 					System.out.println("Login Success!");
 					break;
@@ -159,6 +161,7 @@ public class MUserDao extends BaseDao {
 
 			while (resultSet.next()) {
 				UserManageFormBean userManageFormBean = new UserManageFormBean();
+				userManageFormBean.setIndex(String.valueOf(resultSet.getRow()));
 				userManageFormBean.setUserID(resultSet.getString("userID"));
 				// userManageFormBean.setPassword(resultSet.getString("password"));
 				userManageFormBean.setAuthority(resultSet.getString("authority"));
@@ -210,18 +213,30 @@ public class MUserDao extends BaseDao {
 	}
 
 	// 添加用户
-	public void addUser(String userID, String password, String authority, String tel, String email) throws Exception {
+	public boolean addUser(String userID, String password, String authority, String tel, String email) throws Exception {
 
 		// 密码加密
-		PasswordSecurity passwordSecurity = new PasswordSecurity();
-		byte[] encontent = passwordSecurity.Encrytor(password);
+		// PasswordSecurity passwordSecurity = new PasswordSecurity();
+		// byte[] encontent = passwordSecurity.Encrytor(password);
 		// byte[] decontent = passwordSecurity.Decryptor(encontent);
-		System.out.println("明文是:" + password);
-		System.out.println("加密后:" + new String(encontent));
+		// System.out.println("明文是:" + password);
+		// System.out.println("加密后:" + new String(encontent));
 		// System.out.println("解密后:" + new String(decontent));
-
+		boolean flag = false;
+		StringBuffer sqlBuffers = new StringBuffer();
 		StringBuffer sqlBuffer = new StringBuffer();
 		int rs = 0;
+		
+		// 检索要添加的用户是否存在
+		sqlBuffers.append("SELECT ");
+		sqlBuffers.append("userID, ");
+		sqlBuffers.append("password, ");
+		sqlBuffers.append("authority ");
+		sqlBuffers.append("FROM ");
+		sqlBuffers.append("m_user ");
+		sqlBuffers.append("WHERE ");
+		sqlBuffers.append("userID = ");
+		sqlBuffers.append("'" + userID + "'");
 
 		sqlBuffer.append("INSERT INTO m_user(");
 		sqlBuffer.append("userID, ");
@@ -231,7 +246,7 @@ public class MUserDao extends BaseDao {
 		sqlBuffer.append("email ");
 		sqlBuffer.append(") VALUES(");
 		sqlBuffer.append("'" + userID + "',");
-		sqlBuffer.append("'" + new String(encontent) + "',");
+		sqlBuffer.append("'" + password + "',");
 		sqlBuffer.append("'" + authority + "',");
 		sqlBuffer.append("'" + tel + "',");
 		sqlBuffer.append("'" + email + "'");
@@ -239,19 +254,124 @@ public class MUserDao extends BaseDao {
 
 		String sql = sqlBuffer.toString();
 		System.out.println("sql=" + sql);
+		String sqls = sqlBuffers.toString();
+		System.out.println("sqls=" + sqls);
 
 		Statement statement = null;
-
+		ResultSet resultSet = null;
 		try {
 			super.Open();
 			statement = super.Conn().createStatement();
-			rs = statement.executeUpdate(sql);
-
+			resultSet = statement.executeQuery(sqls);
+			// 如果用户存在，返回false
+			if (resultSet.next()) {
+				flag = false;
+			} else {
+				rs = statement.executeUpdate(sql);
+				flag = true;
+			}
 		} catch (Exception exception) {
 			throw new Exception("SQLException: " + exception.getMessage());
 		} finally {
 			super.Close();
 		}
+		return flag;
 	}
+	
+	// 更新用户
+		public void updateUser(String userID, String password, String authority, String tel, String email) throws Exception {
+
+			// 密码加密
+			// PasswordSecurity passwordSecurity = new PasswordSecurity();
+			// byte[] encontent = passwordSecurity.Encrytor(password);
+			// byte[] decontent = passwordSecurity.Decryptor(encontent);
+			// System.out.println("明文是:" + password);
+			// System.out.println("加密后:" + new String(encontent));
+			// System.out.println("解密后:" + new String(decontent));
+			StringBuffer sqlBuffer = new StringBuffer();
+			int rs = 0;
+			
+			sqlBuffer.append("UPDATE m_user SET ");
+			sqlBuffer.append("userID = '");
+			sqlBuffer.append(userID);
+			sqlBuffer.append("',");
+			sqlBuffer.append("password = '");
+			sqlBuffer.append(password);
+			sqlBuffer.append("',");
+			sqlBuffer.append("authority = '");
+			sqlBuffer.append(authority);
+			sqlBuffer.append("',");
+			sqlBuffer.append("tel = '");
+			sqlBuffer.append(tel);
+			sqlBuffer.append("',");
+			sqlBuffer.append("email = '");
+			sqlBuffer.append(email);
+			sqlBuffer.append("' ");
+			sqlBuffer.append("WHERE ");
+			sqlBuffer.append("userID = '");
+			sqlBuffer.append(userID);
+			sqlBuffer.append("'");
+
+			String sql = sqlBuffer.toString();
+			System.out.println("sql=" + sql);
+
+			Statement statement = null;
+
+			try {
+				super.Open();
+				statement = super.Conn().createStatement();
+				rs = statement.executeUpdate(sql);
+
+			} catch (Exception exception) {
+				throw new Exception("SQLException: " + exception.getMessage());
+			} finally {
+				super.Close();
+			}
+		}
+		
+		// 传递要修改的用户信息到更新页面
+		public ArrayList<UserManageFormBean> sendUserList(String userID) throws Exception {
+
+			ArrayList<UserManageFormBean> sendUserList = new ArrayList<UserManageFormBean>();
+
+			StringBuffer sqlBuffer = new StringBuffer();
+
+			sqlBuffer.append("SELECT ");
+			sqlBuffer.append("* ");
+			sqlBuffer.append("FROM ");
+			sqlBuffer.append("m_user ");
+			sqlBuffer.append("WHERE ");
+			sqlBuffer.append("userID = '");
+			sqlBuffer.append(userID);
+			sqlBuffer.append("'");
+
+			String sql = sqlBuffer.toString();
+			System.out.println("sql=" + sql);
+
+			ResultSet resultSet = null;
+			Statement statement = null;
+
+			try {
+				super.Open();
+				statement = super.Conn().createStatement();
+				resultSet = statement.executeQuery(sql);
+
+				while (resultSet.next()) {
+					UserManageFormBean userManageFormBean = new UserManageFormBean();
+					userManageFormBean.setUserID(resultSet.getString("userID"));
+					userManageFormBean.setPassword(resultSet.getString("password"));
+					userManageFormBean.setAuthority(resultSet.getString("authority"));
+					userManageFormBean.setTel(resultSet.getString("tel"));
+					userManageFormBean.setEmail(resultSet.getString("email"));
+					sendUserList.add(userManageFormBean);
+				}
+				return sendUserList;
+
+			} catch (Exception exception) {
+				throw new Exception("SQLException: " + exception.getMessage());
+			} finally {
+				super.Close();
+			}
+		}
 
 }
