@@ -375,8 +375,8 @@ public class TIronInfoDao extends BaseDao {
 				result2FormBean.setQihao(resultSet3.getString("qihao"));
 				result2FormBean.setFe(Output.getSubValue(resultSet3.getString("fe"), 4));
 				result2FormBean.setCl(Output.getSubValue(resultSet3.getString("cl"), 4));
-				result2FormBean.setO(Output.getSubValue(resultSet3.getString("n"), 4));
-				result2FormBean.setN(Output.getSubValue(resultSet3.getString("o"), 4));
+				result2FormBean.setN(Output.getSubValue(resultSet3.getString("n"), 4));
+				result2FormBean.setO(Output.getSubValue(resultSet3.getString("o"), 4));
 				result2FormBean.setHb(Output.getSubValue(resultSet3.getString("hb"), 0));
 				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3.getString("zongmaozhong"), 0));
 				result2FormBean.setMgzongliang(resultSet3.getString("mgzongliang"));
@@ -502,8 +502,8 @@ public class TIronInfoDao extends BaseDao {
 			while (resultSet3s.next()) {
 				result2FormBean.setFe(Output.getSubValue(resultSet3s.getString("fe"), 4));
 				result2FormBean.setCl(Output.getSubValue(resultSet3s.getString("cl"), 4));
-				result2FormBean.setO(Output.getSubValue(resultSet3s.getString("n"), 4));
-				result2FormBean.setN(Output.getSubValue(resultSet3s.getString("o"), 4));
+				result2FormBean.setN(Output.getSubValue(resultSet3s.getString("n"), 4));
+				result2FormBean.setO(Output.getSubValue(resultSet3s.getString("o"), 4));
 				result2FormBean.setHb(Output.getSubValue(resultSet3s.getString("hb"), 0));
 				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3s.getString("zongmaozhong"), 0));
 				result2FormBean.setMgzongliang(resultSet3s.getString("mgzongliang"));
@@ -606,8 +606,8 @@ public class TIronInfoDao extends BaseDao {
 			while (resultSet3ys.next()) {
 				result2FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
 				result2FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
-				result2FormBean.setO(Output.getSubValue(resultSet3ys.getString("n"), 4));
-				result2FormBean.setN(Output.getSubValue(resultSet3ys.getString("o"), 4));
+				result2FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+				result2FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
 				result2FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
 				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
 				result2FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
@@ -889,8 +889,8 @@ public class TIronInfoDao extends BaseDao {
 				result3FormBean.setQihao(resultSet3.getString("qihao"));
 				result3FormBean.setFe(Output.getSubValue(resultSet3.getString("fe"), 4));
 				result3FormBean.setCl(Output.getSubValue(resultSet3.getString("cl"), 4));
-				result3FormBean.setO(Output.getSubValue(resultSet3.getString("n"), 4));
-				result3FormBean.setN(Output.getSubValue(resultSet3.getString("o"), 4));
+				result3FormBean.setN(Output.getSubValue(resultSet3.getString("n"), 4));
+				result3FormBean.setO(Output.getSubValue(resultSet3.getString("o"), 4));
 				result3FormBean.setHb(Output.getSubValue(resultSet3.getString("hb"), 0));
 				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3.getString("zongmaozhong"), 0));
 				result3FormBean.setMgzongliang(resultSet3.getString("mgzongliang"));
@@ -1016,8 +1016,8 @@ public class TIronInfoDao extends BaseDao {
 			while (resultSet3s.next()) {
 				result3FormBean.setFe(Output.getSubValue(resultSet3s.getString("fe"), 4));
 				result3FormBean.setCl(Output.getSubValue(resultSet3s.getString("cl"), 4));
-				result3FormBean.setO(Output.getSubValue(resultSet3s.getString("n"), 4));
-				result3FormBean.setN(Output.getSubValue(resultSet3s.getString("o"), 4));
+				result3FormBean.setN(Output.getSubValue(resultSet3s.getString("n"), 4));
+				result3FormBean.setO(Output.getSubValue(resultSet3s.getString("o"), 4));
 				result3FormBean.setHb(Output.getSubValue(resultSet3s.getString("hb"), 0));
 				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3s.getString("zongmaozhong"), 0));
 				result3FormBean.setMgzongliang(resultSet3s.getString("mgzongliang"));
@@ -1120,8 +1120,8 @@ public class TIronInfoDao extends BaseDao {
 			while (resultSet3ys.next()) {
 				result3FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
 				result3FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
-				result3FormBean.setO(Output.getSubValue(resultSet3ys.getString("n"), 4));
-				result3FormBean.setN(Output.getSubValue(resultSet3ys.getString("o"), 4));
+				result3FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+				result3FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
 				result3FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
 				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
 				result3FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
