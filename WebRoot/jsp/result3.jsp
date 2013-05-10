@@ -63,7 +63,7 @@
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">0A级率</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">0级</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">0级率</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">0级以上</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">0级以上率</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">1级</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">1级率</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">2级</span></th>
