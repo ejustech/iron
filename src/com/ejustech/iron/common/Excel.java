@@ -66,7 +66,7 @@ public class Excel {
 			Label label16 = new Label(15, 1, "0A级率", format1);
 			Label label17 = new Label(16, 1, "0级", format1);
 			Label label18 = new Label(17, 1, "0级率", format1);
-			Label label19 = new Label(18, 1, "0级以上", format1);
+			Label label19 = new Label(18, 1, "0级以上率", format1);
 			Label label20 = new Label(19, 1, "1级", format1);
 			Label label21 = new Label(20, 1, "1级率", format1);
 			Label label22 = new Label(21, 1, "2级", format1);
@@ -126,7 +126,7 @@ public class Excel {
 					Label l16 = new Label(15, i + 2, list.get(i).getJ0Ajilv());
 					Label l17 = new Label(16, i + 2, list.get(i).getJ0ji());
 					Label l18 = new Label(17, i + 2, list.get(i).getJ0jilv());
-					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishang());
+					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishanglv());
 					Label l20 = new Label(19, i + 2, list.get(i).getJ1ji());
 					Label l21 = new Label(20, i + 2, list.get(i).getJ1jilv());
 					Label l22 = new Label(21, i + 2, list.get(i).getJ2ji());
@@ -213,7 +213,7 @@ public class Excel {
 			Label label16 = new Label(15, 1, "0A级率", format1);
 			Label label17 = new Label(16, 1, "0级", format1);
 			Label label18 = new Label(17, 1, "0级率", format1);
-			Label label19 = new Label(18, 1, "0级以上", format1);
+			Label label19 = new Label(18, 1, "0级以上率", format1);
 			Label label20 = new Label(19, 1, "1级", format1);
 			Label label21 = new Label(20, 1, "1级率", format1);
 			Label label22 = new Label(21, 1, "2级", format1);
@@ -273,7 +273,7 @@ public class Excel {
 					Label l16 = new Label(15, i + 2, list.get(i).getJ0Ajilv());
 					Label l17 = new Label(16, i + 2, list.get(i).getJ0ji());
 					Label l18 = new Label(17, i + 2, list.get(i).getJ0jilv());
-					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishang());
+					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishanglv());
 					Label l20 = new Label(19, i + 2, list.get(i).getJ1ji());
 					Label l21 = new Label(20, i + 2, list.get(i).getJ1jilv());
 					Label l22 = new Label(21, i + 2, list.get(i).getJ2ji());
