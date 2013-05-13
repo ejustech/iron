@@ -38,6 +38,7 @@ public class SearchAction extends EventDispatchAction {
 	public ActionForward srch1(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 
 		try {
+			HttpSession session = request.getSession();
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
 			TIronInfoDao searchDao = new TIronInfoDao();
 			// 检索条件
@@ -96,6 +97,9 @@ public class SearchAction extends EventDispatchAction {
 			} else {
 				sqlBufferCondition.append(" qihao in (1,2,3,4)");
 			}
+			
+			// 放置session用于输出检索区间
+			session.setAttribute("RIQI", "");
 			// 检索条件_日期(三段区间)
 			if (!riqi1.equals("") && !riqi2.equals("")) {
 				sqlBufferCondition.append(" AND");
@@ -104,17 +108,21 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append("' AND '");
 				sqlBufferCondition.append(riqi2);
 				sqlBufferCondition.append("'");
+				session.setAttribute("RIQI", "[" + riqi1 + "～" + riqi2 + "]");
 			} else if (!riqi1.equals("") && riqi2.equals("")) {
 				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" riqi >= '");
 				sqlBufferCondition.append(riqi1);
 				sqlBufferCondition.append("'");
+				session.setAttribute("RIQI", "[" + riqi1 + "～" + riqi2 + "]");
 			} else if (riqi1.equals("") && !riqi2.equals("")) {
 				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" riqi <= '");
 				sqlBufferCondition.append(riqi2);
 				sqlBufferCondition.append("'");
-			}
+				session.setAttribute("RIQI", "[" + riqi1 + "～" + riqi2 + "]");
+			}			
+			
 			// 检索条件_炉次(三段区间)
 			if (!luci1.equals("") && !luci2.equals("")) {
 				sqlBufferCondition.append(" AND");
@@ -158,18 +166,18 @@ public class SearchAction extends EventDispatchAction {
 			// 检索条件_使用次数(三段区间)
 			if (!shiyongcishu1.equals("") && !shiyongcishu2.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" shiyongcishu2 BETWEEN ");
+				sqlBufferCondition.append(" shiyongcishu BETWEEN ");
 				sqlBufferCondition.append(shiyongcishu1);
 				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(shiyongcishu2);
 			} else if (!shiyongcishu1.equals("") && shiyongcishu2.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" shiyongcishu2 >= '");
+				sqlBufferCondition.append(" shiyongcishu >= '");
 				sqlBufferCondition.append(shiyongcishu1);
 				sqlBufferCondition.append("'");
 			} else if (shiyongcishu1.equals("") && !shiyongcishu2.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" shiyongcishu2 <= '");
+				sqlBufferCondition.append(" shiyongcishu <= '");
 				sqlBufferCondition.append(shiyongcishu2);
 				sqlBufferCondition.append("'");
 			}
@@ -348,12 +356,14 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(cl2);
 			}
+			
+			String monthFlag = "m";
 			// 选定要查询的输出表
 			switch (Integer.parseInt(selInfoList)) {
 			case 1: {
 				sqlCondition = " WHERE" + sqlBufferCondition.toString();
 				// sqlCondition查询条件放到session用于result1画面删除后刷新页面的同样条件
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
 				session.setAttribute("SQLCONDITION", sqlCondition);
 				// 执行查询全部信息操作并放到AllINFOLIST供jsp读取
 				ArrayList<Result1FormBean> allInfoList = new ArrayList<Result1FormBean>();
@@ -365,10 +375,21 @@ public class SearchAction extends EventDispatchAction {
 			case 2: {
 				sqlCondition = sqlBufferCondition.toString();
 				ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
-				hanmengList = (ArrayList<Result2FormBean>) searchDao.getHanmengList(request, sqlCondition);
+				hanmengList = (ArrayList<Result2FormBean>) searchDao.getHanmengList(request, sqlCondition,monthFlag);
 				request.setAttribute("HANMENGLIST", hanmengList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
+				session.setAttribute("HANMENGLIST", hanmengList);
+				// 生产数据统计表-含锰
+				return mapping.findForward("srch2");
+			}
+			case 21: {
+				sqlCondition = sqlBufferCondition.toString();
+				ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
+				hanmengList = (ArrayList<Result2FormBean>) searchDao.getHanmengList(request, sqlCondition,"");
+				request.setAttribute("HANMENGLIST", hanmengList);
+				// list放到session用于excel导出
+//				HttpSession session = request.getSession();
 				session.setAttribute("HANMENGLIST", hanmengList);
 				// 生产数据统计表-含锰
 				return mapping.findForward("srch2");
@@ -376,10 +397,21 @@ public class SearchAction extends EventDispatchAction {
 			case 3: {
 				sqlCondition = sqlBufferCondition.toString();
 				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
-				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumengList(request, sqlCondition);
+				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumengList(request, sqlCondition,monthFlag);
 				request.setAttribute("CHUMENGLIST", chumengList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
+				session.setAttribute("CHUMENGLIST", chumengList);
+				// 生产数据统计表-除锰
+				return mapping.findForward("srch3");
+			}
+			case 31: {
+				sqlCondition = sqlBufferCondition.toString();
+				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
+				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumengList(request, sqlCondition,"");
+				request.setAttribute("CHUMENGLIST", chumengList);
+				// list放到session用于excel导出
+//				HttpSession session = request.getSession();
 				session.setAttribute("CHUMENGLIST", chumengList);
 				// 生产数据统计表-除锰
 				return mapping.findForward("srch3");
@@ -390,7 +422,7 @@ public class SearchAction extends EventDispatchAction {
 				waitaiList = (ArrayList<Result4FormBean>) searchDao.getWaitaiList(request, sqlCondition);
 				request.setAttribute("WAITAILIST", waitaiList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
 				session.setAttribute("WAITAILIST", waitaiList);
 				// 等外钛统计表
 				return mapping.findForward("srch4");
@@ -401,7 +433,7 @@ public class SearchAction extends EventDispatchAction {
 				zhibiaoList = (ArrayList<Result5FormBean>) searchDao.getZhibiaoList(request, sqlCondition);
 				request.setAttribute("ZHIBIAOLIST", zhibiaoList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
 				session.setAttribute("ZHIBIAOLIST", zhibiaoList);
 				// 指标统计表
 				return mapping.findForward("srch5");
@@ -412,7 +444,7 @@ public class SearchAction extends EventDispatchAction {
 				danluList = (ArrayList<Result6FormBean>) searchDao.getDanluList(request, sqlCondition);
 				request.setAttribute("DANLULIST", danluList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
 				session.setAttribute("DANLULIST", danluList);
 				// 单炉生产数据统计表
 				return mapping.findForward("srch6");
@@ -423,7 +455,7 @@ public class SearchAction extends EventDispatchAction {
 				yueluList = (ArrayList<Result7FormBean>) searchDao.getYueluList(request, sqlCondition);
 				request.setAttribute("YUELULIST", yueluList);
 				// list放到session用于excel导出
-				HttpSession session = request.getSession();
+//				HttpSession session = request.getSession();
 				session.setAttribute("YUELULIST", yueluList);
 				// 月还渗炉次生产数据汇总表
 				return mapping.findForward("srch7");

@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <html>
 	<head>
 		<title>功能导航</title>
@@ -37,10 +38,15 @@
 				<tr>
 					<td><html:submit property="inputByNew">信息录入</html:submit></td>
 					<td><html:submit property="search">信息查询</html:submit></td>
-					<logic:equal name="AUTHORITY" scope="request" value="0">
-       					<td><html:submit property="userManage">用户管理</html:submit></td>
-    				</logic:equal>
-					<td><html:submit property="logout">注&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
+					<td>
+						<logic:equal name="AUTHORITY" scope="request" value="0">
+	       					<html:submit property="userManage">用户管理</html:submit>
+	    				</logic:equal>
+	    				<logic:notEqual name="AUTHORITY" scope="request" value="0">
+	       					<input type=button value="用户管理" disabled="disabled" >
+	    				</logic:notEqual>
+	    			</td>
+					<td><html:submit property="logout">注&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
 				</tr>
 			</table>
 		</html:form>

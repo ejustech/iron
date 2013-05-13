@@ -71,8 +71,11 @@ public class MUserDao extends BaseDao {
 				String authority = resultSet.getString("authority");
 				// HttpSession session = request.getSession();
 				//放置权限用于判断是否为管理员
-				request.setAttribute("AUTHORITY", authority);
-
+//				if(authority.equals("0")){
+					request.setAttribute("AUTHORITY", authority);
+//				}else{
+//					request.setAttribute("AUTHORITY", "");
+//				}
 				// 验证密码是否与输入的匹配
 				// if(password.equals(new String(decontent))){
 				if (password.equals(resultSet.getString("password"))) {

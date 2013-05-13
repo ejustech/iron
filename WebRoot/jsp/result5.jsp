@@ -34,7 +34,14 @@
 		  </div>
 		  <table width="1024" align="center">
 				<tr>
-					<td align="left"><span class="STYLE13">指标统计表</span></td>
+					<td align="left">
+					<span class="STYLE13">
+					指标统计表
+					<logic:notEmpty name="RIQI">
+						<bean:write name="RIQI" scope="session"></bean:write>
+					</logic:notEmpty>
+					</span>
+					</td>
 					<td align="right">
 						<html:submit property="exportResult5">导出Excel</html:submit>
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
@@ -44,6 +51,11 @@
 			<p></p>
 			<hr width="1024" />
 			<table align="center" border=1 style="BORDER-COLLAPSE: collapse">
+				<tr>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9"></span></th>
+					<th bgcolor="#99CC99" colspan="11"><span class="STYLE10 STYLE9">各指标数值</span></th>
+					<th bgcolor="#99CC99" colspan="8"><span class="STYLE10 STYLE9">所占比例</span></th>
+				</tr>
 				<tr>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">期号</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">总毛重量kg</span></th>

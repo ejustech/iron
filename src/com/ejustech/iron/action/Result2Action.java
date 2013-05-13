@@ -43,8 +43,11 @@ public class Result2Action extends EventDispatchAction {
 //			String fileName = "result2.xls";
 			String fileName = "生产数据统计表-含锰.xls";
 			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
+			//取得检索日期
+			String riqi1 = (String) session.getAttribute("RIQI1");
+			String riqi2 = (String) session.getAttribute("RIQI2");
 			// 导出excel到服务器
-			Excel.exportResult2Excel(list, fileName);
+			Excel.exportResult2Excel(list, fileName, riqi1, riqi2);
 			// 下载excel到本地
 			FileAction fileDownload = new FileAction();
 			fileDownload.downFile(response, fileName);

@@ -22,8 +22,7 @@ import com.ejustech.iron.databean.form.Result7FormBean;
 import com.mysql.jdbc.PreparedStatement;
 
 /**
- * @author Administrator
- * ironinfo表的数据访问对象
+ * @author Administrator ironinfo表的数据访问对象
  */
 public class TIronInfoDao extends BaseDao {
 
@@ -195,7 +194,7 @@ public class TIronInfoDao extends BaseDao {
 	 * @return 月生产数据统计表-含锰
 	 * @throws Exception
 	 */
-	public ArrayList<Result2FormBean> getHanmengList(HttpServletRequest request, String sqlCondition) throws Exception {
+	public ArrayList<Result2FormBean> getHanmengList(HttpServletRequest request, String sqlCondition, String monthFlag) throws Exception {
 
 		ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
 		ArrayList<Result2FormBean> hanmengList1 = new ArrayList<Result2FormBean>();
@@ -586,112 +585,113 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			hanmengList.add(result2FormBean);
+			if (monthFlag.equals("")) {
+				// 年度累计部分
+				result2FormBean = new Result2FormBean();
+				resultSet1ys = statement.executeQuery(sql1ys.toString());
+				System.out.println("sql1ys=" + sql1ys);
+				while (resultSet1ys.next()) {
+					result2FormBean.setQihao(resultSet1ys.getString("qihao"));
+				}
 
-			// 年度累计部分
-			result2FormBean = new Result2FormBean();
-			resultSet1ys = statement.executeQuery(sql1ys.toString());
-			System.out.println("sql1ys=" + sql1ys);
-			while (resultSet1ys.next()) {
-				result2FormBean.setQihao(resultSet1ys.getString("qihao"));
+				resultSet2ys = statement.executeQuery(sql2ys.toString());
+				System.out.println("sql2ys=" + sql2ys);
+				while (resultSet2ys.next()) {
+					result2FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
+				}
+
+				resultSet3ys = statement.executeQuery(sql3ys.toString());
+				System.out.println("sql3ys=" + sql3ys);
+				while (resultSet3ys.next()) {
+					result2FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
+					result2FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
+					result2FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+					result2FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
+					result2FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
+					result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
+					result2FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
+					result2FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
+					if (resultSet3ys.getString("junhuishoulv") != null)
+						result2FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
+					result2FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
+					if (resultSet3ys.getString("zongmaozhong") != null)
+						result2FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result2FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("zongjingzhong") != null)
+						result2FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result2FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("mgzongliang") != null)
+						result2FormBean
+								.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
+					if (resultSet3ys.getString("ticl4zongliang") != null)
+						result2FormBean.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"),
+								result2FormBean.getZongmaozhong(), 3));
+				}
+
+				resultSet4ys = statement.executeQuery(sql4ys.toString());
+				System.out.println("sql4ys=" + sql4ys);
+				while (resultSet4ys.next()) {
+					result2FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
+					if (resultSet4ys.getString("0Aji") != null)
+						result2FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet5ys = statement.executeQuery(sql5ys.toString());
+				System.out.println("sql5ys=" + sql5ys);
+				while (resultSet5ys.next()) {
+					result2FormBean.setJ0ji(resultSet5ys.getString("0ji"));
+					if (resultSet5ys.getString("0ji") != null)
+						result2FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet6ys = statement.executeQuery(sql6ys.toString());
+				System.out.println("sql6ys=" + sql6ys);
+				while (resultSet6ys.next()) {
+					result2FormBean.setJ1ji(resultSet6ys.getString("1ji"));
+					if (resultSet6ys.getString("1ji") != null)
+						result2FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet7ys = statement.executeQuery(sql7ys.toString());
+				System.out.println("sql7ys=" + sql7ys);
+				while (resultSet7ys.next()) {
+					result2FormBean.setJ2ji(resultSet7ys.getString("2ji"));
+				}
+
+				resultSet8ys = statement.executeQuery(sql8ys.toString());
+				System.out.println("sql8ys=" + sql8ys);
+				while (resultSet8ys.next()) {
+					result2FormBean.setJ3ji(resultSet8ys.getString("3ji"));
+				}
+
+				resultSet9ys = statement.executeQuery(sql9ys.toString());
+				System.out.println("sql9ys=" + sql9ys);
+				while (resultSet9ys.next()) {
+					result2FormBean.setJ4ji(resultSet9ys.getString("4ji"));
+				}
+
+				resultSet10ys = statement.executeQuery(sql10ys.toString());
+				System.out.println("sql10ys=" + sql10ys);
+				while (resultSet10ys.next()) {
+					result2FormBean.setJ5ji(resultSet10ys.getString("5ji"));
+				}
+
+				resultSet11ys = statement.executeQuery(sql11ys.toString());
+				System.out.println("sql11ys=" + sql11ys);
+				while (resultSet11ys.next()) {
+					result2FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
+					if (resultSet11ys.getString("2jijiyixia") != null)
+						result2FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet12ys = statement.executeQuery(sql12ys.toString());
+				System.out.println("sql12ys=" + sql12ys);
+				while (resultSet12ys.next()) {
+					result2FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
+					if (resultSet12ys.getString("0jiyishang") != null)
+						result2FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result2FormBean.getZongmaozhong()));
+				}
+
+				hanmengList.add(result2FormBean);
 			}
-
-			resultSet2ys = statement.executeQuery(sql2ys.toString());
-			System.out.println("sql2ys=" + sql2ys);
-			while (resultSet2ys.next()) {
-				result2FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
-			}
-
-			resultSet3ys = statement.executeQuery(sql3ys.toString());
-			System.out.println("sql3ys=" + sql3ys);
-			while (resultSet3ys.next()) {
-				result2FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
-				result2FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
-				result2FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
-				result2FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
-				result2FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
-				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
-				result2FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
-				result2FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
-				if (resultSet3ys.getString("junhuishoulv") != null)
-					result2FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
-				result2FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
-				if (resultSet3ys.getString("zongmaozhong") != null)
-					result2FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result2FormBean.getZonglushu(), 0));
-				if (resultSet3ys.getString("zongjingzhong") != null)
-					result2FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result2FormBean.getZonglushu(), 0));
-				if (resultSet3ys.getString("mgzongliang") != null)
-					result2FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
-				if (resultSet3ys.getString("ticl4zongliang") != null)
-					result2FormBean
-							.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 3));
-			}
-
-			resultSet4ys = statement.executeQuery(sql4ys.toString());
-			System.out.println("sql4ys=" + sql4ys);
-			while (resultSet4ys.next()) {
-				result2FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
-				if (resultSet4ys.getString("0Aji") != null)
-					result2FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result2FormBean.getZongmaozhong()));
-			}
-
-			resultSet5ys = statement.executeQuery(sql5ys.toString());
-			System.out.println("sql5ys=" + sql5ys);
-			while (resultSet5ys.next()) {
-				result2FormBean.setJ0ji(resultSet5ys.getString("0ji"));
-				if (resultSet5ys.getString("0ji") != null)
-					result2FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result2FormBean.getZongmaozhong()));
-			}
-
-			resultSet6ys = statement.executeQuery(sql6ys.toString());
-			System.out.println("sql6ys=" + sql6ys);
-			while (resultSet6ys.next()) {
-				result2FormBean.setJ1ji(resultSet6ys.getString("1ji"));
-				if (resultSet6ys.getString("1ji") != null)
-					result2FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result2FormBean.getZongmaozhong()));
-			}
-
-			resultSet7ys = statement.executeQuery(sql7ys.toString());
-			System.out.println("sql7ys=" + sql7ys);
-			while (resultSet7ys.next()) {
-				result2FormBean.setJ2ji(resultSet7ys.getString("2ji"));
-			}
-
-			resultSet8ys = statement.executeQuery(sql8ys.toString());
-			System.out.println("sql8ys=" + sql8ys);
-			while (resultSet8ys.next()) {
-				result2FormBean.setJ3ji(resultSet8ys.getString("3ji"));
-			}
-
-			resultSet9ys = statement.executeQuery(sql9ys.toString());
-			System.out.println("sql9ys=" + sql9ys);
-			while (resultSet9ys.next()) {
-				result2FormBean.setJ4ji(resultSet9ys.getString("4ji"));
-			}
-
-			resultSet10ys = statement.executeQuery(sql10ys.toString());
-			System.out.println("sql10ys=" + sql10ys);
-			while (resultSet10ys.next()) {
-				result2FormBean.setJ5ji(resultSet10ys.getString("5ji"));
-			}
-
-			resultSet11ys = statement.executeQuery(sql11ys.toString());
-			System.out.println("sql11ys=" + sql11ys);
-			while (resultSet11ys.next()) {
-				result2FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
-				if (resultSet11ys.getString("2jijiyixia") != null)
-					result2FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result2FormBean.getZongmaozhong()));
-			}
-
-			resultSet12ys = statement.executeQuery(sql12ys.toString());
-			System.out.println("sql12ys=" + sql12ys);
-			while (resultSet12ys.next()) {
-				result2FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
-				if (resultSet12ys.getString("0jiyishang") != null)
-					result2FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result2FormBean.getZongmaozhong()));
-			}
-
-			hanmengList.add(result2FormBean);
-
 			return hanmengList;
 
 		} catch (Exception exception) {
@@ -708,7 +708,7 @@ public class TIronInfoDao extends BaseDao {
 	 * @return 月生产数据统计表-除锰
 	 * @throws Exception
 	 */
-	public ArrayList<Result3FormBean> getChumengList(HttpServletRequest request, String sqlCondition) throws Exception {
+	public ArrayList<Result3FormBean> getChumengList(HttpServletRequest request, String sqlCondition, String monthFlag) throws Exception {
 
 		ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
 		ArrayList<Result3FormBean> chumengList1 = new ArrayList<Result3FormBean>();
@@ -1100,112 +1100,113 @@ public class TIronInfoDao extends BaseDao {
 			}
 
 			chumengList.add(result3FormBean);
+			if (monthFlag.equals("")) {
+				// 年度累计部分
+				result3FormBean = new Result3FormBean();
+				resultSet1ys = statement.executeQuery(sql1ys.toString());
+				System.out.println("sql1ys=" + sql1ys);
+				while (resultSet1ys.next()) {
+					result3FormBean.setQihao(resultSet1ys.getString("qihao"));
+				}
 
-			// 年度累计部分
-			result3FormBean = new Result3FormBean();
-			resultSet1ys = statement.executeQuery(sql1ys.toString());
-			System.out.println("sql1ys=" + sql1ys);
-			while (resultSet1ys.next()) {
-				result3FormBean.setQihao(resultSet1ys.getString("qihao"));
+				resultSet2ys = statement.executeQuery(sql2ys.toString());
+				System.out.println("sql2ys=" + sql2ys);
+				while (resultSet2ys.next()) {
+					result3FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
+				}
+
+				resultSet3ys = statement.executeQuery(sql3ys.toString());
+				System.out.println("sql3ys=" + sql3ys);
+				while (resultSet3ys.next()) {
+					result3FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
+					result3FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
+					result3FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+					result3FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
+					result3FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
+					result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
+					result3FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
+					result3FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
+					if (resultSet3ys.getString("junhuishoulv") != null)
+						result3FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
+					result3FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
+					if (resultSet3ys.getString("zongmaozhong") != null)
+						result3FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result3FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("zongjingzhong") != null)
+						result3FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result3FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("mgzongliang") != null)
+						result3FormBean
+								.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result3FormBean.getZongmaozhong(), 3));
+					if (resultSet3ys.getString("ticl4zongliang") != null)
+						result3FormBean.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"),
+								result3FormBean.getZongmaozhong(), 3));
+				}
+
+				resultSet4ys = statement.executeQuery(sql4ys.toString());
+				System.out.println("sql4ys=" + sql4ys);
+				while (resultSet4ys.next()) {
+					result3FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
+					if (resultSet4ys.getString("0Aji") != null)
+						result3FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet5ys = statement.executeQuery(sql5ys.toString());
+				System.out.println("sql5ys=" + sql5ys);
+				while (resultSet5ys.next()) {
+					result3FormBean.setJ0ji(resultSet5ys.getString("0ji"));
+					if (resultSet5ys.getString("0ji") != null)
+						result3FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet6ys = statement.executeQuery(sql6ys.toString());
+				System.out.println("sql6ys=" + sql6ys);
+				while (resultSet6ys.next()) {
+					result3FormBean.setJ1ji(resultSet6ys.getString("1ji"));
+					if (resultSet6ys.getString("1ji") != null)
+						result3FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet7ys = statement.executeQuery(sql7ys.toString());
+				System.out.println("sql7ys=" + sql7ys);
+				while (resultSet7ys.next()) {
+					result3FormBean.setJ2ji(resultSet7ys.getString("2ji"));
+				}
+
+				resultSet8ys = statement.executeQuery(sql8ys.toString());
+				System.out.println("sql8ys=" + sql8ys);
+				while (resultSet8ys.next()) {
+					result3FormBean.setJ3ji(resultSet8ys.getString("3ji"));
+				}
+
+				resultSet9ys = statement.executeQuery(sql9ys.toString());
+				System.out.println("sql9ys=" + sql9ys);
+				while (resultSet9ys.next()) {
+					result3FormBean.setJ4ji(resultSet9ys.getString("4ji"));
+				}
+
+				resultSet10ys = statement.executeQuery(sql10ys.toString());
+				System.out.println("sql10ys=" + sql10ys);
+				while (resultSet10ys.next()) {
+					result3FormBean.setJ5ji(resultSet10ys.getString("5ji"));
+				}
+
+				resultSet11ys = statement.executeQuery(sql11ys.toString());
+				System.out.println("sql11ys=" + sql11ys);
+				while (resultSet11ys.next()) {
+					result3FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
+					if (resultSet11ys.getString("2jijiyixia") != null)
+						result3FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet12ys = statement.executeQuery(sql12ys.toString());
+				System.out.println("sql12ys=" + sql12ys);
+				while (resultSet12ys.next()) {
+					result3FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
+					if (resultSet12ys.getString("0jiyishang") != null)
+						result3FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result3FormBean.getZongmaozhong()));
+				}
+
+				chumengList.add(result3FormBean);
 			}
-
-			resultSet2ys = statement.executeQuery(sql2ys.toString());
-			System.out.println("sql2ys=" + sql2ys);
-			while (resultSet2ys.next()) {
-				result3FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
-			}
-
-			resultSet3ys = statement.executeQuery(sql3ys.toString());
-			System.out.println("sql3ys=" + sql3ys);
-			while (resultSet3ys.next()) {
-				result3FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
-				result3FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
-				result3FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
-				result3FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
-				result3FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
-				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
-				result3FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
-				result3FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
-				if (resultSet3ys.getString("junhuishoulv") != null)
-					result3FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
-				result3FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
-				if (resultSet3ys.getString("zongmaozhong") != null)
-					result3FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result3FormBean.getZonglushu(), 0));
-				if (resultSet3ys.getString("zongjingzhong") != null)
-					result3FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result3FormBean.getZonglushu(), 0));
-				if (resultSet3ys.getString("mgzongliang") != null)
-					result3FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result3FormBean.getZongmaozhong(), 3));
-				if (resultSet3ys.getString("ticl4zongliang") != null)
-					result3FormBean
-							.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"), result3FormBean.getZongmaozhong(), 3));
-			}
-
-			resultSet4ys = statement.executeQuery(sql4ys.toString());
-			System.out.println("sql4ys=" + sql4ys);
-			while (resultSet4ys.next()) {
-				result3FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
-				if (resultSet4ys.getString("0Aji") != null)
-					result3FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result3FormBean.getZongmaozhong()));
-			}
-
-			resultSet5ys = statement.executeQuery(sql5ys.toString());
-			System.out.println("sql5ys=" + sql5ys);
-			while (resultSet5ys.next()) {
-				result3FormBean.setJ0ji(resultSet5ys.getString("0ji"));
-				if (resultSet5ys.getString("0ji") != null)
-					result3FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result3FormBean.getZongmaozhong()));
-			}
-
-			resultSet6ys = statement.executeQuery(sql6ys.toString());
-			System.out.println("sql6ys=" + sql6ys);
-			while (resultSet6ys.next()) {
-				result3FormBean.setJ1ji(resultSet6ys.getString("1ji"));
-				if (resultSet6ys.getString("1ji") != null)
-					result3FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result3FormBean.getZongmaozhong()));
-			}
-
-			resultSet7ys = statement.executeQuery(sql7ys.toString());
-			System.out.println("sql7ys=" + sql7ys);
-			while (resultSet7ys.next()) {
-				result3FormBean.setJ2ji(resultSet7ys.getString("2ji"));
-			}
-
-			resultSet8ys = statement.executeQuery(sql8ys.toString());
-			System.out.println("sql8ys=" + sql8ys);
-			while (resultSet8ys.next()) {
-				result3FormBean.setJ3ji(resultSet8ys.getString("3ji"));
-			}
-
-			resultSet9ys = statement.executeQuery(sql9ys.toString());
-			System.out.println("sql9ys=" + sql9ys);
-			while (resultSet9ys.next()) {
-				result3FormBean.setJ4ji(resultSet9ys.getString("4ji"));
-			}
-
-			resultSet10ys = statement.executeQuery(sql10ys.toString());
-			System.out.println("sql10ys=" + sql10ys);
-			while (resultSet10ys.next()) {
-				result3FormBean.setJ5ji(resultSet10ys.getString("5ji"));
-			}
-
-			resultSet11ys = statement.executeQuery(sql11ys.toString());
-			System.out.println("sql11ys=" + sql11ys);
-			while (resultSet11ys.next()) {
-				result3FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
-				if (resultSet11ys.getString("2jijiyixia") != null)
-					result3FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result3FormBean.getZongmaozhong()));
-			}
-
-			resultSet12ys = statement.executeQuery(sql12ys.toString());
-			System.out.println("sql12ys=" + sql12ys);
-			while (resultSet12ys.next()) {
-				result3FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
-				if (resultSet12ys.getString("0jiyishang") != null)
-					result3FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result3FormBean.getZongmaozhong()));
-			}
-
-			chumengList.add(result3FormBean);
-
 			return chumengList;
 
 		} catch (Exception exception) {
@@ -2111,6 +2112,7 @@ public class TIronInfoDao extends BaseDao {
 
 	/**
 	 * 删除全部信息表删除操作
+	 * 
 	 * @param luci
 	 * @param guige
 	 * @throws Exception
