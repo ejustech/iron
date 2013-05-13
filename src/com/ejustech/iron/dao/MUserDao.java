@@ -6,15 +6,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import com.ejustech.iron.common.ConstantSql;
-import com.ejustech.iron.common.Output;
-import com.ejustech.iron.common.PasswordSecurity;
 import com.ejustech.iron.common.db.BaseDao;
 import com.ejustech.iron.databean.dao.MUserDaoBean;
-import com.ejustech.iron.databean.form.LoginFormBean;
-import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.databean.form.UserManageFormBean;
 
 /***
@@ -30,13 +25,12 @@ public class MUserDao extends BaseDao {
 	 * @return 用户名存在，1；用户名不存在，0
 	 * @throws Exception
 	 */
-	public boolean verifyUserID(String userID, String password) throws Exception {
+	public boolean verifyUserID(String userID, String password, HttpServletRequest request) throws Exception {
 		boolean flag = false;
 
-		// // 密码解密
+		// 密码解密
 		// PasswordSecurity passwordSecurity = new PasswordSecurity();
-
-		LoginFormBean loginFormBean;
+		// LoginFormBean loginFormBean;
 
 		StringBuffer sqlBuffer = new StringBuffer();
 
@@ -48,7 +42,10 @@ public class MUserDao extends BaseDao {
 		sqlBuffer.append("m_user ");
 		sqlBuffer.append("WHERE ");
 		sqlBuffer.append("userID = ");
-		sqlBuffer.append("'" + userID + "'");
+		sqlBuffer.append("'" + userID + "' ");
+		sqlBuffer.append("AND ");
+		sqlBuffer.append("password = ");
+		sqlBuffer.append("'" + password + "'");
 
 		String sql = sqlBuffer.toString();
 		System.out.println("sql=" + sql);
@@ -62,15 +59,19 @@ public class MUserDao extends BaseDao {
 			resultSet = statement.executeQuery(sql);
 
 			while (resultSet.next()) {
-				loginFormBean = new LoginFormBean();
+				// loginFormBean = new LoginFormBean();
 
 				// 解密数据库中密码
 				// byte[] decontent =
 				// passwordSecurity.Decryptor(resultSet.getString("password").getBytes());
 				// System.out.println("解密后:" + new String(decontent));
-				loginFormBean.setUserID(resultSet.getString("userID"));
-				loginFormBean.setPassword(resultSet.getString("password"));
-				loginFormBean.setAuthority(resultSet.getString("authority"));
+				// loginFormBean.setUserID(resultSet.getString("userID"));
+				// loginFormBean.setPassword(resultSet.getString("password"));
+				// loginFormBean.setAuthority(resultSet.getString("authority"));
+				String authority = resultSet.getString("authority");
+				// HttpSession session = request.getSession();
+				//放置权限用于判断是否为管理员
+				request.setAttribute("AUTHORITY", authority);
 
 				// 验证密码是否与输入的匹配
 				// if(password.equals(new String(decontent))){
@@ -164,7 +165,13 @@ public class MUserDao extends BaseDao {
 				userManageFormBean.setIndex(String.valueOf(resultSet.getRow()));
 				userManageFormBean.setUserID(resultSet.getString("userID"));
 				// userManageFormBean.setPassword(resultSet.getString("password"));
-				userManageFormBean.setAuthority(resultSet.getString("authority"));
+				if(resultSet.getString("authority").equals("0")){
+					userManageFormBean.setAuthority("管理员");
+				}else if (resultSet.getString("authority").equals("1")){
+					userManageFormBean.setAuthority("普通用户1");
+				}else if (resultSet.getString("authority").equals("2")){
+					userManageFormBean.setAuthority("普通用户2");
+				}				
 				userManageFormBean.setTel(resultSet.getString("tel"));
 				userManageFormBean.setEmail(resultSet.getString("email"));
 				userList.add(userManageFormBean);
@@ -226,7 +233,7 @@ public class MUserDao extends BaseDao {
 		StringBuffer sqlBuffers = new StringBuffer();
 		StringBuffer sqlBuffer = new StringBuffer();
 		int rs = 0;
-		
+
 		// 检索要添加的用户是否存在
 		sqlBuffers.append("SELECT ");
 		sqlBuffers.append("userID, ");
@@ -277,101 +284,101 @@ public class MUserDao extends BaseDao {
 		}
 		return flag;
 	}
-	
+
 	// 更新用户
-		public void updateUser(String userID, String password, String authority, String tel, String email) throws Exception {
+	public void updateUser(String userID, String password, String authority, String tel, String email) throws Exception {
 
-			// 密码加密
-			// PasswordSecurity passwordSecurity = new PasswordSecurity();
-			// byte[] encontent = passwordSecurity.Encrytor(password);
-			// byte[] decontent = passwordSecurity.Decryptor(encontent);
-			// System.out.println("明文是:" + password);
-			// System.out.println("加密后:" + new String(encontent));
-			// System.out.println("解密后:" + new String(decontent));
-			StringBuffer sqlBuffer = new StringBuffer();
-			int rs = 0;
-			
-			sqlBuffer.append("UPDATE m_user SET ");
-			sqlBuffer.append("userID = '");
-			sqlBuffer.append(userID);
-			sqlBuffer.append("',");
-			sqlBuffer.append("password = '");
-			sqlBuffer.append(password);
-			sqlBuffer.append("',");
-			sqlBuffer.append("authority = '");
-			sqlBuffer.append(authority);
-			sqlBuffer.append("',");
-			sqlBuffer.append("tel = '");
-			sqlBuffer.append(tel);
-			sqlBuffer.append("',");
-			sqlBuffer.append("email = '");
-			sqlBuffer.append(email);
-			sqlBuffer.append("' ");
-			sqlBuffer.append("WHERE ");
-			sqlBuffer.append("userID = '");
-			sqlBuffer.append(userID);
-			sqlBuffer.append("'");
+		// 密码加密
+		// PasswordSecurity passwordSecurity = new PasswordSecurity();
+		// byte[] encontent = passwordSecurity.Encrytor(password);
+		// byte[] decontent = passwordSecurity.Decryptor(encontent);
+		// System.out.println("明文是:" + password);
+		// System.out.println("加密后:" + new String(encontent));
+		// System.out.println("解密后:" + new String(decontent));
+		StringBuffer sqlBuffer = new StringBuffer();
+		int rs = 0;
 
-			String sql = sqlBuffer.toString();
-			System.out.println("sql=" + sql);
+		sqlBuffer.append("UPDATE m_user SET ");
+		sqlBuffer.append("userID = '");
+		sqlBuffer.append(userID);
+		sqlBuffer.append("',");
+		sqlBuffer.append("password = '");
+		sqlBuffer.append(password);
+		sqlBuffer.append("',");
+		sqlBuffer.append("authority = '");
+		sqlBuffer.append(authority);
+		sqlBuffer.append("',");
+		sqlBuffer.append("tel = '");
+		sqlBuffer.append(tel);
+		sqlBuffer.append("',");
+		sqlBuffer.append("email = '");
+		sqlBuffer.append(email);
+		sqlBuffer.append("' ");
+		sqlBuffer.append("WHERE ");
+		sqlBuffer.append("userID = '");
+		sqlBuffer.append(userID);
+		sqlBuffer.append("'");
 
-			Statement statement = null;
+		String sql = sqlBuffer.toString();
+		System.out.println("sql=" + sql);
 
-			try {
-				super.Open();
-				statement = super.Conn().createStatement();
-				rs = statement.executeUpdate(sql);
+		Statement statement = null;
 
-			} catch (Exception exception) {
-				throw new Exception("SQLException: " + exception.getMessage());
-			} finally {
-				super.Close();
-			}
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+			rs = statement.executeUpdate(sql);
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
 		}
-		
-		// 传递要修改的用户信息到更新页面
-		public ArrayList<UserManageFormBean> sendUserList(String userID) throws Exception {
+	}
 
-			ArrayList<UserManageFormBean> sendUserList = new ArrayList<UserManageFormBean>();
+	// 传递要修改的用户信息到更新页面
+	public ArrayList<UserManageFormBean> sendUserList(String userID) throws Exception {
 
-			StringBuffer sqlBuffer = new StringBuffer();
+		ArrayList<UserManageFormBean> sendUserList = new ArrayList<UserManageFormBean>();
 
-			sqlBuffer.append("SELECT ");
-			sqlBuffer.append("* ");
-			sqlBuffer.append("FROM ");
-			sqlBuffer.append("m_user ");
-			sqlBuffer.append("WHERE ");
-			sqlBuffer.append("userID = '");
-			sqlBuffer.append(userID);
-			sqlBuffer.append("'");
+		StringBuffer sqlBuffer = new StringBuffer();
 
-			String sql = sqlBuffer.toString();
-			System.out.println("sql=" + sql);
+		sqlBuffer.append("SELECT ");
+		sqlBuffer.append("* ");
+		sqlBuffer.append("FROM ");
+		sqlBuffer.append("m_user ");
+		sqlBuffer.append("WHERE ");
+		sqlBuffer.append("userID = '");
+		sqlBuffer.append(userID);
+		sqlBuffer.append("'");
 
-			ResultSet resultSet = null;
-			Statement statement = null;
+		String sql = sqlBuffer.toString();
+		System.out.println("sql=" + sql);
 
-			try {
-				super.Open();
-				statement = super.Conn().createStatement();
-				resultSet = statement.executeQuery(sql);
+		ResultSet resultSet = null;
+		Statement statement = null;
 
-				while (resultSet.next()) {
-					UserManageFormBean userManageFormBean = new UserManageFormBean();
-					userManageFormBean.setUserID(resultSet.getString("userID"));
-					userManageFormBean.setPassword(resultSet.getString("password"));
-					userManageFormBean.setAuthority(resultSet.getString("authority"));
-					userManageFormBean.setTel(resultSet.getString("tel"));
-					userManageFormBean.setEmail(resultSet.getString("email"));
-					sendUserList.add(userManageFormBean);
-				}
-				return sendUserList;
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+			resultSet = statement.executeQuery(sql);
 
-			} catch (Exception exception) {
-				throw new Exception("SQLException: " + exception.getMessage());
-			} finally {
-				super.Close();
+			while (resultSet.next()) {
+				UserManageFormBean userManageFormBean = new UserManageFormBean();
+				userManageFormBean.setUserID(resultSet.getString("userID"));
+				userManageFormBean.setPassword(resultSet.getString("password"));
+				userManageFormBean.setAuthority(resultSet.getString("authority"));
+				userManageFormBean.setTel(resultSet.getString("tel"));
+				userManageFormBean.setEmail(resultSet.getString("email"));
+				sendUserList.add(userManageFormBean);
 			}
+			return sendUserList;
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
 		}
+	}
 
 }

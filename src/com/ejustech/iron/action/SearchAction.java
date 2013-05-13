@@ -433,7 +433,7 @@ public class SearchAction extends EventDispatchAction {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return mapping.findForward("loginError");
+			return mapping.findForward("searchError");
 		}
 	}
 
@@ -442,7 +442,7 @@ public class SearchAction extends EventDispatchAction {
 		try {
 			return mapping.findForward("backToMenu");
 		} catch (Exception e) {
-			return mapping.findForward("loginError");
+			return mapping.findForward("searchError");
 		}
 	}
 }

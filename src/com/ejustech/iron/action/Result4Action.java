@@ -50,7 +50,7 @@ public class Result4Action extends EventDispatchAction {
 			return null;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return mapping.findForward("loginError");
+			return mapping.findForward("searchError");
 		}
 	}
 }

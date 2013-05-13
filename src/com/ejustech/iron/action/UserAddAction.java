@@ -69,7 +69,7 @@ public class UserAddAction extends EventDispatchAction {
 					request.setAttribute("USERLIST", userList);
 					return mapping.findForward("update");
 				}else{
-					return mapping.findForward("loginerror");
+					return mapping.findForward("userExistError");
 				}
 			}else if (update_flag.equals("Modify")){
 				mUserDao.updateUser(userID, password, authority, tel, email);

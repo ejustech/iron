@@ -43,7 +43,7 @@ public class LoginAction extends Action {
 			Login loginModule = new Login(loginForm.getUserID(), loginForm.getUserPassword());
 			
 			//登陆验证，并返回一个验证的结果
-			LoginCheckResult loginCheckResult = loginModule.LoginCheck();
+			LoginCheckResult loginCheckResult = loginModule.LoginCheck(request);
 			
 			switch (loginCheckResult) {
 			case USER_ID_IS_EMPTY:

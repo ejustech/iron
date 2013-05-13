@@ -1,6 +1,7 @@
 package com.ejustech.iron.business;
 
 import javax.naming.NamingException;
+import javax.servlet.http.HttpServletRequest;
 
 import com.ejustech.iron.common.IronStatus.LoginCheckResult;
 import com.ejustech.iron.common.db.DaoFactory;
@@ -37,7 +38,7 @@ public class Login {
 	 * @return 验证OK的情况，true；验证NG的情况，false
 	 * @throws Exception
 	 */
-	public LoginCheckResult LoginCheck() throws Exception {
+	public LoginCheckResult LoginCheck(HttpServletRequest request) throws Exception {
 		// 用户名为空
 		if (IsEmptyForUserID())
 			return LoginCheckResult.USER_ID_IS_EMPTY;
@@ -51,7 +52,7 @@ public class Login {
 			return LoginCheckResult.ALL_ITEMS_IS_EMPTY;
 
 		// 用户名不存在
-		if (!HasUserID())
+		if (!HasUserID(request))
 			return LoginCheckResult.USER_ID_NOT_FOUND;
 
 		// 密码验证失败
@@ -120,7 +121,7 @@ public class Login {
 	 * @return 系统中不存在输入的用户名，false；存在，true
 	 * @throws Exception 
 	 */
-	private boolean HasUserID() throws Exception {
+	private boolean HasUserID(HttpServletRequest request) throws Exception {
 		MUserDao mUserDao = (MUserDao) DaoFactory.CreateMUserDao();
 
 //		int userCounts = mUserDao.GetCountsByUserID(userID);
@@ -130,7 +131,7 @@ public class Login {
 //		} else {
 //			return true;
 //		}
-		boolean flag = mUserDao.verifyUserID(userID, userPassword);
+		boolean flag = mUserDao.verifyUserID(userID, userPassword,request);
 		System.out.println(flag);
 		return flag;
 	}

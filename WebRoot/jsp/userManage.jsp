@@ -72,7 +72,7 @@
 					<td align="right">
 						<bean:write name="userManageFormBean" property="email" ></bean:write>
 					</td>
-					<td align="center">
+					<td align="center">						
 						<html:radio idName="userManageFormBean" property="indexModify" value="userID"/>
 					</td>
 				</tr>

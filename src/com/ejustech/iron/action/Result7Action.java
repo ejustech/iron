@@ -50,7 +50,7 @@ public class Result7Action extends Action {
 			return null;
 		} catch (Exception e) {
 			e.printStackTrace();
-			return mapping.findForward("loginError");
+			return mapping.findForward("searchError");
 		}
 	}
 }

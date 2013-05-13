@@ -57,13 +57,13 @@
       path="/menu"
       scope="request"
       type="com.ejustech.iron.action.MenuAction"
-      parameter="search,inputByNew,userManage,inputByUpdate,logout"
+      parameter="search,inputByNew,userManage,inputByUpdate,logout,searchError"
       cancellable="true">
       <forward name="search" path="/jsp/search.jsp" />
       <forward name="inputByNew" path="/jsp/inputByNew.jsp" />
       <forward name="userManage" path="/jsp/userManage.jsp" />
       <forward name="logout" path="/jsp/login.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="searchForm"
@@ -72,7 +72,7 @@
       path="/search"
       scope="request"
       type="com.ejustech.iron.action.SearchAction"
-      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,backToMenu,loginError"
+      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,backToMenu,searchError"
       cancellable="true">
       <forward name="srch1" path="/jsp/result1.jsp" />
       <forward name="srch2" path="/jsp/result2.jsp" />
@@ -82,7 +82,7 @@
       <forward name="srch6" path="/jsp/result6.jsp" />
       <forward name="srch7" path="/jsp/result7.jsp" />
       <forward name="backToMenu" path="/jsp/menu.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result1Form"
@@ -91,13 +91,13 @@
       path="/result1"
       scope="request"
       type="com.ejustech.iron.action.Result1Action"
-      parameter="res1_add,res1_modify,res1_del,res1_back,loginError"
+      parameter="res1_add,res1_modify,res1_del,res1_back,searchError"
       cancellable="true">
       <forward name="res1_add" path="/jsp/inputByNew.jsp" />
       <forward name="res1_modify" path="/jsp/inputByNew.jsp" />
       <forward name="res1_del" path="/jsp/result1.jsp" />
       <forward name="res1_back" path="/jsp/search.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result2Form"
@@ -107,7 +107,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result2Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result3Form"
@@ -117,7 +117,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result3Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result4Form"
@@ -127,7 +127,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result4Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result5Form"
@@ -137,7 +137,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result5Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result6Form"
@@ -147,7 +147,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result6Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="result7Form"
@@ -157,7 +157,7 @@
       scope="request"
       type="com.ejustech.iron.action.Result7Action"
       cancellable="true">
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="userManageForm"
@@ -166,13 +166,13 @@
       path="/userManage"
       scope="request"
       type="com.ejustech.iron.action.UserManageAction"
-      parameter="add,modify,del,back,loginError"
+      parameter="add,modify,del,back,searchError"
       cancellable="true">
       <forward name="add" path="/jsp/userAdd.jsp" />
       <forward name="modify" path="/jsp/userAdd.jsp" />
       <forward name="del" path="/jsp/userManage.jsp" />
       <forward name="back" path="/jsp/menu.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
     </action>
     <action
       attribute="userAdd"
@@ -181,11 +181,12 @@
       path="/userAdd"
       scope="request"
       type="com.ejustech.iron.action.UserAddAction"
-      parameter="update,back,loginError"
+      parameter="update,back,searchError,userExistError"
       cancellable="true">
       <forward name="update" path="/jsp/userManage.jsp" />
       <forward name="back" path="/jsp/userManage.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="userExistError" path="/jsp/userExistError.jsp" />
     </action>
     
     <action
