@@ -30,7 +30,15 @@
 			    
 			  </div>
 			<table width="1024" align="center">
-				<tr><td align="left"><span class="STYLE12">功能列表</span></td></tr>
+				<tr>
+					<td align="left"><span class="STYLE12">功能列表</span></td>
+					<td align="right"><span class="STYLE12">
+					<logic:notEmpty name="USERNAME">
+						<bean:write name="USERNAME" scope="session"></bean:write>
+						，你好！欢迎登陆金达钛业生产数据统计系统
+					</logic:notEmpty>
+					</span></td>
+				</tr>
 			</table>
 			<p></p>
 			<hr width="1024" />
@@ -39,10 +47,10 @@
 					<td><html:submit property="inputByNew">信息录入</html:submit></td>
 					<td><html:submit property="search">信息查询</html:submit></td>
 					<td>
-						<logic:equal name="AUTHORITY" scope="request" value="0">
+						<logic:equal name="AUTHORITY" scope="session" value="0">
 	       					<html:submit property="userManage">用户管理</html:submit>
 	    				</logic:equal>
-	    				<logic:notEqual name="AUTHORITY" scope="request" value="0">
+	    				<logic:notEqual name="AUTHORITY" scope="session" value="0">
 	       					<input type=button value="用户管理" disabled="disabled" >
 	    				</logic:notEqual>
 	    			</td>

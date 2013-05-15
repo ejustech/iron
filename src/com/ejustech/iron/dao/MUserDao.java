@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.common.db.BaseDao;
@@ -69,10 +70,11 @@ public class MUserDao extends BaseDao {
 				// loginFormBean.setPassword(resultSet.getString("password"));
 				// loginFormBean.setAuthority(resultSet.getString("authority"));
 				String authority = resultSet.getString("authority");
-				// HttpSession session = request.getSession();
+				HttpSession session = request.getSession();
+				session.setAttribute("USERNAME", userID);
 				//放置权限用于判断是否为管理员
 //				if(authority.equals("0")){
-					request.setAttribute("AUTHORITY", authority);
+				session.setAttribute("AUTHORITY", authority);
 //				}else{
 //					request.setAttribute("AUTHORITY", "");
 //				}

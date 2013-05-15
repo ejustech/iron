@@ -30,7 +30,7 @@ public class Excel{
 	
 
 	// 导出result2 月生产数据统计表-含锰
-	public static void exportResult2Excel(ArrayList<Result2FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult2Excel(ArrayList<Result2FormBean> list, String fileName, String riqi1, String riqi2) {
 		// TODO Auto-generated method stub
 		try {
 						
@@ -46,7 +46,8 @@ public class Excel{
 			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 			String lableName = "生产数据统计表-含锰";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+//			if(riqi1 != null || riqi2 != null){
+			if(riqi1 != null || riqi2 != null){	
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
@@ -196,7 +197,7 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "生产数据统计表-除锰";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+			if(riqi1 != null || riqi2 != null){
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
@@ -347,7 +348,7 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "等外钛统计表";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+			if(riqi1 != null || riqi2 != null){
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
@@ -463,7 +464,7 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "指标统计表";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+			if(riqi1 != null || riqi2 != null){
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
@@ -595,7 +596,7 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "单炉生产数据统计表";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+			if(riqi1 != null || riqi2 != null){
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
@@ -751,7 +752,7 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "还渗炉次生产数据汇总表";
-			if(!riqi1.equals("") || !riqi2.equals("")){
+			if(riqi1 != null || riqi2 != null){
 				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
