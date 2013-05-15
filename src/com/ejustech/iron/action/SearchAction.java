@@ -65,7 +65,8 @@ public class SearchAction extends EventDispatchAction {
 			String jiamoci = searchForm.getJiamoci();
 			String shiyanluci = searchForm.getShiyanluci();
 			String gongyitiaozhengluci = searchForm.getGongyitiaozhengluci();
-			String tongdao = searchForm.getTongdao();
+//			String tongdao = searchForm.getTongdao();
+			String[] tongdao = searchForm.getTongdao();
 			String shengchanguzhang = searchForm.getShengchanguzhang();
 			String huishoulv1 = searchForm.getHuishoulv1();
 			String huishoulv2 = searchForm.getHuishoulv2();
@@ -252,11 +253,37 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_通道
-			if (!tongdao.equals("")) {
+			if (tongdao.length != 0) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" tongdao ='");
-				sqlBufferCondition.append(new String(tongdao.getBytes("ISO-8859-1"), "utf-8"));
-				sqlBufferCondition.append("'");
+				sqlBufferCondition.append(" tongdao in (");
+				StringBuffer transmode = new StringBuffer("");
+				String[] trans = tongdao;
+				
+				if (trans != null && trans.length > 0) {
+					for (int i = 0; i < trans.length; i++) {
+						String t = trans[i];
+						if(trans[i].equals("1")){
+							t = "'" + new String("√".getBytes("utf-8"), "utf-8") + "'";
+						}
+						if(trans[i].equals("2")){
+							t = "'" + new String("×".getBytes("utf-8"), "utf-8") + "'";
+						}
+						transmode.append(t);
+						if (!(i == trans.length - 1)) {
+							transmode.append(",");
+						}
+					}
+				}
+				sqlBufferCondition.append(transmode.toString());
+				sqlBufferCondition.append(")");
+				
+//				sqlBufferCondition.append(" AND");
+//				sqlBufferCondition.append(" tongdao ='");
+//				sqlBufferCondition.append(new String(tongdao.getBytes("ISO-8859-1"), "utf-8"));
+//				sqlBufferCondition.append("'");
+			} else {
+				sqlBufferCondition.append(" AND");
+				sqlBufferCondition.append(" tongdao in ('√', '×')");
 			}
 			// 检索条件_生产故障
 			if (!shengchanguzhang.equals("")) {

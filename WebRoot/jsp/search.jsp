@@ -259,8 +259,11 @@
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">通道:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="tongdao"/>
-						    <html:errors property="tongdao"/>
+							<html:multibox property="tongdao" value="1"/>
+						    √
+						    <html:multibox property="tongdao" value="2"/>
+						    ×
+						    
 							  </span></td>
 						</tr>
 						<tr>

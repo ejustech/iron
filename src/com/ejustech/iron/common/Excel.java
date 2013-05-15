@@ -30,7 +30,7 @@ public class Excel{
 	
 
 	// 导出result2 月生产数据统计表-含锰
-	public static void exportResult2Excel(ArrayList<Result2FormBean> list, String fileName, String riqi1, String riqi2) {
+	public static void exportResult2Excel(ArrayList<Result2FormBean> list, String fileName, String riqi) {
 		// TODO Auto-generated method stub
 		try {
 						
@@ -46,9 +46,9 @@ public class Excel{
 			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 			String lableName = "生产数据统计表-含锰";
-//			if(riqi1 != null || riqi2 != null){
-			if(riqi1 != null || riqi2 != null){	
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+//			if(riqi != null){
+			if(riqi != null){	
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 			// 合并单元格
@@ -181,7 +181,7 @@ public class Excel{
 	}
 
 	// 导出result3 月生产数据统计表-除锰
-	public static void exportResult3Excel(ArrayList<Result3FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult3Excel(ArrayList<Result3FormBean> list, String fileName, String riqi) throws Exception {
 		try {
 
 			FileProcessor.createForder(path);
@@ -197,8 +197,8 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "生产数据统计表-除锰";
-			if(riqi1 != null || riqi2 != null){
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 			// 合并单元格
@@ -331,7 +331,7 @@ public class Excel{
 	}
 
 	// 导出result4 月等外钛统计表
-	public static void exportResult4Excel(ArrayList<Result4FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult4Excel(ArrayList<Result4FormBean> list, String fileName, String riqi) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 
@@ -348,8 +348,8 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "等外钛统计表";
-			if(riqi1 != null || riqi2 != null){
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 			
@@ -447,7 +447,7 @@ public class Excel{
 	}
 
 	// 导出result5 月指标统计表
-	public static void exportResult5Excel(ArrayList<Result5FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult5Excel(ArrayList<Result5FormBean> list, String fileName, String riqi) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 
@@ -464,8 +464,8 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "指标统计表";
-			if(riqi1 != null || riqi2 != null){
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 
@@ -579,7 +579,7 @@ public class Excel{
 	}
 
 	// 导出result6 单炉生产数据统计表
-	public static void exportResult6Excel(ArrayList<Result6FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult6Excel(ArrayList<Result6FormBean> list, String fileName, String riqi) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 
@@ -596,8 +596,8 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "单炉生产数据统计表";
-			if(riqi1 != null || riqi2 != null){
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 
@@ -735,7 +735,7 @@ public class Excel{
 	}
 
 	// 导出result7 月还渗炉次生产数据汇总表
-	public static void exportResult7Excel(ArrayList<Result7FormBean> list, String fileName, String riqi1, String riqi2) throws Exception {
+	public static void exportResult7Excel(ArrayList<Result7FormBean> list, String fileName, String riqi) throws Exception {
 		// TODO Auto-generated method stub
 		try {
 
@@ -752,8 +752,8 @@ public class Excel{
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
 			String lableName = "还渗炉次生产数据汇总表";
-			if(riqi1 != null || riqi2 != null){
-				lableName = lableName + " " + "【" + riqi1 + "～" + riqi2 +"】";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
 			}
 			Label labelTitle = new Label(0, 0, lableName, formatTitle);
 

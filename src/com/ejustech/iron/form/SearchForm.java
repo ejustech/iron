@@ -32,7 +32,16 @@ public class SearchForm extends ActionForm {
 	private String zhuanzhengliu;
 
 	/** tongdao property */
-	private String tongdao;
+//	private String tongdao;
+	private String[] tongdao=new String[0];
+
+	public String[] getTongdao() {
+		return tongdao;
+	}
+
+	public void setTongdao(String[] tongdao) {
+		this.tongdao = tongdao;
+	}
 
 	/** shengchanguzhang property */
 	private String shengchanguzhang;
@@ -248,9 +257,9 @@ public class SearchForm extends ActionForm {
 	 * 
 	 * @return String
 	 */
-	public String getTongdao() {
-		return tongdao;
-	}
+//	public String getTongdao() {
+//		return tongdao;
+//	}
 
 	/**
 	 * Set the tongdao.
@@ -258,9 +267,9 @@ public class SearchForm extends ActionForm {
 	 * @param tongdao
 	 *            The tongdao to set
 	 */
-	public void setTongdao(String tongdao) {
-		this.tongdao = tongdao;
-	}
+//	public void setTongdao(String tongdao) {
+//		this.tongdao = tongdao;
+//	}
 
 	/**
 	 * Returns the shengchanguzhang.

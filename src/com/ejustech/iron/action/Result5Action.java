@@ -43,10 +43,9 @@ public class Result5Action extends Action {
 			String fileName = "指标统计表.xls";
 			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			//取得检索日期
-			String riqi1 = (String) session.getAttribute("RIQI1");
-			String riqi2 = (String) session.getAttribute("RIQI2");
+			String riqi = (String) session.getAttribute("RIQI");
 			// 导出excel到服务器
-			Excel.exportResult5Excel(list, fileName, riqi1, riqi2);
+			Excel.exportResult5Excel(list, fileName, riqi);
 			// 下载excel到本地
 			FileAction fileDownload = new FileAction();
 			fileDownload.downFile(response, fileName);
