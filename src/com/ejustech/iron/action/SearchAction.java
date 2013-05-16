@@ -248,7 +248,7 @@ public class SearchAction extends EventDispatchAction {
 			// 检索条件_工艺调整炉次
 			if (!gongyitiaozhengluci.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" gongyitiaozhengluci ='");
+				sqlBufferCondition.append(" gongyitiaozheng ='");
 				sqlBufferCondition.append(new String(gongyitiaozhengluci.getBytes("ISO-8859-1"), "utf-8"));
 				sqlBufferCondition.append("'");
 			}
