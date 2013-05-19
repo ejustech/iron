@@ -1,7 +1,6 @@
 package com.ejustech.iron.databean.dao;
 
-public class TIronInfoDaoBean {
-
+public class TIronInfoDaoBean {	
 	/** 备注说明 */
 	private String beiZhuShuoMing;
 
@@ -55,6 +54,9 @@ public class TIronInfoDaoBean {
 
 	/** 净重 */
 	private String jingZhong;
+
+	/** 军品 */
+	private String junPin;
 
 	/** 军品标记 */
 	private String junPinFlg;
@@ -273,6 +275,13 @@ public class TIronInfoDaoBean {
 	 */
 	public String getJingZhong() {
 		return jingZhong;
+	}
+
+	/**
+	 * @return the junPin
+	 */
+	public String getJunPin() {
+		return junPin;
 	}
 
 	/**
@@ -617,6 +626,13 @@ public class TIronInfoDaoBean {
 	 */
 	public void setJingZhong(String jingZhong) {
 		this.jingZhong = jingZhong;
+	}
+
+	/**
+	 * @param junPin the junPin to set
+	 */
+	public void setJunPin(String junPin) {
+		this.junPin = junPin;
 	}
 
 	/**

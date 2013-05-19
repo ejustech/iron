@@ -6,6 +6,8 @@ package com.ejustech.iron.databean.form;
 
 import org.apache.struts.action.ActionFormBean;
 
+import com.ejustech.iron.common.StringHelper;
+
 /**
  * MyEclipse Struts Creation date: 04-19-2013
  * 
@@ -16,7 +18,6 @@ import org.apache.struts.action.ActionFormBean;
 public class InputByNewFormBean extends ActionFormBean {
 	/** 备注说明 */
 	private String beiZhuShuoMing;
-
 	/** 备注说明 */
 	private String beiZhuShuoMingJunPin1;
 
@@ -167,6 +168,9 @@ public class InputByNewFormBean extends ActionFormBean {
 	/** 净重 */
 	private String jingZhongJunPin2;
 
+	/** 军品 */
+	private String junPin;
+
 	/** 考核等级(除锰) */
 	private String kaoHeDengJiChuMeng;
 
@@ -220,6 +224,9 @@ public class InputByNewFormBean extends ActionFormBean {
 
 	/** 期号 */
 	private String qiHaoJunPin2;
+
+	/** 输入或更新数据的用户权限 */
+	private String roleRank;
 
 	/** 上帽Kg */
 	private String shangMaoKg;
@@ -292,6 +299,9 @@ public class InputByNewFormBean extends ActionFormBean {
 
 	/** 通道 */
 	private String tongDaoJunPin2;
+
+	/** 输入或更新完毕标志 */
+	private String updateFlg;
 
 	/** 年月日 */
 	private String yearMonthDay;
@@ -419,955 +429,956 @@ public class InputByNewFormBean extends ActionFormBean {
 	/** 总排镁量Kg */
 	private String zongPaiMeiLiangKgJunPin2;
 	
-	/** 输入或更新数据的用户权限 */
-	private String roleRank;
-	
-	/** 输入或更新完毕标志 */
-	private String updateFlg;
-
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMing() {
-		return beiZhuShuoMing;
+		return StringHelper.null2Empty(beiZhuShuoMing);
 	}
-
+	
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMingJunPin1() {
-		return beiZhuShuoMingJunPin1;
+		return StringHelper.null2Empty(beiZhuShuoMingJunPin1);
 	}
 
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMingJunPin2() {
-		return beiZhuShuoMingJunPin2;
+		return StringHelper.null2Empty(beiZhuShuoMingJunPin2);
 	}
 
 	/**
 	 * @return 成品率
 	 */
 	public String getChengPinLv() {
-		return chengPinLv;
+		return StringHelper.null2Empty(chengPinLv);
 	}
 
 	/**
 	 * @return 成品率
 	 */
 	public String getChengPinLvJunPin1() {
-		return chengPinLvJunPin1;
+		return StringHelper.null2Empty(chengPinLvJunPin1);
 	}
 
 	/**
 	 * @return 成品率
 	 */
 	public String getChengPinLvJunPin2() {
-		return chengPinLvJunPin2;
+		return StringHelper.null2Empty(chengPinLvJunPin2);
 	}
 
 	/**
 	 * @return the 出炉真空度Pa
 	 */
 	public String getChuLuZhenKongDu() {
-		return chuLuZhenKongDu;
+		return StringHelper.null2Empty(chuLuZhenKongDu);
 	}
 
 	/**
 	 * @return the 出炉真空度Pa
 	 */
 	public String getChuLuZhenKongDuJunPin1() {
-		return chuLuZhenKongDuJunPin1;
+		return StringHelper.null2Empty(chuLuZhenKongDuJunPin1);
 	}
 
 	/**
 	 * @return the 出炉真空度Pa
 	 */
 	public String getChuLuZhenKongDuJunPin2() {
-		return chuLuZhenKongDuJunPin2;
+		return StringHelper.null2Empty(chuLuZhenKongDuJunPin2);
 	}
 
 	/**
 	 * @return 磁选Kg
 	 */
 	public String getCiYuanKg() {
-		return ciYuanKg;
+		return StringHelper.null2Empty(ciYuanKg);
 	}
 
 	/**
 	 * @return 磁选Kg
 	 */
 	public String getCiYuanKgJunPin1() {
-		return ciYuanKgJunPin1;
+		return StringHelper.null2Empty(ciYuanKgJunPin1);
 	}
 
 	/**
 	 * @return 磁选Kg
 	 */
 	public String getCiYuanKgJunPin2() {
-		return ciYuanKgJunPin2;
+		return StringHelper.null2Empty(ciYuanKgJunPin2);
 	}
 
 	/**
 	 * @return 等级(含锰)
 	 */
 	public String getDengJiHanMeng() {
-		return dengJiHanMeng;
+		return StringHelper.null2Empty(dengJiHanMeng);
 	}
 
 	/**
 	 * @return 等级JunPin1(含锰)
 	 */
 	public String getDengJiHanMengJunPin1() {
-		return dengJiHanMengJunPin1;
+		return StringHelper.null2Empty(dengJiHanMengJunPin1);
 	}
 
 	/**
 	 * @return 等级JunPin2(含锰)
 	 */
 	public String getDengJiHanMengJunPin2() {
-		return dengJiHanMengJunPin2;
+		return StringHelper.null2Empty(dengJiHanMengJunPin2);
 	}
 
 	/**
 	 * @return 底皮Kg
 	 */
 	public String getDiPiKg() {
-		return diPiKg;
+		return StringHelper.null2Empty(diPiKg);
 	}
 
 	/**
 	 * @return 底皮Kg
 	 */
 	public String getDiPiKgJunPin1() {
-		return diPiKgJunPin1;
+		return StringHelper.null2Empty(diPiKgJunPin1);
 	}
 
 	/**
 	 * @return 底皮Kg
 	 */
 	public String getDiPiKgJunPin2() {
-		return diPiKgJunPin2;
+		return StringHelper.null2Empty(diPiKgJunPin2);
 	}
 
 	/**
 	 * @return 反应器号
 	 */
 	public String getFanYingQiHao() {
-		return fanYingQiHao;
+		return StringHelper.null2Empty(fanYingQiHao);
 	}
 
 	/**
 	 * @return 反应器号
 	 */
 	public String getFanYingQiHaoJunPin1() {
-		return fanYingQiHaoJunPin1;
+		return StringHelper.null2Empty(fanYingQiHaoJunPin1);
 	}
 
 	/**
 	 * @return 反应器号
 	 */
 	public String getFanYingQiHaoJunPin2() {
-		return fanYingQiHaoJunPin2;
+		return StringHelper.null2Empty(fanYingQiHaoJunPin2);
 	}
 
 	/**
 	 * @return 废底皮Kg
 	 */
 	public String getFeiDiPiKg() {
-		return feiDiPiKg;
+		return StringHelper.null2Empty(feiDiPiKg);
 	}
 
 	/**
 	 * @return 废底皮Kg
 	 */
 	public String getFeiDiPiKgJunPin1() {
-		return feiDiPiKgJunPin1;
+		return StringHelper.null2Empty(feiDiPiKgJunPin1);
 	}
 
 	/**
 	 * @return 废底皮Kg
 	 */
 	public String getFeiDiPiKgJunPin2() {
-		return feiDiPiKgJunPin2;
+		return StringHelper.null2Empty(feiDiPiKgJunPin2);
 	}
 
 	/**
 	 * @return 废爬壁Kg
 	 */
 	public String getFeiPaBiKg() {
-		return feiPaBiKg;
+		return StringHelper.null2Empty(feiPaBiKg);
 	}
 
 	/**
 	 * @return 废爬壁Kg
 	 */
 	public String getFeiPaBiKgJunPin1() {
-		return feiPaBiKgJunPin1;
+		return StringHelper.null2Empty(feiPaBiKgJunPin1);
 	}
 
 	/**
 	 * @return 废爬壁Kg
 	 */
 	public String getFeiPaBiKgJunPin2() {
-		return feiPaBiKgJunPin2;
+		return StringHelper.null2Empty(feiPaBiKgJunPin2);
 	}
 
 	/**
 	 * @return 废上帽Kg
 	 */
 	public String getFeiShangMaoKg() {
-		return feiShangMaoKg;
+		return StringHelper.null2Empty(feiShangMaoKg);
 	}
 
 	/**
 	 * @return 废上帽Kg
 	 */
 	public String getFeiShangMaoKgJunPin1() {
-		return feiShangMaoKgJunPin1;
+		return StringHelper.null2Empty(feiShangMaoKgJunPin1);
 	}
 
 	/**
 	 * @return 废上帽Kg
 	 */
 	public String getFeiShangMaoKgJunPin2() {
-		return feiShangMaoKgJunPin2;
+		return StringHelper.null2Empty(feiShangMaoKgJunPin2);
 	}
 
 	/**
 	 * @return 废钛粉Kg
 	 */
 	public String getFeiTaiFenKg() {
-		return feiTaiFenKg;
+		return StringHelper.null2Empty(feiTaiFenKg);
 	}
 
 	/**
 	 * @return 废钛粉Kg
 	 */
 	public String getFeiTaiFenKgJunPin1() {
-		return feiTaiFenKgJunPin1;
+		return StringHelper.null2Empty(feiTaiFenKgJunPin1);
 	}
 
 	/**
 	 * @return 废钛粉Kg
 	 */
 	public String getFeiTaiFenKgJunPin2() {
-		return feiTaiFenKgJunPin2;
+		return StringHelper.null2Empty(feiTaiFenKgJunPin2);
 	}
 
 	/**
 	 * @return 工艺试验
 	 */
 	public String getGongYiShiYan() {
-		return gongYiShiYan;
+		return StringHelper.null2Empty(gongYiShiYan);
 	}
 
 	/**
 	 * @return 工艺试验
 	 */
 	public String getGongYiShiYanJunPin1() {
-		return gongYiShiYanJunPin1;
+		return StringHelper.null2Empty(gongYiShiYanJunPin1);
 	}
 
 	/**
 	 * @return 工艺试验
 	 */
 	public String getGongYiShiYanJunPin2() {
-		return gongYiShiYanJunPin2;
+		return StringHelper.null2Empty(gongYiShiYanJunPin2);
 	}
 
 	/**
 	 * @return 工艺调整
 	 */
 	public String getGongYiTiaoZheng() {
-		return gongYiTiaoZheng;
+		return StringHelper.null2Empty(gongYiTiaoZheng);
 	}
 
 	/**
 	 * @return 工艺调整
 	 */
 	public String getGongYiTiaoZhengJunPin1() {
-		return gongYiTiaoZhengJunPin1;
+		return StringHelper.null2Empty(gongYiTiaoZhengJunPin1);
 	}
 
 	/**
 	 * @return 工艺调整
 	 */
 	public String getGongYiTiaoZhengJunPin2() {
-		return gongYiTiaoZhengJunPin2;
+		return StringHelper.null2Empty(gongYiTiaoZhengJunPin2);
 	}
 
 	/**
 	 * @return 规格
 	 */
 	public String getGuiGe() {
-		return guiGe;
+		return StringHelper.null2Empty(guiGe);
 	}
 
 	/**
 	 * @return 规格
 	 */
 	public String getGuiGeJunPin1() {
-		return guiGeJunPin1;
+		return StringHelper.null2Empty(guiGeJunPin1);
 	}
 
 	/**
 	 * @return 规格
 	 */
 	public String getGuiGeJunPin2() {
-		return guiGeJunPin2;
+		return StringHelper.null2Empty(guiGeJunPin2);
 	}
 
 	/**
 	 * @return 加末次
 	 */
 	public String getJiaMoCi() {
-		return jiaMoCi;
+		return StringHelper.null2Empty(jiaMoCi);
 	}
 
 	/**
 	 * @return 加末次
 	 */
 	public String getJiaMoCiJunPin1() {
-		return jiaMoCiJunPin1;
+		return StringHelper.null2Empty(jiaMoCiJunPin1);
 	}
 
 	/**
 	 * @return 加末次
 	 */
 	public String getJiaMoCiJunPin2() {
-		return jiaMoCiJunPin2;
+		return StringHelper.null2Empty(jiaMoCiJunPin2);
 	}
 
 	/**
 	 * @return 加首次
 	 */
 	public String getJiaShouCi() {
-		return jiaShouCi;
+		return StringHelper.null2Empty(jiaShouCi);
 	}
 
 	/**
 	 * @return 加首次
 	 */
 	public String getJiaShouCiJunPin1() {
-		return jiaShouCiJunPin1;
+		return StringHelper.null2Empty(jiaShouCiJunPin1);
 	}
 
 	/**
 	 * @return 加首次
 	 */
 	public String getJiaShouCiJunPin2() {
-		return jiaShouCiJunPin2;
+		return StringHelper.null2Empty(jiaShouCiJunPin2);
 	}
 
 	/**
 	 * @return 净重
 	 */
 	public String getJingZhong() {
-		return jingZhong;
+		return StringHelper.null2Empty(jingZhong);
 	}
 
 	/**
 	 * @return 净重
 	 */
 	public String getJingZhongJunPin1() {
-		return jingZhongJunPin1;
+		return StringHelper.null2Empty(jingZhongJunPin1);
 	}
 
 	/**
 	 * @return 净重
 	 */
 	public String getJingZhongJunPin2() {
-		return jingZhongJunPin2;
+		return StringHelper.null2Empty(jingZhongJunPin2);
+	}
+
+	/**
+	 * @return the junPin
+	 */
+	public String getJunPin() {
+		return StringHelper.null2Empty(junPin);
 	}
 
 	/**
 	 * @return 考核等级(除锰)
 	 */
 	public String getKaoHeDengJiChuMeng() {
-		return kaoHeDengJiChuMeng;
+		return StringHelper.null2Empty(kaoHeDengJiChuMeng);
 	}
 
 	/**
 	 * @return 考核等级(除锰)
 	 */
 	public String getKaoHeDengJiChuMengJunPin1() {
-		return kaoHeDengJiChuMengJunPin1;
+		return StringHelper.null2Empty(kaoHeDengJiChuMengJunPin1);
 	}
 
 	/**
 	 * @return 考核等级(除锰)
 	 */
 	public String getKaoHeDengJiChuMengJunPin2() {
-		return kaoHeDengJiChuMengJunPin2;
+		return StringHelper.null2Empty(kaoHeDengJiChuMengJunPin2);
 	}
 
 	/**
 	 * @return 炉次
 	 */
 	public String getLuCi() {
-		return luCi;
+		return StringHelper.null2Empty(luCi);
 	}
 
 	/**
 	 * @return 炉次
 	 */
 	public String getLuCiJunPin1() {
-		return luCiJunPin1;
+		return StringHelper.null2Empty(luCiJunPin1);
 	}
 
 	/**
 	 * @return 炉次
 	 */
 	public String getLuCiJunPin2() {
-		return luCiJunPin2;
+		return StringHelper.null2Empty(luCiJunPin2);
 	}
 
 	/**
 	 * @return 毛重
 	 */
 	public String getMaoZhong() {
-		return maoZhong;
+		return StringHelper.null2Empty(maoZhong);
 	}
 
 	/**
 	 * @return 毛重
 	 */
 	public String getMaoZhongJunPin1() {
-		return maoZhongJunPin1;
+		return StringHelper.null2Empty(maoZhongJunPin1);
 	}
 
 	/**
 	 * @return 毛重
 	 */
 	public String getMaoZhongJunPin2() {
-		return maoZhongJunPin2;
+		return StringHelper.null2Empty(maoZhongJunPin2);
 	}
 
 	/**
 	 * @return Mg（t）
 	 */
 	public String getMg() {
-		return mg;
+		return StringHelper.null2Empty(mg);
 	}
 
 	/**
 	 * @return Mg（t）
 	 */
 	public String getMgJunPin1() {
-		return mgJunPin1;
+		return StringHelper.null2Empty(mgJunPin1);
 	}
 
 	/**
 	 * @return Mg（t）
 	 */
 	public String getMgJunPin2() {
-		return mgJunPin2;
+		return StringHelper.null2Empty(mgJunPin2);
 	}
 
 	/**
 	 * @return 爬壁Kg
 	 */
 	public String getPaBiKg() {
-		return paBiKg;
+		return StringHelper.null2Empty(paBiKg);
 	}
 
 	/**
 	 * @return 爬壁Kg
 	 */
 	public String getPaBiKgJunPin1() {
-		return paBiKgJunPin1;
+		return StringHelper.null2Empty(paBiKgJunPin1);
 	}
 
 	/**
 	 * @return 爬壁Kg
 	 */
 	public String getPaBiKgJunPin2() {
-		return paBiKgJunPin2;
+		return StringHelper.null2Empty(paBiKgJunPin2);
 	}
 
 	/**
 	 * @return 期号
 	 */
 	public String getQiHao() {
-		return qiHao;
+		return StringHelper.null2Empty(qiHao);
 	}
 
 	/**
 	 * @return 期号
 	 */
 	public String getQiHaoJunPin1() {
-		return qiHaoJunPin1;
+		return StringHelper.null2Empty(qiHaoJunPin1);
 	}
 
 	/**
 	 * @return 期号
 	 */
 	public String getQiHaoJunPin2() {
-		return qiHaoJunPin2;
+		return StringHelper.null2Empty(qiHaoJunPin2);
 	}
 
 	/**
 	 * @return 上帽Kg
 	 */
 	public String getShangMaoKg() {
-		return shangMaoKg;
+		return StringHelper.null2Empty(shangMaoKg);
 	}
 
 	/**
 	 * @return 上帽Kg
 	 */
 	public String getShangMaoKgJunPin1() {
-		return shangMaoKgJunPin1;
+		return StringHelper.null2Empty(shangMaoKgJunPin1);
 	}
 
 	/**
 	 * @return 上帽Kg
 	 */
 	public String getShangMaoKgJunPin2() {
-		return shangMaoKgJunPin2;
+		return StringHelper.null2Empty(shangMaoKgJunPin2);
 	}
 
 	/**
 	 * @return 生产故障
 	 */
 	public String getShengChanGuZhang() {
-		return shengChanGuZhang;
+		return StringHelper.null2Empty(shengChanGuZhang);
 	}
 
 	/**
 	 * @return 生产故障
 	 */
 	public String getShengChanGuZhangJunPin1() {
-		return shengChanGuZhangJunPin1;
+		return StringHelper.null2Empty(shengChanGuZhangJunPin1);
 	}
 
 	/**
 	 * @return 生产故障
 	 */
 	public String getShengChanGuZhangJunPin2() {
-		return shengChanGuZhangJunPin2;
+		return StringHelper.null2Empty(shengChanGuZhangJunPin2);
 	}
 
 	/**
 	 * @return 生产炉号
 	 */
 	public String getShengChanLuHao() {
-		return shengChanLuHao;
+		return StringHelper.null2Empty(shengChanLuHao);
 	}
 
 	/**
 	 * @return 生产炉号
 	 */
 	public String getShengChanLuHaoJunPin1() {
-		return shengChanLuHaoJunPin1;
+		return StringHelper.null2Empty(shengChanLuHaoJunPin1);
 	}
 
 	/**
 	 * @return 生产炉号
 	 */
 	public String getShengChanLuHaoJunPin2() {
-		return shengChanLuHaoJunPin2;
+		return StringHelper.null2Empty(shengChanLuHaoJunPin2);
 	}
 
 	/**
 	 * @return 使用次数
 	 */
 	public String getShiYongCiShu() {
-		return shiYongCiShu;
+		return StringHelper.null2Empty(shiYongCiShu);
 	}
 
 	/**
 	 * @return 使用次数
 	 */
 	public String getShiYongCiShuJunPin1() {
-		return shiYongCiShuJunPin1;
+		return StringHelper.null2Empty(shiYongCiShuJunPin1);
 	}
 
 	/**
 	 * @return 使用次数
 	 */
 	public String getShiYongCiShuJunPin2() {
-		return shiYongCiShuJunPin2;
+		return StringHelper.null2Empty(shiYongCiShuJunPin2);
 	}
 
 	/**
 	 * @return 手选废料Kg
 	 */
 	public String getShouXuanFeiLiaoKg() {
-		return shouXuanFeiLiaoKg;
+		return StringHelper.null2Empty(shouXuanFeiLiaoKg);
 	}
 
 	/**
 	 * @return 手选废料Kg
 	 */
 	public String getShouXuanFeiLiaoKgJunPin1() {
-		return shouXuanFeiLiaoKgJunPin1;
+		return StringHelper.null2Empty(shouXuanFeiLiaoKgJunPin1);
 	}
 
 	/**
 	 * @return 手选废料Kg
 	 */
 	public String getShouXuanFeiLiaoKgJunPin2() {
-		return shouXuanFeiLiaoKgJunPin2;
+		return StringHelper.null2Empty(shouXuanFeiLiaoKgJunPin2);
 	}
 
 	/**
 	 * @return 损耗Kg
 	 */
 	public String getSunHaoKg() {
-		return sunHaoKg;
+		return StringHelper.null2Empty(sunHaoKg);
 	}
 
 	/**
 	 * @return 损耗Kg
 	 */
 	public String getSunHaoKgJunPin1() {
-		return sunHaoKgJunPin1;
+		return StringHelper.null2Empty(sunHaoKgJunPin1);
 	}
 
 	/**
 	 * @return 损耗Kg
 	 */
 	public String getSunHaoKgJunPin2() {
-		return sunHaoKgJunPin2;
+		return StringHelper.null2Empty(sunHaoKgJunPin2);
 	}
 
 	/**
 	 * @return TiCl4
 	 */
 	public String getTiCl4() {
-		return tiCl4;
+		return StringHelper.null2Empty(tiCl4);
 	}
 
 	/**
 	 * @return TiCl4
 	 */
 	public String getTiCl4JunPin1() {
-		return tiCl4JunPin1;
+		return StringHelper.null2Empty(tiCl4JunPin1);
 	}
 
 	/**
 	 * @return TiCl4
 	 */
 	public String getTiCl4JunPin2() {
-		return tiCl4JunPin2;
+		return StringHelper.null2Empty(tiCl4JunPin2);
 	}
 
 	/**
 	 * @return 通道
 	 */
 	public String getTongDao() {
-		return tongDao;
+		return StringHelper.null2Empty(tongDao);
 	}
 
 	/**
 	 * @return 通道
 	 */
 	public String getTongDaoJunPin1() {
-		return tongDaoJunPin1;
+		return StringHelper.null2Empty(tongDaoJunPin1);
 	}
 
 	/**
 	 * @return 通道
 	 */
 	public String getTongDaoJunPin2() {
-		return tongDaoJunPin2;
+		return StringHelper.null2Empty(tongDaoJunPin2);
 	}
 
 	/**
 	 * @return 年月日
 	 */
 	public String getYearMonthDay() {
-		return yearMonthDay;
+		return StringHelper.null2Empty(yearMonthDay);
 	}
 
 	/**
 	 * @return 年月日
 	 */
 	public String getYearMonthDayJunPin1() {
-		return yearMonthDayJunPin1;
+		return StringHelper.null2Empty(yearMonthDayJunPin1);
 	}
 
 	/**
 	 * @return 年月日
 	 */
 	public String getYearMonthDayJunPin2() {
-		return yearMonthDayJunPin2;
+		return StringHelper.null2Empty(yearMonthDayJunPin2);
 	}
 
 	/**
 	 * @return 元素C
 	 */
 	public String getYuanSuC() {
-		return yuanSuC;
+		return StringHelper.null2Empty(yuanSuC);
 	}
 
 	/**
 	 * @return 元素C
 	 */
 	public String getYuanSuCJunPin1() {
-		return yuanSuCJunPin1;
+		return StringHelper.null2Empty(yuanSuCJunPin1);
 	}
 
 	/**
 	 * @return 元素C
 	 */
 	public String getYuanSuCJunPin2() {
-		return yuanSuCJunPin2;
+		return StringHelper.null2Empty(yuanSuCJunPin2);
 	}
 
 	/**
 	 * @return 元素Cl
 	 */
 	public String getYuanSuCl() {
-		return yuanSuCl;
+		return StringHelper.null2Empty(yuanSuCl);
 	}
 
 	/**
 	 * @return 元素Cl
 	 */
 	public String getYuanSuClJunPin1() {
-		return yuanSuClJunPin1;
+		return StringHelper.null2Empty(yuanSuClJunPin1);
 	}
 
 	/**
 	 * @return 元素Cl
 	 */
 	public String getYuanSuClJunPin2() {
-		return yuanSuClJunPin2;
+		return StringHelper.null2Empty(yuanSuClJunPin2);
 	}
 
 	/**
 	 * @return 元素Fe
 	 */
 	public String getYuanSuFe() {
-		return yuanSuFe;
+		return StringHelper.null2Empty(yuanSuFe);
 	}
 
 	/**
 	 * @return 元素Fe
 	 */
 	public String getYuanSuFeJunPin1() {
-		return yuanSuFeJunPin1;
+		return StringHelper.null2Empty(yuanSuFeJunPin1);
 	}
 
 	/**
 	 * @return 元素Fe
 	 */
 	public String getYuanSuFeJunPin2() {
-		return yuanSuFeJunPin2;
+		return StringHelper.null2Empty(yuanSuFeJunPin2);
 	}
 
 	/**
 	 * @return 元素H
 	 */
 	public String getYuanSuH() {
-		return yuanSuH;
+		return StringHelper.null2Empty(yuanSuH);
 	}
 
 	/**
 	 * @return 元素HB
 	 */
 	public String getYuanSuHb() {
-		return yuanSuHb;
+		return StringHelper.null2Empty(yuanSuHb);
 	}
 
 	/**
 	 * @return 元素HB
 	 */
 	public String getYuanSuHbJunPin1() {
-		return yuanSuHbJunPin1;
+		return StringHelper.null2Empty(yuanSuHbJunPin1);
 	}
 
 	/**
 	 * @return 元素HB
 	 */
 	public String getYuanSuHbJunPin2() {
-		return yuanSuHbJunPin2;
+		return StringHelper.null2Empty(yuanSuHbJunPin2);
 	}
 
 	/**
 	 * @return 元素H
 	 */
 	public String getYuanSuHJunPin1() {
-		return yuanSuHJunPin1;
+		return StringHelper.null2Empty(yuanSuHJunPin1);
 	}
 
 	/**
 	 * @return 元素H
 	 */
 	public String getYuanSuHJunPin2() {
-		return yuanSuHJunPin2;
+		return StringHelper.null2Empty(yuanSuHJunPin2);
 	}
 
 	/**
 	 * @return 元素Mn
 	 */
 	public String getYuanSuMn() {
-		return yuanSuMn;
+		return StringHelper.null2Empty(yuanSuMn);
 	}
 
 	/**
 	 * @return 元素Mn
 	 */
 	public String getYuanSuMnJunPin1() {
-		return yuanSuMnJunPin1;
+		return StringHelper.null2Empty(yuanSuMnJunPin1);
 	}
 
 	/**
 	 * @return 元素Mn
 	 */
 	public String getYuanSuMnJunPin2() {
-		return yuanSuMnJunPin2;
+		return StringHelper.null2Empty(yuanSuMnJunPin2);
 	}
 
 	/**
 	 * @return 元素N
 	 */
 	public String getYuanSuN() {
-		return yuanSuN;
+		return StringHelper.null2Empty(yuanSuN);
 	}
 
 	/**
 	 * @return 元素N
 	 */
 	public String getYuanSuNJunPin1() {
-		return yuanSuNJunPin1;
+		return StringHelper.null2Empty(yuanSuNJunPin1);
 	}
 
 	/**
 	 * @return 元素N
 	 */
 	public String getYuanSuNJunPin2() {
-		return yuanSuNJunPin2;
+		return StringHelper.null2Empty(yuanSuNJunPin2);
 	}
 
 	/**
 	 * @return 元素O
 	 */
 	public String getYuanSuO() {
-		return yuanSuO;
+		return StringHelper.null2Empty(yuanSuO);
 	}
 
 	/**
 	 * @return 元素O
 	 */
 	public String getYuanSuOJunPin1() {
-		return yuanSuOJunPin1;
+		return StringHelper.null2Empty(yuanSuOJunPin1);
 	}
 
 	/**
 	 * @return 元素O
 	 */
 	public String getYuanSuOJunPin2() {
-		return yuanSuOJunPin2;
+		return StringHelper.null2Empty(yuanSuOJunPin2);
 	}
 
 	/**
 	 * @return 元素Si
 	 */
 	public String getYuanSuSi() {
-		return yuanSuSi;
+		return StringHelper.null2Empty(yuanSuSi);
 	}
 
 	/**
 	 * @return 元素Si
 	 */
 	public String getYuanSuSiJunPin1() {
-		return yuanSuSiJunPin1;
+		return StringHelper.null2Empty(yuanSuSiJunPin1);
 	}
 
 	/**
 	 * @return 元素Si
 	 */
 	public String getYuanSuSiJunPin2() {
-		return yuanSuSiJunPin2;
+		return StringHelper.null2Empty(yuanSuSiJunPin2);
 	}
 
 	/**
 	 * @return 还原最高温度℃
 	 */
 	public String getYuanZuiGaoWenDu() {
-		return yuanZuiGaoWenDu;
+		return StringHelper.null2Empty(yuanZuiGaoWenDu);
 	}
 
 	/**
 	 * @return 还原最高温度℃
 	 */
 	public String getYuanZuiGaoWenDuJunPin1() {
-		return yuanZuiGaoWenDuJunPin1;
+		return StringHelper.null2Empty(yuanZuiGaoWenDuJunPin1);
 	}
 
 	/**
 	 * @return 还原最高温度℃
 	 */
 	public String getYuanZuiGaoWenDuJunPin2() {
-		return yuanZuiGaoWenDuJunPin2;
+		return StringHelper.null2Empty(yuanZuiGaoWenDuJunPin2);
 	}
 
 	/**
 	 * @return 蒸馏高恒A点最高℃
 	 */
 	public String getZhengLiuGaoHengDian() {
-		return zhengLiuGaoHengDian;
+		return StringHelper.null2Empty(zhengLiuGaoHengDian);
 	}
 
 	/**
 	 * @return 蒸馏高恒A点最高℃
 	 */
 	public String getZhengLiuGaoHengDianJunPin1() {
-		return zhengLiuGaoHengDianJunPin1;
+		return StringHelper.null2Empty(zhengLiuGaoHengDianJunPin1);
 	}
 
 	/**
 	 * @return 蒸馏高恒A点最高℃
 	 */
 	public String getZhengLiuGaoHengDianJunPin2() {
-		return zhengLiuGaoHengDianJunPin2;
+		return StringHelper.null2Empty(zhengLiuGaoHengDianJunPin2);
 	}
 
 	/**
 	 * @return 转蒸馏
 	 */
 	public String getZhuanZhengLiu() {
-		return zhuanZhengLiu;
+		return StringHelper.null2Empty(zhuanZhengLiu);
 	}
 
 	/**
 	 * @return 转蒸馏
 	 */
 	public String getZhuanZhengLiuJunPin1() {
-		return zhuanZhengLiuJunPin1;
+		return StringHelper.null2Empty(zhuanZhengLiuJunPin1);
 	}
 
 	/**
 	 * @return 转蒸馏
 	 */
 	public String getZhuanZhengLiuJunPin2() {
-		return zhuanZhengLiuJunPin2;
+		return StringHelper.null2Empty(zhuanZhengLiuJunPin2);
 	}
 
 	/**
 	 * @return 总排镁量Kg
 	 */
 	public String getZongPaiMeiLiangKg() {
-		return zongPaiMeiLiangKg;
+		return StringHelper.null2Empty(zongPaiMeiLiangKg);
 	}
 
 	/**
 	 * @return 总排镁量Kg
 	 */
 	public String getZongPaiMeiLiangKgJunPin1() {
-		return zongPaiMeiLiangKgJunPin1;
+		return StringHelper.null2Empty(zongPaiMeiLiangKgJunPin1);
 	}
 
 	/**
 	 * @return 总排镁量Kg
 	 */
 	public String getZongPaiMeiLiangKgJunPin2() {
-		return zongPaiMeiLiangKgJunPin2;
+		return StringHelper.null2Empty(zongPaiMeiLiangKgJunPin2);
 	}
 
 	/**
@@ -1728,6 +1739,13 @@ public class InputByNewFormBean extends ActionFormBean {
 	 */
 	public void setJingZhongJunPin2(String jingZhong) {
 		this.jingZhong = jingZhongJunPin2;
+	}
+
+	/**
+	 * @param junPin the junPin to set
+	 */
+	public void setJunPin(String junPin) {
+		this.junPin = junPin;
 	}
 
 	/**

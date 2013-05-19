@@ -1,5 +1,6 @@
 package com.ejustech.iron.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import com.ejustech.iron.common.Constant;
+import com.ejustech.iron.common.ConstantSql;
 import com.ejustech.iron.common.Output;
 import com.ejustech.iron.common.Utility;
 import com.ejustech.iron.common.db.BaseDao;
@@ -19,24 +21,25 @@ import com.ejustech.iron.databean.form.Result4FormBean;
 import com.ejustech.iron.databean.form.Result5FormBean;
 import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.Result7FormBean;
-import com.mysql.jdbc.PreparedStatement;
+
+
 
 /**
  * @author Administrator ironinfo表的数据访问对象
  */
 public class TIronInfoDao extends BaseDao {
 
-	public Boolean Insert(TIronInfoDaoBean daoBean) {
-		// Open();
+	public Boolean Insert(TIronInfoDaoBean daoBean) throws SQLException {
+		//Open();
 
 		PreparedStatement ps = null;
 		try {
-			// ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_INSERT);
+			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_INSERT);
 
 			ps.setString(Constant.T_IRON_INFO_COL_YearMonthDay, daoBean.getYearMonthDay());
 			ps.setString(Constant.T_IRON_INFO_COL_QiHao, daoBean.getQiHao());
 			ps.setString(Constant.T_IRON_INFO_COL_LuCi, daoBean.getLuCi());
-			ps.setString(Constant.T_IRON_INFO_COL_JunPinFlg, daoBean.getJunPinFlg());
+			ps.setString(Constant.T_IRON_INFO_COL_JunPinFlg, daoBean.getJunPin());
 			ps.setString(Constant.T_IRON_INFO_COL_GuiGe, daoBean.getGuiGe());
 			ps.setString(Constant.T_IRON_INFO_COL_ShengChanLuHao, daoBean.getShengChanLuHao());
 			ps.setString(Constant.T_IRON_INFO_COL_FanYingQiHao, daoBean.getFanYingQiHao());
@@ -79,17 +82,42 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_TongDao, daoBean.getTongDao());
 			ps.setString(Constant.T_IRON_INFO_COL_ShengChanGuZhang, daoBean.getShengChanGuZhang());
 			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing, daoBean.getBeiZhuShuoMing());
-
+//			ps.setString(Constant.T_IRON_INFO_COL_JunPin, daoBean.getJunPin());
+			
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw e;
 		}
 
 		return true;
 
 	}
 
+	/**
+	 * 
+	 * @param daoBean
+	 * @return
+	 * @throws SQLException 
+	 */
+    public Boolean UpdateJunPinNotInput() throws SQLException {
+        // Open();
+
+        PreparedStatement ps = null;
+        try {
+            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT);
+            
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw e;
+        }
+
+        return true;
+    }
+    
 	/**
 	 * @param request
 	 * @param sqlCondition

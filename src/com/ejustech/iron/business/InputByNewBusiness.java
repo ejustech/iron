@@ -86,7 +86,7 @@ public class InputByNewBusiness {
 	private ArrayList<ValidateStatusInputByNew> checkDateFormatAll(InputByNewFormBean inputByNewFormBean) {
 		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
 
-		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
+		if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && !StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
 			checkResult.add(ValidateStatusInputByNew.DATE_FORMAT_YearMonthDay);
 		}
 
@@ -261,34 +261,34 @@ public class InputByNewBusiness {
 
 			break;
 		case R3:
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_YearMonthDay);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_QiHao);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_LuCi);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_GuiGe);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanLuHao);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_FanYingQiHao);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ShiYongCiShu);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_Mg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_TiCl4);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_MaoZhong);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
@@ -330,67 +330,67 @@ public class InputByNewBusiness {
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_KaoHeDengJiChuMeng);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiTiaoZheng);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiShiYan);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_DiPiKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ShangMaoKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_PaBiKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiDiPiKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiShangMaoKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiPaBiKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiTaiFenKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_CiYuanKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ShouXuanFeiLiaoKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_SunHaoKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ZongPaiMeiLiangKg);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ChuLuZhenKongDu);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanZuiGaoWenDu);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhengLiuGaoHengDian);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhuanZhengLiu);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaShouCi);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaMoCi);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_TongDao);
 			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
 				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanGuZhang);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
@@ -974,6 +974,7 @@ public class InputByNewBusiness {
 			daoBean.setQiHao(formBean.getQiHao());
 			daoBean.setLuCi(formBean.getLuCi());
 			daoBean.setGuiGe(formBean.getGuiGe());
+			daoBean.setJunPin(formBean.getJunPin());
 			daoBean.setShengChanLuHao(formBean.getShengChanLuHao());
 			daoBean.setFanYingQiHao(formBean.getFanYingQiHao());
 			daoBean.setShiYongCiShu(formBean.getShiYongCiShu());
@@ -1159,19 +1160,35 @@ public class InputByNewBusiness {
 				dao.Open();
 				dao.BeginTrans();
 				// 信息输入画面，默认10条数据 循环
+				String tmpLuci = "";
+				String tmpYearMonthDay = "";
 				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
 					// 信息输入画面Form取得FormBean
 					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
-					log(inputByNewFormBean);
+					//log(inputByNewFormBean);
 					// 1：常规数据 2:军品1 3：军品2
-					// FormBean转化成DaoBean
+					// FormBean转化成DaoBean				
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
+					
+					if (i % 3 == 0) {
+						tmpLuci = tIronInfoDaoBean.getLuCi();
+					} else {
+						tIronInfoDaoBean.setLuCi(tmpLuci);
+					}
+					
+					if (i % 3 == 0) {
+						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
+					} else {
+						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
+					}
+					
 					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
 							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
 						// 炉次和规格都不为空时，登陆。
 						dao.Insert(tIronInfoDaoBean);
 					}
 				}
+				dao.UpdateJunPinNotInput();
 				dao.Commit();
 				dao.Close();
 			}

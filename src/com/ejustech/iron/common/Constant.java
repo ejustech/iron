@@ -190,6 +190,11 @@ public class Constant {
 	 */
 	public static final int T_IRON_INFO_COL_BeiZhuShuoMing = 46;
 	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 军品
+	 */
+	public static final int T_IRON_INFO_COL_JunPin = 47;
+	
+	/**
 	 * 信息输入画面 文本框输入值 最大长度验证 年月日
 	 */
 	public static final int LENGTH_INPUT_BY_NEW_CHECK_YearMonthDay = 20;
@@ -374,6 +379,10 @@ public class Constant {
 	 */
 	public static final int LENGTH_INPUT_BY_NEW_CHECK_BeiZhuShuoMing = 20;	
 	/**
+	 * 信息输入画面 文本框输入值 最大长度验证 军品
+	 */
+	public static final int LENGTH_INPUT_BY_NEW_CHECK_JunPin = 20;	
+	/**
 	 * 信息输入画面 画面项目 年月日
 	 */
 	public static final String ITEM_YearMonthDay = "年月日";
@@ -557,4 +566,8 @@ public class Constant {
 	 * 信息输入画面 画面项目 备注说明
 	 */
 	public static final String ITEM_BeiZhuShuoMing = "备注说明";
+	/**
+	 * 信息输入画面 画面项目 军品
+	 */
+	public static final String ITEM_JunPin = "军品";
 }
