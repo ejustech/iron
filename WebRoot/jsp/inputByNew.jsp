@@ -27,8 +27,7 @@ body {
 <body>
 <html:form action="/inputByNew" >
   <div align="center">
-    <p><img src="../image/1.jpg" width="1090" height="112" /></p>
-    <p class="STYLE1">金达钛业生产数据统计系统</p>
+    <p><img src="../iron/image/1.jpg"/></p>
   </div>
 <hr width="1200" />
 

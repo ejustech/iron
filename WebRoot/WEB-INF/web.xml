@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-  <display-name>iron</display-name>
+  <display-name>jinda</display-name>
   <servlet>
     <servlet-name>action</servlet-name>
     <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
@@ -22,15 +22,12 @@
     <servlet-name>action</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping>
-
-  <servlet>  
-   <servlet-name>outPutExcel</servlet-name>  
-   <servlet-class>output.OutputExcel</servlet-class>  
-</servlet>  
-<servlet-mapping>  
-   <servlet-name>outPutExcel</servlet-name>  
-   <url-pattern>/excel</url-pattern>  
-</servlet-mapping>  
-
-
+  <servlet>
+    <servlet-name>outPutExcel</servlet-name>
+    <servlet-class>output.OutputExcel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>outPutExcel</servlet-name>
+    <url-pattern>/excel</url-pattern>
+  </servlet-mapping>
 </web-app>

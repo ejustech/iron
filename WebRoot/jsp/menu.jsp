@@ -26,7 +26,7 @@
 	<body>
 		<html:form action="/menu">
 			<div align="center">
-			    <p><img src="../iron/image/1.jpg"/></p>
+			    <p><img src="/image/1.jpg"/></p>
 			    
 			  </div>
 			<table width="1024" align="center">
