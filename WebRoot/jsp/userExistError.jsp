@@ -23,7 +23,7 @@ body {
 <body>
 <html:form action="/login" >
   <div align="center">
-    <p><img src="../iron/image/1.jpg"/></p>
+    <p><img src="../jinda/image/1.jpg"/></p>
   </div>
 <hr width="1200" />
 <table height="375" align="center" border="0">

@@ -36,7 +36,7 @@
 	<body>
 		<html:form action="/search">
 		<div align="center">
-			<p><img src="../iron/image/1.jpg"/></p>
+			<p><img src="../jinda/image/1.jpg"/></p>
 		</div>
 		<!--
 		<table align="left">

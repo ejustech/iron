@@ -13,13 +13,12 @@
 body {
     background-color: #C9D3DA;
 }
-.STYLE1 {
-    font-size: 16px;
-    font-weight: bold;
-}
-.STYLE4 {font-size: 12px}
-.STYLE6 {font-size: 12px; font-weight: bold; }
 .STYLE9 {font-size: 12px}
+.STYLE13 {font-family: "宋体"; font-size: 12px; font-weight: bold; }
+.STYLE14 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
 -->
 </style>
 </head>
@@ -27,7 +26,7 @@ body {
 <body>
 <html:form action="/inputByNew" >
   <div align="center">
-    <p><img src="../iron/image/1.jpg"/></p>
+    <p><img src="../jinda/image/1.jpg"/></p>
   </div>
 <hr width="1200" />
 
@@ -36,58 +35,62 @@ body {
 	<tr><html:errors property="errors"></html:errors></tr>
 	<tr><html:errors property="error01"></html:errors></tr>
   	<tr bgcolor="#006699">
-    <td align="center" width="21" bordercolor="#666666">No.</td>
-    <td align="center">年月日</td>
-    <td align="center">期号</td>
-    <td align="center">炉次</td>
-    <td align="center">军品</td>
-    <td align="center">规格</td>
-    <td align="center">生产炉号</td>
-    <td align="center">反应器号</td>
-    <td align="center">使用次数</td>
-    <td align="center">Mg（t）</td>
-    <td align="center">TiCl4</td>
-    <td align="center">毛重</td>
-    <td align="center">净重</td>
-    <td align="center">成品率</td>
-    <td align="center">Fe</td>
-    <td align="center">Si</td>
-    <td align="center">Cl</td>
-    <td align="center">C</td>
-    <td align="center">N</td>
-    <td align="center">O</td>
-    <td align="center">H</td>
-    <td align="center">Mn</td>
-    <td align="center">HB</td>
-    <td align="center">等级(含锰)</td>
-    <td align="center">考核等级(除锰)</td>
-    <td align="center">工艺调整</td>
-    <td align="center">工艺试验</td>
-    <td align="center">底皮Kg</td>
-    <td align="center">上帽Kg</td>
-    <td align="center">爬壁Kg</td>
-    <td align="center">废底皮Kg</td>
-    <td align="center">废上帽Kg</td>
-    <td align="center">废爬壁Kg</td>
-    <td align="center">废钛粉Kg</td>
-    <td align="center">磁选Kg</td>
-    <td align="center">手选废料Kg</td>
-    <td align="center">损耗Kg</td>
-    <td align="center">总排镁量Kg</td>
-    <td align="center">出炉真空度Pa</td>
-    <td align="center">还原最高温度℃</td>
-    <td align="center">蒸馏高恒A点最高℃</td>
-    <td align="center">转蒸馏</td>
-    <td align="center">加首次</td>
-    <td align="center">加末次</td>
-    <td align="center">通道</td>
-    <td align="center">生产故障</td>
-    <td align="center">备注说明</td>
+    <td width="21" align="center" bordercolor="#666666" bgcolor="#99CC99"><span class="STYLE13">No.</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">年月日</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">期号</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">炉次</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">军品</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">规格</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">生产炉号</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">反应器号</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">使用次数</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">Mg（t）</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">TiCl4</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">毛重</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">净重</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">成品率</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">Fe</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">Si</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">Cl</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">C</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">N</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">O</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">H</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">Mn</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">HB</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">等级(含锰)</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">考核等级(除锰)</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">工艺调整</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">工艺试验</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">底皮Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">上帽Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">爬壁Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">废底皮Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">废上帽Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">废爬壁Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">废钛粉Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">磁选Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">手选废料Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">损耗Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">总排镁量Kg</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">出炉真空度Pa</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">还原最高温度℃</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">蒸馏高恒A点最高℃</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">转蒸馏</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">加首次</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">加末次</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">通道</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">生产故障</span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">备注说明</span></td>
   </tr>
   <logic:iterate id="inputByNewList" name="inputByNewForm" property="inputByNewList" indexId="index">
   	<tr>
-  		<td bordercolor="#666666" align="center"><%if (0 == index%3) {%><%=index/3+1%><%}%></td>
-		<td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text> <%} else {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" disabled="true"></html:text> <%}%> </td>
+  		<td bordercolor="#666666" align="center"><span class="STYLE14">
+  		  <%if (0 == index%3) {%>
+  		  <%=index/3+1%>
+  		  <%}%>
+		  </span></td>
+  		<td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text> <%} else {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" disabled="true"></html:text> <%}%> </td>
 		<td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true"></html:text> <%} else {%> <html:text name="inputByNewList" property="qiHao" indexed="true" disabled="true"></html:text> <%}%> </td>
 		<td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true"></html:text> <%} else {%> <html:text name="inputByNewList" property="luCi" indexed="true" disabled="true"></html:text> <%}%> </td>
         <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true"></html:text></td>
@@ -141,9 +144,9 @@ body {
 <table align="center">
     <tr>
         <td>
-            <html:submit property="Save">保 存</html:submit>
-            <html:submit property="Reset">重 置</html:submit>
-            <html:submit property="Return">返 回</html:submit>
+            <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
+            <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
+            <html:submit property="Return">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
         </td>
     <tr>
 </table>

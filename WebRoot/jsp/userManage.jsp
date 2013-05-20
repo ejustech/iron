@@ -6,7 +6,7 @@
 <html> 
 	<head>
 		<title>用户管理</title>
-		<link href="../iron/css/style.css" rel="stylesheet" type="text/css">
+		<link href="../jinda/css/style.css" rel="stylesheet" type="text/css">
 	    <style type="text/css">
 <!--
 .STYLE1 {
@@ -21,7 +21,7 @@
 	<body>
 		<html:form action="/userManage">
 		<div align="center">
-			<p><img src="../iron/image/1.jpg"/></p>
+			<p><img src="../jinda/image/1.jpg"/></p>
 		</div>
 	
 		<table width="1024" align="center">
