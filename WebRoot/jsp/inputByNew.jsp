@@ -31,7 +31,7 @@ body {
 <hr width="1200" />
 
 
-<table width="3000" border=1 align="center" bordercolor="#999999" >
+<table width="3000" align="center" border=1 style="BORDER-COLLAPSE: collapse">
 	<tr><html:errors property="errors"></html:errors></tr>
 	<tr><html:errors property="error01"></html:errors></tr>
   	<tr bgcolor="#006699">
