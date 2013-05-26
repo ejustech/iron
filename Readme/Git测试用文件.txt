@@ -13,4 +13,5 @@
 			password pwd   				#git密码
 
 3.公司电脑保存git密码测试
+文件消失?
 4.zth Branch
