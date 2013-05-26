@@ -6,6 +6,7 @@ package com.ejustech.iron.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -30,6 +31,8 @@ public class InputByNewAction extends EventDispatchAction {
 		try {
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
 			InputByNewBusiness business = new InputByNewBusiness();
+			
+			inputByNewForm.setSave(true);
 			business.Save(inputByNewForm);
 			
 			return mapping.findForward("OK");
@@ -37,4 +40,19 @@ public class InputByNewAction extends EventDispatchAction {
 		}
 		return null;
 	}
+	
+	// 处理保存的动作
+	public ActionForward Commit(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		try {
+			InputByNewForm inputByNewForm = (InputByNewForm) form;
+			InputByNewBusiness business = new InputByNewBusiness();
+			inputByNewForm.setSave(false);
+			business.Commit(inputByNewForm);
+			
+			return mapping.findForward("OK");
+		} catch (Exception e) {
+		}
+		return null;
+	}	
 }

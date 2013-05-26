@@ -193,6 +193,191 @@ public class Constant {
 	 * 信息输入画面 登陆用SQL文 参数顺序 军品
 	 */
 	public static final int T_IRON_INFO_COL_JunPin = 47;
+
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 年月日
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YearMonthDay = 1;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 期号
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_QiHao = 2;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 军品
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_JunPinFlg = 3;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 生产炉号
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ShengChanLuHao = 4;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 反应器号
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_FanYingQiHao = 5;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 使用次数
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ShiYongCiShu = 6;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 Mg（t）
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_Mg = 7;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 TiCl4
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_TiCl4 = 8;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 毛重
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_MaoZhong = 9;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 净重
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_JingZhong = 10;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 成品率
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ChengPinLv = 11;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 Fe
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuFe = 12;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 Si
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuSi = 13;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 Cl
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuCl = 14;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 C
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuC = 15;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 N
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuN = 16;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 O
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuO = 17;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 H
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuH = 18;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 Mn
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuMn = 19;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 HB
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanSuHb = 20;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 等级(含锰)
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_DengJiHanMeng = 21;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 考核等级(除锰)
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_KaoHeDengJiChuMeng = 22;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 工艺调整
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_GongYiTiaoZheng = 23;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 工艺试验
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_GongYiShiYan = 24;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 底皮Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_DiPiKg = 25;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 上帽Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ShangMaoKg = 26;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 爬壁Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_PaBiKg = 27;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 废底皮Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_FeiDiPiKg = 28;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 废上帽Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_FeiShangMaoKg = 29;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 废爬壁Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_FeiPaBiKg = 30;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 废钛粉Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_FeiTaiFenKg = 31;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 磁选Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_CiYuanKg = 32;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 手选废料Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ShouXuanFeiLiaoKg = 33;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 损耗Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_SunHaoKg = 34;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 总排镁量Kg
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ZongPaiMeiLiangKg = 35;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 出炉真空度Pa
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ChuLuZhenKongDu = 36;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 还原最高温度℃
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_YuanZuiGaoWenDu = 37;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 蒸馏高恒A点最高℃
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ZhengLiuGaoHengDian = 38;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 转蒸馏
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ZhuanZhengLiu = 39;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 加首次
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_JiaShouCi = 40;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 加末次
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_JiaMoCi = 41;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 通道
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_TongDao = 42;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 生产故障
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_ShengChanGuZhang = 43;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 备注说明
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_BeiZhuShuoMing = 44;
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 炉次
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_LuCi = 45;	
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 规格
+	 */
+	public static final int T_IRON_INFO_COL_UPDATE_GuiGe = 46;	
 	
 	/**
 	 * 信息输入画面 文本框输入值 最大长度验证 年月日

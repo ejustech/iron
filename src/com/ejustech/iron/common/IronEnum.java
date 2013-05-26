@@ -15,7 +15,7 @@ public class IronEnum {
 	public enum ErrorType {
 		EMPTY, LENGTH, NUMBER_FORMAT, DATE_FORMAT, OTHER
 	}
-	public enum ValidateStatusInputByNew {
+	public enum ValidateStatusInput {
 		OK,
 		EMPTY_YearMonthDay,
 		EMPTY_QiHao,

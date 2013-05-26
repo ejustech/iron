@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
@@ -19,11 +20,41 @@ import com.ejustech.iron.common.AutoArrayList;
 import com.ejustech.iron.common.StringHelper;
 import com.ejustech.iron.common.IronEnum.ErrorType;
 import com.ejustech.iron.common.IronEnum.UserRole;
-import com.ejustech.iron.common.IronEnum.ValidateStatusInputByNew;
+import com.ejustech.iron.common.IronEnum.ValidateStatusInput;
 import com.ejustech.iron.databean.form.InputByNewFormBean;
 
 public class InputByNewForm extends ActionForm {
 	private List inputByNewList = new AutoArrayList(InputByNewFormBean.class);
+	private boolean isSave = true;
+	private String role = "";
+	
+	/**
+	 * @return the isSave
+	 */
+	public boolean isSave() {
+		return isSave;
+	}
+
+	/**
+	 * @return the role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	/**
+	 * @param isSave the isSave to set
+	 */
+	public void setSave(boolean isSave) {
+		this.isSave = isSave;
+	}
 
 	public List getInputByNewList() {
 		return inputByNewList;
@@ -36,32 +67,31 @@ public class InputByNewForm extends ActionForm {
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
 		InputByNewBusiness business = new InputByNewBusiness();
 		InputByNewFormBean checkBean = new InputByNewFormBean();
-		ArrayList<ValidateStatusInputByNew> checkResultList = new ArrayList<ValidateStatusInputByNew>();
+		ArrayList<ValidateStatusInput> checkResultList = new ArrayList<ValidateStatusInput>();
 
 		ActionErrors error = new ActionErrors();
-//		 error.add("errors", new ActionMessage("jsp.inputByNew.test.error"));
-		// error.add("errors", new
-		// ActionMessage("jsp.inputByNew.Empty.YearMonthDay"));
-		// error.add("errors", new ActionMessage("jsp.inputByNew.Empty.QiHao"));
-		// error.add("errors", new ActionMessage("jsp.inputByNew.Empty.LuCi"));
-		// error.add("errors", new ActionMessage("jsp.inputByNew.Empty.GuiGe"));
-		// error.add("errors", new
-		// ActionMessage("jsp.inputByNew.Format.YearMonthDay"));
-		// error.add("error01", new
-		// ActionMessage("jsp.inputByNew.Length.QiHao"));
-		ValidateStatusInputByNew checkResult;
+
+		ValidateStatusInput checkResult;
 
 		for (int rowIndex = 0; rowIndex < inputByNewList.size(); rowIndex++) {
 			checkBean = (InputByNewFormBean) inputByNewList.get(rowIndex);
 			
 			if (StringHelper.isNullEmpty(checkBean.getLuCi()) && StringHelper.isNullEmpty(checkBean.getGuiGe())) continue;
 			
-			checkResultList.addAll(business.checkAll(checkBean, UserRole.R3));
-
+			HttpSession session = request.getSession();
+			
+			if (isSave) {
+				checkResultList.addAll(business.checkAllForSave(checkBean, UserRole.R3));
+			}
+			
+//			if (request.getAttribute("SaveOrCommit").equals("Commit")) {
+//				checkResultList.addAll(business.checkAllForCommit(checkBean, UserRole.R3));
+//			}			
+			
 			for (int i = 0; i < checkResultList.size(); i++) {
 				checkResult = checkResultList.get(i);
 
-				if (checkResult != ValidateStatusInputByNew.OK) {
+				if (checkResult != ValidateStatusInput.OK) {
 
 					ErrorType errorType = business.getErrorType(checkResult);
 

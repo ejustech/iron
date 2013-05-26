@@ -12,13 +12,16 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
+import com.ejustech.iron.business.InputByUpdateBusiness;
 import com.ejustech.iron.common.Constant;
 import com.ejustech.iron.dao.MUserDao;
 import com.ejustech.iron.databean.form.InputByNewFormBean;
+import com.ejustech.iron.databean.form.InputByUpdateFormBean;
 import com.ejustech.iron.databean.form.Result6FormBean;
 import com.ejustech.iron.databean.form.SearchFormBean;
 import com.ejustech.iron.databean.form.UserManageFormBean;
 import com.ejustech.iron.form.InputByNewForm;
+import com.ejustech.iron.form.InputByUpdateForm;
 import com.ejustech.iron.form.UserManageForm;
 
 public class MenuAction extends EventDispatchAction {
@@ -37,11 +40,26 @@ public class MenuAction extends EventDispatchAction {
 	}
 
 	// 处理信息输入动作
+	public ActionForward inputByUpdate(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			InputByUpdateForm inputByUpdateForm = new InputByUpdateForm();
+			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
+
+			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
+
+			return mapping.findForward("inputByUpdate");
+		} catch (Exception e) {
+		}
+		return null;
+	}
+
+	// 处理信息输入动作
 	public ActionForward inputByNew(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
 			InputByNewForm inputByNewForm = new InputByNewForm();
 			inputByNewForm.setInputByNewList(initInputByNewForm());
-
+			inputByNewForm.setRole("1");
+			
 			request.setAttribute("inputByNewForm", inputByNewForm);
 
 			return mapping.findForward("inputByNew");
@@ -49,7 +67,7 @@ public class MenuAction extends EventDispatchAction {
 		}
 		return null;
 	}
-
+	
 	// 处理用户管理动作
 	public ActionForward userManage(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
@@ -84,6 +102,13 @@ public class MenuAction extends EventDispatchAction {
 		return null;
 	}
 
+	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm() {
+		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
+		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
+		
+		return inputByUpdateBusiness.InitInputByUpdateForm();
+	}
+	
 	private ArrayList<InputByNewFormBean> initInputByNewForm() {
 		ArrayList<InputByNewFormBean> inputByNewList = new ArrayList<InputByNewFormBean>();
 

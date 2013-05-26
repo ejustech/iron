@@ -35,6 +35,7 @@
     <form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
     <form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
     <form-bean name="inputByNewForm" type="com.ejustech.iron.form.InputByNewForm" />
+    <form-bean name="inputByUpdateForm" type="com.ejustech.iron.form.InputByUpdateForm" />
   </form-beans>
   <global-exceptions />
   <global-forwards />
@@ -61,6 +62,7 @@
       cancellable="true">
       <forward name="search" path="/jsp/search.jsp" />
       <forward name="inputByNew" path="/jsp/inputByNew.jsp" />
+      <forward name="inputByUpdate" path="/jsp/inputByUpdate.jsp" />
       <forward name="userManage" path="/jsp/userManage.jsp" />
       <forward name="logout" path="/jsp/login.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
@@ -212,7 +214,7 @@
       attribute="inputByNewForm"
       input="/jsp/inputByNew.jsp"
       name="inputByNewForm"
-      parameter="Save,Reset,Return"
+      parameter="Save,Commit,Reset,Return"
       path="/inputByNew"
       scope="request"
       type="com.ejustech.iron.action.InputByNewAction"
@@ -220,6 +222,19 @@
       validate="true" >
       <forward name="OK" path="/jsp/inputByNew.jsp" />
       <forward name="NG" path="/jsp/inputByNew.jsp" />
+      </action>
+    <action
+      attribute="inputByUpdateForm"
+      input="/jsp/inputByUpdate.jsp"
+      name="inputByUpdateForm"
+      parameter="Save,Commit,Reset,Return"
+      path="/inputByUpdate"
+      scope="request"
+      type="com.ejustech.iron.action.InputByUpdateAction"
+      cancellable="true"
+      validate="true" >
+      <forward name="OK" path="/jsp/inputByUpdate.jsp" />
+      <forward name="NG" path="/jsp/inputByUpdate.jsp" />      
       </action>
   </action-mappings>
 

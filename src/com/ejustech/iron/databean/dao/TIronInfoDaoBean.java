@@ -1,5 +1,7 @@
 package com.ejustech.iron.databean.dao;
 
+import com.ejustech.iron.common.StringHelper;
+
 public class TIronInfoDaoBean {	
 	/** 备注说明 */
 	private String beiZhuShuoMing;
@@ -155,350 +157,350 @@ public class TIronInfoDaoBean {
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMing() {
-		return beiZhuShuoMing;
+		return StringHelper.null2Empty(beiZhuShuoMing);
 	}
 
 	/**
 	 * @return 成品率
 	 */
 	public String getChengPinLv() {
-		return chengPinLv;
+		return StringHelper.null2Empty(chengPinLv);
 	}
 
 	/**
 	 * @return the 出炉真空度Pa
 	 */
 	public String getChuLuZhenKongDu() {
-		return chuLuZhenKongDu;
+		return StringHelper.null2Empty(chuLuZhenKongDu);
 	}
 
 	/**
 	 * @return 磁选Kg
 	 */
 	public String getCiYuanKg() {
-		return ciYuanKg;
+		return StringHelper.null2Empty(ciYuanKg);
 	}
 
 	/**
 	 * @return 日
 	 */
 	public String getDay() {
-		return day;
+		return StringHelper.null2Empty(day);
 	}
 
 	/**
 	 * @return 等级(含锰)
 	 */
 	public String getDengJiHanMeng() {
-		return dengJiHanMeng;
+		return StringHelper.null2Empty(dengJiHanMeng);
 	}
 
 	/**
 	 * @return 底皮Kg
 	 */
 	public String getDiPiKg() {
-		return diPiKg;
+		return StringHelper.null2Empty(diPiKg);
 	}
 
 	/**
 	 * @return 反应器号
 	 */
 	public String getFanYingQiHao() {
-		return fanYingQiHao;
+		return StringHelper.null2Empty(fanYingQiHao);
 	}
 
 	/**
 	 * @return 废底皮Kg
 	 */
 	public String getFeiDiPiKg() {
-		return feiDiPiKg;
+		return StringHelper.null2Empty(feiDiPiKg);
 	}
 
 	/**
 	 * @return 废爬壁Kg
 	 */
 	public String getFeiPaBiKg() {
-		return feiPaBiKg;
+		return StringHelper.null2Empty(feiPaBiKg);
 	}
 
 	/**
 	 * @return 废上帽Kg
 	 */
 	public String getFeiShangMaoKg() {
-		return feiShangMaoKg;
+		return StringHelper.null2Empty(feiShangMaoKg);
 	}
 
 	/**
 	 * @return 废钛粉Kg
 	 */
 	public String getFeiTaiFenKg() {
-		return feiTaiFenKg;
+		return StringHelper.null2Empty(feiTaiFenKg);
 	}
 
 	/**
 	 * @return 工艺试验
 	 */
 	public String getGongYiShiYan() {
-		return gongYiShiYan;
+		return StringHelper.null2Empty(gongYiShiYan);
 	}
 
 	/**
 	 * @return 工艺调整
 	 */
 	public String getGongYiTiaoZheng() {
-		return gongYiTiaoZheng;
+		return StringHelper.null2Empty(gongYiTiaoZheng);
 	}
 
 	/**
 	 * @return 规格
 	 */
 	public String getGuiGe() {
-		return guiGe;
+		return StringHelper.null2Empty(guiGe);
 	}
 
 	/**
 	 * @return 加末次
 	 */
 	public String getJiaMoCi() {
-		return jiaMoCi;
+		return StringHelper.null2Empty(jiaMoCi);
 	}
 
 	/**
 	 * @return 加首次
 	 */
 	public String getJiaShouCi() {
-		return jiaShouCi;
+		return StringHelper.null2Empty(jiaShouCi);
 	}
 
 	/**
 	 * @return 净重
 	 */
 	public String getJingZhong() {
-		return jingZhong;
+		return StringHelper.null2Empty(jingZhong);
 	}
 
 	/**
 	 * @return the junPin
 	 */
 	public String getJunPin() {
-		return junPin;
+		return StringHelper.null2Empty(junPin);
 	}
 
 	/**
 	 * @return 军品标记
 	 */
 	public String getJunPinFlg() {
-		return junPinFlg;
+		return StringHelper.null2Empty(junPinFlg);
 	}
 
 	/**
 	 * @return 考核等级(除锰)
 	 */
 	public String getKaoHeDengJiChuMeng() {
-		return kaoHeDengJiChuMeng;
+		return StringHelper.null2Empty(kaoHeDengJiChuMeng);
 	}
 
 	/**
 	 * @return 炉次
 	 */
 	public String getLuCi() {
-		return luCi;
+		return StringHelper.null2Empty(luCi);
 	}
 
 	/**
 	 * @return 毛重
 	 */
 	public String getMaoZhong() {
-		return maoZhong;
+		return StringHelper.null2Empty(maoZhong);
 	}
 
 	/**
 	 * @return Mg（t）
 	 */
 	public String getMg() {
-		return mg;
+		return StringHelper.null2Empty(mg);
 	}
 
 	/**
 	 * @return 月
 	 */
 	public String getMonth() {
-		return month;
+		return StringHelper.null2Empty(month);
 	}
 
 	/**
 	 * @return 爬壁Kg
 	 */
 	public String getPaBiKg() {
-		return paBiKg;
+		return StringHelper.null2Empty(paBiKg);
 	}
 
 	/**
 	 * @return 期号
 	 */
 	public String getQiHao() {
-		return qiHao;
+		return StringHelper.null2Empty(qiHao);
 	}
 
 	/**
 	 * @return 上帽Kg
 	 */
 	public String getShangMaoKg() {
-		return shangMaoKg;
+		return StringHelper.null2Empty(shangMaoKg);
 	}
 
 	/**
 	 * @return 生产故障
 	 */
 	public String getShengChanGuZhang() {
-		return shengChanGuZhang;
+		return StringHelper.null2Empty(shengChanGuZhang);
 	}
 
 	/**
 	 * @return 生产炉号
 	 */
 	public String getShengChanLuHao() {
-		return shengChanLuHao;
+		return StringHelper.null2Empty(shengChanLuHao);
 	}
 
 	/**
 	 * @return 使用次数
 	 */
 	public String getShiYongCiShu() {
-		return shiYongCiShu;
+		return StringHelper.null2Empty(shiYongCiShu);
 	}
 
 	/**
 	 * @return 手选废料Kg
 	 */
 	public String getShouXuanFeiLiaoKg() {
-		return shouXuanFeiLiaoKg;
+		return StringHelper.null2Empty(shouXuanFeiLiaoKg);
 	}
 
 	/**
 	 * @return 损耗Kg
 	 */
 	public String getSunHaoKg() {
-		return sunHaoKg;
+		return StringHelper.null2Empty(sunHaoKg);
 	}
 
 	/**
 	 * @return TiCl4
 	 */
 	public String getTiCl4() {
-		return tiCl4;
+		return StringHelper.null2Empty(tiCl4);
 	}
 
 	/**
 	 * @return 通道
 	 */
 	public String getTongDao() {
-		return tongDao;
+		return StringHelper.null2Empty(tongDao);
 	}
 
 	/**
 	 * @return 年
 	 */
 	public String getYear() {
-		return year;
+		return StringHelper.null2Empty(year);
 	}
 
 	/**
 	 * @return 年月日
 	 */
 	public String getYearMonthDay() {
-		return yearMonthDay;
+		return StringHelper.null2Empty(yearMonthDay);
 	}
 
 	/**
 	 * @return 元素C
 	 */
 	public String getYuanSuC() {
-		return yuanSuC;
+		return StringHelper.null2Empty(yuanSuC);
 	}
 
 	/**
 	 * @return 元素Cl
 	 */
 	public String getYuanSuCl() {
-		return yuanSuCl;
+		return StringHelper.null2Empty(yuanSuCl);
 	}
 
 	/**
 	 * @return 元素Fe
 	 */
 	public String getYuanSuFe() {
-		return yuanSuFe;
+		return StringHelper.null2Empty(yuanSuFe);
 	}
 
 	/**
 	 * @return 元素H
 	 */
 	public String getYuanSuH() {
-		return yuanSuH;
+		return StringHelper.null2Empty(yuanSuH);
 	}
 
 	/**
 	 * @return 元素HB
 	 */
 	public String getYuanSuHb() {
-		return yuanSuHb;
+		return StringHelper.null2Empty(yuanSuHb);
 	}
 
 	/**
 	 * @return 元素Mn
 	 */
 	public String getYuanSuMn() {
-		return yuanSuMn;
+		return StringHelper.null2Empty(yuanSuMn);
 	}
 
 	/**
 	 * @return 元素N
 	 */
 	public String getYuanSuN() {
-		return yuanSuN;
+		return StringHelper.null2Empty(yuanSuN);
 	}
 
 	/**
 	 * @return 元素O
 	 */
 	public String getYuanSuO() {
-		return yuanSuO;
+		return StringHelper.null2Empty(yuanSuO);
 	}
 
 	/**
 	 * @return 元素Si
 	 */
 	public String getYuanSuSi() {
-		return yuanSuSi;
+		return StringHelper.null2Empty(yuanSuSi);
 	}
 
 	/**
 	 * @return 还原最高温度℃
 	 */
 	public String getYuanZuiGaoWenDu() {
-		return yuanZuiGaoWenDu;
+		return StringHelper.null2Empty(yuanZuiGaoWenDu);
 	}
 
 	/**
 	 * @return 蒸馏高恒A点最高℃
 	 */
 	public String getZhengLiuGaoHengDian() {
-		return zhengLiuGaoHengDian;
+		return StringHelper.null2Empty(zhengLiuGaoHengDian);
 	}
 
 	/**
 	 * @return 转蒸馏
 	 */
 	public String getZhuanZhengLiu() {
-		return zhuanZhengLiu;
+		return StringHelper.null2Empty(zhuanZhengLiu);
 	}
 
 	/**
 	 * @return 总排镁量Kg
 	 */
 	public String getZongPaiMeiLiangKg() {
-		return zongPaiMeiLiangKg;
+		return StringHelper.null2Empty(zongPaiMeiLiangKg);
 	}
 
 	/**

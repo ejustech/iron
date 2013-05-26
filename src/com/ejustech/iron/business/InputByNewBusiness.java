@@ -8,7 +8,7 @@ import org.apache.struts.chain.commands.servlet.ValidateActionForm;
 import com.ejustech.iron.common.Constant;
 import com.ejustech.iron.common.IronEnum.ErrorType;
 import com.ejustech.iron.common.IronEnum.UserRole;
-import com.ejustech.iron.common.IronEnum.ValidateStatusInputByNew;
+import com.ejustech.iron.common.IronEnum.ValidateStatusInput;
 import com.ejustech.iron.common.StringHelper;
 import com.ejustech.iron.dao.TIronInfoDao;
 import com.ejustech.iron.databean.dao.TIronInfoDaoBean;
@@ -16,43 +16,73 @@ import com.ejustech.iron.databean.form.InputByNewFormBean;
 import com.ejustech.iron.form.InputByNewForm;
 
 public class InputByNewBusiness {
-	public ValidateStatusInputByNew check(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-		ValidateStatusInputByNew checkResult = ValidateStatusInputByNew.OK;
+	public ValidateStatusInput check(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+		ValidateStatusInput checkResult = ValidateStatusInput.OK;
 
 		// 空值的验证
 		checkResult = checkEmptyByRole(inputByNewFormBean, userRole);
-		if (checkResult != ValidateStatusInputByNew.OK) {
+		if (checkResult != ValidateStatusInput.OK) {
 			return checkResult;
 		}
 
 		// 长度的验证
 		checkResult = checkLength(inputByNewFormBean);
-		if (checkResult != ValidateStatusInputByNew.OK) {
+		if (checkResult != ValidateStatusInput.OK) {
 			return checkResult;
 		}
 
 		// 数字格式的验证
 		checkResult = checkNumberFormat(inputByNewFormBean);
-		if (checkResult != ValidateStatusInputByNew.OK) {
+		if (checkResult != ValidateStatusInput.OK) {
 			return checkResult;
 		}
 
 		// 日期格式的验证
 		checkResult = checkDateFormat(inputByNewFormBean);
-		if (checkResult != ValidateStatusInputByNew.OK) {
+		if (checkResult != ValidateStatusInput.OK) {
 			return checkResult;
 		}
 
-		return ValidateStatusInputByNew.OK;
+		return ValidateStatusInput.OK;
 	}
 
-	public ArrayList<ValidateStatusInputByNew> checkAll(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
+	public ArrayList<ValidateStatusInput> checkAllForSave(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
-		ArrayList<ValidateStatusInputByNew> checkEmptyByRole = checkEmptyByRoleAll(inputByNewFormBean, userRole);
-		ArrayList<ValidateStatusInputByNew> checkLength = checkLengthAll(inputByNewFormBean);
-		ArrayList<ValidateStatusInputByNew> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
-		ArrayList<ValidateStatusInputByNew> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
+		ArrayList<ValidateStatusInput> checkEmptyByRole = checkEmptyByRoleAllForSave(inputByNewFormBean, userRole);
+		ArrayList<ValidateStatusInput> checkLength = checkLengthAll(inputByNewFormBean);
+		ArrayList<ValidateStatusInput> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
+		ArrayList<ValidateStatusInput> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
+
+		// 输入项目空值的验证
+		if (checkEmptyByRole.size() != 0) {
+			checkResult.addAll(checkEmptyByRole);
+		}
+
+		// 输入项目长度的验证
+		if (checkLength.size() != 0) {
+			checkResult.addAll(checkLength);
+		}
+
+		// 输入项目数字格式的验证
+		if (checkNumberFormat.size() != 0) {
+			checkResult.addAll(checkNumberFormat);
+		}
+
+		// 输入项目日期格式的验证
+		if (checkDateFormat.size() != 0) {
+			checkResult.addAll(checkDateFormat);
+		}
+		return checkResult;
+	}
+	
+	public ArrayList<ValidateStatusInput> checkAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
+
+		ArrayList<ValidateStatusInput> checkEmptyByRole = checkEmptyByRoleAllForCommit(inputByNewFormBean, userRole);
+		ArrayList<ValidateStatusInput> checkLength = checkLengthAll(inputByNewFormBean);
+		ArrayList<ValidateStatusInput> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
+		ArrayList<ValidateStatusInput> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
 
 		// 输入项目空值的验证
 		if (checkEmptyByRole.size() != 0) {
@@ -76,24 +106,24 @@ public class InputByNewBusiness {
 		return checkResult;
 	}
 
-	private ValidateStatusInputByNew checkDateFormat(InputByNewFormBean inputByNewFormBean) {
+	private ValidateStatusInput checkDateFormat(InputByNewFormBean inputByNewFormBean) {
 		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
-			return ValidateStatusInputByNew.DATE_FORMAT_YearMonthDay;
+			return ValidateStatusInput.DATE_FORMAT_YearMonthDay;
 		}
-		return ValidateStatusInputByNew.OK;
+		return ValidateStatusInput.OK;
 	}
 
-	private ArrayList<ValidateStatusInputByNew> checkDateFormatAll(InputByNewFormBean inputByNewFormBean) {
-		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
+	private ArrayList<ValidateStatusInput> checkDateFormatAll(InputByNewFormBean inputByNewFormBean) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
 		if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && !StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
-			checkResult.add(ValidateStatusInputByNew.DATE_FORMAT_YearMonthDay);
+			checkResult.add(ValidateStatusInput.DATE_FORMAT_YearMonthDay);
 		}
 
 		return checkResult;
 	}
 
-	private ValidateStatusInputByNew checkEmptyByRole(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+	private ValidateStatusInput checkEmptyByRole(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
 		switch (userRole) {
 		case R0:
 
@@ -106,149 +136,149 @@ public class InputByNewBusiness {
 			break;
 		case R3:
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
-				return ValidateStatusInputByNew.EMPTY_YearMonthDay;
+				return ValidateStatusInput.EMPTY_YearMonthDay;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
-				return ValidateStatusInputByNew.EMPTY_QiHao;
+				return ValidateStatusInput.EMPTY_QiHao;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
-				return ValidateStatusInputByNew.EMPTY_LuCi;
+				return ValidateStatusInput.EMPTY_LuCi;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
-				return ValidateStatusInputByNew.EMPTY_GuiGe;
+				return ValidateStatusInput.EMPTY_GuiGe;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
-				return ValidateStatusInputByNew.EMPTY_ShengChanLuHao;
+				return ValidateStatusInput.EMPTY_ShengChanLuHao;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
-				return ValidateStatusInputByNew.EMPTY_FanYingQiHao;
+				return ValidateStatusInput.EMPTY_FanYingQiHao;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
-				return ValidateStatusInputByNew.EMPTY_ShiYongCiShu;
+				return ValidateStatusInput.EMPTY_ShiYongCiShu;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
-				return ValidateStatusInputByNew.EMPTY_Mg;
+				return ValidateStatusInput.EMPTY_Mg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
-				return ValidateStatusInputByNew.EMPTY_TiCl4;
+				return ValidateStatusInput.EMPTY_TiCl4;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
-				return ValidateStatusInputByNew.EMPTY_MaoZhong;
+				return ValidateStatusInput.EMPTY_MaoZhong;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
-				return ValidateStatusInputByNew.EMPTY_JingZhong;
+				return ValidateStatusInput.EMPTY_JingZhong;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
-				return ValidateStatusInputByNew.EMPTY_ChengPinLv;
+				return ValidateStatusInput.EMPTY_ChengPinLv;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuFe;
+				return ValidateStatusInput.EMPTY_YuanSuFe;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuSi;
+				return ValidateStatusInput.EMPTY_YuanSuSi;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuCl;
+				return ValidateStatusInput.EMPTY_YuanSuCl;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuC;
+				return ValidateStatusInput.EMPTY_YuanSuC;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuN;
+				return ValidateStatusInput.EMPTY_YuanSuN;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuO;
+				return ValidateStatusInput.EMPTY_YuanSuO;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuH;
+				return ValidateStatusInput.EMPTY_YuanSuH;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuMn;
+				return ValidateStatusInput.EMPTY_YuanSuMn;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
-				return ValidateStatusInputByNew.EMPTY_YuanSuHb;
+				return ValidateStatusInput.EMPTY_YuanSuHb;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
-				return ValidateStatusInputByNew.EMPTY_DengJiHanMeng;
+				return ValidateStatusInput.EMPTY_DengJiHanMeng;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-				return ValidateStatusInputByNew.EMPTY_KaoHeDengJiChuMeng;
+				return ValidateStatusInput.EMPTY_KaoHeDengJiChuMeng;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
-				return ValidateStatusInputByNew.EMPTY_GongYiTiaoZheng;
+				return ValidateStatusInput.EMPTY_GongYiTiaoZheng;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
-				return ValidateStatusInputByNew.EMPTY_GongYiShiYan;
+				return ValidateStatusInput.EMPTY_GongYiShiYan;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
-				return ValidateStatusInputByNew.EMPTY_DiPiKg;
+				return ValidateStatusInput.EMPTY_DiPiKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
-				return ValidateStatusInputByNew.EMPTY_ShangMaoKg;
+				return ValidateStatusInput.EMPTY_ShangMaoKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
-				return ValidateStatusInputByNew.EMPTY_PaBiKg;
+				return ValidateStatusInput.EMPTY_PaBiKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
-				return ValidateStatusInputByNew.EMPTY_FeiDiPiKg;
+				return ValidateStatusInput.EMPTY_FeiDiPiKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
-				return ValidateStatusInputByNew.EMPTY_FeiShangMaoKg;
+				return ValidateStatusInput.EMPTY_FeiShangMaoKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
-				return ValidateStatusInputByNew.EMPTY_FeiPaBiKg;
+				return ValidateStatusInput.EMPTY_FeiPaBiKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
-				return ValidateStatusInputByNew.EMPTY_FeiTaiFenKg;
+				return ValidateStatusInput.EMPTY_FeiTaiFenKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
-				return ValidateStatusInputByNew.EMPTY_CiYuanKg;
+				return ValidateStatusInput.EMPTY_CiYuanKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-				return ValidateStatusInputByNew.EMPTY_ShouXuanFeiLiaoKg;
+				return ValidateStatusInput.EMPTY_ShouXuanFeiLiaoKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
-				return ValidateStatusInputByNew.EMPTY_SunHaoKg;
+				return ValidateStatusInput.EMPTY_SunHaoKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-				return ValidateStatusInputByNew.EMPTY_ZongPaiMeiLiangKg;
+				return ValidateStatusInput.EMPTY_ZongPaiMeiLiangKg;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
-				return ValidateStatusInputByNew.EMPTY_ChuLuZhenKongDu;
+				return ValidateStatusInput.EMPTY_ChuLuZhenKongDu;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-				return ValidateStatusInputByNew.EMPTY_YuanZuiGaoWenDu;
+				return ValidateStatusInput.EMPTY_YuanZuiGaoWenDu;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-				return ValidateStatusInputByNew.EMPTY_ZhengLiuGaoHengDian;
+				return ValidateStatusInput.EMPTY_ZhengLiuGaoHengDian;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
-				return ValidateStatusInputByNew.EMPTY_ZhuanZhengLiu;
+				return ValidateStatusInput.EMPTY_ZhuanZhengLiu;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
-				return ValidateStatusInputByNew.EMPTY_JiaShouCi;
+				return ValidateStatusInput.EMPTY_JiaShouCi;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
-				return ValidateStatusInputByNew.EMPTY_JiaMoCi;
+				return ValidateStatusInput.EMPTY_JiaMoCi;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
-				return ValidateStatusInputByNew.EMPTY_TongDao;
+				return ValidateStatusInput.EMPTY_TongDao;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
-				return ValidateStatusInputByNew.EMPTY_ShengChanGuZhang;
+				return ValidateStatusInput.EMPTY_ShengChanGuZhang;
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
-				return ValidateStatusInputByNew.EMPTY_BeiZhuShuoMing;
+				return ValidateStatusInput.EMPTY_BeiZhuShuoMing;
 			}
 			break;
 		default:
 			break;
 		}
-		return ValidateStatusInputByNew.OK;
+		return ValidateStatusInput.OK;
 	}
 
-	private ArrayList<ValidateStatusInputByNew> checkEmptyByRoleAll(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
+	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
 		switch (userRole) {
 		case R0:
@@ -262,139 +292,139 @@ public class InputByNewBusiness {
 			break;
 		case R3:
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YearMonthDay);
+				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_QiHao);
+				checkResult.add(ValidateStatusInput.EMPTY_QiHao);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_LuCi);
+				checkResult.add(ValidateStatusInput.EMPTY_LuCi);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_GuiGe);
+				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanLuHao);
+				checkResult.add(ValidateStatusInput.EMPTY_ShengChanLuHao);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_FanYingQiHao);
+				checkResult.add(ValidateStatusInput.EMPTY_FanYingQiHao);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ShiYongCiShu);
+				checkResult.add(ValidateStatusInput.EMPTY_ShiYongCiShu);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_Mg);
+				checkResult.add(ValidateStatusInput.EMPTY_Mg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_TiCl4);
+				checkResult.add(ValidateStatusInput.EMPTY_TiCl4);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_MaoZhong);
+				checkResult.add(ValidateStatusInput.EMPTY_MaoZhong);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_JingZhong);
+				checkResult.add(ValidateStatusInput.EMPTY_JingZhong);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ChengPinLv);
+				checkResult.add(ValidateStatusInput.EMPTY_ChengPinLv);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuFe);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuFe);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuSi);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuSi);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuCl);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuCl);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuC);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuC);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuN);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuN);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuO);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuO);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuH);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuH);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuMn);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuMn);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuHb);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanSuHb);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_DengJiHanMeng);
+				checkResult.add(ValidateStatusInput.EMPTY_DengJiHanMeng);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_KaoHeDengJiChuMeng);
+				checkResult.add(ValidateStatusInput.EMPTY_KaoHeDengJiChuMeng);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiTiaoZheng);
+				checkResult.add(ValidateStatusInput.EMPTY_GongYiTiaoZheng);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiShiYan);
+				checkResult.add(ValidateStatusInput.EMPTY_GongYiShiYan);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_DiPiKg);
+				checkResult.add(ValidateStatusInput.EMPTY_DiPiKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ShangMaoKg);
+				checkResult.add(ValidateStatusInput.EMPTY_ShangMaoKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_PaBiKg);
+				checkResult.add(ValidateStatusInput.EMPTY_PaBiKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiDiPiKg);
+				checkResult.add(ValidateStatusInput.EMPTY_FeiDiPiKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiShangMaoKg);
+				checkResult.add(ValidateStatusInput.EMPTY_FeiShangMaoKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiPaBiKg);
+				checkResult.add(ValidateStatusInput.EMPTY_FeiPaBiKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiTaiFenKg);
+				checkResult.add(ValidateStatusInput.EMPTY_FeiTaiFenKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_CiYuanKg);
+				checkResult.add(ValidateStatusInput.EMPTY_CiYuanKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ShouXuanFeiLiaoKg);
+				checkResult.add(ValidateStatusInput.EMPTY_ShouXuanFeiLiaoKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_SunHaoKg);
+				checkResult.add(ValidateStatusInput.EMPTY_SunHaoKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ZongPaiMeiLiangKg);
+				checkResult.add(ValidateStatusInput.EMPTY_ZongPaiMeiLiangKg);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ChuLuZhenKongDu);
+				checkResult.add(ValidateStatusInput.EMPTY_ChuLuZhenKongDu);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanZuiGaoWenDu);
+				checkResult.add(ValidateStatusInput.EMPTY_YuanZuiGaoWenDu);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhengLiuGaoHengDian);
+				checkResult.add(ValidateStatusInput.EMPTY_ZhengLiuGaoHengDian);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhuanZhengLiu);
+				checkResult.add(ValidateStatusInput.EMPTY_ZhuanZhengLiu);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaShouCi);
+				checkResult.add(ValidateStatusInput.EMPTY_JiaShouCi);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaMoCi);
+				checkResult.add(ValidateStatusInput.EMPTY_JiaMoCi);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_TongDao);
+				checkResult.add(ValidateStatusInput.EMPTY_TongDao);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanGuZhang);
+				checkResult.add(ValidateStatusInput.EMPTY_ShengChanGuZhang);
 			}
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
-				checkResult.add(ValidateStatusInputByNew.EMPTY_BeiZhuShuoMing);
+				checkResult.add(ValidateStatusInput.EMPTY_BeiZhuShuoMing);
 			}
 			break;
 		default:
@@ -403,565 +433,721 @@ public class InputByNewBusiness {
 		return checkResult;
 	}
 
-	private ValidateStatusInputByNew checkLength(InputByNewFormBean inputByNewFormBean) {
+	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForSave(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
+
+		switch (userRole) {
+		case R0:
+
+			break;
+		case R1:
+
+			break;
+		case R2:
+
+			break;
+		case R3:
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
+				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
+			}
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
+				checkResult.add(ValidateStatusInput.EMPTY_QiHao);
+			}
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
+				checkResult.add(ValidateStatusInput.EMPTY_LuCi);
+			}
+			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
+				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
+			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanLuHao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_FanYingQiHao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShiYongCiShu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_Mg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_TiCl4);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_MaoZhong);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_JingZhong);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ChengPinLv);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuFe);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuSi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuCl);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuC);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuN);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuO);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuH);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuMn);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuHb);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_DengJiHanMeng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_KaoHeDengJiChuMeng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiTiaoZheng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiShiYan);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_DiPiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShangMaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_PaBiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiDiPiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiShangMaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiPaBiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiTaiFenKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_CiYuanKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShouXuanFeiLiaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_SunHaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZongPaiMeiLiangKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ChuLuZhenKongDu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanZuiGaoWenDu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhengLiuGaoHengDian);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhuanZhengLiu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaShouCi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaMoCi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_TongDao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanGuZhang);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
+//				checkResult.add(ValidateStatusInputByNew.EMPTY_BeiZhuShuoMing);
+//			}
+			break;
+		default:
+			break;
+		}
+		return checkResult;
+	}
+	
+	private ValidateStatusInput checkLength(InputByNewFormBean inputByNewFormBean) {
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYearMonthDay(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YearMonthDay)) {
-			return ValidateStatusInputByNew.LENGTH_YearMonthDay;
+			return ValidateStatusInput.LENGTH_YearMonthDay;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getQiHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_QiHao)) {
-			return ValidateStatusInputByNew.LENGTH_QiHao;
+			return ValidateStatusInput.LENGTH_QiHao;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getLuCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_LuCi)) {
-			return ValidateStatusInputByNew.LENGTH_LuCi;
+			return ValidateStatusInput.LENGTH_LuCi;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGuiGe(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GuiGe)) {
-			return ValidateStatusInputByNew.LENGTH_GuiGe;
+			return ValidateStatusInput.LENGTH_GuiGe;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShengChanLuHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShengChanLuHao)) {
-			return ValidateStatusInputByNew.LENGTH_ShengChanLuHao;
+			return ValidateStatusInput.LENGTH_ShengChanLuHao;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFanYingQiHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FanYingQiHao)) {
-			return ValidateStatusInputByNew.LENGTH_FanYingQiHao;
+			return ValidateStatusInput.LENGTH_FanYingQiHao;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShiYongCiShu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShiYongCiShu)) {
-			return ValidateStatusInputByNew.LENGTH_ShiYongCiShu;
+			return ValidateStatusInput.LENGTH_ShiYongCiShu;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getMg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_Mg)) {
-			return ValidateStatusInputByNew.LENGTH_Mg;
+			return ValidateStatusInput.LENGTH_Mg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getTiCl4(), Constant.LENGTH_INPUT_BY_NEW_CHECK_TiCl4)) {
-			return ValidateStatusInputByNew.LENGTH_TiCl4;
+			return ValidateStatusInput.LENGTH_TiCl4;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getMaoZhong(), Constant.LENGTH_INPUT_BY_NEW_CHECK_MaoZhong)) {
-			return ValidateStatusInputByNew.LENGTH_MaoZhong;
+			return ValidateStatusInput.LENGTH_MaoZhong;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJingZhong(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JingZhong)) {
-			return ValidateStatusInputByNew.LENGTH_JingZhong;
+			return ValidateStatusInput.LENGTH_JingZhong;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getChengPinLv(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ChengPinLv)) {
-			return ValidateStatusInputByNew.LENGTH_ChengPinLv;
+			return ValidateStatusInput.LENGTH_ChengPinLv;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuFe(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuFe)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuFe;
+			return ValidateStatusInput.LENGTH_YuanSuFe;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuSi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuSi)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuSi;
+			return ValidateStatusInput.LENGTH_YuanSuSi;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuCl(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuCl)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuCl;
+			return ValidateStatusInput.LENGTH_YuanSuCl;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuC(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuC)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuC;
+			return ValidateStatusInput.LENGTH_YuanSuC;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuN(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuN)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuN;
+			return ValidateStatusInput.LENGTH_YuanSuN;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuO(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuO)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuO;
+			return ValidateStatusInput.LENGTH_YuanSuO;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuH(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuH)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuH;
+			return ValidateStatusInput.LENGTH_YuanSuH;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuMn(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuMn)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuMn;
+			return ValidateStatusInput.LENGTH_YuanSuMn;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuHb(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuHb)) {
-			return ValidateStatusInputByNew.LENGTH_YuanSuHb;
+			return ValidateStatusInput.LENGTH_YuanSuHb;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getDengJiHanMeng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_DengJiHanMeng)) {
-			return ValidateStatusInputByNew.LENGTH_DengJiHanMeng;
+			return ValidateStatusInput.LENGTH_DengJiHanMeng;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getKaoHeDengJiChuMeng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_KaoHeDengJiChuMeng)) {
-			return ValidateStatusInputByNew.LENGTH_KaoHeDengJiChuMeng;
+			return ValidateStatusInput.LENGTH_KaoHeDengJiChuMeng;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGongYiTiaoZheng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GongYiTiaoZheng)) {
-			return ValidateStatusInputByNew.LENGTH_GongYiTiaoZheng;
+			return ValidateStatusInput.LENGTH_GongYiTiaoZheng;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGongYiShiYan(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GongYiShiYan)) {
-			return ValidateStatusInputByNew.LENGTH_GongYiShiYan;
+			return ValidateStatusInput.LENGTH_GongYiShiYan;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getDiPiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_DiPiKg)) {
-			return ValidateStatusInputByNew.LENGTH_DiPiKg;
+			return ValidateStatusInput.LENGTH_DiPiKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShangMaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShangMaoKg)) {
-			return ValidateStatusInputByNew.LENGTH_ShangMaoKg;
+			return ValidateStatusInput.LENGTH_ShangMaoKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getPaBiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_PaBiKg)) {
-			return ValidateStatusInputByNew.LENGTH_PaBiKg;
+			return ValidateStatusInput.LENGTH_PaBiKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiDiPiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiDiPiKg)) {
-			return ValidateStatusInputByNew.LENGTH_FeiDiPiKg;
+			return ValidateStatusInput.LENGTH_FeiDiPiKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiShangMaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiShangMaoKg)) {
-			return ValidateStatusInputByNew.LENGTH_FeiShangMaoKg;
+			return ValidateStatusInput.LENGTH_FeiShangMaoKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiPaBiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiPaBiKg)) {
-			return ValidateStatusInputByNew.LENGTH_FeiPaBiKg;
+			return ValidateStatusInput.LENGTH_FeiPaBiKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiTaiFenKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiTaiFenKg)) {
-			return ValidateStatusInputByNew.LENGTH_FeiTaiFenKg;
+			return ValidateStatusInput.LENGTH_FeiTaiFenKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getCiYuanKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_CiYuanKg)) {
-			return ValidateStatusInputByNew.LENGTH_CiYuanKg;
+			return ValidateStatusInput.LENGTH_CiYuanKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShouXuanFeiLiaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShouXuanFeiLiaoKg)) {
-			return ValidateStatusInputByNew.LENGTH_ShouXuanFeiLiaoKg;
+			return ValidateStatusInput.LENGTH_ShouXuanFeiLiaoKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getSunHaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_SunHaoKg)) {
-			return ValidateStatusInputByNew.LENGTH_SunHaoKg;
+			return ValidateStatusInput.LENGTH_SunHaoKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZongPaiMeiLiangKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZongPaiMeiLiangKg)) {
-			return ValidateStatusInputByNew.LENGTH_ZongPaiMeiLiangKg;
+			return ValidateStatusInput.LENGTH_ZongPaiMeiLiangKg;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getChuLuZhenKongDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ChuLuZhenKongDu)) {
-			return ValidateStatusInputByNew.LENGTH_ChuLuZhenKongDu;
+			return ValidateStatusInput.LENGTH_ChuLuZhenKongDu;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanZuiGaoWenDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanZuiGaoWenDu)) {
-			return ValidateStatusInputByNew.LENGTH_YuanZuiGaoWenDu;
+			return ValidateStatusInput.LENGTH_YuanZuiGaoWenDu;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZhengLiuGaoHengDian(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
-			return ValidateStatusInputByNew.LENGTH_ZhengLiuGaoHengDian;
+			return ValidateStatusInput.LENGTH_ZhengLiuGaoHengDian;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZhuanZhengLiu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhuanZhengLiu)) {
-			return ValidateStatusInputByNew.LENGTH_ZhuanZhengLiu;
+			return ValidateStatusInput.LENGTH_ZhuanZhengLiu;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJiaShouCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JiaShouCi)) {
-			return ValidateStatusInputByNew.LENGTH_JiaShouCi;
+			return ValidateStatusInput.LENGTH_JiaShouCi;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJiaMoCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JiaMoCi)) {
-			return ValidateStatusInputByNew.LENGTH_JiaMoCi;
+			return ValidateStatusInput.LENGTH_JiaMoCi;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getTongDao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_TongDao)) {
-			return ValidateStatusInputByNew.LENGTH_TongDao;
+			return ValidateStatusInput.LENGTH_TongDao;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShengChanGuZhang(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShengChanGuZhang)) {
-			return ValidateStatusInputByNew.LENGTH_ShengChanGuZhang;
+			return ValidateStatusInput.LENGTH_ShengChanGuZhang;
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getBeiZhuShuoMing(), Constant.LENGTH_INPUT_BY_NEW_CHECK_BeiZhuShuoMing)) {
-			return ValidateStatusInputByNew.LENGTH_BeiZhuShuoMing;
+			return ValidateStatusInput.LENGTH_BeiZhuShuoMing;
 		}
-		return ValidateStatusInputByNew.OK;
+		return ValidateStatusInput.OK;
 	}
 
-	private ArrayList<ValidateStatusInputByNew> checkLengthAll(InputByNewFormBean inputByNewFormBean) {
-		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
+	private ArrayList<ValidateStatusInput> checkLengthAll(InputByNewFormBean inputByNewFormBean) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYearMonthDay(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YearMonthDay)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YearMonthDay);
+			checkResult.add(ValidateStatusInput.LENGTH_YearMonthDay);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getQiHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_QiHao)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_QiHao);
+			checkResult.add(ValidateStatusInput.LENGTH_QiHao);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getLuCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_LuCi)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_LuCi);
+			checkResult.add(ValidateStatusInput.LENGTH_LuCi);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGuiGe(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GuiGe)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_GuiGe);
+			checkResult.add(ValidateStatusInput.LENGTH_GuiGe);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShengChanLuHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShengChanLuHao)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ShengChanLuHao);
+			checkResult.add(ValidateStatusInput.LENGTH_ShengChanLuHao);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFanYingQiHao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FanYingQiHao)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_FanYingQiHao);
+			checkResult.add(ValidateStatusInput.LENGTH_FanYingQiHao);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShiYongCiShu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShiYongCiShu)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ShiYongCiShu);
+			checkResult.add(ValidateStatusInput.LENGTH_ShiYongCiShu);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getMg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_Mg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_Mg);
+			checkResult.add(ValidateStatusInput.LENGTH_Mg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getTiCl4(), Constant.LENGTH_INPUT_BY_NEW_CHECK_TiCl4)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_TiCl4);
+			checkResult.add(ValidateStatusInput.LENGTH_TiCl4);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getMaoZhong(), Constant.LENGTH_INPUT_BY_NEW_CHECK_MaoZhong)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_MaoZhong);
+			checkResult.add(ValidateStatusInput.LENGTH_MaoZhong);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJingZhong(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JingZhong)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_JingZhong);
+			checkResult.add(ValidateStatusInput.LENGTH_JingZhong);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getChengPinLv(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ChengPinLv)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ChengPinLv);
+			checkResult.add(ValidateStatusInput.LENGTH_ChengPinLv);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuFe(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuFe)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuFe);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuFe);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuSi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuSi)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuSi);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuSi);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuCl(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuCl)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuCl);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuCl);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuC(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuC)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuC);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuC);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuN(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuN)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuN);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuN);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuO(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuO)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuO);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuO);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuH(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuH)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuH);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuH);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuMn(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuMn)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuMn);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuMn);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanSuHb(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanSuHb)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanSuHb);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanSuHb);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getDengJiHanMeng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_DengJiHanMeng)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_DengJiHanMeng);
+			checkResult.add(ValidateStatusInput.LENGTH_DengJiHanMeng);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getKaoHeDengJiChuMeng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_KaoHeDengJiChuMeng)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_KaoHeDengJiChuMeng);
+			checkResult.add(ValidateStatusInput.LENGTH_KaoHeDengJiChuMeng);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGongYiTiaoZheng(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GongYiTiaoZheng)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_GongYiTiaoZheng);
+			checkResult.add(ValidateStatusInput.LENGTH_GongYiTiaoZheng);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getGongYiShiYan(), Constant.LENGTH_INPUT_BY_NEW_CHECK_GongYiShiYan)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_GongYiShiYan);
+			checkResult.add(ValidateStatusInput.LENGTH_GongYiShiYan);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getDiPiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_DiPiKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_DiPiKg);
+			checkResult.add(ValidateStatusInput.LENGTH_DiPiKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShangMaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShangMaoKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ShangMaoKg);
+			checkResult.add(ValidateStatusInput.LENGTH_ShangMaoKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getPaBiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_PaBiKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_PaBiKg);
+			checkResult.add(ValidateStatusInput.LENGTH_PaBiKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiDiPiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiDiPiKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_FeiDiPiKg);
+			checkResult.add(ValidateStatusInput.LENGTH_FeiDiPiKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiShangMaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiShangMaoKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_FeiShangMaoKg);
+			checkResult.add(ValidateStatusInput.LENGTH_FeiShangMaoKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiPaBiKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiPaBiKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_FeiPaBiKg);
+			checkResult.add(ValidateStatusInput.LENGTH_FeiPaBiKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getFeiTaiFenKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_FeiTaiFenKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_FeiTaiFenKg);
+			checkResult.add(ValidateStatusInput.LENGTH_FeiTaiFenKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getCiYuanKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_CiYuanKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_CiYuanKg);
+			checkResult.add(ValidateStatusInput.LENGTH_CiYuanKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShouXuanFeiLiaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShouXuanFeiLiaoKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ShouXuanFeiLiaoKg);
+			checkResult.add(ValidateStatusInput.LENGTH_ShouXuanFeiLiaoKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getSunHaoKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_SunHaoKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_SunHaoKg);
+			checkResult.add(ValidateStatusInput.LENGTH_SunHaoKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZongPaiMeiLiangKg(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZongPaiMeiLiangKg)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ZongPaiMeiLiangKg);
+			checkResult.add(ValidateStatusInput.LENGTH_ZongPaiMeiLiangKg);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getChuLuZhenKongDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ChuLuZhenKongDu)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ChuLuZhenKongDu);
+			checkResult.add(ValidateStatusInput.LENGTH_ChuLuZhenKongDu);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYuanZuiGaoWenDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanZuiGaoWenDu)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_YuanZuiGaoWenDu);
+			checkResult.add(ValidateStatusInput.LENGTH_YuanZuiGaoWenDu);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZhengLiuGaoHengDian(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ZhengLiuGaoHengDian);
+			checkResult.add(ValidateStatusInput.LENGTH_ZhengLiuGaoHengDian);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getZhuanZhengLiu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhuanZhengLiu)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ZhuanZhengLiu);
+			checkResult.add(ValidateStatusInput.LENGTH_ZhuanZhengLiu);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJiaShouCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JiaShouCi)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_JiaShouCi);
+			checkResult.add(ValidateStatusInput.LENGTH_JiaShouCi);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getJiaMoCi(), Constant.LENGTH_INPUT_BY_NEW_CHECK_JiaMoCi)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_JiaMoCi);
+			checkResult.add(ValidateStatusInput.LENGTH_JiaMoCi);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getTongDao(), Constant.LENGTH_INPUT_BY_NEW_CHECK_TongDao)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_TongDao);
+			checkResult.add(ValidateStatusInput.LENGTH_TongDao);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getShengChanGuZhang(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ShengChanGuZhang)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_ShengChanGuZhang);
+			checkResult.add(ValidateStatusInput.LENGTH_ShengChanGuZhang);
 		}
 		if (StringHelper.isLenGreater(inputByNewFormBean.getBeiZhuShuoMing(), Constant.LENGTH_INPUT_BY_NEW_CHECK_BeiZhuShuoMing)) {
-			checkResult.add(ValidateStatusInputByNew.LENGTH_BeiZhuShuoMing);
+			checkResult.add(ValidateStatusInput.LENGTH_BeiZhuShuoMing);
 		}
 
 		return checkResult;
 	}
 
-	private ValidateStatusInputByNew checkNumberFormat(InputByNewFormBean inputByNewFormBean) {
+	private ValidateStatusInput checkNumberFormat(InputByNewFormBean inputByNewFormBean) {
 		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay;
 		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_QiHao;
+			return ValidateStatusInput.NUMBER_FORMAT_QiHao;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_LuCi;
+			return ValidateStatusInput.NUMBER_FORMAT_LuCi;
 		}
 		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe;
 		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanLuHao;
+			return ValidateStatusInput.NUMBER_FORMAT_ShengChanLuHao;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFanYingQiHao())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_FanYingQiHao;
+			return ValidateStatusInput.NUMBER_FORMAT_FanYingQiHao;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShiYongCiShu())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ShiYongCiShu;
+			return ValidateStatusInput.NUMBER_FORMAT_ShiYongCiShu;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getMg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_Mg;
+			return ValidateStatusInput.NUMBER_FORMAT_Mg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getTiCl4())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_TiCl4;
+			return ValidateStatusInput.NUMBER_FORMAT_TiCl4;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getMaoZhong())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_MaoZhong;
+			return ValidateStatusInput.NUMBER_FORMAT_MaoZhong;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getJingZhong())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_JingZhong;
+			return ValidateStatusInput.NUMBER_FORMAT_JingZhong;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ChengPinLv;
+			return ValidateStatusInput.NUMBER_FORMAT_ChengPinLv;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuFe;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuFe;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuSi;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuSi;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuCl;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuCl;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuC;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuC;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuN;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuN;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuO;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuO;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuH;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuH;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuMn;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuMn;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuHb;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanSuHb;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_DengJiHanMeng;
+			return ValidateStatusInput.NUMBER_FORMAT_DengJiHanMeng;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_KaoHeDengJiChuMeng;
+			return ValidateStatusInput.NUMBER_FORMAT_KaoHeDengJiChuMeng;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_GongYiTiaoZheng;
+			return ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_GongYiShiYan;
+			return ValidateStatusInput.NUMBER_FORMAT_GongYiShiYan;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDiPiKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_DiPiKg;
+			return ValidateStatusInput.NUMBER_FORMAT_DiPiKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShangMaoKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ShangMaoKg;
+			return ValidateStatusInput.NUMBER_FORMAT_ShangMaoKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getPaBiKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_PaBiKg;
+			return ValidateStatusInput.NUMBER_FORMAT_PaBiKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiDiPiKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiDiPiKg;
+			return ValidateStatusInput.NUMBER_FORMAT_FeiDiPiKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiShangMaoKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiShangMaoKg;
+			return ValidateStatusInput.NUMBER_FORMAT_FeiShangMaoKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiPaBiKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiPaBiKg;
+			return ValidateStatusInput.NUMBER_FORMAT_FeiPaBiKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiTaiFenKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_FeiTaiFenKg;
+			return ValidateStatusInput.NUMBER_FORMAT_FeiTaiFenKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getCiYuanKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_CiYuanKg;
+			return ValidateStatusInput.NUMBER_FORMAT_CiYuanKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ShouXuanFeiLiaoKg;
+			return ValidateStatusInput.NUMBER_FORMAT_ShouXuanFeiLiaoKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getSunHaoKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_SunHaoKg;
+			return ValidateStatusInput.NUMBER_FORMAT_SunHaoKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ZongPaiMeiLiangKg;
+			return ValidateStatusInput.NUMBER_FORMAT_ZongPaiMeiLiangKg;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getChuLuZhenKongDu())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ChuLuZhenKongDu;
+			return ValidateStatusInput.NUMBER_FORMAT_ChuLuZhenKongDu;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_YuanZuiGaoWenDu;
+			return ValidateStatusInput.NUMBER_FORMAT_YuanZuiGaoWenDu;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ZhengLiuGaoHengDian;
+			return ValidateStatusInput.NUMBER_FORMAT_ZhengLiuGaoHengDian;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ZhuanZhengLiu;
+			return ValidateStatusInput.NUMBER_FORMAT_ZhuanZhengLiu;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_JiaShouCi;
+			return ValidateStatusInput.NUMBER_FORMAT_JiaShouCi;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_JiaMoCi;
+			return ValidateStatusInput.NUMBER_FORMAT_JiaMoCi;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_TongDao;
+			return ValidateStatusInput.NUMBER_FORMAT_TongDao;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
-			return ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanGuZhang;
+			return ValidateStatusInput.NUMBER_FORMAT_ShengChanGuZhang;
 		}
 		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
 		// return ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing;
 		// }
-		return ValidateStatusInputByNew.OK;
+		return ValidateStatusInput.OK;
 	}
 
-	private ArrayList<ValidateStatusInputByNew> checkNumberFormatAll(InputByNewFormBean inputByNewFormBean) {
-		ArrayList<ValidateStatusInputByNew> checkResult = new ArrayList<ValidateStatusInputByNew>();
+	private ArrayList<ValidateStatusInput> checkNumberFormatAll(InputByNewFormBean inputByNewFormBean) {
+		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 		
 		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay);
 		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_QiHao);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_QiHao);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_LuCi);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_LuCi);
 		}
 		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe);
 		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanLuHao);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShengChanLuHao);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFanYingQiHao())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FanYingQiHao);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_FanYingQiHao);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShiYongCiShu())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShiYongCiShu);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShiYongCiShu);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getMg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_Mg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_Mg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getTiCl4())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_TiCl4);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_TiCl4);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getMaoZhong())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_MaoZhong);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_MaoZhong);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getJingZhong())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JingZhong);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_JingZhong);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ChengPinLv);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ChengPinLv);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuFe);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuFe);
 		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuSi);
-		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuSi);
+//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuCl);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuCl);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuC);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuC);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuN);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuN);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuO);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuO);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuH);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuH);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuMn);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuMn);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanSuHb);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuHb);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_DengJiHanMeng);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_DengJiHanMeng);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_KaoHeDengJiChuMeng);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_KaoHeDengJiChuMeng);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GongYiTiaoZheng);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
 		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GongYiShiYan);
-		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiShiYan);
+//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDiPiKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_DiPiKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_DiPiKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShangMaoKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShangMaoKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShangMaoKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getPaBiKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_PaBiKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_PaBiKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiDiPiKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiDiPiKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_FeiDiPiKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiShangMaoKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiShangMaoKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_FeiShangMaoKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiPaBiKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiPaBiKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_FeiPaBiKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getFeiTaiFenKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_FeiTaiFenKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_FeiTaiFenKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getCiYuanKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_CiYuanKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_CiYuanKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShouXuanFeiLiaoKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShouXuanFeiLiaoKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getSunHaoKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_SunHaoKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_SunHaoKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZongPaiMeiLiangKg);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ZongPaiMeiLiangKg);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getChuLuZhenKongDu())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ChuLuZhenKongDu);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ChuLuZhenKongDu);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YuanZuiGaoWenDu);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanZuiGaoWenDu);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZhengLiuGaoHengDian);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ZhengLiuGaoHengDian);
 		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ZhuanZhengLiu);
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JiaShouCi);
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_JiaMoCi);
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_TongDao);
-		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ZhuanZhengLiu);
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_JiaShouCi);
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_JiaMoCi);
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_TongDao);
+//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
-			checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_ShengChanGuZhang);
+			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShengChanGuZhang);
 		}
 		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
 		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing);
 		// }
-		checkResult.add(ValidateStatusInputByNew.OK);
+		checkResult.add(ValidateStatusInput.OK);
 		
 		return checkResult;
 	}
@@ -1151,7 +1337,6 @@ public class InputByNewBusiness {
 
 	public Boolean Save(ActionForm form) {
 		TIronInfoDao dao = new TIronInfoDao();
-		;
 		try {
 			if (form != null) {
 				InputByNewForm inputByNewForm = (InputByNewForm) form;
@@ -1203,7 +1388,60 @@ public class InputByNewBusiness {
 		}
 	}
 
-	public ErrorType getErrorType(ValidateStatusInputByNew errorStatus) {
+	public Boolean Commit(ActionForm form) {
+		TIronInfoDao dao = new TIronInfoDao();
+		try {
+			if (form != null) {
+				InputByNewForm inputByNewForm = (InputByNewForm) form;
+				InputByNewFormBean inputByNewFormBean;
+				TIronInfoDaoBean tIronInfoDaoBean;
+				dao.Open();
+				dao.BeginTrans();
+				// 信息输入画面，默认10条数据 循环
+				String tmpLuci = "";
+				String tmpYearMonthDay = "";
+				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
+					// 信息输入画面Form取得FormBean
+					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
+					//log(inputByNewFormBean);
+					// 1：常规数据 2:军品1 3：军品2
+					// FormBean转化成DaoBean				
+					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
+					
+					if (i % 3 == 0) {
+						tmpLuci = tIronInfoDaoBean.getLuCi();
+					} else {
+						tIronInfoDaoBean.setLuCi(tmpLuci);
+					}
+					
+					if (i % 3 == 0) {
+						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
+					} else {
+						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
+					}
+					
+					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
+							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
+						// 炉次和规格都不为空时，登陆。
+						dao.Insert(tIronInfoDaoBean);
+					}
+				}
+				dao.UpdateJunPinNotInput();
+				dao.Commit();
+				dao.Close();
+			}
+
+			return true;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			dao.Rollback();
+			dao.Close();
+			return false;
+		}
+	}
+	
+	public ErrorType getErrorType(ValidateStatusInput errorStatus) {
 		switch (errorStatus) {
 		case EMPTY_YearMonthDay:
 			return ErrorType.EMPTY;
@@ -1489,7 +1727,7 @@ public class InputByNewBusiness {
 		return ErrorType.OTHER;
 	}
 
-	public String getItemNameByErrorStatus(ValidateStatusInputByNew errorStatus) {
+	public String getItemNameByErrorStatus(ValidateStatusInput errorStatus) {
 		switch (errorStatus) {
 		case EMPTY_YearMonthDay:
 			return Constant.ITEM_YearMonthDay;

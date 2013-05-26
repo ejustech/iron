@@ -45,6 +45,7 @@
 			<table align="center">
 				<tr>
 					<td><html:submit property="inputByNew">信息录入</html:submit></td>
+					<td><html:submit property="inputByUpdate">信息更新</html:submit></td>
 					<td><html:submit property="search">信息查询</html:submit></td>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="0">
