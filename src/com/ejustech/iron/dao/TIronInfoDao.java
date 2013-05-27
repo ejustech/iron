@@ -235,7 +235,8 @@ public class TIronInfoDao extends BaseDao {
 				result1FormBean.setMaozhong(resultSet.getString("maozhong"));
 				result1FormBean.setJingzhong(resultSet.getString("jingzhong"));
 				if (resultSet.getString("chengpinlv") != null)
-					result1FormBean.setChengpinlv(Output.getPValue(resultSet.getString("chengpinlv")));
+					result1FormBean.setChengpinlv(resultSet.getString("chengpinlv"));
+					//result1FormBean.setChengpinlv(Output.getPValue(resultSet.getString("chengpinlv")));
 				result1FormBean.setFe(resultSet.getString("fe"));
 				result1FormBean.setSi(resultSet.getString("si"));
 				result1FormBean.setCl(resultSet.getString("cl"));
@@ -2277,7 +2278,8 @@ public class TIronInfoDao extends BaseDao {
 				ironInfoDaoBean.setMaoZhong(resultSet.getString("maozhong"));
 				ironInfoDaoBean.setJingZhong(resultSet.getString("jingzhong"));
 				if (resultSet.getString("chengpinlv") != null)
-					ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
+					ironInfoDaoBean.setChengPinLv(resultSet.getString("chengpinlv"));
+					//ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
 				ironInfoDaoBean.setYuanSuFe(resultSet.getString("fe"));
 				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
 				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
