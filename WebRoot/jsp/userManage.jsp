@@ -7,7 +7,7 @@
 	<head>
 		<title>用户管理</title>
 		<link href="../jinda/css/style.css" rel="stylesheet" type="text/css">
-	    <style type="text/css">
+	    <style type="text/css">  
 <!--
 .STYLE1 {
 	font-family: "宋体";
