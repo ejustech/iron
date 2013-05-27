@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>全部信息输出表</title>
+<title>信息录入</title>
 <style type="text/css">
 <!--
 body {
@@ -28,7 +28,19 @@ body {
   <div align="center">
     <p><img src="../jinda/image/1.jpg"/></p>
   </div>
-<hr width="1200" />
+<table width="1024" align="center">
+				<tr>
+					<td align="left"><span class="STYLE13 STYLE14">信息录入</span></td>
+				  	<td align="right">
+					  	 <input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
+            <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
+            <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
+            <html:submit property="Return">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+				  	</td>
+				</tr>
+		  </table>
+			<p></p>
+			<hr width="1024" />
 <table width="3000" align="center" border=1 style="BORDER-COLLAPSE: collapse">
 	<tr><html:errors property="errors"></html:errors></tr>
 	<tr><html:errors property="error01"></html:errors></tr>
@@ -256,17 +268,21 @@ body {
 </table>
 <p>&nbsp;</p>
 <input id = isSave type="hidden" name="hide" value="" />
+<!-- 
 <table align="center">
     <tr>
         <td>
+		 -->
             <!-- <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit> -->
-            <input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
+            <!-- 
+			<input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
             <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
             <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
             <html:submit property="Return">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
         </td>
     <tr>
 </table>
+ -->
 <hr width="1200" />
 <table align="center">
     <tr>
