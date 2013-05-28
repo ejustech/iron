@@ -35,7 +35,7 @@ body {
 					  	 <input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
             <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
             <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
-            <html:submit property="Return">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+            <input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 				  	</td>
 				</tr>
 		  </table>
@@ -101,52 +101,52 @@ body {
           <%=index/3+1%>
           <%}%>
           </span></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true" size="1" maxlength="1"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true" size="3" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true" size="3" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true" size="1" maxlength="3"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true" size="5" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
   </logic:iterate>
 </logic:equal>
@@ -158,52 +158,52 @@ body {
           <%=index/3+1%>
           <%}%>
           </span></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true" size="1" maxlength="1"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true" size="3" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true" size="3" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true" size="1" maxlength="3"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true" size="5" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
   </logic:iterate>
 </logic:equal>
@@ -215,52 +215,52 @@ body {
           <%=index/3+1%>
           <%}%>
           </span></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true"></html:text></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="qiHao" indexed="true" size="1" maxlength="1"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="junPin" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="mg" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="tiCl4" indexed="true" size="3" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="maoZhong" indexed="true" size="2" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="jingZhong" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chengPinLv" indexed="true" size="3" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuFe" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuSi" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuCl" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuC" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuN" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuO" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuH" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuMn" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanSuHb" indexed="true" size="1" maxlength="3"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="dengJiHanMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="kaoHeDengJiChuMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiTiaoZheng" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="gongYiShiYan" indexed="true" size="5" maxlength="6"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="diPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="paBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiDiPiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiShangMaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiPaBiKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"><html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhengLiuGaoHengDian" indexed="true" size="1" maxlength="4"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
   </logic:iterate>
 </logic:equal>
