@@ -31,7 +31,13 @@ body {
 		<td valign="top">
 			<table width="" border="0" bordercolor="#999999">
 				<tr>
-					<td>用户名已经存在！请返回输入新的用户名重新操作，如仍有错误，请联系管理员。</td>
+					<td>
+					<logic:notEmpty name="USERERRORMSG">
+                        <bean:write name="USERERRORMSG" scope="session"></bean:write>
+                        请返回重新输入，如仍有错误，请联系管理员。
+                    </logic:notEmpty>
+
+					</td>
 				</tr>
 				<tr>
 					<td align="right"><input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();"></td>

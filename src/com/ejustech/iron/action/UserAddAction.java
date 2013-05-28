@@ -6,9 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.dao.MUserDao;
@@ -47,6 +49,24 @@ public class UserAddAction extends EventDispatchAction {
 			String authority = userAddForm.getAuthority();
 			String tel = userAddForm.getTel();
 			String email = userAddForm.getEmail();
+			
+			ActionErrors error = new ActionErrors();
+			HttpSession session = request.getSession();
+			session.setAttribute("USERERRORMSG","");
+			if(userID.equals("") || password.equals("")){
+				error.add("errors", new ActionMessage("error.userIDpassword.empty"));
+				session.setAttribute("USERERRORMSG","用户名密码不能为空！");
+				return mapping.findForward("userExistError");
+			}
+			if(!password.equals(userAddForm.getPasswordv())){
+				error.add("errors", new ActionMessage("error.password.match"));
+				session.setAttribute("USERERRORMSG","你所输入的两次密码不一致！");
+				return mapping.findForward("userExistError");
+			}
+
+//			return error;
+
+
 			// 获取用户权限
 			// HttpSession session = request.getSession();
 			// ArrayList<Result2FormBean> list = new
@@ -55,7 +75,7 @@ public class UserAddAction extends EventDispatchAction {
 			// session.getAttribute("HANMENGLIST"); //此时取出来的是Object, 需要强转
 			
 			// 取得动作状态判断是修改还是添加
-			HttpSession session = request.getSession();
+			
 			String update_flag = (String) session.getAttribute("UPDATE_FLAG");
 			
 			MUserDao mUserDao = new MUserDao();
@@ -64,13 +84,14 @@ public class UserAddAction extends EventDispatchAction {
 				// 添加用户
 				boolean flag = mUserDao.addUser(userID, password, authority, tel, email);
 				//用户不存在添加成功，用户存在添加失败返回错误页面
-				if(flag = true){
+				if(flag == true){
 					// //返回删除后的用户列表
 					ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
 					userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
 					request.setAttribute("USERLIST", userList);
 					return mapping.findForward("update");
 				}else{
+					session.setAttribute("USERERRORMSG","您所输入的用户名已经存在！");
 					return mapping.findForward("userExistError");
 				}
 			}else if (update_flag.equals("Modify")){

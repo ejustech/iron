@@ -57,19 +57,19 @@ public class UserAddForm extends ActionForm {
 	}
 	private String email;
 	
-	//用户名密码校验
-	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
-
-		ActionErrors error = new ActionErrors();
-
-		if(getUserID().equals("") || getPassword().equals("")){
-			error.add("errors", new ActionMessage("error.userIDpassword.empty"));
-		}
-		if(!getPassword().equals(getPasswordv())){
-			error.add("errors", new ActionMessage("error.password.match"));
-		}
-
-		return error;
-		
-	}
+//	//用户名密码校验
+//	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+//
+//		ActionErrors error = new ActionErrors();
+//
+//		if(getUserID().equals("") || getPassword().equals("")){
+//			error.add("errors", new ActionMessage("error.userIDpassword.empty"));
+//		}
+//		if(!getPassword().equals(getPasswordv())){
+//			error.add("errors", new ActionMessage("error.password.match"));
+//		}
+//
+//		return error;
+//		
+//	}
 }
