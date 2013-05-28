@@ -1374,6 +1374,7 @@ public class InputByNewBusiness {
 					}
 				}
 				dao.UpdateJunPinNotInput();
+				dao.UpdateYue();
 				dao.Commit();
 				dao.Close();
 			}
@@ -1427,6 +1428,7 @@ public class InputByNewBusiness {
 					}
 				}
 				dao.UpdateJunPinNotInput();
+				dao.UpdateYue();
 				dao.Commit();
 				dao.Close();
 			}
@@ -2012,4 +2014,62 @@ public class InputByNewBusiness {
 		}
 		return "";
 	}
+	
+	public ArrayList<InputByNewFormBean> initInputByNewForm() {
+		ArrayList<InputByNewFormBean> inputByNewList = new ArrayList<InputByNewFormBean>();
+
+		InputByNewFormBean inputByNewFormBean;
+
+		for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
+			inputByNewFormBean = new InputByNewFormBean();
+			inputByNewFormBean.setYearMonthDay("");
+			inputByNewFormBean.setQiHao("");
+			inputByNewFormBean.setLuCi("");
+			inputByNewFormBean.setGuiGe("");
+			inputByNewFormBean.setShengChanLuHao("");
+			inputByNewFormBean.setFanYingQiHao("");
+			inputByNewFormBean.setShiYongCiShu("");
+			inputByNewFormBean.setMg("");
+			inputByNewFormBean.setTiCl4("");
+			inputByNewFormBean.setMaoZhong("");
+			inputByNewFormBean.setJingZhong("");
+			inputByNewFormBean.setChengPinLv("");
+			inputByNewFormBean.setYuanSuFe("");
+			inputByNewFormBean.setYuanSuSi("");
+			inputByNewFormBean.setYuanSuCl("");
+			inputByNewFormBean.setYuanSuC("");
+			inputByNewFormBean.setYuanSuN("");
+			inputByNewFormBean.setYuanSuO("");
+			inputByNewFormBean.setYuanSuH("");
+			inputByNewFormBean.setYuanSuMn("");
+			inputByNewFormBean.setYuanSuHb("");
+			inputByNewFormBean.setDengJiHanMeng("");
+			inputByNewFormBean.setKaoHeDengJiChuMeng("");
+			inputByNewFormBean.setGongYiTiaoZheng("");
+			inputByNewFormBean.setGongYiShiYan("");
+			inputByNewFormBean.setDiPiKg("");
+			inputByNewFormBean.setShangMaoKg("");
+			inputByNewFormBean.setPaBiKg("");
+			inputByNewFormBean.setFeiDiPiKg("");
+			inputByNewFormBean.setFeiShangMaoKg("");
+			inputByNewFormBean.setFeiPaBiKg("");
+			inputByNewFormBean.setFeiTaiFenKg("");
+			inputByNewFormBean.setCiYuanKg("");
+			inputByNewFormBean.setShouXuanFeiLiaoKg("");
+			inputByNewFormBean.setSunHaoKg("");
+			inputByNewFormBean.setZongPaiMeiLiangKg("");
+			inputByNewFormBean.setChuLuZhenKongDu("");
+			inputByNewFormBean.setYuanZuiGaoWenDu("");
+			inputByNewFormBean.setZhengLiuGaoHengDian("");
+			inputByNewFormBean.setZhuanZhengLiu("");
+			inputByNewFormBean.setJiaShouCi("");
+			inputByNewFormBean.setJiaMoCi("");
+			inputByNewFormBean.setTongDao("");
+			inputByNewFormBean.setShengChanGuZhang("");
+			inputByNewFormBean.setBeiZhuShuoMing("");
+			inputByNewList.add(inputByNewFormBean);
+		}
+		return inputByNewList;
+	}
+	
 }

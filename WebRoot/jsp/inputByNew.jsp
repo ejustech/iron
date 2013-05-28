@@ -32,8 +32,8 @@ body {
 				<tr>
 					<td align="left"><span class="STYLE13 STYLE14">信息录入</span></td>
 				  	<td align="right">
-					  	 <input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
-            <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
+			
+            <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
             <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
             <input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 				  	</td>
@@ -144,7 +144,12 @@ body {
         <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:select name="inputByNewList" property="tongDao" indexed="true">
+                       <html:option value="0">√</html:option>
+                       <html:option value="1">×</html:option>
+        </html:select>
+        </td>
         <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
@@ -201,7 +206,12 @@ body {
         <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:select name="inputByNewList" property="tongDao" indexed="true">
+                       <html:option value="0">√</html:option>
+                       <html:option value="1">×</html:option>
+        </html:select>
+        </td>
         <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
@@ -258,7 +268,12 @@ body {
         <td align="center"><html:text name="inputByNewList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
-        <td align="center"><html:text name="inputByNewList" property="tongDao" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:select name="inputByNewList" property="tongDao" indexed="true">
+                       <html:option value="0">√</html:option>
+                       <html:option value="1">×</html:option>
+        </html:select>
+        </td>
         <td align="center"><html:text name="inputByNewList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
         <td align="center"><html:text name="inputByNewList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>

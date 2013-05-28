@@ -80,7 +80,15 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_ZhuanZhengLiu,  StringHelper.UTF8Convert2ISO8859(daoBean.getZhuanZhengLiu()));
 			ps.setString(Constant.T_IRON_INFO_COL_JiaShouCi,  StringHelper.UTF8Convert2ISO8859(daoBean.getJiaShouCi()));
 			ps.setString(Constant.T_IRON_INFO_COL_JiaMoCi,  StringHelper.UTF8Convert2ISO8859(daoBean.getJiaMoCi()));
-			ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859(daoBean.getTongDao()));
+			
+			if ("0".equals(daoBean.getTongDao())) {
+				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
+			}
+			else
+			{
+				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
+			}
+			
 			ps.setString(Constant.T_IRON_INFO_COL_ShengChanGuZhang,  StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing,  StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			
@@ -107,6 +115,23 @@ public class TIronInfoDao extends BaseDao {
         PreparedStatement ps = null;
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT);
+            
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw e;
+        }
+
+        return true;
+    }
+    
+    public Boolean UpdateYue() throws SQLException {
+        // Open();
+
+        PreparedStatement ps = null;
+        try {
+            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_YUE);
             
             ps.executeUpdate();
         } catch (SQLException e) {
@@ -166,7 +191,15 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ZhuanZhengLiu, StringHelper.UTF8Convert2ISO8859(daoBean.getZhuanZhengLiu()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JiaShouCi, StringHelper.UTF8Convert2ISO8859(daoBean.getJiaShouCi()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JiaMoCi, StringHelper.UTF8Convert2ISO8859(daoBean.getJiaMoCi()));
-			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TongDao, StringHelper.UTF8Convert2ISO8859(daoBean.getTongDao()));
+			
+			if ("0".equals(daoBean.getTongDao())) {
+				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
+			}
+			else
+			{
+				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
+			}
+			
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ShengChanGuZhang, StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_BeiZhuShuoMing, StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_LuCi, StringHelper.UTF8Convert2ISO8859(daoBean.getLuCi()));

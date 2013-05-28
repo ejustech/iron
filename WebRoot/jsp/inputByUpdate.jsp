@@ -140,7 +140,10 @@ body {
         <td align="center"><html:text name="inputByUpdateList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByUpdateList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text></td>
         <td align="center"><html:text name="inputByUpdateList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="tongDao" indexed="true" size="1" maxlength="2"></html:text></td>
+        <html:select name="inputByNewList" property="tongDao" indexed="true">
+                       <html:option value="0">√</html:option>
+                       <html:option value="1">×</html:option>
+        </html:select>
         <td align="center"><html:text name="inputByUpdateList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text></td>
         <td align="center"><html:text name="inputByUpdateList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>

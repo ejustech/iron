@@ -4,6 +4,8 @@
  */
 package com.ejustech.iron.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,6 +16,7 @@ import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.business.InputByNewBusiness;
+import com.ejustech.iron.databean.form.InputByNewFormBean;
 import com.ejustech.iron.form.InputByNewForm;
 
 /**
@@ -36,6 +39,15 @@ public class InputByNewAction extends EventDispatchAction {
 			inputByNewForm.setSave(true);
 			business.Save(inputByNewForm);
 			
+//			inputByNewForm = new InputByNewForm();
+			
+			InputByNewBusiness inputByNewBusiness = new InputByNewBusiness();
+			ArrayList<InputByNewFormBean> initList = inputByNewBusiness.initInputByNewForm();
+			
+			inputByNewForm.setInputByNewList(initList);
+			
+			
+			inputByNewForm.setRole("1");
 			return mapping.findForward("OK");
 		} catch (Exception e) {
 		}
@@ -56,5 +68,24 @@ public class InputByNewAction extends EventDispatchAction {
 		} catch (Exception e) {
 		}
 		return null;
-	}	
+	}
+	
+	// 处理保存的动作
+	public ActionForward Reset(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			InputByNewForm inputByNewForm = (InputByNewForm) form;
+			InputByNewBusiness business = new InputByNewBusiness();
+			
+			ArrayList<InputByNewFormBean> initList = business.initInputByNewForm();
+			
+			inputByNewForm.setInputByNewList(initList);
+			
+			inputByNewForm.setRole("1");
+			return mapping.findForward("OK");
+		} catch (Exception e) {
+		}
+		return null;
+	}
 }

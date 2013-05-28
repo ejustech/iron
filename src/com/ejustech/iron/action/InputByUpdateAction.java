@@ -40,6 +40,7 @@ public class InputByUpdateAction extends EventDispatchAction {
 		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;// TODO Auto-generated method stub
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 		inputByUpdateBusiness.Save(inputByUpdateForm);
+		
 		return mapping.findForward("OK");
 	}
 }

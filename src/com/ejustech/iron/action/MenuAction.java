@@ -12,6 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.EventDispatchAction;
 
+import com.ejustech.iron.business.InputByNewBusiness;
 import com.ejustech.iron.business.InputByUpdateBusiness;
 import com.ejustech.iron.common.Constant;
 import com.ejustech.iron.dao.MUserDao;
@@ -60,7 +61,11 @@ public class MenuAction extends EventDispatchAction {
 		try {
 			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByNewForm inputByNewForm = new InputByNewForm();
-			inputByNewForm.setInputByNewList(initInputByNewForm());
+			
+			InputByNewBusiness inputByNewBusiness = new InputByNewBusiness();
+			ArrayList<InputByNewFormBean> initList = inputByNewBusiness.initInputByNewForm();
+			
+			inputByNewForm.setInputByNewList(initList);
 			inputByNewForm.setRole("1");
 			
 			request.setAttribute("inputByNewForm", inputByNewForm);
@@ -119,150 +124,5 @@ public class MenuAction extends EventDispatchAction {
 		return inputByUpdateBusiness.InitInputByUpdateForm();
 	}
 	
-	private ArrayList<InputByNewFormBean> initInputByNewForm() {
-		ArrayList<InputByNewFormBean> inputByNewList = new ArrayList<InputByNewFormBean>();
 
-		InputByNewFormBean inputByNewFormBean;
-
-		for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
-			inputByNewFormBean = new InputByNewFormBean();
-			inputByNewFormBean.setYearMonthDay("");
-			inputByNewFormBean.setQiHao("");
-			inputByNewFormBean.setLuCi("");
-			inputByNewFormBean.setGuiGe("");
-			inputByNewFormBean.setShengChanLuHao("");
-			inputByNewFormBean.setFanYingQiHao("");
-			inputByNewFormBean.setShiYongCiShu("");
-			inputByNewFormBean.setMg("");
-			inputByNewFormBean.setTiCl4("");
-			inputByNewFormBean.setMaoZhong("");
-			inputByNewFormBean.setJingZhong("");
-			inputByNewFormBean.setChengPinLv("");
-			inputByNewFormBean.setYuanSuFe("");
-			inputByNewFormBean.setYuanSuSi("");
-			inputByNewFormBean.setYuanSuCl("");
-			inputByNewFormBean.setYuanSuC("");
-			inputByNewFormBean.setYuanSuN("");
-			inputByNewFormBean.setYuanSuO("");
-			inputByNewFormBean.setYuanSuH("");
-			inputByNewFormBean.setYuanSuMn("");
-			inputByNewFormBean.setYuanSuHb("");
-			inputByNewFormBean.setDengJiHanMeng("");
-			inputByNewFormBean.setKaoHeDengJiChuMeng("");
-			inputByNewFormBean.setGongYiTiaoZheng("");
-			inputByNewFormBean.setGongYiShiYan("");
-			inputByNewFormBean.setDiPiKg("");
-			inputByNewFormBean.setShangMaoKg("");
-			inputByNewFormBean.setPaBiKg("");
-			inputByNewFormBean.setFeiDiPiKg("");
-			inputByNewFormBean.setFeiShangMaoKg("");
-			inputByNewFormBean.setFeiPaBiKg("");
-			inputByNewFormBean.setFeiTaiFenKg("");
-			inputByNewFormBean.setCiYuanKg("");
-			inputByNewFormBean.setShouXuanFeiLiaoKg("");
-			inputByNewFormBean.setSunHaoKg("");
-			inputByNewFormBean.setZongPaiMeiLiangKg("");
-			inputByNewFormBean.setChuLuZhenKongDu("");
-			inputByNewFormBean.setYuanZuiGaoWenDu("");
-			inputByNewFormBean.setZhengLiuGaoHengDian("");
-			inputByNewFormBean.setZhuanZhengLiu("");
-			inputByNewFormBean.setJiaShouCi("");
-			inputByNewFormBean.setJiaMoCi("");
-			inputByNewFormBean.setTongDao("");
-			inputByNewFormBean.setShengChanGuZhang("");
-			inputByNewFormBean.setBeiZhuShuoMing("");
-			// inputByNewFormBean.setYearMonthDayJunPin1("");
-			// inputByNewFormBean.setQiHaoJunPin1("");
-			// inputByNewFormBean.setLuCiJunPin1("");
-			// inputByNewFormBean.setGuiGeJunPin1("");
-			// inputByNewFormBean.setShengChanLuHaoJunPin1("");
-			// inputByNewFormBean.setFanYingQiHaoJunPin1("");
-			// inputByNewFormBean.setShiYongCiShuJunPin1("");
-			// inputByNewFormBean.setMgJunPin1("");
-			// inputByNewFormBean.setTiCl4JunPin1("");
-			// inputByNewFormBean.setMaoZhongJunPin1("");
-			// inputByNewFormBean.setJingZhongJunPin1("");
-			// inputByNewFormBean.setChengPinLvJunPin1("");
-			// inputByNewFormBean.setYuanSuFeJunPin1("");
-			// inputByNewFormBean.setYuanSuSiJunPin1("");
-			// inputByNewFormBean.setYuanSuClJunPin1("");
-			// inputByNewFormBean.setYuanSuCJunPin1("");
-			// inputByNewFormBean.setYuanSuNJunPin1("");
-			// inputByNewFormBean.setYuanSuOJunPin1("");
-			// inputByNewFormBean.setYuanSuHJunPin1("");
-			// inputByNewFormBean.setYuanSuMnJunPin1("");
-			// inputByNewFormBean.setYuanSuHbJunPin1("");
-			// inputByNewFormBean.setDengJiHanMengJunPin1("");
-			// inputByNewFormBean.setKaoHeDengJiChuMengJunPin1("");
-			// inputByNewFormBean.setGongYiTiaoZhengJunPin1("");
-			// inputByNewFormBean.setGongYiShiYanJunPin1("");
-			// inputByNewFormBean.setDiPiKgJunPin1("");
-			// inputByNewFormBean.setShangMaoKgJunPin1("");
-			// inputByNewFormBean.setPaBiKgJunPin1("");
-			// inputByNewFormBean.setFeiDiPiKgJunPin1("");
-			// inputByNewFormBean.setFeiShangMaoKgJunPin1("");
-			// inputByNewFormBean.setFeiPaBiKgJunPin1("");
-			// inputByNewFormBean.setFeiTaiFenKgJunPin1("");
-			// inputByNewFormBean.setCiYuanKgJunPin1("");
-			// inputByNewFormBean.setShouXuanFeiLiaoKgJunPin1("");
-			// inputByNewFormBean.setSunHaoKgJunPin1("");
-			// inputByNewFormBean.setZongPaiMeiLiangKgJunPin1("");
-			// inputByNewFormBean.setChuLuZhenKongDuJunPin1("");
-			// inputByNewFormBean.setYuanZuiGaoWenDuJunPin1("");
-			// inputByNewFormBean.setZhengLiuGaoHengDianJunPin1("");
-			// inputByNewFormBean.setZhuanZhengLiuJunPin1("");
-			// inputByNewFormBean.setJiaShouCiJunPin1("");
-			// inputByNewFormBean.setJiaMoCiJunPin1("");
-			// inputByNewFormBean.setTongDaoJunPin1("");
-			// inputByNewFormBean.setShengChanGuZhangJunPin1("");
-			// inputByNewFormBean.setBeiZhuShuoMingJunPin1("");
-			// inputByNewFormBean.setYearMonthDayJunPin2("");
-			// inputByNewFormBean.setQiHaoJunPin2("");
-			// inputByNewFormBean.setLuCiJunPin2("");
-			// inputByNewFormBean.setGuiGeJunPin2("");
-			// inputByNewFormBean.setShengChanLuHaoJunPin2("");
-			// inputByNewFormBean.setFanYingQiHaoJunPin2("");
-			// inputByNewFormBean.setShiYongCiShuJunPin2("");
-			// inputByNewFormBean.setMgJunPin2("");
-			// inputByNewFormBean.setTiCl4JunPin2("");
-			// inputByNewFormBean.setMaoZhongJunPin2("");
-			// inputByNewFormBean.setJingZhongJunPin2("");
-			// inputByNewFormBean.setChengPinLvJunPin2("");
-			// inputByNewFormBean.setYuanSuFeJunPin2("");
-			// inputByNewFormBean.setYuanSuSiJunPin2("");
-			// inputByNewFormBean.setYuanSuClJunPin2("");
-			// inputByNewFormBean.setYuanSuCJunPin2("");
-			// inputByNewFormBean.setYuanSuNJunPin2("");
-			// inputByNewFormBean.setYuanSuOJunPin2("");
-			// inputByNewFormBean.setYuanSuHJunPin2("");
-			// inputByNewFormBean.setYuanSuMnJunPin2("");
-			// inputByNewFormBean.setYuanSuHbJunPin2("");
-			// inputByNewFormBean.setDengJiHanMengJunPin2("");
-			// inputByNewFormBean.setKaoHeDengJiChuMengJunPin2("");
-			// inputByNewFormBean.setGongYiTiaoZhengJunPin2("");
-			// inputByNewFormBean.setGongYiShiYanJunPin2("");
-			// inputByNewFormBean.setDiPiKgJunPin2("");
-			// inputByNewFormBean.setShangMaoKgJunPin2("");
-			// inputByNewFormBean.setPaBiKgJunPin2("");
-			// inputByNewFormBean.setFeiDiPiKgJunPin2("");
-			// inputByNewFormBean.setFeiShangMaoKgJunPin2("");
-			// inputByNewFormBean.setFeiPaBiKgJunPin2("");
-			// inputByNewFormBean.setFeiTaiFenKgJunPin2("");
-			// inputByNewFormBean.setCiYuanKgJunPin2("");
-			// inputByNewFormBean.setShouXuanFeiLiaoKgJunPin2("");
-			// inputByNewFormBean.setSunHaoKgJunPin2("");
-			// inputByNewFormBean.setZongPaiMeiLiangKgJunPin2("");
-			// inputByNewFormBean.setChuLuZhenKongDuJunPin2("");
-			// inputByNewFormBean.setYuanZuiGaoWenDuJunPin2("");
-			// inputByNewFormBean.setZhengLiuGaoHengDianJunPin2("");
-			// inputByNewFormBean.setZhuanZhengLiuJunPin2("");
-			// inputByNewFormBean.setJiaShouCiJunPin2("");
-			// inputByNewFormBean.setJiaMoCiJunPin2("");
-			// inputByNewFormBean.setTongDaoJunPin2("");
-			// inputByNewFormBean.setShengChanGuZhangJunPin2("");
-			// inputByNewFormBean.setBeiZhuShuoMingJunPin2("");
-			inputByNewList.add(inputByNewFormBean);
-		}
-		return inputByNewList;
-	}
 }
