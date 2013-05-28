@@ -235,8 +235,8 @@ public class TIronInfoDao extends BaseDao {
 				result1FormBean.setMaozhong(resultSet.getString("maozhong"));
 				result1FormBean.setJingzhong(resultSet.getString("jingzhong"));
 				if (resultSet.getString("chengpinlv") != null)
-					result1FormBean.setChengpinlv(resultSet.getString("chengpinlv"));
-					//result1FormBean.setChengpinlv(Output.getPValue(resultSet.getString("chengpinlv")));
+//					result1FormBean.setChengpinlv(resultSet.getString("chengpinlv"));
+					result1FormBean.setChengpinlv(Output.getPValue(resultSet.getString("chengpinlv")));
 				result1FormBean.setFe(resultSet.getString("fe"));
 				result1FormBean.setSi(resultSet.getString("si"));
 				result1FormBean.setCl(resultSet.getString("cl"));

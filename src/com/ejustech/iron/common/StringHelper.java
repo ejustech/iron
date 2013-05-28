@@ -44,13 +44,14 @@ public class StringHelper {
 	
 	public static String UTF8Convert2ISO8859(String value)
 	{
-		try {
-			return new String(value.getBytes("UTF-8"), "ISO-8859-1");
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "";
+		//DB中直接保存UTF-8
+//		try {
+//			return new String(value.getBytes("UTF-8"), "ISO-8859-1");
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+		return value;
 	}
 	
 	/** 匹配日期格式 */
