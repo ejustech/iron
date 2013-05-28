@@ -85,6 +85,9 @@ public class Result1Action extends EventDispatchAction {
 				ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
 				selList.add(searchFormBean);
 				request.setAttribute("SELLIST", selList);
+
+//				SearchForm searchForm = new SearchForm();
+//				searchForm.set
 //				Result1Form result1Form = (Result1Form) form;
 //				SearchForm searchForm = (SearchForm) form;
 //				System.out.println("llll = " + result1Form.getIndexCheckbox().length);

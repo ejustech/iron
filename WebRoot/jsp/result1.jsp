@@ -35,11 +35,19 @@
 				<tr>
 					<td align="left"><span class="STYLE13 STYLE14">全部信息输出表</span></td>
 				  	<td align="right">
+				  		<!--
 					  	<html:submit property="res1_add">添&nbsp&nbsp&nbsp&nbsp加</html:submit>
+					  	-->
+					  	
+					  	<!--
 						<html:submit property="res1_modify">修&nbsp&nbsp&nbsp&nbsp改</html:submit>
+						-->
+						
 						<html:submit property="res1_del">删&nbsp&nbsp&nbsp&nbsp除</html:submit>
+
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
-					  	<!--  
+
+					  	<!--
 					  	<html:submit property="res1_back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
 					  	-->
 				  	</td>

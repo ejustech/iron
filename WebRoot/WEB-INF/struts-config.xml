@@ -76,7 +76,7 @@
       path="/search"
       scope="request"
       type="com.ejustech.iron.action.SearchAction"
-      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,backToMenu,searchError"
+      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,back,searchError"
       cancellable="true">
       <forward name="srch1" path="/jsp/result1.jsp" />
       <forward name="srch2" path="/jsp/result2.jsp" />
@@ -85,7 +85,7 @@
       <forward name="srch5" path="/jsp/result5.jsp" />
       <forward name="srch6" path="/jsp/result6.jsp" />
       <forward name="srch7" path="/jsp/result7.jsp" />
-      <forward name="backToMenu" path="/jsp/menu.jsp" />
+      <forward name="back" path="/jsp/menu.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
       <forward name="relogin" path="/jsp/login.jsp" />
     </action>
@@ -112,7 +112,9 @@
       path="/result2"
       scope="request"
       type="com.ejustech.iron.action.Result2Action"
+      parameter="back,searchError,relogin"
       cancellable="true">
+      <forward name="back" path="/jsp/menu.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
       <forward name="relogin" path="/jsp/login.jsp" />
     </action>
@@ -228,7 +230,7 @@
       attribute="inputByNewForm"
       input="/jsp/inputByNew.jsp"
       name="inputByNewForm"
-      parameter="Save,Commit,Reset,Return"
+      parameter="Save,Commit,Reset,Return,back"
       path="/inputByNew"
       scope="request"
       type="com.ejustech.iron.action.InputByNewAction"
@@ -237,12 +239,13 @@
       <forward name="OK" path="/jsp/inputByNew.jsp" />
       <forward name="NG" path="/jsp/inputByNew.jsp" />
       <forward name="relogin" path="/jsp/login.jsp" />
+      <forward name="back" path="/jsp/menu.jsp" />
       </action>
     <action
       attribute="inputByUpdateForm"
       input="/jsp/inputByUpdate.jsp"
       name="inputByUpdateForm"
-      parameter="Save,Commit,Reset,Return"
+      parameter="Save,Commit,Reset,Return,back"
       path="/inputByUpdate"
       scope="request"
       type="com.ejustech.iron.action.InputByUpdateAction"
@@ -250,7 +253,8 @@
       validate="true" >
       <forward name="OK" path="/jsp/inputByUpdate.jsp" />
       <forward name="NG" path="/jsp/inputByUpdate.jsp" />   
-      <forward name="relogin" path="/jsp/login.jsp" />   
+      <forward name="relogin" path="/jsp/login.jsp" />  
+      <forward name="back" path="/jsp/menu.jsp" /> 
       </action>
   </action-mappings>
 

@@ -35,12 +35,23 @@ public class InputByUpdateAction extends EventDispatchAction {
 	 * @param response
 	 * @return ActionForward
 	 */
-	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+	public ActionForward Save(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;// TODO Auto-generated method stub
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 		inputByUpdateBusiness.Save(inputByUpdateForm);
 		
 		return mapping.findForward("OK");
+	}
+	// 处理返回跳转动作
+	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			return mapping.findForward("back");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("searchError");
+		}
+//				return null;
 	}
 }

@@ -35,8 +35,7 @@ body {
 					  	 <input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
             <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
             <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
-            <input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
-				  	</td>
+            <html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td>
 				</tr>
 		  </table>
 			<p></p>
