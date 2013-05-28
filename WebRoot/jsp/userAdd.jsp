@@ -45,10 +45,11 @@
 				<td align="right">
 					<html:submit property="update">更&nbsp&nbsp&nbsp&nbsp新</html:submit>
 					<html:reset property="reset">重&nbsp&nbsp&nbsp&nbsp置</html:reset>
-					<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 					<!-- 
-					<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+					<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 					 -->
+					<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+					
 				</td>
 				<tr><td align="left"><html:errors property="errors"></html:errors></td><td align="left"></td></tr>
 			</tr>

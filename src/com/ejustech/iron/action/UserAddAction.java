@@ -14,6 +14,7 @@ import org.apache.struts.actions.EventDispatchAction;
 import com.ejustech.iron.dao.MUserDao;
 import com.ejustech.iron.databean.form.UserManageFormBean;
 import com.ejustech.iron.form.UserAddForm;
+import com.ejustech.iron.form.UserManageForm;
 
 /**
  * MyEclipse Struts Creation date: 05-09-2013
@@ -95,6 +96,9 @@ public class UserAddAction extends EventDispatchAction {
 			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
 			userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
 			request.setAttribute("USERLIST", userList);
+			//设置第一个userID radio被选中
+			UserManageForm userManageForm = new UserManageForm();
+			userManageForm.setIndexModify(userList.get(0).getUserID());
 			return mapping.findForward("back");
 		} catch (Exception e) {
 			e.printStackTrace();
