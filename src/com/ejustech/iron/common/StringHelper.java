@@ -1,5 +1,6 @@
 package com.ejustech.iron.common;
 
+import java.io.UnsupportedEncodingException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,6 +31,28 @@ public class StringHelper {
 	/** 匹配数字 可以为负数，可以是小数 */
 	private static final String REGX_NUMBER = "-?[0-9]*.?[0-9]*";
 
+	public static String ISO8859Convert2UTF8(String value)
+	{
+		try {
+			return new String(value.getBytes("ISO-8859-1"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
+	public static String UTF8Convert2ISO8859(String value)
+	{
+		try {
+			return new String(value.getBytes("UTF-8"), "ISO-8859-1");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
 	/** 匹配日期格式 */
 	public static Boolean isDateFormat(String value) {
 		Pattern p = Pattern.compile(REGX_DATE_FORMAT);

@@ -28,6 +28,7 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息检索动作
 	public ActionForward search(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			SearchFormBean searchFormBean = new SearchFormBean();
 			searchFormBean.setSelInfoList("1");
 			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
@@ -42,6 +43,7 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息输入动作
 	public ActionForward inputByUpdate(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByUpdateForm inputByUpdateForm = new InputByUpdateForm();
 			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
 
@@ -56,6 +58,7 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息输入动作
 	public ActionForward inputByNew(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByNewForm inputByNewForm = new InputByNewForm();
 			inputByNewForm.setInputByNewList(initInputByNewForm());
 			inputByNewForm.setRole("1");
@@ -71,6 +74,7 @@ public class MenuAction extends EventDispatchAction {
 	// 处理用户管理动作
 	public ActionForward userManage(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			MUserDao mUserDao = new MUserDao();
 			// 取得用户列表
 			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
@@ -95,6 +99,12 @@ public class MenuAction extends EventDispatchAction {
 	// 处理用户注销动作
 	public ActionForward logout(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+		    HttpSession session = request.getSession(); 
+		    session.setAttribute("logout", "true");
+//		    session.invalidate();
+//		    session.removeAttribute("");
+		    
 			return mapping.findForward("logout");
 		} catch (Exception e) {
 			e.printStackTrace();

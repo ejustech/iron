@@ -40,6 +40,7 @@ public class LoginAction extends Action {
 			LoginForm loginForm = (LoginForm) form;// TODO Auto-generated method stub
 			
 			//Login画面的业务逻辑类定义并初始化
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			Login loginModule = new Login(loginForm.getUserID(), loginForm.getUserPassword());
 			
 			//登陆验证，并返回一个验证的结果

@@ -2,6 +2,12 @@
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
+<% 
+ response.setHeader("Pragma","No-cache"); 
+ response.setHeader("Cache-Control","No-cache"); 
+ response.setDateHeader("Expires", -1); 
+ response.setHeader("Cache-Control", "No-store");
+%>
 <html>
 	<head>
 		<title>功能导航</title>

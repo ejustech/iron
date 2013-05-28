@@ -36,6 +36,7 @@ public class UserManageAction extends EventDispatchAction {
 	// 处理用户删除动作
 	public ActionForward del(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			UserManageForm userManageForm = (UserManageForm) form;
 			// 获取用户
 			String[] userID = userManageForm.getIndexCheckbox();
@@ -70,6 +71,7 @@ public class UserManageAction extends EventDispatchAction {
 	// 处理用户添加跳转动作
 	public ActionForward add(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			// 动作状态放到session用于执行用户名是否存在的验证
 
 			HttpSession session = request.getSession();
@@ -89,6 +91,7 @@ public class UserManageAction extends EventDispatchAction {
 	// 处理用户修改跳转动作
 	public ActionForward modify(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			UserManageForm userManageForm = (UserManageForm) form;
 			// 获取要更新的用户名称
 			String userID = userManageForm.getIndexModify();
@@ -114,6 +117,7 @@ public class UserManageAction extends EventDispatchAction {
 	// 处理用户返回跳转动作
 	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			return mapping.findForward("back");
 		} catch (Exception e) {
 			e.printStackTrace();

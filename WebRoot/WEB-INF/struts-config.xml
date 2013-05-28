@@ -50,6 +50,7 @@
       cancellable="true">
       <forward name="loginOK" path="/jsp/menu.jsp" />
       <forward name="loginError" path="/jsp/loginError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="menuForm"
@@ -66,6 +67,7 @@
       <forward name="userManage" path="/jsp/userManage.jsp" />
       <forward name="logout" path="/jsp/login.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="searchForm"
@@ -85,6 +87,7 @@
       <forward name="srch7" path="/jsp/result7.jsp" />
       <forward name="backToMenu" path="/jsp/menu.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result1Form"
@@ -100,6 +103,7 @@
       <forward name="res1_del" path="/jsp/result1.jsp" />
       <forward name="res1_back" path="/jsp/search.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result2Form"
@@ -110,6 +114,7 @@
       type="com.ejustech.iron.action.Result2Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result3Form"
@@ -120,6 +125,7 @@
       type="com.ejustech.iron.action.Result3Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result4Form"
@@ -130,6 +136,7 @@
       type="com.ejustech.iron.action.Result4Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result5Form"
@@ -140,6 +147,7 @@
       type="com.ejustech.iron.action.Result5Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result6Form"
@@ -150,6 +158,7 @@
       type="com.ejustech.iron.action.Result6Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="result7Form"
@@ -160,6 +169,7 @@
       type="com.ejustech.iron.action.Result7Action"
       cancellable="true">
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="userManageForm"
@@ -175,6 +185,7 @@
       <forward name="del" path="/jsp/userManage.jsp" />
       <forward name="back" path="/jsp/menu.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="userAdd"
@@ -189,6 +200,7 @@
       <forward name="back" path="/jsp/userManage.jsp" />
       <forward name="searchError" path="/jsp/searchError.jsp" />
       <forward name="userExistError" path="/jsp/userExistError.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     
     <action
@@ -200,6 +212,7 @@
       type="cc.flyzz.sample.SampleQueryAction"
       cancellable="true">
       <forward name="queryResult" path="/jsp/sampleQueryResult.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="sampleQueryResultForm"
@@ -209,6 +222,7 @@
       scope="request"
       type="com.ejustech.iron.action.SampleQueryResultAction"
       cancellable="true">
+      <forward name="relogin" path="/jsp/login.jsp" />
     </action>
     <action
       attribute="inputByNewForm"
@@ -222,6 +236,7 @@
       validate="true" >
       <forward name="OK" path="/jsp/inputByNew.jsp" />
       <forward name="NG" path="/jsp/inputByNew.jsp" />
+      <forward name="relogin" path="/jsp/login.jsp" />
       </action>
     <action
       attribute="inputByUpdateForm"
@@ -234,7 +249,8 @@
       cancellable="true"
       validate="true" >
       <forward name="OK" path="/jsp/inputByUpdate.jsp" />
-      <forward name="NG" path="/jsp/inputByUpdate.jsp" />      
+      <forward name="NG" path="/jsp/inputByUpdate.jsp" />   
+      <forward name="relogin" path="/jsp/login.jsp" />   
       </action>
   </action-mappings>
 

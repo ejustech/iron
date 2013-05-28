@@ -39,6 +39,7 @@ public class UserAddAction extends EventDispatchAction {
 	// 处理用户更新动作
 	public ActionForward update(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			UserAddForm userAddForm = (UserAddForm) form;
 			String userID = userAddForm.getUserID();
 			String password = userAddForm.getPassword();
@@ -88,6 +89,7 @@ public class UserAddAction extends EventDispatchAction {
 	// 处理返回跳转动作
 	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			MUserDao mUserDao = new MUserDao();
 			//返回用户管理列表
 			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();

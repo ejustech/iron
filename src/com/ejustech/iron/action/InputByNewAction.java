@@ -29,6 +29,7 @@ public class InputByNewAction extends EventDispatchAction {
 	public ActionForward Save(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
 			InputByNewBusiness business = new InputByNewBusiness();
 			
@@ -45,6 +46,7 @@ public class InputByNewAction extends EventDispatchAction {
 	public ActionForward Commit(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
 		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
 			InputByNewBusiness business = new InputByNewBusiness();
 			inputByNewForm.setSave(false);

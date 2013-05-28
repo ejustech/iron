@@ -36,6 +36,7 @@ public class InputByUpdateAction extends EventDispatchAction {
 	 * @return ActionForward
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+		if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;// TODO Auto-generated method stub
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 		inputByUpdateBusiness.Save(inputByUpdateForm);
