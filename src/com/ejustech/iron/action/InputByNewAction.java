@@ -57,4 +57,15 @@ public class InputByNewAction extends EventDispatchAction {
 		}
 		return null;
 	}	
+	// 处理返回跳转动作
+	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+		try {
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			return mapping.findForward("back");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return mapping.findForward("searchError");
+		}
+//				return null;
+	}
 }

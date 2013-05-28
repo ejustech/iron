@@ -495,13 +495,24 @@ public class SearchAction extends EventDispatchAction {
 			return mapping.findForward("searchError");
 		}
 	}
-
-	// 处理返回menu动作
-	public ActionForward backToMenu(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+	
+	// 处理返回跳转动作
+	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			return mapping.findForward("backToMenu");
+			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			return mapping.findForward("back");
 		} catch (Exception e) {
+			e.printStackTrace();
 			return mapping.findForward("searchError");
 		}
+//			return null;
 	}
+	// 处理返回menu动作
+//	public ActionForward backToMenu(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+//		try {
+//			return mapping.findForward("backToMenu");
+//		} catch (Exception e) {
+//			return mapping.findForward("searchError");
+//		}
+//	}
 }

@@ -50,7 +50,10 @@
 				<td align="right">
 					<html:submit property="srch1">查&nbsp&nbsp&nbsp&nbsp询</html:submit>
 					<html:reset property="reset">重&nbsp&nbsp&nbsp&nbsp置</html:reset>
+					<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+					<!-- 
 					<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
+					-->
 				</td>
 			</tr>
 		</table>

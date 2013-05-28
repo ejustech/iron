@@ -43,7 +43,10 @@
 					</td>
 					<td align="right">
 						<html:submit property="exportResult2">导出Excel</html:submit>
+						<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+						<!--  
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
+						-->
 					</td>
 				</tr>
 			</table>
