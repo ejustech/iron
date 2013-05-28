@@ -76,35 +76,35 @@ public class InputByNewBusiness {
 		return checkResult;
 	}
 	
-	public ArrayList<ValidateStatusInput> checkAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
-
-		ArrayList<ValidateStatusInput> checkEmptyByRole = checkEmptyByRoleAllForCommit(inputByNewFormBean, userRole);
-		ArrayList<ValidateStatusInput> checkLength = checkLengthAll(inputByNewFormBean);
-		ArrayList<ValidateStatusInput> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
-		ArrayList<ValidateStatusInput> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
-
-		// 输入项目空值的验证
-		if (checkEmptyByRole.size() != 0) {
-			checkResult.addAll(checkEmptyByRole);
-		}
-
-		// 输入项目长度的验证
-		if (checkLength.size() != 0) {
-			checkResult.addAll(checkLength);
-		}
-
-		// 输入项目数字格式的验证
-		if (checkNumberFormat.size() != 0) {
-			checkResult.addAll(checkNumberFormat);
-		}
-
-		// 输入项目日期格式的验证
-		if (checkDateFormat.size() != 0) {
-			checkResult.addAll(checkDateFormat);
-		}
-		return checkResult;
-	}
+//	public ArrayList<ValidateStatusInput> checkAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+//		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
+//
+//		ArrayList<ValidateStatusInput> checkEmptyByRole = checkEmptyByRoleAllForCommit(inputByNewFormBean, userRole);
+//		ArrayList<ValidateStatusInput> checkLength = checkLengthAll(inputByNewFormBean);
+//		ArrayList<ValidateStatusInput> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
+//		ArrayList<ValidateStatusInput> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
+//
+//		// 输入项目空值的验证
+//		if (checkEmptyByRole.size() != 0) {
+//			checkResult.addAll(checkEmptyByRole);
+//		}
+//
+//		// 输入项目长度的验证
+//		if (checkLength.size() != 0) {
+//			checkResult.addAll(checkLength);
+//		}
+//
+//		// 输入项目数字格式的验证
+//		if (checkNumberFormat.size() != 0) {
+//			checkResult.addAll(checkNumberFormat);
+//		}
+//
+//		// 输入项目日期格式的验证
+//		if (checkDateFormat.size() != 0) {
+//			checkResult.addAll(checkDateFormat);
+//		}
+//		return checkResult;
+//	}
 
 	private ValidateStatusInput checkDateFormat(InputByNewFormBean inputByNewFormBean) {
 		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
@@ -277,161 +277,161 @@ public class InputByNewBusiness {
 		return ValidateStatusInput.OK;
 	}
 
-	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
-
-		switch (userRole) {
-		case R0:
-
-			break;
-		case R1:
-
-			break;
-		case R2:
-
-			break;
-		case R3:
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
-				checkResult.add(ValidateStatusInput.EMPTY_QiHao);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
-				checkResult.add(ValidateStatusInput.EMPTY_LuCi);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
-				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ShengChanLuHao);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
-				checkResult.add(ValidateStatusInput.EMPTY_FanYingQiHao);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ShiYongCiShu);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_Mg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
-				checkResult.add(ValidateStatusInput.EMPTY_TiCl4);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
-				checkResult.add(ValidateStatusInput.EMPTY_MaoZhong);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
-				checkResult.add(ValidateStatusInput.EMPTY_JingZhong);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ChengPinLv);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuFe);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuSi);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuCl);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuC);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuN);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuO);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuH);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuMn);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanSuHb);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
-				checkResult.add(ValidateStatusInput.EMPTY_DengJiHanMeng);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-				checkResult.add(ValidateStatusInput.EMPTY_KaoHeDengJiChuMeng);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
-				checkResult.add(ValidateStatusInput.EMPTY_GongYiTiaoZheng);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
-				checkResult.add(ValidateStatusInput.EMPTY_GongYiShiYan);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_DiPiKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ShangMaoKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_PaBiKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_FeiDiPiKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_FeiShangMaoKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_FeiPaBiKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_FeiTaiFenKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_CiYuanKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ShouXuanFeiLiaoKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_SunHaoKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ZongPaiMeiLiangKg);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ChuLuZhenKongDu);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-				checkResult.add(ValidateStatusInput.EMPTY_YuanZuiGaoWenDu);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ZhengLiuGaoHengDian);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ZhuanZhengLiu);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
-				checkResult.add(ValidateStatusInput.EMPTY_JiaShouCi);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
-				checkResult.add(ValidateStatusInput.EMPTY_JiaMoCi);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
-				checkResult.add(ValidateStatusInput.EMPTY_TongDao);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
-				checkResult.add(ValidateStatusInput.EMPTY_ShengChanGuZhang);
-			}
-			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
-				checkResult.add(ValidateStatusInput.EMPTY_BeiZhuShuoMing);
-			}
-			break;
-		default:
-			break;
-		}
-		return checkResult;
-	}
+//	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
+//		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
+//
+//		switch (userRole) {
+//		case R0:
+//
+//			break;
+//		case R1:
+//
+//			break;
+//		case R2:
+//
+//			break;
+//		case R3:
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_QiHao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_LuCi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ShengChanLuHao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_FanYingQiHao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ShiYongCiShu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_Mg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_TiCl4);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_MaoZhong);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_JingZhong);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ChengPinLv);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuFe);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuSi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuCl);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuC);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuN);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuO);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuH);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuMn);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuHb);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_DengJiHanMeng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_KaoHeDengJiChuMeng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_GongYiTiaoZheng);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_GongYiShiYan);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_DiPiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ShangMaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_PaBiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_FeiDiPiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_FeiShangMaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_FeiPaBiKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_FeiTaiFenKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_CiYuanKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ShouXuanFeiLiaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_SunHaoKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ZongPaiMeiLiangKg);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ChuLuZhenKongDu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_YuanZuiGaoWenDu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ZhengLiuGaoHengDian);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ZhuanZhengLiu);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_JiaShouCi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_JiaMoCi);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_TongDao);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_ShengChanGuZhang);
+//			}
+//			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
+//				checkResult.add(ValidateStatusInput.EMPTY_BeiZhuShuoMing);
+//			}
+//			break;
+//		default:
+//			break;
+//		}
+//		return checkResult;
+//	}
 
 	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForSave(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
 		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
@@ -907,33 +907,33 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
 			return ValidateStatusInput.NUMBER_FORMAT_ChengPinLv;
 		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuFe;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuSi;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuCl;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuC;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuN;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuO;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuH;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuMn;
-		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
-			return ValidateStatusInput.NUMBER_FORMAT_YuanSuHb;
-		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuFe;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuSi;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuCl;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuC;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuN;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuO;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuH;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuMn;
+//		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
+//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuHb;
+//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
 			return ValidateStatusInput.NUMBER_FORMAT_DengJiHanMeng;
 		}
