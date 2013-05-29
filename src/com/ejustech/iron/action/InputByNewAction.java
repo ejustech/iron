@@ -10,9 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.business.InputByNewBusiness;
@@ -31,12 +33,12 @@ public class InputByNewAction extends EventDispatchAction {
 	// 处理保存的动作
 	public ActionForward Save(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		try {
+		
 			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
 			InputByNewBusiness business = new InputByNewBusiness();
-			
-			inputByNewForm.setSave(true);
+			try {
+//			inputByNewForm.setSave(true);
 			business.Save(inputByNewForm);
 			
 //			inputByNewForm = new InputByNewForm();
@@ -50,25 +52,30 @@ public class InputByNewAction extends EventDispatchAction {
 			inputByNewForm.setRole("1");
 			return mapping.findForward("OK");
 		} catch (Exception e) {
+			ActionErrors error = new ActionErrors();
+			error.add("errors", new ActionMessage("error.inputByNew.insertError", e.toString()));
+			this.saveErrors(request, error);
+			inputByNewForm.setRole("1");
+			return mapping.findForward("NG");
 		}
-		return null;
+//		return null;
 	}
 	
-	// 处理保存的动作
-	public ActionForward Commit(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
-			InputByNewForm inputByNewForm = (InputByNewForm) form;
-			InputByNewBusiness business = new InputByNewBusiness();
-			inputByNewForm.setSave(false);
-			business.Commit(inputByNewForm);
-			
-			return mapping.findForward("OK");
-		} catch (Exception e) {
-		}
-		return null;
-	}
+//	// 处理保存的动作
+//	public ActionForward Commit(ActionMapping mapping, ActionForm form,
+//			HttpServletRequest request, HttpServletResponse response) {
+//		try {
+//			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+//			InputByNewForm inputByNewForm = (InputByNewForm) form;
+//			InputByNewBusiness business = new InputByNewBusiness();
+//			inputByNewForm.setSave(false);
+//			business.Commit(inputByNewForm);
+//			
+//			return mapping.findForward("OK");
+//		} catch (Exception e) {
+//		}
+//		return null;
+//	}
 	
 	// 处理保存的动作
 	public ActionForward Reset(ActionMapping mapping, ActionForm form,

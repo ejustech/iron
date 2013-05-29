@@ -1535,6 +1535,7 @@ public class InputByUpdateBusiness {
 				}
 
 				dao.UpdateJunPinNotInput();
+				dao.UpdateFlag();
 				dao.Commit();
 				dao.Close();
 			}
@@ -1549,58 +1550,58 @@ public class InputByUpdateBusiness {
 		}
 	}
 
-	public Boolean Commit(ActionForm form) {
-		TIronInfoDao dao = new TIronInfoDao();
-		try {
-			if (form != null) {
-				InputByUpdateForm InputByUpdateForm = (InputByUpdateForm) form;
-				InputByUpdateFormBean InputByUpdateFormBean;
-				TIronInfoDaoBean tIronInfoDaoBean;
-				dao.Open();
-				dao.BeginTrans();
-				// 信息输入画面，默认10条数据 循环
-				String tmpLuci = "";
-				String tmpYearMonthDay = "";
-				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
-					// 信息输入画面Form取得FormBean
-					InputByUpdateFormBean = getInputByUpdateFormBeanFromForm(InputByUpdateForm, i);
-					// log(InputByUpdateFormBean);
-					// 1：常规数据 2:军品1 3：军品2
-					// FormBean转化成DaoBean
-					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean, 1);
-
-					if (i % 3 == 0) {
-						tmpLuci = tIronInfoDaoBean.getLuCi();
-					} else {
-						tIronInfoDaoBean.setLuCi(tmpLuci);
-					}
-
-					if (i % 3 == 0) {
-						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
-					} else {
-						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
-					}
-
-					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
-							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
-						// 炉次和规格都不为空时，登陆。
-						dao.Insert(tIronInfoDaoBean);
-					}
-				}
-				dao.UpdateJunPinNotInput();
-				dao.Commit();
-				dao.Close();
-			}
-
-			return true;
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			dao.Rollback();
-			dao.Close();
-			return false;
-		}
-	}
+//	public Boolean Commit(ActionForm form) {
+//		TIronInfoDao dao = new TIronInfoDao();
+//		try {
+//			if (form != null) {
+//				InputByUpdateForm InputByUpdateForm = (InputByUpdateForm) form;
+//				InputByUpdateFormBean InputByUpdateFormBean;
+//				TIronInfoDaoBean tIronInfoDaoBean;
+//				dao.Open();
+//				dao.BeginTrans();
+//				// 信息输入画面，默认10条数据 循环
+//				String tmpLuci = "";
+//				String tmpYearMonthDay = "";
+//				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
+//					// 信息输入画面Form取得FormBean
+//					InputByUpdateFormBean = getInputByUpdateFormBeanFromForm(InputByUpdateForm, i);
+//					// log(InputByUpdateFormBean);
+//					// 1：常规数据 2:军品1 3：军品2
+//					// FormBean转化成DaoBean
+//					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean, 1);
+//
+//					if (i % 3 == 0) {
+//						tmpLuci = tIronInfoDaoBean.getLuCi();
+//					} else {
+//						tIronInfoDaoBean.setLuCi(tmpLuci);
+//					}
+//
+//					if (i % 3 == 0) {
+//						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
+//					} else {
+//						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
+//					}
+//
+//					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
+//							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
+//						// 炉次和规格都不为空时，登陆。
+//						dao.Insert(tIronInfoDaoBean);
+//					}
+//				}
+//				dao.UpdateJunPinNotInput();
+//				dao.Commit();
+//				dao.Close();
+//			}
+//
+//			return true;
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			dao.Rollback();
+//			dao.Close();
+//			return false;
+//		}
+//	}
 
 	public ErrorType getErrorType(ValidateStatusInput errorStatus) {
 		switch (errorStatus) {

@@ -126,6 +126,23 @@ public class TIronInfoDao extends BaseDao {
         return true;
     }
     
+    public Boolean UpdateFlag() throws SQLException {
+        // Open();
+
+        PreparedStatement ps = null;
+        try {
+            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_INSER);
+            
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            throw e;
+        }
+
+        return true;
+    }
+    
     public Boolean UpdateYue() throws SQLException {
         // Open();
 
