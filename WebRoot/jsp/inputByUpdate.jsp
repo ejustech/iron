@@ -19,6 +19,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
 }
+.STYLE15 {
+	font-family: "新宋体";
+	font-size: 14px;
+	font-weight: bold;
+}
 -->
 </style>
 </head>
@@ -30,7 +35,7 @@ body {
   </div>
  <table width="1024" align="center">
 				<tr>
-					<td align="left"><span class="STYLE13 STYLE14">信息更新</span></td>
+					<td align="left"><span class="STYLE15">信息更新</span></td>
 				  	<td align="right">
             <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
             <!-- <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit> -->

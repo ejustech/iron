@@ -79,10 +79,11 @@ public class SearchAction extends EventDispatchAction {
 			String cl1 = searchForm.getCl1();
 			String cl2 = searchForm.getCl2();
 			String selInfoList = searchForm.getSelInfoList();
-
+			// 检索条件_输入标识为1
+			sqlBufferCondition.append(" flag = '1'");
 			// 检索条件_期号
 			if (qihao.length != 0) {
-				sqlBufferCondition.append(" qihao in (");
+				sqlBufferCondition.append(" AND qihao in (");
 				StringBuffer transmode = new StringBuffer("");
 				String[] trans = qihao;
 				if (trans != null && trans.length > 0) {
@@ -96,7 +97,7 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append(transmode.toString());
 				sqlBufferCondition.append(")");
 			} else {
-				sqlBufferCondition.append(" qihao in (1,2,3,4)");
+				sqlBufferCondition.append(" AND qihao in (1,2,3,4)");
 			}
 			
 			// 放置session用于输出检索区间

@@ -173,9 +173,9 @@ public class MUserDao extends BaseDao {
 				if(resultSet.getString("authority").equals("0")){
 					userManageFormBean.setAuthority("管理员");
 				}else if (resultSet.getString("authority").equals("1")){
-					userManageFormBean.setAuthority("普通用户1");
+					userManageFormBean.setAuthority("统计员");
 				}else if (resultSet.getString("authority").equals("2")){
-					userManageFormBean.setAuthority("普通用户2");
+					userManageFormBean.setAuthority("普通用户");
 				}				
 				userManageFormBean.setTel(resultSet.getString("tel"));
 				userManageFormBean.setEmail(resultSet.getString("email"));

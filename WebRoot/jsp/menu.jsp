@@ -50,8 +50,23 @@
 			<hr width="1024" />
 			<table align="center">
 				<tr>
-					<td><html:submit property="inputByNew">信息录入</html:submit></td>
-					<td><html:submit property="inputByUpdate">信息更新</html:submit></td>
+					<td>
+						<logic:equal name="AUTHORITY" scope="session" value="2">
+							<input type=button value="信息录入" disabled="disabled" >
+	    				</logic:equal>
+	    				<logic:notEqual name="AUTHORITY" scope="session" value="2">
+	       					<html:submit property="inputByNew">信息录入</html:submit>
+	    				</logic:notEqual>
+					</td>
+					<td>
+						<logic:equal name="AUTHORITY" scope="session" value="2">
+							<input type=button value="信息更新" disabled="disabled" >
+	    				</logic:equal>
+	    				<logic:notEqual name="AUTHORITY" scope="session" value="2">
+	       					<html:submit property="inputByUpdate">信息更新</html:submit>
+	    				</logic:notEqual>
+					
+					</td>
 					<td><html:submit property="search">信息查询</html:submit></td>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="0">

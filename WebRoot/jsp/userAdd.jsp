@@ -62,15 +62,15 @@
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">用户名:</span></td>
 				<td><span class="STYLE10 STYLE11">
 				<input type="text" name="userID" maxlength="10" value="<bean:write name="USERID" scope="session"/>">
-				  </span></td>
+				  (只可输入英文,数字,半角符号)</span></td>
 				  
 			</tr>
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">权限:</span></td>
 				<td><html:select property="authority">
 					   <html:option value="0">管理员</html:option>
-					   <html:option value="1">普通用户1</html:option>
-					   <html:option value="2">普通用户2</html:option>
+					   <html:option value="1">统计员</html:option>
+					   <html:option value="2">普通用户</html:option>
 					</html:select>
 				</td>
 			</tr>
@@ -78,7 +78,7 @@
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">密码:</span></td>
 				<td><span class="STYLE10 STYLE11">
 				<input type="password" name="password" maxlength="8">
-				  </span></td>
+				  (密码最多输入8位)</span></td>
 			</tr>
 			<tr>
 				<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">确认密码:</span></td>
