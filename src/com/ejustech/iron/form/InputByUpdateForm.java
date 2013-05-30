@@ -35,6 +35,7 @@ import com.ejustech.iron.databean.form.InputByUpdateFormBean;
 public class InputByUpdateForm extends ActionForm {
 	private List inputByUpdateList = new AutoArrayList(InputByUpdateFormBean.class);
 	private boolean isSave = true;
+	private String role = "";
 	
 	/**
 	 * @return the isSave
@@ -50,6 +51,20 @@ public class InputByUpdateForm extends ActionForm {
 		this.isSave = isSave;
 	}
 
+	/**
+	 * @return the role
+	 */
+	public String getRole() {
+		return role;
+	}
+
+	/**
+	 * @param role the role to set
+	 */
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
 	public List getInputByUpdateList() {
 		return inputByUpdateList;
 	}

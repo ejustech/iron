@@ -7,9 +7,11 @@ package com.ejustech.iron.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.business.InputByUpdateBusiness;
@@ -39,8 +41,16 @@ public class InputByUpdateAction extends EventDispatchAction {
 		if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
 		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;// TODO Auto-generated method stub
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
-		inputByUpdateBusiness.Save(inputByUpdateForm);
-		
+		try {
+			inputByUpdateBusiness.Save(inputByUpdateForm);
+		} catch (Exception e) {
+			ActionErrors error = new ActionErrors();
+			error.add("errors", new ActionMessage("error.inputByUpdate.updateError", e.toString()));
+			this.saveErrors(request, error);
+			inputByUpdateForm.setRole("1");
+			return mapping.findForward("NG");
+		}
+		inputByUpdateForm.setRole("1");
 		return mapping.findForward("OK");
 	}
 	// 处理返回跳转动作

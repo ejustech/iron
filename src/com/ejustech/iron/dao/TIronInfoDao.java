@@ -210,11 +210,11 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JiaMoCi, StringHelper.UTF8Convert2ISO8859(daoBean.getJiaMoCi()));
 			
 			if ("0".equals(daoBean.getTongDao())) {
-				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
+				ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
 			}
 			else
 			{
-				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
+				ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
 			}
 			
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ShengChanGuZhang, StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
@@ -2314,6 +2314,7 @@ public class TIronInfoDao extends BaseDao {
 				ironInfoDaoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(resultSet.getString("riqi")));
 				ironInfoDaoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(resultSet.getString("qihao")));
 				ironInfoDaoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(resultSet.getString("luci")));
+				ironInfoDaoBean.setJunPin(StringHelper.ISO8859Convert2UTF8(resultSet.getString("junpin")));
 //				if (!"".equals(StringHelper.ISO8859Convert2UTF8(resultSet.getString("junpin"))) ){
 //					ironInfoDaoBean.setJunPin("(" + StringHelper.ISO8859Convert2UTF8(resultSet.getString("junpin") + ")"));
 //				} else {

@@ -30,6 +30,7 @@ public class InputByUpdateBusiness {
 				inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
 				inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
 				inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
+				inputByUpdateFormBean.setJunPin(allInfoList.get(i).getJunPin());
 				inputByUpdateFormBean.setGuiGe(allInfoList.get(i).getGuiGe());
 				inputByUpdateFormBean.setShengChanLuHao(allInfoList.get(i).getShengChanLuHao());
 				inputByUpdateFormBean.setFanYingQiHao(allInfoList.get(i).getFanYingQiHao());
@@ -1516,7 +1517,7 @@ public class InputByUpdateBusiness {
 		System.out.println("反应器号军品2:" + InputByUpdateFormBean.getFanYingQiHaoJunPin2());
 	}
 
-	public Boolean Save(ActionForm form) {
+	public Boolean Save(ActionForm form) throws Exception {
 		TIronInfoDao dao = new TIronInfoDao();
 		try {
 			if (form != null) {
@@ -1546,7 +1547,7 @@ public class InputByUpdateBusiness {
 			e.printStackTrace();
 			dao.Rollback();
 			dao.Close();
-			return false;
+			throw e;
 		}
 	}
 

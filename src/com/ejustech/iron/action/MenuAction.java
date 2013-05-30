@@ -49,7 +49,7 @@ public class MenuAction extends EventDispatchAction {
 			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
 
 			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
-
+			inputByUpdateForm.setRole("1");
 			return mapping.findForward("inputByUpdate");
 		} catch (Exception e) {
 		}

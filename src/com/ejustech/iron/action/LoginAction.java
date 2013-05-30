@@ -60,7 +60,9 @@ public class LoginAction extends Action {
 			case USER_ID_NOT_ROLE:
 				return mapping.findForward("loginError");
 			case OK:
+				request.getSession().setAttribute("logout", null);
 				return mapping.findForward("loginOK");
+				
 			default:
 				return mapping.findForward("loginOK");
 			}
