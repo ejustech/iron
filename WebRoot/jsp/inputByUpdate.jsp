@@ -112,13 +112,19 @@ body {
            <html:option value="4">4</html:option>
         </html:select>
         </td>
-        <td align="center"> <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> </td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        <html:hidden name="inputByUpdateList" property="luCi" indexed="true" ></html:hidden>
+        </td>
         <td align="center">
             <logic:notEmpty  name="inputByUpdateList" property="junPin">  
             <html:text name="inputByUpdateList" property="junPin" indexed="true" size="7" maxlength="10"></html:text>
             </logic:notEmpty> 
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10" disabled="true"></html:text>
+        <html:hidden name="inputByUpdateList" property="guiGe" indexed="true" ></html:hidden>
+        </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> </td>
@@ -185,13 +191,17 @@ body {
            <html:option value="4">4</html:option>
         </html:select>
         </td>
-        <td align="center"> <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> </td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        </td>
         <td align="center">
             <logic:notEmpty  name="inputByUpdateList" property="junPin">  
             <html:text name="inputByUpdateList" property="junPin" indexed="true" size="7" maxlength="10"></html:text>
             </logic:notEmpty> 
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10" disabled="true"></html:text>
+        </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> </td>
@@ -244,7 +254,7 @@ body {
     </logic:equal>
     <logic:equal name="inputByUpdateForm" property="role" value="3">
 
-     <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
+  <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
           <%=index+1%>
@@ -258,13 +268,17 @@ body {
            <html:option value="4">4</html:option>
         </html:select>
         </td>
-        <td align="center"> <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9"></html:text> </td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        </td>
         <td align="center">
             <logic:notEmpty  name="inputByUpdateList" property="junPin">  
             <html:text name="inputByUpdateList" property="junPin" indexed="true" size="7" maxlength="10"></html:text>
             </logic:notEmpty> 
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10"></html:text></td>
+        <td align="center">
+        <html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10" disabled="true"></html:text>
+        </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text> </td>
         <td align="center"> <html:text name="inputByUpdateList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> </td>

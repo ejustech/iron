@@ -74,56 +74,56 @@ public class InputByUpdateForm extends ActionForm {
 	}
 	
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
-		return null;
-//		InputByUpdateBusiness business = new InputByUpdateBusiness();
-//		InputByUpdateFormBean checkBean = new InputByUpdateFormBean();
-//		ArrayList<ValidateStatusInput> checkResultList = new ArrayList<ValidateStatusInput>();
-//
-//		ActionErrors error = new ActionErrors();
-//		ValidateStatusInput checkResult;
-//
-//		for (int rowIndex = 0; rowIndex < inputByUpdateList.size(); rowIndex++) {
-//			checkBean = (InputByUpdateFormBean) inputByUpdateList.get(rowIndex);
-//			
-//			if (StringHelper.isNullEmpty(checkBean.getLuCi()) && StringHelper.isNullEmpty(checkBean.getGuiGe())) continue;
-//			
-//			HttpSession session = request.getSession();
-//			
-//			if (isSave) {
-//				checkResultList.addAll(business.checkAllForSave(checkBean, UserRole.R3));
-//			}
-//			
+//		return null;
+		InputByUpdateBusiness business = new InputByUpdateBusiness();
+		InputByUpdateFormBean checkBean = new InputByUpdateFormBean();
+		ArrayList<ValidateStatusInput> checkResultList = new ArrayList<ValidateStatusInput>();
+
+		ActionErrors error = new ActionErrors();
+		ValidateStatusInput checkResult;
+
+		for (int rowIndex = 0; rowIndex < inputByUpdateList.size(); rowIndex++) {
+			checkBean = (InputByUpdateFormBean) inputByUpdateList.get(rowIndex);
+			
+			if (StringHelper.isNullEmpty(checkBean.getLuCi()) && StringHelper.isNullEmpty(checkBean.getGuiGe())) continue;
+			
+			HttpSession session = request.getSession();
+			
+			if (isSave) {
+				checkResultList.addAll(business.checkAllForSave(checkBean, UserRole.R3));
+			}
+			
 //			if (request.getAttribute("SaveOrCommit").equals("Commit")) {
 //				checkResultList.addAll(business.checkAllForCommit(checkBean, UserRole.R3));
 //			}			
-//			
-//			for (int i = 0; i < checkResultList.size(); i++) {
-//				checkResult = checkResultList.get(i);
-//
-//				if (checkResult != ValidateStatusInput.OK) {
-//
-//					ErrorType errorType = business.getErrorType(checkResult);
-//
-//					if (errorType == ErrorType.EMPTY) {
-//						error.add("errors", new ActionMessage("error.inputByNew.Empty", business.getItemNameByErrorStatus(checkResult),
-//								rowIndex + 1));
-//					} else if (errorType == ErrorType.LENGTH) {
-//						error.add("errors", new ActionMessage("error.inputByNew.Length", business.getItemNameByErrorStatus(checkResult),
-//								rowIndex + 1));
-//					} else if (errorType == ErrorType.NUMBER_FORMAT) {
-//						// TODO
-//						error.add("errors",
-//								new ActionMessage("error.inputByNew.NumberFormat", business.getItemNameByErrorStatus(checkResult),
-//										rowIndex + 1, 20));
-//					} else if (errorType == ErrorType.DATE_FORMAT) {
-//						error.add("errors", new ActionMessage("error.inputByNew.DateFormat", business.getItemNameByErrorStatus(checkResult),
-//								rowIndex + 1));
-//					}
-//				}
-//			}
-//		}
-//
-//		return error;
+			
+			for (int i = 0; i < checkResultList.size(); i++) {
+				checkResult = checkResultList.get(i);
+
+				if (checkResult != ValidateStatusInput.OK) {
+
+					ErrorType errorType = business.getErrorType(checkResult);
+
+					if (errorType == ErrorType.EMPTY) {
+						error.add("errors", new ActionMessage("error.inputByNew.Empty", business.getItemNameByErrorStatus(checkResult),
+								rowIndex + 1));
+					} else if (errorType == ErrorType.LENGTH) {
+						error.add("errors", new ActionMessage("error.inputByNew.Length", business.getItemNameByErrorStatus(checkResult),
+								rowIndex + 1));
+					} else if (errorType == ErrorType.NUMBER_FORMAT) {
+						// TODO
+						error.add("errors",
+								new ActionMessage("error.inputByNew.NumberFormat", business.getItemNameByErrorStatus(checkResult),
+										rowIndex + 1, 20));
+					} else if (errorType == ErrorType.DATE_FORMAT) {
+						error.add("errors", new ActionMessage("error.inputByNew.DateFormat", business.getItemNameByErrorStatus(checkResult),
+								rowIndex + 1));
+					}
+				}
+			}
+		}
+
+		return error;
 	}
 
 }

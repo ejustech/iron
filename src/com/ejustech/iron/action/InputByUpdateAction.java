@@ -4,6 +4,8 @@
  */
 package com.ejustech.iron.action;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.Action;
@@ -15,6 +17,7 @@ import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.EventDispatchAction;
 
 import com.ejustech.iron.business.InputByUpdateBusiness;
+import com.ejustech.iron.databean.form.InputByUpdateFormBean;
 import com.ejustech.iron.form.InputByUpdateForm;
 
 /** 
@@ -43,6 +46,13 @@ public class InputByUpdateAction extends EventDispatchAction {
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 		try {
 			inputByUpdateBusiness.Save(inputByUpdateForm);
+			
+			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
+
+			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
+			inputByUpdateForm.setRole("1");
+			return mapping.findForward("OK");
+			
 		} catch (Exception e) {
 			ActionErrors error = new ActionErrors();
 			error.add("errors", new ActionMessage("error.inputByUpdate.updateError", e.toString()));
@@ -50,8 +60,7 @@ public class InputByUpdateAction extends EventDispatchAction {
 			inputByUpdateForm.setRole("1");
 			return mapping.findForward("NG");
 		}
-		inputByUpdateForm.setRole("1");
-		return mapping.findForward("OK");
+
 	}
 	// 处理返回跳转动作
 	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
@@ -63,5 +72,12 @@ public class InputByUpdateAction extends EventDispatchAction {
 			return mapping.findForward("searchError");
 		}
 //				return null;
+	}
+	
+	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm() {
+		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
+		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
+		
+		return inputByUpdateBusiness.InitInputByUpdateForm();
 	}
 }
