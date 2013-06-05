@@ -2335,7 +2335,7 @@ public class TIronInfoDao extends BaseDao {
 				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
 				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
 				ironInfoDaoBean.setYuanSuC(resultSet.getString("c"));
-				ironInfoDaoBean.setYuanSuC(resultSet.getString("n"));
+				ironInfoDaoBean.setYuanSuN(resultSet.getString("n"));
 				ironInfoDaoBean.setYuanSuO(resultSet.getString("o"));
 				ironInfoDaoBean.setYuanSuH(resultSet.getString("h"));
 				ironInfoDaoBean.setYuanSuMn(resultSet.getString("mn"));

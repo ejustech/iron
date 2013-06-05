@@ -1418,6 +1418,9 @@ public Boolean Save(ActionForm form) throws Exception {
 					InputByUpdateFormBean = getInputByUpdateFormBeanFromForm(inputByUpdateForm, i);
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean, 1);
 					
+					if (tIronInfoDaoBean.getYearMonthDay() == null || "".equals(tIronInfoDaoBean.getYearMonthDay()))
+						tIronInfoDaoBean.setYearMonthDay("2013-06-01"); //临时值，最后DB统一更新
+					
 					dao.Update(tIronInfoDaoBean);
 					
 				}
