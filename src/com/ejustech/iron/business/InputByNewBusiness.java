@@ -1370,6 +1370,11 @@ public class InputByNewBusiness {
 					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
 							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
 						// 炉次和规格都不为空时，登陆。
+						
+						if (dao.QueryCountByLuci(tIronInfoDaoBean.getLuCi())) {
+							throw new Exception("已存在相同的炉次：" + tIronInfoDaoBean.getLuCi() +"，请确认修改后重新保存。");
+						}
+						
 						dao.Insert(tIronInfoDaoBean);
 					}
 				}

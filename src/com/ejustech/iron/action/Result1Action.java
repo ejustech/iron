@@ -50,8 +50,11 @@ public class Result1Action extends EventDispatchAction {
 
 			if (trans != null && trans.length > 0) {
 				for (int i = 0; i < trans.length; i++) {
-					luci = "'" + trans[i].substring(0, 9) + "'";
-					guige = "'" + trans[i].substring(10) + "'";
+//					luci = "'" + trans[i].substring(0, 9) + "'";
+//					guige = "'" + trans[i].substring(10) + "'";
+					
+					luci = "'" + trans[i].split("~")[0] + "'";
+					guige = "'" + trans[i].split("~")[1] + "'";
 					// 删除操作
 					tIronInfoDao.delAllInfoList(luci, guige);
 				}

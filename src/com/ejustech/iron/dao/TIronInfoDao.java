@@ -2255,6 +2255,33 @@ public class TIronInfoDao extends BaseDao {
 		}
 	}
 
+	public boolean QueryCountByLuci(String luci) throws Exception {
+
+		try {
+//		Open();
+		//Statement statement = Conn().createStatement();
+		PreparedStatement ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_KEY_LUCI);
+
+		ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
+		
+		ResultSet resultSet = ps.executeQuery();
+
+		while (resultSet.next()) {
+			if (!"0".equals(resultSet.getString("cnt"))) {
+				return true;
+			}
+			return false;
+		}
+		
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+//			Close();
+		}
+		return false;
+
+	}
+	
 	
 	/**
 	 * 删除全部信息表删除操作

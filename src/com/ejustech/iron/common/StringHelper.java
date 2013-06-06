@@ -56,6 +56,7 @@ public class StringHelper {
 	
 	/** 匹配日期格式 */
 	public static Boolean isDateFormat(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_DATE_FORMAT);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -63,6 +64,7 @@ public class StringHelper {
 
 	/** 匹配数字，可以是负数，可以是小数 */
 	public static Boolean isNumber(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NUMBER);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -70,6 +72,7 @@ public class StringHelper {
 	
 	/** 匹配浮点数 */
 	public static Boolean isDecimal(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_DECIMAL);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -77,6 +80,7 @@ public class StringHelper {
 
 	/** 匹配整数 */
 	public static Boolean isInteger(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_INTEGER);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -126,6 +130,7 @@ public class StringHelper {
 
 	/** 匹配负浮点数 */
 	public static Boolean isNegativeDecimal(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NEGATIVE_DECIMAL);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -133,6 +138,7 @@ public class StringHelper {
 
 	/** 匹配负整数 */
 	public static Boolean isNegativeInteger(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NEGATIVE_INTEGER);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -140,6 +146,7 @@ public class StringHelper {
 
 	/** 匹配非负浮点数（正浮点数 + 0） */
 	public static Boolean isNotNegativeDecimal(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NOT_NEGATIVE_DECIMAL);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -147,6 +154,7 @@ public class StringHelper {
 
 	/** 匹配非负整数（正整数 + 0） */
 	public static Boolean isNotNegativeInteger(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NOT_NEGATIVE_INTEGER);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -154,6 +162,7 @@ public class StringHelper {
 
 	/** 匹配非正浮点数（负浮点数 + 0） */
 	public static Boolean isNotPositiveDecimal(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NOT_POSITIVE_DECIMAL);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -161,6 +170,7 @@ public class StringHelper {
 
 	/** 匹配非正整数（负整数 + 0） */
 	public static Boolean isNotPositiveInteger(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_NOT_POSITIVE_INTEGER);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -176,6 +186,7 @@ public class StringHelper {
 
 	/** 匹配正浮点数 */
 	public static Boolean isPositiveDecimal(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_POSITIVE_DECIMAL);
 		Matcher m = p.matcher(value);
 		return m.matches();
@@ -183,6 +194,7 @@ public class StringHelper {
 
 	/** 匹配正整数 */
 	public static Boolean isPositiveInteger(String value) {
+		if ("".equals(value)) return true;
 		Pattern p = Pattern.compile(REGX_POSITIVE_INTEGER);
 		Matcher m = p.matcher(value);
 		return m.matches();

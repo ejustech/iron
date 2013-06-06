@@ -1414,12 +1414,22 @@ public Boolean Save(ActionForm form) throws Exception {
 				dao.Open();
 				dao.BeginTrans();
 				
+				String yearMonthDay = "";
 				for (int i = 0; i < inputByUpdateForm.getInputByUpdateList().size(); i++) {
 					InputByUpdateFormBean = getInputByUpdateFormBeanFromForm(inputByUpdateForm, i);
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean, 1);
 					
-					if (tIronInfoDaoBean.getYearMonthDay() == null || "".equals(tIronInfoDaoBean.getYearMonthDay()))
-						tIronInfoDaoBean.setYearMonthDay("2013-06-01"); //临时值，最后DB统一更新
+					if (tIronInfoDaoBean.getYearMonthDay() == null || "".equals(tIronInfoDaoBean.getYearMonthDay())) {
+						tIronInfoDaoBean.setYearMonthDay(yearMonthDay);
+					}
+					else
+					{
+						yearMonthDay = tIronInfoDaoBean.getYearMonthDay();
+					}
+					
+					if (dao.QueryCountByLuci(tIronInfoDaoBean.getLuCi())) {
+						throw new Exception("已存在相同的炉次：" + tIronInfoDaoBean.getLuCi() +"，请确认修改后重新保存。");
+					}
 					
 					dao.Update(tIronInfoDaoBean);
 					

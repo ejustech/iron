@@ -101,7 +101,7 @@ body {
      <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            <%! int a=0; %>
+            <% int a=0; %>
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -298,7 +298,11 @@ body {
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-          <%=index+1%>
+            <% int a=0; %>
+            <logic:empty  name="inputByUpdateList" property="junPin">
+            <% a=a+1; %>
+          <%=a%>
+      </logic:empty>
           </span></td>
         <td align="center"> <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> </td>
         <td align="center">
@@ -487,7 +491,11 @@ body {
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-          <%=index+1%>
+            <% int a=0; %>
+            <logic:empty  name="inputByUpdateList" property="junPin">
+            <% a=a+1; %>
+          <%=a%>
+      </logic:empty>
           </span></td>
         <td align="center"> <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> </td>
         <td align="center">
