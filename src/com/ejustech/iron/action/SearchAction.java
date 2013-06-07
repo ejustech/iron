@@ -48,6 +48,10 @@ public class SearchAction extends EventDispatchAction {
 			// 从Form中获取Search页面的检索条件
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
+			
+//			riqi1 = String.format("%tF", riqi1);
+//			riqi2 = String.format("%tF", riqi1);
+			
 			String[] qihao = searchForm.getQihao();
 			String luci1 = searchForm.getLuci1();
 			String luci2 = searchForm.getLuci2();

@@ -29,21 +29,23 @@ body {
 </head>
 
 <body>
-<html:form action="/inputByUpdate" >
+<html:form action="/inputByUpdate">
   <div align="center">
     <p><img src="../jinda/image/1.jpg"/></p>
   </div>
- <table width="1024" align="center">
-				<tr>
-					<td align="left"><span class="STYLE15">信息更新</span></td>
-				  	<td align="right">
-            <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
-            <!-- <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit> -->
-            <html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit></td>
-				</tr>
-		  </table>
-			<p></p>
-			<hr width="1024" />
+
+<table width="1024" align="center">
+<tr>
+<td align="left"><span class="STYLE15">信息录入</span></td>
+<td align="right">
+<html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
+<html:submit property="Backkk">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
+</td>
+</tr>
+</table>
+
+<p></p>
+<hr width="1024" />
 
 <table width="3000" align="center" border=1 style="BORDER-COLLAPSE: collapse">
     <tr><html:errors property="errors"></html:errors></tr>
@@ -98,10 +100,11 @@ body {
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">备注说明</span></td>
   </tr>
     <logic:equal name="inputByUpdateForm" property="role" value="1">
+    <% int a=0; %>
      <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            <% int a=0; %>
+            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -294,11 +297,11 @@ body {
 
     </logic:equal>
     <logic:equal name="inputByUpdateForm" property="role" value="2">
-
+<% int a=0; %>
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            <% int a=0; %>
+            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -487,11 +490,11 @@ body {
 
     </logic:equal>
     <logic:equal name="inputByUpdateForm" property="role" value="3">
-
+<% int a=0; %>
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            <% int a=0; %>
+            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -683,22 +686,7 @@ body {
   
 </table>
 <p>&nbsp;</p>
-<input id = isSave type="hidden" name="hide" value="" />
-<!-- 
-<table align="center">
-    <tr>
-        <td> 
-		-->
-            <!-- <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit> -->
-            <!-- 
-			<input type = "button" value = "保&nbsp&nbsp&nbsp&nbsp存" onclick = "javascript:document.getElementById('isSave').value='Save'" />
-            <html:submit property="Save">提&nbsp&nbsp&nbsp&nbsp交</html:submit>
-            <html:submit property="Reset">重&nbsp&nbsp&nbsp&nbsp置</html:submit>
-            <html:submit property="Return">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
-        </td>
-    <tr>
-</table>
- -->
+
 <hr width="1200" />
 <table align="center">
     <tr>

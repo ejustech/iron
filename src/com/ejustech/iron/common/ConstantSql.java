@@ -24,5 +24,5 @@ public class ConstantSql {
 	
 	public static final String T_INRO_INFO_UPDATE_FLG_INSER = "UPDATE ironinfo SET flag = '1' WHERE `riqi` <> '' AND `qihao` <> '' AND `luci` <> '' AND `guige` <> '' AND `shengchanluhao` <> '' AND `fanyingqihao` <> '' AND `shiyongcishu` <> '' AND `mg` <> '' AND `ticl` <> '' AND `maozhong` <> '' AND `jingzhong` <> '' AND `chengpinlv` <> '' AND `fe` <> '' AND `si` <> '' AND `cl` <> '' AND `c` <> '' AND `n` <> '' AND `o` <> '' AND `h` <> '' AND `mn` <> '' AND `hb` <> '' AND `dengji_hanmeng` <> '' AND `kaohedengji_chumeng` <> '' AND `dipi` <> '' AND `shangmao` <> '' AND `pabi` <> '' AND `feidipi` <> '' AND `feishangmao` <> '' AND `feipabi` <> '' AND `feitaifen` <> '' AND `cixuan` <> '' AND `shouxuanfeiliao` <> '' AND `sunhao` <> ''";
 	
-	public static final String T_INRO_INFO_KEY_LUCI = "select count(luci) as cnt from ironinfo where luci = ? and junpin = ''";
+	public static final String T_INRO_INFO_KEY_LUCI = "select count(luci) as cnt from ironinfo where luci = ?";
 }

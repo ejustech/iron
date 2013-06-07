@@ -216,6 +216,7 @@
       <forward name="queryResult" path="/jsp/sampleQueryResult.jsp" />
       <forward name="relogin" path="/jsp/login.jsp" />
     </action>
+    
     <action
       attribute="sampleQueryResultForm"
       input="/jsp/sampleQueryResult.jsp"
@@ -226,6 +227,7 @@
       cancellable="true">
       <forward name="relogin" path="/jsp/login.jsp" />
     </action>
+    
     <action
       attribute="inputByNewForm"
       input="/jsp/inputByNew.jsp"
@@ -241,11 +243,12 @@
       <forward name="relogin" path="/jsp/login.jsp" />
       <forward name="back" path="/jsp/menu.jsp" />
       </action>
+      
     <action
       attribute="inputByUpdateForm"
       input="/jsp/inputByUpdate.jsp"
       name="inputByUpdateForm"
-      parameter="Save,Commit,Reset,Return,back"
+      parameter="Save,Backkk"
       path="/inputByUpdate"
       scope="request"
       type="com.ejustech.iron.action.InputByUpdateAction"
@@ -254,8 +257,9 @@
       <forward name="OK" path="/jsp/inputByUpdate.jsp" />
       <forward name="NG" path="/jsp/inputByUpdate.jsp" />   
       <forward name="relogin" path="/jsp/login.jsp" />  
-      <forward name="back" path="/jsp/menu.jsp" /> 
+      <forward name="Back11" path="/jsp/menu.jsp" /> 
       </action>
+      
   </action-mappings>
 
   <message-resources parameter="com.ejustech.iron.ApplicationResources" />
