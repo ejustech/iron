@@ -1081,9 +1081,9 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_KaoHeDengJiChuMeng);
 		}
-		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
-			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
-		}
+//		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
+//		}
 //		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
 //			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiShiYan);
 //		}

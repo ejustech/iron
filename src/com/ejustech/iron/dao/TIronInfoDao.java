@@ -291,8 +291,8 @@ public class TIronInfoDao extends BaseDao {
 				result1FormBean.setSi(resultSet.getString("si"));
 				result1FormBean.setCl(resultSet.getString("cl"));
 				result1FormBean.setC(resultSet.getString("c"));
-				result1FormBean.setO(resultSet.getString("n"));
-				result1FormBean.setN(resultSet.getString("o"));
+				result1FormBean.setO(resultSet.getString("o"));
+				result1FormBean.setN(resultSet.getString("n"));
 				result1FormBean.setH(resultSet.getString("h"));
 				result1FormBean.setMn(resultSet.getString("mn"));
 				result1FormBean.setHb(resultSet.getString("hb"));

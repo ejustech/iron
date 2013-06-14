@@ -1150,9 +1150,9 @@ public ArrayList<InputByUpdateFormBean> InitInputByUpdateForm() {
 		if (!StringHelper.isNumber(inputByUpdateFormBean.getKaoHeDengJiChuMeng())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_KaoHeDengJiChuMeng);
 		}
-		if (!StringHelper.isNumber(inputByUpdateFormBean.getGongYiTiaoZheng())) {
-			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
-		}
+//		if (!StringHelper.isNumber(inputByUpdateFormBean.getGongYiTiaoZheng())) {
+//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
+//		}
 //		if (!StringHelper.isNumber(inputByUpdateFormBean.getGongYiShiYan())) {
 //			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiShiYan);
 //		}
@@ -1221,6 +1221,57 @@ public ArrayList<InputByUpdateFormBean> InitInputByUpdateForm() {
 		return checkResult;
 	}
 
+	public void InputByUpdateForm2UTF8(InputByUpdateFormBean formBean) {
+
+        formBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDay()));
+        formBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHao()));
+        formBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCi()));
+        formBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGe()));
+        formBean.setJunPin(StringHelper.ISO8859Convert2UTF8(formBean.getJunPin()));
+        formBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHao()));
+        formBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHao()));
+        formBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShu()));
+        formBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMg()));
+        formBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4()));
+        formBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhong()));
+        formBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhong()));
+        formBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLv()));
+        formBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFe()));
+        formBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSi()));
+        formBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCl()));
+        formBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuC()));
+        formBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuN()));
+        formBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuO()));
+        formBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuH()));
+        formBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMn()));
+        formBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHb()));
+        formBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMeng()));
+        formBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMeng()));
+        formBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZheng()));
+        formBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYan()));
+        formBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKg()));
+        formBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKg()));
+        formBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKg()));
+        formBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKg()));
+        formBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKg()));
+        formBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKg()));
+        formBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKg()));
+        formBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKg()));
+        formBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKg()));
+        formBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKg()));
+        formBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKg()));
+        formBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDu()));
+        formBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDu()));
+        formBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDian()));
+        formBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiu()));
+        formBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCi()));
+        formBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCi()));
+        formBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDao()));
+        formBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhang()));
+        formBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMing()));
+
+}
+	
 	private TIronInfoDaoBean ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean formBean, int rowDataIndex) {
 		TIronInfoDaoBean daoBean = new TIronInfoDaoBean();
 		switch (rowDataIndex) {

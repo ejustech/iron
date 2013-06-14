@@ -90,6 +90,10 @@ public class InputByUpdateForm extends ActionForm {
 			HttpSession session = request.getSession();
 			
 			if (isSave) {
+				InputByUpdateBusiness x = new InputByUpdateBusiness();
+				
+				x.InputByUpdateForm2UTF8(checkBean);
+				
 				checkResultList.addAll(business.checkAllForSave(checkBean, UserRole.R3));
 			}
 			
