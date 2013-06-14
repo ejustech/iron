@@ -253,6 +253,8 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append(" ironinfo");
 
 		String sql = sqlBuffer.append(sqlCondition).toString();
+		
+		sql = sql + " order by riqi, luci, guige";
 		System.out.println("sql=" + sql);
 
 		ResultSet resultSet = null;
