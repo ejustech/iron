@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>信息补全</title>
+<title>信息补全/纠错</title>
 <style type="text/css">
 <!--
 body {
@@ -36,7 +36,12 @@ body {
 
 <table width="1024" align="center">
 <tr>
+<logic:equal name="inputByUpdateForm" property="deleteId" value="">
 <td align="left"><span class="STYLE15">信息补全</span></td>
+</logic:equal>
+<logic:notEqual name="inputByUpdateForm" property="deleteId" value="">
+<td align="left"><span class="STYLE15">信息纠错</span></td>
+</logic:notEqual>
 <td align="right">
 <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
 <html:submit property="Backkk">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
