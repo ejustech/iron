@@ -31,12 +31,12 @@ body {
 <body>
 <html:form action="/inputByUpdate">
   <div align="center">
-    <p><img src="../jinda/image/1.jpg"/></p>
+    <p><img src="<%=request.getContextPath() %>/image/1.jpg"/></p>
   </div>
 
 <table width="1024" align="center">
 <tr>
-<td align="left"><span class="STYLE15">信息录入</span></td>
+<td align="left"><span class="STYLE15">信息更新</span></td>
 <td align="right">
 <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
 <html:submit property="Backkk">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
@@ -50,7 +50,6 @@ body {
 <table width="3000" align="center" border=1 style="BORDER-COLLAPSE: collapse">
     <tr><html:errors property="errors"></html:errors></tr>
     <tr><html:errors property="error01"></html:errors></tr>    
-    <html:hidden name="inputByUpdateForm" property="deleteId" ></html:hidden>
     <tr bgcolor="#006699">
     <td width="21" align="center" bordercolor="#666666" bgcolor="#99CC99"><span class="STYLE13">No.</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">年月日</span></td>

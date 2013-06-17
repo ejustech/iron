@@ -1374,7 +1374,7 @@ public class InputByNewBusiness {
 //						if (dao.QueryCountByLuci(tIronInfoDaoBean.getLuCi())) {
 //							throw new Exception("已存在相同的炉次：" + tIronInfoDaoBean.getLuCi() +"，请确认修改后重新保存。");
 //						}
-						
+						tIronInfoDaoBean.setId(dao.GetMaxId());
 						dao.Insert(tIronInfoDaoBean);
 					}
 				}

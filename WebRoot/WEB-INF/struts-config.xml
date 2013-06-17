@@ -2,267 +2,182 @@
 <!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-	<display-name/>
-<!-- 
-	<data-sources>
-		<data-source type="org.apached.commons.dbcp.BasicDataSource">
-			<set-property property="autoCommit" value="true" />
-			<set-property property="description" value="MySQL Data Source" />
-			<set-property property="driverClass" value="com.mysql.jdbc.Driver" />
-			<set-property property="maxCount" value="10" />
-			<set-property property="minCount" value="2" />
-			<set-property property="user" value="root" />
-			<set-property property="password" value="" />
-			<set-property property="url" value="jdbc:mysql://localhost:3306/addressbooksample" />
-		</data-source>
-	</data-sources>
--->
-  <form-beans >
-    <form-bean name="loginForm" type="com.ejustech.iron.form.LoginForm" />
-    <form-bean name="menuForm" type="com.ejustech.iron.form.MenuForm" />
-    <form-bean name="searchForm" type="com.ejustech.iron.form.SearchForm" />
-    <form-bean name="result1Form" type="com.ejustech.iron.form.Result1Form" />
-    <form-bean name="result2Form" type="com.ejustech.iron.form.Result2Form" />
-    <form-bean name="result3Form" type="com.ejustech.iron.form.Result3Form" />
-    <form-bean name="result4Form" type="com.ejustech.iron.form.Result4Form" />
-    <form-bean name="result5Form" type="com.ejustech.iron.form.Result5Form" />
-    <form-bean name="result6Form" type="com.ejustech.iron.form.Result6Form" />
-    <form-bean name="result7Form" type="com.ejustech.iron.form.Result7Form" />
-    <form-bean name="userManageForm" type="com.ejustech.iron.form.UserManageForm" />
-    <form-bean name="userAddForm" type="com.ejustech.iron.form.UserAddForm" />
-    
-    <form-bean name="SampleQuery" type="SampleQuery" />
-    <form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
-    <form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
-    <form-bean name="inputByNewForm" type="com.ejustech.iron.form.InputByNewForm" />
-    <form-bean name="inputByUpdateForm" type="com.ejustech.iron.form.InputByUpdateForm" />
-  </form-beans>
-  <global-exceptions />
-  <global-forwards />
-  <action-mappings >
-    <action
-      attribute="loginForm"
-      input="/jsp/login.jsp"
-      name="loginForm"
-      path="/login"
-      scope="request"
-      type="com.ejustech.iron.action.LoginAction"
-      cancellable="true">
-      <forward name="loginOK" path="/jsp/menu.jsp" />
-      <forward name="loginError" path="/jsp/loginError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="menuForm"
-      input="/jsp/menu.jsp"
-      name="menuForm"
-      path="/menu"
-      scope="request"
-      type="com.ejustech.iron.action.MenuAction"
-      parameter="search,inputByNew,userManage,inputByUpdate,logout,searchError"
-      cancellable="true">
-      <forward name="search" path="/jsp/search.jsp" />
-      <forward name="inputByNew" path="/jsp/inputByNew.jsp" />
-      <forward name="inputByUpdate" path="/jsp/inputByUpdate.jsp" />
-      <forward name="userManage" path="/jsp/userManage.jsp" />
-      <forward name="logout" path="/jsp/login.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="searchForm"
-      input="/jsp/search.jsp"
-      name="searchForm"
-      path="/search"
-      scope="request"
-      type="com.ejustech.iron.action.SearchAction"
-      parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,back,searchError"
-      cancellable="true">
-      <forward name="srch1" path="/jsp/result1.jsp" />
-      <forward name="srch2" path="/jsp/result2.jsp" />
-      <forward name="srch3" path="/jsp/result3.jsp" />
-      <forward name="srch4" path="/jsp/result4.jsp" />
-      <forward name="srch5" path="/jsp/result5.jsp" />
-      <forward name="srch6" path="/jsp/result6.jsp" />
-      <forward name="srch7" path="/jsp/result7.jsp" />
-      <forward name="back" path="/jsp/menu.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result1Form"
-      input="/jsp/result1.jsp"
-      name="result1Form"
-      path="/result1"
-      scope="request"
-      type="com.ejustech.iron.action.Result1Action"
-      parameter="res1_add,res1_modify,res1_del,res1_back,searchError"
-      cancellable="true">
-      <forward name="res1_add" path="/jsp/inputByNew.jsp" />
-      <forward name="res1_modify" path="/jsp/inputByNew.jsp" />
-      <forward name="res1_del" path="/jsp/result1.jsp" />
-      <forward name="res1_back" path="/jsp/search.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result2Form"
-      input="/jsp/result2.jsp"
-      name="result2Form"
-      path="/result2"
-      scope="request"
-      type="com.ejustech.iron.action.Result2Action"
-      parameter="back,searchError,relogin"
-      cancellable="true">
-      <forward name="back" path="/jsp/menu.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result3Form"
-      input="/jsp/result3.jsp"
-      name="result3Form"
-      path="/result3"
-      scope="request"
-      type="com.ejustech.iron.action.Result3Action"
-      cancellable="true">
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result4Form"
-      input="/jsp/result4.jsp"
-      name="result4Form"
-      path="/result4"
-      scope="request"
-      type="com.ejustech.iron.action.Result4Action"
-      cancellable="true">
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result5Form"
-      input="/jsp/result5.jsp"
-      name="result5Form"
-      path="/result5"
-      scope="request"
-      type="com.ejustech.iron.action.Result5Action"
-      cancellable="true">
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result6Form"
-      input="/jsp/result6.jsp"
-      name="result6Form"
-      path="/result6"
-      scope="request"
-      type="com.ejustech.iron.action.Result6Action"
-      cancellable="true">
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="result7Form"
-      input="/jsp/result7.jsp"
-      name="result7Form"
-      path="/result7"
-      scope="request"
-      type="com.ejustech.iron.action.Result7Action"
-      cancellable="true">
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="userManageForm"
-      input="/jsp/userManage.jsp"
-      name="userManageForm"
-      path="/userManage"
-      scope="request"
-      type="com.ejustech.iron.action.UserManageAction"
-      parameter="add,modify,del,back,searchError"
-      cancellable="true">
-      <forward name="add" path="/jsp/userAdd.jsp" />
-      <forward name="modify" path="/jsp/userAdd.jsp" />
-      <forward name="del" path="/jsp/userManage.jsp" />
-      <forward name="back" path="/jsp/menu.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    <action
-      attribute="userAdd"
-      input="/jsp/userAdd.jsp"
-      name="userAddForm"
-      path="/userAdd"
-      scope="request"
-      type="com.ejustech.iron.action.UserAddAction"
-      parameter="update,back,searchError,userExistError"
-      cancellable="true">
-      <forward name="update" path="/jsp/userManage.jsp" />
-      <forward name="back" path="/jsp/userManage.jsp" />
-      <forward name="searchError" path="/jsp/searchError.jsp" />
-      <forward name="userExistError" path="/jsp/userExistError.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    
-    <action
-      attribute="sampleQueryForm"
-      input="/jsp/sampleQuery.jsp"
-      name="sampleQueryForm"
-      path="/sampleQuery"
-      scope="request"
-      type="cc.flyzz.sample.SampleQueryAction"
-      cancellable="true">
-      <forward name="queryResult" path="/jsp/sampleQueryResult.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    
-    <action
-      attribute="sampleQueryResultForm"
-      input="/jsp/sampleQueryResult.jsp"
-      name="sampleQueryResultForm"
-      path="/sampleQueryResult"
-      scope="request"
-      type="com.ejustech.iron.action.SampleQueryResultAction"
-      cancellable="true">
-      <forward name="relogin" path="/jsp/login.jsp" />
-    </action>
-    
-    <action
-      attribute="inputByNewForm"
-      input="/jsp/inputByNew.jsp"
-      name="inputByNewForm"
-      parameter="Save,Commit,Reset,Return,back"
-      path="/inputByNew"
-      scope="request"
-      type="com.ejustech.iron.action.InputByNewAction"
-      cancellable="true"
-      validate="true" >
-      <forward name="OK" path="/jsp/inputByNew.jsp" />
-      <forward name="NG" path="/jsp/inputByNew.jsp" />
-      <forward name="relogin" path="/jsp/login.jsp" />
-      <forward name="back" path="/jsp/menu.jsp" />
-      </action>
-      
-    <action
-      attribute="inputByUpdateForm"
-      input="/jsp/inputByUpdate.jsp"
-      name="inputByUpdateForm"
-      parameter="Save,Backkk"
-      path="/inputByUpdate"
-      scope="request"
-      type="com.ejustech.iron.action.InputByUpdateAction"
-      cancellable="true"
-      validate="true" >
-      <forward name="OK" path="/jsp/inputByUpdate.jsp" />
-      <forward name="NG" path="/jsp/inputByUpdate.jsp" />   
-      <forward name="relogin" path="/jsp/login.jsp" />  
-      <forward name="Back11" path="/jsp/menu.jsp" /> 
-      </action>
-      
-  </action-mappings>
+	<display-name />
+	<!-- <data-sources> <data-source type="org.apached.commons.dbcp.BasicDataSource"> 
+		<set-property property="autoCommit" value="true" /> <set-property property="description" 
+		value="MySQL Data Source" /> <set-property property="driverClass" value="com.mysql.jdbc.Driver" 
+		/> <set-property property="maxCount" value="10" /> <set-property property="minCount" 
+		value="2" /> <set-property property="user" value="root" /> <set-property 
+		property="password" value="" /> <set-property property="url" value="jdbc:mysql://localhost:3306/addressbooksample" 
+		/> </data-source> </data-sources> -->
+	<form-beans>
+		<form-bean name="loginForm" type="com.ejustech.iron.form.LoginForm" />
+		<form-bean name="menuForm" type="com.ejustech.iron.form.MenuForm" />
+		<form-bean name="searchForm" type="com.ejustech.iron.form.SearchForm" />
+		<form-bean name="result1Form" type="com.ejustech.iron.form.Result1Form" />
+		<form-bean name="result2Form" type="com.ejustech.iron.form.Result2Form" />
+		<form-bean name="result3Form" type="com.ejustech.iron.form.Result3Form" />
+		<form-bean name="result4Form" type="com.ejustech.iron.form.Result4Form" />
+		<form-bean name="result5Form" type="com.ejustech.iron.form.Result5Form" />
+		<form-bean name="result6Form" type="com.ejustech.iron.form.Result6Form" />
+		<form-bean name="result7Form" type="com.ejustech.iron.form.Result7Form" />
+		<form-bean name="userManageForm" type="com.ejustech.iron.form.UserManageForm" />
+		<form-bean name="userAddForm" type="com.ejustech.iron.form.UserAddForm" />
 
-  <message-resources parameter="com.ejustech.iron.ApplicationResources" />
+		<form-bean name="SampleQuery" type="SampleQuery" />
+		<form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
+		<form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
+		<form-bean name="inputByNewForm" type="com.ejustech.iron.form.InputByNewForm" />
+		<form-bean name="inputByUpdateForm" type="com.ejustech.iron.form.InputByUpdateForm" />
+		<form-bean name="updateSingleForm" type="com.ejustech.iron.form.UpdateSingleForm" />
+	</form-beans>
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action attribute="loginForm" input="/jsp/login.jsp" name="loginForm"
+			path="/login" scope="request" type="com.ejustech.iron.action.LoginAction"
+			cancellable="true">
+			<forward name="loginOK" path="/jsp/menu.jsp" />
+			<forward name="loginError" path="/jsp/loginError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="menuForm" input="/jsp/menu.jsp" name="menuForm"
+			path="/menu" scope="request" type="com.ejustech.iron.action.MenuAction"
+			parameter="search,inputByNew,userManage,inputByUpdate,logout,searchError"
+			cancellable="true">
+			<forward name="search" path="/jsp/search.jsp" />
+			<forward name="inputByNew" path="/jsp/inputByNew.jsp" />
+			<forward name="inputByUpdate" path="/jsp/inputByUpdate.jsp" />
+			<forward name="userManage" path="/jsp/userManage.jsp" />
+			<forward name="logout" path="/jsp/login.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="searchForm" input="/jsp/search.jsp" name="searchForm"
+			path="/search" scope="request" type="com.ejustech.iron.action.SearchAction"
+			parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,back,searchError"
+			cancellable="true">
+			<forward name="srch1" path="/jsp/result1.jsp" />
+			<forward name="srch2" path="/jsp/result2.jsp" />
+			<forward name="srch3" path="/jsp/result3.jsp" />
+			<forward name="srch4" path="/jsp/result4.jsp" />
+			<forward name="srch5" path="/jsp/result5.jsp" />
+			<forward name="srch6" path="/jsp/result6.jsp" />
+			<forward name="srch7" path="/jsp/result7.jsp" />
+			<forward name="back" path="/jsp/menu.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result1Form" input="/jsp/result1.jsp" name="result1Form"
+			path="/result1" scope="request" type="com.ejustech.iron.action.Result1Action"
+			parameter="res1_add,res1_modify,res1_del,res1_back,searchError"
+			cancellable="true">
+			<forward name="res1_add" path="/jsp/inputByNew.jsp" />
+			<forward name="res1_modify" path="/jsp/inputByNew.jsp" />
+			<forward name="res1_del" path="/jsp/result1.jsp" />
+			<forward name="res1_back" path="/jsp/search.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result2Form" input="/jsp/result2.jsp" name="result2Form"
+			path="/result2" scope="request" type="com.ejustech.iron.action.Result2Action"
+			parameter="back,searchError,relogin" cancellable="true">
+			<forward name="back" path="/jsp/menu.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result3Form" input="/jsp/result3.jsp" name="result3Form"
+			path="/result3" scope="request" type="com.ejustech.iron.action.Result3Action"
+			cancellable="true">
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result4Form" input="/jsp/result4.jsp" name="result4Form"
+			path="/result4" scope="request" type="com.ejustech.iron.action.Result4Action"
+			cancellable="true">
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result5Form" input="/jsp/result5.jsp" name="result5Form"
+			path="/result5" scope="request" type="com.ejustech.iron.action.Result5Action"
+			cancellable="true">
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result6Form" input="/jsp/result6.jsp" name="result6Form"
+			path="/result6" scope="request" type="com.ejustech.iron.action.Result6Action"
+			cancellable="true">
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="result7Form" input="/jsp/result7.jsp" name="result7Form"
+			path="/result7" scope="request" type="com.ejustech.iron.action.Result7Action"
+			cancellable="true">
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="userManageForm" input="/jsp/userManage.jsp"
+			name="userManageForm" path="/userManage" scope="request"
+			type="com.ejustech.iron.action.UserManageAction" parameter="add,modify,del,back,searchError"
+			cancellable="true">
+			<forward name="add" path="/jsp/userAdd.jsp" />
+			<forward name="modify" path="/jsp/userAdd.jsp" />
+			<forward name="del" path="/jsp/userManage.jsp" />
+			<forward name="back" path="/jsp/menu.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+		<action attribute="userAdd" input="/jsp/userAdd.jsp" name="userAddForm"
+			path="/userAdd" scope="request" type="com.ejustech.iron.action.UserAddAction"
+			parameter="update,back,searchError,userExistError" cancellable="true">
+			<forward name="update" path="/jsp/userManage.jsp" />
+			<forward name="back" path="/jsp/userManage.jsp" />
+			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="userExistError" path="/jsp/userExistError.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+
+		<action attribute="sampleQueryForm" input="/jsp/sampleQuery.jsp"
+			name="sampleQueryForm" path="/sampleQuery" scope="request"
+			type="cc.flyzz.sample.SampleQueryAction" cancellable="true">
+			<forward name="queryResult" path="/jsp/sampleQueryResult.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+
+		<action attribute="sampleQueryResultForm" input="/jsp/sampleQueryResult.jsp"
+			name="sampleQueryResultForm" path="/sampleQueryResult" scope="request"
+			type="com.ejustech.iron.action.SampleQueryResultAction" cancellable="true">
+			<forward name="relogin" path="/jsp/login.jsp" />
+		</action>
+
+		<action attribute="inputByNewForm" input="/jsp/inputByNew.jsp"
+			name="inputByNewForm" parameter="Save,Commit,Reset,Return,back" path="/inputByNew"
+			scope="request" type="com.ejustech.iron.action.InputByNewAction"
+			cancellable="true" validate="true">
+			<forward name="OK" path="/jsp/inputByNew.jsp" />
+			<forward name="NG" path="/jsp/inputByNew.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+			<forward name="back" path="/jsp/menu.jsp" />
+		</action>
+
+		<action attribute="inputByUpdateForm" input="/jsp/inputByUpdate.jsp"
+			name="inputByUpdateForm" parameter="Save,Backkk" path="/inputByUpdate"
+			scope="request" type="com.ejustech.iron.action.InputByUpdateAction"
+			cancellable="true" validate="true">
+			<forward name="OK" path="/jsp/inputByUpdate.jsp" />
+			<forward name="NG" path="/jsp/inputByUpdate.jsp" />
+			<forward name="relogin" path="/jsp/login.jsp" />
+			<forward name="Back11" path="/jsp/menu.jsp" />
+		</action>
+		<action attribute="updateSingleForm" input="/jsp/UpdateSingle.jsp"
+			name="updateSingleForm" path="/updateSingle" scope="request"
+			type="com.ejustech.iron.action.UpdateSingleAction" cancellable="true">
+			<forward name="inputByUpdate" path="/jsp/inputByUpdate.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="com.ejustech.iron.ApplicationResources" />
 
 </struts-config>
 
