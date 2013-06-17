@@ -60,10 +60,10 @@
 					</td>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="2">
-							<input type=button value="信息更新" disabled="disabled" >
+							<input type=button value="信息补全" disabled="disabled" >
 	    				</logic:equal>
 	    				<logic:notEqual name="AUTHORITY" scope="session" value="2">
-	       					<html:submit property="inputByUpdate">信息更新</html:submit>
+	       					<html:submit property="inputByUpdate">信息补全</html:submit>
 	    				</logic:notEqual>
 					
 					</td>

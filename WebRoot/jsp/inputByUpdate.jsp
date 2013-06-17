@@ -7,7 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>信息更新</title>
+<title>信息补全</title>
 <style type="text/css">
 <!--
 body {
@@ -36,7 +36,7 @@ body {
 
 <table width="1024" align="center">
 <tr>
-<td align="left"><span class="STYLE15">信息录入</span></td>
+<td align="left"><span class="STYLE15">信息补全</span></td>
 <td align="right">
 <html:submit property="Save">保&nbsp&nbsp&nbsp&nbsp存</html:submit>
 <html:submit property="Backkk">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
