@@ -85,6 +85,75 @@ public ArrayList<InputByUpdateFormBean> InitInputByUpdateForm() {
 		return inputByNewList;
 	}
 	
+public ArrayList<InputByUpdateFormBean> InitInputByUpdateSingleForm(String luci) {
+	ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
+
+	InputByUpdateFormBean inputByUpdateFormBean;
+
+	TIronInfoDao dao = new TIronInfoDao();
+	ArrayList<TIronInfoDaoBean> allInfoList = new ArrayList<TIronInfoDaoBean>();
+	try {
+		allInfoList = dao.GetSingleIronInfo(luci);
+
+		for (int i = 0; i < allInfoList.size(); i++) {
+			inputByUpdateFormBean = new InputByUpdateFormBean();
+			inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
+			inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
+			inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
+			inputByUpdateFormBean.setJunPin(allInfoList.get(i).getJunPin());
+			inputByUpdateFormBean.setGuiGe(allInfoList.get(i).getGuiGe());
+			inputByUpdateFormBean.setShengChanLuHao(allInfoList.get(i).getShengChanLuHao());
+			inputByUpdateFormBean.setFanYingQiHao(allInfoList.get(i).getFanYingQiHao());
+			inputByUpdateFormBean.setShiYongCiShu(allInfoList.get(i).getShiYongCiShu());
+			inputByUpdateFormBean.setMg(allInfoList.get(i).getMg());
+			inputByUpdateFormBean.setTiCl4(allInfoList.get(i).getTiCl4());
+			inputByUpdateFormBean.setMaoZhong(allInfoList.get(i).getMaoZhong());
+			inputByUpdateFormBean.setJingZhong(allInfoList.get(i).getJingZhong());
+			inputByUpdateFormBean.setChengPinLv(allInfoList.get(i).getChengPinLv());
+			inputByUpdateFormBean.setYuanSuFe(allInfoList.get(i).getYuanSuFe());
+			inputByUpdateFormBean.setYuanSuSi(allInfoList.get(i).getYuanSuSi());
+			inputByUpdateFormBean.setYuanSuCl(allInfoList.get(i).getYuanSuCl());
+			inputByUpdateFormBean.setYuanSuC(allInfoList.get(i).getYuanSuC());
+			inputByUpdateFormBean.setYuanSuN(allInfoList.get(i).getYuanSuN());
+			inputByUpdateFormBean.setYuanSuO(allInfoList.get(i).getYuanSuO());
+			inputByUpdateFormBean.setYuanSuH(allInfoList.get(i).getYuanSuH());
+			inputByUpdateFormBean.setYuanSuMn(allInfoList.get(i).getYuanSuMn());
+			inputByUpdateFormBean.setYuanSuHb(allInfoList.get(i).getYuanSuHb());
+			inputByUpdateFormBean.setDengJiHanMeng(allInfoList.get(i).getDengJiHanMeng());
+			inputByUpdateFormBean.setKaoHeDengJiChuMeng(allInfoList.get(i).getKaoHeDengJiChuMeng());
+			inputByUpdateFormBean.setGongYiTiaoZheng(allInfoList.get(i).getGongYiTiaoZheng());
+			inputByUpdateFormBean.setGongYiShiYan(allInfoList.get(i).getGongYiShiYan());
+			inputByUpdateFormBean.setDiPiKg(allInfoList.get(i).getDiPiKg());
+			inputByUpdateFormBean.setShangMaoKg(allInfoList.get(i).getShangMaoKg());
+			inputByUpdateFormBean.setPaBiKg(allInfoList.get(i).getPaBiKg());
+			inputByUpdateFormBean.setFeiDiPiKg(allInfoList.get(i).getFeiDiPiKg());
+			inputByUpdateFormBean.setFeiShangMaoKg(allInfoList.get(i).getFeiShangMaoKg());
+			inputByUpdateFormBean.setFeiPaBiKg(allInfoList.get(i).getFeiPaBiKg());
+			inputByUpdateFormBean.setFeiTaiFenKg(allInfoList.get(i).getFeiTaiFenKg());
+			inputByUpdateFormBean.setCiYuanKg(allInfoList.get(i).getCiYuanKg());
+			inputByUpdateFormBean.setShouXuanFeiLiaoKg(allInfoList.get(i).getShouXuanFeiLiaoKg());
+			inputByUpdateFormBean.setSunHaoKg(allInfoList.get(i).getSunHaoKg());
+			inputByUpdateFormBean.setZongPaiMeiLiangKg(allInfoList.get(i).getZongPaiMeiLiangKg());
+			inputByUpdateFormBean.setChuLuZhenKongDu(allInfoList.get(i).getChuLuZhenKongDu());
+			inputByUpdateFormBean.setYuanZuiGaoWenDu(allInfoList.get(i).getYuanZuiGaoWenDu());
+			inputByUpdateFormBean.setZhengLiuGaoHengDian(allInfoList.get(i).getZhengLiuGaoHengDian());
+			inputByUpdateFormBean.setZhuanZhengLiu(allInfoList.get(i).getZhuanZhengLiu());
+			inputByUpdateFormBean.setJiaShouCi(allInfoList.get(i).getJiaShouCi());
+			inputByUpdateFormBean.setJiaMoCi(allInfoList.get(i).getJiaMoCi());
+			inputByUpdateFormBean.setTongDao(allInfoList.get(i).getTongDao());
+			inputByUpdateFormBean.setShengChanGuZhang(allInfoList.get(i).getShengChanGuZhang());
+			inputByUpdateFormBean.setBeiZhuShuoMing(allInfoList.get(i).getBeiZhuShuoMing());
+
+			inputByNewList.add(inputByUpdateFormBean);
+		}
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+	return inputByNewList;
+}
+
 	public ValidateStatusInput check(InputByUpdateFormBean inputByUpdateFormBean, UserRole userRole) {
 		ValidateStatusInput checkResult = ValidateStatusInput.OK;
 

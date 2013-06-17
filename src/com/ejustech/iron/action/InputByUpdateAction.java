@@ -53,12 +53,25 @@ public class InputByUpdateAction extends EventDispatchAction {
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 		try {
 			inputByUpdateBusiness.Save(inputByUpdateForm);
+			String deleteId = inputByUpdateForm.getDeleteId();
+			
+			if ("".equals(deleteId)) {
+				inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
 
-			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
+				request.setAttribute("inputByUpdateForm", inputByUpdateForm);
+				inputByUpdateForm.setRole("1");
+				return mapping.findForward("OK");
+			}
+			else
+			{
+				inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm(deleteId));
 
-			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
-			inputByUpdateForm.setRole("1");
-			return mapping.findForward("OK");
+				request.setAttribute("inputByUpdateForm", inputByUpdateForm);
+				request.setAttribute("deleteId", deleteId);
+				inputByUpdateForm.setRole("1");
+				return mapping.findForward("OK");
+			}
+
 
 		} catch (Exception e) {
 			ActionErrors error = new ActionErrors();
@@ -88,5 +101,12 @@ public class InputByUpdateAction extends EventDispatchAction {
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
 
 		return inputByUpdateBusiness.InitInputByUpdateForm();
+	}
+	
+	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm(String luci) {
+		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
+		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
+		
+		return inputByUpdateBusiness.InitInputByUpdateSingleForm(luci);
 	}
 }
