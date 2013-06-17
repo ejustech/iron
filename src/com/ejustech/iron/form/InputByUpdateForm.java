@@ -33,22 +33,20 @@ import com.ejustech.iron.databean.form.InputByUpdateFormBean;
  * @struts.form name="InputByUpdateForm"
  */
 public class InputByUpdateForm extends ActionForm {
+	private String deleteId = "";
 	private List inputByUpdateList = new AutoArrayList(InputByUpdateFormBean.class);
 	private boolean isSave = true;
 	private String role = "";
 	
 	/**
-	 * @return the isSave
+	 * @return the deleteId
 	 */
-	public boolean isSave() {
-		return isSave;
+	public String getDeleteId() {
+		return deleteId;
 	}
 
-	/**
-	 * @param isSave the isSave to set
-	 */
-	public void setSave(boolean isSave) {
-		this.isSave = isSave;
+	public List getInputByUpdateList() {
+		return inputByUpdateList;
 	}
 
 	/**
@@ -59,18 +57,35 @@ public class InputByUpdateForm extends ActionForm {
 	}
 
 	/**
+	 * @return the isSave
+	 */
+	public boolean isSave() {
+		return isSave;
+	}
+
+	/**
+	 * @param deleteId the deleteId to set
+	 */
+	public void setDeleteId(String deleteId) {
+		this.deleteId = deleteId;
+	}
+
+	public void setInputByUpdateList(List inputByUpdateList) {
+		this.inputByUpdateList = inputByUpdateList;
+	}
+	
+	/**
 	 * @param role the role to set
 	 */
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	public List getInputByUpdateList() {
-		return inputByUpdateList;
-	}
 
-	public void setInputByUpdateList(List inputByUpdateList) {
-		this.inputByUpdateList = inputByUpdateList;
+	/**
+	 * @param isSave the isSave to set
+	 */
+	public void setSave(boolean isSave) {
+		this.isSave = isSave;
 	}
 	
 	public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {

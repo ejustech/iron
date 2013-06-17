@@ -2,10 +2,10 @@ package com.ejustech.iron.databean.dao;
 
 import com.ejustech.iron.common.StringHelper;
 
-public class TIronInfoDaoBean {	
+public class TIronInfoDaoBean {
 	/** 备注说明 */
 	private String beiZhuShuoMing;
-
+	
 	/** 成品率 */
 	private String chengPinLv;
 
@@ -47,6 +47,9 @@ public class TIronInfoDaoBean {
 
 	/** 规格 */
 	private String guiGe;
+
+	/** ID */
+	private String id;
 
 	/** 加末次 */
 	private String jiaMoCi;
@@ -256,6 +259,13 @@ public class TIronInfoDaoBean {
 	 */
 	public String getGuiGe() {
 		return StringHelper.null2Empty(guiGe);
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -607,6 +617,13 @@ public class TIronInfoDaoBean {
 	 */
 	public void setGuiGe(String guiGe) {
 		this.guiGe = guiGe;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**

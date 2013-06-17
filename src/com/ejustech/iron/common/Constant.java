@@ -190,9 +190,9 @@ public class Constant {
 	 */
 	public static final int T_IRON_INFO_COL_BeiZhuShuoMing = 46;
 	/**
-	 * 信息输入画面 登陆用SQL文 参数顺序 军品
+	 * 信息输入画面 登陆用SQL文 参数顺序 ID
 	 */
-	public static final int T_IRON_INFO_COL_JunPin = 47;
+	public static final int T_IRON_INFO_COL_ID = 47;
 
 	/**
 	 * 信息输入画面 登陆用SQL文 参数顺序 年月日

@@ -57,7 +57,8 @@
 			<hr width="1024" />
 			<table align="center" border=1 style="BORDER-COLLAPSE: collapse">
 				<tr>
-					<th bgcolor="#99CC99"><span class="STYLE11"></span></th>
+					<th bgcolor="#99CC99"><span class="STYLE11">删除</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE11">修改</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">日期</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">期号</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">炉次</span></th>
@@ -113,6 +114,10 @@
 							<bean:write name="result1FormBean" property="index" />
 						</html:multibox>					
 					</td>
+					<td align="center"><span class="STYLE16">
+					  <!-- <html:text name="result1FormBean" property="id" indexed="true" ></html:text> -->
+					  <input type="button" value="修改" onclick="window.location.href='/jinda/updateSingle.do?id=${result1FormBean.id}';" /> 
+					</span></td>					
 					<td align="center"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="riqi" ></bean:write>
 					</span></td>
