@@ -106,13 +106,14 @@ public class TIronInfoDao extends BaseDao {
 	/**
 	 * 使用军品数据，更新非军品部分数据
 	 */
-    public Boolean UpdateJunPinNotInput() throws SQLException {
+    public Boolean UpdateJunPinNotInput(String id) throws SQLException {
 
         PreparedStatement ps = null;
 
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT);
-
+            ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
+            
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -124,13 +125,14 @@ public class TIronInfoDao extends BaseDao {
 	/**
 	 * 更新数据输入完全标志
 	 */
-    public Boolean UpdateFlag() throws SQLException {
+    public Boolean UpdateFlag(String id) throws SQLException {
 
         PreparedStatement ps = null;
 
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_INSER);
-
+            ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
+            
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -142,13 +144,14 @@ public class TIronInfoDao extends BaseDao {
 	/**
 	 * 更新月字段
 	 */
-    public Boolean UpdateYue() throws SQLException {
+    public Boolean UpdateYue(String id) throws SQLException {
 
         PreparedStatement ps = null;
 
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_YUE);
-
+            ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
+            
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -300,6 +303,7 @@ public class TIronInfoDao extends BaseDao {
 
 				ironInfoDaoBean = new TIronInfoDaoBean();
 
+				ironInfoDaoBean.setId(resultSet.getString("id"));
 				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
 				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
 				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
@@ -381,6 +385,7 @@ public class TIronInfoDao extends BaseDao {
 
 				ironInfoDaoBean = new TIronInfoDaoBean();
 
+				ironInfoDaoBean.setId(resultSet.getString("id"));
 				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
 				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
 				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
@@ -460,7 +465,7 @@ public class TIronInfoDao extends BaseDao {
 
 		String sql = sqlBuffer.append(sqlCondition).toString();
 
-		sql = sql + " order by riqi, luci";
+		sql = sql + " order by id";
 		System.out.println("sql=" + sql);
 
 		ResultSet resultSet = null;

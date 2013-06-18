@@ -110,7 +110,6 @@ body {
      <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -133,6 +132,7 @@ body {
         </td>
         <td align="center">
         <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        <html:hidden name="inputByUpdateList" property="id" indexed="true" ></html:hidden>
         <html:hidden name="inputByUpdateList" property="luCi" indexed="true" ></html:hidden>
         </td>
         <td align="center">
@@ -307,7 +307,6 @@ body {
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -326,6 +325,7 @@ body {
         </td>
         <td align="center">
         <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        <html:hidden name="inputByUpdateList" property="id" indexed="true" ></html:hidden>
         <html:hidden name="inputByUpdateList" property="luCi" indexed="true" ></html:hidden>
         </td>
         <td align="center">
@@ -500,7 +500,6 @@ body {
        <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
-            
             <logic:empty  name="inputByUpdateList" property="junPin">
             <% a=a+1; %>
           <%=a%>
@@ -519,6 +518,7 @@ body {
         </td>
         <td align="center">
         <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        <html:hidden name="inputByUpdateList" property="id" indexed="true" ></html:hidden>
         <html:hidden name="inputByUpdateList" property="luCi" indexed="true" ></html:hidden>
         </td>
         <td align="center">

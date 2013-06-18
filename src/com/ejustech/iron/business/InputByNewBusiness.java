@@ -968,16 +968,18 @@ public class InputByNewBusiness {
 					}
 
 					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
-									&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
+							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
 						// 炉次和规格都不为空时，登陆。
 
 						tIronInfoDaoBean.setId(dao.GetMaxId());
 						dao.Insert(tIronInfoDaoBean);
+						if (!"".equals(StringHelper.null2Empty(tIronInfoDaoBean.getJunPin()))) {
+							dao.UpdateJunPinNotInput(tIronInfoDaoBean.getId());
+						}
+						dao.UpdateYue(tIronInfoDaoBean.getId());
+						dao.UpdateFlag(tIronInfoDaoBean.getId());
 					}
 				}
-				dao.UpdateJunPinNotInput();
-				dao.UpdateYue();
-				dao.UpdateFlag();
 				dao.Commit();
 				dao.Close();
 			}

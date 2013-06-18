@@ -29,6 +29,7 @@ public class InputByUpdateBusiness {
 
 			for (int i = 0; i < allInfoList.size(); i++) {
 				inputByUpdateFormBean = new InputByUpdateFormBean();
+				inputByUpdateFormBean.setId(allInfoList.get(i).getId());
 				inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
 				inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
 				inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
@@ -98,6 +99,7 @@ public class InputByUpdateBusiness {
 
 			for (int i = 0; i < allInfoList.size(); i++) {
 				inputByUpdateFormBean = new InputByUpdateFormBean();
+				inputByUpdateFormBean.setId(allInfoList.get(i).getId());
 				inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
 				inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
 				inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
@@ -225,7 +227,8 @@ public class InputByUpdateBusiness {
 	private ArrayList<ValidateStatusInput> checkDateFormatAll(InputByUpdateFormBean inputByUpdateFormBean) {
 		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
-		if (StringHelper.isNullEmpty(inputByUpdateFormBean.getJunPin()) && !StringHelper.isDateFormat(inputByUpdateFormBean.getYearMonthDay())) {
+		if (StringHelper.isNullEmpty(inputByUpdateFormBean.getJunPin())
+				&& !StringHelper.isDateFormat(inputByUpdateFormBean.getYearMonthDay())) {
 			checkResult.add(ValidateStatusInput.DATE_FORMAT_YearMonthDay);
 		}
 
@@ -400,7 +403,8 @@ public class InputByUpdateBusiness {
 
 			break;
 		case R3:
-			if (StringHelper.isNullEmpty(inputByUpdateFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByUpdateFormBean.getYearMonthDay())) {
+			if (StringHelper.isNullEmpty(inputByUpdateFormBean.getJunPin())
+					&& StringHelper.isNullEmpty(inputByUpdateFormBean.getYearMonthDay())) {
 				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
 			}
 			if (StringHelper.isNullEmpty(inputByUpdateFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByUpdateFormBean.getQiHao())) {
@@ -534,7 +538,8 @@ public class InputByUpdateBusiness {
 		if (StringHelper.isLenGreater(inputByUpdateFormBean.getYuanZuiGaoWenDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanZuiGaoWenDu)) {
 			return ValidateStatusInput.LENGTH_YuanZuiGaoWenDu;
 		}
-		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhengLiuGaoHengDian(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
+		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhengLiuGaoHengDian(),
+				Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
 			return ValidateStatusInput.LENGTH_ZhengLiuGaoHengDian;
 		}
 		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhuanZhengLiu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhuanZhengLiu)) {
@@ -675,7 +680,8 @@ public class InputByUpdateBusiness {
 		if (StringHelper.isLenGreater(inputByUpdateFormBean.getYuanZuiGaoWenDu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YuanZuiGaoWenDu)) {
 			checkResult.add(ValidateStatusInput.LENGTH_YuanZuiGaoWenDu);
 		}
-		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhengLiuGaoHengDian(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
+		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhengLiuGaoHengDian(),
+				Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhengLiuGaoHengDian)) {
 			checkResult.add(ValidateStatusInput.LENGTH_ZhengLiuGaoHengDian);
 		}
 		if (StringHelper.isLenGreater(inputByUpdateFormBean.getZhuanZhengLiu(), Constant.LENGTH_INPUT_BY_NEW_CHECK_ZhuanZhengLiu)) {
@@ -969,6 +975,7 @@ public class InputByUpdateBusiness {
 		TIronInfoDaoBean daoBean = new TIronInfoDaoBean();
 		switch (rowDataIndex) {
 		case 1:
+			daoBean.setId(formBean.getId());
 			daoBean.setYearMonthDay(formBean.getYearMonthDay());
 			daoBean.setQiHao(formBean.getQiHao());
 			daoBean.setLuCi(formBean.getLuCi());
@@ -1017,6 +1024,7 @@ public class InputByUpdateBusiness {
 			daoBean.setBeiZhuShuoMing(formBean.getBeiZhuShuoMing());
 			break;
 		case 2:
+			daoBean.setId(formBean.getId());
 			daoBean.setYearMonthDay(formBean.getYearMonthDayJunPin1());
 			daoBean.setQiHao(formBean.getQiHaoJunPin1());
 			daoBean.setLuCi(formBean.getLuCiJunPin1());
@@ -1064,6 +1072,7 @@ public class InputByUpdateBusiness {
 			daoBean.setBeiZhuShuoMing(formBean.getBeiZhuShuoMingJunPin1());
 			break;
 		case 3:
+			daoBean.setId(formBean.getId());
 			daoBean.setYearMonthDay(formBean.getYearMonthDayJunPin2());
 			daoBean.setQiHao(formBean.getQiHaoJunPin2());
 			daoBean.setLuCi(formBean.getLuCiJunPin2());
@@ -1144,10 +1153,12 @@ public class InputByUpdateBusiness {
 						yearMonthDay = tIronInfoDaoBean.getYearMonthDay();
 					}
 					dao.Update(tIronInfoDaoBean);
+					if (!"".equals(StringHelper.null2Empty(tIronInfoDaoBean.getJunPin()))) {
+						dao.UpdateJunPinNotInput(tIronInfoDaoBean.getId());
+					}
+					dao.UpdateYue(tIronInfoDaoBean.getId());
+					dao.UpdateFlag(tIronInfoDaoBean.getId());
 				}
-
-				dao.UpdateJunPinNotInput();
-				dao.UpdateFlag();
 				dao.Commit();
 				dao.Close();
 			}

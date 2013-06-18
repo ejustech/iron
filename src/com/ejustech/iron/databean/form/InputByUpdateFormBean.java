@@ -5,6 +5,7 @@ import com.ejustech.iron.common.StringHelper;
 public class InputByUpdateFormBean {
 	/** 备注说明 */
 	private String beiZhuShuoMing;
+	
 	/** 备注说明 */
 	private String beiZhuShuoMingJunPin1;
 
@@ -13,7 +14,6 @@ public class InputByUpdateFormBean {
 
 	/** 成品率 */
 	private String chengPinLv;
-
 	/** 成品率 */
 	private String chengPinLvJunPin1;
 
@@ -127,6 +127,8 @@ public class InputByUpdateFormBean {
 
 	/** 规格 */
 	private String guiGeJunPin2;
+
+	private String id;
 
 	/** 加末次 */
 	private String jiaMoCi;
@@ -415,28 +417,28 @@ public class InputByUpdateFormBean {
 
 	/** 总排镁量Kg */
 	private String zongPaiMeiLiangKgJunPin2;
-	
+
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMing() {
 		return StringHelper.null2Empty(beiZhuShuoMing);
 	}
-	
+
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMingJunPin1() {
 		return StringHelper.null2Empty(beiZhuShuoMingJunPin1);
 	}
-
+	
 	/**
 	 * @return 备注说明
 	 */
 	public String getBeiZhuShuoMingJunPin2() {
 		return StringHelper.null2Empty(beiZhuShuoMingJunPin2);
 	}
-
+	
 	/**
 	 * @return 成品率
 	 */
@@ -708,6 +710,13 @@ public class InputByUpdateFormBean {
 	 */
 	public String getGuiGeJunPin2() {
 		return StringHelper.null2Empty(guiGeJunPin2);
+	}
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
 	}
 
 	/**
@@ -1663,6 +1672,13 @@ public class InputByUpdateFormBean {
 	 */
 	public void setGuiGeJunPin2(String guiGe) {
 		this.guiGe = guiGeJunPin2;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	/**
