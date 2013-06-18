@@ -18,7 +18,7 @@ public class ConstantSql {
 	/***
 	 * 用军品数据更新非军品部分项目数据，关联条件：炉次
 	 */
-	public static final String T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT = "UPDATE ironinfo AS junpinT,ironinfo AS notjunpinT SET junpinT.qihao = notjunpinT.qihao,junpinT.luci = notjunpinT.luci,junpinT.shengchanluhao = notjunpinT.shengchanluhao,junpinT.fanyingqihao = notjunpinT.fanyingqihao,junpinT.shiyongcishu = notjunpinT.shiyongcishu,junpinT.gongyishiyan = notjunpinT.gongyishiyan,junpinT.zongpaimeiliang = notjunpinT.zongpaimeiliang,junpinT.chuluzhenkongdu = notjunpinT.chuluzhenkongdu,junpinT.huanyuanzuigaowendu = notjunpinT.huanyuanzuigaowendu,junpinT.zhengliugaoheng = notjunpinT.zhengliugaoheng,junpinT.zhuanzhengliu = notjunpinT.zhuanzhengliu,junpinT.jiashouci = notjunpinT.jiashouci,junpinT.jiamoci = notjunpinT.jiamoci,junpinT.tongdao = notjunpinT.tongdao,junpinT.chengpinlv = notjunpinT.chengpinlv,junpinT.shengchanguzhang = notjunpinT.shengchanguzhang,junpinT.gongyitiaozheng = notjunpinT.gongyitiaozheng,junpinT.dipi = notjunpinT.dipi,junpinT.shangmao = notjunpinT.shangmao,junpinT.pabi = notjunpinT.pabi,junpinT.feidipi = notjunpinT.feidipi,junpinT.feishangmao = notjunpinT.feishangmao,junpinT.feipabi = notjunpinT.feipabi,junpinT.feitaifen = notjunpinT.feitaifen,junpinT.cixuan = notjunpinT.cixuan,junpinT.shouxuanfeiliao = notjunpinT.shouxuanfeiliao,junpinT.sunhao = notjunpinT.sunhao,junpinT.ticl = notjunpinT.ticl_query_condition WHERE junpinT.luci = notjunpinT.luci";
+	public static final String T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT = "UPDATE ironinfo AS junpinT,ironinfo AS notjunpinT SET junpinT.qihao = notjunpinT.qihao,junpinT.luci = notjunpinT.luci,junpinT.shengchanluhao = notjunpinT.shengchanluhao,junpinT.fanyingqihao = notjunpinT.fanyingqihao,junpinT.shiyongcishu = notjunpinT.shiyongcishu,junpinT.gongyishiyan = notjunpinT.gongyishiyan,junpinT.zongpaimeiliang = notjunpinT.zongpaimeiliang,junpinT.chuluzhenkongdu = notjunpinT.chuluzhenkongdu,junpinT.huanyuanzuigaowendu = notjunpinT.huanyuanzuigaowendu,junpinT.zhengliugaoheng = notjunpinT.zhengliugaoheng,junpinT.zhuanzhengliu = notjunpinT.zhuanzhengliu,junpinT.jiashouci = notjunpinT.jiashouci,junpinT.jiamoci = notjunpinT.jiamoci,junpinT.tongdao = notjunpinT.tongdao,junpinT.chengpinlv = notjunpinT.chengpinlv,junpinT.shengchanguzhang = notjunpinT.shengchanguzhang,junpinT.gongyitiaozheng = notjunpinT.gongyitiaozheng,junpinT.dipi = notjunpinT.dipi,junpinT.shangmao = notjunpinT.shangmao,junpinT.pabi = notjunpinT.pabi,junpinT.feidipi = notjunpinT.feidipi,junpinT.feishangmao = notjunpinT.feishangmao,junpinT.feipabi = notjunpinT.feipabi,junpinT.feitaifen = notjunpinT.feitaifen,junpinT.cixuan = notjunpinT.cixuan,junpinT.shouxuanfeiliao = notjunpinT.shouxuanfeiliao,junpinT.sunhao = notjunpinT.sunhao,junpinT.ticl_query_condition = notjunpinT.ticl_query_condition WHERE junpinT.luci = notjunpinT.luci";
 
 	/***
 	 * 信息补全用，检索未输入完全的数据，flag is null
@@ -53,5 +53,5 @@ public class ConstantSql {
 	/***
 	 * 检索最大ID，每次数据登录时用
 	 */
-	public static final String T_INRO_INFO_MAX_ID = "SELECT MAX(id) + 1 as id FROM ironinfo";
+	public static final String T_INRO_INFO_MAX_ID = "SELECT IFNULL(MAX(id), 0) + 1 as maxid FROM ironinfo";
 }

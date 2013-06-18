@@ -238,26 +238,23 @@ public class TIronInfoDao extends BaseDao {
 	 * 查询炉次是否存在
 	 */
 	public Boolean QueryCountByLuci(String luci) throws Exception {
-
 		PreparedStatement ps = null;
-
 		try {
-		ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_KEY_LUCI);
-
-		ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
-
-		ResultSet resultSet = ps.executeQuery();
-
-		while (resultSet.next()) {
-			if (!"0".equals(resultSet.getString("cnt"))) {
-				return true;
+			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_KEY_LUCI);
+	
+			ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
+	
+			ResultSet resultSet = ps.executeQuery();
+	
+			while (resultSet.next()) {
+				if (!"0".equals(resultSet.getString("cnt"))) {
+					return true;
+				}
+				return false;
 			}
-			return false;
-		}
 
 		} catch (Exception exception) {
 			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
 		}
 		return false;
 	}
@@ -266,23 +263,21 @@ public class TIronInfoDao extends BaseDao {
 	 * 取得ID最大值+1
 	 */
 	public String GetMaxId() throws Exception {
-
 		PreparedStatement ps = null;
-
+		
 		try {
 			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_MAX_ID);
 
 			ResultSet resultSet = ps.executeQuery();
 
 			while (resultSet.next()) {
-				return	resultSet.getString("id").toString();
+				return	resultSet.getString("maxid").toString();
 			}
 
 		} catch (Exception exception) {
 			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
-			return "";
 		}
+		return null;
 	}
 
 	/**
