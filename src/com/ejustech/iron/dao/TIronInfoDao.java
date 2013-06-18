@@ -93,6 +93,7 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_ShengChanGuZhang,  StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing,  StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			ps.setString(Constant.T_IRON_INFO_COL_ID,  StringHelper.UTF8Convert2ISO8859(daoBean.getId()));
+			ps.setString(Constant.T_IRON_INFO_COL_TiCl4_QUERY_CONDITION,  StringHelper.UTF8Convert2ISO8859(daoBean.getTiCl4()));
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -219,6 +220,7 @@ public class TIronInfoDao extends BaseDao {
 
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ShengChanGuZhang, StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_BeiZhuShuoMing, StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
+			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TICL4_QUERY_CONDITION, StringHelper.UTF8Convert2ISO8859(daoBean.getTiCl4()));
 
 			//炉次和规格作为更新条件
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_LuCi, StringHelper.UTF8Convert2ISO8859(daoBean.getLuCi()));
@@ -463,7 +465,7 @@ public class TIronInfoDao extends BaseDao {
 
 		String sql = sqlBuffer.append(sqlCondition).toString();
 
-		sql = sql + " order by riqi, luci, guige";
+		sql = sql + " order by riqi, luci";
 		System.out.println("sql=" + sql);
 
 		ResultSet resultSet = null;

@@ -28,7 +28,7 @@ import com.ejustech.iron.form.SearchForm;
 public class SearchAction extends EventDispatchAction {
 	/**
 	 * Method execute
-	 * 
+	 *
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -48,10 +48,10 @@ public class SearchAction extends EventDispatchAction {
 			// 从Form中获取Search页面的检索条件
 			String riqi1 = searchForm.getRiqi1();
 			String riqi2 = searchForm.getRiqi2();
-			
+
 //			riqi1 = String.format("%tF", riqi1);
 //			riqi2 = String.format("%tF", riqi1);
-			
+
 			String[] qihao = searchForm.getQihao();
 			String luci1 = searchForm.getLuci1();
 			String luci2 = searchForm.getLuci2();
@@ -103,7 +103,7 @@ public class SearchAction extends EventDispatchAction {
 			} else {
 				sqlBufferCondition.append(" AND qihao in (1,2,3,4)");
 			}
-			
+
 			// 放置session用于输出检索区间
 			session.setAttribute("RIQI", "");
 			// 检索条件_日期(三段区间)
@@ -127,8 +127,8 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append(riqi2);
 				sqlBufferCondition.append("'");
 				session.setAttribute("RIQI", "[" + riqi1 + "～" + riqi2 + "]");
-			}			
-			
+			}
+
 			// 检索条件_炉次(三段区间)
 			if (!luci1.equals("") && !luci2.equals("")) {
 				sqlBufferCondition.append(" AND");
@@ -190,18 +190,18 @@ public class SearchAction extends EventDispatchAction {
 			// 检索条件_Ticl4(三段区间)
 			if (!ticl41.equals("") && !ticl42.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" ticl BETWEEN ");
+				sqlBufferCondition.append(" ticl_query_condition BETWEEN ");
 				sqlBufferCondition.append(ticl41);
 				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(ticl42);
 			} else if (!ticl41.equals("") && ticl42.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" ticl >= '");
+				sqlBufferCondition.append(" ticl_query_condition >= '");
 				sqlBufferCondition.append(ticl41);
 				sqlBufferCondition.append("'");
 			} else if (ticl41.equals("") && !ticl42.equals("")) {
 				sqlBufferCondition.append(" AND");
-				sqlBufferCondition.append(" ticl <= '");
+				sqlBufferCondition.append(" ticl_query_condition <= '");
 				sqlBufferCondition.append(ticl42);
 				sqlBufferCondition.append("'");
 			}
@@ -263,7 +263,7 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append(" tongdao in (");
 				StringBuffer transmode = new StringBuffer("");
 				String[] trans = tongdao;
-				
+
 				if (trans != null && trans.length > 0) {
 					for (int i = 0; i < trans.length; i++) {
 						String t = trans[i];
@@ -281,7 +281,7 @@ public class SearchAction extends EventDispatchAction {
 				}
 				sqlBufferCondition.append(transmode.toString());
 				sqlBufferCondition.append(")");
-				
+
 //				sqlBufferCondition.append(" AND");
 //				sqlBufferCondition.append(" tongdao ='");
 //				sqlBufferCondition.append(new String(tongdao.getBytes("ISO-8859-1"), "utf-8"));
@@ -388,7 +388,7 @@ public class SearchAction extends EventDispatchAction {
 				sqlBufferCondition.append(" AND ");
 				sqlBufferCondition.append(cl2);
 			}
-			
+
 			String monthFlag = "m";
 			// 选定要查询的输出表
 			switch (Integer.parseInt(selInfoList)) {
@@ -500,7 +500,7 @@ public class SearchAction extends EventDispatchAction {
 			return mapping.findForward("searchError");
 		}
 	}
-	
+
 	// 处理返回跳转动作
 	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
