@@ -3,12 +3,12 @@
 
 <struts-config>
 	<display-name />
-	<!-- <data-sources> <data-source type="org.apached.commons.dbcp.BasicDataSource"> 
-		<set-property property="autoCommit" value="true" /> <set-property property="description" 
-		value="MySQL Data Source" /> <set-property property="driverClass" value="com.mysql.jdbc.Driver" 
-		/> <set-property property="maxCount" value="10" /> <set-property property="minCount" 
-		value="2" /> <set-property property="user" value="root" /> <set-property 
-		property="password" value="" /> <set-property property="url" value="jdbc:mysql://localhost:3306/addressbooksample" 
+	<!-- <data-sources> <data-source type="org.apached.commons.dbcp.BasicDataSource">
+		<set-property property="autoCommit" value="true" /> <set-property property="description"
+		value="MySQL Data Source" /> <set-property property="driverClass" value="com.mysql.jdbc.Driver"
+		/> <set-property property="maxCount" value="10" /> <set-property property="minCount"
+		value="2" /> <set-property property="user" value="root" /> <set-property
+		property="password" value="" /> <set-property property="url" value="jdbc:mysql://localhost:3306/addressbooksample"
 		/> </data-source> </data-sources> -->
 	<form-beans>
 		<form-bean name="loginForm" type="com.ejustech.iron.form.LoginForm" />
@@ -23,10 +23,6 @@
 		<form-bean name="result7Form" type="com.ejustech.iron.form.Result7Form" />
 		<form-bean name="userManageForm" type="com.ejustech.iron.form.UserManageForm" />
 		<form-bean name="userAddForm" type="com.ejustech.iron.form.UserAddForm" />
-
-		<form-bean name="SampleQuery" type="SampleQuery" />
-		<form-bean name="sampleQueryForm" type="cc.flyzz.sample.SampleQueryForm" />
-		<form-bean name="sampleQueryResultForm" type="cc.flyzz.sample.SampleQueryResultForm" />
 		<form-bean name="inputByNewForm" type="com.ejustech.iron.form.InputByNewForm" />
 		<form-bean name="inputByUpdateForm" type="com.ejustech.iron.form.InputByUpdateForm" />
 		<form-bean name="updateSingleForm" type="com.ejustech.iron.form.UpdateSingleForm" />
@@ -134,19 +130,6 @@
 			<forward name="back" path="/jsp/userManage.jsp" />
 			<forward name="searchError" path="/jsp/searchError.jsp" />
 			<forward name="userExistError" path="/jsp/userExistError.jsp" />
-			<forward name="relogin" path="/jsp/login.jsp" />
-		</action>
-
-		<action attribute="sampleQueryForm" input="/jsp/sampleQuery.jsp"
-			name="sampleQueryForm" path="/sampleQuery" scope="request"
-			type="cc.flyzz.sample.SampleQueryAction" cancellable="true">
-			<forward name="queryResult" path="/jsp/sampleQueryResult.jsp" />
-			<forward name="relogin" path="/jsp/login.jsp" />
-		</action>
-
-		<action attribute="sampleQueryResultForm" input="/jsp/sampleQueryResult.jsp"
-			name="sampleQueryResultForm" path="/sampleQueryResult" scope="request"
-			type="com.ejustech.iron.action.SampleQueryResultAction" cancellable="true">
 			<forward name="relogin" path="/jsp/login.jsp" />
 		</action>
 

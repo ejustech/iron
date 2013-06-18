@@ -8,19 +8,19 @@
 
 <Resource name="jdbc/mysql"
         type="javax.sql.DataSource"
-        username="flyzz"  
+        username="flyzz"
         password="123456"
         driverClassName="com.mysql.jdbc.Driver"
         maxIdle="2"
         maxWait="50"
-        url="jdbc:mysql://192.168.1.104:3306/test"   
+        url="jdbc:mysql://192.168.1.104:3306/test"
         maxActive="4"
 />
 
 3.mysql驱动包
 将project\lib\mysql-connector-javabin.jar复制到%TOMCAT_HOME%/lib/中
 
-4.SSH Key?
-
-5.将project\lib\jxl.jar和poi-3.9-20121203.jar，复制到%TOMCAT_HOME%/lib/中
+4.将project\lib\jxl.jar和poi-3.9-20121203.jar，复制到%TOMCAT_HOME%/lib/中
 Excel用
+
+5.DB导入用SQL，DB.sql
