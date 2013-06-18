@@ -43,36 +43,34 @@ public class InputByUpdateAction extends EventDispatchAction {
 	 * @return ActionForward
 	 */
 	public ActionForward Save(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+
 		if (request.getSession().getAttribute("logout") != null) {
 			return mapping.findForward("relogin");
 		}
-		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;// TODO
-																		// Auto-generated
-																		// method
-																		// stub
+
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
+		InputByUpdateForm inputByUpdateForm = (InputByUpdateForm) form;
+
 		try {
 			inputByUpdateBusiness.Save(inputByUpdateForm);
 			String deleteId = inputByUpdateForm.getDeleteId();
-			
+
 			if ("".equals(deleteId)) {
 				inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
+				inputByUpdateForm.setRole("1");
 
 				request.setAttribute("inputByUpdateForm", inputByUpdateForm);
-				inputByUpdateForm.setRole("1");
+
 				return mapping.findForward("OK");
-			}
-			else
-			{
+			} else {
 				inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm(deleteId));
+				inputByUpdateForm.setRole("1");
 
 				request.setAttribute("inputByUpdateForm", inputByUpdateForm);
 				request.setAttribute("deleteId", deleteId);
-				inputByUpdateForm.setRole("1");
+
 				return mapping.findForward("OK");
 			}
-
-
 		} catch (Exception e) {
 			ActionErrors error = new ActionErrors();
 			error.add("errors", new ActionMessage("error.inputByUpdate.updateError", e.toString()));
@@ -89,7 +87,7 @@ public class InputByUpdateAction extends EventDispatchAction {
 			if (request.getSession().getAttribute("logout") != null) {
 				return mapping.findForward("relogin");
 			}
-			
+
 			return mapping.findForward("Back11");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -99,14 +97,11 @@ public class InputByUpdateAction extends EventDispatchAction {
 
 	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm() {
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
-
 		return inputByUpdateBusiness.InitInputByUpdateForm();
 	}
-	
+
 	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm(String luci) {
-		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
-		
 		return inputByUpdateBusiness.InitInputByUpdateSingleForm(luci);
 	}
 }

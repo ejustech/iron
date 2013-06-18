@@ -26,14 +26,17 @@ import com.ejustech.iron.databean.form.Result7FormBean;
 
 
 /**
- * @author Administrator ironinfo表的数据访问对象
+ * 业务表数据操作
  */
 public class TIronInfoDao extends BaseDao {
 
+	/**
+	 * 业务表数据登录用
+	 */
 	public Boolean Insert(TIronInfoDaoBean daoBean) throws SQLException {
-		//Open();
 
 		PreparedStatement ps = null;
+
 		try {
 			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_INSERT);
 
@@ -80,7 +83,6 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_ZhuanZhengLiu,  StringHelper.UTF8Convert2ISO8859(daoBean.getZhuanZhengLiu()));
 			ps.setString(Constant.T_IRON_INFO_COL_JiaShouCi,  StringHelper.UTF8Convert2ISO8859(daoBean.getJiaShouCi()));
 			ps.setString(Constant.T_IRON_INFO_COL_JiaMoCi,  StringHelper.UTF8Convert2ISO8859(daoBean.getJiaMoCi()));
-			
 			if ("0".equals(daoBean.getTongDao())) {
 				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
 			}
@@ -88,86 +90,83 @@ public class TIronInfoDao extends BaseDao {
 			{
 				ps.setString(Constant.T_IRON_INFO_COL_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
 			}
-			
 			ps.setString(Constant.T_IRON_INFO_COL_ShengChanGuZhang,  StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing,  StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			ps.setString(Constant.T_IRON_INFO_COL_ID,  StringHelper.UTF8Convert2ISO8859(daoBean.getId()));
-			
+
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		}
-
 		return true;
-
 	}
 
 	/**
-	 * 
-	 * @param daoBean
-	 * @return
-	 * @throws SQLException 
+	 * 使用军品数据，更新非军品部分数据
 	 */
     public Boolean UpdateJunPinNotInput() throws SQLException {
-        // Open();
 
         PreparedStatement ps = null;
+
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT);
-            
+
             ps.executeUpdate();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             throw e;
         }
-
         return true;
     }
-    
+
+	/**
+	 * 更新数据输入完全标志
+	 */
     public Boolean UpdateFlag() throws SQLException {
-        // Open();
 
         PreparedStatement ps = null;
+
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_INSER);
-            
+
             ps.executeUpdate();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             throw e;
         }
-
         return true;
     }
-    
+
+	/**
+	 * 更新月字段
+	 */
     public Boolean UpdateYue() throws SQLException {
-        // Open();
 
         PreparedStatement ps = null;
+
         try {
             ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_YUE);
-            
+
             ps.executeUpdate();
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             throw e;
         }
-
         return true;
     }
-    
+
+	/**
+	 * 更新数据（信息更新、补全）
+	 */
 	public Boolean Update(TIronInfoDaoBean daoBean) throws SQLException {
-		//Open();
 
 		PreparedStatement ps = null;
+
 		try {
 			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE);
 
+			//更新项目
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_YearMonthDay, StringHelper.UTF8Convert2ISO8859(daoBean.getYearMonthDay()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_QiHao, StringHelper.UTF8Convert2ISO8859(daoBean.getQiHao()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JunPinFlg, StringHelper.UTF8Convert2ISO8859(daoBean.getJunPin()));
@@ -209,7 +208,7 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ZhuanZhengLiu, StringHelper.UTF8Convert2ISO8859(daoBean.getZhuanZhengLiu()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JiaShouCi, StringHelper.UTF8Convert2ISO8859(daoBean.getJiaShouCi()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_JiaMoCi, StringHelper.UTF8Convert2ISO8859(daoBean.getJiaMoCi()));
-			
+
 			if ("0".equals(daoBean.getTongDao())) {
 				ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TongDao,  StringHelper.UTF8Convert2ISO8859("√"));
 			}
@@ -217,24 +216,233 @@ public class TIronInfoDao extends BaseDao {
 			{
 				ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TongDao,  StringHelper.UTF8Convert2ISO8859("×"));
 			}
-			
+
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ShengChanGuZhang, StringHelper.UTF8Convert2ISO8859(daoBean.getShengChanGuZhang()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_BeiZhuShuoMing, StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
+
+			//炉次和规格作为更新条件
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_LuCi, StringHelper.UTF8Convert2ISO8859(daoBean.getLuCi()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_GuiGe, StringHelper.UTF8Convert2ISO8859(daoBean.getGuiGe()));
-//			ps.setString(Constant.T_IRON_INFO_COL_JunPin, StringHelper.UTF8Convert2ISO8859(daoBean.getJunPin()));
-			
+
 			ps.executeUpdate();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			throw e;
 		}
-
 		return true;
-
 	}
-	
+
+	/**
+	 * 查询炉次是否存在
+	 */
+	public Boolean QueryCountByLuci(String luci) throws Exception {
+
+		PreparedStatement ps = null;
+
+		try {
+		ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_KEY_LUCI);
+
+		ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
+
+		ResultSet resultSet = ps.executeQuery();
+
+		while (resultSet.next()) {
+			if (!"0".equals(resultSet.getString("cnt"))) {
+				return true;
+			}
+			return false;
+		}
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+		}
+		return false;
+	}
+
+	/**
+	 * 取得ID最大值+1
+	 */
+	public String GetMaxId() throws Exception {
+
+		PreparedStatement ps = null;
+
+		try {
+			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_MAX_ID);
+
+			ResultSet resultSet = ps.executeQuery();
+
+			while (resultSet.next()) {
+				return	resultSet.getString("id").toString();
+			}
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			return "";
+		}
+	}
+
+	/**
+	 * 信息补全用
+	 */
+	public ArrayList<TIronInfoDaoBean> GetAllIronInfo() throws Exception {
+
+		ArrayList<TIronInfoDaoBean> allInfoList = new ArrayList<TIronInfoDaoBean>();
+
+		try {
+			Open();
+
+			Statement statement = Conn().createStatement();
+
+			ResultSet resultSet = statement.executeQuery(ConstantSql.T_INRO_INFO_SELECT_ALL);
+
+			TIronInfoDaoBean ironInfoDaoBean = new TIronInfoDaoBean();
+
+			while (resultSet.next()) {
+
+				ironInfoDaoBean = new TIronInfoDaoBean();
+
+				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
+				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
+				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
+				ironInfoDaoBean.setJunPin(resultSet.getString("junpin"));
+				ironInfoDaoBean.setGuiGe(resultSet.getString("guige"));
+				ironInfoDaoBean.setShengChanLuHao(resultSet.getString("shengchanluhao"));
+				ironInfoDaoBean.setFanYingQiHao(resultSet.getString("fanyingqihao"));
+				ironInfoDaoBean.setShiYongCiShu(resultSet.getString("shiyongcishu"));
+				ironInfoDaoBean.setMg(resultSet.getString("mg"));
+				ironInfoDaoBean.setTiCl4(resultSet.getString("ticl"));
+				ironInfoDaoBean.setMaoZhong(resultSet.getString("maozhong"));
+				ironInfoDaoBean.setJingZhong(resultSet.getString("jingzhong"));
+				if (resultSet.getString("chengpinlv") != null)
+					ironInfoDaoBean.setChengPinLv(resultSet.getString("chengpinlv"));
+					//ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
+				ironInfoDaoBean.setYuanSuFe(resultSet.getString("fe"));
+				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
+				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
+				ironInfoDaoBean.setYuanSuC(resultSet.getString("c"));
+				ironInfoDaoBean.setYuanSuN(resultSet.getString("n"));
+				ironInfoDaoBean.setYuanSuO(resultSet.getString("o"));
+				ironInfoDaoBean.setYuanSuH(resultSet.getString("h"));
+				ironInfoDaoBean.setYuanSuMn(resultSet.getString("mn"));
+				ironInfoDaoBean.setYuanSuHb(resultSet.getString("hb"));
+				ironInfoDaoBean.setDengJiHanMeng(resultSet.getString("dengji_hanmeng"));
+				ironInfoDaoBean.setKaoHeDengJiChuMeng(resultSet.getString("kaohedengji_chumeng"));
+				ironInfoDaoBean.setGongYiTiaoZheng(resultSet.getString("gongyitiaozheng"));
+				ironInfoDaoBean.setGongYiShiYan(resultSet.getString("gongyishiyan"));
+				ironInfoDaoBean.setDiPiKg(resultSet.getString("dipi"));
+				ironInfoDaoBean.setShangMaoKg(resultSet.getString("shangmao"));
+				ironInfoDaoBean.setPaBiKg(resultSet.getString("pabi"));
+				ironInfoDaoBean.setFeiDiPiKg(resultSet.getString("feidipi"));
+				ironInfoDaoBean.setFeiShangMaoKg(resultSet.getString("feishangmao"));
+				ironInfoDaoBean.setFeiPaBiKg(resultSet.getString("feipabi"));
+				ironInfoDaoBean.setFeiTaiFenKg(resultSet.getString("feitaifen"));
+				ironInfoDaoBean.setCiYuanKg(resultSet.getString("cixuan"));
+				ironInfoDaoBean.setShouXuanFeiLiaoKg(resultSet.getString("shouxuanfeiliao"));
+				ironInfoDaoBean.setSunHaoKg(resultSet.getString("sunhao"));
+				ironInfoDaoBean.setZongPaiMeiLiangKg(resultSet.getString("zongpaimeiliang"));
+				ironInfoDaoBean.setChuLuZhenKongDu(resultSet.getString("chuluzhenkongdu"));
+				ironInfoDaoBean.setYuanZuiGaoWenDu(resultSet.getString("huanyuanzuigaowendu"));
+				ironInfoDaoBean.setZhengLiuGaoHengDian(resultSet.getString("zhengliugaoheng"));
+				ironInfoDaoBean.setZhuanZhengLiu(resultSet.getString("zhuanzhengliu"));
+				ironInfoDaoBean.setJiaShouCi(resultSet.getString("jiashouci"));
+				ironInfoDaoBean.setJiaMoCi(resultSet.getString("jiamoci"));
+				ironInfoDaoBean.setTongDao(resultSet.getString("tongdao"));
+				ironInfoDaoBean.setShengChanGuZhang(resultSet.getString("shengchanguzhang"));
+				ironInfoDaoBean.setBeiZhuShuoMing(resultSet.getString("beizhushuoming"));
+
+				allInfoList.add(ironInfoDaoBean);
+			}
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			Close();
+			return allInfoList;
+		}
+	}
+
+	/**
+	 * 信息更新用
+	 */
+	public ArrayList<TIronInfoDaoBean> GetSingleIronInfo(String luci) throws Exception {
+
+		ArrayList<TIronInfoDaoBean> allInfoList = new ArrayList<TIronInfoDaoBean>();
+
+		try {
+			Open();
+
+			PreparedStatement ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_SELECT_SINGLE);
+
+			ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
+
+			ResultSet resultSet = ps.executeQuery();
+
+			TIronInfoDaoBean ironInfoDaoBean = new TIronInfoDaoBean();
+
+			while (resultSet.next()) {
+
+				ironInfoDaoBean = new TIronInfoDaoBean();
+
+				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
+				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
+				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
+				ironInfoDaoBean.setJunPin(resultSet.getString("junpin"));
+				ironInfoDaoBean.setGuiGe(resultSet.getString("guige"));
+				ironInfoDaoBean.setShengChanLuHao(resultSet.getString("shengchanluhao"));
+				ironInfoDaoBean.setFanYingQiHao(resultSet.getString("fanyingqihao"));
+				ironInfoDaoBean.setShiYongCiShu(resultSet.getString("shiyongcishu"));
+				ironInfoDaoBean.setMg(resultSet.getString("mg"));
+				ironInfoDaoBean.setTiCl4(resultSet.getString("ticl"));
+				ironInfoDaoBean.setMaoZhong(resultSet.getString("maozhong"));
+				ironInfoDaoBean.setJingZhong(resultSet.getString("jingzhong"));
+				if (resultSet.getString("chengpinlv") != null)
+					ironInfoDaoBean.setChengPinLv(resultSet.getString("chengpinlv"));
+					//ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
+				ironInfoDaoBean.setYuanSuFe(resultSet.getString("fe"));
+				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
+				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
+				ironInfoDaoBean.setYuanSuC(resultSet.getString("c"));
+				ironInfoDaoBean.setYuanSuN(resultSet.getString("n"));
+				ironInfoDaoBean.setYuanSuO(resultSet.getString("o"));
+				ironInfoDaoBean.setYuanSuH(resultSet.getString("h"));
+				ironInfoDaoBean.setYuanSuMn(resultSet.getString("mn"));
+				ironInfoDaoBean.setYuanSuHb(resultSet.getString("hb"));
+				ironInfoDaoBean.setDengJiHanMeng(resultSet.getString("dengji_hanmeng"));
+				ironInfoDaoBean.setKaoHeDengJiChuMeng(resultSet.getString("kaohedengji_chumeng"));
+				ironInfoDaoBean.setGongYiTiaoZheng(resultSet.getString("gongyitiaozheng"));
+				ironInfoDaoBean.setGongYiShiYan(resultSet.getString("gongyishiyan"));
+				ironInfoDaoBean.setDiPiKg(resultSet.getString("dipi"));
+				ironInfoDaoBean.setShangMaoKg(resultSet.getString("shangmao"));
+				ironInfoDaoBean.setPaBiKg(resultSet.getString("pabi"));
+				ironInfoDaoBean.setFeiDiPiKg(resultSet.getString("feidipi"));
+				ironInfoDaoBean.setFeiShangMaoKg(resultSet.getString("feishangmao"));
+				ironInfoDaoBean.setFeiPaBiKg(resultSet.getString("feipabi"));
+				ironInfoDaoBean.setFeiTaiFenKg(resultSet.getString("feitaifen"));
+				ironInfoDaoBean.setCiYuanKg(resultSet.getString("cixuan"));
+				ironInfoDaoBean.setShouXuanFeiLiaoKg(resultSet.getString("shouxuanfeiliao"));
+				ironInfoDaoBean.setSunHaoKg(resultSet.getString("sunhao"));
+				ironInfoDaoBean.setZongPaiMeiLiangKg(resultSet.getString("zongpaimeiliang"));
+				ironInfoDaoBean.setChuLuZhenKongDu(resultSet.getString("chuluzhenkongdu"));
+				ironInfoDaoBean.setYuanZuiGaoWenDu(resultSet.getString("huanyuanzuigaowendu"));
+				ironInfoDaoBean.setZhengLiuGaoHengDian(resultSet.getString("zhengliugaoheng"));
+				ironInfoDaoBean.setZhuanZhengLiu(resultSet.getString("zhuanzhengliu"));
+				ironInfoDaoBean.setJiaShouCi(resultSet.getString("jiashouci"));
+				ironInfoDaoBean.setJiaMoCi(resultSet.getString("jiamoci"));
+				ironInfoDaoBean.setTongDao(resultSet.getString("tongdao"));
+				ironInfoDaoBean.setShengChanGuZhang(resultSet.getString("shengchanguzhang"));
+				ironInfoDaoBean.setBeiZhuShuoMing(resultSet.getString("beizhushuoming"));
+
+				allInfoList.add(ironInfoDaoBean);
+			}
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			Close();
+			return allInfoList;
+		}
+	}
+
 	/**
 	 * @param request
 	 * @param sqlCondition
@@ -254,7 +462,7 @@ public class TIronInfoDao extends BaseDao {
 		sqlBuffer.append(" ironinfo");
 
 		String sql = sqlBuffer.append(sqlCondition).toString();
-		
+
 		sql = sql + " order by riqi, luci, guige";
 		System.out.println("sql=" + sql);
 
@@ -2259,53 +2467,9 @@ public class TIronInfoDao extends BaseDao {
 		}
 	}
 
-	public boolean QueryCountByLuci(String luci) throws Exception {
-
-		try {
-//		Open();
-		//Statement statement = Conn().createStatement();
-		PreparedStatement ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_KEY_LUCI);
-
-		ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
-		
-		ResultSet resultSet = ps.executeQuery();
-
-		while (resultSet.next()) {
-			if (!"0".equals(resultSet.getString("cnt"))) {
-				return true;
-			}
-			return false;
-		}
-		
-		} catch (Exception exception) {
-			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
-//			Close();
-		}
-		return false;
-
-	}
-	
-	public String GetMaxId() throws Exception {
-		try {
-		PreparedStatement ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_MAX_ID);
-		ResultSet resultSet = ps.executeQuery();
-		while (resultSet.next()) {
-			return	resultSet.getString("id").toString();
-		}
-		
-		} catch (Exception exception) {
-			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
-//			Close();
-		}
-		return "";
-
-	}
-	
 	/**
 	 * 删除全部信息表删除操作
-	 * 
+	 *
 	 * @param luci
 	 * @param guige
 	 * @throws Exception
@@ -2341,170 +2505,4 @@ public class TIronInfoDao extends BaseDao {
 		}
 
 	}
-	
-	public ArrayList<TIronInfoDaoBean> GetAllIronInfo() throws Exception {
-
-		ArrayList<TIronInfoDaoBean> allInfoList = new ArrayList<TIronInfoDaoBean>();
-
-		try {
-			Open();
-			Statement statement = Conn().createStatement();
-			ResultSet resultSet = statement.executeQuery(ConstantSql.T_INRO_INFO_SELECT_ALL);
-
-			TIronInfoDaoBean ironInfoDaoBean = new TIronInfoDaoBean();
-			
-			while (resultSet.next()) {
-
-				ironInfoDaoBean = new TIronInfoDaoBean();
-
-				//ironInfoDaoBean.setIndex(resultSet.getString("luci") + "~" + resultSet.getString("guige"));
-				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
-				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
-				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
-				ironInfoDaoBean.setJunPin(resultSet.getString("junpin"));
-//				if (!"".equals(resultSet.getString("junpin"))) ){
-//					ironInfoDaoBean.setJunPin("(" + resultSet.getString("junpin") + ")");
-//				} else {
-//					ironInfoDaoBean.setGuiGe(resultSet.getString("junpin"));
-//				}
-				ironInfoDaoBean.setGuiGe(resultSet.getString("guige"));
-				ironInfoDaoBean.setShengChanLuHao(resultSet.getString("shengchanluhao"));
-				ironInfoDaoBean.setFanYingQiHao(resultSet.getString("fanyingqihao"));
-				ironInfoDaoBean.setShiYongCiShu(resultSet.getString("shiyongcishu"));
-				ironInfoDaoBean.setMg(resultSet.getString("mg"));
-				ironInfoDaoBean.setTiCl4(resultSet.getString("ticl"));
-				ironInfoDaoBean.setMaoZhong(resultSet.getString("maozhong"));
-				ironInfoDaoBean.setJingZhong(resultSet.getString("jingzhong"));
-				if (resultSet.getString("chengpinlv") != null)
-					ironInfoDaoBean.setChengPinLv(resultSet.getString("chengpinlv"));
-					//ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
-				ironInfoDaoBean.setYuanSuFe(resultSet.getString("fe"));
-				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
-				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
-				ironInfoDaoBean.setYuanSuC(resultSet.getString("c"));
-				ironInfoDaoBean.setYuanSuN(resultSet.getString("n"));
-				ironInfoDaoBean.setYuanSuO(resultSet.getString("o"));
-				ironInfoDaoBean.setYuanSuH(resultSet.getString("h"));
-				ironInfoDaoBean.setYuanSuMn(resultSet.getString("mn"));
-				ironInfoDaoBean.setYuanSuHb(resultSet.getString("hb"));
-				ironInfoDaoBean.setDengJiHanMeng(resultSet.getString("dengji_hanmeng"));
-				ironInfoDaoBean.setKaoHeDengJiChuMeng(resultSet.getString("kaohedengji_chumeng"));
-				ironInfoDaoBean.setGongYiTiaoZheng(resultSet.getString("gongyitiaozheng"));
-				ironInfoDaoBean.setGongYiShiYan(resultSet.getString("gongyishiyan"));
-				ironInfoDaoBean.setDiPiKg(resultSet.getString("dipi"));
-				ironInfoDaoBean.setShangMaoKg(resultSet.getString("shangmao"));
-				ironInfoDaoBean.setPaBiKg(resultSet.getString("pabi"));
-				ironInfoDaoBean.setFeiDiPiKg(resultSet.getString("feidipi"));
-				ironInfoDaoBean.setFeiShangMaoKg(resultSet.getString("feishangmao"));
-				ironInfoDaoBean.setFeiPaBiKg(resultSet.getString("feipabi"));
-				ironInfoDaoBean.setFeiTaiFenKg(resultSet.getString("feitaifen"));
-				ironInfoDaoBean.setCiYuanKg(resultSet.getString("cixuan"));
-				ironInfoDaoBean.setShouXuanFeiLiaoKg(resultSet.getString("shouxuanfeiliao"));
-				ironInfoDaoBean.setSunHaoKg(resultSet.getString("sunhao"));
-				ironInfoDaoBean.setZongPaiMeiLiangKg(resultSet.getString("zongpaimeiliang"));
-				ironInfoDaoBean.setChuLuZhenKongDu(resultSet.getString("chuluzhenkongdu"));
-				ironInfoDaoBean.setYuanZuiGaoWenDu(resultSet.getString("huanyuanzuigaowendu"));
-				ironInfoDaoBean.setZhengLiuGaoHengDian(resultSet.getString("zhengliugaoheng"));
-				ironInfoDaoBean.setZhuanZhengLiu(resultSet.getString("zhuanzhengliu"));
-				ironInfoDaoBean.setJiaShouCi(resultSet.getString("jiashouci"));
-				ironInfoDaoBean.setJiaMoCi(resultSet.getString("jiamoci"));
-				ironInfoDaoBean.setTongDao(resultSet.getString("tongdao"));
-				ironInfoDaoBean.setShengChanGuZhang(resultSet.getString("shengchanguzhang"));
-				ironInfoDaoBean.setBeiZhuShuoMing(resultSet.getString("beizhushuoming"));
-
-				allInfoList.add(ironInfoDaoBean);
-			}
-			Close();
-			return allInfoList;
-		} catch (Exception exception) {
-			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
-			Close();
-		}
-	}
-	
-	public ArrayList<TIronInfoDaoBean> GetSingleIronInfo(String luci) throws Exception {
-
-		ArrayList<TIronInfoDaoBean> allInfoList = new ArrayList<TIronInfoDaoBean>();
-
-		try {
-			Open();
-			
-			PreparedStatement ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_SELECT_SINGLE);
-
-			ps.setString(1,  StringHelper.UTF8Convert2ISO8859(luci));
-			
-			ResultSet resultSet = ps.executeQuery();
-
-			TIronInfoDaoBean ironInfoDaoBean = new TIronInfoDaoBean();
-			
-			while (resultSet.next()) {
-
-				ironInfoDaoBean = new TIronInfoDaoBean();
-
-				//ironInfoDaoBean.setIndex(resultSet.getString("luci") + "~" + resultSet.getString("guige"));
-				ironInfoDaoBean.setYearMonthDay(resultSet.getString("riqi"));
-				ironInfoDaoBean.setQiHao(resultSet.getString("qihao"));
-				ironInfoDaoBean.setLuCi(resultSet.getString("luci"));
-				ironInfoDaoBean.setJunPin(resultSet.getString("junpin"));
-//				if (!"".equals(resultSet.getString("junpin"))) ){
-//					ironInfoDaoBean.setJunPin("(" + resultSet.getString("junpin") + ")");
-//				} else {
-//					ironInfoDaoBean.setGuiGe(resultSet.getString("junpin"));
-//				}
-				ironInfoDaoBean.setGuiGe(resultSet.getString("guige"));
-				ironInfoDaoBean.setShengChanLuHao(resultSet.getString("shengchanluhao"));
-				ironInfoDaoBean.setFanYingQiHao(resultSet.getString("fanyingqihao"));
-				ironInfoDaoBean.setShiYongCiShu(resultSet.getString("shiyongcishu"));
-				ironInfoDaoBean.setMg(resultSet.getString("mg"));
-				ironInfoDaoBean.setTiCl4(resultSet.getString("ticl"));
-				ironInfoDaoBean.setMaoZhong(resultSet.getString("maozhong"));
-				ironInfoDaoBean.setJingZhong(resultSet.getString("jingzhong"));
-				if (resultSet.getString("chengpinlv") != null)
-					ironInfoDaoBean.setChengPinLv(resultSet.getString("chengpinlv"));
-					//ironInfoDaoBean.setChengPinLv(Output.getPValue(resultSet.getString("chengpinlv")));
-				ironInfoDaoBean.setYuanSuFe(resultSet.getString("fe"));
-				ironInfoDaoBean.setYuanSuSi(resultSet.getString("si"));
-				ironInfoDaoBean.setYuanSuCl(resultSet.getString("cl"));
-				ironInfoDaoBean.setYuanSuC(resultSet.getString("c"));
-				ironInfoDaoBean.setYuanSuN(resultSet.getString("n"));
-				ironInfoDaoBean.setYuanSuO(resultSet.getString("o"));
-				ironInfoDaoBean.setYuanSuH(resultSet.getString("h"));
-				ironInfoDaoBean.setYuanSuMn(resultSet.getString("mn"));
-				ironInfoDaoBean.setYuanSuHb(resultSet.getString("hb"));
-				ironInfoDaoBean.setDengJiHanMeng(resultSet.getString("dengji_hanmeng"));
-				ironInfoDaoBean.setKaoHeDengJiChuMeng(resultSet.getString("kaohedengji_chumeng"));
-				ironInfoDaoBean.setGongYiTiaoZheng(resultSet.getString("gongyitiaozheng"));
-				ironInfoDaoBean.setGongYiShiYan(resultSet.getString("gongyishiyan"));
-				ironInfoDaoBean.setDiPiKg(resultSet.getString("dipi"));
-				ironInfoDaoBean.setShangMaoKg(resultSet.getString("shangmao"));
-				ironInfoDaoBean.setPaBiKg(resultSet.getString("pabi"));
-				ironInfoDaoBean.setFeiDiPiKg(resultSet.getString("feidipi"));
-				ironInfoDaoBean.setFeiShangMaoKg(resultSet.getString("feishangmao"));
-				ironInfoDaoBean.setFeiPaBiKg(resultSet.getString("feipabi"));
-				ironInfoDaoBean.setFeiTaiFenKg(resultSet.getString("feitaifen"));
-				ironInfoDaoBean.setCiYuanKg(resultSet.getString("cixuan"));
-				ironInfoDaoBean.setShouXuanFeiLiaoKg(resultSet.getString("shouxuanfeiliao"));
-				ironInfoDaoBean.setSunHaoKg(resultSet.getString("sunhao"));
-				ironInfoDaoBean.setZongPaiMeiLiangKg(resultSet.getString("zongpaimeiliang"));
-				ironInfoDaoBean.setChuLuZhenKongDu(resultSet.getString("chuluzhenkongdu"));
-				ironInfoDaoBean.setYuanZuiGaoWenDu(resultSet.getString("huanyuanzuigaowendu"));
-				ironInfoDaoBean.setZhengLiuGaoHengDian(resultSet.getString("zhengliugaoheng"));
-				ironInfoDaoBean.setZhuanZhengLiu(resultSet.getString("zhuanzhengliu"));
-				ironInfoDaoBean.setJiaShouCi(resultSet.getString("jiashouci"));
-				ironInfoDaoBean.setJiaMoCi(resultSet.getString("jiamoci"));
-				ironInfoDaoBean.setTongDao(resultSet.getString("tongdao"));
-				ironInfoDaoBean.setShengChanGuZhang(resultSet.getString("shengchanguzhang"));
-				ironInfoDaoBean.setBeiZhuShuoMing(resultSet.getString("beizhushuoming"));
-
-				allInfoList.add(ironInfoDaoBean);
-			}
-			return allInfoList;
-		} catch (Exception exception) {
-			throw new Exception("SQLException: " + exception.getMessage());
-		} finally {
-			Close();
-		}
-	}	
-
 }

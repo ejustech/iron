@@ -18,20 +18,22 @@ import com.ejustech.iron.databean.form.InputByUpdateFormBean;
 import com.ejustech.iron.form.InputByUpdateForm;
 import com.ejustech.iron.form.UpdateSingleForm;
 
-/** 
- * MyEclipse Struts
- * Creation date: 06-17-2013
+/**
+ * MyEclipse Struts Creation date: 06-17-2013
  * 
  * XDoclet definition:
- * @struts.action path="/updateSingle" name="updateSingleForm" input="UpdateSingle" scope="request" validate="true"
+ * 
+ * @struts.action path="/updateSingle" name="updateSingleForm"
+ *                input="UpdateSingle" scope="request" validate="true"
  */
 public class UpdateSingleAction extends Action {
 	/*
 	 * Generated Methods
 	 */
 
-	/** 
+	/**
 	 * Method execute
+	 * 
 	 * @param mapping
 	 * @param form
 	 * @param request
@@ -39,28 +41,31 @@ public class UpdateSingleAction extends Action {
 	 * @return ActionForward
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
-		UpdateSingleForm updateSingleForm = (UpdateSingleForm) form;// TODO Auto-generated method stub
-		String deleteId=(String)request.getParameter("id");
-		
+
+		String deleteId = (String) request.getParameter("id");
+
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			InputByUpdateForm inputByUpdateForm = new InputByUpdateForm();
 			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm(deleteId));
+			inputByUpdateForm.setDeleteId(deleteId);
+			inputByUpdateForm.setRole("1");
 
 			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
 			request.setAttribute("deleteId", deleteId);
-			inputByUpdateForm.setDeleteId(deleteId);
-			inputByUpdateForm.setRole("1");
+
 			return mapping.findForward("inputByUpdate");
 		} catch (Exception e) {
 		}
 		return null;
 	}
-	
+
 	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm(String luci) {
-		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
-		
+
 		return inputByUpdateBusiness.InitInputByUpdateSingleForm(luci);
 	}
 }

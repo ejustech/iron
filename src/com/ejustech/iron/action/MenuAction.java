@@ -29,7 +29,9 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息检索动作
 	public ActionForward search(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
 			SearchFormBean searchFormBean = new SearchFormBean();
 			searchFormBean.setSelInfoList("1");
 			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
@@ -44,12 +46,16 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息输入动作
 	public ActionForward inputByUpdate(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			InputByUpdateForm inputByUpdateForm = new InputByUpdateForm();
 			inputByUpdateForm.setInputByUpdateList(initInputByUpdateForm());
+			inputByUpdateForm.setRole("1");
 
 			request.setAttribute("inputByUpdateForm", inputByUpdateForm);
-			inputByUpdateForm.setRole("1");
+
 			return mapping.findForward("inputByUpdate");
 		} catch (Exception e) {
 		}
@@ -59,15 +65,17 @@ public class MenuAction extends EventDispatchAction {
 	// 处理信息输入动作
 	public ActionForward inputByNew(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
-			InputByNewForm inputByNewForm = new InputByNewForm();
-			
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			InputByNewBusiness inputByNewBusiness = new InputByNewBusiness();
 			ArrayList<InputByNewFormBean> initList = inputByNewBusiness.initInputByNewForm();
-			
+
+			InputByNewForm inputByNewForm = new InputByNewForm();
 			inputByNewForm.setInputByNewList(initList);
 			inputByNewForm.setRole("1");
-			
+
 			request.setAttribute("inputByNewForm", inputByNewForm);
 
 			return mapping.findForward("inputByNew");
@@ -75,25 +83,24 @@ public class MenuAction extends EventDispatchAction {
 		}
 		return null;
 	}
-	
+
 	// 处理用户管理动作
 	public ActionForward userManage(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			MUserDao mUserDao = new MUserDao();
 			// 取得用户列表
 			ArrayList<UserManageFormBean> userList = new ArrayList<UserManageFormBean>();
 			userList = (ArrayList<UserManageFormBean>) mUserDao.getUserList();
 			request.setAttribute("USERLIST", userList);
-			
-			//设置第一个userID radio被选中
+
+			// 设置第一个userID radio被选中
 			UserManageForm userManageForm = new UserManageForm();
 			userManageForm.setIndexModify(userList.get(0).getUserID());
-			
-//			ArrayList<SearchFormBean> selList = new ArrayList<SearchFormBean>();
-//			selList.add(searchFormBean);
-//			request.setAttribute("SELLIST", selList);
-			
+
 			return mapping.findForward("userManage");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -104,12 +111,13 @@ public class MenuAction extends EventDispatchAction {
 	// 处理用户注销动作
 	public ActionForward logout(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
-		    HttpSession session = request.getSession(); 
-		    session.setAttribute("logout", "true");
-//		    session.invalidate();
-//		    session.removeAttribute("");
-		    
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
+			HttpSession session = request.getSession();
+			session.setAttribute("logout", "true");
+
 			return mapping.findForward("logout");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -120,9 +128,7 @@ public class MenuAction extends EventDispatchAction {
 	private ArrayList<InputByUpdateFormBean> initInputByUpdateForm() {
 		ArrayList<InputByUpdateFormBean> inputByNewList = new ArrayList<InputByUpdateFormBean>();
 		InputByUpdateBusiness inputByUpdateBusiness = new InputByUpdateBusiness();
-		
+
 		return inputByUpdateBusiness.InitInputByUpdateForm();
 	}
-	
-
 }

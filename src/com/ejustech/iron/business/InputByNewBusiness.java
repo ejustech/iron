@@ -75,36 +75,6 @@ public class InputByNewBusiness {
 		}
 		return checkResult;
 	}
-	
-//	public ArrayList<ValidateStatusInput> checkAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-//		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
-//
-//		ArrayList<ValidateStatusInput> checkEmptyByRole = checkEmptyByRoleAllForCommit(inputByNewFormBean, userRole);
-//		ArrayList<ValidateStatusInput> checkLength = checkLengthAll(inputByNewFormBean);
-//		ArrayList<ValidateStatusInput> checkNumberFormat = checkNumberFormatAll(inputByNewFormBean);
-//		ArrayList<ValidateStatusInput> checkDateFormat = checkDateFormatAll(inputByNewFormBean);
-//
-//		// 输入项目空值的验证
-//		if (checkEmptyByRole.size() != 0) {
-//			checkResult.addAll(checkEmptyByRole);
-//		}
-//
-//		// 输入项目长度的验证
-//		if (checkLength.size() != 0) {
-//			checkResult.addAll(checkLength);
-//		}
-//
-//		// 输入项目数字格式的验证
-//		if (checkNumberFormat.size() != 0) {
-//			checkResult.addAll(checkNumberFormat);
-//		}
-//
-//		// 输入项目日期格式的验证
-//		if (checkDateFormat.size() != 0) {
-//			checkResult.addAll(checkDateFormat);
-//		}
-//		return checkResult;
-//	}
 
 	private ValidateStatusInput checkDateFormat(InputByNewFormBean inputByNewFormBean) {
 		if (!StringHelper.isDateFormat(inputByNewFormBean.getYearMonthDay())) {
@@ -277,162 +247,6 @@ public class InputByNewBusiness {
 		return ValidateStatusInput.OK;
 	}
 
-//	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForCommit(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
-//		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
-//
-//		switch (userRole) {
-//		case R0:
-//
-//			break;
-//		case R1:
-//
-//			break;
-//		case R2:
-//
-//			break;
-//		case R3:
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYearMonthDay())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YearMonthDay);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getQiHao())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_QiHao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getLuCi())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_LuCi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ShengChanLuHao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_FanYingQiHao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ShiYongCiShu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_Mg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_TiCl4);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_MaoZhong);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_JingZhong);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ChengPinLv);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuFe);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuSi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuCl);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuC);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuN);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuO);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuH);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuMn);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanSuHb);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_DengJiHanMeng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_KaoHeDengJiChuMeng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_GongYiTiaoZheng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_GongYiShiYan);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_DiPiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ShangMaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_PaBiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_FeiDiPiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_FeiShangMaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_FeiPaBiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_FeiTaiFenKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_CiYuanKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ShouXuanFeiLiaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_SunHaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ZongPaiMeiLiangKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ChuLuZhenKongDu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_YuanZuiGaoWenDu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ZhengLiuGaoHengDian);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ZhuanZhengLiu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_JiaShouCi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_JiaMoCi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_TongDao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_ShengChanGuZhang);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
-//				checkResult.add(ValidateStatusInput.EMPTY_BeiZhuShuoMing);
-//			}
-//			break;
-//		default:
-//			break;
-//		}
-//		return checkResult;
-//	}
-
 	private ArrayList<ValidateStatusInput> checkEmptyByRoleAllForSave(InputByNewFormBean inputByNewFormBean, UserRole userRole) {
 		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
 
@@ -459,136 +273,13 @@ public class InputByNewBusiness {
 			if (StringHelper.isNullEmpty(inputByNewFormBean.getGuiGe())) {
 				checkResult.add(ValidateStatusInput.EMPTY_GuiGe);
 			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanLuHao())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanLuHao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFanYingQiHao())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_FanYingQiHao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShiYongCiShu())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShiYongCiShu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_Mg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTiCl4())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_TiCl4);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getMaoZhong())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_MaoZhong);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJingZhong())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_JingZhong);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getChengPinLv())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ChengPinLv);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuFe())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuFe);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuSi())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuSi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuCl())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuCl);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuC())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuC);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuN())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuN);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuO())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuO);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuH())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuH);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuMn())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuMn);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getYuanSuHb())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanSuHb);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getDengJiHanMeng())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_DengJiHanMeng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_KaoHeDengJiChuMeng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiTiaoZheng())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiTiaoZheng);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getGongYiShiYan())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_GongYiShiYan);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getDiPiKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_DiPiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShangMaoKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShangMaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getPaBiKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_PaBiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiDiPiKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiDiPiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiShangMaoKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiShangMaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiPaBiKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiPaBiKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getFeiTaiFenKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_FeiTaiFenKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getCiYuanKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_CiYuanKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShouXuanFeiLiaoKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShouXuanFeiLiaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getSunHaoKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_SunHaoKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZongPaiMeiLiangKg())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZongPaiMeiLiangKg);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getChuLuZhenKongDu())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ChuLuZhenKongDu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getYuanZuiGaoWenDu())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_YuanZuiGaoWenDu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhengLiuGaoHengDian())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhengLiuGaoHengDian);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getZhuanZhengLiu())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ZhuanZhengLiu);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaShouCi())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaShouCi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getJiaMoCi())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_JiaMoCi);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getTongDao())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_TongDao);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getJunPin()) && StringHelper.isNullEmpty(inputByNewFormBean.getShengChanGuZhang())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_ShengChanGuZhang);
-//			}
-//			if (StringHelper.isNullEmpty(inputByNewFormBean.getBeiZhuShuoMing())) {
-//				checkResult.add(ValidateStatusInputByNew.EMPTY_BeiZhuShuoMing);
-//			}
 			break;
 		default:
 			break;
 		}
 		return checkResult;
 	}
-	
+
 	private ValidateStatusInput checkLength(InputByNewFormBean inputByNewFormBean) {
 		if (StringHelper.isLenGreater(inputByNewFormBean.getYearMonthDay(), Constant.LENGTH_INPUT_BY_NEW_CHECK_YearMonthDay)) {
 			return ValidateStatusInput.LENGTH_YearMonthDay;
@@ -871,18 +562,12 @@ public class InputByNewBusiness {
 	}
 
 	private ValidateStatusInput checkNumberFormat(InputByNewFormBean inputByNewFormBean) {
-		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
-		// return ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay;
-		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
 			return ValidateStatusInput.NUMBER_FORMAT_QiHao;
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
 			return ValidateStatusInput.NUMBER_FORMAT_LuCi;
 		}
-		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
-		// return ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe;
-		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
 			return ValidateStatusInput.NUMBER_FORMAT_ShengChanLuHao;
 		}
@@ -907,33 +592,6 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getChengPinLv())) {
 			return ValidateStatusInput.NUMBER_FORMAT_ChengPinLv;
 		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuFe;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuSi;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuCl;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuC())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuC;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuN())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuN;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuO())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuO;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuH())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuH;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuMn())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuMn;
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuHb())) {
-//			return ValidateStatusInput.NUMBER_FORMAT_YuanSuHb;
-//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDengJiHanMeng())) {
 			return ValidateStatusInput.NUMBER_FORMAT_DengJiHanMeng;
 		}
@@ -1003,27 +661,18 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
 			return ValidateStatusInput.NUMBER_FORMAT_ShengChanGuZhang;
 		}
-		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
-		// return ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing;
-		// }
 		return ValidateStatusInput.OK;
 	}
 
 	private ArrayList<ValidateStatusInput> checkNumberFormatAll(InputByNewFormBean inputByNewFormBean) {
 		ArrayList<ValidateStatusInput> checkResult = new ArrayList<ValidateStatusInput>();
-		
-		// if (!StringHelper.isNumber(inputByNewFormBean.getYearMonthDay())) {
-		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_YearMonthDay);
-		// }
+
 		if (!StringHelper.isNumber(inputByNewFormBean.getQiHao())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_QiHao);
 		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getLuCi())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_LuCi);
 		}
-		// if (!StringHelper.isNumber(inputByNewFormBean.getGuiGe())) {
-		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_GuiGe);
-		// }
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanLuHao())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShengChanLuHao);
 		}
@@ -1051,9 +700,6 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuFe())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuFe);
 		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuSi())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuSi);
-//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getYuanSuCl())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_YuanSuCl);
 		}
@@ -1081,12 +727,6 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getKaoHeDengJiChuMeng())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_KaoHeDengJiChuMeng);
 		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiTiaoZheng())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiTiaoZheng);
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getGongYiShiYan())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_GongYiShiYan);
-//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getDiPiKg())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_DiPiKg);
 		}
@@ -1129,176 +769,161 @@ public class InputByNewBusiness {
 		if (!StringHelper.isNumber(inputByNewFormBean.getZhengLiuGaoHengDian())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ZhengLiuGaoHengDian);
 		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getZhuanZhengLiu())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ZhuanZhengLiu);
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getJiaShouCi())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_JiaShouCi);
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getJiaMoCi())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_JiaMoCi);
-//		}
-//		if (!StringHelper.isNumber(inputByNewFormBean.getTongDao())) {
-//			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_TongDao);
-//		}
 		if (!StringHelper.isNumber(inputByNewFormBean.getShengChanGuZhang())) {
 			checkResult.add(ValidateStatusInput.NUMBER_FORMAT_ShengChanGuZhang);
 		}
-		// if (!StringHelper.isNumber(inputByNewFormBean.getBeiZhuShuoMing())) {
-		// checkResult.add(ValidateStatusInputByNew.NUMBER_FORMAT_BeiZhuShuoMing);
-		// }
 		checkResult.add(ValidateStatusInput.OK);
-		
+
 		return checkResult;
 	}
 
 	private TIronInfoDaoBean ConvToTIronInfoDaoBeanFromInputByNewFormBean(InputByNewFormBean formBean, int rowDataIndex) {
 		TIronInfoDaoBean daoBean = new TIronInfoDaoBean();
 		switch (rowDataIndex) {
-        case 1:
-            daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDay()));
-            daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHao()));
-            daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCi()));
-            daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGe()));
-            daoBean.setJunPin(StringHelper.ISO8859Convert2UTF8(formBean.getJunPin()));
-            daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHao()));
-            daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHao()));
-            daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShu()));
-            daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMg()));
-            daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4()));
-            daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhong()));
-            daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhong()));
-            daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLv()));
-            daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFe()));
-            daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSi()));
-            daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCl()));
-            daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuC()));
-            daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuN()));
-            daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuO()));
-            daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuH()));
-            daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMn()));
-            daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHb()));
-            daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMeng()));
-            daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMeng()));
-            daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZheng()));
-            daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYan()));
-            daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKg()));
-            daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKg()));
-            daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKg()));
-            daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKg()));
-            daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKg()));
-            daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKg()));
-            daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKg()));
-            daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKg()));
-            daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKg()));
-            daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKg()));
-            daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKg()));
-            daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDu()));
-            daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDu()));
-            daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDian()));
-            daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiu()));
-            daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCi()));
-            daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCi()));
-            daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDao()));
-            daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhang()));
-            daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMing()));
-            break;
-        case 2:
-            daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDayJunPin1()));
-            daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHaoJunPin1()));
-            daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCiJunPin1()));
-            daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGeJunPin1()));
-            daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHaoJunPin1()));
-            daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHaoJunPin1()));
-            daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShuJunPin1()));
-            daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMgJunPin1()));
-            daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4JunPin1()));
-            daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhongJunPin1()));
-            daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhongJunPin1()));
-            daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLvJunPin1()));
-            daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFeJunPin1()));
-            daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSiJunPin1()));
-            daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuClJunPin1()));
-            daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCJunPin1()));
-            daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuNJunPin1()));
-            daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuOJunPin1()));
-            daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHJunPin1()));
-            daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMnJunPin1()));
-            daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHbJunPin1()));
-            daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMengJunPin1()));
-            daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMengJunPin1()));
-            daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZhengJunPin1()));
-            daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYanJunPin1()));
-            daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKgJunPin1()));
-            daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKgJunPin1()));
-            daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKgJunPin1()));
-            daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKgJunPin1()));
-            daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKgJunPin1()));
-            daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKgJunPin1()));
-            daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKgJunPin1()));
-            daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKgJunPin1()));
-            daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKgJunPin1()));
-            daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKgJunPin1()));
-            daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKgJunPin1()));
-            daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDuJunPin1()));
-            daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDuJunPin1()));
-            daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDianJunPin1()));
-            daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiuJunPin1()));
-            daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCiJunPin1()));
-            daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCiJunPin1()));
-            daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDaoJunPin1()));
-            daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhangJunPin1()));
-            daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMingJunPin1()));
-            break;
-        case 3:
-            daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDayJunPin2()));
-            daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHaoJunPin2()));
-            daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCiJunPin2()));
-            daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGeJunPin2()));
-            daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHaoJunPin2()));
-            daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHaoJunPin2()));
-            daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShuJunPin2()));
-            daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMgJunPin2()));
-            daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4JunPin2()));
-            daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhongJunPin2()));
-            daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhongJunPin2()));
-            daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLvJunPin2()));
-            daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFeJunPin2()));
-            daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSiJunPin2()));
-            daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuClJunPin2()));
-            daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCJunPin2()));
-            daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuNJunPin2()));
-            daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuOJunPin2()));
-            daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHJunPin2()));
-            daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMnJunPin2()));
-            daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHbJunPin2()));
-            daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMengJunPin2()));
-            daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMengJunPin2()));
-            daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZhengJunPin2()));
-            daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYanJunPin2()));
-            daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKgJunPin2()));
-            daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKgJunPin2()));
-            daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKgJunPin2()));
-            daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKgJunPin2()));
-            daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKgJunPin2()));
-            daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKgJunPin2()));
-            daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKgJunPin2()));
-            daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKgJunPin2()));
-            daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKgJunPin2()));
-            daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKgJunPin2()));
-            daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKgJunPin2()));
-            daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDuJunPin2()));
-            daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDuJunPin2()));
-            daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDianJunPin2()));
-            daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiuJunPin2()));
-            daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCiJunPin2()));
-            daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCiJunPin2()));
-            daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDaoJunPin2()));
-            daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhangJunPin2()));
-            daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMingJunPin2()));
-            break;
-        default:
-            break;
+		case 1:
+			daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDay()));
+			daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHao()));
+			daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCi()));
+			daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGe()));
+			daoBean.setJunPin(StringHelper.ISO8859Convert2UTF8(formBean.getJunPin()));
+			daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHao()));
+			daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHao()));
+			daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShu()));
+			daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMg()));
+			daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4()));
+			daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhong()));
+			daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhong()));
+			daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLv()));
+			daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFe()));
+			daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSi()));
+			daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCl()));
+			daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuC()));
+			daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuN()));
+			daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuO()));
+			daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuH()));
+			daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMn()));
+			daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHb()));
+			daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMeng()));
+			daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMeng()));
+			daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZheng()));
+			daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYan()));
+			daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKg()));
+			daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKg()));
+			daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKg()));
+			daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKg()));
+			daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKg()));
+			daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKg()));
+			daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKg()));
+			daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKg()));
+			daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKg()));
+			daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKg()));
+			daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKg()));
+			daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDu()));
+			daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDu()));
+			daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDian()));
+			daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiu()));
+			daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCi()));
+			daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCi()));
+			daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDao()));
+			daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhang()));
+			daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMing()));
+			break;
+		case 2:
+			daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDayJunPin1()));
+			daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHaoJunPin1()));
+			daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCiJunPin1()));
+			daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGeJunPin1()));
+			daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHaoJunPin1()));
+			daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHaoJunPin1()));
+			daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShuJunPin1()));
+			daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMgJunPin1()));
+			daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4JunPin1()));
+			daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhongJunPin1()));
+			daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhongJunPin1()));
+			daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLvJunPin1()));
+			daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFeJunPin1()));
+			daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSiJunPin1()));
+			daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuClJunPin1()));
+			daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCJunPin1()));
+			daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuNJunPin1()));
+			daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuOJunPin1()));
+			daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHJunPin1()));
+			daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMnJunPin1()));
+			daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHbJunPin1()));
+			daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMengJunPin1()));
+			daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMengJunPin1()));
+			daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZhengJunPin1()));
+			daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYanJunPin1()));
+			daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKgJunPin1()));
+			daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKgJunPin1()));
+			daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKgJunPin1()));
+			daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKgJunPin1()));
+			daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKgJunPin1()));
+			daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKgJunPin1()));
+			daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKgJunPin1()));
+			daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKgJunPin1()));
+			daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKgJunPin1()));
+			daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKgJunPin1()));
+			daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKgJunPin1()));
+			daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDuJunPin1()));
+			daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDuJunPin1()));
+			daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDianJunPin1()));
+			daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiuJunPin1()));
+			daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCiJunPin1()));
+			daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCiJunPin1()));
+			daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDaoJunPin1()));
+			daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhangJunPin1()));
+			daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMingJunPin1()));
+			break;
+		case 3:
+			daoBean.setYearMonthDay(StringHelper.ISO8859Convert2UTF8(formBean.getYearMonthDayJunPin2()));
+			daoBean.setQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getQiHaoJunPin2()));
+			daoBean.setLuCi(StringHelper.ISO8859Convert2UTF8(formBean.getLuCiJunPin2()));
+			daoBean.setGuiGe(StringHelper.ISO8859Convert2UTF8(formBean.getGuiGeJunPin2()));
+			daoBean.setShengChanLuHao(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanLuHaoJunPin2()));
+			daoBean.setFanYingQiHao(StringHelper.ISO8859Convert2UTF8(formBean.getFanYingQiHaoJunPin2()));
+			daoBean.setShiYongCiShu(StringHelper.ISO8859Convert2UTF8(formBean.getShiYongCiShuJunPin2()));
+			daoBean.setMg(StringHelper.ISO8859Convert2UTF8(formBean.getMgJunPin2()));
+			daoBean.setTiCl4(StringHelper.ISO8859Convert2UTF8(formBean.getTiCl4JunPin2()));
+			daoBean.setMaoZhong(StringHelper.ISO8859Convert2UTF8(formBean.getMaoZhongJunPin2()));
+			daoBean.setJingZhong(StringHelper.ISO8859Convert2UTF8(formBean.getJingZhongJunPin2()));
+			daoBean.setChengPinLv(StringHelper.ISO8859Convert2UTF8(formBean.getChengPinLvJunPin2()));
+			daoBean.setYuanSuFe(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuFeJunPin2()));
+			daoBean.setYuanSuSi(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuSiJunPin2()));
+			daoBean.setYuanSuCl(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuClJunPin2()));
+			daoBean.setYuanSuC(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuCJunPin2()));
+			daoBean.setYuanSuN(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuNJunPin2()));
+			daoBean.setYuanSuO(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuOJunPin2()));
+			daoBean.setYuanSuH(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHJunPin2()));
+			daoBean.setYuanSuMn(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuMnJunPin2()));
+			daoBean.setYuanSuHb(StringHelper.ISO8859Convert2UTF8(formBean.getYuanSuHbJunPin2()));
+			daoBean.setDengJiHanMeng(StringHelper.ISO8859Convert2UTF8(formBean.getDengJiHanMengJunPin2()));
+			daoBean.setKaoHeDengJiChuMeng(StringHelper.ISO8859Convert2UTF8(formBean.getKaoHeDengJiChuMengJunPin2()));
+			daoBean.setGongYiTiaoZheng(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiTiaoZhengJunPin2()));
+			daoBean.setGongYiShiYan(StringHelper.ISO8859Convert2UTF8(formBean.getGongYiShiYanJunPin2()));
+			daoBean.setDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getDiPiKgJunPin2()));
+			daoBean.setShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShangMaoKgJunPin2()));
+			daoBean.setPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getPaBiKgJunPin2()));
+			daoBean.setFeiDiPiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiDiPiKgJunPin2()));
+			daoBean.setFeiShangMaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiShangMaoKgJunPin2()));
+			daoBean.setFeiPaBiKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiPaBiKgJunPin2()));
+			daoBean.setFeiTaiFenKg(StringHelper.ISO8859Convert2UTF8(formBean.getFeiTaiFenKgJunPin2()));
+			daoBean.setCiYuanKg(StringHelper.ISO8859Convert2UTF8(formBean.getCiYuanKgJunPin2()));
+			daoBean.setShouXuanFeiLiaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getShouXuanFeiLiaoKgJunPin2()));
+			daoBean.setSunHaoKg(StringHelper.ISO8859Convert2UTF8(formBean.getSunHaoKgJunPin2()));
+			daoBean.setZongPaiMeiLiangKg(StringHelper.ISO8859Convert2UTF8(formBean.getZongPaiMeiLiangKgJunPin2()));
+			daoBean.setChuLuZhenKongDu(StringHelper.ISO8859Convert2UTF8(formBean.getChuLuZhenKongDuJunPin2()));
+			daoBean.setYuanZuiGaoWenDu(StringHelper.ISO8859Convert2UTF8(formBean.getYuanZuiGaoWenDuJunPin2()));
+			daoBean.setZhengLiuGaoHengDian(StringHelper.ISO8859Convert2UTF8(formBean.getZhengLiuGaoHengDianJunPin2()));
+			daoBean.setZhuanZhengLiu(StringHelper.ISO8859Convert2UTF8(formBean.getZhuanZhengLiuJunPin2()));
+			daoBean.setJiaShouCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaShouCiJunPin2()));
+			daoBean.setJiaMoCi(StringHelper.ISO8859Convert2UTF8(formBean.getJiaMoCiJunPin2()));
+			daoBean.setTongDao(StringHelper.ISO8859Convert2UTF8(formBean.getTongDaoJunPin2()));
+			daoBean.setShengChanGuZhang(StringHelper.ISO8859Convert2UTF8(formBean.getShengChanGuZhangJunPin2()));
+			daoBean.setBeiZhuShuoMing(StringHelper.ISO8859Convert2UTF8(formBean.getBeiZhuShuoMingJunPin2()));
+			break;
+		default:
+			break;
 		}
 		return daoBean;
 	}
@@ -1308,31 +933,6 @@ public class InputByNewBusiness {
 			return (InputByNewFormBean) form.getInputByNewList().get(index);
 		}
 		return null;
-	}
-
-	private void log(InputByNewFormBean inputByNewFormBean) {
-		System.out.println("年月日:" + inputByNewFormBean.getYearMonthDay());
-		System.out.println("期号:" + inputByNewFormBean.getQiHao());
-		System.out.println("炉次:" + inputByNewFormBean.getLuCi());
-		System.out.println("规格:" + inputByNewFormBean.getGuiGe());
-		System.out.println("生产炉号:" + inputByNewFormBean.getShengChanLuHao());
-		System.out.println("反应器号:" + inputByNewFormBean.getFanYingQiHao());
-
-		System.out.println("年月日军品1:" + inputByNewFormBean.getYearMonthDayJunPin1());
-		System.out.println("期号军品1:" + inputByNewFormBean.getQiHaoJunPin1());
-		System.out.println("炉次军品1:" + inputByNewFormBean.getLuCi());
-		System.out.println("炉次军品1:" + inputByNewFormBean.getLuCiJunPin1());
-		System.out.println("规格军品1:" + inputByNewFormBean.getGuiGeJunPin1());
-		System.out.println("生产炉号军品1:" + inputByNewFormBean.getShengChanLuHaoJunPin1());
-		System.out.println("反应器号军品1:" + inputByNewFormBean.getFanYingQiHaoJunPin1());
-
-		System.out.println("年月日军品2:" + inputByNewFormBean.getYearMonthDayJunPin2());
-		System.out.println("期号军品2:" + inputByNewFormBean.getQiHaoJunPin2());
-		System.out.println("炉次军品2:" + inputByNewFormBean.getLuCi());
-		System.out.println("炉次军品2:" + inputByNewFormBean.getLuCiJunPin2());
-		System.out.println("规格军品2:" + inputByNewFormBean.getGuiGeJunPin2());
-		System.out.println("生产炉号军品2:" + inputByNewFormBean.getShengChanLuHaoJunPin2());
-		System.out.println("反应器号军品2:" + inputByNewFormBean.getFanYingQiHaoJunPin2());
 	}
 
 	public Boolean Save(ActionForm form) throws Exception {
@@ -1350,30 +950,27 @@ public class InputByNewBusiness {
 				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
 					// 信息输入画面Form取得FormBean
 					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
-					//log(inputByNewFormBean);
+					// log(inputByNewFormBean);
 					// 1：常规数据 2:军品1 3：军品2
-					// FormBean转化成DaoBean				
+					// FormBean转化成DaoBean
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
-					
+
 					if (i % 3 == 0) {
 						tmpLuci = tIronInfoDaoBean.getLuCi();
 					} else {
 						tIronInfoDaoBean.setLuCi(tmpLuci);
 					}
-					
+
 					if (i % 3 == 0) {
 						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
 					} else {
 						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
 					}
-					
+
 					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
-							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
+									&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
 						// 炉次和规格都不为空时，登陆。
-						
-//						if (dao.QueryCountByLuci(tIronInfoDaoBean.getLuCi())) {
-//							throw new Exception("已存在相同的炉次：" + tIronInfoDaoBean.getLuCi() +"，请确认修改后重新保存。");
-//						}
+
 						tIronInfoDaoBean.setId(dao.GetMaxId());
 						dao.Insert(tIronInfoDaoBean);
 					}
@@ -1384,72 +981,15 @@ public class InputByNewBusiness {
 				dao.Commit();
 				dao.Close();
 			}
-
 			return true;
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			dao.Rollback();
 			dao.Close();
 			throw e;
-			//return false;
 		}
 	}
-//
-//	public Boolean Commit(ActionForm form) {
-//		TIronInfoDao dao = new TIronInfoDao();
-//		try {
-//			if (form != null) {
-//				InputByNewForm inputByNewForm = (InputByNewForm) form;
-//				InputByNewFormBean inputByNewFormBean;
-//				TIronInfoDaoBean tIronInfoDaoBean;
-//				dao.Open();
-//				dao.BeginTrans();
-//				// 信息输入画面，默认10条数据 循环
-//				String tmpLuci = "";
-//				String tmpYearMonthDay = "";
-//				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
-//					// 信息输入画面Form取得FormBean
-//					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
-//					//log(inputByNewFormBean);
-//					// 1：常规数据 2:军品1 3：军品2
-//					// FormBean转化成DaoBean				
-//					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
-//					
-//					if (i % 3 == 0) {
-//						tmpLuci = tIronInfoDaoBean.getLuCi();
-//					} else {
-//						tIronInfoDaoBean.setLuCi(tmpLuci);
-//					}
-//					
-//					if (i % 3 == 0) {
-//						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
-//					} else {
-//						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
-//					}
-//					
-//					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
-//							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
-//						// 炉次和规格都不为空时，登陆。
-//						dao.Insert(tIronInfoDaoBean);
-//					}
-//				}
-//				dao.UpdateJunPinNotInput();
-//				dao.UpdateYue();
-//				dao.Commit();
-//				dao.Close();
-//			}
-//
-//			return true;
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			dao.Rollback();
-//			dao.Close();
-//			return false;
-//		}
-//	}
-	
+
 	public ErrorType getErrorType(ValidateStatusInput errorStatus) {
 		switch (errorStatus) {
 		case EMPTY_YearMonthDay:
@@ -2015,13 +1555,13 @@ public class InputByNewBusiness {
 		case NUMBER_FORMAT_BeiZhuShuoMing:
 			return Constant.ITEM_BeiZhuShuoMing;
 		case DATE_FORMAT_YearMonthDay:
-			return Constant.ITEM_YearMonthDay;		
+			return Constant.ITEM_YearMonthDay;
 		default:
 			break;
 		}
 		return "";
 	}
-	
+
 	public ArrayList<InputByNewFormBean> initInputByNewForm() {
 		ArrayList<InputByNewFormBean> inputByNewList = new ArrayList<InputByNewFormBean>();
 
@@ -2078,5 +1618,4 @@ public class InputByNewBusiness {
 		}
 		return inputByNewList;
 	}
-	
 }

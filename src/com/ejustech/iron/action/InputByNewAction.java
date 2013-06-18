@@ -31,25 +31,22 @@ import com.ejustech.iron.form.InputByNewForm;
  */
 public class InputByNewAction extends EventDispatchAction {
 	// 处理保存的动作
-	public ActionForward Save(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
-		
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
-			InputByNewForm inputByNewForm = (InputByNewForm) form;
-			InputByNewBusiness business = new InputByNewBusiness();
-			try {
-//			inputByNewForm.setSave(true);
+	public ActionForward Save(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
+
+		if (request.getSession().getAttribute("logout") != null) {
+			return mapping.findForward("relogin");
+		}
+
+		InputByNewForm inputByNewForm = (InputByNewForm) form;
+		InputByNewBusiness business = new InputByNewBusiness();
+
+		try {
 			business.Save(inputByNewForm);
-			
-//			inputByNewForm = new InputByNewForm();
-			
-			InputByNewBusiness inputByNewBusiness = new InputByNewBusiness();
-			ArrayList<InputByNewFormBean> initList = inputByNewBusiness.initInputByNewForm();
-			
+
+			ArrayList<InputByNewFormBean> initList = business.initInputByNewForm();
 			inputByNewForm.setInputByNewList(initList);
-			
-			
 			inputByNewForm.setRole("1");
+
 			return mapping.findForward("OK");
 		} catch (Exception e) {
 			ActionErrors error = new ActionErrors();
@@ -58,52 +55,40 @@ public class InputByNewAction extends EventDispatchAction {
 			inputByNewForm.setRole("1");
 			return mapping.findForward("NG");
 		}
-//		return null;
 	}
-	
-//	// 处理保存的动作
-//	public ActionForward Commit(ActionMapping mapping, ActionForm form,
-//			HttpServletRequest request, HttpServletResponse response) {
-//		try {
-//			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
-//			InputByNewForm inputByNewForm = (InputByNewForm) form;
-//			InputByNewBusiness business = new InputByNewBusiness();
-//			inputByNewForm.setSave(false);
-//			business.Commit(inputByNewForm);
-//			
-//			return mapping.findForward("OK");
-//		} catch (Exception e) {
-//		}
-//		return null;
-//	}
-	
+
 	// 处理保存的动作
-	public ActionForward Reset(ActionMapping mapping, ActionForm form,
-			HttpServletRequest request, HttpServletResponse response) {
+	public ActionForward Reset(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			InputByNewForm inputByNewForm = (InputByNewForm) form;
 			InputByNewBusiness business = new InputByNewBusiness();
-			
+
 			ArrayList<InputByNewFormBean> initList = business.initInputByNewForm();
-			
+
 			inputByNewForm.setInputByNewList(initList);
-			
+
 			inputByNewForm.setRole("1");
 			return mapping.findForward("OK");
 		} catch (Exception e) {
 		}
 		return null;
 	}
+
 	// 处理返回跳转动作
 	public ActionForward back(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) {
 		try {
-			if (request.getSession().getAttribute("logout") != null) {return mapping.findForward("relogin");}
+			if (request.getSession().getAttribute("logout") != null) {
+				return mapping.findForward("relogin");
+			}
+
 			return mapping.findForward("back");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return mapping.findForward("searchError");
 		}
-//					return null;
 	}
 }
