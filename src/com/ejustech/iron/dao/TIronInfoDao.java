@@ -244,9 +244,8 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_BeiZhuShuoMing, StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_TICL4_QUERY_CONDITION, StringHelper.UTF8Convert2ISO8859(daoBean.getTiCl4()));
 
-			//炉次和规格作为更新条件
-			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_LuCi, StringHelper.UTF8Convert2ISO8859(daoBean.getLuCi()));
-			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_GuiGe, StringHelper.UTF8Convert2ISO8859(daoBean.getGuiGe()));
+			//ID作为更新条件
+			ps.setString(Constant.T_IRON_INFO_COL_UPDATE_ID, StringHelper.UTF8Convert2ISO8859(daoBean.getId()));
 
 			ps.executeUpdate();
 		} catch (SQLException e) {

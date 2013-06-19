@@ -384,12 +384,7 @@ public class Constant {
 	/**
 	 * 信息输入画面 登陆用SQL文 参数顺序 炉次
 	 */
-	public static final int T_IRON_INFO_COL_UPDATE_LuCi = 46;
-	/**
-	 * 信息输入画面 登陆用SQL文 参数顺序 规格
-	 */
-	public static final int T_IRON_INFO_COL_UPDATE_GuiGe = 47;
-
+	public static final int T_IRON_INFO_COL_UPDATE_ID = 46;
 	/**
 	 * 信息输入画面 文本框输入值 最大长度验证 年月日
 	 */
