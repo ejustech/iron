@@ -43,7 +43,7 @@ public class ConstantSql {
 	/***
 	 * 更新数据完全输入的Flag，每次登陆或保存数据时调用
 	 */
-	public static final String T_INRO_INFO_UPDATE_FLG_INSER = "UPDATE ironinfo SET flag = '1' WHERE `riqi` <> '' AND `qihao` <> '' AND `luci` <> '' AND `guige` <> '' AND `shengchanluhao` <> '' AND `fanyingqihao` <> '' AND `shiyongcishu` <> '' AND `jingzhong` <> '' AND `chengpinlv` <> '' AND `fe` <> '' AND `si` <> '' AND `cl` <> '' AND `c` <> '' AND `n` <> '' AND `o` <> '' AND `h` <> '' AND `mn` <> '' AND `hb` <> '' AND `dengji_hanmeng` <> '' AND `kaohedengji_chumeng` <> '' AND id = ?";
+	public static final String T_INRO_INFO_UPDATE_FLG_INSER = "UPDATE ironinfo SET flag = '1' WHERE `riqi` <> '' AND `qihao` <> '' AND `luci` <> '' AND `guige` <> '' AND `shengchanluhao` <> '' AND `fanyingqihao` <> '' AND `shiyongcishu` <> '' AND `jingzhong` <> '' AND `chengpinlv` <> '' AND `fe` <> '' AND `si` <> '' AND `cl` <> '' AND `c` <> '' AND `n` <> '' AND `o` <> '' AND `h` <> '' AND `mn` <> '' AND `hb` <> '' AND `dengji_hanmeng` <> '' AND `kaohedengji_chumeng` <> '' AND `dipi` <> '' AND `shangmao` <> '' AND `pabi` <> '' AND `feidipi` <> '' AND `feishangmao` <> '' AND `feipabi` <> '' AND `feitaifen` <> '' AND `cixuan` <> '' AND `shouxuanfeiliao` <> '' AND `sunhao` <> '' AND id = ?";
 
 	/***
 	 * 确认炉次是否存在，目前未使用
