@@ -197,7 +197,10 @@ public class Constant {
 	 * 信息输入画面 登陆用SQL文 参数顺序 TiCl4_Query_Condition
 	 */
 	public static final int T_IRON_INFO_COL_TiCl4_QUERY_CONDITION = 48;
-
+	/**
+	 * 信息输入画面 登陆用SQL文 参数顺序 炉次 军品、非军品相同 累加
+	 */
+	public static final int T_IRON_INFO_COL_LUICI_INDEX = 49;
 	/**
 	 * 信息输入画面 登陆用SQL文 参数顺序 年月日
 	 */

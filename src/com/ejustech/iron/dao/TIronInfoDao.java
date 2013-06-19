@@ -94,6 +94,7 @@ public class TIronInfoDao extends BaseDao {
 			ps.setString(Constant.T_IRON_INFO_COL_BeiZhuShuoMing,  StringHelper.UTF8Convert2ISO8859(daoBean.getBeiZhuShuoMing()));
 			ps.setString(Constant.T_IRON_INFO_COL_ID,  StringHelper.UTF8Convert2ISO8859(daoBean.getId()));
 			ps.setString(Constant.T_IRON_INFO_COL_TiCl4_QUERY_CONDITION,  StringHelper.UTF8Convert2ISO8859(daoBean.getTiCl4()));
+			ps.setString(Constant.T_IRON_INFO_COL_LUICI_INDEX,  StringHelper.UTF8Convert2ISO8859(daoBean.getLuciIndex()));
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
@@ -282,8 +283,12 @@ public class TIronInfoDao extends BaseDao {
 
 	/**
 	 * 取得ID最大值+1
+	 * @return 
 	 */
-	public String GetMaxId() throws Exception {
+	public String[] GetMaxId() throws Exception {
+		String[] result;
+		result = new String[2];
+
 		PreparedStatement ps = null;
 		
 		try {
@@ -292,13 +297,15 @@ public class TIronInfoDao extends BaseDao {
 			ResultSet resultSet = ps.executeQuery();
 
 			while (resultSet.next()) {
-				return	resultSet.getString("maxid").toString();
+				result[0] = resultSet.getString("maxid").toString();
+				result[1] = resultSet.getString("maxluciindex").toString();
 			}
+			
+			return result;
 
 		} catch (Exception exception) {
 			throw new Exception("SQLException: " + exception.getMessage());
 		}
-		return null;
 	}
 
 	/**

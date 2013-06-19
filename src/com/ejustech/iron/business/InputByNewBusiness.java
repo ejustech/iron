@@ -947,6 +947,7 @@ public class InputByNewBusiness {
 				// 信息输入画面，默认10条数据 循环
 				String tmpLuci = "";
 				String tmpYearMonthDay = "";
+				String luciIndex = "";
 				for (int i = 0; i < Constant.INPUT_BY_NEW_ROWS; i++) {
 					// 信息输入画面Form取得FormBean
 					inputByNewFormBean = getInputByNewFormBeanFromForm(inputByNewForm, i);
@@ -970,17 +971,23 @@ public class InputByNewBusiness {
 					if (null != tIronInfoDaoBean.getLuCi() && !"".equals(tIronInfoDaoBean.getLuCi()) && null != tIronInfoDaoBean.getGuiGe()
 							&& !"".equals(tIronInfoDaoBean.getGuiGe())) {
 						// 炉次和规格都不为空时，登陆。
-
-						tIronInfoDaoBean.setId(dao.GetMaxId());
-						dao.Insert(tIronInfoDaoBean);
+						String[] max = dao.GetMaxId();
+						
+						tIronInfoDaoBean.setId(max[0]);
+						
 						if (!"".equals(StringHelper.null2Empty(tIronInfoDaoBean.getJunPin()))) {
 							//军品行
+							tIronInfoDaoBean.setLuciIndex(luciIndex);
+							dao.Insert(tIronInfoDaoBean);
 							dao.UpdateJunPinNotInput(tIronInfoDaoBean.getId());
 							dao.UpdateFlagWhenJunPin(tIronInfoDaoBean.getId());
 						}
 						else
 						{
 							//非军品行
+							luciIndex = max[1];
+							tIronInfoDaoBean.setLuciIndex(luciIndex);
+							dao.Insert(tIronInfoDaoBean);
 							dao.UpdateFlagWhenNotJunPin(tIronInfoDaoBean.getId());
 						}
 						dao.UpdateYue(tIronInfoDaoBean.getId());

@@ -13,17 +13,17 @@ public class ConstantSql {
 	/***
 	 * 数据输入用SQL
 	 */
-	public static final String T_INRO_INFO_INSERT = "INSERT INTO ironinfo (`riqi`, `qihao`, `luci`, `junpin`, `guige`, `shengchanluhao`, `fanyingqihao`, `shiyongcishu`, `mg`, `ticl`, `maozhong`, `jingzhong`, `chengpinlv`, `fe`, `si`, `cl`, `c`, `n`, `o`, `h`, `mn`, `hb`, `dengji_hanmeng`, `kaohedengji_chumeng`, `gongyitiaozheng`, `gongyishiyan`, `dipi`, `shangmao`, `pabi`, `feidipi`, `feishangmao`, `feipabi`, `feitaifen`, `cixuan`, `shouxuanfeiliao`, `sunhao`, `zongpaimeiliang`, `chuluzhenkongdu`, `huanyuanzuigaowendu`, `zhengliugaoheng`, `zhuanzhengliu`, `jiashouci`, `jiamoci`, `tongdao`, `shengchanguzhang`, `beizhushuoming`, id, `ticl_query_condition`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	public static final String T_INRO_INFO_INSERT = "INSERT INTO ironinfo (`riqi`, `qihao`, `luci`, `junpin`, `guige`, `shengchanluhao`, `fanyingqihao`, `shiyongcishu`, `mg`, `ticl`, `maozhong`, `jingzhong`, `chengpinlv`, `fe`, `si`, `cl`, `c`, `n`, `o`, `h`, `mn`, `hb`, `dengji_hanmeng`, `kaohedengji_chumeng`, `gongyitiaozheng`, `gongyishiyan`, `dipi`, `shangmao`, `pabi`, `feidipi`, `feishangmao`, `feipabi`, `feitaifen`, `cixuan`, `shouxuanfeiliao`, `sunhao`, `zongpaimeiliang`, `chuluzhenkongdu`, `huanyuanzuigaowendu`, `zhengliugaoheng`, `zhuanzhengliu`, `jiashouci`, `jiamoci`, `tongdao`, `shengchanguzhang`, `beizhushuoming`, id, `ticl_query_condition`, luci_index) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 	/***
 	 * 用非军品数据更新军品部分项目数据，关联条件：炉次
 	 */
-	public static final String T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT = "UPDATE ironinfo AS junpinT,ironinfo AS notjunpinT SET junpinT.qihao = notjunpinT.qihao,junpinT.luci = notjunpinT.luci,junpinT.shengchanluhao = notjunpinT.shengchanluhao,junpinT.fanyingqihao = notjunpinT.fanyingqihao,junpinT.shiyongcishu = notjunpinT.shiyongcishu,junpinT.gongyishiyan = notjunpinT.gongyishiyan,junpinT.zongpaimeiliang = notjunpinT.zongpaimeiliang,junpinT.chuluzhenkongdu = notjunpinT.chuluzhenkongdu,junpinT.huanyuanzuigaowendu = notjunpinT.huanyuanzuigaowendu,junpinT.zhengliugaoheng = notjunpinT.zhengliugaoheng,junpinT.zhuanzhengliu = notjunpinT.zhuanzhengliu,junpinT.jiashouci = notjunpinT.jiashouci,junpinT.jiamoci = notjunpinT.jiamoci,junpinT.tongdao = notjunpinT.tongdao,junpinT.chengpinlv = notjunpinT.chengpinlv,junpinT.shengchanguzhang = notjunpinT.shengchanguzhang,junpinT.gongyitiaozheng = notjunpinT.gongyitiaozheng,junpinT.ticl_query_condition = notjunpinT.ticl_query_condition WHERE junpinT.luci = notjunpinT.luci and junpinT.id = ?";
+	public static final String T_INRO_INFO_UPDATE_JUNPIN_NOT_INPUT = "UPDATE ironinfo AS junpinT,ironinfo AS notjunpinT SET junpinT.qihao = notjunpinT.qihao,junpinT.luci = notjunpinT.luci,junpinT.shengchanluhao = notjunpinT.shengchanluhao,junpinT.fanyingqihao = notjunpinT.fanyingqihao,junpinT.shiyongcishu = notjunpinT.shiyongcishu,junpinT.gongyishiyan = notjunpinT.gongyishiyan,junpinT.zongpaimeiliang = notjunpinT.zongpaimeiliang,junpinT.chuluzhenkongdu = notjunpinT.chuluzhenkongdu,junpinT.huanyuanzuigaowendu = notjunpinT.huanyuanzuigaowendu,junpinT.zhengliugaoheng = notjunpinT.zhengliugaoheng,junpinT.zhuanzhengliu = notjunpinT.zhuanzhengliu,junpinT.jiashouci = notjunpinT.jiashouci,junpinT.jiamoci = notjunpinT.jiamoci,junpinT.tongdao = notjunpinT.tongdao,junpinT.chengpinlv = notjunpinT.chengpinlv,junpinT.shengchanguzhang = notjunpinT.shengchanguzhang,junpinT.gongyitiaozheng = notjunpinT.gongyitiaozheng,junpinT.ticl_query_condition = notjunpinT.ticl_query_condition WHERE junpinT.luci_index = notjunpinT.luci_index and junpinT.id = ?";
 
 	/***
 	 * 信息补全用，检索未输入完全的数据，flag is null
 	 */
-	public static final String T_INRO_INFO_SELECT_ALL = "SELECT id, riqi, qihao, luci, junpin, guige, shengchanluhao, fanyingqihao, shiyongcishu, mg, ticl, maozhong, jingzhong, chengpinlv, fe, si, cl, c, n, o, h, mn, hb, dengji_hanmeng, kaohedengji_chumeng, gongyitiaozheng, gongyishiyan, dipi, shangmao, pabi, feidipi, feishangmao, feipabi, feitaifen, cixuan, shouxuanfeiliao, sunhao, zongpaimeiliang, chuluzhenkongdu, huanyuanzuigaowendu, zhengliugaoheng, zhuanzhengliu, jiashouci, jiamoci, tongdao, shengchanguzhang, beizhushuoming FROM ironinfo where luci in (SELECT luci FROM ironinfo where flag is null) order by id";
+	public static final String T_INRO_INFO_SELECT_ALL = "SELECT id, riqi, qihao, luci, junpin, guige, shengchanluhao, fanyingqihao, shiyongcishu, mg, ticl, maozhong, jingzhong, chengpinlv, fe, si, cl, c, n, o, h, mn, hb, dengji_hanmeng, kaohedengji_chumeng, gongyitiaozheng, gongyishiyan, dipi, shangmao, pabi, feidipi, feishangmao, feipabi, feitaifen, cixuan, shouxuanfeiliao, sunhao, zongpaimeiliang, chuluzhenkongdu, huanyuanzuigaowendu, zhengliugaoheng, zhuanzhengliu, jiashouci, jiamoci, tongdao, shengchanguzhang, beizhushuoming FROM ironinfo where luci_index in (SELECT luci_index FROM ironinfo where flag is null) order by id";
 
 	/***
 	 * 信息更新时，检索用。根据选中项目的id，检索出炉次，然后检索炉次所有的军品和非军品数据
@@ -56,7 +56,7 @@ public class ConstantSql {
 	public static final String T_INRO_INFO_KEY_LUCI = "SELECT COUNT(luci) as cnt FROM ironinfo where luci = ?";
 
 	/***
-	 * 检索最大ID，每次数据登录时用
+	 * 检索最大ID，最大炉次索引，每次数据登录时用
 	 */
-	public static final String T_INRO_INFO_MAX_ID = "SELECT IFNULL(MAX(id), 0) + 1 as maxid FROM ironinfo";
+	public static final String T_INRO_INFO_MAX_ID = "SELECT IFNULL(MAX(id), 0) + 1 as maxid, IFNULL(MAX(luci_index), 0) + 1 AS maxluciindex FROM ironinfo";
 }

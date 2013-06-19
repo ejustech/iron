@@ -14,7 +14,7 @@ public class TIronInfoDaoBean {
 
 	/** 磁选Kg */
 	private String ciYuanKg;
-
+	
 	/** 日 */
 	private String day;
 
@@ -29,10 +29,10 @@ public class TIronInfoDaoBean {
 
 	/** 废底皮Kg */
 	private String feiDiPiKg;
-
+	
 	/** 废爬壁Kg */
 	private String feiPaBiKg;
-
+	
 	/** 废上帽Kg */
 	private String feiShangMaoKg;
 
@@ -71,6 +71,8 @@ public class TIronInfoDaoBean {
 
 	/** 炉次 */
 	private String luCi;
+
+	private String luciIndex;
 
 	/** 毛重 */
 	private String maoZhong;
@@ -315,6 +317,13 @@ public class TIronInfoDaoBean {
 	 */
 	public String getLuCi() {
 		return StringHelper.null2Empty(luCi);
+	}
+
+	/**
+	 * @return the luciIndex
+	 */
+	public String getLuciIndex() {
+		return luciIndex;
 	}
 
 	/**
@@ -674,6 +683,13 @@ public class TIronInfoDaoBean {
 	 */
 	public void setLuCi(String luCi) {
 		this.luCi = luCi;
+	}
+
+	/**
+	 * @param luciIndex the luciIndex to set
+	 */
+	public void setLuciIndex(String luciIndex) {
+		this.luciIndex = luciIndex;
 	}
 
 	/**
