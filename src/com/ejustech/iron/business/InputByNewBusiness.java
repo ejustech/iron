@@ -974,10 +974,16 @@ public class InputByNewBusiness {
 						tIronInfoDaoBean.setId(dao.GetMaxId());
 						dao.Insert(tIronInfoDaoBean);
 						if (!"".equals(StringHelper.null2Empty(tIronInfoDaoBean.getJunPin()))) {
+							//军品行
 							dao.UpdateJunPinNotInput(tIronInfoDaoBean.getId());
+							dao.UpdateFlagWhenJunPin(tIronInfoDaoBean.getId());
+						}
+						else
+						{
+							//非军品行
+							dao.UpdateFlagWhenNotJunPin(tIronInfoDaoBean.getId());
 						}
 						dao.UpdateYue(tIronInfoDaoBean.getId());
-						dao.UpdateFlag(tIronInfoDaoBean.getId());
 					}
 				}
 				dao.Commit();

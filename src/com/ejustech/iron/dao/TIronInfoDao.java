@@ -123,14 +123,14 @@ public class TIronInfoDao extends BaseDao {
     }
 
 	/**
-	 * 更新数据输入完全标志
+	 * 更新数据输入完全标志(明细行：非军品时用)
 	 */
-    public Boolean UpdateFlag(String id) throws SQLException {
+    public Boolean UpdateFlagWhenNotJunPin(String id) throws SQLException {
 
         PreparedStatement ps = null;
 
         try {
-            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_INSER);
+            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_WHEN_NOT_JUNPIN);
             ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
             
             ps.executeUpdate();
@@ -141,6 +141,24 @@ public class TIronInfoDao extends BaseDao {
         return true;
     }
 
+	/**
+	 * 更新数据输入完全标志(明细行：军品时用)
+	 */
+    public Boolean UpdateFlagWhenJunPin(String id) throws SQLException {
+
+        PreparedStatement ps = null;
+
+        try {
+            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_UPDATE_FLG_WHEN_JUNPIN);
+            ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
+            
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
+        return true;
+    }
 	/**
 	 * 更新月字段
 	 */
