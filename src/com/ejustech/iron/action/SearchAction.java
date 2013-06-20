@@ -401,6 +401,8 @@ public class SearchAction extends EventDispatchAction {
 				ArrayList<Result1FormBean> allInfoList = new ArrayList<Result1FormBean>();
 				allInfoList = (ArrayList<Result1FormBean>) searchDao.getAllInfoList(request, sqlCondition);
 				request.setAttribute("AllINFOLIST", allInfoList);
+				// list放到session用于excel导出
+				session.setAttribute("AllINFOLIST", allInfoList);
 				// 全部信息输出表
 				return mapping.findForward("srch1");
 			}

@@ -66,10 +66,11 @@
 		</action>
 		<action attribute="result1Form" input="/jsp/result1.jsp" name="result1Form"
 			path="/result1" scope="request" type="com.ejustech.iron.action.Result1Action"
-			parameter="res1_add,res1_modify,res1_del,res1_back,searchError"
+			parameter="res1_add,res1_modify,exportResult1,res1_del,res1_back,searchError"
 			cancellable="true">
 			<forward name="res1_add" path="/jsp/inputByNew.jsp" />
 			<forward name="res1_modify" path="/jsp/inputByNew.jsp" />
+			<forward name="exportResult1" path="/jsp/result1.jsp" />
 			<forward name="res1_del" path="/jsp/result1.jsp" />
 			<forward name="res1_back" path="/jsp/search.jsp" />
 			<forward name="searchError" path="/jsp/searchError.jsp" />

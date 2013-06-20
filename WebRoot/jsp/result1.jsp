@@ -43,6 +43,8 @@
 						<html:submit property="res1_modify">修&nbsp&nbsp&nbsp&nbsp改</html:submit>
 						-->
 						
+						<html:submit property="exportResult1">导出Excel</html:submit>
+						
 						<html:submit property="res1_del">删&nbsp&nbsp&nbsp&nbsp除</html:submit>
 
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
