@@ -33,6 +33,8 @@ body {
   <div align="center">
     <p><img src="../jinda/image/1.jpg"/></p>
   </div>
+  
+  <script src="../jinda/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
 
 <table width="1024" align="center">
 <tr>
@@ -117,7 +119,7 @@ body {
           </span></td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> 
+            <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10" onclick="WdatePicker()"></html:text> 
 </logic:empty>
         </td>
         <td align="center">

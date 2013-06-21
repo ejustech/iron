@@ -33,6 +33,8 @@
 			//window.history.back()
 		//}
   	</script>
+  	<script src="../jinda/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+  	
 	<body>
 		<html:form action="/search">
 		<div align="center">
@@ -118,9 +120,9 @@
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">日期:</span></td>
 							<td><span class="STYLE10 STYLE11">
-							从<input type="text" name="riqi1" maxlength="10">
+							从<input type="text" name="riqi1" maxlength="10" onClick="WdatePicker()">
 						    -
-						    到<input type="text" name="riqi2" maxlength="10">
+						    到<input type="text" name="riqi2" maxlength="10" onClick="WdatePicker()">
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">期号:</span></td>
 							<td><span class="STYLE10 STYLE11">

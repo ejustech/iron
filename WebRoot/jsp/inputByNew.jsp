@@ -33,6 +33,9 @@ body {
   <div align="center">
     <p><img src="../jinda/image/1.jpg"/></p>
   </div>
+  
+  <script src="../jinda/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+  
 <table width="1024" align="center">
 				<tr>
 					<td align="left"><span class="STYLE15">信息录入</span></td>
@@ -106,7 +109,7 @@ body {
           <%=index/3+1%>
           <%}%>
           </span></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10" onclick="WdatePicker()"></html:text> <%} else {%>  <%}%> </td>
         <td align="center">
         <%if (0 == index%3) {%> 
         <html:select name="inputByNewList" property="qiHao" indexed="true">
@@ -250,7 +253,7 @@ body {
           <%=index/3+1%>
           <%}%>
           </span></td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"  onchange="WdatePicker()"></html:text> <%} else {%>  <%}%> </td>
         <td align="center">
         <%if (0 == index%3) {%> 
         <html:select name="inputByNewList" property="qiHao" indexed="true">
