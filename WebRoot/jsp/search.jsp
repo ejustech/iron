@@ -35,7 +35,7 @@
   	</script>
   	<script src="../jinda/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
   	
-	<body>
+	<body style="overflow-x:hidden">
 		<html:form action="/search">
 		<div align="center">
 			<p><img src="../jinda/image/1.jpg"/></p>
