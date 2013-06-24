@@ -81,7 +81,12 @@
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="21"/>
 						  月生产数据统计表-含锰</span></td>
-						</tr>						
+						</tr>
+                        <tr>
+                          <td><span class="STYLE10 STYLE11">
+                          <html:radio name="sList" property="selInfoList" value="22"/>
+                          月生产数据统计表-含锰-1</span></td>
+                        </tr>												
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="3"/>
@@ -92,6 +97,11 @@
 						  <html:radio name="sList" property="selInfoList" value="31"/>
 						  月生产数据统计表-除锰</span></td>
 						</tr>
+                        <tr>
+                          <td><span class="STYLE10 STYLE11">
+                          <html:radio name="sList" property="selInfoList" value="32"/>
+                          月生产数据统计表-除锰-1</span></td>
+                        </tr>						
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="4"/>

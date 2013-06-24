@@ -428,6 +428,17 @@ public class SearchAction extends EventDispatchAction {
 				// 生产数据统计表-含锰
 				return mapping.findForward("srch2");
 			}
+			case 22: {
+				sqlCondition = sqlBufferCondition.toString();
+				ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
+				hanmengList = (ArrayList<Result2FormBean>) searchDao.getHanmeng1List(request, sqlCondition,"");
+				request.setAttribute("HANMENG1LIST", hanmengList);
+				// list放到session用于excel导出
+//				HttpSession session = request.getSession();
+				session.setAttribute("HANMENG1LIST", hanmengList);
+				// 生产数据统计表-含锰-1
+				return mapping.findForward("srch21");
+			}			
 			case 3: {
 				sqlCondition = sqlBufferCondition.toString();
 				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
@@ -450,6 +461,17 @@ public class SearchAction extends EventDispatchAction {
 				// 生产数据统计表-除锰
 				return mapping.findForward("srch3");
 			}
+			case 32: {
+				sqlCondition = sqlBufferCondition.toString();
+				ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
+				chumengList = (ArrayList<Result3FormBean>) searchDao.getChumeng1List(request, sqlCondition,"");
+				request.setAttribute("CHUMENG1LIST", chumengList);
+				// list放到session用于excel导出
+//				HttpSession session = request.getSession();
+				session.setAttribute("CHUMENG1LIST", chumengList);
+				// 生产数据统计表-除锰
+				return mapping.findForward("srch31");
+			}			
 			case 4: {
 				sqlCondition = sqlBufferCondition.toString();
 				ArrayList<Result4FormBean> waitaiList = new ArrayList<Result4FormBean>();

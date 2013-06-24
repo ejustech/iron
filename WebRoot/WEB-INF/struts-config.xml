@@ -51,11 +51,13 @@
 		</action>
 		<action attribute="searchForm" input="/jsp/search.jsp" name="searchForm"
 			path="/search" scope="request" type="com.ejustech.iron.action.SearchAction"
-			parameter="srch1,srch2,srch3,srch4,srch5,srch6,srch7,back,searchError"
+			parameter="srch1,srch2,srch21,srch3,srch4,srch5,srch6,srch7,back,searchError"
 			cancellable="true">
 			<forward name="srch1" path="/jsp/result1.jsp" />
 			<forward name="srch2" path="/jsp/result2.jsp" />
+			<forward name="srch21" path="/jsp/result21.jsp" />
 			<forward name="srch3" path="/jsp/result3.jsp" />
+			<forward name="srch31" path="/jsp/result31.jsp" />
 			<forward name="srch4" path="/jsp/result4.jsp" />
 			<forward name="srch5" path="/jsp/result5.jsp" />
 			<forward name="srch6" path="/jsp/result6.jsp" />

@@ -1088,6 +1088,520 @@ public class TIronInfoDao extends BaseDao {
 	 * @param request
 	 * @param sqlCondition
 	 *            检索条件
+	 * @return 月生产数据统计表->XXXXX-含锰
+	 * @throws Exception
+	 */
+	public ArrayList<Result2FormBean> getHanmeng1List(HttpServletRequest request, String sqlCondition, String monthFlag) throws Exception {
+
+		ArrayList<Result2FormBean> hanmengList = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList1 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList2 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList3 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList4 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList5 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList6 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList7 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList8 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList9 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList10 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList11 = new ArrayList<Result2FormBean>();
+		ArrayList<Result2FormBean> hanmengList12 = new ArrayList<Result2FormBean>();
+
+		Result2FormBean result2FormBean = new Result2FormBean();
+
+		StringBuffer sql1 = new StringBuffer();
+		StringBuffer sql2 = new StringBuffer();
+		StringBuffer sql3 = new StringBuffer();
+		StringBuffer sql4 = new StringBuffer();
+		StringBuffer sql5 = new StringBuffer();
+		StringBuffer sql6 = new StringBuffer();
+		StringBuffer sql7 = new StringBuffer();
+		StringBuffer sql8 = new StringBuffer();
+		StringBuffer sql9 = new StringBuffer();
+		StringBuffer sql10 = new StringBuffer();
+		StringBuffer sql11 = new StringBuffer();
+		StringBuffer sql12 = new StringBuffer();
+
+		StringBuffer sql1s = new StringBuffer();
+		StringBuffer sql2s = new StringBuffer();
+		StringBuffer sql3s = new StringBuffer();
+		StringBuffer sql4s = new StringBuffer();
+		StringBuffer sql5s = new StringBuffer();
+		StringBuffer sql6s = new StringBuffer();
+		StringBuffer sql7s = new StringBuffer();
+		StringBuffer sql8s = new StringBuffer();
+		StringBuffer sql9s = new StringBuffer();
+		StringBuffer sql10s = new StringBuffer();
+		StringBuffer sql11s = new StringBuffer();
+		StringBuffer sql12s = new StringBuffer();
+
+		StringBuffer sql1ys = new StringBuffer();
+		StringBuffer sql2ys = new StringBuffer();
+		StringBuffer sql3ys = new StringBuffer();
+		StringBuffer sql4ys = new StringBuffer();
+		StringBuffer sql5ys = new StringBuffer();
+		StringBuffer sql6ys = new StringBuffer();
+		StringBuffer sql7ys = new StringBuffer();
+		StringBuffer sql8ys = new StringBuffer();
+		StringBuffer sql9ys = new StringBuffer();
+		StringBuffer sql10ys = new StringBuffer();
+		StringBuffer sql11ys = new StringBuffer();
+		StringBuffer sql12ys = new StringBuffer();
+
+		StringBuffer sqlBuffer1 = new StringBuffer();
+		StringBuffer sqlBuffer2 = new StringBuffer();
+		if (!sqlCondition.equals("")) {
+			sqlBuffer1 = sqlBuffer1.append(" WHERE" + sqlCondition);
+			sqlBuffer2 = sqlBuffer2.append(" AND" + sqlCondition);
+		}
+
+		sql1.append("SELECT qihao FROM ironinfo GROUP BY qihao");
+		sql2.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql3.append(
+				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao");
+		sql4.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql5.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql6.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE dengji_hanmeng = '1'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql7.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE dengji_hanmeng = '2'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql8.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE dengji_hanmeng = '3'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql9.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE dengji_hanmeng = '4'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql10.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE dengji_hanmeng = '5'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql11.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE dengji_hanmeng IN (2,3,4,5)").append(sqlBuffer2)
+				.append(" GROUP BY qihao");
+		sql12.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE dengji_hanmeng IN ('0','0A')").append(sqlBuffer2)
+				.append(" GROUP BY qihao");
+		// 合计部分
+		sql1s.append("SELECT '总计' AS qihao FROM ironinfo");
+		sql2s.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2);
+		sql3s.append(
+				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo")
+				.append(sqlBuffer1);
+		sql4s.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'").append(sqlBuffer2);
+		sql5s.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0'").append(sqlBuffer2);
+		sql6s.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE dengji_hanmeng = '1'").append(sqlBuffer2);
+		sql7s.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE dengji_hanmeng = '2'").append(sqlBuffer2);
+		sql8s.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE dengji_hanmeng = '3'").append(sqlBuffer2);
+		sql9s.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE dengji_hanmeng = '4'").append(sqlBuffer2);
+		sql10s.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE dengji_hanmeng = '5'").append(sqlBuffer2);
+		sql11s.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE dengji_hanmeng IN (2,3,4,5)").append(sqlBuffer2);
+		sql12s.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE dengji_hanmeng IN ('0','0A')").append(sqlBuffer2);
+		// 年度累计部分
+		sql1ys.append("SELECT '年度累计' AS qihao FROM ironinfo");
+		sql2ys.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'");
+		sql3ys.append("SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo");
+		sql4ys.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE dengji_hanmeng = '0A'");
+		sql5ys.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE dengji_hanmeng = '0'");
+		sql6ys.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE dengji_hanmeng = '1'");
+		sql7ys.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE dengji_hanmeng = '2'");
+		sql8ys.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE dengji_hanmeng = '3'");
+		sql9ys.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE dengji_hanmeng = '4'");
+		sql10ys.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE dengji_hanmeng = '5'");
+		sql11ys.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE dengji_hanmeng IN (2,3,4,5)");
+		sql12ys.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE dengji_hanmeng IN ('0','0A')");
+
+		ResultSet resultSet1 = null;
+		ResultSet resultSet2 = null;
+		ResultSet resultSet3 = null;
+		ResultSet resultSet4 = null;
+		ResultSet resultSet5 = null;
+		ResultSet resultSet6 = null;
+		ResultSet resultSet7 = null;
+		ResultSet resultSet8 = null;
+		ResultSet resultSet9 = null;
+		ResultSet resultSet10 = null;
+		ResultSet resultSet11 = null;
+		ResultSet resultSet12 = null;
+
+		ResultSet resultSet1s = null;
+		ResultSet resultSet2s = null;
+		ResultSet resultSet3s = null;
+		ResultSet resultSet4s = null;
+		ResultSet resultSet5s = null;
+		ResultSet resultSet6s = null;
+		ResultSet resultSet7s = null;
+		ResultSet resultSet8s = null;
+		ResultSet resultSet9s = null;
+		ResultSet resultSet10s = null;
+		ResultSet resultSet11s = null;
+		ResultSet resultSet12s = null;
+
+		ResultSet resultSet1ys = null;
+		ResultSet resultSet2ys = null;
+		ResultSet resultSet3ys = null;
+		ResultSet resultSet4ys = null;
+		ResultSet resultSet5ys = null;
+		ResultSet resultSet6ys = null;
+		ResultSet resultSet7ys = null;
+		ResultSet resultSet8ys = null;
+		ResultSet resultSet9ys = null;
+		ResultSet resultSet10ys = null;
+		ResultSet resultSet11ys = null;
+		ResultSet resultSet12ys = null;
+
+		Statement statement = null;
+
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+
+			resultSet1 = statement.executeQuery(sql1.toString());
+			System.out.println("sql1=" + sql1);
+			while (resultSet1.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet1.getString("qihao"));
+				hanmengList1.add(result2FormBean);
+			}
+
+			resultSet2 = statement.executeQuery(sql2.toString());
+			System.out.println("sql2=" + sql2);
+			while (resultSet2.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet2.getString("qihao"));
+				result2FormBean.setZonglushu(resultSet2.getString("zonglushu"));
+				hanmengList2.add(result2FormBean);
+			}
+			// 横向合并list2到list1
+			hanmengList = Utility.getList2ByHashMap(hanmengList1, hanmengList2, 2);
+
+			resultSet3 = statement.executeQuery(sql3.toString());
+			System.out.println("sql3=" + sql3);
+			while (resultSet3.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet3.getString("qihao"));
+				result2FormBean.setFe(Output.getSubValue(resultSet3.getString("fe"), 4));
+				result2FormBean.setCl(Output.getSubValue(resultSet3.getString("cl"), 4));
+				result2FormBean.setN(Output.getSubValue(resultSet3.getString("n"), 4));
+				result2FormBean.setO(Output.getSubValue(resultSet3.getString("o"), 4));
+				result2FormBean.setHb(Output.getSubValue(resultSet3.getString("hb"), 0));
+				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3.getString("zongmaozhong"), 0));
+				result2FormBean.setMgzongliang(resultSet3.getString("mgzongliang"));
+				result2FormBean.setTicl4zongliang(resultSet3.getString("ticl4zongliang"));
+				if (resultSet3.getString("junhuishoulv") != null)
+					result2FormBean.setJunhuishoulv(Output.getPValue(resultSet3.getString("junhuishoulv")));
+				result2FormBean.setZongjingzhong(Output.getSubValue(resultSet3.getString("zongjingzhong"), 0));
+				hanmengList3.add(result2FormBean);
+			}
+
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList3, 3);
+
+			resultSet4 = statement.executeQuery(sql4.toString());
+			System.out.println("sql4=" + sql4);
+			while (resultSet4.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet4.getString("qihao"));
+				result2FormBean.setJ0Aji(resultSet4.getString("0Aji"));
+				hanmengList4.add(result2FormBean);
+			}
+
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList4, 4);
+
+			resultSet5 = statement.executeQuery(sql5.toString());
+			System.out.println("sql5=" + sql5);
+			while (resultSet5.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet5.getString("qihao"));
+				result2FormBean.setJ0ji(resultSet5.getString("0ji"));
+				hanmengList5.add(result2FormBean);
+			}
+
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList5, 5);
+
+			resultSet6 = statement.executeQuery(sql6.toString());
+			System.out.println("sql6=" + sql6);
+			while (resultSet6.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet6.getString("qihao"));
+				result2FormBean.setJ1ji(resultSet6.getString("1ji"));
+				hanmengList6.add(result2FormBean);
+			}
+
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList6, 6);
+
+			resultSet7 = statement.executeQuery(sql7.toString());
+			System.out.println("sql7=" + sql7);
+			while (resultSet7.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet7.getString("qihao"));
+				result2FormBean.setJ2ji(resultSet7.getString("2ji"));
+				hanmengList7.add(result2FormBean);
+			}
+
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList7, 7);
+
+			resultSet8 = statement.executeQuery(sql8.toString());
+			System.out.println("sql8=" + sql8);
+			while (resultSet8.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet8.getString("qihao"));
+				result2FormBean.setJ3ji(resultSet8.getString("3ji"));
+				hanmengList8.add(result2FormBean);
+			}
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList8, 8);
+
+			resultSet9 = statement.executeQuery(sql9.toString());
+			System.out.println("sql9=" + sql9);
+			while (resultSet9.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet9.getString("qihao"));
+				result2FormBean.setJ4ji(resultSet9.getString("4ji"));
+				hanmengList9.add(result2FormBean);
+			}
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList9, 9);
+
+			resultSet10 = statement.executeQuery(sql10.toString());
+			System.out.println("sql10=" + sql10);
+			while (resultSet10.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet10.getString("qihao"));
+				result2FormBean.setJ5ji(resultSet10.getString("5ji"));
+				hanmengList10.add(result2FormBean);
+			}
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList10, 10);
+
+			resultSet11 = statement.executeQuery(sql11.toString());
+			System.out.println("sql11=" + sql11);
+			while (resultSet11.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet11.getString("qihao"));
+				result2FormBean.setJ2jijiyixia(resultSet11.getString("2jijiyixia"));
+				hanmengList11.add(result2FormBean);
+			}
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList11, 11);
+
+			resultSet12 = statement.executeQuery(sql12.toString());
+			System.out.println("sql12=" + sql12);
+			while (resultSet12.next()) {
+				result2FormBean = new Result2FormBean();
+				result2FormBean.setQihao(resultSet12.getString("qihao"));
+				result2FormBean.setJ0jiyishang(resultSet12.getString("0jiyishang"));
+				hanmengList12.add(result2FormBean);
+			}
+			hanmengList = Utility.getList2ByHashMap(hanmengList, hanmengList12, 12);
+
+			// 合计部分
+			result2FormBean = new Result2FormBean();
+			resultSet1s = statement.executeQuery(sql1s.toString());
+			System.out.println("sql1s=" + sql1s);
+			while (resultSet1s.next()) {
+				result2FormBean.setQihao(resultSet1s.getString("qihao"));
+			}
+
+			resultSet2s = statement.executeQuery(sql2s.toString());
+			System.out.println("sql2s=" + sql2s);
+			while (resultSet2s.next()) {
+				result2FormBean.setZonglushu(resultSet2s.getString("zonglushu"));
+			}
+
+			resultSet3s = statement.executeQuery(sql3s.toString());
+			System.out.println("sql3s=" + sql3s);
+			while (resultSet3s.next()) {
+				result2FormBean.setFe(Output.getSubValue(resultSet3s.getString("fe"), 4));
+				result2FormBean.setCl(Output.getSubValue(resultSet3s.getString("cl"), 4));
+				result2FormBean.setN(Output.getSubValue(resultSet3s.getString("n"), 4));
+				result2FormBean.setO(Output.getSubValue(resultSet3s.getString("o"), 4));
+				result2FormBean.setHb(Output.getSubValue(resultSet3s.getString("hb"), 0));
+				result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3s.getString("zongmaozhong"), 0));
+				result2FormBean.setMgzongliang(resultSet3s.getString("mgzongliang"));
+				result2FormBean.setTicl4zongliang(resultSet3s.getString("ticl4zongliang"));
+				if (resultSet3s.getString("junhuishoulv") != null)
+					result2FormBean.setJunhuishoulv(Output.getPValue(resultSet3s.getString("junhuishoulv")));
+				result2FormBean.setZongjingzhong(Output.getSubValue(resultSet3s.getString("zongjingzhong"), 0));
+				if (resultSet3s.getString("zongmaozhong") != null)
+					result2FormBean.setJunmaozhong(Output.getAValue(resultSet3s.getString("zongmaozhong"), result2FormBean.getZonglushu(), 0));
+				if (resultSet3s.getString("zongjingzhong") != null)
+					result2FormBean.setJunjingzhong(Output.getAValue(resultSet3s.getString("zongjingzhong"), result2FormBean.getZonglushu(), 0));
+				if (resultSet3s.getString("mgzongliang") != null)
+					result2FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3s.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
+				if (resultSet3s.getString("ticl4zongliang") != null)
+					result2FormBean.setTicl4danhao(Output.getAkgValue(resultSet3s.getString("ticl4zongliang"), result2FormBean.getZongmaozhong(), 3));
+			}
+
+			resultSet4s = statement.executeQuery(sql4s.toString());
+			System.out.println("sql4s=" + sql4s);
+			while (resultSet4s.next()) {
+				result2FormBean.setJ0Aji(resultSet4s.getString("0Aji"));
+				if (resultSet4s.getString("0Aji") != null)
+					result2FormBean.setJ0Ajilv(Output.getPValue(resultSet4s.getString("0Aji"), result2FormBean.getZongmaozhong()));
+			}
+
+			resultSet5s = statement.executeQuery(sql5s.toString());
+			System.out.println("sql5s=" + sql5s);
+			while (resultSet5s.next()) {
+				result2FormBean.setJ0ji(resultSet5s.getString("0ji"));
+				if (resultSet5s.getString("0ji") != null)
+					result2FormBean.setJ0jilv(Output.getPValue(resultSet5s.getString("0ji"), result2FormBean.getZongmaozhong()));
+			}
+
+			resultSet6s = statement.executeQuery(sql6s.toString());
+			System.out.println("sql6s=" + sql6s);
+			while (resultSet6s.next()) {
+				result2FormBean.setJ1ji(resultSet6s.getString("1ji"));
+				if (resultSet6s.getString("1ji") != null)
+					result2FormBean.setJ1jilv(Output.getPValue(resultSet6s.getString("1ji"), result2FormBean.getZongmaozhong()));
+			}
+
+			resultSet7s = statement.executeQuery(sql7s.toString());
+			System.out.println("sql7s=" + sql7s);
+			while (resultSet7s.next()) {
+				result2FormBean.setJ2ji(resultSet7s.getString("2ji"));
+			}
+
+			resultSet8s = statement.executeQuery(sql8s.toString());
+			System.out.println("sql8s=" + sql8s);
+			while (resultSet8s.next()) {
+				result2FormBean.setJ3ji(resultSet8s.getString("3ji"));
+			}
+
+			resultSet9s = statement.executeQuery(sql9s.toString());
+			System.out.println("sql9s=" + sql9s);
+			while (resultSet9s.next()) {
+				result2FormBean.setJ4ji(resultSet9s.getString("4ji"));
+			}
+
+			resultSet10s = statement.executeQuery(sql10s.toString());
+			System.out.println("sql10s=" + sql10s);
+			while (resultSet10s.next()) {
+				result2FormBean.setJ5ji(resultSet10s.getString("5ji"));
+			}
+
+			resultSet11s = statement.executeQuery(sql11s.toString());
+			System.out.println("sql11s=" + sql11s);
+			while (resultSet11s.next()) {
+				result2FormBean.setJ2jijiyixia(resultSet11s.getString("2jijiyixia"));
+				if (resultSet11s.getString("2jijiyixia") != null)
+					result2FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11s.getString("2jijiyixia"), result2FormBean.getZongmaozhong()));
+			}
+
+			resultSet12s = statement.executeQuery(sql12s.toString());
+			System.out.println("sql12s=" + sql12s);
+			while (resultSet12s.next()) {
+				result2FormBean.setJ0jiyishang(resultSet12s.getString("0jiyishang"));
+				if (resultSet12s.getString("0jiyishang") != null)
+					result2FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12s.getString("0jiyishang"), result2FormBean.getZongmaozhong()));
+			}
+
+			hanmengList.add(result2FormBean);
+			if (monthFlag.equals("")) {
+				// 年度累计部分
+				result2FormBean = new Result2FormBean();
+				resultSet1ys = statement.executeQuery(sql1ys.toString());
+				System.out.println("sql1ys=" + sql1ys);
+				while (resultSet1ys.next()) {
+					result2FormBean.setQihao(resultSet1ys.getString("qihao"));
+				}
+
+				resultSet2ys = statement.executeQuery(sql2ys.toString());
+				System.out.println("sql2ys=" + sql2ys);
+				while (resultSet2ys.next()) {
+					result2FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
+				}
+
+				resultSet3ys = statement.executeQuery(sql3ys.toString());
+				System.out.println("sql3ys=" + sql3ys);
+				while (resultSet3ys.next()) {
+					result2FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
+					result2FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
+					result2FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+					result2FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
+					result2FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
+					result2FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
+					result2FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
+					result2FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
+					if (resultSet3ys.getString("junhuishoulv") != null)
+						result2FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
+					result2FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
+					if (resultSet3ys.getString("zongmaozhong") != null)
+						result2FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result2FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("zongjingzhong") != null)
+						result2FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result2FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("mgzongliang") != null)
+						result2FormBean
+								.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result2FormBean.getZongmaozhong(), 3));
+					if (resultSet3ys.getString("ticl4zongliang") != null)
+						result2FormBean.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"),
+								result2FormBean.getZongmaozhong(), 3));
+				}
+
+				resultSet4ys = statement.executeQuery(sql4ys.toString());
+				System.out.println("sql4ys=" + sql4ys);
+				while (resultSet4ys.next()) {
+					result2FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
+					if (resultSet4ys.getString("0Aji") != null)
+						result2FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet5ys = statement.executeQuery(sql5ys.toString());
+				System.out.println("sql5ys=" + sql5ys);
+				while (resultSet5ys.next()) {
+					result2FormBean.setJ0ji(resultSet5ys.getString("0ji"));
+					if (resultSet5ys.getString("0ji") != null)
+						result2FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet6ys = statement.executeQuery(sql6ys.toString());
+				System.out.println("sql6ys=" + sql6ys);
+				while (resultSet6ys.next()) {
+					result2FormBean.setJ1ji(resultSet6ys.getString("1ji"));
+					if (resultSet6ys.getString("1ji") != null)
+						result2FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet7ys = statement.executeQuery(sql7ys.toString());
+				System.out.println("sql7ys=" + sql7ys);
+				while (resultSet7ys.next()) {
+					result2FormBean.setJ2ji(resultSet7ys.getString("2ji"));
+				}
+
+				resultSet8ys = statement.executeQuery(sql8ys.toString());
+				System.out.println("sql8ys=" + sql8ys);
+				while (resultSet8ys.next()) {
+					result2FormBean.setJ3ji(resultSet8ys.getString("3ji"));
+				}
+
+				resultSet9ys = statement.executeQuery(sql9ys.toString());
+				System.out.println("sql9ys=" + sql9ys);
+				while (resultSet9ys.next()) {
+					result2FormBean.setJ4ji(resultSet9ys.getString("4ji"));
+				}
+
+				resultSet10ys = statement.executeQuery(sql10ys.toString());
+				System.out.println("sql10ys=" + sql10ys);
+				while (resultSet10ys.next()) {
+					result2FormBean.setJ5ji(resultSet10ys.getString("5ji"));
+				}
+
+				resultSet11ys = statement.executeQuery(sql11ys.toString());
+				System.out.println("sql11ys=" + sql11ys);
+				while (resultSet11ys.next()) {
+					result2FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
+					if (resultSet11ys.getString("2jijiyixia") != null)
+						result2FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result2FormBean.getZongmaozhong()));
+				}
+
+				resultSet12ys = statement.executeQuery(sql12ys.toString());
+				System.out.println("sql12ys=" + sql12ys);
+				while (resultSet12ys.next()) {
+					result2FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
+					if (resultSet12ys.getString("0jiyishang") != null)
+						result2FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result2FormBean.getZongmaozhong()));
+				}
+
+				hanmengList.add(result2FormBean);
+			}
+			return hanmengList;
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
+		}
+	}
+	
+	/**
+	 * @param request
+	 * @param sqlCondition
+	 *            检索条件
 	 * @return 月生产数据统计表-除锰
 	 * @throws Exception
 	 */
@@ -1599,6 +2113,520 @@ public class TIronInfoDao extends BaseDao {
 		}
 	}
 
+	/**
+	 * @param request
+	 * @param sqlCondition
+	 *            检索条件
+	 * @return 月生产数据统计表-除锰
+	 * @throws Exception
+	 */
+	public ArrayList<Result3FormBean> getChumeng1List(HttpServletRequest request, String sqlCondition, String monthFlag) throws Exception {
+
+		ArrayList<Result3FormBean> chumengList = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList1 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList2 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList3 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList4 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList5 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList6 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList7 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList8 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList9 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList10 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList11 = new ArrayList<Result3FormBean>();
+		ArrayList<Result3FormBean> chumengList12 = new ArrayList<Result3FormBean>();
+
+		Result3FormBean result3FormBean = new Result3FormBean();
+
+		StringBuffer sql1 = new StringBuffer();
+		StringBuffer sql2 = new StringBuffer();
+		StringBuffer sql3 = new StringBuffer();
+		StringBuffer sql4 = new StringBuffer();
+		StringBuffer sql5 = new StringBuffer();
+		StringBuffer sql6 = new StringBuffer();
+		StringBuffer sql7 = new StringBuffer();
+		StringBuffer sql8 = new StringBuffer();
+		StringBuffer sql9 = new StringBuffer();
+		StringBuffer sql10 = new StringBuffer();
+		StringBuffer sql11 = new StringBuffer();
+		StringBuffer sql12 = new StringBuffer();
+
+		StringBuffer sql1s = new StringBuffer();
+		StringBuffer sql2s = new StringBuffer();
+		StringBuffer sql3s = new StringBuffer();
+		StringBuffer sql4s = new StringBuffer();
+		StringBuffer sql5s = new StringBuffer();
+		StringBuffer sql6s = new StringBuffer();
+		StringBuffer sql7s = new StringBuffer();
+		StringBuffer sql8s = new StringBuffer();
+		StringBuffer sql9s = new StringBuffer();
+		StringBuffer sql10s = new StringBuffer();
+		StringBuffer sql11s = new StringBuffer();
+		StringBuffer sql12s = new StringBuffer();
+
+		StringBuffer sql1ys = new StringBuffer();
+		StringBuffer sql2ys = new StringBuffer();
+		StringBuffer sql3ys = new StringBuffer();
+		StringBuffer sql4ys = new StringBuffer();
+		StringBuffer sql5ys = new StringBuffer();
+		StringBuffer sql6ys = new StringBuffer();
+		StringBuffer sql7ys = new StringBuffer();
+		StringBuffer sql8ys = new StringBuffer();
+		StringBuffer sql9ys = new StringBuffer();
+		StringBuffer sql10ys = new StringBuffer();
+		StringBuffer sql11ys = new StringBuffer();
+		StringBuffer sql12ys = new StringBuffer();
+
+		StringBuffer sqlBuffer1 = new StringBuffer();
+		StringBuffer sqlBuffer2 = new StringBuffer();
+		if (!sqlCondition.equals("")) {
+			sqlBuffer1 = sqlBuffer1.append(" WHERE" + sqlCondition);
+			sqlBuffer2 = sqlBuffer2.append(" AND" + sqlCondition);
+		}
+
+		sql1.append("SELECT qihao FROM ironinfo GROUP BY qihao");
+		sql2.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql3.append(
+				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo")
+				.append(sqlBuffer1).append(" GROUP BY qihao");
+		sql4.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2)
+				.append(" GROUP BY qihao");
+		sql5.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql6.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql7.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE kaohedengji_chumeng = '2'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql8.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE kaohedengji_chumeng = '3'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql9.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE kaohedengji_chumeng = '4'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql10.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE kaohedengji_chumeng = '5'").append(sqlBuffer2).append(" GROUP BY qihao");
+		sql11.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2)
+				.append(" GROUP BY qihao");
+		sql12.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE kaohedengji_chumeng IN ('0','0A')").append(sqlBuffer2)
+				.append(" GROUP BY qihao");
+		// 合计部分
+		sql1s.append("SELECT '总计' AS qihao FROM ironinfo");
+		sql2s.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'").append(sqlBuffer2);
+		sql3s.append(
+				"SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo")
+				.append(sqlBuffer1);
+		sql4s.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'").append(sqlBuffer2);
+		sql5s.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'").append(sqlBuffer2);
+		sql6s.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'").append(sqlBuffer2);
+		sql7s.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE kaohedengji_chumeng = '2'").append(sqlBuffer2);
+		sql8s.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE kaohedengji_chumeng = '3'").append(sqlBuffer2);
+		sql9s.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE kaohedengji_chumeng = '4'").append(sqlBuffer2);
+		sql10s.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE kaohedengji_chumeng = '5'").append(sqlBuffer2);
+		sql11s.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)").append(sqlBuffer2);
+		sql12s.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE kaohedengji_chumeng IN ('0','0A')").append(sqlBuffer2);
+		// 年度累计部分
+		sql1ys.append("SELECT '年度累计' AS qihao FROM ironinfo");
+		sql2ys.append("SELECT qihao,count(guige) AS zonglushu FROM ironinfo WHERE guige ='0.83-25.4'");
+		sql3ys.append("SELECT qihao,SUM(jingzhong*fe)/SUM(jingzhong) AS fe,SUM(jingzhong*cl)/SUM(jingzhong) AS cl,SUM(jingzhong*n)/SUM(jingzhong) AS n,SUM(jingzhong*o)/SUM(jingzhong) AS o,SUM(jingzhong*hb)/SUM(jingzhong) AS hb ,SUM(maozhong-sunhao-cixuan) AS zongmaozhong,SUM(mg) AS mgzongliang,SUM(ticl) AS ticl4zongliang,SUM(jingzhong) AS zongjingzhong,SUM(jingzhong)/SUM(maozhong-sunhao-cixuan) AS junhuishoulv FROM ironinfo");
+		sql4ys.append("SELECT qihao,SUM(jingzhong) AS 0Aji FROM ironinfo WHERE kaohedengji_chumeng = '0A'");
+		sql5ys.append("SELECT qihao,SUM(jingzhong) AS 0ji FROM ironinfo WHERE kaohedengji_chumeng = '0'");
+		sql6ys.append("SELECT qihao,SUM(jingzhong) AS 1ji FROM ironinfo WHERE kaohedengji_chumeng = '1'");
+		sql7ys.append("SELECT qihao,SUM(jingzhong) AS 2ji FROM ironinfo WHERE kaohedengji_chumeng = '2'");
+		sql8ys.append("SELECT qihao,SUM(jingzhong) AS 3ji FROM ironinfo WHERE kaohedengji_chumeng = '3'");
+		sql9ys.append("SELECT qihao,SUM(jingzhong) AS 4ji FROM ironinfo WHERE kaohedengji_chumeng = '4'");
+		sql10ys.append("SELECT qihao,SUM(jingzhong) AS 5ji FROM ironinfo WHERE kaohedengji_chumeng = '5'");
+		sql11ys.append("SELECT qihao,SUM(jingzhong) AS 2jijiyixia FROM ironinfo WHERE kaohedengji_chumeng IN (2,3,4,5)");
+		sql12ys.append("SELECT qihao,SUM(jingzhong) AS 0jiyishang FROM ironinfo WHERE kaohedengji_chumeng IN ('0','0A')");
+
+		ResultSet resultSet1 = null;
+		ResultSet resultSet2 = null;
+		ResultSet resultSet3 = null;
+		ResultSet resultSet4 = null;
+		ResultSet resultSet5 = null;
+		ResultSet resultSet6 = null;
+		ResultSet resultSet7 = null;
+		ResultSet resultSet8 = null;
+		ResultSet resultSet9 = null;
+		ResultSet resultSet10 = null;
+		ResultSet resultSet11 = null;
+		ResultSet resultSet12 = null;
+
+		ResultSet resultSet1s = null;
+		ResultSet resultSet2s = null;
+		ResultSet resultSet3s = null;
+		ResultSet resultSet4s = null;
+		ResultSet resultSet5s = null;
+		ResultSet resultSet6s = null;
+		ResultSet resultSet7s = null;
+		ResultSet resultSet8s = null;
+		ResultSet resultSet9s = null;
+		ResultSet resultSet10s = null;
+		ResultSet resultSet11s = null;
+		ResultSet resultSet12s = null;
+
+		ResultSet resultSet1ys = null;
+		ResultSet resultSet2ys = null;
+		ResultSet resultSet3ys = null;
+		ResultSet resultSet4ys = null;
+		ResultSet resultSet5ys = null;
+		ResultSet resultSet6ys = null;
+		ResultSet resultSet7ys = null;
+		ResultSet resultSet8ys = null;
+		ResultSet resultSet9ys = null;
+		ResultSet resultSet10ys = null;
+		ResultSet resultSet11ys = null;
+		ResultSet resultSet12ys = null;
+
+		Statement statement = null;
+
+		try {
+			super.Open();
+			statement = super.Conn().createStatement();
+
+			resultSet1 = statement.executeQuery(sql1.toString());
+			System.out.println("sql1=" + sql1);
+			while (resultSet1.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet1.getString("qihao"));
+				chumengList1.add(result3FormBean);
+			}
+
+			resultSet2 = statement.executeQuery(sql2.toString());
+			System.out.println("sql2=" + sql2);
+			while (resultSet2.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet2.getString("qihao"));
+				result3FormBean.setZonglushu(resultSet2.getString("zonglushu"));
+				chumengList2.add(result3FormBean);
+			}
+			// 横向合并list2到list1
+			chumengList = Utility.getList3ByHashMap(chumengList1, chumengList2, 2);
+
+			resultSet3 = statement.executeQuery(sql3.toString());
+			System.out.println("sql3=" + sql3);
+			while (resultSet3.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet3.getString("qihao"));
+				result3FormBean.setFe(Output.getSubValue(resultSet3.getString("fe"), 4));
+				result3FormBean.setCl(Output.getSubValue(resultSet3.getString("cl"), 4));
+				result3FormBean.setN(Output.getSubValue(resultSet3.getString("n"), 4));
+				result3FormBean.setO(Output.getSubValue(resultSet3.getString("o"), 4));
+				result3FormBean.setHb(Output.getSubValue(resultSet3.getString("hb"), 0));
+				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3.getString("zongmaozhong"), 0));
+				result3FormBean.setMgzongliang(resultSet3.getString("mgzongliang"));
+				result3FormBean.setTicl4zongliang(resultSet3.getString("ticl4zongliang"));
+				if (resultSet3.getString("junhuishoulv") != null)
+					result3FormBean.setJunhuishoulv(Output.getPValue(resultSet3.getString("junhuishoulv")));
+				result3FormBean.setZongjingzhong(Output.getSubValue(resultSet3.getString("zongjingzhong"), 0));
+				chumengList3.add(result3FormBean);
+			}
+
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList3, 3);
+
+			resultSet4 = statement.executeQuery(sql4.toString());
+			System.out.println("sql4=" + sql4);
+			while (resultSet4.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet4.getString("qihao"));
+				result3FormBean.setJ0Aji(resultSet4.getString("0Aji"));
+				chumengList4.add(result3FormBean);
+			}
+
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList4, 4);
+
+			resultSet5 = statement.executeQuery(sql5.toString());
+			System.out.println("sql5=" + sql5);
+			while (resultSet5.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet5.getString("qihao"));
+				result3FormBean.setJ0ji(resultSet5.getString("0ji"));
+				chumengList5.add(result3FormBean);
+			}
+
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList5, 5);
+
+			resultSet6 = statement.executeQuery(sql6.toString());
+			System.out.println("sql6=" + sql6);
+			while (resultSet6.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet6.getString("qihao"));
+				result3FormBean.setJ1ji(resultSet6.getString("1ji"));
+				chumengList6.add(result3FormBean);
+			}
+
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList6, 6);
+
+			resultSet7 = statement.executeQuery(sql7.toString());
+			System.out.println("sql7=" + sql7);
+			while (resultSet7.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet7.getString("qihao"));
+				result3FormBean.setJ2ji(resultSet7.getString("2ji"));
+				chumengList7.add(result3FormBean);
+			}
+
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList7, 7);
+
+			resultSet8 = statement.executeQuery(sql8.toString());
+			System.out.println("sql8=" + sql8);
+			while (resultSet8.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet8.getString("qihao"));
+				result3FormBean.setJ3ji(resultSet8.getString("3ji"));
+				chumengList8.add(result3FormBean);
+			}
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList8, 8);
+
+			resultSet9 = statement.executeQuery(sql9.toString());
+			System.out.println("sql9=" + sql9);
+			while (resultSet9.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet9.getString("qihao"));
+				result3FormBean.setJ4ji(resultSet9.getString("4ji"));
+				chumengList9.add(result3FormBean);
+			}
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList9, 9);
+
+			resultSet10 = statement.executeQuery(sql10.toString());
+			System.out.println("sql10=" + sql10);
+			while (resultSet10.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet10.getString("qihao"));
+				result3FormBean.setJ5ji(resultSet10.getString("5ji"));
+				chumengList10.add(result3FormBean);
+			}
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList10, 10);
+
+			resultSet11 = statement.executeQuery(sql11.toString());
+			System.out.println("sql11=" + sql11);
+			while (resultSet11.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet11.getString("qihao"));
+				result3FormBean.setJ2jijiyixia(resultSet11.getString("2jijiyixia"));
+				chumengList11.add(result3FormBean);
+			}
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList11, 11);
+
+			resultSet12 = statement.executeQuery(sql12.toString());
+			System.out.println("sql12=" + sql12);
+			while (resultSet12.next()) {
+				result3FormBean = new Result3FormBean();
+				result3FormBean.setQihao(resultSet12.getString("qihao"));
+				result3FormBean.setJ0jiyishang(resultSet12.getString("0jiyishang"));
+				chumengList12.add(result3FormBean);
+			}
+			chumengList = Utility.getList3ByHashMap(chumengList, chumengList12, 12);
+
+			// 合计部分
+			result3FormBean = new Result3FormBean();
+			resultSet1s = statement.executeQuery(sql1s.toString());
+			System.out.println("sql1s=" + sql1s);
+			while (resultSet1s.next()) {
+				result3FormBean.setQihao(resultSet1s.getString("qihao"));
+			}
+
+			resultSet2s = statement.executeQuery(sql2s.toString());
+			System.out.println("sql2s=" + sql2s);
+			while (resultSet2s.next()) {
+				result3FormBean.setZonglushu(resultSet2s.getString("zonglushu"));
+			}
+
+			resultSet3s = statement.executeQuery(sql3s.toString());
+			System.out.println("sql3s=" + sql3s);
+			while (resultSet3s.next()) {
+				result3FormBean.setFe(Output.getSubValue(resultSet3s.getString("fe"), 4));
+				result3FormBean.setCl(Output.getSubValue(resultSet3s.getString("cl"), 4));
+				result3FormBean.setN(Output.getSubValue(resultSet3s.getString("n"), 4));
+				result3FormBean.setO(Output.getSubValue(resultSet3s.getString("o"), 4));
+				result3FormBean.setHb(Output.getSubValue(resultSet3s.getString("hb"), 0));
+				result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3s.getString("zongmaozhong"), 0));
+				result3FormBean.setMgzongliang(resultSet3s.getString("mgzongliang"));
+				result3FormBean.setTicl4zongliang(resultSet3s.getString("ticl4zongliang"));
+				if (resultSet3s.getString("junhuishoulv") != null)
+					result3FormBean.setJunhuishoulv(Output.getPValue(resultSet3s.getString("junhuishoulv")));
+				result3FormBean.setZongjingzhong(Output.getSubValue(resultSet3s.getString("zongjingzhong"), 0));
+				if (resultSet3s.getString("zongmaozhong") != null)
+					result3FormBean.setJunmaozhong(Output.getAValue(resultSet3s.getString("zongmaozhong"), result3FormBean.getZonglushu(), 0));
+				if (resultSet3s.getString("zongjingzhong") != null)
+					result3FormBean.setJunjingzhong(Output.getAValue(resultSet3s.getString("zongjingzhong"), result3FormBean.getZonglushu(), 0));
+				if (resultSet3s.getString("mgzongliang") != null)
+					result3FormBean.setJunmgdanhao(Output.getAkgValue(resultSet3s.getString("mgzongliang"), result3FormBean.getZongmaozhong(), 3));
+				if (resultSet3s.getString("ticl4zongliang") != null)
+					result3FormBean.setTicl4danhao(Output.getAkgValue(resultSet3s.getString("ticl4zongliang"), result3FormBean.getZongmaozhong(), 3));
+			}
+
+			resultSet4s = statement.executeQuery(sql4s.toString());
+			System.out.println("sql4s=" + sql4s);
+			while (resultSet4s.next()) {
+				result3FormBean.setJ0Aji(resultSet4s.getString("0Aji"));
+				if (resultSet4s.getString("0Aji") != null)
+					result3FormBean.setJ0Ajilv(Output.getPValue(resultSet4s.getString("0Aji"), result3FormBean.getZongmaozhong()));
+			}
+
+			resultSet5s = statement.executeQuery(sql5s.toString());
+			System.out.println("sql5s=" + sql5s);
+			while (resultSet5s.next()) {
+				result3FormBean.setJ0ji(resultSet5s.getString("0ji"));
+				if (resultSet5s.getString("0ji") != null)
+					result3FormBean.setJ0jilv(Output.getPValue(resultSet5s.getString("0ji"), result3FormBean.getZongmaozhong()));
+			}
+
+			resultSet6s = statement.executeQuery(sql6s.toString());
+			System.out.println("sql6s=" + sql6s);
+			while (resultSet6s.next()) {
+				result3FormBean.setJ1ji(resultSet6s.getString("1ji"));
+				if (resultSet6s.getString("1ji") != null)
+					result3FormBean.setJ1jilv(Output.getPValue(resultSet6s.getString("1ji"), result3FormBean.getZongmaozhong()));
+			}
+
+			resultSet7s = statement.executeQuery(sql7s.toString());
+			System.out.println("sql7s=" + sql7s);
+			while (resultSet7s.next()) {
+				result3FormBean.setJ2ji(resultSet7s.getString("2ji"));
+			}
+
+			resultSet8s = statement.executeQuery(sql8s.toString());
+			System.out.println("sql8s=" + sql8s);
+			while (resultSet8s.next()) {
+				result3FormBean.setJ3ji(resultSet8s.getString("3ji"));
+			}
+
+			resultSet9s = statement.executeQuery(sql9s.toString());
+			System.out.println("sql9s=" + sql9s);
+			while (resultSet9s.next()) {
+				result3FormBean.setJ4ji(resultSet9s.getString("4ji"));
+			}
+
+			resultSet10s = statement.executeQuery(sql10s.toString());
+			System.out.println("sql10s=" + sql10s);
+			while (resultSet10s.next()) {
+				result3FormBean.setJ5ji(resultSet10s.getString("5ji"));
+			}
+
+			resultSet11s = statement.executeQuery(sql11s.toString());
+			System.out.println("sql11s=" + sql11s);
+			while (resultSet11s.next()) {
+				result3FormBean.setJ2jijiyixia(resultSet11s.getString("2jijiyixia"));
+				if (resultSet11s.getString("2jijiyixia") != null)
+					result3FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11s.getString("2jijiyixia"), result3FormBean.getZongmaozhong()));
+			}
+
+			resultSet12s = statement.executeQuery(sql12s.toString());
+			System.out.println("sql12s=" + sql12s);
+			while (resultSet12s.next()) {
+				result3FormBean.setJ0jiyishang(resultSet12s.getString("0jiyishang"));
+				if (resultSet12s.getString("0jiyishang") != null)
+					result3FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12s.getString("0jiyishang"), result3FormBean.getZongmaozhong()));
+			}
+
+			chumengList.add(result3FormBean);
+			if (monthFlag.equals("")) {
+				// 年度累计部分
+				result3FormBean = new Result3FormBean();
+				resultSet1ys = statement.executeQuery(sql1ys.toString());
+				System.out.println("sql1ys=" + sql1ys);
+				while (resultSet1ys.next()) {
+					result3FormBean.setQihao(resultSet1ys.getString("qihao"));
+				}
+
+				resultSet2ys = statement.executeQuery(sql2ys.toString());
+				System.out.println("sql2ys=" + sql2ys);
+				while (resultSet2ys.next()) {
+					result3FormBean.setZonglushu(resultSet2ys.getString("zonglushu"));
+				}
+
+				resultSet3ys = statement.executeQuery(sql3ys.toString());
+				System.out.println("sql3ys=" + sql3ys);
+				while (resultSet3ys.next()) {
+					result3FormBean.setFe(Output.getSubValue(resultSet3ys.getString("fe"), 4));
+					result3FormBean.setCl(Output.getSubValue(resultSet3ys.getString("cl"), 4));
+					result3FormBean.setN(Output.getSubValue(resultSet3ys.getString("n"), 4));
+					result3FormBean.setO(Output.getSubValue(resultSet3ys.getString("o"), 4));
+					result3FormBean.setHb(Output.getSubValue(resultSet3ys.getString("hb"), 0));
+					result3FormBean.setZongmaozhong(Output.getSubValue(resultSet3ys.getString("zongmaozhong"), 0));
+					result3FormBean.setMgzongliang(resultSet3ys.getString("mgzongliang"));
+					result3FormBean.setTicl4zongliang(resultSet3ys.getString("ticl4zongliang"));
+					if (resultSet3ys.getString("junhuishoulv") != null)
+						result3FormBean.setJunhuishoulv(Output.getPValue(resultSet3ys.getString("junhuishoulv")));
+					result3FormBean.setZongjingzhong(Output.getSubValue(resultSet3ys.getString("zongjingzhong"), 0));
+					if (resultSet3ys.getString("zongmaozhong") != null)
+						result3FormBean.setJunmaozhong(Output.getAValue(resultSet3ys.getString("zongmaozhong"), result3FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("zongjingzhong") != null)
+						result3FormBean.setJunjingzhong(Output.getAValue(resultSet3ys.getString("zongjingzhong"), result3FormBean.getZonglushu(), 0));
+					if (resultSet3ys.getString("mgzongliang") != null)
+						result3FormBean
+								.setJunmgdanhao(Output.getAkgValue(resultSet3ys.getString("mgzongliang"), result3FormBean.getZongmaozhong(), 3));
+					if (resultSet3ys.getString("ticl4zongliang") != null)
+						result3FormBean.setTicl4danhao(Output.getAkgValue(resultSet3ys.getString("ticl4zongliang"),
+								result3FormBean.getZongmaozhong(), 3));
+				}
+
+				resultSet4ys = statement.executeQuery(sql4ys.toString());
+				System.out.println("sql4ys=" + sql4ys);
+				while (resultSet4ys.next()) {
+					result3FormBean.setJ0Aji(resultSet4ys.getString("0Aji"));
+					if (resultSet4ys.getString("0Aji") != null)
+						result3FormBean.setJ0Ajilv(Output.getPValue(resultSet4ys.getString("0Aji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet5ys = statement.executeQuery(sql5ys.toString());
+				System.out.println("sql5ys=" + sql5ys);
+				while (resultSet5ys.next()) {
+					result3FormBean.setJ0ji(resultSet5ys.getString("0ji"));
+					if (resultSet5ys.getString("0ji") != null)
+						result3FormBean.setJ0jilv(Output.getPValue(resultSet5ys.getString("0ji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet6ys = statement.executeQuery(sql6ys.toString());
+				System.out.println("sql6ys=" + sql6ys);
+				while (resultSet6ys.next()) {
+					result3FormBean.setJ1ji(resultSet6ys.getString("1ji"));
+					if (resultSet6ys.getString("1ji") != null)
+						result3FormBean.setJ1jilv(Output.getPValue(resultSet6ys.getString("1ji"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet7ys = statement.executeQuery(sql7ys.toString());
+				System.out.println("sql7ys=" + sql7ys);
+				while (resultSet7ys.next()) {
+					result3FormBean.setJ2ji(resultSet7ys.getString("2ji"));
+				}
+
+				resultSet8ys = statement.executeQuery(sql8ys.toString());
+				System.out.println("sql8ys=" + sql8ys);
+				while (resultSet8ys.next()) {
+					result3FormBean.setJ3ji(resultSet8ys.getString("3ji"));
+				}
+
+				resultSet9ys = statement.executeQuery(sql9ys.toString());
+				System.out.println("sql9ys=" + sql9ys);
+				while (resultSet9ys.next()) {
+					result3FormBean.setJ4ji(resultSet9ys.getString("4ji"));
+				}
+
+				resultSet10ys = statement.executeQuery(sql10ys.toString());
+				System.out.println("sql10ys=" + sql10ys);
+				while (resultSet10ys.next()) {
+					result3FormBean.setJ5ji(resultSet10ys.getString("5ji"));
+				}
+
+				resultSet11ys = statement.executeQuery(sql11ys.toString());
+				System.out.println("sql11ys=" + sql11ys);
+				while (resultSet11ys.next()) {
+					result3FormBean.setJ2jijiyixia(resultSet11ys.getString("2jijiyixia"));
+					if (resultSet11ys.getString("2jijiyixia") != null)
+						result3FormBean.setJ2jijiyixialv(Output.getPValue(resultSet11ys.getString("2jijiyixia"), result3FormBean.getZongmaozhong()));
+				}
+
+				resultSet12ys = statement.executeQuery(sql12ys.toString());
+				System.out.println("sql12ys=" + sql12ys);
+				while (resultSet12ys.next()) {
+					result3FormBean.setJ0jiyishang(resultSet12ys.getString("0jiyishang"));
+					if (resultSet12ys.getString("0jiyishang") != null)
+						result3FormBean.setJ0jiyishanglv(Output.getPValue(resultSet12ys.getString("0jiyishang"), result3FormBean.getZongmaozhong()));
+				}
+
+				chumengList.add(result3FormBean);
+			}
+			return chumengList;
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		} finally {
+			super.Close();
+		}
+	}
 	/**
 	 * @param request
 	 * @param sqlCondition
