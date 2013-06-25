@@ -5,7 +5,7 @@
 
 <html> 
 	<head>
-		<title>生产数据统计表-含锰</title>
+		<title>生产数据统计表-含锰（毛重）</title>
         <style type="text/css">
 <!--
 .STYLE15 {
@@ -35,7 +35,7 @@
 				<tr>
 					<td align="left">
 					<span class="STYLE15">
-					生产数据统计表（等级：含锰）
+					生产数据统计表（等级：含锰-毛重）
 					<logic:notEmpty name="RIQI">
 						<bean:write name="RIQI" scope="session"></bean:write>
 					</logic:notEmpty>				

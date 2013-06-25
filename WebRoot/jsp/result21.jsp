@@ -5,7 +5,7 @@
 
 <html> 
 	<head>
-		<title>生产数据统计表-含锰-1</title>
+		<title>生产数据统计表-含锰（产量）</title>
         <style type="text/css">
 <!--
 .STYLE15 {
@@ -27,7 +27,7 @@
 	-->
 	</style>
 	<body>
-		<html:form action="/result2" >
+		<html:form action="/result21" >
 			<div align="center">
 			    <p><img src="../jinda/image/1.jpg"/></p>
 		  	</div>
@@ -35,14 +35,14 @@
 				<tr>
 					<td align="left">
 					<span class="STYLE15">
-					生产数据统计表（等级：含锰）-1
+					生产数据统计表（等级：含锰-产量）
 					<logic:notEmpty name="RIQI">
 						<bean:write name="RIQI" scope="session"></bean:write>
 					</logic:notEmpty>				
 					</span>
 					</td>
 					<td align="right">
-						<html:submit property="exportResult2">导出Excel</html:submit>
+						<html:submit property="exportResult21">导出Excel</html:submit>
 						<!-- 
 						<html:submit property="back">返&nbsp&nbsp&nbsp&nbsp回</html:submit>
 						-->

@@ -5,7 +5,7 @@
 
 <html> 
 	<head>
-		<title>生产数据统计表-除锰-1</title>
+		<title>生产数据统计表-除锰（产量）</title>
 	    <style type="text/css">
 <!--
 .STYLE14 {
@@ -27,7 +27,7 @@
 	-->
 	</style>
 	<body>
-		<html:form action="/result3">
+		<html:form action="/result31">
 			<div align="center">
 			    <p><img src="../jinda/image/1.jpg"/></p>
 			    
@@ -36,14 +36,14 @@
 				<tr>
 					<td align="left">
 					<span class="STYLE14">
-					生产数据统计表（等级：除锰）-1
+					生产数据统计表（等级：除锰-产量）
 					<logic:notEmpty name="RIQI">
 						<bean:write name="RIQI" scope="session"></bean:write>
 					</logic:notEmpty>
 					</span>
 					</td>
 					<td align="right">
-						<html:submit property="exportResult3">导出Excel</html:submit>
+						<html:submit property="exportResult31">导出Excel</html:submit>
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 					</td>
 				</tr>

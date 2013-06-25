@@ -41,7 +41,7 @@ public class Result2Action extends EventDispatchAction {
 																						// 需要强转
 			// 定义导出excel名字
 //			String fileName = "result2.xls";
-			String fileName = "生产数据统计表-含锰.xls";
+			String fileName = "生产数据统计表-含锰（毛重）.xls";
 			fileName = new String(fileName.getBytes("UTF-8"), "utf-8");
 			//取得检索日期
 			String riqi = (String) session.getAttribute("RIQI");

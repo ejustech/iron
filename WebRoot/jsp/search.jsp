@@ -65,7 +65,7 @@
 		<table width="1024" align="center" border=1 style="BORDER-COLLAPSE: collapse">
 			<tr>
 				<td valign="top">
-					<table align="center">
+					<table width="280" align="center">
 					<logic:iterate id="sList" name="SELLIST" >
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
@@ -80,12 +80,12 @@
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="21"/>
-						  月生产数据统计表-含锰</span></td>
+						  月生产数据统计表-含锰（毛重）</span></td>
 						</tr>
                         <tr>
                           <td><span class="STYLE10 STYLE11">
                           <html:radio name="sList" property="selInfoList" value="22"/>
-                          月生产数据统计表-含锰-1</span></td>
+                          月生产数据统计表-含锰（产量）</span></td>
                         </tr>												
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
@@ -95,12 +95,12 @@
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
 						  <html:radio name="sList" property="selInfoList" value="31"/>
-						  月生产数据统计表-除锰</span></td>
+						  月生产数据统计表-除锰（毛重）</span></td>
 						</tr>
                         <tr>
                           <td><span class="STYLE10 STYLE11">
                           <html:radio name="sList" property="selInfoList" value="32"/>
-                          月生产数据统计表-除锰-1</span></td>
+                          月生产数据统计表-除锰（产量）</span></td>
                         </tr>						
 						<tr>
 						  <td><span class="STYLE10 STYLE11">
@@ -126,7 +126,7 @@
 					</table>
 				</td>
 				<td valign="top">
-					<table width="815" align="center" border=1 style="BORDER-COLLAPSE: collapse">
+					<table width="744" align="center" border=1 style="BORDER-COLLAPSE: collapse">
 						<tr>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">日期:</span></td>
 							<td><span class="STYLE10 STYLE11">

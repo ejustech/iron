@@ -274,7 +274,7 @@ public class Excel{
 
 			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
 			WritableCellFormat format1 = new WritableCellFormat(font1);
-			String lableName = "生产数据统计表-含锰";
+			String lableName = "生产数据统计表-含锰（毛重）";
 //			if(riqi != null){
 			if(riqi != null){	
 				lableName = lableName + " " +  riqi;
@@ -409,6 +409,156 @@ public class Excel{
 		}
 	}
 
+	public static void exportResult21Excel(ArrayList<Result2FormBean> list, String fileName, String riqi) {
+		// TODO Auto-generated method stub
+		try {
+						
+			FileProcessor.createForder(path);
+			
+			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
+
+			WritableSheet sheet = book.createSheet("sheet1", 0);
+
+			WritableFont fontTitle = new WritableFont(WritableFont.TIMES, 14, WritableFont.BOLD);
+			WritableCellFormat formatTitle = new WritableCellFormat(fontTitle);
+
+			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
+			WritableCellFormat format1 = new WritableCellFormat(font1);
+			String lableName = "生产数据统计表-含锰（产量）";
+//			if(riqi != null){
+			if(riqi != null){	
+				lableName = lableName + " " +  riqi;
+			}
+			Label labelTitle = new Label(0, 0, lableName, formatTitle);
+			// 合并单元格
+			sheet.mergeCells(0, 0, 26, 0);
+
+			// 添加表头, 第一个参数是列，第二个是行
+			Label label1 = new Label(0, 1, "期号", format1);
+			Label label2 = new Label(1, 1, "Fe", format1);
+			Label label3 = new Label(2, 1, "Cl", format1);
+			Label label4 = new Label(3, 1, "N", format1);
+			Label label5 = new Label(4, 1, "O", format1);
+			Label label6 = new Label(5, 1, "HB", format1);
+			Label label7 = new Label(6, 1, "产量kg", format1);
+			Label label8 = new Label(7, 1, "总炉次数", format1);
+			Label label9 = new Label(8, 1, "均产量kg", format1);
+			Label label10 = new Label(9, 1, "Mg单耗", format1);
+			Label label11 = new Label(10, 1, "TiCl4单耗", format1);
+			Label label12 = new Label(11, 1, "生产成品率", format1);
+			Label label13 = new Label(12, 1, "总净重量kg", format1);
+			Label label14 = new Label(13, 1, "均净重kg", format1);
+			Label label15 = new Label(14, 1, "0A级", format1);
+			Label label16 = new Label(15, 1, "0A级率", format1);
+			Label label17 = new Label(16, 1, "0级", format1);
+			Label label18 = new Label(17, 1, "0级率", format1);
+			Label label19 = new Label(18, 1, "0级以上率", format1);
+			Label label20 = new Label(19, 1, "1级", format1);
+			Label label21 = new Label(20, 1, "1级率", format1);
+			Label label22 = new Label(21, 1, "2级", format1);
+			Label label23 = new Label(22, 1, "3级", format1);
+			Label label24 = new Label(23, 1, "4级", format1);
+			Label label25 = new Label(24, 1, "5级", format1);
+			Label label26 = new Label(25, 1, "2级及以下", format1);
+			Label label27 = new Label(26, 1, "2级及以下率", format1);
+
+			// 添加到sheet1中
+			sheet.addCell(labelTitle);
+			sheet.addCell(label1);
+			sheet.addCell(label2);
+			sheet.addCell(label3);
+			sheet.addCell(label4);
+			sheet.addCell(label5);
+			sheet.addCell(label6);
+			sheet.addCell(label7);
+			sheet.addCell(label8);
+			sheet.addCell(label9);
+			sheet.addCell(label10);
+			sheet.addCell(label11);
+			sheet.addCell(label12);
+			sheet.addCell(label13);
+			sheet.addCell(label14);
+			sheet.addCell(label15);
+			sheet.addCell(label16);
+			sheet.addCell(label17);
+			sheet.addCell(label18);
+			sheet.addCell(label19);
+			sheet.addCell(label20);
+			sheet.addCell(label21);
+			sheet.addCell(label22);
+			sheet.addCell(label23);
+			sheet.addCell(label24);
+			sheet.addCell(label25);
+			sheet.addCell(label26);
+			sheet.addCell(label27);
+
+			if (list.size() != 0) {
+				for (int i = 0; i < list.size(); i++) {
+					Label l1 = new Label(0, i + 2, list.get(i).getQihao());
+					Label l2 = new Label(1, i + 2, list.get(i).getFe());
+					Label l3 = new Label(2, i + 2, list.get(i).getCl());
+					Label l4 = new Label(3, i + 2, list.get(i).getN());
+					Label l5 = new Label(4, i + 2, list.get(i).getO());
+					Label l6 = new Label(5, i + 2, list.get(i).getHb());
+					Label l7 = new Label(6, i + 2, list.get(i).getZongmaozhong());
+					Label l8 = new Label(7, i + 2, list.get(i).getZonglushu());
+					Label l9 = new Label(8, i + 2, list.get(i).getJunmaozhong());
+					Label l10 = new Label(9, i + 2, list.get(i).getJunmgdanhao());
+					Label l11 = new Label(10, i + 2, list.get(i).getTicl4danhao());
+					Label l12 = new Label(11, i + 2, list.get(i).getJunhuishoulv());
+					Label l13 = new Label(12, i + 2, list.get(i).getZongjingzhong());
+					Label l14 = new Label(13, i + 2, list.get(i).getJunjingzhong());
+					Label l15 = new Label(14, i + 2, list.get(i).getJ0Aji());
+					Label l16 = new Label(15, i + 2, list.get(i).getJ0Ajilv());
+					Label l17 = new Label(16, i + 2, list.get(i).getJ0ji());
+					Label l18 = new Label(17, i + 2, list.get(i).getJ0jilv());
+					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishanglv());
+					Label l20 = new Label(19, i + 2, list.get(i).getJ1ji());
+					Label l21 = new Label(20, i + 2, list.get(i).getJ1jilv());
+					Label l22 = new Label(21, i + 2, list.get(i).getJ2ji());
+					Label l23 = new Label(22, i + 2, list.get(i).getJ3ji());
+					Label l24 = new Label(23, i + 2, list.get(i).getJ4ji());
+					Label l25 = new Label(24, i + 2, list.get(i).getJ5ji());
+					Label l26 = new Label(25, i + 2, list.get(i).getJ2jijiyixia());
+					Label l27 = new Label(26, i + 2, list.get(i).getJ2jijiyixialv());
+
+					sheet.addCell(l1);
+					sheet.addCell(l2);
+					sheet.addCell(l3);
+					sheet.addCell(l4);
+					sheet.addCell(l5);
+					sheet.addCell(l6);
+					sheet.addCell(l7);
+					sheet.addCell(l8);
+					sheet.addCell(l9);
+					sheet.addCell(l10);
+					sheet.addCell(l11);
+					sheet.addCell(l12);
+					sheet.addCell(l13);
+					sheet.addCell(l14);
+					sheet.addCell(l15);
+					sheet.addCell(l16);
+					sheet.addCell(l17);
+					sheet.addCell(l18);
+					sheet.addCell(l19);
+					sheet.addCell(l20);
+					sheet.addCell(l21);
+					sheet.addCell(l22);
+					sheet.addCell(l23);
+					sheet.addCell(l24);
+					sheet.addCell(l25);
+					sheet.addCell(l26);
+					sheet.addCell(l27);
+				}
+			}
+			book.write();
+			book.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	// 导出result3 月生产数据统计表-除锰
 	public static void exportResult3Excel(ArrayList<Result3FormBean> list, String fileName, String riqi) throws Exception {
 		try {
@@ -425,7 +575,7 @@ public class Excel{
 			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
 			WritableCellFormat format1 = new WritableCellFormat(font1);
 
-			String lableName = "生产数据统计表-除锰";
+			String lableName = "生产数据统计表-除锰（毛重）";
 			if(riqi != null){
 				lableName = lableName + " " +  riqi;
 			}
@@ -558,7 +708,155 @@ public class Excel{
 			e.printStackTrace();
 		}
 	}
+	
+	public static void exportResult31Excel(ArrayList<Result3FormBean> list, String fileName, String riqi) throws Exception {
+		try {
 
+			FileProcessor.createForder(path);
+
+			WritableWorkbook book = Workbook.createWorkbook(new File(path + "\\" + fileName));
+
+			WritableSheet sheet = book.createSheet("sheet1", 0);
+
+			WritableFont fontTitle = new WritableFont(WritableFont.TIMES, 14, WritableFont.BOLD);
+			WritableCellFormat formatTitle = new WritableCellFormat(fontTitle);
+
+			WritableFont font1 = new WritableFont(WritableFont.TIMES, 11, WritableFont.BOLD);
+			WritableCellFormat format1 = new WritableCellFormat(font1);
+
+			String lableName = "生产数据统计表-除锰（产量）";
+			if(riqi != null){
+				lableName = lableName + " " +  riqi;
+			}
+			Label labelTitle = new Label(0, 0, lableName, formatTitle);
+			// 合并单元格
+			sheet.mergeCells(0, 0, 26, 0);
+
+			// 添加表头, 第一个参数是列，第二个是行
+			Label label1 = new Label(0, 1, "期号", format1);
+			Label label2 = new Label(1, 1, "Fe", format1);
+			Label label3 = new Label(2, 1, "Cl", format1);
+			Label label4 = new Label(3, 1, "N", format1);
+			Label label5 = new Label(4, 1, "O", format1);
+			Label label6 = new Label(5, 1, "HB", format1);
+			Label label7 = new Label(6, 1, "产量kg", format1);
+			Label label8 = new Label(7, 1, "总炉次数", format1);
+			Label label9 = new Label(8, 1, "均产量kg", format1);
+			Label label10 = new Label(9, 1, "Mg单耗", format1);
+			Label label11 = new Label(10, 1, "TiCl4单耗", format1);
+			Label label12 = new Label(11, 1, "生产成品率", format1);
+			Label label13 = new Label(12, 1, "总净重量kg", format1);
+			Label label14 = new Label(13, 1, "均净重kg", format1);
+			Label label15 = new Label(14, 1, "0A级", format1);
+			Label label16 = new Label(15, 1, "0A级率", format1);
+			Label label17 = new Label(16, 1, "0级", format1);
+			Label label18 = new Label(17, 1, "0级率", format1);
+			Label label19 = new Label(18, 1, "0级以上率", format1);
+			Label label20 = new Label(19, 1, "1级", format1);
+			Label label21 = new Label(20, 1, "1级率", format1);
+			Label label22 = new Label(21, 1, "2级", format1);
+			Label label23 = new Label(22, 1, "3级", format1);
+			Label label24 = new Label(23, 1, "4级", format1);
+			Label label25 = new Label(24, 1, "5级", format1);
+			Label label26 = new Label(25, 1, "2级及以下", format1);
+			Label label27 = new Label(26, 1, "2级及以下率", format1);
+
+			// 添加到sheet1中
+			sheet.addCell(labelTitle);
+			sheet.addCell(label1);
+			sheet.addCell(label2);
+			sheet.addCell(label3);
+			sheet.addCell(label4);
+			sheet.addCell(label5);
+			sheet.addCell(label6);
+			sheet.addCell(label7);
+			sheet.addCell(label8);
+			sheet.addCell(label9);
+			sheet.addCell(label10);
+			sheet.addCell(label11);
+			sheet.addCell(label12);
+			sheet.addCell(label13);
+			sheet.addCell(label14);
+			sheet.addCell(label15);
+			sheet.addCell(label16);
+			sheet.addCell(label17);
+			sheet.addCell(label18);
+			sheet.addCell(label19);
+			sheet.addCell(label20);
+			sheet.addCell(label21);
+			sheet.addCell(label22);
+			sheet.addCell(label23);
+			sheet.addCell(label24);
+			sheet.addCell(label25);
+			sheet.addCell(label26);
+			sheet.addCell(label27);
+
+			if (list.size() != 0) {
+				for (int i = 0; i < list.size(); i++) {
+					Label l1 = new Label(0, i + 2, list.get(i).getQihao());
+					Label l2 = new Label(1, i + 2, list.get(i).getFe());
+					Label l3 = new Label(2, i + 2, list.get(i).getCl());
+					Label l4 = new Label(3, i + 2, list.get(i).getN());
+					Label l5 = new Label(4, i + 2, list.get(i).getO());
+					Label l6 = new Label(5, i + 2, list.get(i).getHb());
+					Label l7 = new Label(6, i + 2, list.get(i).getZongmaozhong());
+					Label l8 = new Label(7, i + 2, list.get(i).getZonglushu());
+					Label l9 = new Label(8, i + 2, list.get(i).getJunmaozhong());
+					Label l10 = new Label(9, i + 2, list.get(i).getJunmgdanhao());
+					Label l11 = new Label(10, i + 2, list.get(i).getTicl4danhao());
+					Label l12 = new Label(11, i + 2, list.get(i).getJunhuishoulv());
+					Label l13 = new Label(12, i + 2, list.get(i).getZongjingzhong());
+					Label l14 = new Label(13, i + 2, list.get(i).getJunjingzhong());
+					Label l15 = new Label(14, i + 2, list.get(i).getJ0Aji());
+					Label l16 = new Label(15, i + 2, list.get(i).getJ0Ajilv());
+					Label l17 = new Label(16, i + 2, list.get(i).getJ0ji());
+					Label l18 = new Label(17, i + 2, list.get(i).getJ0jilv());
+					Label l19 = new Label(18, i + 2, list.get(i).getJ0jiyishanglv());
+					Label l20 = new Label(19, i + 2, list.get(i).getJ1ji());
+					Label l21 = new Label(20, i + 2, list.get(i).getJ1jilv());
+					Label l22 = new Label(21, i + 2, list.get(i).getJ2ji());
+					Label l23 = new Label(22, i + 2, list.get(i).getJ3ji());
+					Label l24 = new Label(23, i + 2, list.get(i).getJ4ji());
+					Label l25 = new Label(24, i + 2, list.get(i).getJ5ji());
+					Label l26 = new Label(25, i + 2, list.get(i).getJ2jijiyixia());
+					Label l27 = new Label(26, i + 2, list.get(i).getJ2jijiyixialv());
+
+					sheet.addCell(l1);
+					sheet.addCell(l2);
+					sheet.addCell(l3);
+					sheet.addCell(l4);
+					sheet.addCell(l5);
+					sheet.addCell(l6);
+					sheet.addCell(l7);
+					sheet.addCell(l8);
+					sheet.addCell(l9);
+					sheet.addCell(l10);
+					sheet.addCell(l11);
+					sheet.addCell(l12);
+					sheet.addCell(l13);
+					sheet.addCell(l14);
+					sheet.addCell(l15);
+					sheet.addCell(l16);
+					sheet.addCell(l17);
+					sheet.addCell(l18);
+					sheet.addCell(l19);
+					sheet.addCell(l20);
+					sheet.addCell(l21);
+					sheet.addCell(l22);
+					sheet.addCell(l23);
+					sheet.addCell(l24);
+					sheet.addCell(l25);
+					sheet.addCell(l26);
+					sheet.addCell(l27);
+				}
+			}
+			book.write();
+			book.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	// 导出result4 月等外钛统计表
 	public static void exportResult4Excel(ArrayList<Result4FormBean> list, String fileName, String riqi) throws Exception {
 		// TODO Auto-generated method stub

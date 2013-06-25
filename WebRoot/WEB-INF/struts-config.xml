@@ -16,7 +16,9 @@
 		<form-bean name="searchForm" type="com.ejustech.iron.form.SearchForm" />
 		<form-bean name="result1Form" type="com.ejustech.iron.form.Result1Form" />
 		<form-bean name="result2Form" type="com.ejustech.iron.form.Result2Form" />
+		<form-bean name="result21Form" type="com.ejustech.iron.form.Result21Form" />
 		<form-bean name="result3Form" type="com.ejustech.iron.form.Result3Form" />
+		<form-bean name="result31Form" type="com.ejustech.iron.form.Result31Form" />
 		<form-bean name="result4Form" type="com.ejustech.iron.form.Result4Form" />
 		<form-bean name="result5Form" type="com.ejustech.iron.form.Result5Form" />
 		<form-bean name="result6Form" type="com.ejustech.iron.form.Result6Form" />
@@ -85,12 +87,25 @@
 			<forward name="searchError" path="/jsp/searchError.jsp" />
 			<forward name="relogin" path="/jsp/login.jsp" />
 		</action>
+        <action attribute="result21Form" input="/jsp/result21.jsp" name="result21Form"
+            path="/result21" scope="request" type="com.ejustech.iron.action.Result21Action"
+            parameter="back,searchError,relogin" cancellable="true">
+            <forward name="back" path="/jsp/menu.jsp" />
+            <forward name="searchError" path="/jsp/searchError.jsp" />
+            <forward name="relogin" path="/jsp/login.jsp" />
+        </action>
 		<action attribute="result3Form" input="/jsp/result3.jsp" name="result3Form"
 			path="/result3" scope="request" type="com.ejustech.iron.action.Result3Action"
 			cancellable="true">
 			<forward name="searchError" path="/jsp/searchError.jsp" />
 			<forward name="relogin" path="/jsp/login.jsp" />
 		</action>
+        <action attribute="result31Form" input="/jsp/result31.jsp" name="result31Form"
+            path="/result31" scope="request" type="com.ejustech.iron.action.Result31Action"
+            cancellable="true">
+            <forward name="searchError" path="/jsp/searchError.jsp" />
+            <forward name="relogin" path="/jsp/login.jsp" />
+        </action>		
 		<action attribute="result4Form" input="/jsp/result4.jsp" name="result4Form"
 			path="/result4" scope="request" type="com.ejustech.iron.action.Result4Action"
 			cancellable="true">
