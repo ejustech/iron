@@ -23,4 +23,12 @@
 4.将project\lib\jxl.jar和poi-3.9-20121203.jar，复制到%TOMCAT_HOME%/lib/中
 Excel用
 
-5.DB导入用SQL，DB.sql
+5.执行SQL文件夹下的sql文件。
+    01.DataBase.sql
+            删除test数据库，并建立test数据库
+    02.Table.sql
+            删除test数据库中所有的数据表，并建立所有的数据表。m_user表中默认一条数据，用户名和密码都是admin，用于登录。
+    03.TableData(Test ironinfo).sql
+            测试用数据（2013年1月-5月的生产数据），非测试时，不需要执行
+    04.Procedure.sql
+            导入生产数据后执行，更新炉次索引的数据
