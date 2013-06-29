@@ -27,6 +27,7 @@
 	font-size: 14px;
 	font-weight: bold;
 }
+        .STYLEBUTTON{height:30px;width:100px;font-size: 15px;}
 	-->
 	</style>
 	<body>
@@ -52,31 +53,31 @@
 				<tr>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="2">
-							<input type=button value="信息录入" disabled="disabled" >
+							<input type=button value="信息录入" disabled="disabled" class="STYLEBUTTON" >
 	    				</logic:equal>
 	    				<logic:notEqual name="AUTHORITY" scope="session" value="2">
-	       					<html:submit property="inputByNew">信息录入</html:submit>
+	       					<html:submit property="inputByNew" styleClass="STYLEBUTTON">信息录入</html:submit>
 	    				</logic:notEqual>
 					</td>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="2">
-							<input type=button value="信息补全" disabled="disabled" >
+							<input type=button value="信息补全" disabled="disabled" class="STYLEBUTTON" >
 	    				</logic:equal>
 	    				<logic:notEqual name="AUTHORITY" scope="session" value="2">
-	       					<html:submit property="inputByUpdate">信息补全</html:submit>
+	       					<html:submit property="inputByUpdate" styleClass="STYLEBUTTON">信息补全</html:submit>
 	    				</logic:notEqual>
 					
 					</td>
-					<td><html:submit property="search">信息查询</html:submit></td>
+					<td><html:submit property="search" styleClass="STYLEBUTTON">信息查询</html:submit></td>
 					<td>
 						<logic:equal name="AUTHORITY" scope="session" value="0">
-	       					<html:submit property="userManage">用户管理</html:submit>
+	       					<html:submit property="userManage" styleClass="STYLEBUTTON">用户管理</html:submit>
 	    				</logic:equal>
 	    				<logic:notEqual name="AUTHORITY" scope="session" value="0">
-	       					<input type=button value="用户管理" disabled="disabled" >
+	       					<input type=button value="用户管理" disabled="disabled" class="STYLEBUTTON" >
 	    				</logic:notEqual>
 	    			</td>
-					<td><html:submit property="logout">注&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
+					<td><html:submit property="logout" styleClass="STYLEBUTTON">注&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp销</html:submit></td>
 				</tr>
 			</table>
 		</html:form>

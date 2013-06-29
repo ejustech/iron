@@ -159,7 +159,7 @@
 							  </span></td>
 						</tr>
 						<tr>
-							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">ticl4:</span></td>
+							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">TiCl<label style="font-size:7px">4</label>:</span></td>
 							<td><span class="STYLE10 STYLE11">
 						    从<html:text property="ticl41"/>
 						    <html:errors property="ticl41"/>
@@ -169,7 +169,7 @@
 							  </span></td>
 							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">反应器号:</span></td>
 							<td><span class="STYLE10 STYLE11">
-						    <html:text property="fanyingqihao"/>
+						    <html:text property="fanyingqihao" style="width:135px"/><lable>&nbsp#</lable>
 						    <html:errors property="fanyingqihao"/>
 							  </span></td>
 						</tr>

@@ -166,7 +166,14 @@ public class SearchAction extends EventDispatchAction {
 			if (!fanyingqihao.equals("")) {
 				sqlBufferCondition.append(" AND");
 				sqlBufferCondition.append(" fanyingqihao ='");
-				sqlBufferCondition.append(fanyingqihao);
+				// 截取输入字符的最后一位，判断是否输入了#号
+				if ("#".equals(fanyingqihao.substring(fanyingqihao.length()-1, fanyingqihao.length()))) {
+					//用户最后一位输入了#号的情况
+					sqlBufferCondition.append(fanyingqihao);
+				} else {
+					//用户最后一位没有输入#号的情况
+					sqlBufferCondition.append(fanyingqihao + "#");
+				}
 				sqlBufferCondition.append("'");
 			}
 			// 检索条件_使用次数(三段区间)

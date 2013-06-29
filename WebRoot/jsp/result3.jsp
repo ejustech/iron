@@ -62,7 +62,7 @@
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">总炉次数</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">均毛重kg</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">Mg单耗</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">TiCl4单耗</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">TiCl<label style="font-size:7px">4</label>单耗</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">成品率</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">总净重量kg</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE9">均净重kg</span></th>

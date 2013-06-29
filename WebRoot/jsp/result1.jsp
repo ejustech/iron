@@ -69,7 +69,7 @@
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">反应器号</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">使用次数</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Mg(t)</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">TiCl4</span></th>
+					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">TiCl<label style="font-size:7px">4</label></span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">毛重</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">净重</span></th>
 					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">成品率</span></th>
