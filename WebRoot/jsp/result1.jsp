@@ -26,7 +26,6 @@
 .STYLE16 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
 
 .STYLETD{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;word-break:keep-all;}
-.STYLEXIABIAO {font-size: 7px}
 	-->
 	</style>
 	<body>
@@ -72,7 +71,7 @@
 					<th bgcolor="#99CC99" style="width:25px;"><span class="STYLE10 STYLE11 STYLE9">反应器号</span></th>
 					<th bgcolor="#99CC99" style="width:15px;"><span class="STYLE10 STYLE11 STYLE9">使用次数</span></th>
 					<th bgcolor="#99CC99" style="width:30px;"><span class="STYLE10 STYLE11 STYLE9">Mg(t)</span></th>
-					<th bgcolor="#99CC99" style="width:35px;"><span class="STYLE10 STYLE11 STYLE9">TiCl</span><lable style="font-size: 7px">4</lable></th>
+					<th bgcolor="#99CC99" style="width:35px;"><span class="STYLE10 STYLE11 STYLE9">TiCl</span><lable style="-webkit-text-size-adjust:none;font-size: 7px">4</lable></th>
 					<th bgcolor="#99CC99" style="width:25px;"><span class="STYLE10 STYLE11 STYLE9">毛重</span></th>
 					<th bgcolor="#99CC99" style="width:25px;"><span class="STYLE10 STYLE11 STYLE9">净重</span></th>
 					<th bgcolor="#99CC99" style="width:40px;"><span class="STYLE10 STYLE11 STYLE9">成品率</span></th>

@@ -159,7 +159,7 @@
 							  </span></td>
 						</tr>
 						<tr>
-							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">TiCl<label style="font-size:7px">4</label>:</span></td>
+							<td bgcolor="#99CCCC"><span class="STYLE10 STYLE11">TiCl<lable style="-webkit-text-size-adjust:none;font-size: 7px">4</lable>:</span></td>
 							<td><span class="STYLE10 STYLE11">
 						    从<html:text property="ticl41"/>
 						    <html:errors property="ticl41"/>

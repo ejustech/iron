@@ -63,7 +63,7 @@ body {
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">反应器号</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">使用次数</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">Mg（t）</span></td>
-    <td align="center" bgcolor="#99CC99"><span class="STYLE13">TiCl<label style="font-size:7px">4</label></span></td>
+    <td align="center" bgcolor="#99CC99"><span class="STYLE13">TiCl</span><lable style="-webkit-text-size-adjust:none;font-size: 7px">4</lable></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">毛重</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">净重</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">成品率</span></td>
