@@ -24,6 +24,8 @@
 	font-weight: bold;
 }
 .STYLE16 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
+
+.STYLETD{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;word-break:keep-all;}
 	-->
 	</style>
 	<body>
@@ -57,203 +59,203 @@
 		  </table>
 			<p></p>
 			<hr width="1024" />
-			<table align="center" border=1 style="BORDER-COLLAPSE: collapse">
+			<table align="center" border=1 style="BORDER-COLLAPSE: collapse;table-layout:fixed;width:1850px">
 				<tr>
-					<th bgcolor="#99CC99"><span class="STYLE11">删除</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE11">修改</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">日期</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">期号</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">炉次</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">规格</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">生产炉号</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">反应器号</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">使用次数</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Mg(t)</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">TiCl<label style="font-size:7px">4</label></span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">毛重</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">净重</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">成品率</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Fe</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Si</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Cl</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">C</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">N</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">O</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">H</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">Mn</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">HB</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">等级(含锰)</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">考核等级(除锰)</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">工艺调整</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">工艺试验</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">底皮Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">上帽Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">爬壁Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">废底皮Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">废上帽Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">废爬壁Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">废钛粉Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">磁选Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">手选废料Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">损耗Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">总排镁量Kg</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">出炉真空度Pa</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">还原最高温度℃</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">蒸馏高恒A点最高℃</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">转蒸馏</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">加首次</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">加末次</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">通道</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">生产故障</span></th>
-					<th bgcolor="#99CC99"><span class="STYLE10 STYLE11 STYLE9">备注说明</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE11">删除</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:50px;"><span class="STYLE11">修改</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:60px;"><span class="STYLE10 STYLE11 STYLE9">日期</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:15px;"><span class="STYLE10 STYLE11 STYLE9">期号</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:85px;"><span class="STYLE10 STYLE11 STYLE9">炉次</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:50px;"><span class="STYLE10 STYLE11 STYLE9">规格</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:15px;"><span class="STYLE10 STYLE11 STYLE9">生产炉号</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">反应器号</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:15px;"><span class="STYLE10 STYLE11 STYLE9">使用次数</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">Mg(t)</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:35px;"><span class="STYLE10 STYLE11 STYLE9">TiCl<label style="font-size:7px">4</label></span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">毛重</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">净重</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:40px;"><span class="STYLE10 STYLE11 STYLE9">成品率</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">Fe</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">Si</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">Cl</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">C</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">N</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">O</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:35px;"><span class="STYLE10 STYLE11 STYLE9">H</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">Mn</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">HB</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">等级(含锰)</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">考核等级(除锰)</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:60px;"><span class="STYLE10 STYLE11 STYLE9">工艺调整</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:60px;"><span class="STYLE10 STYLE11 STYLE9">工艺试验</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">底皮Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">上帽Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">爬壁Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">废底皮Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">废上帽Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">废爬壁Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">废钛粉Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">磁选Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">手选废料Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">损耗Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:35px;"><span class="STYLE10 STYLE11 STYLE9">总排镁量Kg</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:25px;"><span class="STYLE10 STYLE11 STYLE9">出炉真空度Pa</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">还原最高温度℃</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:30px;"><span class="STYLE10 STYLE11 STYLE9">蒸馏高恒A点最高℃</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">转蒸馏</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">加首次</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">加末次</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">通道</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:20px;"><span class="STYLE10 STYLE11 STYLE9">生产故障</span></th>
+					<th bgcolor="#99CC99" style="white-space:nowrap;width:60px;"><span class="STYLE10 STYLE11 STYLE9">备注说明</span></th>
 				</tr>
 				<logic:notEmpty name="AllINFOLIST">
 					<logic:iterate id="result1FormBean" name="AllINFOLIST">
 				<tr>
-					<td align="center">
+					<td align="center" class="STYLETD">
 						<html:multibox property="indexCheckbox">
 							<logic:empty name="result1FormBean" property="index"></logic:empty>
 							<bean:write name="result1FormBean" property="index" />
 						</html:multibox>					
 					</td>
-					<td align="center"><span class="STYLE16">
+					<td align="center" class="STYLETD"><span class="STYLE16">
 					  <!-- <html:text name="result1FormBean" property="id" indexed="true" ></html:text> -->
 					  <input type="button" value="修改" onclick="window.location.href='/jinda/updateSingle.do?id=${result1FormBean.id}';" /> 
 					</span></td>					
-					<td align="center"><span class="STYLE16">
+					<td align="center" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="riqi" ></bean:write>
 					</span></td>
-					<td align="center"><span class="STYLE16">
+					<td align="center" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="qihao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="luci" ></bean:write>
 					  <bean:write name="result1FormBean" property="junpin" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="guige" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="shengchanluhao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="fanyingqihao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="shiyongcishu" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="mg" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="ticl" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="maozhong" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="jingzhong" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="chengpinlv" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="fe" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="si" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="cl" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="c" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="n" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="o" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="h" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="mn" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="hb" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="dengji_hanmeng" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="kaohedengji_chumeng" ></bean:write>
 					</span></td>	
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="gongyitiaozheng" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="gongyitiaozheng" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="gongyishiyan" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="gongyishiyan" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="dipi" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="shangmao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="pabi" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feidipi" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feishangmao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feipabi" ></bean:write>
 					</span></td>	
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feitaifen" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="cixuan" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="shouxuanfeiliao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="sunhao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="zongpaimeiliang" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="chuluzhenkongdu" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="huanyuanzuigaowendu" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="zhengliugaoheng" ></bean:write>
 					</span></td>	
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="zhuanzhengliu" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="zhuanzhengliu" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="jiashouci" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="jiashouci" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="jiamoci" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="jiamoci" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="tongdao" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="shengchanguzhang" ></bean:write>
 					</span></td>
-					<td align="right"><span class="STYLE16">
+					<td align="right" title="<bean:write name="result1FormBean" property="beizhushuoming" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="beizhushuoming" ></bean:write>
 					</span></td>
 				</tr>
