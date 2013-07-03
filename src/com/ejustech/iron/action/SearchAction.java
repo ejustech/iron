@@ -6,11 +6,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.struts.action.ActionErrors;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
 import org.apache.struts.actions.EventDispatchAction;
 
+import com.ejustech.iron.business.SearchBusiness;
 import com.ejustech.iron.dao.TIronInfoDao;
 import com.ejustech.iron.databean.form.Result1FormBean;
 import com.ejustech.iron.databean.form.Result2FormBean;
@@ -40,6 +43,19 @@ public class SearchAction extends EventDispatchAction {
 		try {
 			HttpSession session = request.getSession();
 			SearchForm searchForm = (SearchForm) form;// TODO Auto-generated
+			
+			//验证
+			//单炉生产数据统计表时，期号只能选择一个
+			SearchBusiness business = new SearchBusiness();
+			if (business.DanLuShengChanShuJuTongJi_QiHaoIsOnly(searchForm)) {
+				
+				ActionErrors error = new ActionErrors();
+				
+				error.add("errors", new ActionMessage("error.Search.QiHaoIsOnly"));
+				this.saveErrors(request, error);
+				return mapping.findForward("searchCheckNG");
+			}
+			
 			TIronInfoDao searchDao = new TIronInfoDao();
 			// 检索条件
 			String sqlCondition = new String();

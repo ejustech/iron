@@ -66,6 +66,7 @@
 			<forward name="srch7" path="/jsp/result7.jsp" />
 			<forward name="back" path="/jsp/menu.jsp" />
 			<forward name="searchError" path="/jsp/searchError.jsp" />
+			<forward name="searchCheckNG" path="/jsp/searchCheckNG.jsp" />
 			<forward name="relogin" path="/jsp/login.jsp" />
 		</action>
 		<action attribute="result1Form" input="/jsp/result1.jsp" name="result1Form"
