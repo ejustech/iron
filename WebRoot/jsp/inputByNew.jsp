@@ -154,7 +154,7 @@ body {
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
@@ -226,7 +226,7 @@ body {
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
@@ -298,7 +298,7 @@ body {
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
-        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="4"></html:text> <%} else {%>  <%}%> </td>
+        <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text> <%} else {%>  <%}%> </td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
         <td align="center"> <%if (0 == index%3) {%> <html:text name="inputByNewList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text><%} else {%>  <%}%></td>
