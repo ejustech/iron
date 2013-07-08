@@ -249,7 +249,7 @@ body {
     </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text></logic:empty> 
+            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" style="width:50px" maxlength="6"></html:text></logic:empty> 
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
@@ -442,7 +442,7 @@ body {
     </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text></logic:empty> 
+            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" style="width:50px" maxlength="6"></html:text></logic:empty> 
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
@@ -635,7 +635,7 @@ body {
     </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" maxlength="5"></html:text></logic:empty> 
+            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" style="width:50px" maxlength="6"></html:text></logic:empty> 
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
