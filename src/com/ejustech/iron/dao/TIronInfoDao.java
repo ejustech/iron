@@ -489,7 +489,7 @@ public class TIronInfoDao extends BaseDao {
 
 		String sql = sqlBuffer.append(sqlCondition).toString();
 
-		sql = sql + " order by id";
+		sql = sql + " order by luci, id";
 		System.out.println("sql=" + sql);
 
 		ResultSet resultSet = null;
