@@ -1,9 +1,9 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
- 
-<html> 
+
+<html>
 	<head>
 		<title>全部信息输出表</title>
 	    <style type="text/css">
@@ -40,14 +40,16 @@
 				  		<!--
 					  	<html:submit property="res1_add">添&nbsp&nbsp&nbsp&nbsp加</html:submit>
 					  	-->
-					  	
+
 					  	<!--
 						<html:submit property="res1_modify">修&nbsp&nbsp&nbsp&nbsp改</html:submit>
 						-->
-						
+
 						<html:submit property="exportResult1">导出Excel</html:submit>
-						
+
+						<logic:notEqual name="AUTHORITY" scope="session" value="2">
 						<html:submit property="res1_del">删&nbsp&nbsp&nbsp&nbsp除</html:submit>
+						</logic:notEqual>
 
 						<input type=button value="返&nbsp&nbsp&nbsp&nbsp回" onClick="javascript:window.history.back();">
 
@@ -116,12 +118,17 @@
 						<html:multibox property="indexCheckbox">
 							<logic:empty name="result1FormBean" property="index"></logic:empty>
 							<bean:write name="result1FormBean" property="index" />
-						</html:multibox>					
+						</html:multibox>
 					</td>
 					<td align="center" class="STYLETD"><span class="STYLE16">
 					  <!-- <html:text name="result1FormBean" property="id" indexed="true" ></html:text> -->
-					  <input type="button" value="修改" onclick="window.location.href='/jinda/updateSingle.do?id=${result1FormBean.id}';" /> 
-					</span></td>					
+					  <logic:notEqual name="AUTHORITY" scope="session" value="2">
+					  <input type="button" value="修改" onclick="window.location.href='/jinda/updateSingle.do?id=${result1FormBean.id}';" />
+					  </logic:notEqual>
+					  <logic:equal name="AUTHORITY" scope="session" value="2">
+					  <input type="button" value="修改" disabled="disabled" onclick="window.location.href='/jinda/updateSingle.do?id=${result1FormBean.id}';" />
+					  </logic:equal>
+					</span></td>
 					<td align="center" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="riqi" ></bean:write>
 					</span></td>
@@ -191,7 +198,7 @@
 					</span></td>
 					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="kaohedengji_chumeng" ></bean:write>
-					</span></td>	
+					</span></td>
 					<td align="right" title="<bean:write name="result1FormBean" property="gongyitiaozheng" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="gongyitiaozheng" ></bean:write>
 					</span></td>
@@ -215,7 +222,7 @@
 					</span></td>
 					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feipabi" ></bean:write>
-					</span></td>	
+					</span></td>
 					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="feitaifen" ></bean:write>
 					</span></td>
@@ -239,7 +246,7 @@
 					</span></td>
 					<td align="right" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="zhengliugaoheng" ></bean:write>
-					</span></td>	
+					</span></td>
 					<td align="right" title="<bean:write name="result1FormBean" property="zhuanzhengliu" />" class="STYLETD"><span class="STYLE16">
 					  <bean:write name="result1FormBean" property="zhuanzhengliu" ></bean:write>
 					</span></td>
