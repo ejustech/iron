@@ -118,7 +118,7 @@ body {
       </logic:empty>
           </span></td>
         <td align="center"> 
-            <logic:empty  name="inputByUpdateList" property="junPin">
+<logic:empty  name="inputByUpdateList" property="junPin">
             <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10" onclick="WdatePicker()"></html:text> 
 </logic:empty>
         </td>

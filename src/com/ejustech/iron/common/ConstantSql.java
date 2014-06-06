@@ -59,4 +59,9 @@ public class ConstantSql {
 	 * 检索最大ID，最大炉次索引，每次数据登录时用
 	 */
 	public static final String T_INRO_INFO_MAX_ID = "SELECT IFNULL(MAX(id), 0) + 1 as maxid, IFNULL(MAX(luci_index), 0) + 1 AS maxluciindex FROM ironinfo";
+	
+	/***
+	 * 检索炉次Index
+	 */
+	public static final String T_INRO_INFO_LUCI_INDEX = "SELECT luci_index FROM ironinfo where id = ?";	
 }

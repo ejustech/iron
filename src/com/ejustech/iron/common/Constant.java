@@ -4,7 +4,7 @@ public class Constant {
 	/**
 	 * 信息输入画面，默认显示行数
 	 */
-	public static final int INPUT_BY_NEW_ROWS = 30;
+	public static final int INPUT_BY_NEW_ROWS = 70;
 	/**
 	 * 信息输入画面 登陆用SQL文 参数顺序 年月日
 	 */

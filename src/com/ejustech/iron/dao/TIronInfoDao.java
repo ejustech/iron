@@ -308,6 +308,33 @@ public class TIronInfoDao extends BaseDao {
 	}
 
 	/**
+	 * 取得炉次Index
+	 * @return 
+	 */
+	public String GetLuCiIndex(String id) throws Exception {
+		String result = "";
+
+		PreparedStatement ps = null;
+		
+		try {
+			ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_LUCI_INDEX);
+
+//            ps = Conn().prepareStatement(ConstantSql.T_INRO_INFO_LUCI_INDEX);
+            ps.setString(1,  StringHelper.UTF8Convert2ISO8859(id));
+            
+			ResultSet resultSet = ps.executeQuery();
+
+			while (resultSet.next()) {
+				result = resultSet.getString("luci_index").toString();
+			}
+			
+			return result;
+
+		} catch (Exception exception) {
+			throw new Exception("SQLException: " + exception.getMessage());
+		}
+	}
+	/**
 	 * 信息补全用
 	 */
 	public ArrayList<TIronInfoDaoBean> GetAllIronInfo() throws Exception {

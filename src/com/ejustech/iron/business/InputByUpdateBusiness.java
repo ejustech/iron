@@ -98,56 +98,113 @@ public class InputByUpdateBusiness {
 			allInfoList = dao.GetSingleIronInfo(luci);
 
 			for (int i = 0; i < allInfoList.size(); i++) {
-				inputByUpdateFormBean = new InputByUpdateFormBean();
-				inputByUpdateFormBean.setId(allInfoList.get(i).getId());
-				inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
-				inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
-				inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
-				inputByUpdateFormBean.setJunPin(allInfoList.get(i).getJunPin());
-				inputByUpdateFormBean.setGuiGe(allInfoList.get(i).getGuiGe());
-				inputByUpdateFormBean.setShengChanLuHao(allInfoList.get(i).getShengChanLuHao());
-				inputByUpdateFormBean.setFanYingQiHao(allInfoList.get(i).getFanYingQiHao());
-				inputByUpdateFormBean.setShiYongCiShu(allInfoList.get(i).getShiYongCiShu());
-				inputByUpdateFormBean.setMg(allInfoList.get(i).getMg());
-				inputByUpdateFormBean.setTiCl4(allInfoList.get(i).getTiCl4());
-				inputByUpdateFormBean.setMaoZhong(allInfoList.get(i).getMaoZhong());
-				inputByUpdateFormBean.setJingZhong(allInfoList.get(i).getJingZhong());
-				inputByUpdateFormBean.setChengPinLv(allInfoList.get(i).getChengPinLv());
-				inputByUpdateFormBean.setYuanSuFe(allInfoList.get(i).getYuanSuFe());
-				inputByUpdateFormBean.setYuanSuSi(allInfoList.get(i).getYuanSuSi());
-				inputByUpdateFormBean.setYuanSuCl(allInfoList.get(i).getYuanSuCl());
-				inputByUpdateFormBean.setYuanSuC(allInfoList.get(i).getYuanSuC());
-				inputByUpdateFormBean.setYuanSuN(allInfoList.get(i).getYuanSuN());
-				inputByUpdateFormBean.setYuanSuO(allInfoList.get(i).getYuanSuO());
-				inputByUpdateFormBean.setYuanSuH(allInfoList.get(i).getYuanSuH());
-				inputByUpdateFormBean.setYuanSuMn(allInfoList.get(i).getYuanSuMn());
-				inputByUpdateFormBean.setYuanSuHb(allInfoList.get(i).getYuanSuHb());
-				inputByUpdateFormBean.setDengJiHanMeng(allInfoList.get(i).getDengJiHanMeng());
-				inputByUpdateFormBean.setKaoHeDengJiChuMeng(allInfoList.get(i).getKaoHeDengJiChuMeng());
-				inputByUpdateFormBean.setGongYiTiaoZheng(allInfoList.get(i).getGongYiTiaoZheng());
-				inputByUpdateFormBean.setGongYiShiYan(allInfoList.get(i).getGongYiShiYan());
-				inputByUpdateFormBean.setDiPiKg(allInfoList.get(i).getDiPiKg());
-				inputByUpdateFormBean.setShangMaoKg(allInfoList.get(i).getShangMaoKg());
-				inputByUpdateFormBean.setPaBiKg(allInfoList.get(i).getPaBiKg());
-				inputByUpdateFormBean.setFeiDiPiKg(allInfoList.get(i).getFeiDiPiKg());
-				inputByUpdateFormBean.setFeiShangMaoKg(allInfoList.get(i).getFeiShangMaoKg());
-				inputByUpdateFormBean.setFeiPaBiKg(allInfoList.get(i).getFeiPaBiKg());
-				inputByUpdateFormBean.setFeiTaiFenKg(allInfoList.get(i).getFeiTaiFenKg());
-				inputByUpdateFormBean.setCiYuanKg(allInfoList.get(i).getCiYuanKg());
-				inputByUpdateFormBean.setShouXuanFeiLiaoKg(allInfoList.get(i).getShouXuanFeiLiaoKg());
-				inputByUpdateFormBean.setSunHaoKg(allInfoList.get(i).getSunHaoKg());
-				inputByUpdateFormBean.setZongPaiMeiLiangKg(allInfoList.get(i).getZongPaiMeiLiangKg());
-				inputByUpdateFormBean.setChuLuZhenKongDu(allInfoList.get(i).getChuLuZhenKongDu());
-				inputByUpdateFormBean.setYuanZuiGaoWenDu(allInfoList.get(i).getYuanZuiGaoWenDu());
-				inputByUpdateFormBean.setZhengLiuGaoHengDian(allInfoList.get(i).getZhengLiuGaoHengDian());
-				inputByUpdateFormBean.setZhuanZhengLiu(allInfoList.get(i).getZhuanZhengLiu());
-				inputByUpdateFormBean.setJiaShouCi(allInfoList.get(i).getJiaShouCi());
-				inputByUpdateFormBean.setJiaMoCi(allInfoList.get(i).getJiaMoCi());
-				inputByUpdateFormBean.setTongDao(allInfoList.get(i).getTongDao());
-				inputByUpdateFormBean.setShengChanGuZhang(allInfoList.get(i).getShengChanGuZhang());
-				inputByUpdateFormBean.setBeiZhuShuoMing(allInfoList.get(i).getBeiZhuShuoMing());
+//				for (int i = 0; i < 7; i++) {
+				
+//				System.out.println("aaa");
+				if(i < allInfoList.size()){
+					inputByUpdateFormBean = new InputByUpdateFormBean();
+					inputByUpdateFormBean.setId(allInfoList.get(i).getId());
+					inputByUpdateFormBean.setYearMonthDay(allInfoList.get(i).getYearMonthDay());
+					inputByUpdateFormBean.setQiHao(allInfoList.get(i).getQiHao());
+					inputByUpdateFormBean.setLuCi(allInfoList.get(i).getLuCi());
+					inputByUpdateFormBean.setJunPin(allInfoList.get(i).getJunPin());
+					inputByUpdateFormBean.setGuiGe(allInfoList.get(i).getGuiGe());
+					inputByUpdateFormBean.setShengChanLuHao(allInfoList.get(i).getShengChanLuHao());
+					inputByUpdateFormBean.setFanYingQiHao(allInfoList.get(i).getFanYingQiHao());
+					inputByUpdateFormBean.setShiYongCiShu(allInfoList.get(i).getShiYongCiShu());
+					inputByUpdateFormBean.setMg(allInfoList.get(i).getMg());
+					inputByUpdateFormBean.setTiCl4(allInfoList.get(i).getTiCl4());
+					inputByUpdateFormBean.setMaoZhong(allInfoList.get(i).getMaoZhong());
+					inputByUpdateFormBean.setJingZhong(allInfoList.get(i).getJingZhong());
+					inputByUpdateFormBean.setChengPinLv(allInfoList.get(i).getChengPinLv());
+					inputByUpdateFormBean.setYuanSuFe(allInfoList.get(i).getYuanSuFe());
+					inputByUpdateFormBean.setYuanSuSi(allInfoList.get(i).getYuanSuSi());
+					inputByUpdateFormBean.setYuanSuCl(allInfoList.get(i).getYuanSuCl());
+					inputByUpdateFormBean.setYuanSuC(allInfoList.get(i).getYuanSuC());
+					inputByUpdateFormBean.setYuanSuN(allInfoList.get(i).getYuanSuN());
+					inputByUpdateFormBean.setYuanSuO(allInfoList.get(i).getYuanSuO());
+					inputByUpdateFormBean.setYuanSuH(allInfoList.get(i).getYuanSuH());
+					inputByUpdateFormBean.setYuanSuMn(allInfoList.get(i).getYuanSuMn());
+					inputByUpdateFormBean.setYuanSuHb(allInfoList.get(i).getYuanSuHb());
+					inputByUpdateFormBean.setDengJiHanMeng(allInfoList.get(i).getDengJiHanMeng());
+					inputByUpdateFormBean.setKaoHeDengJiChuMeng(allInfoList.get(i).getKaoHeDengJiChuMeng());
+					inputByUpdateFormBean.setGongYiTiaoZheng(allInfoList.get(i).getGongYiTiaoZheng());
+					inputByUpdateFormBean.setGongYiShiYan(allInfoList.get(i).getGongYiShiYan());
+					inputByUpdateFormBean.setDiPiKg(allInfoList.get(i).getDiPiKg());
+					inputByUpdateFormBean.setShangMaoKg(allInfoList.get(i).getShangMaoKg());
+					inputByUpdateFormBean.setPaBiKg(allInfoList.get(i).getPaBiKg());
+					inputByUpdateFormBean.setFeiDiPiKg(allInfoList.get(i).getFeiDiPiKg());
+					inputByUpdateFormBean.setFeiShangMaoKg(allInfoList.get(i).getFeiShangMaoKg());
+					inputByUpdateFormBean.setFeiPaBiKg(allInfoList.get(i).getFeiPaBiKg());
+					inputByUpdateFormBean.setFeiTaiFenKg(allInfoList.get(i).getFeiTaiFenKg());
+					inputByUpdateFormBean.setCiYuanKg(allInfoList.get(i).getCiYuanKg());
+					inputByUpdateFormBean.setShouXuanFeiLiaoKg(allInfoList.get(i).getShouXuanFeiLiaoKg());
+					inputByUpdateFormBean.setSunHaoKg(allInfoList.get(i).getSunHaoKg());
+					inputByUpdateFormBean.setZongPaiMeiLiangKg(allInfoList.get(i).getZongPaiMeiLiangKg());
+					inputByUpdateFormBean.setChuLuZhenKongDu(allInfoList.get(i).getChuLuZhenKongDu());
+					inputByUpdateFormBean.setYuanZuiGaoWenDu(allInfoList.get(i).getYuanZuiGaoWenDu());
+					inputByUpdateFormBean.setZhengLiuGaoHengDian(allInfoList.get(i).getZhengLiuGaoHengDian());
+					inputByUpdateFormBean.setZhuanZhengLiu(allInfoList.get(i).getZhuanZhengLiu());
+					inputByUpdateFormBean.setJiaShouCi(allInfoList.get(i).getJiaShouCi());
+					inputByUpdateFormBean.setJiaMoCi(allInfoList.get(i).getJiaMoCi());
+					inputByUpdateFormBean.setTongDao(allInfoList.get(i).getTongDao());
+					inputByUpdateFormBean.setShengChanGuZhang(allInfoList.get(i).getShengChanGuZhang());
+					inputByUpdateFormBean.setBeiZhuShuoMing(allInfoList.get(i).getBeiZhuShuoMing());
 
-				inputByNewList.add(inputByUpdateFormBean);
+					inputByNewList.add(inputByUpdateFormBean);
+				}else{
+					inputByUpdateFormBean = new InputByUpdateFormBean();
+					inputByUpdateFormBean.setId("");
+					inputByUpdateFormBean.setYearMonthDay(allInfoList.get(0).getYearMonthDay());
+					inputByUpdateFormBean.setQiHao(allInfoList.get(0).getQiHao());
+					inputByUpdateFormBean.setLuCi("");
+					inputByUpdateFormBean.setJunPin("A");
+					inputByUpdateFormBean.setGuiGe("");
+					inputByUpdateFormBean.setShengChanLuHao(allInfoList.get(0).getShengChanLuHao());
+					inputByUpdateFormBean.setFanYingQiHao(allInfoList.get(0).getFanYingQiHao());
+					inputByUpdateFormBean.setShiYongCiShu(allInfoList.get(0).getShiYongCiShu());
+					inputByUpdateFormBean.setMg(allInfoList.get(0).getMg());
+					inputByUpdateFormBean.setTiCl4(allInfoList.get(0).getTiCl4());
+					inputByUpdateFormBean.setMaoZhong(allInfoList.get(0).getMaoZhong());
+					inputByUpdateFormBean.setJingZhong("");
+					inputByUpdateFormBean.setChengPinLv("");
+					inputByUpdateFormBean.setYuanSuFe("");
+					inputByUpdateFormBean.setYuanSuSi("");
+					inputByUpdateFormBean.setYuanSuCl("");
+					inputByUpdateFormBean.setYuanSuC("");
+					inputByUpdateFormBean.setYuanSuN("");
+					inputByUpdateFormBean.setYuanSuO("");
+					inputByUpdateFormBean.setYuanSuH("");
+					inputByUpdateFormBean.setYuanSuMn("");
+					inputByUpdateFormBean.setYuanSuHb("");
+					inputByUpdateFormBean.setDengJiHanMeng("");
+					inputByUpdateFormBean.setKaoHeDengJiChuMeng("");
+					inputByUpdateFormBean.setGongYiTiaoZheng("");
+					inputByUpdateFormBean.setGongYiShiYan("");
+					inputByUpdateFormBean.setDiPiKg("");
+					inputByUpdateFormBean.setShangMaoKg("");
+					inputByUpdateFormBean.setPaBiKg("");
+					inputByUpdateFormBean.setFeiDiPiKg("");
+					inputByUpdateFormBean.setFeiShangMaoKg("");
+					inputByUpdateFormBean.setFeiPaBiKg("");
+					inputByUpdateFormBean.setFeiTaiFenKg("");
+					inputByUpdateFormBean.setCiYuanKg("");
+					inputByUpdateFormBean.setShouXuanFeiLiaoKg("");
+					inputByUpdateFormBean.setSunHaoKg("");
+					inputByUpdateFormBean.setZongPaiMeiLiangKg("");
+					inputByUpdateFormBean.setChuLuZhenKongDu("");
+					inputByUpdateFormBean.setYuanZuiGaoWenDu("");
+					inputByUpdateFormBean.setZhengLiuGaoHengDian("");
+					inputByUpdateFormBean.setZhuanZhengLiu("");
+					inputByUpdateFormBean.setJiaShouCi("");
+					inputByUpdateFormBean.setJiaMoCi("");
+					inputByUpdateFormBean.setTongDao("");
+					inputByUpdateFormBean.setShengChanGuZhang("");
+					inputByUpdateFormBean.setBeiZhuShuoMing("");
+
+					inputByNewList.add(inputByUpdateFormBean);
+				}
+				
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -1143,6 +1200,7 @@ public class InputByUpdateBusiness {
 				dao.BeginTrans();
 
 				String yearMonthDay = "";
+//				String luciIndex = "";
 				for (int i = 0; i < inputByUpdateForm.getInputByUpdateList().size(); i++) {
 					InputByUpdateFormBean = getInputByUpdateFormBeanFromForm(inputByUpdateForm, i);
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByUpdateFormBean(InputByUpdateFormBean, 1);
@@ -1152,15 +1210,30 @@ public class InputByUpdateBusiness {
 					} else {
 						yearMonthDay = tIronInfoDaoBean.getYearMonthDay();
 					}
-					dao.Update(tIronInfoDaoBean);
+//					String[] max = dao.GetMaxId();
+//					if ("".equals(luciIndex)) {
+//						luciIndex = dao.GetLuCiIndex(tIronInfoDaoBean.getId());	
+//					}
+					
 					if (!"".equals(StringHelper.null2Empty(tIronInfoDaoBean.getJunPin()))) {
 						//军品行
+//						if ("".equals(tIronInfoDaoBean.getId())) {
+//							tIronInfoDaoBean.setId(max[0]);
+//							tIronInfoDaoBean.setLuciIndex(luciIndex);
+//							dao.Insert(tIronInfoDaoBean);
+//						} else {
+//							dao.Update(tIronInfoDaoBean);
+//						}
+						dao.Update(tIronInfoDaoBean);
+						
 						dao.UpdateJunPinNotInput(tIronInfoDaoBean.getId());
 						dao.UpdateFlagWhenJunPin(tIronInfoDaoBean.getId());
 					}
 					else
 					{
 						//非军品行
+						dao.Update(tIronInfoDaoBean);
+						
 						dao.UpdateFlagWhenNotJunPin(tIronInfoDaoBean.getId());
 					}
 					dao.UpdateYue(tIronInfoDaoBean.getId());

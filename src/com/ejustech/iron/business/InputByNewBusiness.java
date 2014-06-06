@@ -956,13 +956,13 @@ public class InputByNewBusiness {
 					// FormBean转化成DaoBean
 					tIronInfoDaoBean = ConvToTIronInfoDaoBeanFromInputByNewFormBean(inputByNewFormBean, 1);
 
-					if (i % 3 == 0) {
+					if (i % 7 == 0) {
 						tmpLuci = tIronInfoDaoBean.getLuCi();
 					} else {
 						tIronInfoDaoBean.setLuCi(tmpLuci);
 					}
 
-					if (i % 3 == 0) {
+					if (i % 7 == 0) {
 						tmpYearMonthDay = tIronInfoDaoBean.getYearMonthDay();
 					} else {
 						tIronInfoDaoBean.setYearMonthDay(tmpYearMonthDay);
