@@ -155,17 +155,16 @@ function keystoke(obj){
 	}
 }
 function copy(id){
-	
 	//alert("button id = " + id);
 	var radioId = "";
-　var rPort = document.getElementsByName("RadioGroup");
-　for(i=0;i<rPort.length;i++){
-　	if(rPort[i].checked){
-			radioId=rPort[i].value;
-			//alert("radioId = " + radioId);
-			break;
-		}
-　}
+	var rPort = document.getElementsByName("RadioGroup");
+	for(i=0;i<rPort.length;i++) {
+	    if(rPort[i].checked){
+				radioId=rPort[i].value;
+				//alert("radioId = " + radioId);
+				break;
+	    }
+	}
 	//x14-24 fe-kaohedengjichumeng
 
 	document.getElementById("14,"+id).value = document.getElementById("14,"+radioId).value;
@@ -263,7 +262,7 @@ function copy(id){
         <%int x = 0; int y = index; String focusIndex = String.valueOf(x) + "," + String.valueOf(y);%>
         
           <%if (0 == index%7) {%>
-          <%=index/6+1%>
+          <%=index/7+1%>
           <%}%>
           </span></td>
 		<td><INPUT id='<%=index%>' type="radio" value='<%=index%>' name="RadioGroup"/></td>  
@@ -381,7 +380,7 @@ function copy(id){
     <tr>
         <td bordercolor="#666666" align="center"><span class="STYLE14">
           <%if (0 == index%7) {%>
-          <%=index/6+1%>
+          <%=index/7+1%>
           <%}%>
           </span></td>
         <td align="center"> <%if (0 == index%7) {%> <html:text name="inputByNewList" property="yearMonthDay" indexed="true" size="7" maxlength="10"></html:text> <%} else {%>  <%}%> </td>

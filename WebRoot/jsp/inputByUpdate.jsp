@@ -27,6 +27,163 @@ body {
 -->
 </style>
 </head>
+<script language="javascript">
+
+function keystoke(obj){
+    var e = window.event;
+    var id = document.activeElement.id;
+    //alert(e.keyCode);
+    switch(e.keyCode){
+
+        case 40:
+        //alert(id);
+        var x = parseInt(id.split(",")[0]);
+        var y = parseInt(id.split(",")[1]);
+
+        var focusIndex = parseInt(id.split(",")[1]);
+
+        var foucs_Down1 =  x + "," + (y + 1);
+        var foucs_Down2 =  x + "," + (y + 2);
+        var foucs_Down7 =  x + "," + (y + 7);
+
+        if (x == "4"){
+            if(y == "6" || y == "13" || y == "20" || y == "27" || y == "34" || y == "41" || y == "48" || y == "55" || y == "62"){
+                document.getElementById(foucs_Down2).focus();
+                //alert(foucs_Down2);
+            }else{
+                document.getElementById(foucs_Down1).focus();
+                //alert(foucs_Down1);
+            }
+        }else if (x == "1" || x == "2" || x == "3" || x == "6" || x == "7" || x == "8" || x == "9" || x == "10" || x == "11" || x == "13" || x == "25" || x == "26" || x == "27" || x == "28" || x == "29" || x == "30" || x == "31" || x == "32" || x == "33" || x == "34" || x == "35" || x == "36" || x == "37" || x == "38" || x == "39" || x == "40" || x == "41" || x == "42" || x == "43" || x == "44" || x == "45"){
+            document.getElementById(foucs_Down7).focus();
+            //alert(foucs_Down7);
+        }else{
+            document.getElementById(foucs_Down1).focus();
+            //alert(foucs_Down1);   
+        }
+        break;
+
+        case 38:
+
+        var x = parseInt(id.split(",")[0]);
+        var y = parseInt(id.split(",")[1]);
+
+        var focusIndex = parseInt(id.split(",")[1]);
+
+        var foucs_Up1 =  x + "," + (y - 1);
+        var foucs_Up2 =  x + "," + (y - 2);
+        var foucs_Up7 =  x + "," + (y - 7);
+
+        if (x == "4"){
+            if(y == "8" || y == "15" || y == "22" || y == "29" || y == "36" || y == "43" || y == "50" || y == "57" || y == "64"){
+                document.getElementById(foucs_Up2).focus();
+                //alert(foucs_Up2); 
+            }else{
+                document.getElementById(foucs_Up1).focus();
+                //alert(foucs_Up1); 
+            }
+        }else if (x == "1" || x == "2" || x == "3" || x == "6" || x == "7" || x == "8" || x == "9" || x == "10" || x == "11" || x == "13" || x == "25" || x == "26" || x == "27" || x == "28" || x == "29" || x == "30" || x == "31" || x == "32" || x == "33" || x == "34" || x == "35" || x == "36" || x == "37" || x == "38" || x == "39" || x == "40" || x == "41" || x == "42" || x == "43" || x == "44" || x == "45"){
+            document.getElementById(foucs_Up7).focus();
+        }else{
+
+            document.getElementById(foucs_Up1).focus();
+        }
+        break;
+
+        case 37:
+
+        var x = parseInt(id.split(",")[0]);
+        var y = parseInt(id.split(",")[1]);
+
+        var focusIndex = parseInt(id.split(",")[1]);
+
+        var foucs_Left1 = (x - 1) + "," + y;
+        var foucs_Left2 = (x - 2) + "," + y;
+        var foucs_Left7 = (x - 7) + "," + y;
+        var foucs_Left22 = (x - 22) + "," + y;
+
+        if (y == "0" || y == "7" || y == "14" || y == "21" || y == "28" || y == "35" || y == "42" || y == "49" || y == "56" || y == "63" || y == "70" || y == "77"){
+            if (x == "5"){
+                document.getElementById(foucs_Left2).focus();
+            }else {
+                document.getElementById(foucs_Left1).focus();
+            }
+        }else {
+            if (x == "12"){
+                document.getElementById(foucs_Left7).focus();
+            }else if (x == "14"){
+                document.getElementById(foucs_Left2).focus();
+            }else if (x == "46"){
+                document.getElementById(foucs_Left22).focus();
+            }else{
+                document.getElementById(foucs_Left1).focus();
+            }   
+        }
+
+        break;
+
+        case 39:
+
+        var x = parseInt(id.split(",")[0]);
+        var y = parseInt(id.split(",")[1]);
+
+        var focusIndex = parseInt(id.split(",")[1]);
+
+        var foucs_Right1 = (x + 1) + "," + y;
+        var foucs_Right2 = (x + 2) + "," + y;
+        var foucs_Right7 = (x + 7) + "," + y;
+        var foucs_Right22 = (x + 22) + "," + y;
+
+        if (y == "0" || y == "7" || y == "14" || y == "21" || y == "28" || y == "35" || y == "42" || y == "49" || y == "56" || y == "63" || y == "70" || y == "77"){
+            if (x == "3"){
+                document.getElementById(foucs_Right2).focus();
+            }else {
+                document.getElementById(foucs_Right1).focus();
+            }
+        }else {
+            if (x == "5"){
+                document.getElementById(foucs_Right7).focus();
+            }else if (x == "12"){
+                document.getElementById(foucs_Right2).focus();
+            }else if (x == "24"){
+                document.getElementById(foucs_Right22).focus();
+            }else{
+                document.getElementById(foucs_Right1).focus();
+            }   
+        }
+
+        break;
+    }
+}
+
+function copy(id){
+    //alert("button id = " + id);
+    var radioId = "";
+    var rPort = document.getElementsByName("RadioGroup");
+    for(i=0;i<rPort.length;i++) {
+        if(rPort[i].checked){
+                radioId=rPort[i].value;
+                //alert("radioId = " + radioId);
+                break;
+        }
+    }
+    //x14-24 fe-kaohedengjichumeng
+    // alert("button id = " + id);
+    // alert("button radioId = " + radioId);
+    document.getElementById("15,"+id).value = document.getElementById("15,"+radioId).value;
+    document.getElementById("16,"+id).value = document.getElementById("16,"+radioId).value;
+    document.getElementById("17,"+id).value = document.getElementById("17,"+radioId).value;
+    document.getElementById("18,"+id).value = document.getElementById("18,"+radioId).value;
+    document.getElementById("19,"+id).value = document.getElementById("19,"+radioId).value;
+    document.getElementById("20,"+id).value = document.getElementById("20,"+radioId).value;
+    document.getElementById("21,"+id).value = document.getElementById("21,"+radioId).value;
+    document.getElementById("22,"+id).value = document.getElementById("22,"+radioId).value;
+    document.getElementById("23,"+id).value = document.getElementById("23,"+radioId).value;
+    document.getElementById("24,"+id).value = document.getElementById("24,"+radioId).value;
+    document.getElementById("25,"+id).value = document.getElementById("25,"+radioId).value;
+}
+
+</script>
 
 <body>
 <html:form action="/inputByUpdate">
@@ -59,6 +216,8 @@ body {
     <tr><html:errors property="error01"></html:errors></tr>    
     <html:hidden name="inputByUpdateForm" property="deleteId" ></html:hidden>
     <tr bgcolor="#006699">
+    <td width="21" align="center" bordercolor="#666666" bgcolor="#99CC99"><span class="STYLE13">No.</span></td>
+    <td width="21" align="center" bordercolor="#666666" bgcolor="#99CC99"><span class="STYLE13">复制</span></td>    
     <td width="21" align="center" bordercolor="#666666" bgcolor="#99CC99"><span class="STYLE13">No.</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">年月日</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">期号</span></td>
@@ -107,6 +266,7 @@ body {
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">生产故障</span></td>
     <td align="center" bgcolor="#99CC99"><span class="STYLE13">备注说明</span></td>
   </tr>
+
     <logic:equal name="inputByUpdateForm" property="role" value="1">
     <% int a=0; %>
      <logic:iterate id="inputByUpdateList" name="inputByUpdateForm" property="inputByUpdateList" indexId="index">
@@ -117,9 +277,16 @@ body {
           <%=a%>
       </logic:empty>
           </span></td>
+<%int x = 0; int y = index; String focusIndex = String.valueOf(x) + "," + String.valueOf(y);%>
+        <td><INPUT id='<%=index%>' type="radio" value='<%=index%>' name="RadioGroup"/></td>  
+        <td><input id='<%=index%>'  name='<%=index%>'  type="button" value="粘贴" onclick="copy(this.id)" /></td> 
+
         <td align="center"> 
+                
+
+
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10" onclick="WdatePicker()"></html:text> 
+            <%x = 3; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yearMonthDay" indexed="true" size="7" maxlength="10" onclick="WdatePicker()"></html:text> 
 </logic:empty>
         </td>
         <td align="center">
@@ -133,162 +300,163 @@ body {
             </logic:empty>
         </td>
         <td align="center">
-        <html:text name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
+        <%x = 4; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="luCi" indexed="true" size="7" maxlength="9" disabled="true"></html:text>
         <html:hidden name="inputByUpdateList" property="id" indexed="true" ></html:hidden>
         <html:hidden name="inputByUpdateList" property="luCi" indexed="true" ></html:hidden>
         </td>
         <td align="center">
             <logic:notEmpty  name="inputByUpdateList" property="junPin">  
-            <html:text name="inputByUpdateList" property="junPin" indexed="true" size="7" maxlength="10"></html:text>
+            <%x = 5; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="junPin" indexed="true" size="7" maxlength="10"></html:text>
             </logic:notEmpty> 
         </td>
         <td align="center">
-        <html:text name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10" disabled="true"></html:text>
+        <%x = 6; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="guiGe" indexed="true" size="7" maxlength="10" disabled="true"></html:text>
         <html:hidden name="inputByUpdateList" property="guiGe" indexed="true" ></html:hidden>
         </td>
         <td align="center">
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text>
+            <%x = 7; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="shengChanLuHao" indexed="true" size="1" maxlength="2"></html:text>
         </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-<html:text name="inputByUpdateList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text>
+<%x = 8; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="fanYingQiHao" indexed="true" size="1" maxlength="4"></html:text>
 </logic:empty>
 </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> 
+            <%x = 9; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="shiYongCiShu" indexed="true" size="1" maxlength="2"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="mg" indexed="true" size="2" maxlength="5"></html:text> 
+            <%x = 10; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="mg" indexed="true" size="2" maxlength="5"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="tiCl4" indexed="true" size="3" maxlength="6"></html:text> 
+            <%x = 11; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="tiCl4" indexed="true" size="3" maxlength="6"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="maoZhong" indexed="true" size="2" maxlength="5"></html:text></logic:empty> 
+            <%x = 12; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="maoZhong" indexed="true" size="2" maxlength="5"></html:text></logic:empty> 
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="jingZhong" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 13; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="jingZhong" indexed="true" size="2" maxlength="5"></html:text></td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="chengPinLv" indexed="true" size="3" maxlength="6"></html:text>
+            <%x = 14; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="chengPinLv" indexed="true" size="3" maxlength="6"></html:text>
 </logic:empty>
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuFe" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuSi" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuCl" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuC" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuN" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuO" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuH" indexed="true" size="2" maxlength="6"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuMn" indexed="true" size="2" maxlength="5"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="yuanSuHb" indexed="true" size="1" maxlength="3"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="dengJiHanMeng" indexed="true" size="1" maxlength="2"></html:text></td>
-        <td align="center"><html:text name="inputByUpdateList" property="kaoHeDengJiChuMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><%x = 15; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuFe" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 16; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuSi" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 17; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuCl" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 18; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuC" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 19; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuN" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 20; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuO" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 21; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuH" indexed="true" size="2" maxlength="6"></html:text></td>
+        <td align="center"><%x = 22; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuMn" indexed="true" size="2" maxlength="5"></html:text></td>
+        <td align="center"><%x = 23; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanSuHb" indexed="true" size="1" maxlength="3"></html:text></td>
+        <td align="center"><%x = 24; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="dengJiHanMeng" indexed="true" size="1" maxlength="2"></html:text></td>
+        <td align="center"><%x =25; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="kaoHeDengJiChuMeng" indexed="true" size="1" maxlength="2"></html:text></td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="gongYiTiaoZheng" indexed="true" size="7" maxlength="10"></html:text>
+            <%x = 26; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="gongYiTiaoZheng" indexed="true" size="7" maxlength="10"></html:text>
 </logic:empty>
              </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="gongYiShiYan" indexed="true" size="5" maxlength="6"></html:text> 
+            <%x = 27; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="gongYiShiYan" indexed="true" size="5" maxlength="6"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="diPiKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 28; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="diPiKg" indexed="true" size="1" maxlength="4"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="shangMaoKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 29; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="shangMaoKg" indexed="true" size="1" maxlength="4"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="paBiKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 30; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="paBiKg" indexed="true" size="1" maxlength="4"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="feiDiPiKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 31; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="feiDiPiKg" indexed="true" size="1" maxlength="4"></html:text> 
 </logic:empty>
         </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="feiShangMaoKg" indexed="true" size="1" maxlength="4"></html:text>
+            <%x = 32; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="feiShangMaoKg" indexed="true" size="1" maxlength="4"></html:text>
 </logic:empty>
              </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="feiPaBiKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 33; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="feiPaBiKg" indexed="true" size="1" maxlength="4"></html:text> 
         </logic:empty>
     </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text>
+            <%x = 34; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="feiTaiFenKg" indexed="true" size="1" maxlength="4"></html:text>
         </logic:empty>
              </td>
         <td align="center">
         <logic:empty  name="inputByUpdateList" property="junPin">
-         <html:text name="inputByUpdateList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text>
+         <%x = 35; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="ciYuanKg" indexed="true" size="1" maxlength="4"></html:text>
          </logic:empty>
           </td>
         <td align="center"> 
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> 
+            <%x = 36; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="shouXuanFeiLiaoKg" indexed="true" size="1" maxlength="4"></html:text> 
         </logic:empty>
     </td>
         <td align="center"> 
             <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" style="width:50px" maxlength="6"></html:text></logic:empty> 
+            <%x = 37; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="sunHaoKg" indexed="true" size="1" style="width:50px" maxlength="6"></html:text></logic:empty> 
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text>
+            <%x = 38; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="zongPaiMeiLiangKg" indexed="true" size="2" maxlength="6"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text>
+            <%x = 39; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="chuLuZhenKongDu" indexed="true" size="1" maxlength="4"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text>
+            <%x = 40; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="yuanZuiGaoWenDu" indexed="true" size="1" maxlength="4"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="zhengLiuGaoHengDian" indexed="true" size="1" maxlength="4"></html:text>
+            <%x = 41; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="zhengLiuGaoHengDian" indexed="true" size="1" maxlength="4"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text>
+            <%x = 42; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="zhuanZhengLiu" indexed="true" size="7" maxlength="10"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text>
+            <%x = 43; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="jiaShouCi" indexed="true" size="7" maxlength="10"></html:text>
 </logic:empty>
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text>
+            <%x = 44; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="jiaMoCi" indexed="true" size="7" maxlength="10"></html:text>
 </logic:empty>
         </td>
         <td align="center">
-            <logic:empty  name="inputByUpdateList" property="junPin">
-        <html:select name="inputByUpdateList" property="tongDao" indexed="true">
+            <logic:empty name="inputByUpdateList" property="junPin">
+        <%x = 45; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%>
+        <html:select styleId='<%=focusIndex%>' name="inputByUpdateList" property="tongDao" indexed="true">
            <html:option value="0">√</html:option>
            <html:option value="1">×</html:option>
         </html:select>
@@ -296,10 +464,10 @@ body {
         </td>
         <td align="center">
 <logic:empty  name="inputByUpdateList" property="junPin">
-            <html:text name="inputByUpdateList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text>
+            <%x = 46; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="shengChanGuZhang" indexed="true" size="1" maxlength="2"></html:text>
 </logic:empty>
         </td>
-        <td align="center"><html:text name="inputByUpdateList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
+        <td align="center"><%x = 47; focusIndex = String.valueOf(x) + "," + String.valueOf(y);%> <html:text styleId='<%=focusIndex%>' name="inputByUpdateList" property="beiZhuShuoMing" indexed="true" size="10" maxlength="200"></html:text></td>
     </tr>
   </logic:iterate> 
 
